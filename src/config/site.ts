@@ -60,6 +60,15 @@ export const site = {
     bookingsPhrase: 'millions in bookings managed',
     ratingPhrase: 'consistently five-star rated', // swap for real aggregate rating
   },
+
+  // Service areas for LocalBusiness areaServed schema (curated highlights; the
+  // full market list lives in the cities collection + /areas-we-serve/).
+  serviceAreas: [
+    'Atlanta, GA', 'Sandy Springs, GA', 'Roswell, GA', 'Alpharetta, GA',
+    'Marietta, GA', 'Brookhaven, GA', 'Dunwoody, GA', 'Decatur, GA',
+    'Johns Creek, GA', 'Savannah, GA', 'Blue Ridge, GA', 'Athens, GA',
+    'Georgia, US',
+  ],
 } as const;
 
 export type Site = typeof site;

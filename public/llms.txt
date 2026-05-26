@@ -1,0 +1,23 @@
+# Keystone Stays
+
+> Premium short-term rental (Airbnb & Vrbo) management for homeowners across Atlanta, metro Atlanta, and Georgia. Full-service: listing, dynamic pricing, 24/7 guest communication, cleaning, maintenance, and five-star review management. Transparent, all-inclusive pricing. Local experts, national-quality service.
+
+## Core
+- [Services](https://www.keystonestays.com/services/): Everything included in full-service short-term rental management.
+- [Pricing](https://www.keystonestays.com/pricing/): One transparent, all-inclusive management fee — no hidden charges.
+- [Free rental projection](https://www.keystonestays.com/rental-projection/): Request a custom, comps-based estimate of what your home could earn. Delivered by a local expert within one business day.
+- [How it works](https://www.keystonestays.com/how-it-works/): The owner journey from projection to monthly payouts.
+- [About](https://www.keystonestays.com/about/): Why Keystone Stays — the local authority on Atlanta short-term rentals.
+
+## Areas we serve
+- [Areas we serve](https://www.keystonestays.com/areas-we-serve/): Full coverage map — intown Atlanta, metro Atlanta, and Georgia destination markets.
+- [Atlanta short-term rental management](https://www.keystonestays.com/atlanta/)
+
+## Resources
+- [How much does Airbnb management cost in Atlanta?](https://www.keystonestays.com/resources/airbnb-management-cost-atlanta/)
+- [Atlanta short-term rental regulations guide](https://www.keystonestays.com/resources/atlanta-short-term-rental-regulations/)
+- [Is Airbnb management worth it?](https://www.keystonestays.com/resources/is-airbnb-management-worth-it/)
+
+## Notes
+- We manage other owners' properties for a fee (full-service). We also operate select properties directly.
+- Service area is expanding; the canonical list of markets lives on the Areas we serve page and the XML sitemap at https://www.keystonestays.com/sitemap-index.xml.

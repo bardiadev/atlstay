@@ -39,7 +39,7 @@ export function organizationSchema() {
 
 /** ProfessionalService is a LocalBusiness subtype — fits STR management. */
 export function localBusinessSchema(opts: { areaServed?: string[] } = {}) {
-  const areaServed = opts.areaServed ?? [`${site.contact.address.city}, ${site.contact.address.region}`];
+  const areaServed = opts.areaServed ?? [...site.serviceAreas];
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',

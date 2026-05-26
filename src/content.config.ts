@@ -12,6 +12,7 @@ const cities = defineCollection({
       name: z.string(), // "Atlanta"
       state: z.string(), // "GA"
       slug: z.string(), // "atlanta"
+      region: z.enum(['atlanta', 'metro', 'georgia']).default('metro'),
       title: z.string(), // SEO <title>
       description: z.string(), // meta description
       intro: z.string(), // hero subhead / lede

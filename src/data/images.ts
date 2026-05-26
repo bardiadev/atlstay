@@ -30,6 +30,16 @@ export const images = {
   nbhdDefault: { src: '/images/neighborhood-default.jpg', alt: 'A charming Atlanta residential street' },
 
   worldCup: { src: '/images/world-cup.jpg', alt: "Mercedes-Benz Stadium, an Atlanta World Cup 2026 host venue" },
+
+  // Regional hero images for metro Atlanta + Georgia location pages
+  metroAtlanta: { src: '/images/metro-atlanta.jpg', alt: 'Leafy residential street in suburban metro Atlanta' },
+  suburbHome: { src: '/images/suburb-home.jpg', alt: 'Welcoming suburban Atlanta home exterior' },
+  savannah: { src: '/images/savannah.jpg', alt: 'Historic Savannah, Georgia square shaded by live oaks' },
+  northGeorgia: { src: '/images/north-georgia.jpg', alt: 'Blue Ridge mountains in north Georgia' },
+  georgiaCoast: { src: '/images/georgia-coast.jpg', alt: 'Georgia coastline near Tybee Island' },
+  athensGa: { src: '/images/athens-ga.jpg', alt: 'Downtown Athens, Georgia' },
+  lakeLanier: { src: '/images/lake-lanier.jpg', alt: 'Lake Lanier waterfront in north Georgia' },
+  georgiaCity: { src: '/images/georgia-city.jpg', alt: 'Historic downtown street in a Georgia city' },
 } satisfies Record<string, SiteImage>;
 
 export type ImageKey = keyof typeof images;

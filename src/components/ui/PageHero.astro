@@ -1,0 +1,80 @@
+---
+// Reusable full-bleed hero for INTERIOR pages (home has its own 100svh hero).
+// Full-bleed image + forest scrim + breadcrumb + eyebrow + H1 + subtitle + CTAs.
+import Container from './Container.astro';
+import Button from './Button.astro';
+import { images, type ImageKey } from '../../data/images';
+
+interface Crumb { name: string; path: string; }
+interface Props {
+  title: string;
+  subtitle?: string;
+  eyebrow?: string;
+  imageKey?: ImageKey;
+  image?: string;
+  imageAlt?: string;
+  breadcrumbs?: Crumb[];
+  align?: 'left' | 'center';
+  size?: 'sm' | 'md' | 'lg';
+  cta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+}
+const {
+  title, subtitle, eyebrow, imageKey, image, imageAlt,
+  breadcrumbs = [], align = 'left', size = 'md', cta, secondaryCta,
+} = Astro.props;
+
+const img = image
+  ? { src: image, alt: imageAlt ?? '' }
+  : imageKey
+    ? images[imageKey]
+    : images.atlantaSkyline;
+
+const minH = { sm: 'min-h-[32vh]', md: 'min-h-[44vh]', lg: 'min-h-[56vh]' }[size];
+const centered = align === 'center';
+---
+<section class={`relative isolate flex ${minH} items-end overflow-hidden`}>
+  <img
+    src={img.src}
+    alt={img.alt}
+    loading="eager"
+    fetchpriority="high"
+    class="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+  />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-forest/95 via-forest/75 to-forest/40"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-forest/70 to-transparent"></div>
+
+  <Container class="py-12 sm:py-16">
+    <div class={`max-w-3xl ${centered ? 'mx-auto text-center' : ''}`}>
+      {breadcrumbs.length > 0 && (
+        <nav aria-label="Breadcrumb" class="mb-4">
+          <ol class={`flex flex-wrap items-center gap-1.5 text-xs text-cream/70 ${centered ? 'justify-center' : ''}`}>
+            {breadcrumbs.map((c, i) => (
+              <li class="flex items-center gap-1.5">
+                {i > 0 && <span class="text-cream/40">/</span>}
+                {i < breadcrumbs.length - 1
+                  ? <a href={c.path} class="transition-colors hover:text-brass">{c.name}</a>
+                  : <span class="text-cream">{c.name}</span>}
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
+      {eyebrow && <p class="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-brass">{eyebrow}</p>}
+      <h1 class="font-display text-[clamp(2rem,4.4vw,3.25rem)] font-medium leading-[1.08] tracking-tight text-balance text-cream">
+        {title}
+      </h1>
+      {subtitle && (
+        <p class={`mt-4 max-w-2xl text-base leading-relaxed text-cream/85 sm:text-lg ${centered ? 'mx-auto' : ''}`}>
+          {subtitle}
+        </p>
+      )}
+      {(cta || secondaryCta) && (
+        <div class={`mt-7 flex flex-col gap-3 sm:flex-row sm:items-center ${centered ? 'sm:justify-center' : ''}`}>
+          {cta && <Button href={cta.href} size="lg">{cta.label}</Button>}
+          {secondaryCta && <Button href={secondaryCta.href} variant="inverse" size="lg">{secondaryCta.label}</Button>}
+        </div>
+      )}
+    </div>
+  </Container>
+</section>
