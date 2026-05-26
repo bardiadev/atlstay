@@ -1,0 +1,37 @@
+---
+// A single full-service row — alternating image left / image right layout
+import { images } from '@/data/images';
+import type { ImageKey } from '@/data/images';
+
+interface Props {
+  title: string;
+  description: string;
+  imageKey?: ImageKey;
+  reverse?: boolean;
+}
+
+const { title, description, imageKey, reverse = false } = Astro.props;
+const img = imageKey ? images[imageKey] : null;
+---
+
+<div class={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${reverse ? 'lg:[&>:first-child]:order-2' : ''}`}>
+  <!-- Image column -->
+  <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-forest-50">
+    {img ? (
+      <img
+        src={img.src}
+        alt={img.alt}
+        loading="lazy"
+        class="h-full w-full object-cover"
+      />
+    ) : (
+      <div class="h-full w-full bg-gradient-to-br from-forest-50 to-brass-50" />
+    )}
+  </div>
+
+  <!-- Text column -->
+  <div>
+    <h2 class="font-display text-2xl text-forest sm:text-3xl">{title}</h2>
+    <p class="mt-4 leading-relaxed text-ink/80">{description}</p>
+  </div>
+</div>

@@ -1,0 +1,269 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { breadcrumbSchema } from '@/lib/schema';
+import { images } from '@/data/images';
+import { site } from '@/config/site';
+
+const faqs = [
+  {
+    q: 'Is my Atlanta home suitable for World Cup guests?',
+    a: 'Most well-located Atlanta properties are excellent candidates. Guests attending the World Cup typically book in groups — larger homes, condos near Mercedes-Benz Stadium, and properties with easy transit access to downtown tend to perform especially well. Properties in Midtown, Old Fourth Ward, Buckhead, and Inman Park are particularly well-positioned.',
+  },
+  {
+    q: 'When should I start preparing my listing for World Cup 2026?',
+    a: "Now. The booking window for major sporting events like the World Cup opens early — many dedicated fans book months in advance as soon as ticket allocations are confirmed. Getting a professionally optimized listing live as early as possible ensures maximum visibility during the peak search period.",
+  },
+  {
+    q: 'Do I need a permit to rent my home during the World Cup?',
+    a: "Yes. The City of Atlanta requires a Short-Term Rental License for any property rented for fewer than 30 consecutive nights. The annual fee is $150 and applications are submitted through atl311.com. If you're in DeKalb County, a separate license ($175/year) is required effective May 2026. We help owners navigate permitting as part of our onboarding process.",
+  },
+  {
+    q: 'How much can I earn during the World Cup matches?',
+    a: "Demand surges during major international sporting events — premium pricing during match weeks is standard. Your actual earnings depend on your property, location, and how far in advance you're booked. We'll build you a comps-based projection that accounts for World Cup demand. Request your free projection to see what's realistic for your specific home.",
+  },
+  {
+    q: 'Can I use my property myself and still rent it during the World Cup?',
+    a: "Yes. Most management arrangements allow owner holds — you block dates you want to use the property yourself. We work around your personal calendar. If you want to maximize World Cup rental income, you would plan your own travel around the match schedule. We can walk you through how to structure that.",
+  },
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'World Cup 2026 Atlanta', path: '/world-cup-2026-atlanta/' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Rent Your Atlanta Home During the 2026 FIFA World Cup"
+  description="Atlanta is a FIFA World Cup 2026 host city. Maximize your home's earning potential during the biggest sports event of the year. Get a free rental projection today."
+  image={images.worldCup.src}
+  schemas={schemas}
+>
+  <!-- Hero -->
+  <Section variant="forest" class="relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src={images.worldCup.src}
+        alt={images.worldCup.alt}
+        class="h-full w-full object-cover opacity-20"
+        loading="eager"
+      />
+    </div>
+    <Container size="narrow" class="relative z-10">
+      <Eyebrow class="text-brass">FIFA World Cup 2026 · Atlanta</Eyebrow>
+      <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl lg:text-6xl leading-tight">
+        The World Cup is coming to Atlanta.
+        <span class="text-brass"> Is your home ready?</span>
+      </h1>
+      <p class="mt-5 text-xl text-cream/80 max-w-2xl leading-relaxed">
+        Mercedes-Benz Stadium is a FIFA World Cup 2026 host venue. Millions of fans are heading to Atlanta this summer — and many of them will need a place to stay. This is a rare, time-limited opportunity for Atlanta homeowners.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <Button href="/rental-projection/" size="lg" variant="primary">
+          Get my free projection
+        </Button>
+        <Button href="/services/" size="lg" variant="inverse">
+          See how we work
+        </Button>
+      </div>
+      <p class="mt-4 text-sm text-cream/50">No sales pitch. Just honest Atlanta data. No obligation — ever.</p>
+    </Container>
+  </Section>
+
+  <!-- Stats / urgency band -->
+  <Section variant="brass">
+    <Container>
+      <div class="grid gap-8 sm:grid-cols-3 text-center">
+        <div>
+          <div class="font-display text-4xl text-forest font-semibold">Summer 2026</div>
+          <div class="mt-1 text-sm text-stone">World Cup match window in Atlanta</div>
+        </div>
+        <div>
+          <div class="font-display text-4xl text-forest font-semibold">Mercedes-Benz Stadium</div>
+          <div class="mt-1 text-sm text-stone">Atlanta's World Cup host venue</div>
+        </div>
+        <div>
+          <div class="font-display text-4xl text-forest font-semibold">$1B+</div>
+          <div class="mt-1 text-sm text-stone">Projected economic impact for metro Atlanta</div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Opportunity section -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <Eyebrow>The opportunity</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            The biggest demand surge Atlanta has seen in years
+          </h2>
+          <p class="mt-4 text-lg text-ink/80 leading-relaxed">
+            International football fans travel in groups. They stay for multiple matches. They pay premium rates for the right properties. And they book early — often months before the event.
+          </p>
+          <p class="mt-4 text-lg text-ink/80 leading-relaxed">
+            Properties that are professionally listed, beautifully presented, and competitively priced will capture disproportionate share of this demand. Properties that aren't — won't.
+          </p>
+          <p class="mt-4 text-lg text-ink/80 leading-relaxed">
+            The window to get your home World Cup-ready is now. Every week of lead time matters.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-cream border border-line p-8">
+          <h3 class="font-display text-xl text-forest mb-5">What drives World Cup rental demand</h3>
+          <CheckList
+            items={[
+              'Group bookings — fan groups needing multiple bedrooms',
+              'Extended stays spanning multiple match weeks',
+              'Premium pricing during high-demand match dates',
+              'International guests who rely heavily on professional, well-reviewed listings',
+              'Early bookers who want certainty — demand starts months before',
+              'Properties near Mercedes-Benz Stadium, transit, and downtown Atlanta',
+            ]}
+          />
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- How we help -->
+  <Section variant="forest">
+    <Container>
+      <div class="text-center mb-12">
+        <Eyebrow class="text-brass">How we help</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+          We get your home World Cup-ready
+        </h2>
+        <p class="mt-4 text-lg text-cream/80 max-w-2xl mx-auto">
+          Capturing World Cup demand isn't just about listing your home. It's about presenting it at its best, pricing it intelligently, and delivering a guest experience that earns five-star reviews from international guests.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          {
+            title: 'Professional photography',
+            text: 'Listings with professional photos consistently outperform amateur shots on occupancy and nightly rate. International guests make decisions quickly — presentation is everything.',
+          },
+          {
+            title: 'World Cup pricing strategy',
+            text: 'Event-based demand requires dynamic, proactive pricing. We monitor the market daily and ensure your property is positioned to capture premium rates during peak demand windows.',
+          },
+          {
+            title: 'Multi-platform distribution',
+            text: "Your home listed everywhere international fans search — Airbnb, VRBO, Booking.com, and more. Maximum visibility across the platforms that matter for international travelers.",
+          },
+          {
+            title: '24/7 guest support',
+            text: 'International guests cross time zones. Our team is available around the clock to handle check-ins, questions, and any issues — so guests from London or São Paulo get immediate help whenever they need it.',
+          },
+          {
+            title: 'Permit and compliance handling',
+            text: 'Atlanta requires a Short-Term Rental License to host. We guide new owners through the permit process as part of onboarding — ensuring your listing is fully legal from day one.',
+          },
+          {
+            title: 'Five-star experience setup',
+            text: "Stocked supplies, premium linens, clear local guides, and a spotless property after every cleaning — the details that earn five-star reviews and repeat bookings from international guests' social networks.",
+          },
+        ].map((item) => (
+          <div class="rounded-xl border border-cream/10 bg-forest-700 p-6">
+            <h3 class="font-display text-lg text-brass mb-2">{item.title}</h3>
+            <p class="text-cream/80 text-sm leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Urgency / timeline -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Act now</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        The booking window opens early
+      </h2>
+      <p class="mt-4 text-lg text-ink/80 max-w-2xl">
+        World Cup fans — especially international travelers — book accommodation months in advance. Serious demand is already building. The homes that will capture peak World Cup rates are the ones that are live, optimized, and visible now.
+      </p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-xl border border-line bg-white p-5 text-center">
+          <div class="font-display text-2xl text-forest mb-1">Now</div>
+          <p class="text-sm text-stone">Get your projection and start onboarding</p>
+        </div>
+        <div class="rounded-xl border border-line bg-white p-5 text-center">
+          <div class="font-display text-2xl text-forest mb-1">Weeks 1–3</div>
+          <p class="text-sm text-stone">Photography, listing setup, permit confirmation</p>
+        </div>
+        <div class="rounded-xl border border-line bg-white p-5 text-center">
+          <div class="font-display text-2xl text-forest mb-1">Summer 2026</div>
+          <p class="text-sm text-stone">World Cup matches, peak demand, premium earnings</p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- CTA band -->
+  <Section variant="forest">
+    <Container size="narrow" class="text-center">
+      <Eyebrow class="text-brass">Don't miss the window</Eyebrow>
+      <h2 class="mt-3 font-display text-4xl text-cream sm:text-5xl leading-tight">
+        What could your Atlanta home earn during the World Cup?
+      </h2>
+      <p class="mt-5 text-lg text-cream/80 max-w-xl mx-auto">
+        Get a free, comps-based rental projection from {site.brandName}. We'll give you an honest estimate of your property's World Cup potential — and a clear picture of what it takes to get there. No sales call unless you want one.
+      </p>
+      <Button href="/rental-projection/" size="lg" class="mt-8">
+        Get my free projection
+      </Button>
+      <p class="mt-4 text-sm text-cream/50">
+        We'll respond within 1 business day. · No obligation — ever.
+      </p>
+    </Container>
+  </Section>
+
+  <!-- FAQ -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Your questions answered</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest">
+        World Cup hosting FAQ
+      </h2>
+      <div class="mt-8">
+        <FAQ items={faqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Internal links -->
+  <Section variant="white">
+    <Container size="narrow">
+      <h2 class="font-display text-2xl text-forest text-center mb-8">
+        Learn more about hosting in Atlanta
+      </h2>
+      <div class="grid gap-4 sm:grid-cols-3 text-center">
+        <a href="/resources/atlanta-short-term-rental-regulations/" class="rounded-xl border border-line p-5 hover:border-brass transition-colors group">
+          <div class="font-display text-base text-forest group-hover:text-brass-600 transition-colors">STR Regulations</div>
+          <p class="mt-1 text-sm text-stone">Permits, rules, and what you need to know</p>
+        </a>
+        <a href="/resources/airbnb-management-cost-atlanta/" class="rounded-xl border border-line p-5 hover:border-brass transition-colors group">
+          <div class="font-display text-base text-forest group-hover:text-brass-600 transition-colors">Management Fees</div>
+          <p class="mt-1 text-sm text-stone">What you'll pay and what you'll get</p>
+        </a>
+        <a href="/pricing/" class="rounded-xl border border-line p-5 hover:border-brass transition-colors group">
+          <div class="font-display text-base text-forest group-hover:text-brass-600 transition-colors">Our Pricing</div>
+          <p class="mt-1 text-sm text-stone">Transparent, all-inclusive management rate</p>
+        </a>
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand />
+</BaseLayout>

@@ -1,0 +1,310 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { pricingFaqs } from '@/data/faqs';
+import { site } from '@/config/site';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const included = [
+  'Listing creation, copywriting & ongoing optimization',
+  'Professional photography coordination',
+  'Nightly dynamic pricing & revenue management',
+  '24/7 guest communication & support',
+  'Hotel-grade cleaning & turnover coordination',
+  'Quality inspection between every single stay',
+  'Linen service & essential amenity restocking',
+  'Maintenance coordination with trusted local vendors',
+  'Multi-platform distribution (Airbnb, Vrbo, Booking.com)',
+  'Synchronized calendar — zero double-bookings',
+  'Review management & five-star reputation strategy',
+  'Transparent monthly owner statements & reliable payouts',
+];
+
+const notCharged = [
+  'Setup or onboarding fee',
+  'Monthly minimum fee',
+  'Cleaning coordination markup',
+  'Restocking or supply handling fee',
+  'Photography or listing creation fee',
+  'Platform or distribution fee',
+  'Owner personal-use blocking fee',
+  'Early cancellation penalty',
+];
+
+const extendedFaqs = [
+  ...pricingFaqs,
+  {
+    q: 'Do you charge a setup or onboarding fee?',
+    a: `No. Getting started costs nothing. Your first month's management fee applies only after your first guest checks in. We earn when you earn — that's the whole model.`,
+  },
+  {
+    q: 'Is there a minimum number of bookings or minimum revenue?',
+    a: 'No minimums. We manage homes we believe will perform, and we\'ll give you an honest assessment of your earning potential before you sign anything.',
+  },
+  {
+    q: 'How do payouts work?',
+    a: 'You receive a clean monthly statement with all booking revenue, our management fee clearly itemized, and your net payout. Disbursements are reliable and on a consistent schedule — no opaque deductions.',
+  },
+  {
+    q: 'What if I want to cancel?',
+    a: site.features.noLockIn
+      ? 'No long-term contract. We earn your business every month, not by locking you in. If you ever want to stop, we\'ll work through a professional transition so your guests and reviews are protected.'
+      : 'We\'ll walk you through the agreement in plain language before you commit. No surprises.',
+  },
+  {
+    q: 'Why is your fee higher than some national platforms?',
+    a: `The companies charging less often don't include physical operations — cleaning coordination, maintenance, restocking. You'd layer on those costs separately. Our ${site.pricing.rate} is genuinely all-in. Total cost is what matters, not the headline rate.`,
+  },
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Pricing', path: '/pricing/' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Airbnb Management Pricing in Atlanta — Transparent, All-In"
+  description={`Keystone Stays charges ${site.pricing.rate} of booking revenue — all-inclusive, no hidden fees. See exactly what's included and what we never charge for.`}
+  schemas={schemas}
+>
+  <!-- Hero: transparency as the weapon -->
+  <Section variant="white" class="pb-12 pt-20 sm:pb-16 sm:pt-28">
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <!-- Left: the pitch -->
+        <div>
+          <Eyebrow>Transparent pricing</Eyebrow>
+          <h1 class="mt-3 font-display text-4xl text-forest sm:text-5xl lg:text-6xl">
+            One rate. No surprises. No fine print.
+          </h1>
+          <p class="mt-5 text-lg leading-relaxed text-ink/80">
+            We charge a single, all-inclusive management fee. You see it before you sign, and it never changes without your knowledge. That's the whole deal.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
+            <Button href="/services/" variant="ghost" size="lg">See what's included →</Button>
+          </div>
+        </div>
+
+        <!-- Right: the big rate card -->
+        <div class="rounded-3xl border border-line bg-cream p-10 text-center shadow-sm">
+          <Eyebrow class="justify-center">Management fee</Eyebrow>
+          <div class="mt-5 font-display text-7xl font-light text-forest sm:text-8xl">
+            {site.pricing.rate}
+          </div>
+          <p class="mt-3 text-sm text-ink/70">{site.pricing.rateNote}</p>
+          <div class="my-8 h-px bg-line" />
+          <ul class="space-y-2 text-left text-sm text-ink/80">
+            <li class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 flex-none rounded-full bg-brass-600" />
+              All services included — no add-ons
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 flex-none rounded-full bg-brass-600" />
+              We earn only when you earn
+            </li>
+            {site.features.noLockIn && (
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 flex-none rounded-full bg-brass-600" />
+                No long-term contract required
+              </li>
+            )}
+            {site.features.guarantee && (
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 flex-none rounded-full bg-brass-600" />
+                {site.features.guaranteeText}
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What's included -->
+  <Section variant="cream">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <Eyebrow>What's included</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            Everything. No tiers, no upgrades.
+          </h2>
+          <p class="mt-4 leading-relaxed text-ink/75">
+            The full management stack — listing, pricing, guests, cleaning, maintenance, reviews, and reporting — is included in your single rate. There is no "basic plan" that leaves out the hard parts.
+          </p>
+          <div class="mt-8">
+            <CheckList items={included} />
+          </div>
+        </div>
+
+        <!-- What we don't charge for -->
+        <div class="rounded-3xl bg-white p-8 shadow-sm sm:p-10">
+          <Eyebrow>What we don't charge for</Eyebrow>
+          <h2 class="mt-3 font-display text-2xl text-forest">
+            The list of fees we simply don't have
+          </h2>
+          <p class="mt-3 text-sm text-ink/70">
+            Hidden fees are how some managers quietly increase what you actually pay. We've made a deliberate choice not to have any of these.
+          </p>
+          <div class="mt-6">
+            <ul class="space-y-3">
+              {notCharged.map((item) => (
+                <li class="flex items-start gap-3">
+                  <svg class="mt-0.5 h-5 w-5 flex-none text-forest" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M6 10h8" stroke-linecap="round" />
+                    <circle cx="10" cy="10" r="8" />
+                  </svg>
+                  <span class="text-sm text-ink/80">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Guarantee + no-lock-in band -->
+  {(site.features.guarantee || site.features.noLockIn) && (
+    <Section variant="forest">
+      <Container>
+        <div class="mx-auto max-w-3xl text-center">
+          <Eyebrow class="text-brass">Our commitments to you</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+            We put our money where our management is.
+          </h2>
+          <p class="mt-4 text-lg text-cream/75">
+            We're confident in our work — and we want you to be too. Here's what we put in writing.
+          </p>
+        </div>
+
+        <div class={`mt-12 grid gap-6 ${site.features.guarantee && site.features.noLockIn ? 'sm:grid-cols-2' : ''}`}>
+          {site.features.guarantee && (
+            <div class="rounded-2xl bg-forest-700 p-8">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brass/20">
+                <svg class="h-6 w-6 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-xl text-cream">{site.features.guaranteeText}</h3>
+              <p class="mt-3 text-cream/70">
+                We're not satisfied unless you are. If our management isn't delivering in the first six months, we'll make it right — because our reputation is only as good as your results.
+              </p>
+            </div>
+          )}
+
+          {site.features.noLockIn && (
+            <div class="rounded-2xl bg-forest-700 p-8">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brass/20">
+                <svg class="h-6 w-6 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-xl text-cream">No long-term contract</h3>
+              <p class="mt-3 text-cream/70">
+                We earn your business month by month, not by locking you in. Stay because the results are there — not because you're trapped.
+              </p>
+            </div>
+          )}
+        </div>
+
+        <div class="mt-10 text-center">
+          <Button href="/rental-projection/" size="lg">Get my free projection</Button>
+          <p class="mt-3 text-sm text-cream/50">No obligation. Just honest Atlanta data.</p>
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Honest comparison band -->
+  <Section variant="cream">
+    <Container>
+      <div class="mx-auto max-w-3xl">
+        <Eyebrow>How we compare</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Transparency is unusual in this industry. We think that's wrong.
+        </h2>
+        <p class="mt-5 leading-relaxed text-ink/80">
+          Many national short-term rental management companies charge 25–35% or more of gross revenue — and that's before add-on fees for cleaning coordination, photography, or restocking. The full rate is often only revealed after you've had multiple conversations.
+        </p>
+        <p class="mt-4 leading-relaxed text-ink/80">
+          We've chosen the opposite approach: one transparent rate, disclosed on this page, before you ever fill out a form. What you see is what you pay.
+        </p>
+        <div class="mt-8 overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead>
+              <tr class="border-b border-line">
+                <th class="py-3 pr-6 text-left font-semibold text-forest">What to compare</th>
+                <th class="px-6 py-3 text-center font-semibold text-forest">Keystone Stays</th>
+                <th class="px-6 py-3 text-center text-stone">Typical national manager</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-line">
+              <tr>
+                <td class="py-3 pr-6 text-ink/80">Fee disclosed upfront</td>
+                <td class="px-6 py-3 text-center font-medium text-forest">Yes — on this page</td>
+                <td class="px-6 py-3 text-center text-stone">Often requires a call</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-6 text-ink/80">Cleaning coordination included</td>
+                <td class="px-6 py-3 text-center font-medium text-forest">Yes</td>
+                <td class="px-6 py-3 text-center text-stone">Sometimes extra</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-6 text-ink/80">Photography included</td>
+                <td class="px-6 py-3 text-center font-medium text-forest">Yes</td>
+                <td class="px-6 py-3 text-center text-stone">Sometimes extra</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-6 text-ink/80">Onboarding / setup fee</td>
+                <td class="px-6 py-3 text-center font-medium text-forest">None</td>
+                <td class="px-6 py-3 text-center text-stone">Often $150–$250</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-6 text-ink/80">Local Atlanta expertise</td>
+                <td class="px-6 py-3 text-center font-medium text-forest">Full-time local team</td>
+                <td class="px-6 py-3 text-center text-stone">Regional or national call center</td>
+              </tr>
+              <tr>
+                <td class="py-3 pr-6 text-ink/80">Long-term contract required</td>
+                <td class="px-6 py-3 text-center font-medium text-forest">No</td>
+                <td class="px-6 py-3 text-center text-stone">Sometimes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-xs text-stone">
+          Comparison based on generally available public information about national STR management services. Actual competitor terms vary; verify with each provider.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ -->
+  <Section variant="white">
+    <Container size="narrow">
+      <Eyebrow>Pricing questions</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Everything you want to know</h2>
+      <div class="mt-10">
+        <FAQ items={extendedFaqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand
+    heading="No hidden fees. No catch. Just results."
+    text="Get a free custom rental projection and see exactly what your Atlanta home could earn — with full transparency on what it costs."
+    ctaLabel="Get my free projection"
+  />
+</BaseLayout>

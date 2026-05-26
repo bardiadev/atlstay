@@ -1,14 +1,496 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Button from '@/components/ui/Button.astro';
+import Badge from '@/components/ui/Badge.astro';
+import Card from '@/components/ui/Card.astro';
+import Stat from '@/components/ui/Stat.astro';
+import StepList from '@/components/ui/StepList.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import LogoCloud from '@/components/ui/LogoCloud.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import TestimonialCard from '@/components/ui/TestimonialCard.astro';
+import NeighborhoodCard from '@/components/ui/NeighborhoodCard.astro';
+import { site } from '@/config/site';
+import { services } from '@/data/services';
+import { testimonials } from '@/data/testimonials';
+import { homeFaqs } from '@/data/faqs';
+import { images } from '@/data/images';
+
+// Show first 6 services on homepage
+const featuredServices = services.slice(0, 6);
+
+const howItWorksSteps = [
+  {
+    title: 'Get your free projection',
+    text: 'Tell us about your home. We pull real Atlanta comps and send you a custom, honest earnings estimate — built by a person, not an algorithm — within one business day.',
+  },
+  {
+    title: 'We set everything up',
+    text: 'Professional photography, listing creation, dynamic pricing, and a complete readiness check. Your home launches polished and ready to earn.',
+  },
+  {
+    title: 'We run the whole operation',
+    text: 'Guests, cleaning, maintenance, reviews — we handle every detail. You stay in control of your calendar and house rules. We do the rest.',
+  },
+  {
+    title: 'You receive your payout',
+    text: 'Reliable monthly payouts with a clear statement showing exactly how your home performed. Total transparency, every time.',
+  },
+];
+
+const neighborhoods = [
+  {
+    name: 'Buckhead',
+    href: '/atlanta/buckhead/',
+    imageKey: 'nbhdBuckhead' as const,
+    blurb: 'Atlanta\'s premier address. Corporate travelers, luxury stays, and strong year-round demand.',
+  },
+  {
+    name: 'Midtown',
+    href: '/atlanta/midtown/',
+    imageKey: 'nbhdMidtown' as const,
+    blurb: 'Arts, culture, Piedmont Park, and walkable demand from Georgia Tech and major employers.',
+  },
+  {
+    name: 'Old Fourth Ward',
+    href: '/atlanta/old-fourth-ward/',
+    imageKey: 'nbhdOldFourthWard' as const,
+    blurb: 'The BeltLine\'s most vibrant stretch. Design-forward properties with exceptional guest draw.',
+  },
+  {
+    name: 'Inman Park',
+    href: '/atlanta/inman-park/',
+    imageKey: 'nbhdInmanPark' as const,
+    blurb: 'Historic charm, walkable to Little Five Points and the BeltLine. A guest favorite.',
+  },
+  {
+    name: 'Virginia-Highland',
+    href: '/atlanta/virginia-highland/',
+    imageKey: 'nbhdDefault' as const,
+    blurb: 'Boutique neighborhood with loyal guest following and strong weekend and event demand.',
+  },
+  {
+    name: 'Grant Park',
+    href: '/atlanta/grant-park/',
+    imageKey: 'nbhdDefault' as const,
+    blurb: 'Steps from Zoo Atlanta and major event venues. Excellent family and group bookings.',
+  },
+  {
+    name: 'East Atlanta Village',
+    href: '/atlanta/east-atlanta-village/',
+    imageKey: 'nbhdDefault' as const,
+    blurb: 'Creative energy, independent restaurants, and a growing short-term rental market.',
+  },
+  {
+    name: 'Decatur',
+    href: '/atlanta/decatur/',
+    imageKey: 'nbhdDecatur' as const,
+    blurb: 'Award-winning schools, a beloved downtown square, and a thriving arts scene.',
+  },
+];
+
+const differentiators = [
+  `${site.pricing.rate} management fee — ${site.pricing.rateNote}`,
+  'Full-service: listing, guests, cleaning, maintenance, reviews',
+  '24/7 local response — not a national call center',
+  site.features.noLockIn ? 'No long-term contracts — stay because results speak' : 'Clear, simple agreements with no surprises',
+  site.features.guarantee ? `${site.features.guaranteeText} — we stand behind our work` : 'We only take on homes we\'re confident we can perform for',
+  'Atlanta-specific pricing: conventions, concerts, sports demand',
+  'Professional photography included — no nickle-and-diming',
+  'Transparent monthly reporting — always know your numbers',
+];
 ---
 
-<BaseLayout title="foundation check">
-  <main class="grid min-h-screen place-items-center px-6">
-    <div class="text-center">
-      <p class="font-display text-5xl text-forest sm:text-6xl">Keystone Stays</p>
-      <p class="mt-4 text-stone">Foundation ready. Alias + tokens + components working.</p>
-      <Button href="/services/" class="mt-6">Alias check</Button>
+<BaseLayout
+  title="Airbnb & Short-Term Rental Management in Atlanta"
+  description="Premium short-term rental management in Atlanta. Professional listing, dynamic pricing, 24/7 guest care, and five-star turnovers — handled for you. Get a free rental projection."
+>
+
+  <!-- ─── HERO ─── -->
+  <Section variant="white" class="relative overflow-hidden !py-0">
+    <div class="relative grid min-h-[88vh] grid-cols-1 items-center lg:grid-cols-2">
+
+      <!-- Text column -->
+      <div class="relative z-10 px-6 py-20 sm:px-8 sm:py-28 lg:py-32">
+        <div class="max-w-2xl lg:ml-auto lg:max-w-xl lg:pr-12 xl:pr-16">
+          <Badge variant="brass" class="mb-5">Atlanta's Local STR Experts</Badge>
+          <h1 class="font-display text-[clamp(2.6rem,5.5vw,4.25rem)] leading-[1.08] tracking-tight text-forest">
+            Your Atlanta home,<br/>earning more —<br class="hidden sm:block"/>effortlessly.
+          </h1>
+          <p class="mt-6 max-w-md text-lg leading-relaxed text-ink/75">
+            We manage every detail — listing, pricing, guests, cleaning, and five-star reviews — so your home performs like a pro without costing you a weekend.
+          </p>
+          <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
+            <Button href="/how-it-works/" variant="ghost" size="lg">See how it works</Button>
+          </div>
+          <p class="mt-4 text-xs text-stone">No sales pitch. No obligation — ever. Real Atlanta data within 1 business day.</p>
+
+          <!-- Trust anchors — scale phrases are credible-but-vague by design -->
+          <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-8">
+            <Stat value="100s of stays" label="and five-star reviews" />
+            <Stat value="5&#9733;" label="average guest rating" />
+            <Stat value="24/7" label="local guest support" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Image column -->
+      <div class="relative h-72 overflow-hidden lg:h-full lg:min-h-[88vh]">
+        <img
+          src={images.heroHome.src}
+          alt={images.heroHome.alt}
+          loading="eager"
+          class="h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent lg:from-transparent"></div>
+      </div>
+
     </div>
-  </main>
+  </Section>
+
+  <!-- ─── LOGO CLOUD / PLATFORM STRIP ─── -->
+  <Section variant="cream" class="!py-0">
+    <div class="border-y border-line">
+      <LogoCloud heading="Your home, listed everywhere guests book" />
+    </div>
+  </Section>
+
+  <!-- ─── PROBLEM → SOLUTION ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
+
+        <!-- Problem side -->
+        <div>
+          <Eyebrow>The self-managing trap</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            Managing your own Airbnb is a second job. An exhausting one.
+          </h2>
+          <div class="mt-6 space-y-4 text-ink/75">
+            <p>Message volume you didn't expect. Cleaning crews that cancel the night before. A guest leaves a 4-star review because the wifi password was wrong. Dynamic pricing that takes a full course to understand.</p>
+            <p>Most self-managing owners spend <strong class="text-ink">15–25 hours a week</strong> on their rental — and still leave revenue on the table because they're pricing off instinct, not data.</p>
+          </div>
+          <div class="mt-8 rounded-2xl border border-line bg-cream p-6">
+            <p class="font-display text-xl text-forest">The local advantage you've been missing.</p>
+            <p class="mt-2 text-ink/75">Atlanta's calendar is packed with demand drivers — conventions at the GWCC, SEC Championship weekends, Braves and Falcons games, Peach Bowl, and a global arts scene. Knowing when to push rates and when to stay competitive takes constant local attention. That's what we do, every single day.</p>
+          </div>
+        </div>
+
+        <!-- Solution side -->
+        <div>
+          <Eyebrow>The Keystone difference</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            Premium local management. Handled entirely for you.
+          </h2>
+          <p class="mt-4 text-ink/75">We're not a national platform that learned Atlanta from a spreadsheet. We manage homes in these neighborhoods, know the demand patterns, and treat every property like it's the only one we have.</p>
+          <div class="mt-6">
+            <CheckList
+              columns={1}
+              items={[
+                'Professional listing creation and ongoing optimization',
+                'Nightly dynamic pricing using real local demand data',
+                '24/7 guest communication — every message answered fast',
+                'Hotel-grade cleaners and thorough turnover quality checks',
+                'Maintenance coordination with trusted local vendors',
+                'Transparent owner reporting and reliable monthly payouts',
+              ]}
+            />
+          </div>
+          <div class="mt-8">
+            <Button href="/rental-projection/" size="lg">See what your home could earn</Button>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── SERVICES OVERVIEW ─── -->
+  <Section variant="cream">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>Full-service management</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Everything your rental needs. Nothing you have to do.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-ink/75">
+          From the first professional photo to every five-star review — we handle the complete operation so you stay a property owner, not an accidental hotelier.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {featuredServices.map((service) => (
+          <Card class="flex flex-col">
+            <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-forest-50">
+              <svg class="h-5 w-5 text-forest" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M10 2l2.4 4.8 5.4.8-3.9 3.8.9 5.4L10 14.3l-4.8 2.5.9-5.4-3.9-3.8 5.4-.8L10 2z" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="font-display text-lg text-forest">{service.title}</h3>
+            <p class="mt-1.5 text-sm font-medium text-brass-600">{service.short}</p>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">{service.description}</p>
+          </Card>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <Button href="/services/" variant="secondary">See everything we handle</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── WHY KEYSTONE DIFFERENTIATORS ─── -->
+  <Section variant="forest">
+    <Container>
+      <div class="text-center">
+        <Eyebrow class="text-brass">Why Keystone Stays</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+          The local authority. The national quality.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-cream/70">
+          National brands know scale. Local operators know the neighborhood. We're the only STR manager in Atlanta built to deliver both — in one team, with one clear fee.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+          <div class="mb-4 font-display text-3xl text-brass">
+            {site.pricing.rate}
+          </div>
+          <h3 class="font-display text-lg text-cream">One clear fee</h3>
+          <p class="mt-2 text-sm leading-relaxed text-cream/65">
+            {site.pricing.rateNote}. No setup costs, no surprise line items. You see the number before you sign anything.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+          <div class="mb-4 text-3xl">🏙</div>
+          <h3 class="font-display text-lg text-cream">Deep Atlanta roots</h3>
+          <p class="mt-2 text-sm leading-relaxed text-cream/65">
+            We price around SEC Championship weekends, Braves post-seasons, and conventions the algorithms miss. Local expertise is the edge.
+          </p>
+        </div>
+
+        {site.features.guarantee && (
+          <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <div class="mb-4 text-3xl">🛡</div>
+            <h3 class="font-display text-lg text-cream">{site.features.guaranteeText}</h3>
+            <!-- CONFIRM guarantee terms with owner before publishing -->
+            <p class="mt-2 text-sm leading-relaxed text-cream/65">
+              We stand behind the results. If we fall short of expectations in the first six months, we make it right — no bureaucracy, no runaround.
+            </p>
+          </div>
+        )}
+
+        {site.features.noLockIn && (
+          <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <div class="mb-4 text-3xl">🔓</div>
+            <h3 class="font-display text-lg text-cream">No lock-in, ever</h3>
+            <!-- CONFIRM no-lock-in terms with owner -->
+            <p class="mt-2 text-sm leading-relaxed text-cream/65">
+              No long-term contracts. We earn your partnership every month with results. Stay because it's working — leave anytime if it's not.
+            </p>
+          </div>
+        )}
+
+        {!site.features.guarantee && (
+          <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <div class="mb-4 text-3xl">📊</div>
+            <h3 class="font-display text-lg text-cream">Performance-first model</h3>
+            <p class="mt-2 text-sm leading-relaxed text-cream/65">
+              We only earn when your home earns. Our incentives are perfectly aligned with yours — we succeed when you do.
+            </p>
+          </div>
+        )}
+
+        {!site.features.noLockIn && (
+          <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <div class="mb-4 text-3xl">💬</div>
+            <h3 class="font-display text-lg text-cream">Real people, real answers</h3>
+            <p class="mt-2 text-sm leading-relaxed text-cream/65">
+              24/7 local guest support from a team that knows your property — not a national call center following a script.
+            </p>
+          </div>
+        )}
+
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-white/5 p-8 ring-1 ring-white/10">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Scale phrases are credible-but-vague by design — never fabricated precise stats -->
+          <div class="text-cream">
+            <p class="font-display text-lg text-brass leading-snug">{site.scale.portfolioPhrase}</p>
+            <p class="mt-1 text-xs text-cream/60">homes under management</p>
+          </div>
+          <div class="text-cream">
+            <p class="font-display text-lg text-brass leading-snug">{site.scale.staysPhrase}</p>
+            <p class="mt-1 text-xs text-cream/60">delivered for Atlanta owners</p>
+          </div>
+          <div class="text-cream">
+            <p class="font-display text-lg text-brass leading-snug">{site.scale.bookingsPhrase}</p>
+            <p class="mt-1 text-xs text-cream/60">in bookings managed</p>
+          </div>
+          <div class="text-cream">
+            <p class="font-display text-lg text-brass leading-snug">{site.scale.ratingPhrase}</p>
+            <p class="mt-1 text-xs text-cream/60">across every property</p>
+          </div>
+        </div>
+      </div>
+
+    </Container>
+  </Section>
+
+  <!-- ─── HOW IT WORKS (condensed) ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:items-start">
+        <div>
+          <Eyebrow>Simple by design</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            From first conversation to first payout in four steps.
+          </h2>
+          <p class="mt-4 text-ink/75">
+            We've built a process that gets your home earning fast — with full transparency at every stage. Most properties are live and taking bookings within two weeks of signing.
+          </p>
+          <Button href="/how-it-works/" variant="secondary" class="mt-8">See the full process</Button>
+        </div>
+        <div>
+          <StepList steps={howItWorksSteps} />
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── ATLANTA NEIGHBORHOODS GRID ─── -->
+  <Section variant="cream">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>We know Atlanta</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Neighborhood expertise that no national brand can fake.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-ink/75">
+          From Buckhead to Decatur, each Atlanta neighborhood has its own demand profile, seasonality, and guest expectations. We manage in all of them.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {neighborhoods.map((nbhd) => (
+          <NeighborhoodCard
+            name={nbhd.name}
+            href={nbhd.href}
+            imageKey={nbhd.imageKey}
+            blurb={nbhd.blurb}
+          />
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <Button href="/areas-we-serve/" variant="ghost">View all service areas</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── OUTCOMES / SCALE BAND ─── -->
+  <Section variant="tint">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>Real results for Atlanta owners</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Owners who partner with us stop leaving money on the table.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-ink/75">
+          {site.scale.bookingsPhrase} across our portfolio. Owners consistently tell us the biggest surprise isn't the extra income — it's how little they have to think about the property.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(20,52,43,0.06)] ring-1 ring-line text-center">
+          <p class="font-display text-3xl text-forest">{site.scale.staysPhrase}</p>
+          <p class="mt-2 text-sm text-stone">five-star guest experiences</p>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(20,52,43,0.06)] ring-1 ring-line text-center">
+          <p class="font-display text-3xl text-forest">{site.scale.ratingPhrase}</p>
+          <p class="mt-2 text-sm text-stone">across our entire portfolio</p>
+        </div>
+        <div class="rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(20,52,43,0.06)] ring-1 ring-line text-center">
+          <p class="font-display text-3xl text-forest">{site.scale.portfolioPhrase}</p>
+          <p class="mt-2 text-sm text-stone">trusted to us by Atlanta owners</p>
+        </div>
+      </div>
+
+      <div class="mt-10 rounded-2xl border border-line bg-white p-8">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-stone">What we don't do</p>
+            <p class="mt-2 font-display text-lg text-forest">Auto-generate projections</p>
+            <p class="mt-1 text-sm text-ink/70">Every projection is built by a real person using real Atlanta comps.</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-stone">What we don't do</p>
+            <p class="mt-2 font-display text-lg text-forest">Hide fees in the fine print</p>
+            <p class="mt-1 text-sm text-ink/70">One clear rate. You see it before you sign. No setup or surprise charges.</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-stone">What we don't do</p>
+            <p class="mt-2 font-display text-lg text-forest">Route your call offshore</p>
+            <p class="mt-1 text-sm text-ink/70">Local team. Real people who manage homes in your neighborhood.</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-stone">What we don't do</p>
+            <p class="mt-2 font-display text-lg text-forest">Lock you into long contracts</p>
+            <p class="mt-1 text-sm text-ink/70">We earn your partnership every month. No traps, no penalties to leave.</p>
+          </div>
+        </div>
+      </div>
+
+    </Container>
+  </Section>
+
+  <!-- ─── TESTIMONIALS ─── -->
+  <!-- ⚠️ PLACEHOLDER testimonials — replace with genuine owner quotes before launch. See data/testimonials.ts -->
+  <Section variant="white">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>What Atlanta owners say</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Real owners. Real results.
+        </h2>
+        <p class="mx-auto mt-2 text-sm text-stone">
+          Note to owner: Replace these placeholder reviews with genuine, attributable testimonials from real clients before launch.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-3">
+        {testimonials.map((t) => (
+          <TestimonialCard
+            quote={t.quote}
+            name={t.name}
+            location={t.location}
+            rating={t.rating}
+          />
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── FAQ ─── -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <div class="text-center">
+        <Eyebrow>Common questions</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Everything you want to know before you decide.
+        </h2>
+      </div>
+      <div class="mt-10">
+        <FAQ items={homeFaqs} emitSchema={true} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── CTA BAND ─── -->
+  <CTABand />
+
 </BaseLayout>

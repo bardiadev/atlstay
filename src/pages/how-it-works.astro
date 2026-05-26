@@ -1,0 +1,236 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import Badge from '@/components/ui/Badge.astro';
+import Card from '@/components/ui/Card.astro';
+import StepList from '@/components/ui/StepList.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { site } from '@/config/site';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'How It Works', path: '/how-it-works/' },
+  ]),
+];
+
+const onboardingSteps = [
+  {
+    title: 'Request your free rental projection',
+    text: 'Tell us a little about your property — address, bedrooms, bathrooms, and goals. We pull real comparable rental data from your specific Atlanta neighborhood and send you a custom, honest projection within one business day. Built by a real person, not an algorithm. No cost. No commitment.',
+  },
+  {
+    title: 'We have a quick fit conversation',
+    text: `Once you've seen the projection, we'll have a short call to walk through the numbers, answer your questions, and make sure we're the right fit. We only take on homes we genuinely believe we can perform for — this call is low-pressure and designed to give you confidence, not close you.`,
+  },
+  {
+    title: 'Professional setup — we handle everything',
+    text: 'Professional photography, listing copywriting, pricing strategy setup, and a comprehensive property readiness review. We configure your listing across Airbnb, Vrbo, Booking.com, and more — optimized for Atlanta search and designed to convert. Most homes are live and taking bookings within two weeks of signing.',
+  },
+  {
+    title: 'We run the full operation, every day',
+    text: 'From the first inquiry to checkout and review — we handle every touchpoint. Guest screening, 24/7 communication, professional cleaning, maintenance coordination, restocking, and ongoing pricing optimization. You stay an owner. We do the hosting.',
+  },
+  {
+    title: 'You receive monthly payouts and clear reporting',
+    text: 'A clean monthly statement shows exactly how your home performed: revenue, our fee, and your net payout. Reliable transfers on a consistent schedule. No spreadsheets to decode, no mystery line items. Just honest numbers and income you can count on.',
+  },
+];
+
+const whatWeHandle = [
+  'Professional listing creation and ongoing copy optimization',
+  'Magazine-quality photography',
+  'Dynamic nightly pricing with Atlanta event and demand tracking',
+  '24/7 guest communication — every message, every platform',
+  'Guest screening and house-rule enforcement',
+  'Hotel-grade cleaning and linen service',
+  'Turnover quality inspections',
+  'Maintenance coordination (trusted local vendors)',
+  'Consumables restocking between stays',
+  'Multi-platform syndication (Airbnb, Vrbo, Booking.com, and more)',
+  'Calendar management — no double bookings',
+  'Review management and five-star reputation building',
+  'Monthly financial reporting and statements',
+  'Tax compliance assistance (platform-issued forms)',
+];
+
+const ownerControls = [
+  'You set your own house rules and minimum requirements',
+  'Block any dates for personal use — no advance notice needed',
+  'You approve major decisions about the property',
+  'You can reach us directly — no phone trees, no ticket systems',
+  'You choose what gets invested in the property',
+  'Exit whenever you want — no penalties, no lock-in',
+];
+
+const howFaqs = [
+  {
+    q: 'How long does it take to get my home live and earning?',
+    a: 'Most properties are listed and taking bookings within two weeks of signing. That includes the photography session, listing creation, and platform setup. Properties that already have some photos or are partially listed can go live even faster.',
+  },
+  {
+    q: 'Do I need to do anything to prepare my home?',
+    a: 'We do a readiness review as part of onboarding and walk you through any recommendations — things like guest essentials, basic safety items, and a few quick touches that meaningfully improve reviews. Nothing elaborate. We\'ll tell you what matters and what doesn\'t.',
+  },
+  {
+    q: 'Can I use my home whenever I want?',
+    a: 'Yes. It\'s your property. Block any dates — you don\'t need to give advance notice or explain your plans. Your calendar is fully under your control at all times.',
+  },
+  {
+    q: 'How does cleaning work between stays?',
+    a: 'We coordinate vetted local cleaning professionals with a detailed turnover checklist for every stay. Fresh linens, restocked essentials, and a quality check before the next guest arrives. Cleaning is scheduled and confirmed automatically — you\'re never chasing anyone down.',
+  },
+  {
+    q: 'What if something breaks or needs maintenance?',
+    a: 'We handle it. We have trusted local vendors for plumbing, HVAC, appliances, and general repairs. For anything above a pre-agreed threshold, we\'ll contact you. For urgent issues that affect a guest\'s stay, we act first and keep you in the loop — no waiting days for approvals while a guest has a broken dishwasher.',
+  },
+  {
+    q: 'How do you handle difficult guests or damage?',
+    a: 'We screen guests carefully before every booking, enforce your house rules, and act quickly if something goes wrong. Airbnb\'s AirCover and Vrbo\'s host guarantee cover most damage scenarios. For anything that isn\'t covered, we work with you directly to resolve it.',
+  },
+  {
+    q: 'How do I know how my property is performing?',
+    a: 'Monthly statements with full detail: bookings, revenue, our fee, and your net payout. We also track your review ratings and occupancy trends. No mystery, no guesswork — you have a clear picture of performance at all times.',
+  },
+];
+---
+
+<BaseLayout
+  title="How Short-Term Rental Management Works — Keystone Stays"
+  description="From free projection to first payout — see exactly how our Atlanta STR management process works. Professional setup, full-service management, and transparent monthly reporting."
+  schemas={schemas}
+>
+
+  <!-- ─── HERO ─── -->
+  <Section variant="forest" class="!pb-12">
+    <Container>
+      <div class="max-w-2xl">
+        <Eyebrow class="text-brass">The process, plainly explained</Eyebrow>
+        <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl">
+          How it works — start to payout.
+        </h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">
+          You shouldn't need a manual to understand how your property manager operates. Here's exactly what happens from your first conversation to your first deposit — and every month after.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Button href="/rental-projection/">Get my free rental projection</Button>
+          <Button href="/contact/" variant="inverse">Talk to us first</Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── FULL PROCESS ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-16 lg:grid-cols-[1fr_2fr] lg:gap-20">
+        <div class="lg:sticky lg:top-10 lg:self-start">
+          <Eyebrow>Five steps</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest">
+            Onboarding to ongoing — the complete journey.
+          </h2>
+          <p class="mt-4 text-ink/75">
+            We've designed every stage to be low-friction for you and high-performing for your home. Most owners tell us they're surprised by how little they have to think about it after setup.
+          </p>
+          <div class="mt-8 rounded-2xl bg-forest-50 p-6">
+            <p class="font-display text-lg text-forest">Typical timeline</p>
+            <ul class="mt-4 space-y-2 text-sm text-ink/75">
+              <li><strong class="text-forest">Day 1:</strong> Projection delivered</li>
+              <li><strong class="text-forest">Day 3–5:</strong> Fit conversation and agreement</li>
+              <li><strong class="text-forest">Day 7–10:</strong> Photography and listing setup</li>
+              <li><strong class="text-forest">Day 10–14:</strong> Live on all platforms</li>
+              <li><strong class="text-forest">Month 1:</strong> First bookings and guest stays</li>
+              <li><strong class="text-forest">Month 2+:</strong> Momentum builds, reviews accumulate</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <StepList steps={onboardingSteps} />
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── WHAT WE HANDLE ─── -->
+  <Section variant="cream">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>Full-service scope</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Everything we handle. Nothing you have to.
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-ink/75">
+          Our fee covers the complete operation. There's no tiered plan, no "basic vs. premium" game — every property we manage gets everything.
+        </p>
+      </div>
+      <div class="mx-auto mt-10 max-w-3xl">
+        <CheckList items={whatWeHandle} columns={2} />
+      </div>
+      <div class="mt-10 text-center">
+        <Button href="/services/" variant="secondary">See full service details</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── OWNER CONTROL ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <div>
+          <Eyebrow>Your home, your rules</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            Full control. Zero day-to-day work.
+          </h2>
+          <p class="mt-4 text-ink/75">
+            Handing your property to a management company sounds like giving up control. It shouldn't be — and with us, it isn't. You remain the owner in every meaningful sense. We just handle the operations.
+          </p>
+          <div class="mt-6">
+            <CheckList items={ownerControls} />
+          </div>
+        </div>
+        <div class="rounded-2xl border border-line bg-cream p-8">
+          <h3 class="font-display text-xl text-forest">Owner reassurance, in plain terms.</h3>
+          <div class="mt-6 space-y-5 text-sm leading-relaxed text-ink/75">
+            <p><strong class="text-forest">On contract terms:</strong> {site.features.noLockIn ? 'No long-term contracts. We earn your business every month. If you ever want to stop, you can.' : 'Straightforward agreements in plain language. We\'ll walk through every term before you sign.'}</p>
+            <p><strong class="text-forest">On our fee:</strong> {site.pricing.rate} of booking revenue, {site.pricing.rateNote}. You see the number before anything is signed. We only earn when you earn.</p>
+            {site.features.guarantee && (
+              <p><strong class="text-forest">On performance:</strong> We stand behind our work with a {site.features.guaranteeText}. If we fall short of expectations, we make it right — no hoops to jump through.</p>
+            )}
+            <p><strong class="text-forest">On access:</strong> It's your property. You can block dates, visit anytime, and reach us directly — not through a phone tree.</p>
+          </div>
+          <div class="mt-8">
+            <Button href="/rental-projection/" size="lg">Start with a free projection</Button>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── FAQ ─── -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <div class="text-center">
+        <Eyebrow>Common questions</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Questions we hear from owners considering us.
+        </h2>
+      </div>
+      <div class="mt-10">
+        <FAQ items={howFaqs} emitSchema={true} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── CTA BAND ─── -->
+  <CTABand
+    heading="Ready to see what your home could earn?"
+    text="Get a free, no-obligation projection from people who actually manage Atlanta homes — delivered within one business day."
+  />
+
+</BaseLayout>

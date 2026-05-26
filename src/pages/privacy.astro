@@ -1,0 +1,38 @@
+---
+// TEMPLATE privacy policy — generic and reasonable, but have counsel review
+// and tailor before launch. Company specifics pull from site config.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Prose from '@/components/ui/Prose.astro';
+import { breadcrumbSchema } from '@/lib/schema';
+import { site } from '@/config/site';
+const updated = 'May 26, 2026';
+const schemas = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Privacy', path: '/privacy/' }])];
+---
+<BaseLayout title="Privacy Policy" description={`How ${site.brandName} collects, uses, and protects your information.`} schemas={schemas}>
+  <Section variant="white">
+    <Container size="narrow">
+      <h1 class="font-display text-4xl text-forest">Privacy Policy</h1>
+      <p class="mt-2 text-sm text-stone">Last updated: {updated}</p>
+      <Prose class="mt-8">
+        <p>{site.brandName} (“we,” “us,” or “our”) respects your privacy. This policy explains what information we collect through this website, how we use it, and the choices you have.</p>
+        <h2>Information we collect</h2>
+        <p>When you request a rental projection or contact us, we collect the details you provide — such as your name, email, phone number, and information about your property. We may also collect standard, non-identifying analytics data about how visitors use the site.</p>
+        <h2>How we use your information</h2>
+        <ul>
+          <li>To prepare and deliver the rental projection or response you requested.</li>
+          <li>To communicate with you about our services, only as relevant to your inquiry.</li>
+          <li>To improve our website and the quality of our service.</li>
+        </ul>
+        <p>We do not sell your personal information.</p>
+        <h2>Sharing</h2>
+        <p>We share information only with service providers who help us operate (for example, email or form-processing tools), and only as needed to provide the service you requested, or where required by law.</p>
+        <h2>Your choices</h2>
+        <p>You may request access to, correction of, or deletion of your information at any time by emailing <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>. You can opt out of non-essential communications at any time.</p>
+        <h2>Contact</h2>
+        <p>Questions about this policy? Email <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>{site.contact.phone ? <> or call <a href={site.contact.phoneHref}>{site.contact.phone}</a></> : null}.</p>
+      </Prose>
+    </Container>
+  </Section>
+</BaseLayout>

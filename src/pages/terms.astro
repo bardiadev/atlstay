@@ -1,0 +1,33 @@
+---
+// TEMPLATE terms of use — generic and reasonable, but have counsel review and
+// tailor before launch. These cover the WEBSITE, not the management agreement.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Prose from '@/components/ui/Prose.astro';
+import { breadcrumbSchema } from '@/lib/schema';
+import { site } from '@/config/site';
+const updated = 'May 26, 2026';
+const schemas = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Terms', path: '/terms/' }])];
+---
+<BaseLayout title="Terms of Use" description={`The terms that govern use of the ${site.brandName} website.`} schemas={schemas}>
+  <Section variant="white">
+    <Container size="narrow">
+      <h1 class="font-display text-4xl text-forest">Terms of Use</h1>
+      <p class="mt-2 text-sm text-stone">Last updated: {updated}</p>
+      <Prose class="mt-8">
+        <p>These terms govern your use of the {site.brandName} website. By using the site, you agree to them. They do not constitute a management agreement; any engagement of our services is governed by a separate written agreement.</p>
+        <h2>Informational purpose</h2>
+        <p>Content on this site — including rental projections, earnings discussions, and educational resources — is provided for general informational purposes. Projections are estimates based on available comparable data and are not a guarantee of future results. Short-term rental regulations change; always verify current rules with the relevant authority.</p>
+        <h2>Acceptable use</h2>
+        <p>You agree not to misuse the site, attempt to disrupt it, or use it for any unlawful purpose.</p>
+        <h2>Intellectual property</h2>
+        <p>All site content, branding, and materials are owned by {site.brandName} or its licensors and may not be copied or reused without permission.</p>
+        <h2>Limitation of liability</h2>
+        <p>The site is provided “as is.” To the fullest extent permitted by law, {site.brandName} is not liable for any damages arising from your use of the site.</p>
+        <h2>Contact</h2>
+        <p>Questions about these terms? Email <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p>
+      </Prose>
+    </Container>
+  </Section>
+</BaseLayout>

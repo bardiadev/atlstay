@@ -1,0 +1,359 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import StepList from '@/components/ui/StepList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import TestimonialCard from '@/components/ui/TestimonialCard.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import ProjectionForm from '@/components/react/ProjectionForm';
+import { testimonials } from '@/data/testimonials';
+import { site } from '@/config/site';
+import { breadcrumbSchema } from '@/lib/schema';
+import { images } from '@/data/images';
+
+const projectionFaqs = [
+  {
+    q: `Why don't you show an instant estimate right now?`,
+    a: 'Automated calculators use broad market averages. We use actual comparable listings from your specific Atlanta neighborhood — recent booking rates, real occupancy, and local demand factors like proximity to events, transit, and parks. The 24-hour human analysis produces a projection that\'s meaningfully more accurate than any algorithm.',
+  },
+  {
+    q: 'Is there any cost or obligation?',
+    a: 'Zero cost, zero obligation. We provide the projection as a free service because we believe in earning your trust with honest information first. There\'s no sales call, no follow-up pressure, and no obligation to use Keystone Stays. If the numbers are compelling and you want to talk, we\'re here.',
+  },
+  {
+    q: 'What information do you use to build the projection?',
+    a: 'We pull real comparable listings from your neighborhood — properties with similar bedrooms, property type, and quality level. We factor in Atlanta\'s seasonal demand patterns, upcoming events, and your specific location. You receive a clear, grounded estimate — not a best-case scenario.',
+  },
+  {
+    q: 'Will you call me after I submit?',
+    a: 'Only if you want us to. We\'ll email your projection within one business day. If you\'d like to talk through the numbers, there\'s an option to schedule a call — but it\'s entirely your choice. No unsolicited calls, ever.',
+  },
+  {
+    q: 'My home isn\'t currently listed. Can I still get a projection?',
+    a: 'Absolutely — most of the projections we deliver are for homes considering short-term rental for the first time. We model what your property could earn fully managed, and walk you through the realistic upside and timeline.',
+  },
+  {
+    q: 'How long does it take?',
+    a: 'We deliver your projection by email within one business day, often same day. If we have any questions about your property that would improve the accuracy, we\'ll reach out — with your permission — by email.',
+  },
+];
+
+const whatHappensNext = [
+  {
+    title: 'We pull your neighborhood comps',
+    text: 'A real team member reviews comparable active listings near your property — same size, type, and quality level — and builds your projection from actual Atlanta market data.',
+  },
+  {
+    title: 'You receive your custom projection',
+    text: 'Within one business day, you\'ll have a clear, honest estimate of what your home could earn as a managed short-term rental — with context on seasonality, peak demand, and realistic occupancy.',
+  },
+  {
+    title: 'If you\'re interested, we talk — on your terms',
+    text: 'If the numbers look good and you want to learn more, you can schedule a no-pressure call. We\'ll walk through the numbers, answer every question, and let you decide at your own pace.',
+  },
+];
+
+const objectionBlocks = [
+  {
+    icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
+    heading: 'No sales pitch. Just honest numbers.',
+    body: 'We deliver real, comps-based data — not a rosy estimate engineered to close a deal. If your home isn\'t a strong fit for short-term rental, we\'ll tell you that too.',
+  },
+  {
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    heading: 'Your information is never shared.',
+    body: 'We use your contact details only to deliver your projection. Your information is never sold, never shared with third parties, and never used for spam.',
+  },
+  {
+    icon: 'M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z',
+    heading: 'No obligation — ever.',
+    body: 'Getting your projection doesn\'t start a contract, trigger a follow-up call, or commit you to anything. It\'s free information to help you make a great decision.',
+  },
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Free Rental Projection', path: '/rental-projection/' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Free Atlanta Rental Projection — What Could Your Home Earn?"
+  description="See what your Atlanta home could earn as a short-term rental. A real comps-based projection — not an algorithm — delivered by our local team within one business day. Free, no obligation."
+  image={images.heroProjection.src}
+  schemas={schemas}
+>
+
+  <!-- =============================================
+       HERO: Two-column — copy left, form right
+       ============================================= -->
+  <Section variant="white" class="pb-16 pt-20 sm:pt-28">
+    <Container>
+      <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+
+        <!-- Left: copy -->
+        <div class="lg:pt-4">
+          <Eyebrow>Free rental projection</Eyebrow>
+          <h1 class="mt-3 font-display text-4xl leading-tight text-forest sm:text-5xl lg:text-[3.25rem]">
+            See what your Atlanta home could earn as a short-term rental.
+          </h1>
+          <p class="mt-5 text-lg leading-relaxed text-ink/80">
+            We run a real comps analysis — not an algorithm — and send you an honest, property-specific projection within one business day. Free, with no obligation.
+          </p>
+
+          <!-- Trust microcopy bullets -->
+          <ul class="mt-7 space-y-3">
+            {[
+              'Real Atlanta neighborhood comps — not national averages',
+              'Delivered by a local team member, not a calculator',
+              'No sales pitch. No obligation. No spam.',
+              'Your projection in one business day',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-sm text-ink/75">
+                <svg class="mt-0.5 h-4 w-4 flex-none text-brass-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.3 3.3 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <!-- Guarantee callout (conditional) -->
+          {site.features.guarantee && (
+            <div class="mt-8 rounded-xl border border-brass/30 bg-brass-50 p-5">
+              <p class="text-sm font-medium text-forest">
+                {site.features.guaranteeText}
+              </p>
+              <p class="mt-1 text-xs text-ink/65">
+                If you become a managed owner and aren't thrilled with the results, we make it right.
+              </p>
+            </div>
+          )}
+
+          <!-- Hero image on mobile / desktop decoration -->
+          <div class="mt-10 hidden aspect-video overflow-hidden rounded-2xl lg:block">
+            <img
+              src={images.heroProjection.src}
+              alt={images.heroProjection.alt}
+              loading="eager"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Right: the form (sticky on desktop) -->
+        <div class="lg:sticky lg:top-8">
+          <ProjectionForm client:load />
+          <p class="mt-4 text-center text-xs text-stone">
+            Free. No obligation. No sales call unless you want one.
+          </p>
+        </div>
+
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       TRUST BAND: Why a human projection beats an algorithm
+       ============================================= -->
+  <Section variant="tint">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>Why human beats algorithm</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          A real comps analysis, not a national average with your address plugged in.
+        </h2>
+        <p class="mt-4 leading-relaxed text-ink/80">
+          Online calculators use broad market benchmarks — often city-wide or metro averages. They don't know that your Inman Park block books differently than Buckhead, or that the BeltLine access two streets over adds real value. We do.
+        </p>
+        <p class="mt-4 leading-relaxed text-ink/80">
+          Our projections are built from actual comparable listings in your neighborhood — same property size, type, and quality tier. We factor in Atlanta's seasonality, event demand (conventions, sporting events, concerts), and current market conditions. The result is a projection you can actually make decisions with.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="font-display text-lg text-forest">Neighborhood-level accuracy</div>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">
+            We pull comps from your specific block and neighborhood — not a city-wide average that flattens out what makes your property unique.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="font-display text-lg text-forest">Atlanta event calendar baked in</div>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">
+            Dragon Con, SEC Championship, Braves playoffs, World Cup 2026 — we know when Atlanta surges and model your peak revenue accordingly.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="font-display text-lg text-forest">Honest, not inflated</div>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">
+            We only take on homes we believe will perform. If the numbers aren't compelling, we'll tell you — because a bad fit isn't good for either of us.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       WHAT HAPPENS NEXT — 3-step process
+       ============================================= -->
+  <Section variant="cream">
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <Eyebrow>What happens after you submit</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            Three steps. No surprises. No pressure.
+          </h2>
+          <p class="mt-4 leading-relaxed text-ink/75">
+            Here's exactly what happens when you fill out the form — so there's nothing to wonder about.
+          </p>
+          <div class="mt-8">
+            <StepList steps={whatHappensNext} />
+          </div>
+        </div>
+
+        <!-- Objection-handling sidebar -->
+        <div class="space-y-5">
+          {objectionBlocks.map((block) => (
+            <div class="flex gap-5 rounded-2xl border border-line bg-white p-6 shadow-sm">
+              <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-forest-50">
+                <svg class="h-5 w-5 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d={block.icon} stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-display text-base text-forest">{block.heading}</div>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink/75">{block.body}</p>
+              </div>
+            </div>
+          ))}
+
+          <!-- No lock-in -->
+          {site.features.noLockIn && (
+            <div class="flex gap-5 rounded-2xl border border-brass/25 bg-brass-50 p-6">
+              <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brass/20">
+                <svg class="h-5 w-5 text-brass-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-display text-base text-forest">No long-term contract</div>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink/75">
+                  If you decide to work with us after seeing the numbers, there's no long-term commitment. We earn your business month by month.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       TESTIMONIALS
+       ============================================= -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-xl text-center">
+        <Eyebrow>What Atlanta owners say</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Real owners. Real results.
+        </h2>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((t) => (
+          <TestimonialCard
+            quote={t.quote}
+            name={t.name}
+            location={t.location}
+            rating={t.rating}
+          />
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       SECOND FORM CTA BAND — for users who scrolled
+       ============================================= -->
+  <Section variant="forest">
+    <Container>
+      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <Eyebrow class="text-brass">Ready to see your number?</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+            Find out what your home could earn — in one business day.
+          </h2>
+          <p class="mt-4 text-lg text-cream/75">
+            A custom, comps-based projection from our Atlanta team. No algorithm. No sales pressure. Just honest numbers so you can make the best decision for your home.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm text-cream/70">
+            <li class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-brass" />
+              Free — no cost, ever
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-brass" />
+              Delivered within one business day
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-brass" />
+              No obligation. No sales call unless you want one.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ProjectionForm client:load />
+          <p class="mt-3 text-center text-xs text-cream/50">
+            Your information is never shared or sold.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       FAQ
+       ============================================= -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Common questions</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        Everything you're wondering
+      </h2>
+      <div class="mt-10">
+        <FAQ items={projectionFaqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       INTERNAL LINKS
+       ============================================= -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-6 sm:grid-cols-3">
+        <a href="/services/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">What we manage →</div>
+          <p class="mt-2 text-sm text-ink/70">Full-service means full-service. See every detail we handle on your behalf.</p>
+        </a>
+        <a href="/pricing/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Our pricing →</div>
+          <p class="mt-2 text-sm text-ink/70">One transparent rate — all-inclusive, disclosed on the page, no fine print.</p>
+        </a>
+        <a href="/areas-we-serve/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Atlanta neighborhoods →</div>
+          <p class="mt-2 text-sm text-ink/70">Buckhead, Midtown, Inman Park, Old Fourth Ward, and more across metro Atlanta.</p>
+        </a>
+      </div>
+    </Container>
+  </Section>
+
+</BaseLayout>

@@ -1,0 +1,234 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import Prose from '@/components/ui/Prose.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import { breadcrumbSchema, serviceSchema, faqPageSchema } from '@/lib/schema';
+import { images, type ImageKey } from '@/data/images';
+import { site } from '@/config/site';
+
+export async function getStaticPaths() {
+  const neighborhoods = await getCollection('neighborhoods');
+  return neighborhoods
+    .filter((e) => e.data.published)
+    .map((e) => ({
+      params: { city: e.data.citySlug, neighborhood: e.data.slug },
+      props: { entry: e },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// Hero image
+const heroImg = entry.data.heroImage && entry.data.heroImage in images
+  ? images[entry.data.heroImage as ImageKey]
+  : images.nbhdDefault;
+
+const cityName = entry.data.citySlug.charAt(0).toUpperCase() + entry.data.citySlug.slice(1);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Areas We Serve', path: '/areas-we-serve/' },
+    { name: cityName, path: `/${entry.data.citySlug}/` },
+    { name: entry.data.name, path: `/${entry.data.citySlug}/${entry.data.slug}/` },
+  ]),
+  serviceSchema({
+    name: `Short-Term Rental Management in ${entry.data.name}, ${cityName}`,
+    description: entry.data.description,
+  }),
+  ...(entry.data.faqs.length ? [faqPageSchema(entry.data.faqs)] : []),
+];
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  image={heroImg.src}
+  schemas={schemas}
+>
+  <!-- Hero -->
+  <Section variant="forest">
+    <Container>
+      <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-sm text-cream/60 flex-wrap">
+        <a href="/" class="hover:text-cream/90 transition-colors">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/areas-we-serve/" class="hover:text-cream/90 transition-colors">Areas We Serve</a>
+        <span aria-hidden="true">/</span>
+        <a href={`/${entry.data.citySlug}/`} class="hover:text-cream/90 transition-colors">{cityName}</a>
+        <span aria-hidden="true">/</span>
+        <span class="text-cream/90">{entry.data.name}</span>
+      </nav>
+      <Eyebrow class="text-brass">STR Management in {entry.data.name}</Eyebrow>
+      <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl lg:text-6xl">
+        {entry.data.name} Airbnb & Vacation Rental Management
+      </h1>
+      <p class="mt-5 max-w-2xl text-lg text-cream/80">
+        {entry.data.intro}
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <Button href="/rental-projection/" size="lg">Get my free projection</Button>
+        <Button href={`/${entry.data.citySlug}/`} variant="inverse" size="lg">All {cityName} neighborhoods</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Hero image -->
+  <div class="relative h-64 w-full overflow-hidden sm:h-80">
+    <img
+      src={heroImg.src}
+      alt={heroImg.alt}
+      loading="eager"
+      class="h-full w-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-forest/50 to-transparent"></div>
+  </div>
+
+  <!-- Demand drivers -->
+  {entry.data.demandDrivers.length > 0 && (
+    <Section variant="cream">
+      <Container>
+        <div class="grid gap-12 lg:grid-cols-2 lg:gap-20 lg:items-start">
+          <div>
+            <Eyebrow>Why STR Works Here</Eyebrow>
+            <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+              What Drives Demand in {entry.data.name}
+            </h2>
+            <p class="mt-4 text-ink/80">
+              {entry.data.name} has specific, identifiable demand drivers that generate consistent short-term rental occupancy. Understanding these is the foundation of smart local management.
+            </p>
+          </div>
+          <div class="space-y-4">
+            {entry.data.demandDrivers.map((driver) => {
+              const [title, ...rest] = driver.split(':');
+              const text = rest.join(':').trim();
+              return (
+                <div class="flex gap-4 rounded-xl border border-line bg-white p-5">
+                  <div class="mt-0.5 flex-none">
+                    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-brass/15">
+                      <svg class="h-4 w-4 text-brass-600" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M8 2v12M2 8h12" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="font-display text-sm text-forest">{title.trim()}</div>
+                    {text && <p class="mt-1 text-sm text-ink/70">{text}</p>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Rich body content -->
+  <Section variant="white">
+    <Container size="narrow">
+      <Prose>
+        <Content />
+      </Prose>
+    </Container>
+  </Section>
+
+  <!-- Attractions -->
+  {entry.data.attractions.length > 0 && (
+    <Section variant="cream">
+      <Container>
+        <Eyebrow>What's Nearby</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          {entry.data.name} Attractions & Points of Interest
+        </h2>
+        <p class="mt-4 max-w-2xl text-ink/70">
+          Proximity to these destinations drives guest bookings and justifies premium nightly rates for well-managed {entry.data.name} properties.
+        </p>
+        <div class="mt-8">
+          <CheckList items={entry.data.attractions} columns={2} />
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Our local management band -->
+  <Section variant="forest">
+    <Container>
+      <div class="grid gap-10 lg:grid-cols-2 lg:gap-20 lg:items-center">
+        <div>
+          <Eyebrow class="text-brass">How We Manage It</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+            Local Management for {entry.data.name} Properties
+          </h2>
+          <p class="mt-4 text-cream/80">
+            A {entry.data.name} short-term rental performs at its best when managed by someone who actually knows the neighborhood. Keystone Stays brings that local context to every decision — from how we price your property around {entry.data.name}'s specific demand calendar to how we present it to exactly the right guest.
+          </p>
+          <p class="mt-4 text-cream/80">
+            Our management fee is a flat {site.pricing.rate} of booking revenue — all-in, no hidden charges. Everything from listing creation to turnover coordination is included.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <Button href="/rental-projection/" size="lg">Get my free projection</Button>
+            <Button href="/pricing/" variant="inverse">See pricing details</Button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { title: 'Listing & photography', text: 'Professional listing creation and photography coordination that showcases your property\'s specific character.' },
+            { title: 'Dynamic pricing', text: 'Rates calibrated to ' + entry.data.name + '\'s event calendar and real-time market conditions — not national averages.' },
+            { title: '24/7 guest comms', text: 'Every guest inquiry and issue handled promptly by our team — you never wake up to a problem.' },
+            { title: 'Turnover management', text: 'Vetted local cleaning teams who know your property and deliver consistent hotel-quality results.' },
+          ].map((item) => (
+            <div class="rounded-xl border border-cream/15 bg-cream/5 p-5">
+              <div class="font-display text-sm text-brass">{item.title}</div>
+              <p class="mt-2 text-xs text-cream/70">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ -->
+  {entry.data.faqs.length > 0 && (
+    <Section variant="white">
+      <Container size="narrow">
+        <Eyebrow>Common Questions</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          {entry.data.name} STR Management — FAQs
+        </h2>
+        <div class="mt-8">
+          <FAQ items={entry.data.faqs} />
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Navigation back up -->
+  <Section variant="cream">
+    <Container>
+      <div class="flex flex-wrap gap-4">
+        <Button href={`/${entry.data.citySlug}/`} variant="secondary">
+          &larr; Back to {cityName} overview
+        </Button>
+        <Button href="/areas-we-serve/" variant="ghost">
+          All areas we serve
+        </Button>
+        <Button href="/services/" variant="ghost">
+          Our services
+        </Button>
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand
+    heading={`Own a property in ${entry.data.name}?`}
+    text={`Get a free custom rental projection for your ${entry.data.name} property — real comps, local expertise, no sales pitch.`}
+  />
+</BaseLayout>

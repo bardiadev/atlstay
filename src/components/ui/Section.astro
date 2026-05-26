@@ -1,6 +1,6 @@
 ---
 interface Props {
-  variant?: 'cream' | 'white' | 'forest' | 'tint';
+  variant?: 'cream' | 'white' | 'forest' | 'tint' | 'brass';
   class?: string;
   id?: string;
 }
@@ -10,6 +10,7 @@ const bg = {
   white: 'bg-white text-ink',
   forest: 'bg-forest text-cream',
   tint: 'bg-forest-50 text-ink',
+  brass: 'bg-brass-50 text-ink',
 };
 ---
 <section id={id} class={`py-20 sm:py-28 ${bg[variant]} ${cls}`}><slot /></section>

@@ -1,0 +1,323 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import Badge from '@/components/ui/Badge.astro';
+import Card from '@/components/ui/Card.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { site } from '@/config/site';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Contact', path: '/contact/' },
+  ]),
+];
+
+// INTEGRATE — wire this form to site.forms.projectionEndpoint or a dedicated
+// contact endpoint (Formspree, Netlify Forms, etc.) before launch.
+// The form currently submits to site.forms.projectionEndpoint if set.
+// If endpoint is empty, the form is shown but submit is handled gracefully
+// (no data is sent; a success message is shown via JS state).
+const formEndpoint = site.forms.projectionEndpoint || '';
+
+const serviceAreaNeighborhoods = [
+  'Buckhead', 'Midtown', 'Old Fourth Ward', 'Inman Park',
+  'Virginia-Highland', 'Grant Park', 'East Atlanta Village', 'Decatur',
+  'Candler Park', 'Cabbagetown', 'Reynoldstown', 'West Midtown',
+  'Downtown Atlanta', 'Poncey-Highland', 'Ormewood Park', 'East Lake',
+];
+---
+
+<BaseLayout
+  title="Contact Keystone Stays — Atlanta STR Management"
+  description={`Reach the Keystone Stays team at ${site.contact.phone} or ${site.contact.email}. We manage short-term rentals across Atlanta and metro neighborhoods. No sales pitch — just honest answers.`}
+  schemas={schemas}
+>
+
+  <!-- ─── HERO ─── -->
+  <Section variant="forest" class="!pb-16">
+    <Container>
+      <div class="max-w-2xl">
+        <Eyebrow class="text-brass">Get in touch</Eyebrow>
+        <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl">
+          Let's talk about your property.
+        </h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">
+          Whether you're ready to get started, have a question, or just want to explore your options — we're easy to reach, and we don't do sales calls. Just honest conversations.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── CONTACT DETAILS + FORM ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
+
+        <!-- Contact details column -->
+        <div>
+          <Eyebrow>Direct contact</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest">
+            Real people. Real answers.
+          </h2>
+          <p class="mt-4 text-ink/75">
+            No chatbot, no ticket system, no hold music. We respond to every inquiry personally — usually the same day.
+          </p>
+
+          <div class="mt-8 space-y-6">
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-forest-50">
+                <svg class="h-5 w-5 text-forest" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M2.5 6.5C2.5 13 7 17.5 13.5 17.5l2-.4c.5-.1.9-.5.9-1v-2.3c0-.5-.3-.9-.8-1l-1.7-.5a1 1 0 0 0-1 .3L12 13.9c-1.5-.8-3.1-2.4-3.9-3.9l.9-.9a1 1 0 0 0 .3-1L8.8 6.3a1 1 0 0 0-1-.8H5.5c-.5 0-.9.4-1 .9l-.4 2 1.4-.9z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-stone">Phone</p>
+                <a href={site.contact.phoneHref} class="mt-1 block font-display text-xl text-forest hover:text-brass-600 transition-colors">
+                  {site.contact.phone}
+                </a>
+                <p class="mt-1 text-sm text-stone">Call or text — we check both</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-forest-50">
+                <svg class="h-5 w-5 text-forest" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M3 5h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 0 7 7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-stone">Email</p>
+                <a href={`mailto:${site.contact.email}`} class="mt-1 block font-display text-xl text-forest hover:text-brass-600 transition-colors">
+                  {site.contact.email}
+                </a>
+                <p class="mt-1 text-sm text-stone">We respond same day on weekdays</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-forest-50">
+                <svg class="h-5 w-5 text-forest" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M10 2C6.7 2 4 4.7 4 8c0 4.5 6 10 6 10s6-5.5 6-10c0-3.3-2.7-6-6-6zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-stone">Service area</p>
+                <p class="mt-1 font-display text-xl text-forest">{site.contact.address.city}, {site.contact.address.region}</p>
+                <p class="mt-1 text-sm text-stone">Metro Atlanta and surrounding neighborhoods</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Primary action -->
+          <div class="mt-10 rounded-2xl bg-brass-50 p-6">
+            <h3 class="font-display text-lg text-forest">Want a rental projection first?</h3>
+            <p class="mt-2 text-sm text-ink/70">
+              Start with our free, no-obligation projection. It's the fastest way to understand what your property could earn — and the best first conversation we can have.
+            </p>
+            <Button href="/rental-projection/" class="mt-5" size="md">
+              Get my free projection
+            </Button>
+          </div>
+
+          <!-- Service area list -->
+          <div class="mt-8">
+            <h3 class="font-display text-base text-forest">Neighborhoods we serve</h3>
+            <ul class="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5">
+              {serviceAreaNeighborhoods.map((nbhd) => (
+                <li class="text-sm text-ink/70">{nbhd}</li>
+              ))}
+            </ul>
+            <p class="mt-3 text-xs text-stone">Not on the list? Reach out — we may serve your area.</p>
+          </div>
+        </div>
+
+        <!-- Contact form column -->
+        <div>
+          <Eyebrow>Send us a message</Eyebrow>
+          <h2 class="mt-3 font-display text-2xl text-forest">
+            What's on your mind?
+          </h2>
+          <p class="mt-2 text-ink/75">We read every message personally and respond with honest answers — not a brochure.</p>
+
+          <!-- INTEGRATE — wire to site.forms.projectionEndpoint or a dedicated contact endpoint before launch.
+               Add anti-spam / reCAPTCHA as needed on the backend. -->
+          <form
+            id="contact-form"
+            class="mt-8 space-y-5"
+            method="POST"
+            action={formEndpoint || undefined}
+            data-endpoint={formEndpoint}
+            novalidate
+          >
+            <!-- Honeypot anti-spam field — hidden from real users -->
+            <div aria-hidden="true" class="absolute left-[-9999px] top-0 h-0 overflow-hidden">
+              <label for="contact-website">Website (leave blank)</label>
+              <input
+                type="text"
+                id="contact-website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="contact-name" class="block text-sm font-medium text-forest">
+                  Your name <span class="text-brass-600" aria-label="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  class="mt-1.5 block w-full rounded-xl border border-line bg-white px-4 py-3 text-ink placeholder-stone/60 shadow-sm transition-colors focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20"
+                  placeholder="Jane Smith"
+                />
+              </div>
+              <div>
+                <label for="contact-email" class="block text-sm font-medium text-forest">
+                  Email address <span class="text-brass-600" aria-label="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  class="mt-1.5 block w-full rounded-xl border border-line bg-white px-4 py-3 text-ink placeholder-stone/60 shadow-sm transition-colors focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20"
+                  placeholder="jane@example.com"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="contact-phone" class="block text-sm font-medium text-forest">
+                Phone number <span class="text-stone font-normal">(optional)</span>
+              </label>
+              <input
+                type="tel"
+                id="contact-phone"
+                name="phone"
+                autocomplete="tel"
+                class="mt-1.5 block w-full rounded-xl border border-line bg-white px-4 py-3 text-ink placeholder-stone/60 shadow-sm transition-colors focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20"
+                placeholder="(404) 555-0000"
+              />
+            </div>
+
+            <div>
+              <label for="contact-message" class="block text-sm font-medium text-forest">
+                How can we help? <span class="text-brass-600" aria-label="required">*</span>
+              </label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                rows="5"
+                class="mt-1.5 block w-full resize-none rounded-xl border border-line bg-white px-4 py-3 text-ink placeholder-stone/60 shadow-sm transition-colors focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20"
+                placeholder="Tell us about your property or ask us anything — we give real answers."
+              ></textarea>
+            </div>
+
+            <div class="flex items-start gap-3 pt-1">
+              <Button type="submit" size="lg">Send message</Button>
+              <p class="text-xs text-stone self-center">We respond same day, most weekdays.</p>
+            </div>
+          </form>
+
+          <!-- Success / error state (handled by inline script below) -->
+          <div id="contact-success" class="hidden mt-8 rounded-2xl bg-forest-50 p-6">
+            <h3 class="font-display text-lg text-forest">Message received. Thank you.</h3>
+            <p class="mt-2 text-sm text-ink/75">We'll get back to you within one business day. No sales call unless you want one.</p>
+          </div>
+          <div id="contact-error" class="hidden mt-4 rounded-xl bg-red-50 p-4">
+            <p class="text-sm text-red-700">Something went wrong sending your message. Please email us directly at <a href={`mailto:${site.contact.email}`} class="underline">{site.contact.email}</a> or call <a href={site.contact.phoneHref} class="underline">{site.contact.phone}</a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── LOCAL BUSINESS EMPHASIS ─── -->
+  <Section variant="cream">
+    <Container>
+      <div class="grid gap-8 sm:grid-cols-3">
+        <Card>
+          <h3 class="font-display text-lg text-forest">Atlanta-based</h3>
+          <p class="mt-2 text-sm text-ink/70">We're not a national brand with an Atlanta branch. We are an Atlanta company — managing properties in neighborhoods we know personally.</p>
+        </Card>
+        <Card>
+          <h3 class="font-display text-lg text-forest">Owner-focused</h3>
+          <p class="mt-2 text-sm text-ink/70">Every decision we make is oriented toward owner outcomes. You're not a property number in our system — you're a partner we're genuinely invested in.</p>
+        </Card>
+        <Card>
+          <h3 class="font-display text-lg text-forest">No pressure, ever</h3>
+          <p class="mt-2 text-sm text-ink/70">We hate pushy sales calls. Ask us anything — about our process, our fee, our results — and you'll get a straight answer, not a pitch.</p>
+        </Card>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── CTA BAND ─── -->
+  <CTABand
+    heading="Rather start with a projection?"
+    text="Our free rental projection is the best first step — a custom, comps-based estimate of what your Atlanta home could earn, built by a real person."
+    ctaLabel="Get my free projection"
+    ctaHref="/rental-projection/"
+  />
+
+</BaseLayout>
+
+<!-- INTEGRATE — minimal inline script for graceful form handling.
+     Replace with a proper React island or server-side form if more complex
+     validation or integrations are needed. -->
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const successEl = document.getElementById('contact-success');
+  const errorEl = document.getElementById('contact-error');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const endpoint = form.dataset.endpoint;
+
+      // Honeypot check
+      const honeypot = form.querySelector<HTMLInputElement>('input[name="website"]');
+      if (honeypot && honeypot.value) return;
+
+      if (!endpoint) {
+        // No endpoint configured — show success message gracefully (dev/placeholder mode)
+        form.style.display = 'none';
+        if (successEl) successEl.classList.remove('hidden');
+        return;
+      }
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          if (successEl) successEl.classList.remove('hidden');
+        } else {
+          throw new Error('Non-OK response');
+        }
+      } catch {
+        if (errorEl) errorEl.classList.remove('hidden');
+      }
+    });
+  }
+</script>

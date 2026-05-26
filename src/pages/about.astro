@@ -1,0 +1,214 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import Badge from '@/components/ui/Badge.astro';
+import Card from '@/components/ui/Card.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { site } from '@/config/site';
+import { images } from '@/data/images';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about/' },
+  ]),
+];
+
+const values = [
+  {
+    title: 'Local roots, national standard',
+    text: 'We built this company in Atlanta, for Atlanta. We know Buckhead occupancy seasonality and BeltLine pricing pressure because we live and work here — not because we read a report about it.',
+  },
+  {
+    title: 'Transparency without exception',
+    text: 'One clear fee. No setup charges. No hidden deductions. You see our rate before you sign anything, and your monthly statement reflects exactly what happened — no decoding required.',
+  },
+  {
+    title: 'Owner alignment, always',
+    text: 'We only earn when your home earns. There\'s no setup fee to collect, no retainer regardless of performance. If your home doesn\'t perform, neither do we — and we take that seriously.',
+  },
+  {
+    title: 'Hospitality over property management',
+    text: 'We don\'t think of ourselves as a property management company. We\'re in the hospitality business — the guest experience, the presentation, the welcome. That mindset drives better reviews, which drives everything else.',
+  },
+  {
+    title: 'No bureaucracy',
+    text: 'You can reach us directly. No ticket numbers, no five-day response windows, no "please hold for the next available representative." Local teams making local decisions, in real time.',
+  },
+  {
+    title: 'We only take homes we believe in',
+    text: 'We don\'t sign every property that walks through the door. We run a real projection, have an honest conversation, and only take on homes where we\'re genuinely confident in the results. That\'s better for you and better for us.',
+  },
+];
+---
+
+<BaseLayout
+  title="About Keystone Stays — Atlanta's Premium Local STR Management"
+  description="Keystone Stays was built to be Atlanta's most credible, most local, and most transparent short-term rental management company. Learn our story, values, and approach."
+  image={images.about.src}
+  schemas={schemas}
+>
+
+  <!-- ─── HERO ─── -->
+  <Section variant="forest">
+    <Container>
+      <div class="max-w-2xl">
+        <Eyebrow class="text-brass">Our story</Eyebrow>
+        <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl">
+          Built in Atlanta. Built for Atlanta owners.
+        </h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">
+          {site.brandName} was founded on a simple observation: Atlanta homeowners deserved better than a national call center managing their most valuable asset, and better than the dated, opaque local operators that preceded the big brands. We set out to be both things at once — premium national quality with genuine local expertise.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── WHY WE STARTED ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <div>
+          <Eyebrow>Why we started</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            There was a gap nobody was filling.
+          </h2>
+          <div class="mt-5 space-y-4 text-ink/75">
+            <p>The national brands — Vacasa, Evolve, Awning — brought scale and technology to the market. But they brought it with national pricing strategies, national cleaning crews, and national customer service queues that had no idea when the Peach Bowl was, who was playing at State Farm Arena, or what a Buckhead corporate traveler actually expects from a short-term stay.</p>
+            <p>The local operators knew Atlanta inside out. But they often ran dated sites, operated with minimal transparency on fees, and couldn't offer the professional infrastructure that serious owners needed to feel confident handing over their property.</p>
+            <p>We built {site.brandName} to sit exactly in the gap between those two worlds. Local expertise, delivered at a standard the nationals set the bar for.</p>
+          </div>
+        </div>
+        <div>
+          <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-forest-50">
+            <img
+              src={images.about.src}
+              alt={images.about.alt}
+              loading="lazy"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── LOCAL ROOTS ─── -->
+  <Section variant="cream">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>Deep Atlanta roots</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          We know this city the way only a local can.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-ink/75">
+          Atlanta's short-term rental market is driven by a specific mix of demand drivers. Conventions at the Georgia World Congress Center. SEC Championship and Peach Bowl weekends at Mercedes-Benz Stadium. Georgia Tech and Emory driving consistent corporate travel. The BeltLine and Ponce City Market pulling experiential travelers from across the country. Film production bringing long-stay crews to neighborhoods most managers never think about.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Card>
+          <h3 class="font-display text-lg text-forest">Convention demand</h3>
+          <p class="mt-2 text-sm text-ink/70">The Georgia World Congress Center hosts events that fill metro Atlanta hotels and drive premium short-term rental rates for properties up to 15 miles away.</p>
+        </Card>
+        <Card>
+          <h3 class="font-display text-lg text-forest">Sports & event weekends</h3>
+          <p class="mt-2 text-sm text-ink/70">Braves, Falcons, Hawks, and major college football events create predictable demand spikes that require proactive pricing — weeks or months in advance.</p>
+        </Card>
+        <Card>
+          <h3 class="font-display text-lg text-forest">Film & production stays</h3>
+          <p class="mt-2 text-sm text-ink/70">Atlanta's status as a major film hub creates extended-stay demand from production crews — a market segment most managers underserve entirely.</p>
+        </Card>
+        <Card>
+          <h3 class="font-display text-lg text-forest">Neighborhood character</h3>
+          <p class="mt-2 text-sm text-ink/70">Buckhead, Midtown, Old Fourth Ward, and Decatur each attract a different guest profile with different expectations. We manage for those differences intentionally.</p>
+        </Card>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── OUR VALUES ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>How we operate</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          The principles that guide every decision we make.
+        </h2>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {values.map((v) => (
+          <Card>
+            <h3 class="font-display text-lg text-forest">{v.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink/75">{v.text}</p>
+          </Card>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── TEAM (placeholder) ─── -->
+  <!-- PLACEHOLDER SECTION — Owner to provide real team bios and photos before launch.
+       Do NOT publish placeholder names or bios as real people. This section is clearly
+       marked as a template. Replace with genuine, attributable team members only. -->
+  <Section variant="tint">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>The team</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Local people who care about this as much as you do.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-ink/75">
+          {site.brandName} is run by a small, dedicated team of Atlanta locals who are hands-on with every property in our portfolio. Not a call center. Not a franchise network. Real people who are personally invested in your home's performance.
+        </p>
+        <!-- Owner: add real team member cards here. Example structure below — replace with genuine bios. -->
+      </div>
+      <div class="mt-10 rounded-2xl border border-line bg-white p-8 text-center">
+        <p class="text-stone text-sm italic">Team bios coming soon. Owner to provide real team member names, photos, and short bios.</p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── TRUST + SCALE ─── -->
+  <Section variant="forest">
+    <Container>
+      <div class="text-center">
+        <Eyebrow class="text-brass">Track record</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+          A growing operation. A consistent standard.
+        </h2>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl bg-white/5 p-8 text-center ring-1 ring-white/10">
+          <p class="font-display text-2xl text-brass">{site.scale.portfolioPhrase}</p>
+          <p class="mt-2 text-sm text-cream/65">trusted to us by Atlanta owners</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-8 text-center ring-1 ring-white/10">
+          <p class="font-display text-2xl text-brass">{site.scale.staysPhrase}</p>
+          <p class="mt-2 text-sm text-cream/65">five-star guest experiences</p>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-8 text-center ring-1 ring-white/10">
+          <p class="font-display text-2xl text-brass">{site.scale.bookingsPhrase}</p>
+          <p class="mt-2 text-sm text-cream/65">in revenue managed for owners</p>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <p class="mx-auto max-w-xl text-cream/70">
+          We're {site.scale.portfolioPhrase}. And we're growing because owners tell other owners — not because we have the biggest ad budget.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── CTA BAND ─── -->
+  <CTABand
+    heading="Let's talk about your property."
+    text="Get a free projection and find out if we're the right fit for your home — no commitment, no sales pressure."
+  />
+
+</BaseLayout>

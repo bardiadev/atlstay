@@ -1,0 +1,170 @@
+---
+import { comparisons } from '@/data/comparisons';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { breadcrumbSchema } from '@/lib/schema';
+import { site } from '@/config/site';
+
+export function getStaticPaths() {
+  return comparisons.map((c) => ({
+    params: { slug: c.slug },
+    props: { comparison: c },
+  }));
+}
+
+const { comparison } = Astro.props;
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Compare', path: '/compare/' },
+    { name: `${comparison.competitor} Alternative`, path: `/compare/${comparison.slug}/` },
+  ]),
+];
+
+const metaDescription = `${comparison.summary.slice(0, 140)}…`;
+---
+
+<BaseLayout
+  title={comparison.headline}
+  description={metaDescription}
+  schemas={schemas}
+>
+  <!-- Hero -->
+  <Section variant="forest">
+    <Container size="narrow">
+      <Eyebrow class="text-brass">Comparison</Eyebrow>
+      <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl leading-tight">
+        {comparison.headline}
+      </h1>
+      <p class="mt-5 text-lg text-cream/80 max-w-2xl leading-relaxed">
+        {comparison.summary}
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <Button href="/rental-projection/" size="lg" variant="primary">
+          Get my free projection
+        </Button>
+        <Button href="/pricing/" size="lg" variant="inverse">
+          See our pricing
+        </Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Two-column comparison -->
+  <Section variant="cream">
+    <Container>
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- Their model -->
+        <div class="rounded-2xl border border-line bg-white p-8">
+          <div class="mb-5">
+            <span class="inline-block rounded-full bg-stone/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-stone">
+              {comparison.competitor}'s model
+            </span>
+          </div>
+          <ul class="space-y-4">
+            {comparison.theirModel.map((point) => (
+              <li class="flex gap-3 text-ink/80">
+                <svg
+                  class="mt-0.5 h-5 w-5 flex-none text-stone/50"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <circle cx="10" cy="10" r="8" />
+                  <path d="M7 10h6" stroke-linecap="round" />
+                </svg>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Our edge -->
+        <div class="rounded-2xl border border-brass/30 bg-forest p-8">
+          <div class="mb-5">
+            <span class="inline-block rounded-full bg-brass/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brass">
+              The {site.brandName} edge
+            </span>
+          </div>
+          <ul class="space-y-4">
+            {comparison.ourEdge.map((point) => (
+              <li class="flex gap-3 text-cream/90">
+                <svg
+                  class="mt-0.5 h-5 w-5 flex-none text-brass"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <polyline points="4,10 8,14 16,6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why local matters -->
+  <Section variant="white">
+    <Container size="narrow">
+      <Eyebrow>Why local expertise matters</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        Atlanta is not a generic market
+      </h2>
+      <p class="mt-4 text-lg text-ink/80 max-w-2xl">
+        Managing short-term rentals well in Atlanta means knowing which neighborhoods drive demand,
+        which events fill calendars in November and April, how to navigate the city's STR permit
+        requirements, and which guests expect what experience in Buckhead vs. Old Fourth Ward.
+        National operators apply playbooks. We apply local knowledge.
+      </p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-xl border border-line bg-cream p-5">
+          <h3 class="font-display text-lg text-forest mb-2">Real local presence</h3>
+          <p class="text-sm text-ink/70">Our team is in Atlanta. We know the neighborhoods, the vendors, the regulations, and the demand calendar — from the SEC Championship to the World Cup.</p>
+        </div>
+        <div class="rounded-xl border border-line bg-cream p-5">
+          <h3 class="font-display text-lg text-forest mb-2">Transparent pricing</h3>
+          <p class="text-sm text-ink/70">One clear management rate. Everything included. No hidden charges at month-end, no add-on fees for maintenance calls or supply restocking.</p>
+        </div>
+        <div class="rounded-xl border border-line bg-cream p-5">
+          <h3 class="font-display text-lg text-forest mb-2">Genuinely full-service</h3>
+          <p class="text-sm text-ink/70">We handle everything — pricing, guests, cleaning, maintenance, permits, reviews. You review your monthly statement. That's it.</p>
+        </div>
+        <div class="rounded-xl border border-line bg-cream p-5">
+          <h3 class="font-display text-lg text-forest mb-2">No long-term lock-in</h3>
+          <p class="text-sm text-ink/70">No multi-year contracts. We earn your business month to month by delivering results — not by making it painful to leave.</p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- CTA -->
+  <Section variant="cream">
+    <Container size="narrow" class="text-center">
+      <Eyebrow>Ready to see the difference?</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        See what your Atlanta home could earn
+      </h2>
+      <p class="mt-4 text-lg text-ink/80 max-w-xl mx-auto">
+        Get a free, comps-based rental projection for your property. No sales pitch — just honest Atlanta data from a team that actually knows your market.
+      </p>
+      <Button href="/rental-projection/" size="lg" class="mt-8">
+        Get my free projection
+      </Button>
+      <p class="mt-3 text-sm text-stone">No obligation. We'll respond within 1 business day.</p>
+    </Container>
+  </Section>
+
+  <CTABand />
+</BaseLayout>

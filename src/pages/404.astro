@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/ui/Container.astro';
+import Button from '@/components/ui/Button.astro';
+import { mainNav } from '@/data/navigation';
+---
+<BaseLayout title="Page not found" description="The page you’re looking for doesn’t exist." noindex={true}>
+  <Container class="py-28 text-center sm:py-36">
+    <p class="font-display text-7xl text-brass">404</p>
+    <h1 class="mt-4 font-display text-3xl text-forest sm:text-4xl">This page checked out early.</h1>
+    <p class="mx-auto mt-4 max-w-md text-ink/75">
+      The page you’re looking for doesn’t exist or has moved. Let’s get you back on track.
+    </p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <Button href="/" size="lg">Back to home</Button>
+      <Button href="/rental-projection/" variant="secondary" size="lg">Get my free projection</Button>
+    </div>
+    <nav class="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm" aria-label="Helpful links">
+      {mainNav.map((i) => (
+        <a href={i.href} class="text-stone transition-colors hover:text-forest">{i.label}</a>
+      ))}
+    </nav>
+  </Container>
+</BaseLayout>

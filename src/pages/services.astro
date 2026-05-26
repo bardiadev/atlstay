@@ -1,0 +1,228 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import Stat from '@/components/ui/Stat.astro';
+import ServicesServiceRow from '@/components/services/ServicesServiceRow.astro';
+import { services } from '@/data/services';
+import { site } from '@/config/site';
+import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
+
+const servicesFaqs = [
+  {
+    q: 'Do I need to hire cleaners separately?',
+    a: 'No. Cleaning coordination, turnover inspections, and linen management are all included in your management fee. We work with a vetted network of local cleaners and handle scheduling, quality checks, and restock — you never have to coordinate a single turnover.',
+  },
+  {
+    q: 'How does your dynamic pricing actually work?',
+    a: 'We price every night individually using live demand signals, local event calendars (Braves games, SEC Championship, conventions, World Cup matches), and competitive data. Rates adjust automatically — up when Atlanta is in demand, strategically lower to fill gaps. The goal is always maximum revenue, not just maximum rate.',
+  },
+  {
+    q: 'What platforms do you distribute to?',
+    a: `Your listing lives on Airbnb, Vrbo, and Booking.com as primary platforms, with calendar sync so you're never double-booked. We optimize separately for each platform's algorithm to maximize visibility everywhere guests search.`,
+  },
+  {
+    q: 'Who handles guest problems at 2 a.m.?',
+    a: 'We do. Every message, every inquiry, every midnight "the Wi-Fi is down" — our team handles it. Guests get fast, professional responses that keep your reviews high. You stay asleep.',
+  },
+  {
+    q: 'How does maintenance coordination work?',
+    a: 'We have a network of trusted local Atlanta vendors for HVAC, plumbing, appliances, and general repairs. When something needs attention, we coordinate — and we loop you in before anything significant. No surprise invoices.',
+  },
+  {
+    q: 'How do I see how my property is performing?',
+    a: 'You receive clear, easy-to-read monthly statements with booking revenue, management fee, and net payout — every line item visible. No guesswork, no opaque deductions.',
+  },
+  {
+    q: 'Can I block dates for personal use?',
+    a: `Always. Your home is yours. Block any dates for personal stays, maintenance, or family visits — just let us know and we update the calendar. You're in control.`,
+  },
+];
+
+const whatsIncluded = [
+  'Listing creation, copywriting & SEO optimization',
+  'Professional photography coordination',
+  'Nightly dynamic pricing & revenue strategy',
+  '24/7 guest communication & support',
+  'Hotel-grade cleaning & turnover management',
+  'Quality inspection between every stay',
+  'Linen service & amenity restocking',
+  'Maintenance coordination with trusted local vendors',
+  'Airbnb, Vrbo & Booking.com distribution',
+  'Multi-calendar sync — zero double-bookings',
+  'Review management & reputation strategy',
+  'Transparent monthly owner statements & payouts',
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services/' },
+  ]),
+  serviceSchema({
+    name: 'Full-service short-term rental management',
+    description:
+      'End-to-end Airbnb and VRBO management for Atlanta homeowners — listing, pricing, guests, cleaning, maintenance, and reporting all handled.',
+  }),
+];
+---
+
+<BaseLayout
+  title="Full-Service Short-Term Rental Management in Atlanta"
+  description="Everything your Atlanta Airbnb needs to earn more and run effortlessly — listing, dynamic pricing, guests, cleaning, maintenance, and reporting. One transparent fee."
+  schemas={schemas}
+>
+  <!-- Hero -->
+  <Section variant="white" class="pb-12 pt-20 sm:pb-16 sm:pt-28">
+    <Container>
+      <div class="max-w-3xl">
+        <Eyebrow>What we handle</Eyebrow>
+        <h1 class="mt-3 font-display text-4xl text-forest sm:text-5xl lg:text-6xl">
+          Everything. So you do&nbsp;nothing.
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-ink/80">
+          Full-service means full-service. From the first photo shoot to each monthly payout, we handle every detail of running a top-performing short-term rental in Atlanta — so you stay an owner, not an operator.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
+          <Button href="/pricing/" variant="ghost" size="lg">See our transparent pricing →</Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Quick stats strip -->
+  <Section variant="tint" class="py-14 sm:py-16">
+    <Container>
+      <div class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <Stat value="24/7" label="Guest communication — every message, handled" />
+        <Stat value="5★" label={site.scale.ratingPhrase} />
+        <Stat value="All-in" label={`One flat fee — ${site.pricing.rate} of revenue, nothing else`} />
+        <Stat value="100%" label="Local team — we know Atlanta's neighborhoods" />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What's included checklist -->
+  <Section variant="cream">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>Everything included</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          One fee. Zero surprises. The full picture.
+        </h2>
+        <p class="mt-4 text-ink/75">
+          National managers often charge add-ons for cleaning coordination, photography, or restocking supplies. With Keystone Stays, everything below is included in your single management rate — {site.pricing.rate}, {site.pricing.rateNote}.
+        </p>
+      </div>
+      <div class="mx-auto mt-12 max-w-3xl">
+        <CheckList items={whatsIncluded} columns={2} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Service deep-dives: alternating rows -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-2xl text-center">
+        <Eyebrow>The full service, in detail</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          What "full-service" actually looks like
+        </h2>
+      </div>
+
+      <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-28">
+        {services.map((service, i) => (
+          <ServicesServiceRow
+            title={service.title}
+            description={service.description}
+            imageKey={service.imageKey}
+            reverse={i % 2 !== 0}
+          />
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why full-service beats half-service band -->
+  <Section variant="forest">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow class="text-brass">Why full-service beats half-service</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+          Half the service isn't half the work — it's double the headache.
+        </h2>
+        <p class="mt-5 text-lg text-cream/75">
+          Some management companies handle marketing and bookings — but leave you to hire cleaners, coordinate maintenance, restock supplies, and solve guest problems at midnight. That's not management. That's delegation with extra steps.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-8 sm:grid-cols-3">
+        <div class="rounded-2xl bg-forest-700 p-8">
+          <div class="font-display text-xl text-brass">True end-to-end</div>
+          <p class="mt-3 text-cream/75">
+            One team. One call. Every aspect of your rental — from the welcome basket to the maintenance invoice — managed by us, not farmed out to you.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-forest-700 p-8">
+          <div class="font-display text-xl text-brass">Local expertise at scale</div>
+          <p class="mt-3 text-cream/75">
+            We know Atlanta's demand cycles, peak event weekends, and neighborhood dynamics. That local knowledge drives the pricing decisions that maximize your revenue.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-forest-700 p-8">
+          <div class="font-display text-xl text-brass">One transparent fee</div>
+          <p class="mt-3 text-cream/75">
+            Not a base rate plus cleaning markup plus maintenance coordination plus restocking fees. One flat {site.pricing.rate} of your booking revenue — all-in, full-stop.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
+        <p class="mt-3 text-sm text-cream/50">No obligation. No sales pitch. Real Atlanta data.</p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Common questions</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Service FAQ</h2>
+      <div class="mt-10">
+        <FAQ items={servicesFaqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Internal links -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-6 sm:grid-cols-3">
+        <a href="/pricing/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Pricing →</div>
+          <p class="mt-2 text-sm text-ink/70">One clear rate. No hidden fees. See exactly what you pay — and what you keep.</p>
+        </a>
+        <a href="/how-it-works/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">How it works →</div>
+          <p class="mt-2 text-sm text-ink/70">From first conversation to first payout — the Keystone Stays onboarding process.</p>
+        </a>
+        <a href="/areas-we-serve/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Areas we serve →</div>
+          <p class="mt-2 text-sm text-ink/70">Buckhead, Midtown, Inman Park, Old Fourth Ward, Virginia-Highland, and more across metro Atlanta.</p>
+        </a>
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand
+    heading="Ready to see what your Atlanta home could earn?"
+    text="Get a free, no-obligation projection from a local team that knows your neighborhood — delivered within one business day."
+  />
+</BaseLayout>
