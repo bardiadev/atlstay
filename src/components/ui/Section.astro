@@ -1,0 +1,15 @@
+---
+interface Props {
+  variant?: 'cream' | 'white' | 'forest' | 'tint';
+  class?: string;
+  id?: string;
+}
+const { variant = 'cream', class: cls = '', id } = Astro.props;
+const bg = {
+  cream: 'bg-cream text-ink',
+  white: 'bg-white text-ink',
+  forest: 'bg-forest text-cream',
+  tint: 'bg-forest-50 text-ink',
+};
+---
+<section id={id} class={`py-20 sm:py-28 ${bg[variant]} ${cls}`}><slot /></section>

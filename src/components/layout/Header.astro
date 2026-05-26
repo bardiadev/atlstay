@@ -1,0 +1,44 @@
+---
+import { mainNav, primaryCta } from '../../data/navigation';
+import Logo from './Logo.astro';
+import Button from '../ui/Button.astro';
+---
+<header class="sticky top-0 z-50 border-b border-line/70 bg-cream/85 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
+    <Logo />
+
+    <nav class="hidden items-center gap-7 lg:flex" aria-label="Primary">
+      {mainNav.map((i) => (
+        <a href={i.href} class="text-sm text-ink/80 transition-colors hover:text-forest">{i.label}</a>
+      ))}
+    </nav>
+
+    <div class="hidden lg:block">
+      <Button href={primaryCta.href}>{primaryCta.label}</Button>
+    </div>
+
+    <details class="relative lg:hidden">
+      <summary
+        class="flex cursor-pointer list-none items-center rounded-full p-2 text-forest [&::-webkit-details-marker]:hidden"
+        aria-label="Open menu"
+      >
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+        </svg>
+      </summary>
+      <div class="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-line bg-white p-4 shadow-xl">
+        <nav class="flex flex-col" aria-label="Mobile">
+          {mainNav.map((i) => (
+            <a href={i.href} class="rounded-lg px-3 py-2.5 text-sm text-ink/85 hover:bg-cream">{i.label}</a>
+          ))}
+          <a
+            href={primaryCta.href}
+            class="mt-2 rounded-full bg-brass px-3 py-2.5 text-center text-sm font-medium text-forest-900"
+          >
+            {primaryCta.label}
+          </a>
+        </nav>
+      </div>
+    </details>
+  </div>
+</header>

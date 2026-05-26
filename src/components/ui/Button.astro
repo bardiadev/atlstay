@@ -1,0 +1,28 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost' | 'inverse';
+  size?: 'md' | 'lg';
+  class?: string;
+  type?: 'button' | 'submit';
+  'aria-label'?: string;
+}
+const { href, variant = 'primary', size = 'md', class: cls = '', type = 'button', ...rest } = Astro.props;
+const base =
+  'inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-tight transition-all duration-200';
+const sizes = { md: 'px-6 py-3 text-sm', lg: 'px-8 py-4 text-base' };
+const variants = {
+  primary: 'bg-brass text-forest-900 hover:bg-brass-600 shadow-sm hover:shadow-md',
+  secondary: 'bg-forest text-cream hover:bg-forest-700',
+  ghost: 'text-forest hover:text-brass-600 underline-offset-4 hover:underline',
+  inverse: 'bg-cream text-forest hover:bg-white',
+};
+const cl = [base, sizes[size], variants[variant], cls].join(' ');
+---
+{
+  href ? (
+    <a href={href} class={cl} {...rest}><slot /></a>
+  ) : (
+    <button type={type} class={cl} {...rest}><slot /></button>
+  )
+}

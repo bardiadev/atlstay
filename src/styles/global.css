@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+   Keystone Stays — design tokens (Tailwind v4 @theme)
+   Utilities generated: bg-forest, text-brass, border-line, font-display, etc.
+---------------------------------------------------------------------------- */
+@theme {
+  /* Brand */
+  --color-forest: #14342b;
+  --color-forest-700: #1c4a3c;
+  --color-forest-900: #0e241d;
+  --color-forest-50: #eaf1ed;
+
+  --color-brass: #c9a24b;
+  --color-brass-600: #b08a38;
+  --color-brass-50: #f7efd9;
+
+  --color-cream: #f7f4ec;
+  --color-ink: #1a2420;
+  --color-stone: #6b7770;
+  --color-line: #e2e0d6;
+
+  /* Type */
+  --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Container */
+  --breakpoint-3xl: 120rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+::selection {
+  background: var(--color-brass);
+  color: #1a2420;
+}
+
+/* Accessible focus ring */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-brass-600);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,17 @@
+---
+interface Props { steps: { title: string; text: string }[]; class?: string; }
+const { steps, class: cls = '' } = Astro.props;
+---
+<ol class={`grid gap-8 ${cls}`}>
+  {steps.map((s, i) => (
+    <li class="flex gap-5">
+      <span class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brass font-display text-lg text-forest-900">
+        {i + 1}
+      </span>
+      <div>
+        <h3 class="font-display text-xl text-forest">{s.title}</h3>
+        <p class="mt-1.5 leading-relaxed text-ink/80">{s.text}</p>
+      </div>
+    </li>
+  ))}
+</ol>

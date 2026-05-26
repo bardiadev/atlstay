@@ -1,0 +1,16 @@
+---
+// Factual platform strip (we list on these channels). Not press logos — do not
+// imply endorsements/affiliations that don't exist.
+import Container from './Container.astro';
+interface Props { heading?: string; logos?: string[]; }
+const {
+  heading = 'Your home, marketed everywhere guests book',
+  logos = ['Airbnb', 'Vrbo', 'Booking.com', 'Google', 'Expedia'],
+} = Astro.props;
+---
+<Container class="py-10">
+  <p class="text-center text-xs uppercase tracking-[0.18em] text-stone">{heading}</p>
+  <div class="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+    {logos.map((l) => <span class="font-display text-xl text-forest/55">{l}</span>)}
+  </div>
+</Container>

@@ -1,0 +1,13 @@
+---
+import { site } from '../../config/site';
+interface Props { variant?: 'dark' | 'light'; class?: string; }
+const { variant = 'dark', class: cls = '' } = Astro.props;
+const word = variant === 'light' ? 'text-cream' : 'text-forest';
+---
+<a href="/" class={`inline-flex items-center gap-2.5 ${cls}`} aria-label={`${site.brandName} — home`}>
+  <svg class="text-brass" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M7 8 H25 L21 25 H11 Z" fill="currentColor" opacity="0.16" />
+    <path d="M7 8 H25 L21 25 H11 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" />
+  </svg>
+  <span class={`font-display text-xl tracking-tight ${word}`}>{site.brandName}</span>
+</a>

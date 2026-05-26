@@ -1,0 +1,16 @@
+---
+interface Props { items: string[]; columns?: 1 | 2; class?: string; }
+const { items, columns = 1, class: cls = '' } = Astro.props;
+---
+<ul class={`grid gap-3 ${columns === 2 ? 'sm:grid-cols-2' : ''} ${cls}`}>
+  {
+    items.map((item) => (
+      <li class="flex items-start gap-3">
+        <svg class="mt-0.5 h-5 w-5 flex-none text-brass-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0z" clip-rule="evenodd" />
+        </svg>
+        <span class="text-ink/90">{item}</span>
+      </li>
+    ))
+  }
+</ul>

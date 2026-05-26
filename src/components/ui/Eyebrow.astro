@@ -1,0 +1,7 @@
+---
+// Small-caps label. Default color suits light backgrounds; on dark (forest)
+// sections pass class="text-brass".
+interface Props { class?: string; }
+const { class: cls = '' } = Astro.props;
+---
+<p class={`text-xs font-semibold uppercase tracking-[0.18em] text-brass-600 ${cls}`}><slot /></p>

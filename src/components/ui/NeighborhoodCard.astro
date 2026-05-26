@@ -1,0 +1,25 @@
+---
+import { images, type ImageKey } from '../../data/images';
+interface Props { name: string; href: string; imageKey?: ImageKey; blurb?: string; }
+const { name, href, imageKey, blurb } = Astro.props;
+const img = imageKey ? images[imageKey] : images.nbhdDefault;
+---
+<a href={href} class="group relative block overflow-hidden rounded-2xl border border-line bg-forest-50">
+  <div class="aspect-[4/3] overflow-hidden">
+    <img
+      src={img.src}
+      alt={img.alt}
+      loading="lazy"
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-forest/85 via-forest/15 to-transparent"></div>
+  <div class="absolute inset-x-0 bottom-0 p-5">
+    <h3 class="font-display text-xl text-cream">{name}</h3>
+    {blurb && <p class="mt-1 line-clamp-2 text-sm text-cream/80">{blurb}</p>}
+    <span class="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brass">
+      Explore
+      <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </div>
+</a>

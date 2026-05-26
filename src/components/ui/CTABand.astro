@@ -1,0 +1,27 @@
+---
+import Button from './Button.astro';
+import Container from './Container.astro';
+import { primaryCta } from '../../data/navigation';
+interface Props {
+  heading?: string;
+  text?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+const {
+  heading = 'See what your home could earn',
+  text = 'Get a free, no-obligation rental projection from people who actually manage homes in your neighborhood.',
+  ctaLabel = primaryCta.label,
+  ctaHref = primaryCta.href,
+} = Astro.props;
+---
+<section class="bg-forest">
+  <Container class="py-16 text-center sm:py-20">
+    <h2 class="mx-auto max-w-2xl font-display text-3xl text-cream sm:text-4xl">{heading}</h2>
+    <p class="mx-auto mt-4 max-w-xl text-cream/75">{text}</p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <Button href={ctaHref} size="lg">{ctaLabel}</Button>
+      <span class="text-xs text-cream/55">No sales pitch. No obligation — ever.</span>
+    </div>
+  </Container>
+</section>

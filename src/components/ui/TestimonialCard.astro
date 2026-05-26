@@ -1,0 +1,21 @@
+---
+// Placeholder testimonials are flagged in data/testimonials.ts. Never present
+// fabricated reviews as real — swap for genuine guest/owner quotes before launch.
+import Card from './Card.astro';
+interface Props { quote: string; name: string; location?: string; rating?: number; }
+const { quote, name, location, rating = 5 } = Astro.props;
+---
+<Card class="flex h-full flex-col">
+  <div class="flex gap-0.5 text-brass" aria-label={`${rating} out of 5 stars`}>
+    {Array.from({ length: rating }).map(() => (
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 15l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
+      </svg>
+    ))}
+  </div>
+  <blockquote class="mt-4 flex-1 leading-relaxed text-ink/85">“{quote}”</blockquote>
+  <figcaption class="mt-5 text-sm">
+    <span class="font-semibold text-forest">{name}</span>
+    {location && <span class="text-stone"> · {location}</span>}
+  </figcaption>
+</Card>

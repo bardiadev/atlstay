@@ -1,0 +1,10 @@
+---
+// `value` is a short phrase (e.g. "5★", "24/7", "100s of stays") — keep it
+// credible; never a fabricated precise statistic.
+interface Props { value: string; label: string; class?: string; }
+const { value, label, class: cls = '' } = Astro.props;
+---
+<div class={cls}>
+  <div class="font-display text-4xl text-forest sm:text-5xl">{value}</div>
+  <div class="mt-2 text-sm text-stone">{label}</div>
+</div>

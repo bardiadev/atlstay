@@ -1,0 +1,75 @@
+---
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import { site } from '../config/site';
+import { pageTitle, canonical, absoluteImage, type SeoProps } from '../lib/seo';
+import { organizationSchema, websiteSchema, localBusinessSchema } from '../lib/schema';
+
+interface Props extends SeoProps {
+  /** Extra page-specific JSON-LD objects (breadcrumbs, article, service, faq…). */
+  schemas?: unknown[];
+  /** Hide header/footer for a focused landing page. */
+  bare?: boolean;
+}
+const {
+  title,
+  description = site.description,
+  image,
+  ogType = 'website',
+  noindex = false,
+  schemas = [],
+  bare = false,
+} = Astro.props;
+
+const fullTitle = pageTitle(title);
+const canonicalUrl = canonical(Astro.url);
+const ogImage = absoluteImage(image);
+
+// Sitewide org/website/localbusiness once; pages add their own via `schemas`.
+const allSchemas = [
+  organizationSchema(),
+  websiteSchema(),
+  localBusinessSchema(),
+  ...schemas,
+].filter(Boolean);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={site.brandName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content="#14342B" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {allSchemas.map((s) => <script type="application/ld+json" is:inline set:html={JSON.stringify(s)} />)}
+    <slot name="head" />
+  </head>
+  <body>
+    {!bare && <Header />}
+    <main>
+      <slot />
+    </main>
+    {!bare && <Footer />}
+  </body>
+</html>
