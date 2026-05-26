@@ -110,48 +110,58 @@ const differentiators = [
   description="Premium short-term rental management in Atlanta. Professional listing, dynamic pricing, 24/7 guest care, and five-star turnovers — handled for you. Get a free rental projection."
 >
 
-  <!-- ─── HERO ─── -->
-  <Section variant="white" class="relative overflow-hidden !py-0">
-    <div class="relative grid min-h-[88vh] grid-cols-1 items-center lg:grid-cols-2">
+  <!-- ─── HERO ─── (full-bleed, fits the viewport minus the sticky header) -->
+  <section class="relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden">
+    <!-- Full-bleed background image -->
+    <img
+      src={images.heroHome.src}
+      alt={images.heroHome.alt}
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+    />
+    <!-- Legibility scrims (forest-toned, keeps cream text crisp on any photo) -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-forest/95 via-forest/75 to-forest/30"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-forest/65 via-transparent to-forest/25"></div>
 
-      <!-- Text column -->
-      <div class="relative z-10 px-6 py-20 sm:px-8 sm:py-28 lg:py-32">
-        <div class="max-w-2xl lg:ml-auto lg:max-w-xl lg:pr-12 xl:pr-16">
-          <Badge variant="brass" class="mb-5">Atlanta's Local STR Experts</Badge>
-          <h1 class="font-display text-[clamp(2.6rem,5.5vw,4.25rem)] leading-[1.08] tracking-tight text-forest">
-            Your Atlanta home,<br/>earning more —<br class="hidden sm:block"/>effortlessly.
-          </h1>
-          <p class="mt-6 max-w-md text-lg leading-relaxed text-ink/75">
-            We manage every detail — listing, pricing, guests, cleaning, and five-star reviews — so your home performs like a pro without costing you a weekend.
-          </p>
-          <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
-            <Button href="/how-it-works/" variant="ghost" size="lg">See how it works</Button>
-          </div>
-          <p class="mt-4 text-xs text-stone">No sales pitch. No obligation — ever. Real Atlanta data within 1 business day.</p>
-
-          <!-- Trust anchors — scale phrases are credible-but-vague by design -->
-          <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-8">
-            <Stat value="100s of stays" label="and five-star reviews" />
-            <Stat value="5&#9733;" label="average guest rating" />
-            <Stat value="24/7" label="local guest support" />
-          </div>
+    <Container>
+      <div class="max-w-3xl">
+        <Badge variant="brass" class="mb-4">Atlanta's local short-term rental experts</Badge>
+        <h1 class="font-display text-[clamp(2rem,4.6vw,3.25rem)] font-medium leading-[1.07] tracking-tight text-balance text-cream">
+          Effortless Airbnb management in Atlanta.
+        </h1>
+        <p class="mt-4 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
+          Premium short-term rental management for local homeowners — listing, dynamic pricing, 24/7 guest care, cleaning, and five-star reviews handled for you, so your home earns more without the work.
+        </p>
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
+          <Button href="/how-it-works/" variant="inverse" size="lg">See how it works</Button>
         </div>
-      </div>
+        <p class="mt-4 text-sm text-cream/70">No sales pitch. No obligation — ever. Real Atlanta data within one business day.</p>
 
-      <!-- Image column -->
-      <div class="relative h-72 overflow-hidden lg:h-full lg:min-h-[88vh]">
-        <img
-          src={images.heroHome.src}
-          alt={images.heroHome.alt}
-          loading="eager"
-          class="h-full w-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent lg:from-transparent"></div>
+        <dl class="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-cream/20 pt-6">
+          <div>
+            <dt class="font-display text-xl text-cream">5&#9733;</dt>
+            <dd class="mt-0.5 text-xs text-cream/70">Average guest rating</dd>
+          </div>
+          <div>
+            <dt class="font-display text-xl text-cream">24/7</dt>
+            <dd class="mt-0.5 text-xs text-cream/70">Local guest support</dd>
+          </div>
+          <div>
+            <dt class="font-display text-xl text-cream">100s</dt>
+            <dd class="mt-0.5 text-xs text-cream/70">of five-star stays</dd>
+          </div>
+        </dl>
       </div>
+    </Container>
 
+    <div aria-hidden="true" class="absolute bottom-5 left-1/2 -translate-x-1/2 text-cream/55">
+      <svg class="h-6 w-6 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 5v13M6 12l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
     </div>
-  </Section>
+  </section>
 
   <!-- ─── LOGO CLOUD / PLATFORM STRIP ─── -->
   <Section variant="cream" class="!py-0">
