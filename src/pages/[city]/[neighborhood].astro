@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
 import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
@@ -9,7 +10,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import Prose from '@/components/ui/Prose.astro';
 import CheckList from '@/components/ui/CheckList.astro';
-import { breadcrumbSchema, serviceSchema, faqPageSchema } from '@/lib/schema';
+import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 
@@ -44,7 +45,6 @@ const schemas = [
     name: `Short-Term Rental Management in ${entry.data.name}, ${cityName}`,
     description: entry.data.description,
   }),
-  ...(entry.data.faqs.length ? [faqPageSchema(entry.data.faqs)] : []),
 ];
 ---
 
@@ -54,42 +54,22 @@ const schemas = [
   image={heroImg.src}
   schemas={schemas}
 >
-  <!-- Hero -->
-  <Section variant="forest">
-    <Container>
-      <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-sm text-cream/60 flex-wrap">
-        <a href="/" class="hover:text-cream/90 transition-colors">Home</a>
-        <span aria-hidden="true">/</span>
-        <a href="/areas-we-serve/" class="hover:text-cream/90 transition-colors">Areas We Serve</a>
-        <span aria-hidden="true">/</span>
-        <a href={`/${entry.data.citySlug}/`} class="hover:text-cream/90 transition-colors">{cityName}</a>
-        <span aria-hidden="true">/</span>
-        <span class="text-cream/90">{entry.data.name}</span>
-      </nav>
-      <Eyebrow class="text-brass">STR Management in {entry.data.name}</Eyebrow>
-      <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl lg:text-6xl">
-        {entry.data.name} Airbnb & Vacation Rental Management
-      </h1>
-      <p class="mt-5 max-w-2xl text-lg text-cream/80">
-        {entry.data.intro}
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <Button href="/rental-projection/" size="lg">Get my free projection</Button>
-        <Button href={`/${entry.data.citySlug}/`} variant="inverse" size="lg">All {cityName} neighborhoods</Button>
-      </div>
-    </Container>
-  </Section>
-
-  <!-- Hero image -->
-  <div class="relative h-64 w-full overflow-hidden sm:h-80">
-    <img
-      src={heroImg.src}
-      alt={heroImg.alt}
-      loading="eager"
-      class="h-full w-full object-cover"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-forest/50 to-transparent"></div>
-  </div>
+  <PageHero
+    title={`${entry.data.name} Airbnb & Vacation Rental Management`}
+    subtitle={entry.data.intro}
+    eyebrow={`${cityName} · ${entry.data.name}`}
+    image={heroImg.src}
+    imageAlt={heroImg.alt}
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: 'Areas We Serve', path: '/areas-we-serve/' },
+      { name: cityName, path: `/${entry.data.citySlug}/` },
+      { name: entry.data.name, path: `/${entry.data.citySlug}/${entry.data.slug}/` },
+    ]}
+    cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
+    secondaryCta={{ label: `All ${cityName} neighborhoods`, href: `/${entry.data.citySlug}/` }}
+    size="lg"
+  />
 
   <!-- Demand drivers -->
   {entry.data.demandDrivers.length > 0 && (

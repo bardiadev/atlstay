@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
 import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
-import Button from '@/components/ui/Button.astro';
-import Badge from '@/components/ui/Badge.astro';
 import Card from '@/components/ui/Card.astro';
 import CheckList from '@/components/ui/CheckList.astro';
 import CTABand from '@/components/ui/CTABand.astro';
@@ -54,20 +53,14 @@ const values = [
   schemas={schemas}
 >
 
-  <!-- ─── HERO ─── -->
-  <Section variant="forest">
-    <Container>
-      <div class="max-w-2xl">
-        <Eyebrow class="text-brass">Our story</Eyebrow>
-        <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl">
-          Built in Atlanta. Built for Atlanta owners.
-        </h1>
-        <p class="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">
-          {site.brandName} was founded on a simple observation: Atlanta homeowners deserved better than a national call center managing their most valuable asset, and better than the dated, opaque local operators that preceded the big brands. We set out to be both things at once — premium national quality with genuine local expertise.
-        </p>
-      </div>
-    </Container>
-  </Section>
+  <PageHero
+    title="Atlanta's Premium Local Short-Term Rental Management Company"
+    subtitle="We built Keystone Stays to close the gap between national scale and genuine local expertise — premium standards, deep Atlanta roots."
+    eyebrow="OUR STORY"
+    imageKey="about"
+    breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }]}
+    cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
+  />
 
   <!-- ─── WHY WE STARTED ─── -->
   <Section variant="white">

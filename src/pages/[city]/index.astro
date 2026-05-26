@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
 import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
@@ -10,148 +11,102 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import Prose from '@/components/ui/Prose.astro';
 import CheckList from '@/components/ui/CheckList.astro';
-import { breadcrumbSchema, serviceSchema, faqPageSchema } from '@/lib/schema';
+import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 
 export async function getStaticPaths() {
   const c = await getCollection('cities');
-  return c
-    .filter((e) => e.data.published)
-    .map((e) => ({ params: { city: e.data.slug }, props: { entry: e } }));
+  return c.filter((e) => e.data.published).map((e) => ({ params: { city: e.data.slug }, props: { entry: e } }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const d = entry.data;
+const isAtlanta = d.region === 'atlanta';
 
-// Load neighborhood entries for this city
-const allNeighborhoods = await getCollection('neighborhoods', (n) => n.data.published && n.data.citySlug === entry.data.slug);
-
-// Maintain a consistent display order
-const orderedSlugs = entry.data.neighborhoods;
+// Neighborhoods (Atlanta only)
+const allNeighborhoods = await getCollection('neighborhoods', (n) => n.data.published && n.data.citySlug === d.slug);
 const neighborhoodMap = Object.fromEntries(allNeighborhoods.map((n) => [n.data.slug, n]));
-const orderedNeighborhoods = orderedSlugs
-  .map((slug) => neighborhoodMap[slug])
-  .filter(Boolean);
-
-// Image key mapping for neighborhood cards
+const orderedNeighborhoods = d.neighborhoods.map((slug) => neighborhoodMap[slug]).filter(Boolean);
 const nbhdImageMap: Record<string, ImageKey> = {
-  buckhead: 'nbhdBuckhead',
-  midtown: 'nbhdMidtown',
-  'old-fourth-ward': 'nbhdOldFourthWard',
-  'inman-park': 'nbhdInmanPark',
-  decatur: 'nbhdDecatur',
+  buckhead: 'nbhdBuckhead', midtown: 'nbhdMidtown', 'old-fourth-ward': 'nbhdOldFourthWard',
+  'inman-park': 'nbhdInmanPark', decatur: 'nbhdDecatur',
 };
 
-// Hero image
-const heroImg = entry.data.heroImage && entry.data.heroImage in images
-  ? images[entry.data.heroImage as ImageKey]
-  : images.atlantaSkyline;
+// Nearby markets in the same region (internal linking)
+const allCities = await getCollection('cities', (c) => c.data.published);
+const regionLabel = d.region === 'georgia' ? 'Across Georgia' : 'Metro Atlanta';
+const nearby = allCities
+  .filter((c) => c.data.slug !== d.slug && (isAtlanta ? c.data.region === 'metro' : c.data.region === d.region))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name))
+  .slice(0, 8);
+
+const heroKey: ImageKey = d.heroImage && d.heroImage in images ? (d.heroImage as ImageKey) : 'atlantaSkyline';
 
 const schemas = [
   breadcrumbSchema([
     { name: 'Home', path: '/' },
     { name: 'Areas We Serve', path: '/areas-we-serve/' },
-    { name: entry.data.name, path: `/${entry.data.slug}/` },
+    { name: d.name, path: `/${d.slug}/` },
   ]),
   serviceSchema({
-    name: `Short-Term Rental Management in ${entry.data.name}, ${entry.data.state}`,
-    description: entry.data.description,
+    name: `Short-Term Rental Management in ${d.name}, ${d.state}`,
+    description: d.description,
   }),
-  ...(entry.data.faqs.length ? [faqPageSchema(entry.data.faqs)] : []),
 ];
 ---
 
-<BaseLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  image={heroImg.src}
-  schemas={schemas}
->
-  <!-- Hero -->
-  <Section variant="forest">
-    <Container>
-      <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-sm text-cream/60">
-        <a href="/" class="hover:text-cream/90 transition-colors">Home</a>
-        <span aria-hidden="true">/</span>
-        <a href="/areas-we-serve/" class="hover:text-cream/90 transition-colors">Areas We Serve</a>
-        <span aria-hidden="true">/</span>
-        <span class="text-cream/90">{entry.data.name}</span>
-      </nav>
-      <Eyebrow class="text-brass">STR Management in {entry.data.name}</Eyebrow>
-      <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl lg:text-6xl">
-        {entry.data.name}, {entry.data.state} — Your Local STR Experts
-      </h1>
-      <p class="mt-5 max-w-2xl text-lg text-cream/80">
-        {entry.data.intro}
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <Button href="/rental-projection/" size="lg">Get my free projection</Button>
-        <Button href="/areas-we-serve/" variant="inverse" size="lg">All neighborhoods</Button>
-      </div>
-    </Container>
-  </Section>
+<BaseLayout title={d.title} description={d.description} image={images[heroKey].src} schemas={schemas}>
+  <PageHero
+    title={`Short-Term Rental Management in ${d.name}, ${d.state}`}
+    subtitle={d.intro}
+    eyebrow={`${d.name} · Airbnb & Vrbo management`}
+    imageKey={heroKey}
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: 'Areas We Serve', path: '/areas-we-serve/' },
+      { name: d.name, path: `/${d.slug}/` },
+    ]}
+    cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
+    secondaryCta={{ label: 'All areas we serve', href: '/areas-we-serve/' }}
+    size="lg"
+  />
 
-  <!-- Hero image band -->
-  <div class="relative h-64 w-full overflow-hidden sm:h-80 lg:h-96">
-    <img
-      src={heroImg.src}
-      alt={heroImg.alt}
-      loading="eager"
-      class="h-full w-full object-cover"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-forest/60 to-transparent"></div>
-  </div>
-
-  <!-- Highlights -->
+  <!-- What we deliver -->
   <Section variant="cream">
     <Container>
-      <div class="grid gap-12 lg:grid-cols-2 lg:gap-20 lg:items-start">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-20">
         <div>
-          <Eyebrow>What We Deliver</Eyebrow>
-          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-            Full-Service Management in {entry.data.name}
-          </h2>
+          <Eyebrow>What we deliver</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Full-service management in {d.name}</h2>
           <p class="mt-4 text-ink/80">
-            Keystone Stays handles every aspect of your {entry.data.name} short-term rental — from listing creation and professional photography to dynamic pricing, guest communication, and turnover management. One flat management rate. No surprises.
+            Keystone Stays handles every part of your {d.name} short-term rental — listing creation and professional photography, dynamic pricing, 24/7 guest communication, cleaning, and turnovers. One transparent rate, {site.pricing.rateNote}.
           </p>
-          <Button href="/services/" variant="secondary" class="mt-6">
-            See all services &rarr;
-          </Button>
+          <Button href="/services/" variant="secondary" class="mt-6">See all services &rarr;</Button>
         </div>
-        {entry.data.highlights.length > 0 && (
+        {d.highlights.length > 0 && (
           <div class="rounded-2xl border border-line bg-white p-8">
-            <h3 class="font-display text-lg text-forest">Why Keystone Stays in {entry.data.name}</h3>
-            <div class="mt-4">
-              <CheckList items={entry.data.highlights} />
-            </div>
+            <h3 class="font-display text-lg text-forest">Why Keystone Stays in {d.name}</h3>
+            <div class="mt-4"><CheckList items={d.highlights} /></div>
           </div>
         )}
       </div>
     </Container>
   </Section>
 
-  <!-- Neighborhoods grid -->
+  <!-- Neighborhoods grid (Atlanta) -->
   {orderedNeighborhoods.length > 0 && (
     <Section variant="white">
       <Container size="wide">
         <div class="mb-10 text-center">
-          <Eyebrow>{entry.data.name} Neighborhoods</Eyebrow>
-          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-            Neighborhoods We Serve in {entry.data.name}
-          </h2>
-          <p class="mx-auto mt-4 max-w-2xl text-ink/70">
-            Each {entry.data.name} neighborhood has its own demand profile, guest mix, and market dynamics. We manage properties across all of them.
-          </p>
+          <Eyebrow>{d.name} neighborhoods</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Neighborhoods we serve in {d.name}</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-ink/70">Each {d.name} neighborhood has its own demand profile and guest mix. We manage properties across all of them.</p>
         </div>
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {orderedNeighborhoods.map((n) => (
-            <NeighborhoodCard
-              name={n.data.name}
-              href={`/${entry.data.slug}/${n.data.slug}/`}
-              imageKey={nbhdImageMap[n.data.slug]}
-              blurb={n.data.intro.split('.')[0] + '.'}
-            />
+            <NeighborhoodCard name={n.data.name} href={`/${d.slug}/${n.data.slug}/`} imageKey={nbhdImageMap[n.data.slug]} blurb={n.data.intro.split('.')[0] + '.'} />
           ))}
         </div>
       </Container>
@@ -161,19 +116,17 @@ const schemas = [
   <!-- Why local management matters -->
   <Section variant="forest">
     <Container>
-      <div class="max-w-3xl mx-auto text-center">
-        <Eyebrow class="text-brass">Local vs. National</Eyebrow>
-        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
-          The {entry.data.name} Advantage: Local Knowledge at Every Level
-        </h2>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow class="text-brass">Local vs. national</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">The {d.name} advantage: local knowledge at every level</h2>
         <p class="mt-5 text-cream/80">
-          National STR management platforms run algorithms, not relationships. They set prices from national datasets, manage turnovers with remote contractor networks, and handle guest issues from call centers with no knowledge of your specific market. Keystone Stays is different. We live and work in {entry.data.name}. We know the event calendar, the neighborhood demand patterns, the local vendor relationships that make turnovers reliable, and the guest expectations that drive five-star reviews.
+          National STR platforms run algorithms, not relationships — pricing from national datasets, remote contractor turnovers, and call-center support with no feel for your market. Keystone Stays is different: we know {d.name}'s demand patterns, event calendar, and the local vendor relationships that make turnovers reliable and reviews five-star.
         </p>
         <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {[
-            { value: site.scale.staysPhrase, label: 'Guest stays managed' },
+            { value: '24/7', label: 'Local guest support' },
             { value: site.pricing.rate, label: 'All-inclusive management rate' },
-            { value: site.scale.ratingPhrase, label: 'Review performance' },
+            { value: '5★', label: site.scale.ratingPhrase },
           ].map((stat) => (
             <div class="rounded-xl border border-cream/15 bg-cream/5 p-6">
               <div class="font-display text-2xl text-brass">{stat.value}</div>
@@ -181,74 +134,82 @@ const schemas = [
             </div>
           ))}
         </div>
-        <Button href="/rental-projection/" size="lg" class="mt-10">
-          Get my free {entry.data.name} projection
-        </Button>
+        <Button href="/rental-projection/" size="lg" class="mt-10">Get my free {d.name} projection</Button>
       </div>
     </Container>
   </Section>
 
-  <!-- Rich body content -->
+  <!-- Rich body -->
   <Section variant="white">
-    <Container size="narrow">
-      <Prose>
-        <Content />
-      </Prose>
-    </Container>
+    <Container size="narrow"><Prose><Content /></Prose></Container>
   </Section>
 
-  <!-- Regulations teaser -->
+  <!-- Regulations: Atlanta-specific vs general (never assert wrong local rules) -->
   <Section variant="cream">
     <Container>
       <div class="rounded-2xl border border-line bg-white px-8 py-10">
-        <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div>
-            <Eyebrow>Regulatory Compliance</Eyebrow>
-            <h2 class="mt-3 font-display text-2xl text-forest sm:text-3xl">
-              {entry.data.name} Short-Term Rental Regulations
-            </h2>
-            <p class="mt-4 text-ink/80">
-              {entry.data.name} has specific licensing requirements for short-term rentals — including the City of Atlanta's STRL program and DeKalb County's new licensing requirement effective May 2026. Operating without proper permits risks fines starting at $500 and a mandatory one-year ban on new applications.
-            </p>
-            <p class="mt-3 text-ink/80">
-              Keystone Stays guides every client through the compliance process and stays current on regulatory changes across all the jurisdictions we serve.
-            </p>
-          </div>
-          <div class="space-y-4">
-            <div class="rounded-lg border border-line p-4">
-              <div class="text-sm font-medium text-forest">City of Atlanta STRL</div>
-              <div class="mt-1 text-sm text-ink/70">$150/year · max 2 per owner · primary residence required · atl311.com</div>
+        {isAtlanta ? (
+          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <Eyebrow>Regulatory compliance</Eyebrow>
+              <h2 class="mt-3 font-display text-2xl text-forest sm:text-3xl">{d.name} short-term rental regulations</h2>
+              <p class="mt-4 text-ink/80">The City of Atlanta requires a Short-Term Rental License, and DeKalb County introduced its own program effective May 2026. Operating without the right permits can mean steep fines. We guide every client through compliance and stay current as rules change.</p>
             </div>
-            <div class="rounded-lg border border-line p-4">
-              <div class="text-sm font-medium text-forest">DeKalb County (eff. May 2026)</div>
-              <div class="mt-1 text-sm text-ink/70">$175/year · 24-hr local contact required · portal.deckard.com</div>
+            <div class="space-y-4">
+              <div class="rounded-lg border border-line p-4">
+                <div class="text-sm font-medium text-forest">City of Atlanta STRL</div>
+                <div class="mt-1 text-sm text-ink/70">~$150/year · primary-residence rules · via atl311.com</div>
+              </div>
+              <div class="rounded-lg border border-line p-4">
+                <div class="text-sm font-medium text-forest">DeKalb County (eff. May 2026)</div>
+                <div class="mt-1 text-sm text-ink/70">~$175/year · local-contact requirement</div>
+              </div>
+              <Button href="/resources/atlanta-short-term-rental-regulations/" variant="secondary" class="w-full text-center">Full Atlanta STR regulations guide &rarr;</Button>
             </div>
-            <Button href="/resources/atlanta-short-term-rental-regulations/" variant="secondary" class="w-full text-center">
-              Full {entry.data.name} STR regulations guide &rarr;
-            </Button>
           </div>
-        </div>
+        ) : (
+          <div class="grid gap-8 lg:grid-cols-[2fr_1fr] lg:items-center">
+            <div>
+              <Eyebrow>Regulatory compliance</Eyebrow>
+              <h2 class="mt-3 font-display text-2xl text-forest sm:text-3xl">{d.name} short-term rental rules — handled</h2>
+              <p class="mt-4 text-ink/80">Short-term rental permitting in Georgia varies by city and county — licensing, occupancy taxes, and local rules differ from one market to the next. Keystone Stays helps every {d.name} owner navigate the local requirements and stay compliant, and we keep current as rules change.</p>
+              <p class="mt-3 text-ink/80">Always confirm the latest rules with {d.name}'s local authority before you list — we'll point you to exactly what applies to your property.</p>
+            </div>
+            <Button href="/resources/atlanta-short-term-rental-regulations/" variant="secondary" class="self-start text-center">Georgia STR regulations guide &rarr;</Button>
+          </div>
+        )}
       </div>
     </Container>
   </Section>
 
-  <!-- FAQ -->
-  {entry.data.faqs.length > 0 && (
+  <!-- Nearby markets (internal linking) -->
+  {nearby.length > 0 && (
     <Section variant="white">
-      <Container size="narrow">
-        <Eyebrow>Common Questions</Eyebrow>
-        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-          {entry.data.name} STR Management — FAQs
-        </h2>
-        <div class="mt-8">
-          <FAQ items={entry.data.faqs} />
+      <Container>
+        <div class="mb-8 text-center">
+          <Eyebrow>{regionLabel}</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Nearby areas we manage</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          {nearby.map((c) => (
+            <a href={`/${c.data.slug}/`} class="rounded-full border border-line bg-cream px-5 py-2.5 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">{c.data.name}</a>
+          ))}
+          <a href="/areas-we-serve/" class="rounded-full bg-forest px-5 py-2.5 text-sm text-cream transition-colors hover:bg-forest-700">All areas &rarr;</a>
         </div>
       </Container>
     </Section>
   )}
 
-  <CTABand
-    heading={`Ready to maximize your ${entry.data.name} property?`}
-    text="Get a free, comps-based rental projection from our local team — no sales pitch, just honest Atlanta data."
-  />
+  <!-- FAQ (emits FAQPage JSON-LD) -->
+  {d.faqs.length > 0 && (
+    <Section variant="cream">
+      <Container size="narrow">
+        <Eyebrow>Common questions</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">{d.name} STR management — FAQs</h2>
+        <div class="mt-8"><FAQ items={d.faqs} /></div>
+      </Container>
+    </Section>
+  )}
+
+  <CTABand heading={`Ready to maximize your ${d.name} property?`} text="Get a free, comps-based rental projection from our local team — no sales pitch, just honest local data." />
 </BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
 import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
@@ -76,59 +77,15 @@ const schemas = [
   description={`Keystone Stays charges ${site.pricing.rate} of booking revenue — all-inclusive, no hidden fees. See exactly what's included and what we never charge for.`}
   schemas={schemas}
 >
-  <!-- Hero: transparency as the weapon -->
-  <Section variant="white" class="pb-12 pt-20 sm:pb-16 sm:pt-28">
-    <Container>
-      <div class="grid items-center gap-12 lg:grid-cols-2">
-        <!-- Left: the pitch -->
-        <div>
-          <Eyebrow>Transparent pricing</Eyebrow>
-          <h1 class="mt-3 font-display text-4xl text-forest sm:text-5xl lg:text-6xl">
-            One rate. No surprises. No fine print.
-          </h1>
-          <p class="mt-5 text-lg leading-relaxed text-ink/80">
-            We charge a single, all-inclusive management fee. You see it before you sign, and it never changes without your knowledge. That's the whole deal.
-          </p>
-          <div class="mt-8 flex flex-wrap items-center gap-4">
-            <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
-            <Button href="/services/" variant="ghost" size="lg">See what's included →</Button>
-          </div>
-        </div>
-
-        <!-- Right: the big rate card -->
-        <div class="rounded-3xl border border-line bg-cream p-10 text-center shadow-sm">
-          <Eyebrow class="justify-center">Management fee</Eyebrow>
-          <div class="mt-5 font-display text-7xl font-light text-forest sm:text-8xl">
-            {site.pricing.rate}
-          </div>
-          <p class="mt-3 text-sm text-ink/70">{site.pricing.rateNote}</p>
-          <div class="my-8 h-px bg-line" />
-          <ul class="space-y-2 text-left text-sm text-ink/80">
-            <li class="flex items-center gap-2">
-              <span class="h-1.5 w-1.5 flex-none rounded-full bg-brass-600" />
-              All services included — no add-ons
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1.5 w-1.5 flex-none rounded-full bg-brass-600" />
-              We earn only when you earn
-            </li>
-            {site.features.noLockIn && (
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 flex-none rounded-full bg-brass-600" />
-                No long-term contract required
-              </li>
-            )}
-            {site.features.guarantee && (
-              <li class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 flex-none rounded-full bg-brass-600" />
-                {site.features.guaranteeText}
-              </li>
-            )}
-          </ul>
-        </div>
-      </div>
-    </Container>
-  </Section>
+  <PageHero
+    title="Airbnb Management Pricing in Atlanta — Transparent, All-In"
+    subtitle="One flat management fee covers everything. See it before you sign, and it never changes without your knowledge."
+    eyebrow="TRANSPARENT PRICING"
+    imageKey="pricingDashboard"
+    breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing/' }]}
+    cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
+    secondaryCta={{ label: 'See what\'s included', href: '/services/' }}
+  />
 
   <!-- What's included -->
   <Section variant="cream">

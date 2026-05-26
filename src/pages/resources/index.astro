@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
-import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Button from '@/components/ui/Button.astro';
 import Badge from '@/components/ui/Badge.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import PageHero from '@/components/ui/PageHero.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 
 const allResources = await getCollection('resources', (entry) => !entry.data.draft);
@@ -30,18 +30,13 @@ const categories = [...new Set(resources.map((r) => r.data.category))];
   description="Practical guides for Atlanta Airbnb hosts: management fees explained, short-term rental regulations, and how to decide if professional management is right for you."
   schemas={schemas}
 >
-  <!-- Hero -->
-  <Section variant="forest">
-    <Container size="narrow">
-      <Eyebrow class="text-brass">Owner Resources</Eyebrow>
-      <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl">
-        Honest guides for Atlanta STR owners
-      </h1>
-      <p class="mt-4 max-w-2xl text-lg text-cream/80">
-        Everything you need to understand fees, navigate regulations, and decide whether professional management makes sense for your property.
-      </p>
-    </Container>
-  </Section>
+  <PageHero
+    title="Honest guides for Atlanta STR owners"
+    subtitle="Everything you need to understand fees, navigate regulations, and decide whether professional management makes sense for your property."
+    eyebrow="Owner Resources"
+    imageKey="photography"
+    breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Resources', path: '/resources/' }]}
+  />
 
   <!-- Category nav (visible if multiple categories) -->
   {categories.length > 1 && (

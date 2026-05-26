@@ -5,10 +5,10 @@ import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Button from '@/components/ui/Button.astro';
-import Badge from '@/components/ui/Badge.astro';
 import Prose from '@/components/ui/Prose.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import PageHero from '@/components/ui/PageHero.astro';
 import { breadcrumbSchema, articleSchema } from '@/lib/schema';
 import { images } from '@/data/images';
 import type { ImageKey } from '@/data/images';
@@ -26,6 +26,7 @@ const { Content } = await render(entry);
 
 const heroImageKey = entry.data.heroImage as ImageKey | undefined;
 const heroImg = heroImageKey && heroImageKey in images ? images[heroImageKey] : null;
+// heroImg still used for articleSchema image prop below
 
 const schemas = [
   breadcrumbSchema([
@@ -51,61 +52,17 @@ const schemas = [
   ogType="article"
   schemas={schemas}
 >
-  <!-- Hero -->
-  <Section variant="forest">
-    <Container size="narrow">
-      <div class="flex items-center gap-3 mb-4">
-        <a
-          href="/resources/"
-          class="text-sm text-cream/60 hover:text-brass transition-colors"
-        >
-          ← Resources
-        </a>
-        <span class="text-cream/30">|</span>
-        <Badge variant="brass">{entry.data.category}</Badge>
-      </div>
-      <h1 class="font-display text-3xl text-cream sm:text-4xl lg:text-5xl leading-tight">
-        {entry.data.title}
-      </h1>
-      <p class="mt-4 text-lg text-cream/80 max-w-2xl">
-        {entry.data.description}
-      </p>
-      <p class="mt-4 text-sm text-cream/50">
-        Published{' '}
-        <time datetime={entry.data.publishDate.toISOString()}>
-          {entry.data.publishDate.toLocaleDateString('en-US', {
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric',
-          })}
-        </time>
-        {entry.data.updatedDate && (
-          <span>
-            {' · Updated '}
-            <time datetime={entry.data.updatedDate.toISOString()}>
-              {entry.data.updatedDate.toLocaleDateString('en-US', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric',
-              })}
-            </time>
-          </span>
-        )}
-      </p>
-    </Container>
-  </Section>
-
-  <!-- Hero image -->
-  {heroImg && (
-    <div class="aspect-[16/6] w-full overflow-hidden bg-forest-50">
-      <img
-        src={heroImg.src}
-        alt={heroImg.alt}
-        class="h-full w-full object-cover"
-        loading="eager"
-      />
-    </div>
-  )}
+  <PageHero
+    title={entry.data.title}
+    subtitle={entry.data.description}
+    eyebrow={entry.data.category}
+    imageKey={(entry.data.heroImage as ImageKey | undefined) ?? 'about'}
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: 'Resources', path: '/resources/' },
+      { name: entry.data.title, path: `/resources/${entry.id}/` },
+    ]}
+  />
 
   <!-- Article body -->
   <Section variant="white">

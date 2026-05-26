@@ -403,6 +403,44 @@ const differentiators = [
     </Container>
   </Section>
 
+  <!-- ─── BEYOND ATLANTA — GEORGIA COVERAGE ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="text-center">
+        <Eyebrow>Across metro Atlanta &amp; Georgia</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          The same five-star management, statewide.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-ink/75">
+          We manage short-term rentals well beyond the city — across the metro suburbs and Georgia's top destination markets.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-10 max-w-4xl space-y-7">
+        <div>
+          <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-brass-600">Metro Atlanta</p>
+          <div class="flex flex-wrap justify-center gap-2.5">
+            {[['Sandy Springs', 'sandy-springs'], ['Roswell', 'roswell'], ['Alpharetta', 'alpharetta'], ['Marietta', 'marietta'], ['Smyrna', 'smyrna'], ['Brookhaven', 'brookhaven'], ['Dunwoody', 'dunwoody'], ['Johns Creek', 'johns-creek'], ['Kennesaw', 'kennesaw'], ['Duluth', 'duluth']].map(([label, slug]) => (
+              <a href={`/${slug}/`} class="rounded-full border border-line bg-cream px-4 py-2 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">{label}</a>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-brass-600">Across Georgia</p>
+          <div class="flex flex-wrap justify-center gap-2.5">
+            {[['Savannah', 'savannah'], ['Tybee Island', 'tybee-island'], ['Blue Ridge', 'blue-ridge'], ['Helen', 'helen'], ['Athens', 'athens'], ['Lake Lanier', 'lake-lanier'], ['Augusta', 'augusta'], ['Columbus', 'columbus']].map(([label, slug]) => (
+              <a href={`/${slug}/`} class="rounded-full border border-line bg-cream px-4 py-2 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">{label}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <Button href="/areas-we-serve/" variant="secondary">See all areas we serve &rarr;</Button>
+      </div>
+    </Container>
+  </Section>
+
   <!-- ─── OUTCOMES / SCALE BAND ─── -->
   <Section variant="tint">
     <Container>

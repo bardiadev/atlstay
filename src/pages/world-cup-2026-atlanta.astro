@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import CheckList from '@/components/ui/CheckList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import PageHero from '@/components/ui/PageHero.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 import { images } from '@/data/images';
 import { site } from '@/config/site';
@@ -48,36 +49,19 @@ const schemas = [
   image={images.worldCup.src}
   schemas={schemas}
 >
-  <!-- Hero -->
-  <Section variant="forest" class="relative overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img
-        src={images.worldCup.src}
-        alt={images.worldCup.alt}
-        class="h-full w-full object-cover opacity-20"
-        loading="eager"
-      />
-    </div>
-    <Container size="narrow" class="relative z-10">
-      <Eyebrow class="text-brass">FIFA World Cup 2026 · Atlanta</Eyebrow>
-      <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl lg:text-6xl leading-tight">
-        The World Cup is coming to Atlanta.
-        <span class="text-brass"> Is your home ready?</span>
-      </h1>
-      <p class="mt-5 text-xl text-cream/80 max-w-2xl leading-relaxed">
-        Mercedes-Benz Stadium is a FIFA World Cup 2026 host venue. Millions of fans are heading to Atlanta this summer — and many of them will need a place to stay. This is a rare, time-limited opportunity for Atlanta homeowners.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <Button href="/rental-projection/" size="lg" variant="primary">
-          Get my free projection
-        </Button>
-        <Button href="/services/" size="lg" variant="inverse">
-          See how we work
-        </Button>
-      </div>
-      <p class="mt-4 text-sm text-cream/50">No sales pitch. Just honest Atlanta data. No obligation — ever.</p>
-    </Container>
-  </Section>
+  <PageHero
+    title="The World Cup is coming to Atlanta. Is your home ready?"
+    subtitle="Mercedes-Benz Stadium is a FIFA World Cup 2026 host venue. Millions of fans are heading to Atlanta this summer — and many of them will need a place to stay. This is a rare, time-limited opportunity for Atlanta homeowners."
+    eyebrow="Limited 2026 opportunity"
+    imageKey="worldCup"
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: 'World Cup 2026 Atlanta', path: '/world-cup-2026-atlanta/' },
+    ]}
+    cta={{ label: 'Get my free projection', href: '/rental-projection/' }}
+    secondaryCta={{ label: 'See how we work', href: '/services/' }}
+    size="lg"
+  />
 
   <!-- Stats / urgency band -->
   <Section variant="brass">

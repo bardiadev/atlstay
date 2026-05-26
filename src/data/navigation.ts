@@ -29,13 +29,15 @@ export const footerNav: { heading: string; links: { label: string; href: string 
     ],
   },
   {
-    heading: 'Atlanta neighborhoods',
+    heading: 'Popular areas',
     links: [
+      { label: 'Atlanta', href: '/atlanta/' },
       { label: 'Buckhead', href: '/atlanta/buckhead/' },
-      { label: 'Midtown', href: '/atlanta/midtown/' },
-      { label: 'Old Fourth Ward', href: '/atlanta/old-fourth-ward/' },
-      { label: 'Inman Park', href: '/atlanta/inman-park/' },
-      { label: 'Decatur', href: '/atlanta/decatur/' },
+      { label: 'Marietta', href: '/marietta/' },
+      { label: 'Sandy Springs', href: '/sandy-springs/' },
+      { label: 'Savannah', href: '/savannah/' },
+      { label: 'Blue Ridge', href: '/blue-ridge/' },
+      { label: 'All areas we serve', href: '/areas-we-serve/' },
     ],
   },
   {

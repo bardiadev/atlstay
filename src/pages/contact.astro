@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
 import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Button from '@/components/ui/Button.astro';
-import Badge from '@/components/ui/Badge.astro';
 import Card from '@/components/ui/Card.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import { site } from '@/config/site';
@@ -38,20 +38,15 @@ const serviceAreaNeighborhoods = [
   schemas={schemas}
 >
 
-  <!-- ─── HERO ─── -->
-  <Section variant="forest" class="!pb-16">
-    <Container>
-      <div class="max-w-2xl">
-        <Eyebrow class="text-brass">Get in touch</Eyebrow>
-        <h1 class="mt-3 font-display text-4xl text-cream sm:text-5xl">
-          Let's talk about your property.
-        </h1>
-        <p class="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">
-          Whether you're ready to get started, have a question, or just want to explore your options — we're easy to reach, and we don't do sales calls. Just honest conversations.
-        </p>
-      </div>
-    </Container>
-  </Section>
+  <PageHero
+    title="Contact Keystone Stays — Atlanta STR Management"
+    subtitle="Ready to get started or just have questions? We're easy to reach and we don't do sales calls — just honest conversations about your property."
+    eyebrow="GET IN TOUCH"
+    imageKey="atlantaSkyline"
+    breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact/' }]}
+    cta={{ label: 'Get my free projection', href: '/rental-projection/' }}
+    size="sm"
+  />
 
   <!-- ─── CONTACT DETAILS + FORM ─── -->
   <Section variant="white">
