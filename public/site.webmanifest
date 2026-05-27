@@ -1,0 +1,15 @@
+{
+  "name": "ATLStay — Atlanta Short-Term Rental Management",
+  "short_name": "ATLStay",
+  "description": "Premium short-term rental management across Atlanta and Georgia. Listing, dynamic pricing, guests, cleaning, and five-star reviews — handled.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#14342B",
+  "theme_color": "#14342B",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
