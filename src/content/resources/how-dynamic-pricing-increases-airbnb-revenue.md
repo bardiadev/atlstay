@@ -1,7 +1,7 @@
 ---
 title: "How Dynamic Pricing Increases Your Airbnb Revenue"
 description: "Why daily, demand-based pricing out-earns a set-and-forget nightly rate — the levers that move price, why Atlanta rewards it, and how optimization can net you more even after management fees."
-category: "Pricing Guide"
+category: "Pricing & Revenue"
 publishDate: 2026-05-27
 heroImage: "pricingDashboard"
 featured: false

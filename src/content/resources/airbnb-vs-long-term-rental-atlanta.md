@@ -1,7 +1,7 @@
 ---
 title: "Airbnb vs. Long-Term Rental in Atlanta: Which Earns More?"
 description: "Short-term (Airbnb) vs. long-term renting in Atlanta — an honest look at revenue potential, costs, effort, stability, and regulations to help you decide what fits your property and goals."
-category: "Investment Guide"
+category: "Comparisons & Decisions"
 publishDate: 2026-05-27
 heroImage: "suburbHome"
 featured: false

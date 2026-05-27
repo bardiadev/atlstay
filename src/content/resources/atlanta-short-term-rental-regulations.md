@@ -1,7 +1,7 @@
 ---
 title: "Atlanta Short-Term Rental Regulations Guide (2026)"
 description: "A complete guide to Atlanta's short-term rental permit requirements, DeKalb County's new licensing program, tax obligations, and what to verify before you list."
-category: "Regulations"
+category: "Regulations & Taxes"
 publishDate: 2026-05-26
 heroImage: "atlantaSkyline"
 featured: true

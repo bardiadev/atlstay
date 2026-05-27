@@ -1,7 +1,7 @@
 ---
 title: "Is Airbnb Management Worth It? An Honest Assessment"
 description: "Self-managing vs. hiring an Airbnb manager — an honest look at the real costs, time commitment, revenue impact, and how to decide what's right for your Atlanta property."
-category: "Decision Guide"
+category: "Comparisons & Decisions"
 publishDate: 2026-05-26
 heroImage: "ownerHandshake"
 featured: false
