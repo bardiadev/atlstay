@@ -5,9 +5,8 @@ import Container from '@/components/ui/Container.astro';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
 import StepList from '@/components/ui/StepList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
-import TestimonialCard from '@/components/ui/TestimonialCard.astro';
+import ReviewProof from '@/components/ui/ReviewProof.astro';
 import ProjectionForm from '@/components/react/ProjectionForm';
-import { testimonials } from '@/data/testimonials';
 import { site } from '@/config/site';
 import { breadcrumbSchema } from '@/lib/schema';
 import { images } from '@/data/images';
@@ -255,26 +254,11 @@ const schemas = [
   </Section>
 
   <!-- =============================================
-       TESTIMONIALS
+       SOCIAL PROOF (aggregate, owner-verified)
        ============================================= -->
   <Section variant="white">
     <Container>
-      <div class="mx-auto max-w-xl text-center">
-        <Eyebrow>What Atlanta owners say</Eyebrow>
-        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-          Real owners. Real results.
-        </h2>
-      </div>
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {testimonials.map((t) => (
-          <TestimonialCard
-            quote={t.quote}
-            name={t.name}
-            location={t.location}
-            rating={t.rating}
-          />
-        ))}
-      </div>
+      <ReviewProof heading="Owners trust us with their homes." />
     </Container>
   </Section>
 

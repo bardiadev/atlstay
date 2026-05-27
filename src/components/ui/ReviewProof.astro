@@ -1,0 +1,60 @@
+---
+// Honest aggregate social proof — built entirely from owner-verified numbers
+// in src/config/site.ts (4.9★ across 10,000+ five-star reviews, 450+ homes,
+// 10+ years). No fabricated individual quotes or names. When the owner has
+// genuine, attributable owner testimonials, they can be added via
+// TestimonialCard + data/testimonials.ts.
+import Eyebrow from './Eyebrow.astro';
+import { site } from '@/config/site';
+
+interface Props {
+  /** Override the section heading if a page wants a different framing. */
+  heading?: string;
+}
+const { heading = 'Real reviews. Real numbers.' } = Astro.props;
+
+const points = [
+  { value: site.stats.reviews, label: 'five-star guest reviews' },
+  { value: site.stats.homes, label: 'homes under management' },
+  { value: `${site.stats.years} yrs`, label: 'hosting across Atlanta' },
+];
+---
+
+<div class="text-center">
+  <Eyebrow>Proven track record</Eyebrow>
+  <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">{heading}</h2>
+  <p class="mx-auto mt-3 max-w-xl text-ink/70">
+    A {site.reviews.ratingValue}-star average across {site.stats.reviews} five-star guest reviews,
+    earned over {site.stats.years} years on Airbnb, Vrbo, and direct bookings.
+  </p>
+
+  <!-- Aggregate rating -->
+  <div class="mt-8 inline-flex flex-col items-center rounded-2xl border border-line bg-white px-10 py-7 shadow-sm">
+    <div class="flex items-center gap-1 text-brass" aria-label={`${site.reviews.ratingValue} out of 5 stars`}>
+      {Array.from({ length: 5 }).map(() => (
+        <svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 15l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
+        </svg>
+      ))}
+    </div>
+    <p class="mt-3 font-display text-5xl leading-none text-forest">
+      {site.reviews.ratingValue}<span class="text-2xl text-stone">/5</span>
+    </p>
+    <p class="mt-2 text-sm text-stone">average across {site.stats.reviews} reviews</p>
+  </div>
+</div>
+
+<div class="mt-10 grid gap-6 sm:grid-cols-3">
+  {points.map((p) => (
+    <div class="rounded-2xl border border-line bg-cream/40 p-8 text-center">
+      <p class="font-display text-4xl text-forest">{p.value}</p>
+      <p class="mt-2 text-sm text-stone">{p.label}</p>
+    </div>
+  ))}
+</div>
+
+<p class="mx-auto mt-8 max-w-2xl text-center text-sm text-stone">
+  Verified across booking platforms over {site.stats.years} years of hosting.
+  Owner references available on request —{' '}
+  <a href="/contact/" class="font-medium text-brass-600 underline-offset-4 hover:underline">just ask</a>.
+</p>
