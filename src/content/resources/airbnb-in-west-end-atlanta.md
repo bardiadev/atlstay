@@ -1,7 +1,7 @@
 ---
 title: "West End Airbnb: Owner's Guide to Atlanta's Westside Neighborhood"
 description: "West End Airbnb demand is built on BeltLine access, Atlanta University Center proximity, and a growing cultural scene. Here's what owners need to know."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-01-22
 heroImage: "nbhdDefault"
 featured: false

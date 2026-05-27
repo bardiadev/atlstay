@@ -1,7 +1,7 @@
 ---
 title: "How Much Can You Make on Airbnb in Atlanta?"
 description: "The honest answer depends on several factors. Here's how to think about Airbnb income in Atlanta and how to get a real, comps-based projection for your property."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-05-06
 heroImage: "ownerHandshake"
 featured: false

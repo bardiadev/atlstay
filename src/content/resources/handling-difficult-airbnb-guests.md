@@ -1,7 +1,7 @@
 ---
 title: "Handling Difficult Airbnb Guests Professionally"
 description: "Clear policies, calm communication, and documentation protect your listing when guests are difficult. Here's how professional hosts handle it."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2025-01-21
 heroImage: "guestExperience"
 featured: false

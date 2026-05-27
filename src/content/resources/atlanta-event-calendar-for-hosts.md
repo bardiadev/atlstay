@@ -1,7 +1,7 @@
 ---
 title: "The Atlanta Event Calendar Every Host Should Know"
 description: "A recurring-demand guide for Atlanta Airbnb hosts: conventions, sports seasons, concerts, festivals, and graduation weekends that drive bookings year-round."
-category: "Events & Seasonality"
+category: "Pricing & Revenue"
 publishDate: 2025-09-09
 heroImage: "atlantaSkyline"
 featured: false

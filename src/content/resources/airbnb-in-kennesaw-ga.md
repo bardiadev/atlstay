@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Kennesaw, GA: An Owner's Guide"
 description: "What Kennesaw property owners need to know about running a short-term rental — from KSU demand cycles to Cobb County regulations and what guests expect."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-08-12
 heroImage: "metroAtlanta"
 featured: false

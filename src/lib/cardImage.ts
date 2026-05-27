@@ -1,70 +1,33 @@
-// Smart, varied card imagery. Maps each location to a category-appropriate
-// photo pool (urban intown, suburban metro, mountains, lake, coast, GA city),
-// then assigns images so no two *adjacent* cards in a grid share one — fixing
-// the "every card uses the same picture" look. Real photos, decoratively
-// cropped/graded (see scripts/generate-card-images.mjs); not claiming to be a
-// specific address.
+// Card styling for area/neighborhood cards. Instead of repeating a small pool
+// of photos (which read as "the same picture" and made white text unreadable),
+// each card gets a rich, dark, brand-harmonious gradient + a quiet category
+// icon (skyline / house / mountain / waves) so cream text always stays crisp
+// and no two nearby cards look alike. The location name is the focus.
+//
+// Gradients are emitted as real CSS values (applied via inline `style`) so they
+// render regardless of how the CSS scanner treats this file.
 
-export interface CardImage {
-  src: string;
-  alt: string;
+export interface CardStyle {
+  gradient: string; // CSS `background-image` value (dark → very dark; cream text safe)
+  icon: 'building' | 'house' | 'mountain' | 'wave';
 }
 
-const C = (src: string, alt: string): CardImage => ({ src, alt });
-
-const POOLS: Record<string, CardImage[]> = {
-  intown: [
-    C('/images/buckhead.jpg', 'An upscale intown Atlanta neighborhood'),
-    C('/images/midtown.jpg', 'Midtown Atlanta'),
-    C('/images/old-fourth-ward.jpg', 'The Atlanta BeltLine corridor'),
-    C('/images/inman-park.jpg', 'A historic Atlanta neighborhood'),
-    C('/images/decatur.jpg', 'A walkable Atlanta district'),
-    C('/images/atlanta-skyline.jpg', 'The Atlanta skyline'),
-    C('/images/neighborhood-default.jpg', 'A charming Atlanta residential street'),
-  ],
-  suburban: [
-    C('/images/suburb-home.jpg', 'A metro Atlanta home'),
-    C('/images/metro-atlanta.jpg', 'A leafy metro Atlanta street'),
-    C('/images/neighborhood-default.jpg', 'A metro Atlanta residential street'),
-    C('/images/cards/suburb-1.jpg', 'A metro Atlanta home'),
-    C('/images/cards/suburb-2.jpg', 'A metro Atlanta home'),
-    C('/images/cards/suburb-3.jpg', 'A metro Atlanta street'),
-    C('/images/cards/suburb-4.jpg', 'A metro Atlanta street'),
-    C('/images/cards/suburb-5.jpg', 'A metro Atlanta residential area'),
-    C('/images/cards/suburb-6.jpg', 'A metro Atlanta residential area'),
-  ],
-  mountains: [
-    C('/images/north-georgia.jpg', 'The north Georgia mountains'),
-    C('/images/cards/mtn-1.jpg', 'The north Georgia mountains'),
-    C('/images/cards/mtn-2.jpg', 'North Georgia mountain country'),
-    C('/images/cards/mtn-3.jpg', 'The Blue Ridge mountains of north Georgia'),
-  ],
-  lake: [
-    C('/images/lake-lanier.jpg', 'A north Georgia lake'),
-    C('/images/cards/lake-1.jpg', 'A north Georgia lake'),
-    C('/images/cards/lake-2.jpg', 'Lakefront in north Georgia'),
-    C('/images/cards/lake-3.jpg', 'A Georgia lake community'),
-  ],
-  coast: [
-    C('/images/georgia-coast.jpg', 'The Georgia coast'),
-    C('/images/savannah.jpg', 'Historic Savannah, Georgia'),
-    C('/images/cards/coast-1.jpg', 'The Georgia coast'),
-    C('/images/cards/coast-2.jpg', 'A Georgia coastal town'),
-    C('/images/cards/coast-3.jpg', 'A historic Georgia square'),
-    C('/images/cards/coast-4.jpg', 'Coastal Georgia charm'),
-  ],
-  city: [
-    C('/images/georgia-city.jpg', 'A historic Georgia downtown'),
-    C('/images/athens-ga.jpg', 'A Georgia college-town downtown'),
-    C('/images/cards/city-1.jpg', 'A historic Georgia downtown'),
-    C('/images/cards/city-2.jpg', 'A Georgia downtown street'),
-    C('/images/cards/city-3.jpg', 'A Georgia downtown'),
-    C('/images/cards/city-4.jpg', 'A Georgia city street'),
-  ],
-};
+// Deep, jewel-toned, brand-harmonious gradients — all dark enough for cream text.
+const GRADIENTS = [
+  'linear-gradient(135deg,#1c4a3c,#0e241d)', // brand forest
+  'linear-gradient(135deg,#1a4a3a,#0a201a)',
+  'linear-gradient(135deg,#143a3a,#08201f)',
+  'linear-gradient(135deg,#1c3550,#0c1d2e)',
+  'linear-gradient(135deg,#33294a,#161226)',
+  'linear-gradient(135deg,#4a3a20,#1d1408)',
+  'linear-gradient(135deg,#23402c,#0f231a)',
+  'linear-gradient(135deg,#2b3a42,#121c20)',
+  'linear-gradient(135deg,#3f2a2a,#1a0f0f)',
+  'linear-gradient(135deg,#15403a,#0a221e)',
+];
 
 const KEYWORDS: Record<string, string[]> = {
-  mountains: ['blue-ridge', 'helen', 'dahlonega', 'ellijay', 'blairsville', 'hiawassee', 'clayton', 'jasper', 'dawsonville', 'clarkesville', 'cleveland', 'cornelia', 'toccoa', 'canton', 'ball-ground', 'young-harris', 'sautee', 'mountain'],
+  mountains: ['blue-ridge', 'helen', 'dahlonega', 'ellijay', 'blairsville', 'hiawassee', 'clayton', 'jasper', 'dawsonville', 'clarkesville', 'cleveland', 'cornelia', 'toccoa', 'canton', 'ball-ground', 'young-harris', 'sautee', 'mountain', 'cartersville'],
   lake: ['lanier', 'gainesville', 'buford', 'cumming', 'flowery-branch', 'acworth', 'lake'],
   coast: ['savannah', 'tybee', 'st-simons', 'jekyll', 'brunswick', 'sea-island', 'darien', 'pooler', 'richmond-hill', 'island', 'coast'],
   city: ['columbus', 'augusta', 'macon', 'athens', 'valdosta', 'warner-robins', 'albany', 'rome', 'dalton', 'milledgeville', 'statesboro', 'americus', 'carrollton'],
@@ -81,6 +44,15 @@ export function categoryFor(slug: string, region?: string): string {
   return 'intown';
 }
 
+const ICON_FOR: Record<string, CardStyle['icon']> = {
+  intown: 'building',
+  city: 'building',
+  suburban: 'house',
+  mountains: 'mountain',
+  lake: 'wave',
+  coast: 'wave',
+};
+
 function hash(s: string): number {
   let h = 2166136261;
   for (let i = 0; i < s.length; i++) {
@@ -91,19 +63,27 @@ function hash(s: string): number {
 }
 
 /**
- * Assign an image to each item so no two consecutive items share one.
- * Stable per slug (via hash) but bumps to the next pool image on a collision
- * with the previous card.
+ * Assign a {gradient, icon} per item. The icon reflects the location's
+ * character (semantic); the gradient is varied by slug so a grid never looks
+ * repetitive. We avoid reusing any of the last few gradients, which keeps
+ * horizontal neighbours — and the card directly above in a 4-column grid —
+ * from ever sharing the same background.
  */
-export function assignCardImages(items: { slug: string; region?: string }[]): CardImage[] {
-  const out: CardImage[] = [];
-  let prev = '';
+export function assignCardStyles(items: { slug: string; region?: string }[]): CardStyle[] {
+  const out: CardStyle[] = [];
+  const recent: string[] = [];
+  const window = Math.min(4, GRADIENTS.length - 1);
   for (const it of items) {
-    const pool = POOLS[categoryFor(it.slug, it.region)] ?? POOLS.intown;
-    let idx = hash(it.slug) % pool.length;
-    if (pool.length > 1 && pool[idx].src === prev) idx = (idx + 1) % pool.length;
-    out.push(pool[idx]);
-    prev = pool[idx].src;
+    let i = hash(it.slug) % GRADIENTS.length;
+    let guard = 0;
+    while (recent.includes(GRADIENTS[i]) && guard < GRADIENTS.length) {
+      i = (i + 1) % GRADIENTS.length;
+      guard++;
+    }
+    const gradient = GRADIENTS[i];
+    recent.push(gradient);
+    if (recent.length > window) recent.shift();
+    out.push({ gradient, icon: ICON_FOR[categoryFor(it.slug, it.region)] ?? 'building' });
   }
   return out;
 }

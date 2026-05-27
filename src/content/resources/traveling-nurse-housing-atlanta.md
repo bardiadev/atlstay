@@ -1,7 +1,7 @@
 ---
 title: "Housing Traveling Nurses in Atlanta: Owner's Guide"
 description: "How Atlanta property owners can attract traveling nurses and healthcare workers — what they need, which hospitals anchor demand, and why mid-term fits this segment well."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-01-23
 heroImage: "ownerHandshake"
 featured: false

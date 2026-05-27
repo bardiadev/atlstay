@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Lawrenceville, GA: Owner's Guide"
 description: "What Lawrenceville owners need to know about short-term rentals — courthouse square, Aurora Theatre, youth sports, and local rules before you list."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-09-15
 heroImage: "metroAtlanta"
 featured: false

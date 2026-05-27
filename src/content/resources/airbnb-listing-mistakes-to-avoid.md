@@ -1,7 +1,7 @@
 ---
 title: "Common Airbnb Listing Mistakes to Avoid"
 description: "These listing and setup mistakes quietly cost Atlanta Airbnb hosts bookings every day. Here's what they are, why they hurt, and how to fix them."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-01-15
 heroImage: "photography"
 featured: false

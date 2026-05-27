@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Norcross, GA: A Property Owner's Guide"
 description: "What Norcross owners need to know about short-term rentals — historic downtown, Gwinnett business demand, and local rules before you list."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-09-01
 heroImage: "metroAtlanta"
 featured: false

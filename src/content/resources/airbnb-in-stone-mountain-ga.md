@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Stone Mountain, GA: Owner's Guide"
 description: "What owners need to know about running an Airbnb in Stone Mountain — park tourism, seasonal events, family demand, and how local STR rules actually work."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-10-07
 heroImage: "metroAtlanta"
 featured: false

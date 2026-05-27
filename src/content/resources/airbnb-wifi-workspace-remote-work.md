@@ -1,7 +1,7 @@
 ---
 title: "Making Your Airbnb Remote-Work Ready"
 description: "How to set up fast wifi, a real workspace, and the right amenities to attract Atlanta's growing remote-work and workation guest segment."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2025-04-09
 heroImage: "serviceManagement"
 featured: false

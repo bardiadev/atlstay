@@ -1,7 +1,7 @@
 ---
 title: "How to Respond to Airbnb Reviews (Even Bad Ones)"
 description: "Writing professional public responses to Airbnb reviews — good and bad — is one of the highest-leverage reputation tools available to hosts. Here's how to do it."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2025-02-14
 heroImage: "guestExperience"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Do Pools and Hot Tubs Pay Off for Airbnb?"
 description: "An honest look at the demand boost, maintenance costs, safety requirements, and liability tradeoffs before adding a pool or hot tub to your Atlanta Airbnb."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2025-04-23
 heroImage: "suburbHome"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Midtown Atlanta Airbnb: An Owner's Complete Guide"
 description: "Your guide to running a Midtown Atlanta Airbnb — walkable demand drivers, guest types, property fit, and how to compete in one of Atlanta's busiest STR markets."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-02-24
 heroImage: "nbhdMidtown"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Vinings, GA: An Owner's Guide"
 description: "What short-term rental owners need to know about Vinings, GA — guest demand, local rules, property fit, and how to maximize an upscale historic address."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-09-25
 heroImage: "metroAtlanta"
 featured: false

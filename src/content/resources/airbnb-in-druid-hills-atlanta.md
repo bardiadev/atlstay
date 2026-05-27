@@ -1,7 +1,7 @@
 ---
 title: "Druid Hills Airbnb: Owner's Guide to Atlanta's Historic Estate District"
 description: "Druid Hills Airbnb demand is anchored by Emory University, the CDC, and Fernbank. Here's what owners need to know about guests, property fit, and local rules."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-02-05
 heroImage: "nbhdDefault"
 featured: false

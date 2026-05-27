@@ -1,7 +1,7 @@
 ---
 title: "Airbnb vs. Vrbo for Atlanta Hosts: Which Platform Wins?"
 description: "Airbnb and Vrbo attract different guests and charge different fees. Here's how Atlanta hosts can decide where to list — or whether to list on both."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-02-25
 heroImage: "photography"
 featured: false

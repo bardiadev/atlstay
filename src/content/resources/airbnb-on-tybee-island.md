@@ -1,7 +1,7 @@
 ---
 title: "Airbnb on Tybee Island: An Owner's Guide"
 description: "Everything owners need to know about Airbnb on Tybee Island — peak demand, STR regulations, property setup, and how to maximize Georgia's premier beach market."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-04-24
 heroImage: "georgiaCoast"
 featured: false

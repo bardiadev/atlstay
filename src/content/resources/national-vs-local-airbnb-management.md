@@ -1,7 +1,7 @@
 ---
 title: "National vs. Local Airbnb Management: Real Tradeoffs"
 description: "Comparing national Airbnb management platforms with local Atlanta operators — local market knowledge, on-the-ground response, and neighborhood-level pricing explained."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-03-18
 heroImage: "about"
 featured: false

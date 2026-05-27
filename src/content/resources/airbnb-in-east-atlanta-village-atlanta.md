@@ -1,7 +1,7 @@
 ---
 title: "East Atlanta Village Airbnb: Owner's Guide"
 description: "How to run a successful East Atlanta Village Airbnb — who books here, what properties work, and how to stand out in Atlanta's quirkiest live-music neighborhood."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-10-30
 heroImage: "nbhdDefault"
 featured: false

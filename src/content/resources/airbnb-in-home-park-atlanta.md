@@ -1,7 +1,7 @@
 ---
 title: "Home Park Airbnb: An Owner's Guide"
 description: "What owners need to know about a Home Park Airbnb — Georgia Tech demand, Midtown proximity, guest profile, and how to price this value-competitive Atlanta location."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-06-12
 heroImage: "nbhdDefault"
 featured: false

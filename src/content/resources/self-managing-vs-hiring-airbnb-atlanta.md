@@ -1,7 +1,7 @@
 ---
 title: "Self-Managing vs. Hiring: An Atlanta Host's Decision"
 description: "An honest decision framework for Atlanta Airbnb hosts — weighing time, distance, goals, and scale to figure out whether self-management or hiring actually makes sense."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-05-23
 heroImage: "ownerHandshake"
 featured: false

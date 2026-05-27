@@ -1,7 +1,7 @@
 ---
 title: "Castleberry Hill Airbnb: Atlanta Owner's Guide"
 description: "A complete guide to running a Castleberry Hill Airbnb — Atlanta's arts district, event-night demand near Mercedes-Benz Stadium, and what makes loft rentals work here."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-05-18
 heroImage: "nbhdDefault"
 featured: false

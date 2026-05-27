@@ -1,7 +1,7 @@
 ---
 title: "Airbnb Checkout Instructions That Protect Your Property"
 description: "How to write clear, fair Airbnb checkout instructions that protect your property, keep guests happy, and avoid the review damage that unreasonable requests cause."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2025-01-20
 heroImage: "guestExperience"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Capitol View Airbnb: A Property Owner's Guide"
 description: "What owners need to know about running a Capitol View Airbnb — BeltLine access, emerging demand, and getting in early on one of SW Atlanta's up-and-coming neighborhoods."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-05-01
 heroImage: "nbhdDefault"
 featured: false

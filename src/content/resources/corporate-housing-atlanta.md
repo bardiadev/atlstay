@@ -1,7 +1,7 @@
 ---
 title: "Corporate Housing in Atlanta: An Owner's Guide"
 description: "How Atlanta property owners can capture extended corporate and relocation stays — what business guests need, where demand concentrates, and how mid-term compares to nightly STR."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-01-09
 heroImage: "ownerHandshake"
 featured: false

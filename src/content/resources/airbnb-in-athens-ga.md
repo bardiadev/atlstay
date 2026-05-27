@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Athens, GA: Game Day & More"
 description: "A complete owner's guide to Airbnb in Athens, GA — UGA game-day demand, graduation weekends, the music scene, and Athens-Clarke County STR rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-05-15
 heroImage: "athensGa"
 featured: false

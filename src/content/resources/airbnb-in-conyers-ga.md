@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Conyers, GA: Property Owner's Guide"
 description: "Conyers hosts the Georgia International Horse Park and Olde Town charm. Here's what Rockdale County property owners need to know about running an Airbnb."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-12-08
 heroImage: "metroAtlanta"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Peoplestown Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running a Peoplestown Airbnb — event demand, stadium access, Grant Park proximity, and how to maximize this emerging Atlanta address."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-08-07
 heroImage: "nbhdDefault"
 featured: false

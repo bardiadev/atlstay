@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Acworth, GA: An Owner's Guide"
 description: "Lake access, historic downtown, and strong commuter demand make Acworth one of North Georgia's most compelling Airbnb markets. Here's what owners need to know."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-11-06
 heroImage: "northGeorgia"
 featured: false

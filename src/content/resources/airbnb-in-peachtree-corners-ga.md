@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Peachtree Corners, GA: Owner's Guide"
 description: "What Peachtree Corners owners need to know about short-term rentals — Technology Park demand, The Forum, and local rules before you list."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-08-18
 heroImage: "metroAtlanta"
 featured: false

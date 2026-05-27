@@ -1,7 +1,7 @@
 ---
 title: "Writing Airbnb Titles & Descriptions That Convert"
 description: "Copywriting tactics for Airbnb titles and summaries that win the click, filter for the right guest, and improve booking conversion without relying on hype."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2024-09-03
 heroImage: "photography"
 featured: false

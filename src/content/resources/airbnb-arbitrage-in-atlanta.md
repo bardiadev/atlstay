@@ -1,7 +1,7 @@
 ---
 title: "Airbnb Arbitrage in Atlanta: How It Works"
 description: "How rental arbitrage works for Atlanta short-term rentals — the lease-and-sublease model, landlord permission, real risks, and what makes it viable."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2024-10-29
 heroImage: "ownerHandshake"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "How Airbnb Search Ranking Works for Hosts"
 description: "Understand the key factors that influence where your Airbnb listing appears in search — and what you can control to improve visibility and bookings."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2024-12-16
 heroImage: "photography"
 featured: false

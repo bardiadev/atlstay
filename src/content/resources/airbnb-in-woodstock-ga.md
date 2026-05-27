@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Woodstock, GA: An Owner's Guide"
 description: "What Woodstock, GA Airbnb owners need to know — Cherokee County demand, downtown dining and concerts, family leisure guests, and local STR rules to verify."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-09-11
 heroImage: "metroAtlanta"
 featured: false

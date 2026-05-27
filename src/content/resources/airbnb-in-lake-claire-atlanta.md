@@ -1,7 +1,7 @@
 ---
 title: "Lake Claire Airbnb: An Owner's Guide"
 description: "What owners need to know about a Lake Claire Airbnb — leafy intown character, family demand, Candler Park proximity, and how to position this quiet Atlanta neighborhood."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-06-26
 heroImage: "nbhdDefault"
 featured: false

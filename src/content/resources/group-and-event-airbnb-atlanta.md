@@ -1,7 +1,7 @@
 ---
 title: "Hosting Groups & Event Guests in Atlanta"
 description: "How Atlanta Airbnb hosts can capture group bookings — reunions, weddings, sports and concert guests — while protecting the property and neighbor relations."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2024-09-13
 heroImage: "guestExperience"
 featured: false

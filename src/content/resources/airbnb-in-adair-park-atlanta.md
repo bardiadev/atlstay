@@ -1,7 +1,7 @@
 ---
 title: "Adair Park Airbnb: A Property Owner's Guide"
 description: "What owners need to know about running an Adair Park Airbnb — guest demand, BeltLine access, property fit, and how to earn well in historic SW Atlanta."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-04-03
 heroImage: "nbhdDefault"
 featured: false

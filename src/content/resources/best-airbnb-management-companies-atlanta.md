@@ -1,7 +1,7 @@
 ---
 title: "How to Choose an Airbnb Management Company in Atlanta"
 description: "A practical buyer's guide to evaluating Atlanta Airbnb management companies — fee structures, what's included, local knowledge, communication, and performance."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-03-04
 heroImage: "ownerHandshake"
 featured: false

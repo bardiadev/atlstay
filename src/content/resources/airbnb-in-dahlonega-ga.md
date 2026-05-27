@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Dahlonega, GA: Wine Country Host Guide"
 description: "What hosts need to know about running an Airbnb in Dahlonega — wine country demand, Gold Rush history, UNG, fall season, and local STR rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-01-12
 heroImage: "northGeorgia"
 featured: false

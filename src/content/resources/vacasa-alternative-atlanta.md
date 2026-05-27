@@ -1,7 +1,7 @@
 ---
 title: "A Local Vacasa Alternative in Atlanta"
 description: "Considering Vacasa for your Atlanta rental? See how a local Atlanta property manager compares on service, pricing, and market knowledge."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-04-15
 heroImage: "about"
 featured: false

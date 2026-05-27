@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Chamblee, GA: Property Owner's Guide"
 description: "Chamblee's intown-adjacent location, Buford Highway dining, antiques district, and MARTA access make it a strong Airbnb market for DeKalb property owners."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-11-24
 heroImage: "metroAtlanta"
 featured: false

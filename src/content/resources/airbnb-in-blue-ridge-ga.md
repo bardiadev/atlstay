@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Blue Ridge, GA: Cabin Country Guide"
 description: "Everything cabin owners need to know about running an Airbnb in Blue Ridge, GA — demand drivers, seasonal peaks, amenities, and Fannin County rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-02-13
 heroImage: "northGeorgia"
 featured: false

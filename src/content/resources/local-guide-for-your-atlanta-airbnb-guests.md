@@ -1,7 +1,7 @@
 ---
 title: "Building a Local Guide for Your Atlanta Guests"
 description: "A curated neighborhood guide turns first-time Atlanta visitors into loyal repeat bookers. Here's how to build one that actually delights guests."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2025-02-18
 heroImage: "guestExperience"
 featured: false

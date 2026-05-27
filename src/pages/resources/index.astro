@@ -21,8 +21,24 @@ const schemas = [
   ]),
 ];
 
-// Group by category for nav/filtering purposes
-const categories = [...new Set(resources.map((r) => r.data.category))];
+// Group by category for the topic filter. Show chips in a deliberate, logical
+// order (location → money → operations → compliance) rather than by recency.
+const CATEGORY_ORDER = [
+  'Atlanta Neighborhoods',
+  'Georgia Markets',
+  'Investing & ROI',
+  'Pricing & Revenue',
+  'Marketing & Listings',
+  'Hosting & Operations',
+  'Regulations & Taxes',
+];
+const orderOf = (c: string) => {
+  const i = CATEGORY_ORDER.indexOf(c);
+  return i === -1 ? CATEGORY_ORDER.length : i;
+};
+const categories = [...new Set(resources.map((r) => r.data.category))].sort(
+  (a, b) => orderOf(a) - orderOf(b) || a.localeCompare(b),
+);
 const featured = resources.filter((r) => r.data.featured);
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Exit Strategies for a Short-Term Rental"
 description: "Selling, converting to long-term rental, or handing off management — what Atlanta STR owners need to know before making an exit decision and protecting their asset's value."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-05-19
 heroImage: "ownerHandshake"
 featured: false

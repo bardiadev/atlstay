@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Dunwoody, GA: An Owner's Guide"
 description: "What Dunwoody Airbnb owners need to know — guest demand from Perimeter Center, local STR rules, property setup, and how to maximize earnings year-round."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-08-14
 heroImage: "metroAtlanta"
 featured: false

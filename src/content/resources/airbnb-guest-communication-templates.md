@@ -1,7 +1,7 @@
 ---
 title: "Airbnb Message Templates That Save Time"
 description: "The full Airbnb message sequence — inquiry through review request — with reusable template structures for each touchpoint and what each one needs to accomplish."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2025-02-19
 heroImage: "guestExperience"
 featured: false

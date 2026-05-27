@@ -1,7 +1,7 @@
 ---
 title: "Virginia-Highland Airbnb: Atlanta's Walkable Village"
 description: "Virginia-Highland Airbnb success comes from its leafy, walkable village character. Discover what drives demand, who books, and how to set up a property that earns here."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-04-02
 heroImage: "nbhdDefault"
 featured: false

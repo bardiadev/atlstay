@@ -1,7 +1,7 @@
 ---
 title: "Managing a Condo Airbnb in Atlanta"
 description: "What Atlanta condo owners need to know before listing on Airbnb — HOA rules, building policies, what performs, and how to run it profitably."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-02-04
 heroImage: "ownerHandshake"
 featured: false

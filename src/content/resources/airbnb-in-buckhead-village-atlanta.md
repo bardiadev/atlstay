@@ -1,7 +1,7 @@
 ---
 title: "Buckhead Village Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running a Buckhead Village Airbnb — luxury shopping, upscale dining, nightlife demand, and how to position a premium Atlanta listing."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-09-18
 heroImage: "nbhdDefault"
 featured: false

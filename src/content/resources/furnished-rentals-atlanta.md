@@ -1,7 +1,7 @@
 ---
 title: "Furnished Rentals in Atlanta: A Host's Guide"
 description: "How Atlanta hosts set up, price, and fill furnished monthly rentals — target tenants, setup costs, positioning, and what makes furnished inventory perform."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-03-06
 heroImage: "suburbHome"
 featured: false

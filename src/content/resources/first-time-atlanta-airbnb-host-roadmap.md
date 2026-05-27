@@ -1,7 +1,7 @@
 ---
 title: "A First-Time Atlanta Airbnb Host's Roadmap"
 description: "From idea to first booking: a practical step-by-step guide for first-time Atlanta short-term rental hosts covering permits, setup, pricing, and launch."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-03-18
 heroImage: "ownerHandshake"
 featured: false

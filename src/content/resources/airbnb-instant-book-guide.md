@@ -1,7 +1,7 @@
 ---
 title: "Should You Turn On Airbnb Instant Book?"
 description: "Instant Book boosts your Airbnb ranking and fills your calendar faster — but the tradeoffs are real. Here's when to enable it and how to protect yourself."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-03-12
 heroImage: "photography"
 featured: false

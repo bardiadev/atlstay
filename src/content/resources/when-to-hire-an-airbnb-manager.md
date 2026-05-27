@@ -1,7 +1,7 @@
 ---
 title: "When Should You Hire an Airbnb Manager?"
 description: "The real signals that tell self-managing hosts it's time to bring in a professional — burnout, scale, distance, declining reviews, and missed revenue."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2024-11-08
 heroImage: "ownerHandshake"
 featured: false

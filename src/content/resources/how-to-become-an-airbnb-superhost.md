@@ -1,7 +1,7 @@
 ---
 title: "How to Become (and Stay) an Airbnb Superhost"
 description: "Airbnb Superhost status lifts your search ranking and conversion rate — but the criteria are demanding. Here's what it takes and how professional management sustains it."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-03-25
 heroImage: "photography"
 featured: false

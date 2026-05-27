@@ -1,7 +1,7 @@
 ---
 title: "Finding Reliable Airbnb Cleaners in Atlanta"
 description: "How to find, vet, and keep reliable Airbnb cleaners in Atlanta — including same-day turnover scheduling, backup coverage, and what separates good cleaners from great ones."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2024-09-24
 heroImage: "cleaning"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Atlantic Station Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running an Atlantic Station Airbnb — walkable appeal, event demand, business travel, and how to maximize this Midtown-adjacent address."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-09-05
 heroImage: "nbhdDefault"
 featured: false

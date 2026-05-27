@@ -1,7 +1,7 @@
 ---
 title: "Mid-Term Rentals in Atlanta: The 30+ Day STR Model"
 description: "What Atlanta hosts need to know about 30+ day furnished rentals — the revenue tradeoffs, regulatory differences, and who actually books them."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-02-20
 heroImage: "about"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Airbnb Guest Communication That Wins Reviews"
 description: "The message cadence — pre-arrival, mid-stay, checkout — plus speed and tone principles that turn good stays into five-star reviews."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2025-01-07
 heroImage: "guestExperience"
 featured: false

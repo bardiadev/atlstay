@@ -1,7 +1,7 @@
 ---
 title: "Airbnb vs. Hotel: Why Guests Choose Rentals"
 description: "Travelers skip hotels for short-term rentals because of space, kitchens, local character, and group value. Here's what that means for your listing."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-02-12
 heroImage: "guestExperience"
 featured: false

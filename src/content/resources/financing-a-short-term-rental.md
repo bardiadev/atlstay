@@ -1,7 +1,7 @@
 ---
 title: "Financing a Short-Term Rental Property"
 description: "Conventional, DSCR, and second-home loans all look different for STR buyers. Here's what to understand before you talk to a lender — general overview, not financial advice."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2024-11-26
 heroImage: "ownerHandshake"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Roswell, GA: An Owner's Guide"
 description: "What Roswell owners need to know about short-term rentals — Canton Street demand, the Chattahoochee, local STR rules, and how to position an affluent north Atlanta property."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-10-15
 heroImage: "metroAtlanta"
 featured: false

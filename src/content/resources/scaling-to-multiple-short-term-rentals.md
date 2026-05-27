@@ -1,7 +1,7 @@
 ---
 title: "Scaling to Multiple Short-Term Rentals"
 description: "The systems, management structure, and mindset shifts that let STR investors grow a portfolio past one or two properties without burning out or watching quality slip."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-04-29
 heroImage: "ownerHandshake"
 featured: false

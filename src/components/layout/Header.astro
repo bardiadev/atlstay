@@ -3,15 +3,32 @@ import { mainNav, primaryCta } from '../../data/navigation';
 import { site } from '../../config/site';
 import Logo from './Logo.astro';
 import Button from '../ui/Button.astro';
+
+// Highlight the nav link for the current page (and its sub-pages, e.g. /resources/<post>/).
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
 <header id="site-header" class="sticky top-0 z-50 border-b border-line/70 bg-cream/85 backdrop-blur-md transition-transform duration-300 will-change-transform">
   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
     <Logo />
 
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Primary">
-      {mainNav.map((i) => (
-        <a href={i.href} class="text-sm text-ink/80 transition-colors hover:text-forest">{i.label}</a>
-      ))}
+      {mainNav.map((i) => {
+        const active = isActive(i.href);
+        return (
+          <a
+            href={i.href}
+            aria-current={active ? 'page' : undefined}
+            class:list={[
+              'relative text-sm transition-colors',
+              active ? 'font-semibold text-forest' : 'text-ink/80 hover:text-forest',
+            ]}
+          >
+            {i.label}
+            {active && <span class="absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-brass"></span>}
+          </a>
+        );
+      })}
     </nav>
 
     <div class="hidden items-center gap-5 lg:flex">
@@ -30,9 +47,19 @@ import Button from '../ui/Button.astro';
       </summary>
       <div class="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-line bg-white p-4 shadow-xl">
         <nav class="flex flex-col" aria-label="Mobile">
-          {mainNav.map((i) => (
-            <a href={i.href} class="rounded-lg px-3 py-2.5 text-sm text-ink/85 hover:bg-cream">{i.label}</a>
-          ))}
+          {mainNav.map((i) => {
+            const active = isActive(i.href);
+            return (
+              <a
+                href={i.href}
+                aria-current={active ? 'page' : undefined}
+                class:list={[
+                  'rounded-lg px-3 py-2.5 text-sm',
+                  active ? 'bg-cream font-semibold text-forest' : 'text-ink/85 hover:bg-cream',
+                ]}
+              >{i.label}</a>
+            );
+          })}
           <a
             href={primaryCta.href}
             class="mt-2 rounded-full bg-brass px-3 py-2.5 text-center text-sm font-medium text-forest-900"

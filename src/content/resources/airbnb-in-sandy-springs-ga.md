@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Sandy Springs: An Owner's Guide"
 description: "What Sandy Springs owners need to know about short-term rentals — guest demand, property fit, local regulations, and how to maximize a Perimeter corridor address."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-09-17
 heroImage: "metroAtlanta"
 featured: false

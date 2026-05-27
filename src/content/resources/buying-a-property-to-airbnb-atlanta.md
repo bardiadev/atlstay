@@ -1,7 +1,7 @@
 ---
 title: "Buying an Atlanta Property to Airbnb"
 description: "What to evaluate before buying an Atlanta property specifically for Airbnb — location, layout, regulations, and how to read the comps honestly."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-02-11
 heroImage: "ownerHandshake"
 featured: false

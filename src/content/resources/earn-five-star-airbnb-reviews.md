@@ -1,7 +1,7 @@
 ---
 title: "How to Earn Five-Star Airbnb Reviews"
 description: "The levers that consistently earn five-star Airbnb reviews — cleanliness, communication, accuracy, and the small touches that guests remember."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2024-12-03
 heroImage: "guestExperience"
 featured: false

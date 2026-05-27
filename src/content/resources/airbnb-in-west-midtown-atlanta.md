@@ -1,7 +1,7 @@
 ---
 title: "West Midtown Airbnb: Atlanta Owner's Guide"
 description: "A complete guide to running a West Midtown Airbnb in Atlanta — guest demand, industrial-chic design, dining district seasonality, and what performs here."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-05-08
 heroImage: "nbhdDefault"
 featured: false

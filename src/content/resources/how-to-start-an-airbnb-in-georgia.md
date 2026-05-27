@@ -1,7 +1,7 @@
 ---
 title: "How to Start an Airbnb in Georgia"
 description: "A step-by-step guide to launching a Georgia Airbnb — evaluating the property, navigating local rules, furnishing, listing, and pricing for profit."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2024-11-04
 heroImage: "ownerHandshake"
 featured: false

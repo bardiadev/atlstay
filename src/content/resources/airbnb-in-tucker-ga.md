@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Tucker, GA: An Owner's Guide"
 description: "A practical guide for Tucker, GA Airbnb owners — guest demand, walkable Main Street appeal, DeKalb business park proximity, and local STR considerations."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-08-28
 heroImage: "metroAtlanta"
 featured: false

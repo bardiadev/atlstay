@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Alpharetta, GA: An Owner's Guide"
 description: "Everything you need to know about hosting a short-term rental in Alpharetta — demand drivers, licensing steps, property fit, and how to maximize your North Fulton address."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-11-12
 heroImage: "metroAtlanta"
 featured: false

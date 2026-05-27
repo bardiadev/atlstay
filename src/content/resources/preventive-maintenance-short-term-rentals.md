@@ -1,7 +1,7 @@
 ---
 title: "Preventive Maintenance for Atlanta Short-Term Rentals"
 description: "A practical guide to preventive maintenance schedules for Atlanta short-term rentals — stop small issues before they become emergencies, bad reviews, or expensive repairs."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2024-10-08
 heroImage: "serviceManagement"
 featured: false

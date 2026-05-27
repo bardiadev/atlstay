@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Savannah: A Host's Guide"
 description: "What Savannah hosts need to know about year-round tourism demand, the city's stricter STR ordinance and permit zones, and running a profitable short-term rental."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-01-30
 heroImage: "savannah"
 featured: false

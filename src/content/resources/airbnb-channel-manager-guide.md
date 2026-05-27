@@ -1,7 +1,7 @@
 ---
 title: "Do You Need an Airbnb Channel Manager?"
 description: "What a channel manager actually does for short-term rental hosts — syncing calendars and rates across Airbnb, Vrbo, and direct bookings — and when it makes sense."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-01-06
 heroImage: "photography"
 featured: false

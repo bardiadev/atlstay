@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Helen, GA: An Owner's Guide"
 description: "A practical guide to running an Airbnb in Helen, GA — Oktoberfest demand, seasonal peaks, the right property setup, and what to know about local STR rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-03-13
 heroImage: "northGeorgia"
 featured: false

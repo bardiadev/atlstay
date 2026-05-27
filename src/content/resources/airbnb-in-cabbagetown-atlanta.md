@@ -1,7 +1,7 @@
 ---
 title: "Cabbagetown Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running a Cabbagetown Airbnb — street art, BeltLine access, historic mill-village character, and how to attract the right Atlanta guests."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-10-02
 heroImage: "nbhdDefault"
 featured: false

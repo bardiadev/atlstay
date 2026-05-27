@@ -1,7 +1,7 @@
 ---
 title: "Self Check-In Systems for Atlanta Airbnbs"
 description: "Smart locks, keypad codes, and clear guest instructions make self check-in seamless — but there are real security tradeoffs to understand before you choose a system."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2024-11-19
 heroImage: "serviceManagement"
 featured: false

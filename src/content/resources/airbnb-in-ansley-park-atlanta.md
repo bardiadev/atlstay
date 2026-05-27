@@ -1,7 +1,7 @@
 ---
 title: "Ansley Park Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running an Ansley Park Airbnb — arts district access, affluent leisure demand, and maximizing a rare Midtown-adjacent address."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-04-17
 heroImage: "nbhdDefault"
 featured: false

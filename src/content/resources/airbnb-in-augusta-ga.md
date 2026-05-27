@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Augusta, GA: A Host's Complete Guide"
 description: "Everything hosts need to know about Airbnb in Augusta — Masters week demand, AU Health and Fort Eisenhower visitors, year-round occupancy, and local STR rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-03-09
 heroImage: "georgiaCity"
 featured: false

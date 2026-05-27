@@ -1,7 +1,7 @@
 ---
 title: "Hosting for Atlanta Pride Weekend on Airbnb"
 description: "Atlanta Pride draws massive crowds to Midtown every October. Here's how short-term rental hosts can prepare, price, and capitalize on one of the city's biggest weekends."
-category: "Events & Seasonality"
+category: "Pricing & Revenue"
 publishDate: 2025-05-09
 heroImage: "atlantaSkyline"
 featured: false

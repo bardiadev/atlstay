@@ -1,7 +1,7 @@
 ---
 title: "Is Airbnb Still Profitable in Atlanta?"
 description: "The honest factors that determine short-term rental profitability in Atlanta — and how to evaluate your specific property before you commit."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-05-13
 heroImage: "ownerHandshake"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "College Football Weekends & Your Atlanta Airbnb"
 description: "Game weekends drive some of the biggest Airbnb demand spikes in Atlanta. Here's how to capture them at your property with the right strategy."
-category: "Events & Seasonality"
+category: "Pricing & Revenue"
 publishDate: 2025-08-26
 heroImage: "atlantaSkyline"
 featured: false

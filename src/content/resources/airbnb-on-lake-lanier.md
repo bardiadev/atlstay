@@ -1,7 +1,7 @@
 ---
 title: "Airbnb on Lake Lanier: An Owner's Guide"
 description: "A complete guide to running an Airbnb on Lake Lanier — lakefront demand, dock premiums, summer peak, county-specific STR rules, and what owners need to know."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-04-03
 heroImage: "lakeLanier"
 featured: false

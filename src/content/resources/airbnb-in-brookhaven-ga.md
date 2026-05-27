@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Brookhaven, GA: Owner's Guide"
 description: "What owners need to know about running an Airbnb in Brookhaven — intown-adjacent demand, business travel, local STR rules, and how to position your property."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-10-21
 heroImage: "metroAtlanta"
 featured: false

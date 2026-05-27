@@ -1,7 +1,7 @@
 ---
 title: "Handling Damage & AirCover Claims at Your Airbnb"
 description: "A practical guide to documenting damage, filing AirCover for Hosts claims, and preventing costly incidents at your Atlanta short-term rental property."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2025-05-02
 heroImage: "serviceManagement"
 featured: false

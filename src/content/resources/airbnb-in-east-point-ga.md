@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in East Point, GA: An Owner's Guide"
 description: "What STR owners need to know about East Point — airport access, historic downtown, film industry demand, and how to run a profitable listing in this emerging market."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-10-23
 heroImage: "metroAtlanta"
 featured: false

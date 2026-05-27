@@ -1,7 +1,7 @@
 ---
 title: "Guest Screening for Short-Term Rentals"
 description: "How to screen Airbnb and Vrbo guests effectively — verification tools, red flags, house rules, and balancing protection with booking conversion."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2025-04-18
 heroImage: "serviceManagement"
 featured: false

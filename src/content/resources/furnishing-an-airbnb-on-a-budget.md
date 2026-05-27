@@ -1,7 +1,7 @@
 ---
 title: "Furnishing an Airbnb on a Budget"
 description: "Smart strategies for equipping your short-term rental without overspending — where to save, where to invest, and how to source durable pieces affordably."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2024-10-25
 heroImage: "suburbHome"
 featured: false

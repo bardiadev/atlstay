@@ -1,7 +1,7 @@
 ---
 title: "Safety Essentials Every Airbnb Property Needs"
 description: "A practical guide to smoke detectors, CO alarms, fire extinguishers, first aid, secure locks, and clear exits — the safety baseline every host should meet."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2025-04-08
 heroImage: "suburbHome"
 featured: false

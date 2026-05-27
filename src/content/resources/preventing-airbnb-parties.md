@@ -1,7 +1,7 @@
 ---
 title: "Preventing Parties at Your Atlanta Airbnb"
 description: "How Atlanta Airbnb owners can prevent unauthorized parties with guest screening, noise monitors, clear house rules, and smart neighbor relations."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2025-04-04
 heroImage: "serviceManagement"
 featured: false

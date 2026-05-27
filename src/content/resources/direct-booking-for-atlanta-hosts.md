@@ -1,7 +1,7 @@
 ---
 title: "Direct Bookings for Atlanta Short-Term Rentals"
 description: "Direct booking channels cut OTA fees and build repeat guests — but they take real work to set up. Here's what Atlanta hosts should know before they start."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-03-11
 heroImage: "photography"
 featured: false

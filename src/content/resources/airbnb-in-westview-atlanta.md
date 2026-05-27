@@ -1,7 +1,7 @@
 ---
 title: "Westview Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running a Westview Airbnb — BeltLine Westside access, AUC proximity, cultural demand, and how to maximize this historic Atlanta address."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-08-21
 heroImage: "nbhdDefault"
 featured: false

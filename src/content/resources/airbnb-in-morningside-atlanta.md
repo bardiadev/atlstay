@@ -1,7 +1,7 @@
 ---
 title: "Morningside Airbnb: An Owner's Guide"
 description: "What owners need to know about a Morningside Airbnb — upscale residential demand, Piedmont Park access, longer stays, and how to position this premier Atlanta address."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-07-10
 heroImage: "nbhdDefault"
 featured: false

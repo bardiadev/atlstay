@@ -15,7 +15,7 @@ import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 import { cityGeo } from '@/data/cityGeo';
-import { assignCardImages } from '@/lib/cardImage';
+import { assignCardStyles } from '@/lib/cardImage';
 
 export async function getStaticPaths() {
   const c = await getCollection('cities');
@@ -43,8 +43,8 @@ const countyLine = county ? ` We manage homes across ${d.name} and ${county} Cou
 const allNeighborhoods = await getCollection('neighborhoods', (n) => n.data.published && n.data.citySlug === d.slug);
 const neighborhoodMap = Object.fromEntries(allNeighborhoods.map((n) => [n.data.slug, n]));
 const orderedNeighborhoods = d.neighborhoods.map((slug) => neighborhoodMap[slug]).filter(Boolean);
-// Varied, non-repeating card imagery for the neighborhood grid.
-const nbhdImgs = assignCardImages(orderedNeighborhoods.map((n) => ({ slug: n.data.slug, region: 'atlanta' })));
+// Varied, non-repeating card styling for the neighborhood grid.
+const nbhdStyles = assignCardStyles(orderedNeighborhoods.map((n) => ({ slug: n.data.slug, region: 'atlanta' })));
 
 // Nearby markets — same county first, then same region (internal linking)
 const allCities = await getCollection('cities', (c) => c.data.published);
@@ -121,7 +121,7 @@ const schemas = [
         </div>
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {orderedNeighborhoods.map((n, i) => (
-            <NeighborhoodCard name={n.data.name} href={`/${d.slug}/${n.data.slug}/`} imageSrc={nbhdImgs[i].src} imageAlt={nbhdImgs[i].alt} blurb={n.data.intro.split('.')[0] + '.'} />
+            <NeighborhoodCard name={n.data.name} href={`/${d.slug}/${n.data.slug}/`} gradient={nbhdStyles[i].gradient} icon={nbhdStyles[i].icon} blurb={n.data.intro.split('.')[0] + '.'} />
           ))}
         </div>
       </Container>

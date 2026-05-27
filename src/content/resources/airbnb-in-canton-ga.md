@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Canton, GA: An Owner's Guide"
 description: "Canton is Cherokee County's fast-growing seat and a gateway to North Georgia — making it a compelling, underserved Airbnb market for investors who move early."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-11-20
 heroImage: "northGeorgia"
 featured: false

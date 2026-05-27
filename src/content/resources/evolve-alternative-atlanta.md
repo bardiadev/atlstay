@@ -1,7 +1,7 @@
 ---
 title: "A Local Evolve Alternative in Atlanta"
 description: "Comparing Evolve for your Atlanta rental? See how a full-service local manager differs from a remote-first model for ATL property owners."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-04-29
 heroImage: "about"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "The Amenities Atlanta Airbnb Guests Want Most"
 description: "High-impact amenities vary by guest type. Here's what Atlanta short-term rental guests actually prioritize — by who's booking and why it matters."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2025-02-04
 heroImage: "guestExperience"
 featured: false

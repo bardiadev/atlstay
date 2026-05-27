@@ -1,7 +1,7 @@
 ---
 title: "Old Fourth Ward Airbnb: An Owner's Guide to Atlanta's BeltLine Hub"
 description: "How to run a successful Old Fourth Ward Airbnb — BeltLine demand, Ponce City Market, guest profiles, property fit, and what makes this Atlanta market work."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-03-09
 heroImage: "nbhdOldFourthWard"
 featured: false

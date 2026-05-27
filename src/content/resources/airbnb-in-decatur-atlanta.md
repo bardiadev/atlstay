@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Decatur, Atlanta: Owner's Guide"
 description: "Everything Decatur Airbnb owners need to know: guest demand, property types, design tips, seasonality, and DeKalb County licensing requirements."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-04-28
 heroImage: "nbhdDecatur"
 featured: false

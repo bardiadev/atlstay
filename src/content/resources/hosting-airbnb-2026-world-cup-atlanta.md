@@ -1,7 +1,7 @@
 ---
 title: "Hosting Your Airbnb for the 2026 World Cup"
 description: "Atlanta is a 2026 FIFA World Cup host city. Here's how to prepare your Airbnb for the surge — pricing, availability, setup, and guest experience."
-category: "Events & Seasonality"
+category: "Pricing & Revenue"
 publishDate: 2025-10-14
 heroImage: "worldCup"
 featured: false

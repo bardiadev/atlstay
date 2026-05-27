@@ -1,7 +1,7 @@
 ---
 title: "Inman Park Airbnb: Atlanta's Historic BeltLine Gem"
 description: "Inman Park Airbnb demand is driven by Victorian character, Krog Street Market, and BeltLine access. Learn what guests expect and how to run a profitable STR here."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-03-20
 heroImage: "nbhdInmanPark"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "What to Put in Your Airbnb Welcome Book"
 description: "The digital or printed welcome guide that answers guest questions before they ask, reduces host messages, and consistently earns better reviews."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2024-12-17
 heroImage: "guestExperience"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "How to Switch Airbnb Management Companies"
 description: "A step-by-step guide for Atlanta hosts: review your contract, protect existing bookings and reviews, transfer your listing, and confirm your new manager is ready."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-05-22
 heroImage: "about"
 featured: false

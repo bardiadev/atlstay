@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Johns Creek, GA: An Owner's Guide"
 description: "What Johns Creek property owners need to know about short-term rentals — corporate visitors, youth sports demand, family travelers, and local permit rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-09-09
 heroImage: "metroAtlanta"
 featured: false

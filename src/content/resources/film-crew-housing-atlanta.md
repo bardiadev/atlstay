@@ -1,7 +1,7 @@
 ---
 title: "Film & Production Housing in Atlanta: Owner's Guide"
 description: "How Atlanta property owners can capitalize on the city's film and TV industry — what cast and crew need for extended stays, how production bookings work, and why mid-term fits."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-02-06
 heroImage: "ownerHandshake"
 featured: false

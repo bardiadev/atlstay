@@ -1,7 +1,7 @@
 ---
 title: "Airbnb vs. Furnished Finder for Mid-Term Stays"
 description: "A clear breakdown of Airbnb vs. Furnished Finder for 30-day-plus stays — audiences, economics, and why some owners list on both platforms."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-01-08
 heroImage: "photography"
 featured: false

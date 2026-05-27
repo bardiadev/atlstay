@@ -1,7 +1,7 @@
 ---
 title: "What It Costs to Start an Airbnb"
 description: "A practical breakdown of the categories of startup costs for a new Airbnb — furnishing, photography, licensing, supplies, smart locks, and insurance."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2024-11-18
 heroImage: "ownerHandshake"
 featured: false

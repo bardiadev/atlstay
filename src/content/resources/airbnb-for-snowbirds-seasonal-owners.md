@@ -1,7 +1,7 @@
 ---
 title: "Airbnb for Snowbirds & Seasonal Owners"
 description: "If you leave Atlanta for months at a time, your empty home can generate real income — without giving up flexibility or control over when you're back."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2024-12-06
 heroImage: "ownerHandshake"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Should You Make Your Atlanta Airbnb Pet-Friendly?"
 description: "Pet-friendly Airbnbs attract strong demand in Atlanta — but wear, deposits, and setup decisions matter. Here's how to weigh the real tradeoffs before deciding."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2025-05-06
 heroImage: "suburbHome"
 featured: false

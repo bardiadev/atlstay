@@ -1,7 +1,7 @@
 ---
 title: "Ormewood Park Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running an Ormewood Park Airbnb — guest demand, BeltLine access, family appeal, and how to maximize this intown Atlanta address."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-07-24
 heroImage: "nbhdDefault"
 featured: false

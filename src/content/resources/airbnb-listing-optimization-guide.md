@@ -1,7 +1,7 @@
 ---
 title: "Airbnb Listing Optimization: A Host's Guide"
 description: "The complete guide to optimizing your Airbnb listing — title, photos, description, amenities, reviews, and the signals that move search ranking and conversion."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2024-08-06
 heroImage: "photography"
 featured: false

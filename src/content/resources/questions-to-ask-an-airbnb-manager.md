@@ -1,7 +1,7 @@
 ---
 title: "Questions to Ask Before Hiring an Airbnb Manager"
 description: "A practical vetting checklist for Atlanta hosts: fee structures, contract terms, communication standards, vendor networks, and how to check references."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-05-21
 heroImage: "ownerHandshake"
 featured: false

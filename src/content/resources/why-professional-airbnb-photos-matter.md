@@ -1,7 +1,7 @@
 ---
 title: "Why Professional Photos Make or Break Your Listing"
 description: "Professional photography is the single highest-ROI investment for an Airbnb listing — here's how it affects clicks, rate, occupancy, and your overall competitive position."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2024-08-20
 heroImage: "photography"
 featured: false

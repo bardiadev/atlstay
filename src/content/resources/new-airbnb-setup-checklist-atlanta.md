@@ -1,7 +1,7 @@
 ---
 title: "The New Airbnb Setup Checklist for Atlanta"
 description: "A complete zero-to-listed checklist for new Atlanta short-term rental hosts — covering compliance, setup, furnishing, and your first booking."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2025-01-14
 heroImage: "suburbHome"
 featured: false

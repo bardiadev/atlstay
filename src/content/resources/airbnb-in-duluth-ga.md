@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Duluth, GA: An Owner's Guide"
 description: "What Duluth property owners need to know about short-term rentals — Gas South District events, Gwinnett's suburban demand, and local rules before you list."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-08-26
 heroImage: "metroAtlanta"
 featured: false

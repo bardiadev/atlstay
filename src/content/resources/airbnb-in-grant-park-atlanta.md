@@ -1,7 +1,7 @@
 ---
 title: "Grant Park Airbnb: Atlanta's Family-Friendly Historic Stay"
 description: "Grant Park Airbnb demand is built on Zoo Atlanta, the park itself, and beautiful historic homes. Here's what owners need to know to run a successful STR in this neighborhood."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-04-15
 heroImage: "nbhdDefault"
 featured: false

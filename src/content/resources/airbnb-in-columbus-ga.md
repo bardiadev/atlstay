@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Columbus, GA: A Host's Guide"
 description: "Fort Moore, the RiverWalk, and the National Infantry Museum make Columbus one of Georgia's most demand-rich Airbnb markets outside Atlanta. Here's what hosts need to know."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-12-04
 heroImage: "georgiaCity"
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Maximizing the Holiday Season at Your Atlanta Airbnb"
 description: "Thanksgiving through New Year is one of Atlanta's strongest Airbnb periods. Here's how to price, prepare, and capture the season's full revenue potential."
-category: "Events & Seasonality"
+category: "Pricing & Revenue"
 publishDate: 2025-11-04
 heroImage: "atlantaSkyline"
 featured: false

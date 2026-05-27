@@ -1,7 +1,7 @@
 ---
 title: "Short-Term Rental Management: What It Actually Includes"
 description: "An end-to-end explainer of everything full-service short-term rental management covers — listing, pricing, guests, cleaning, maintenance, reviews, and reporting."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-04-01
 heroImage: "about"
 featured: false

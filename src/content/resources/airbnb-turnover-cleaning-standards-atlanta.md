@@ -1,7 +1,7 @@
 ---
 title: "Airbnb Turnover & Cleaning Standards in Atlanta"
 description: "Why the turnover between guests makes or breaks a short-term rental — what a professional clean actually involves, the same-day timing challenge, linen and supply systems, and how it drives five-star reviews."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2026-05-27
 heroImage: "cleaning"
 featured: false

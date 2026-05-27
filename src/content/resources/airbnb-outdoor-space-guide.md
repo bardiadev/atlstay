@@ -1,7 +1,7 @@
 ---
 title: "Outdoor Space: An Underrated Airbnb Edge"
 description: "Patios, porches, fire pits, and yards can push your Atlanta Airbnb ahead of the competition — here's how to style and market outdoor space well."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2025-01-31
 heroImage: "suburbHome"
 featured: false

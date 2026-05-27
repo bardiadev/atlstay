@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Newnan, GA: An Owner's Guide"
 description: "What Newnan property owners need to know about short-term rentals — historic downtown, film industry stays, Coweta County demand, and local rules before you list."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-10-27
 heroImage: "metroAtlanta"
 featured: false

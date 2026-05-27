@@ -1,7 +1,7 @@
 ---
 title: "Luxury Airbnb Management in Atlanta"
 description: "How Atlanta's high-end short-term rentals are managed well — premium presentation, concierge-level guest experience, and where luxury demand concentrates."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-02-18
 heroImage: "ownerHandshake"
 featured: false

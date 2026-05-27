@@ -1,7 +1,7 @@
 ---
 title: "Hosting for Dragon Con & Atlanta's Festivals"
 description: "Dragon Con, Music Midtown, Shaky Knees — Atlanta's festival calendar creates major Airbnb demand spikes. Here's how to capture them as a host."
-category: "Events & Seasonality"
+category: "Pricing & Revenue"
 publishDate: 2025-07-15
 heroImage: "atlantaSkyline"
 featured: false

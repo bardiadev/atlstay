@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Peachtree City, GA: Owner's Guide"
 description: "What owners need to know about running an Airbnb in Peachtree City — guest demand, the golf-cart culture, Trilith-driven travel, and local STR rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-09-23
 heroImage: "metroAtlanta"
 featured: false

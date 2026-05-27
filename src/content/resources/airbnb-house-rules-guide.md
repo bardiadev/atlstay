@@ -1,7 +1,7 @@
 ---
 title: "Airbnb House Rules That Protect and Welcome"
 description: "How to write Airbnb house rules that set clear expectations around quiet hours, pets, and events without deterring the guests you actually want."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2025-03-26
 heroImage: "guestExperience"
 featured: false

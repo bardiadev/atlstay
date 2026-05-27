@@ -1,7 +1,7 @@
 ---
 title: "Keyless Entry & Security for Your Airbnb"
 description: "Smart locks, per-guest codes, exterior cameras, and noise monitors protect your Atlanta property and your guests — here's how to set it up right."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2024-12-20
 heroImage: "serviceManagement"
 featured: false

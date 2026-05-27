@@ -1,7 +1,7 @@
 ---
 title: "Reynoldstown Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running a Reynoldstown Airbnb — BeltLine access, brewery culture, new development, and the young-professional demand driving this neighborhood."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-12-09
 heroImage: "nbhdDefault"
 featured: false

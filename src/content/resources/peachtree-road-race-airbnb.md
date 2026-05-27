@@ -1,7 +1,7 @@
 ---
 title: "The Peachtree Road Race & Your Atlanta Airbnb"
 description: "The AJC Peachtree Road Race draws massive crowds to Atlanta every July 4th. Learn how hosts along the corridor can capture peak demand and price it right."
-category: "Events & Seasonality"
+category: "Pricing & Revenue"
 publishDate: 2025-05-12
 heroImage: "atlantaSkyline"
 featured: false

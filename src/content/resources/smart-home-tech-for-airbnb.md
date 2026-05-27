@@ -1,7 +1,7 @@
 ---
 title: "Smart-Home Tech Worth Adding to Your Airbnb"
 description: "Smart locks, noise monitors, and thermostats worth installing in your Airbnb — practical value, guest-privacy rules, and what actually earns reviews."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2025-01-28
 heroImage: "serviceManagement"
 featured: false

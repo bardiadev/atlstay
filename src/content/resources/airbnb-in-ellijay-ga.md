@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Ellijay, GA: Apple Country Host Guide"
 description: "A host's guide to Airbnb in Ellijay, GA — Gilmer County apple season, mountain cabin demand, hot-tub views, leaf season peaks, and local STR rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2025-02-09
 heroImage: "northGeorgia"
 featured: false

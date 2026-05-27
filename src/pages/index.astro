@@ -15,6 +15,7 @@ import ReviewProof from '@/components/ui/ReviewProof.astro';
 import NeighborhoodCard from '@/components/ui/NeighborhoodCard.astro';
 import ProjectionForm from '@/components/react/ProjectionForm';
 import { serviceSchema } from '@/lib/schema';
+import { assignCardStyles } from '@/lib/cardImage';
 import { site } from '@/config/site';
 import { services } from '@/data/services';
 import { homeFaqs } from '@/data/faqs';
@@ -54,52 +55,49 @@ const neighborhoods = [
   {
     name: 'Buckhead',
     href: '/atlanta/buckhead/',
-    imageKey: 'nbhdBuckhead' as const,
     blurb: 'Atlanta\'s premier address. Corporate travelers, luxury stays, and strong year-round demand.',
   },
   {
     name: 'Midtown',
     href: '/atlanta/midtown/',
-    imageKey: 'nbhdMidtown' as const,
     blurb: 'Arts, culture, Piedmont Park, and walkable demand from Georgia Tech and major employers.',
   },
   {
     name: 'Old Fourth Ward',
     href: '/atlanta/old-fourth-ward/',
-    imageKey: 'nbhdOldFourthWard' as const,
     blurb: 'The BeltLine\'s most vibrant stretch. Design-forward properties with exceptional guest draw.',
   },
   {
     name: 'Inman Park',
     href: '/atlanta/inman-park/',
-    imageKey: 'nbhdInmanPark' as const,
     blurb: 'Historic charm, walkable to Little Five Points and the BeltLine. A guest favorite.',
   },
   {
     name: 'Virginia-Highland',
     href: '/atlanta/virginia-highland/',
-    imageKey: 'nbhdDefault' as const,
     blurb: 'Boutique neighborhood with loyal guest following and strong weekend and event demand.',
   },
   {
     name: 'Grant Park',
     href: '/atlanta/grant-park/',
-    imageKey: 'metroAtlanta' as const,
     blurb: 'Steps from Zoo Atlanta and major event venues. Excellent family and group bookings.',
   },
   {
     name: 'East Atlanta Village',
     href: '/atlanta/east-atlanta-village/',
-    imageKey: 'atlantaSkyline' as const,
     blurb: 'Creative energy, independent restaurants, and a growing short-term rental market.',
   },
   {
     name: 'Decatur',
     href: '/atlanta/decatur/',
-    imageKey: 'nbhdDecatur' as const,
     blurb: 'Award-winning schools, a beloved downtown square, and a thriving arts scene.',
   },
 ];
+
+// Distinct gradient + icon per neighbourhood card (no nearby repeats).
+const nbhdStyles = assignCardStyles(
+  neighborhoods.map((n) => ({ slug: n.href.split('/').filter(Boolean).pop() ?? n.name, region: 'atlanta' })),
+);
 
 ---
 
@@ -516,11 +514,12 @@ const neighborhoods = [
         </p>
       </div>
       <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {neighborhoods.map((nbhd) => (
+        {neighborhoods.map((nbhd, i) => (
           <NeighborhoodCard
             name={nbhd.name}
             href={nbhd.href}
-            imageKey={nbhd.imageKey}
+            gradient={nbhdStyles[i].gradient}
+            icon={nbhdStyles[i].icon}
             blurb={nbhd.blurb}
           />
         ))}

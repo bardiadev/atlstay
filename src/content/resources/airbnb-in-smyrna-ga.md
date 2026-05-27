@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Smyrna, GA: An Owner's Guide"
 description: "What Smyrna hosts need to know about short-term rental demand, Cobb County licensing, The Battery adjacency, and running a profitable listing near Truist Park."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-12-10
 heroImage: "metroAtlanta"
 featured: false

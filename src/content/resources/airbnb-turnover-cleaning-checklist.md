@@ -1,7 +1,7 @@
 ---
 title: "The Airbnb Turnover Cleaning Checklist"
 description: "A room-by-room Airbnb turnover cleaning checklist to protect your reviews, prevent complaints, and keep every guest arrival feeling fresh."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2024-09-10
 heroImage: "cleaning"
 featured: false

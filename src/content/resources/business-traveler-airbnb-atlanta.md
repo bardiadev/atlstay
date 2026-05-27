@@ -1,7 +1,7 @@
 ---
 title: "Winning Business Travelers in Your Atlanta Airbnb"
 description: "How to set up your Atlanta short-term rental to attract and retain corporate guests — workspace, fast wifi, reliable check-in, and midweek demand."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2024-09-27
 heroImage: "guestExperience"
 featured: false

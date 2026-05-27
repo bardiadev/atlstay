@@ -1,7 +1,7 @@
 ---
 title: "Sweet Auburn Airbnb: Owner's Guide to Atlanta's Historic Heart"
 description: "Sweet Auburn Airbnb demand is rooted in civil-rights heritage and cultural tourism. Here's what owners need to know about this Downtown-adjacent historic district."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-01-08
 heroImage: "nbhdDefault"
 featured: false

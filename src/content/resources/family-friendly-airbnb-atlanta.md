@@ -1,7 +1,7 @@
 ---
 title: "Hosting a Family-Friendly Airbnb in Atlanta"
 description: "How to set up and position your Atlanta Airbnb to attract family bookings — amenities, safety, parking, and kid-friendly Atlanta attractions nearby."
-category: "Guest Experience"
+category: "Hosting & Operations"
 publishDate: 2024-08-30
 heroImage: "guestExperience"
 featured: false

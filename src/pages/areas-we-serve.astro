@@ -10,7 +10,7 @@ import CTABand from '@/components/ui/CTABand.astro';
 import RelatedReading from '@/components/ui/RelatedReading.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 import { getCollection } from 'astro:content';
-import { assignCardImages } from '@/lib/cardImage';
+import { assignCardStyles } from '@/lib/cardImage';
 import { site } from '@/config/site';
 
 const neighborhoods = (await getCollection('neighborhoods', (e) => e.data.published && e.data.citySlug === 'atlanta'))
@@ -20,10 +20,10 @@ const cities = await getCollection('cities', (c) => c.data.published);
 const metro = cities.filter((c) => c.data.region === 'metro').sort((a, b) => a.data.name.localeCompare(b.data.name));
 const georgia = cities.filter((c) => c.data.region === 'georgia').sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-// Smart, non-repeating card imagery per group (no two adjacent cards share a photo).
-const nbhdImgs = assignCardImages(neighborhoods.map((n) => ({ slug: n.data.slug, region: 'atlanta' })));
-const metroImgs = assignCardImages(metro.map((c) => ({ slug: c.data.slug, region: 'metro' })));
-const gaImgs = assignCardImages(georgia.map((c) => ({ slug: c.data.slug, region: 'georgia' })));
+// Distinct, non-repeating card styling per group (no two nearby cards share a gradient).
+const nbhdStyles = assignCardStyles(neighborhoods.map((n) => ({ slug: n.data.slug, region: 'atlanta' })));
+const metroStyles = assignCardStyles(metro.map((c) => ({ slug: c.data.slug, region: 'metro' })));
+const gaStyles = assignCardStyles(georgia.map((c) => ({ slug: c.data.slug, region: 'georgia' })));
 
 const firstSentence = (s: string) => s.split('. ')[0].replace(/\.$/, '') + '.';
 
@@ -78,7 +78,7 @@ const schemas = [
       </div>
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {neighborhoods.map((n, i) => (
-          <NeighborhoodCard name={n.data.name} href={`/atlanta/${n.data.slug}/`} imageSrc={nbhdImgs[i].src} imageAlt={nbhdImgs[i].alt} blurb={firstSentence(n.data.intro)} />
+          <NeighborhoodCard name={n.data.name} href={`/atlanta/${n.data.slug}/`} gradient={nbhdStyles[i].gradient} icon={nbhdStyles[i].icon} blurb={firstSentence(n.data.intro)} />
         ))}
       </div>
     </Container>
@@ -94,7 +94,7 @@ const schemas = [
       </div>
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {metro.map((c, i) => (
-          <NeighborhoodCard name={c.data.name} href={`/${c.data.slug}/`} imageSrc={metroImgs[i].src} imageAlt={metroImgs[i].alt} blurb={firstSentence(c.data.intro)} />
+          <NeighborhoodCard name={c.data.name} href={`/${c.data.slug}/`} gradient={metroStyles[i].gradient} icon={metroStyles[i].icon} blurb={firstSentence(c.data.intro)} />
         ))}
       </div>
     </Container>
@@ -110,7 +110,7 @@ const schemas = [
       </div>
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {georgia.map((c, i) => (
-          <NeighborhoodCard name={c.data.name} href={`/${c.data.slug}/`} imageSrc={gaImgs[i].src} imageAlt={gaImgs[i].alt} blurb={firstSentence(c.data.intro)} />
+          <NeighborhoodCard name={c.data.name} href={`/${c.data.slug}/`} gradient={gaStyles[i].gradient} icon={gaStyles[i].icon} blurb={firstSentence(c.data.intro)} />
         ))}
       </div>
     </Container>

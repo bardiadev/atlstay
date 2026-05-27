@@ -1,7 +1,7 @@
 ---
 title: "Co-Hosting vs. Full Airbnb Management"
 description: "Co-host or full-service manager — what's the real difference, what each one covers, and how to decide which model fits your property and your life."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-05-20
 heroImage: "about"
 featured: false

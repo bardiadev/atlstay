@@ -1,7 +1,7 @@
 ---
 title: "Kirkwood Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running a Kirkwood Airbnb — guest demand, the Pratt-Pullman district, family stays, and what makes this up-and-coming neighborhood work."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-11-13
 heroImage: "nbhdDefault"
 featured: false

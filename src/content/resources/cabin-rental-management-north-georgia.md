@@ -1,7 +1,7 @@
 ---
 title: "Cabin Rental Management in North Georgia"
 description: "What owners need to know about managing a North Georgia cabin rental — Blue Ridge, Helen, Ellijay, seasonal demand, distance operations, and local rules."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-03-25
 heroImage: "northGeorgia"
 featured: false

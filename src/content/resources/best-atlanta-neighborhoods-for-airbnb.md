@@ -1,7 +1,7 @@
 ---
 title: "Best Atlanta Neighborhoods for Airbnb: A 2026 Owner's Guide"
 description: "Which Atlanta neighborhoods work best for short-term rentals — Buckhead, Midtown, the BeltLine corridor, Decatur and more — matched to guest demand, property type, and your goals."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-05-27
 heroImage: "metroAtlanta"
 featured: true

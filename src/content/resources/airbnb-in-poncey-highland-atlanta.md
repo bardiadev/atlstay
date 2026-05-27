@@ -1,7 +1,7 @@
 ---
 title: "Poncey-Highland Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running a Poncey-Highland Airbnb — Ponce City Market, the BeltLine, walkability, and what makes this leisure-driven neighborhood perform."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-11-25
 heroImage: "nbhdDefault"
 featured: false

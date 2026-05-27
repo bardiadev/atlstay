@@ -1,7 +1,7 @@
 ---
 title: "Edgewood Airbnb: A Property Owner's Guide"
 description: "What owners need to know about running an Edgewood Airbnb — nightlife proximity, social guests, local retail, and how to earn well in an eclectic East Atlanta neighborhood."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-05-15
 heroImage: "nbhdDefault"
 featured: false

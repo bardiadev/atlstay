@@ -1,7 +1,7 @@
 ---
 title: "Choosing the Right Airbnb Cancellation Policy"
 description: "Flexible, Moderate, or Strict — your Airbnb cancellation policy shapes both booking conversion and income protection. Here's how to choose the right one for your listing."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-05-16
 heroImage: "photography"
 featured: false

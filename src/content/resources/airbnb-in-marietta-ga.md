@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Marietta, GA: A Host's Guide"
 description: "What Marietta hosts need to know about short-term rentals — Marietta Square, Truist Park demand, local regulations, and how to run a successful Cobb County property."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-10-01
 heroImage: "metroAtlanta"
 featured: false

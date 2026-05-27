@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in College Park, GA: An Owner's Guide"
 description: "A practical guide for STR owners in College Park — airport adjacency, convention demand, local rules, and what it takes to run a high-performing listing here."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-10-09
 heroImage: "metroAtlanta"
 featured: false

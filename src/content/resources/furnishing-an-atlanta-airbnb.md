@@ -1,7 +1,7 @@
 ---
 title: "Furnishing an Atlanta Airbnb: A Starter Guide"
 description: "What to buy, where to invest, and where to save when furnishing an Atlanta Airbnb — built for durability, guest satisfaction, and repeat bookings."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2024-12-30
 heroImage: "suburbHome"
 featured: false

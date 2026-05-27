@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in McDonough, GA: Property Owner's Guide"
 description: "McDonough's historic Square, Henry County growth, and Atlanta Motor Speedway proximity make it a compelling Airbnb market. Here's what owners need to know."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-11-10
 heroImage: "metroAtlanta"
 featured: false

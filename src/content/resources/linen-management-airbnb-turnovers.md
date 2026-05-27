@@ -1,7 +1,7 @@
 ---
 title: "Linen Management for Fast Airbnb Turnovers"
 description: "Multiple linen sets, hotel-grade quality, and smart laundry logistics are the difference between a smooth same-day turn and a botched one. Here's how to run it."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2024-11-05
 heroImage: "cleaning"
 featured: false

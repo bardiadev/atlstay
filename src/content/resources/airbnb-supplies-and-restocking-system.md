@@ -1,7 +1,7 @@
 ---
 title: "Airbnb Supplies & Restocking: A Par-Level System"
 description: "A par-level stocking system keeps your Airbnb running smoothly between turnovers — here's how to set it up so you never run out of consumables mid-stay."
-category: "Operations & Cleaning"
+category: "Hosting & Operations"
 publishDate: 2024-10-22
 heroImage: "cleaning"
 featured: false

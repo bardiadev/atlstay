@@ -1,7 +1,7 @@
 ---
 title: "A Local Awning Alternative in Atlanta"
 description: "Evaluating Awning for your Atlanta STR? See how a local Atlanta property manager compares across service, operations, and market knowledge."
-category: "Comparisons & Decisions"
+category: "Investing & ROI"
 publishDate: 2025-05-13
 heroImage: "about"
 featured: false

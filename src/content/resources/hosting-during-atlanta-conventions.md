@@ -1,7 +1,7 @@
 ---
 title: "Hosting During Atlanta's Big Conventions"
 description: "Georgia World Congress Center drives some of Atlanta's strongest midweek Airbnb demand. How to position, price, and prepare your listing for convention guests."
-category: "Events & Seasonality"
+category: "Pricing & Revenue"
 publishDate: 2025-09-23
 heroImage: "atlantaSkyline"
 featured: false

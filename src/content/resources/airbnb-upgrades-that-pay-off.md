@@ -1,7 +1,7 @@
 ---
 title: "Which Airbnb Upgrades Actually Pay Off?"
 description: "Not every improvement earns its cost back. Here's how to think about high-ROI Airbnb upgrades versus the vanity spends that impress only on paper."
-category: "Design & Setup"
+category: "Hosting & Operations"
 publishDate: 2025-04-22
 heroImage: "suburbHome"
 featured: false

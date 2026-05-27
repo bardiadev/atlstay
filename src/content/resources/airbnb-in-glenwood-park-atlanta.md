@@ -1,7 +1,7 @@
 ---
 title: "Glenwood Park Airbnb: An Owner's Guide"
 description: "Everything owners need to know about a Glenwood Park Airbnb — guest demand, BeltLine proximity, design tips, and how to maximize this walkable Atlanta address."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2025-05-29
 heroImage: "nbhdDefault"
 featured: false

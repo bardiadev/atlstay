@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Suwanee, GA: An Owner's Guide"
 description: "What Suwanee property owners need to know about short-term rentals — Town Center events, youth sports weekends, affluent suburban demand, and local rules before you list."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-09-29
 heroImage: "metroAtlanta"
 featured: false

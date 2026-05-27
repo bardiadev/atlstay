@@ -1,7 +1,7 @@
 ---
 title: "Renting Your Second Home on Airbnb"
 description: "How second-home owners earn income from Airbnb when they're not using their property — and what to weigh before you list."
-category: "Investment & ROI"
+category: "Investing & ROI"
 publishDate: 2025-05-14
 heroImage: "ownerHandshake"
 featured: false

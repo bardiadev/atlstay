@@ -1,7 +1,7 @@
 ---
 title: "Buckhead Airbnb: A Property Owner's Guide"
 description: "Everything owners need to know about running a Buckhead Airbnb — guest demand, property fit, design tips, and how to maximize a premium Atlanta address."
-category: "Neighborhood Guides"
+category: "Atlanta Neighborhoods"
 publishDate: 2026-02-10
 heroImage: "nbhdBuckhead"
 featured: false

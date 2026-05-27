@@ -1,7 +1,7 @@
 ---
 title: "Airbnb in Douglasville, GA: An Owner's Guide"
 description: "What Douglasville property owners need to know about short-term rentals — I-20 corridor demand, Sweetwater Creek proximity, value pricing, and Douglas County rules."
-category: "Metro & Georgia Markets"
+category: "Georgia Markets"
 publishDate: 2024-10-13
 heroImage: "metroAtlanta"
 featured: false

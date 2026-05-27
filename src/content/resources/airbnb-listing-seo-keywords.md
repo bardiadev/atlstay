@@ -1,7 +1,7 @@
 ---
 title: "Airbnb Listing SEO: Get Found in Search"
 description: "Airbnb has its own search algorithm. Here's how to optimize your listing title, photos, completeness, and reviews to rank higher and get more bookings."
-category: "Listing & Marketing"
+category: "Marketing & Listings"
 publishDate: 2025-01-29
 heroImage: "photography"
 featured: false
