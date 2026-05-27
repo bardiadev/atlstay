@@ -57,6 +57,13 @@ export function localBusinessSchema(opts: { areaServed?: string[] } = {}) {
     },
     areaServed: areaServed.map((name) => ({ '@type': 'City', name })),
     priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: site.reviews.ratingValue,
+      reviewCount: site.reviews.reviewCount,
+      bestRating: site.reviews.bestRating,
+    },
+    foundingDate: String(site.stats.foundingYear),
     parentOrganization: { '@id': ORG_ID },
   };
 }
