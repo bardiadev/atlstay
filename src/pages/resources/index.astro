@@ -23,6 +23,7 @@ const schemas = [
 
 // Group by category for nav/filtering purposes
 const categories = [...new Set(resources.map((r) => r.data.category))];
+const featured = resources.filter((r) => r.data.featured);
 ---
 
 <BaseLayout
@@ -38,8 +39,41 @@ const categories = [...new Set(resources.map((r) => r.data.category))];
     breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Resources', path: '/resources/' }]}
   />
 
+  <!-- Featured guides -->
+  {featured.length > 0 && (
+    <Section variant="white">
+      <Container>
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-brass-600">Start here</span>
+            <h2 class="mt-2 font-display text-2xl text-forest sm:text-3xl">Featured guides</h2>
+          </div>
+          <p class="hidden text-sm text-stone sm:block">{resources.length} owner guides and counting</p>
+        </div>
+        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featured.map((entry) => (
+            <article class="group flex flex-col rounded-2xl border border-brass/30 bg-brass-50/40 p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brass/60 hover:shadow-md">
+              <Badge variant="brass">{entry.data.category}</Badge>
+              <h3 class="mt-4 font-display text-xl leading-snug text-forest">
+                <a href={`/resources/${entry.id}/`} class="transition-colors group-hover:text-brass-600">{entry.data.title}</a>
+              </h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-ink/75">{entry.data.description}</p>
+              <span class="mt-4 text-sm font-medium text-brass-600">Read the guide &rarr;</span>
+            </article>
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )}
+
   <!-- Resource cards + client-side topic filter -->
   <Section variant="cream">
+    <Container>
+      <div class="mb-2">
+        <span class="text-xs font-semibold uppercase tracking-[0.18em] text-brass-600">All guides</span>
+        <h2 class="mt-2 font-display text-2xl text-forest sm:text-3xl">Browse every guide</h2>
+      </div>
+    </Container>
     <Container>
       {categories.length > 1 && (
         <div class="mb-10 flex flex-wrap items-center gap-2">

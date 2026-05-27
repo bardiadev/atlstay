@@ -4,7 +4,7 @@ description: "Short-term (Airbnb) vs. long-term renting in Atlanta — an honest
 category: "Comparisons & Decisions"
 publishDate: 2026-05-27
 heroImage: "suburbHome"
-featured: false
+featured: true
 faqs:
   - q: "Does an Airbnb make more money than a long-term rental in Atlanta?"
     a: "For well-located, well-run properties, short-term rental often produces higher gross revenue than a long-term lease, because nightly rates across a full year can add up to more than a fixed monthly rent. But it's not automatic: short-term rentals carry higher operating costs and more income variability, so the number that matters is net income to you after costs — not gross. The only reliable comparison is running both numbers for your specific property and market."

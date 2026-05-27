@@ -4,7 +4,7 @@ description: "Why daily, demand-based pricing out-earns a set-and-forget nightly
 category: "Pricing & Revenue"
 publishDate: 2026-05-27
 heroImage: "pricingDashboard"
-featured: false
+featured: true
 faqs:
   - q: "What is dynamic pricing for an Airbnb?"
     a: "Dynamic pricing means setting each night's rate based on real-time demand signals — local events, seasonality, day of week, how far out the booking is, your remaining availability, and what comparable listings are charging — instead of one fixed rate. The goal is simple: the right price for every single night, rather than a rate you set once and forget."

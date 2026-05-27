@@ -4,7 +4,7 @@ description: "Self-managing vs. hiring an Airbnb manager — an honest look at t
 category: "Comparisons & Decisions"
 publishDate: 2026-05-26
 heroImage: "ownerHandshake"
-featured: false
+featured: true
 faqs:
   - q: "Should I self-manage my Airbnb or hire a property manager?"
     a: "It depends on three factors: how much your time is worth, how much revenue optimization matters to you, and how much risk you're comfortable carrying. Self-managing can work well if you have local availability, hospitality instincts, and the time to invest. Hiring a manager is almost always the right call if you want truly passive income, if you live far from the property, or if you want professional pricing and guest management without the daily commitment."

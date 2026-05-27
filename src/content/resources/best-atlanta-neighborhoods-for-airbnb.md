@@ -4,7 +4,7 @@ description: "Which Atlanta neighborhoods work best for short-term rentals — B
 category: "Neighborhood Guides"
 publishDate: 2026-05-27
 heroImage: "metroAtlanta"
-featured: false
+featured: true
 faqs:
   - q: "What is the best Atlanta neighborhood for Airbnb?"
     a: "There isn't one universal best — it depends on your property type and the guest you want to attract. That said, the neighborhoods that consistently see the strongest short-term rental demand are the walkable, attraction-rich areas: Midtown (arts, Piedmont Park, tech employers), the BeltLine corridor through Old Fourth Ward and Inman Park, Buckhead for upscale and business travel, and Downtown-adjacent districts near the Georgia World Congress Center and Mercedes-Benz Stadium. The right fit is the one where your specific home matches what guests in that area are looking for."
