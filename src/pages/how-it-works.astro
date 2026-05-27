@@ -9,6 +9,7 @@ import StepList from '@/components/ui/StepList.astro';
 import CheckList from '@/components/ui/CheckList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import RelatedReading from '@/components/ui/RelatedReading.astro';
 import { site } from '@/config/site';
 import { breadcrumbSchema } from '@/lib/schema';
 
@@ -216,6 +217,16 @@ const howFaqs = [
       </div>
     </Container>
   </Section>
+
+  <RelatedReading
+    variant="white"
+    heading="Helpful reading before you start"
+    items={[
+      { title: "Is Airbnb Management Worth It?", desc: "An honest look at whether professional management pays for itself for your property.", href: "/resources/is-airbnb-management-worth-it/" },
+      { title: "Airbnb vs. Long-Term Rental in Atlanta", desc: "Which earns more after costs — and how to decide what fits your goals.", href: "/resources/airbnb-vs-long-term-rental-atlanta/" },
+      { title: "Airbnb Management Fees in Atlanta", desc: "How management pricing works, what's included, and how to judge the cost.", href: "/resources/airbnb-management-cost-atlanta/" },
+    ]}
+  />
 
   <!-- ─── CTA BAND ─── -->
   <CTABand
