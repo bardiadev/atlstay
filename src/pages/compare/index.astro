@@ -1,0 +1,57 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { comparisons } from '@/data/comparisons';
+import { breadcrumbSchema } from '@/lib/schema';
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Compare', path: '/compare/' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Keystone Stays vs National STR Managers"
+  description="See how Keystone Stays compares to national short-term rental managers like Vacasa, Evolve, and Awning — local expertise, transparent pricing, and genuinely full service."
+  schemas={schemas}
+>
+  <PageHero
+    title="How we compare"
+    subtitle="An honest look at Keystone Stays versus the big national management companies — so you can choose with confidence."
+    eyebrow="Compare"
+    imageKey="ownerHandshake"
+    breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Compare', path: '/compare/' }]}
+    cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
+    secondaryCta={{ label: 'See our pricing', href: '/pricing/' }}
+  />
+
+  <Section variant="cream">
+    <Container>
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <Eyebrow>Local vs. national</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">The local alternative to the big platforms</h2>
+        <p class="mt-4 text-ink/75">National brands manage at scale from afar. We manage your home like it's the only one we have — with transparent pricing and a team that actually knows Atlanta.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {comparisons.map((c) => (
+          <Card class="flex h-full flex-col">
+            <Eyebrow>vs {c.competitor}</Eyebrow>
+            <h3 class="mt-2 font-display text-xl text-forest">{c.headline}</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">{c.summary}</p>
+            <Button href={`/compare/${c.slug}/`} variant="secondary" class="mt-5">Read the full comparison &rarr;</Button>
+          </Card>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand />
+</BaseLayout>

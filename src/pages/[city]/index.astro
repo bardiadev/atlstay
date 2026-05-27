@@ -35,6 +35,7 @@ const countyOf = (c: typeof entry) => c.data.county ?? cityGeo[c.data.slug]?.cou
 
 const isVacation = d.region === 'georgia';
 const heading = `${isVacation ? 'Vacation Rental & Airbnb Management' : 'Airbnb & Short-Term Rental Management'} in ${d.name}, ${d.state}`;
+const seoTitle = isVacation ? `Vacation Rental Management in ${d.name}, GA` : `Airbnb Management in ${d.name}, GA`;
 const countyLine = county ? ` We manage homes across ${d.name} and ${county} County.` : '';
 
 // Neighborhoods (Atlanta only)
@@ -72,7 +73,7 @@ const schemas = [
 ];
 ---
 
-<BaseLayout title={d.title} description={d.description} image={images[heroKey].src} schemas={schemas}>
+<BaseLayout title={seoTitle} description={d.description} image={images[heroKey].src} schemas={schemas}>
   <PageHero
     title={heading}
     subtitle={d.intro}

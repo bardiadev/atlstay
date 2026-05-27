@@ -5,7 +5,7 @@ import '../styles/global.css';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import { site } from '../config/site';
-import { pageTitle, canonical, absoluteImage, type SeoProps } from '../lib/seo';
+import { pageTitle, clampDescription, canonical, absoluteImage, type SeoProps } from '../lib/seo';
 import { organizationSchema, websiteSchema, localBusinessSchema } from '../lib/schema';
 
 interface Props extends SeoProps {
@@ -27,6 +27,7 @@ const {
 const fullTitle = pageTitle(title);
 const canonicalUrl = canonical(Astro.url);
 const ogImage = absoluteImage(image);
+const metaDescription = clampDescription(description);
 
 // Sitewide org/website/localbusiness once; pages add their own via `schemas`.
 const allSchemas = [
@@ -44,18 +45,18 @@ const allSchemas = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href={canonicalUrl} />
     <title>{fullTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
 
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={site.brandName} />
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={ogImage} />
 
     <meta name="theme-color" content="#14342B" />

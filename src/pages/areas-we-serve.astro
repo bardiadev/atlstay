@@ -12,9 +12,8 @@ import { getCollection } from 'astro:content';
 import type { ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 
-const nbhdOrder = ['buckhead', 'midtown', 'old-fourth-ward', 'inman-park', 'virginia-highland', 'grant-park', 'east-atlanta-village', 'decatur'];
 const neighborhoods = (await getCollection('neighborhoods', (e) => e.data.published && e.data.citySlug === 'atlanta'))
-  .sort((a, b) => nbhdOrder.indexOf(a.data.slug) - nbhdOrder.indexOf(b.data.slug));
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
 const nbhdImageMap: Record<string, ImageKey> = {
   buckhead: 'nbhdBuckhead', midtown: 'nbhdMidtown', 'old-fourth-ward': 'nbhdOldFourthWard',
   'inman-park': 'nbhdInmanPark', decatur: 'nbhdDecatur',

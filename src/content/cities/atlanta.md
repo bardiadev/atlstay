@@ -16,8 +16,32 @@ neighborhoods:
   - grant-park
   - east-atlanta-village
   - decatur
+  - buckhead-village
+  - ansley-park
+  - morningside
+  - druid-hills
+  - poncey-highland
+  - candler-park
+  - lake-claire
+  - kirkwood
+  - edgewood
+  - cabbagetown
+  - reynoldstown
+  - glenwood-park
+  - ormewood-park
+  - summerhill
+  - peoplestown
+  - west-midtown
+  - home-park
+  - atlantic-station
+  - castleberry-hill
+  - sweet-auburn
+  - west-end
+  - westview
+  - adair-park
+  - capitol-view
 highlights:
-  - "Hyper-local expertise across all 8 core Atlanta neighborhoods"
+  - "Hyper-local expertise across 30+ Atlanta neighborhoods, from Buckhead to the BeltLine"
   - "Dynamic pricing calibrated to Atlanta's event-driven demand spikes"
   - "Full-service turnovers with our vetted Atlanta cleaning teams"
   - "24/7 guest communication so you never wake up to a problem"

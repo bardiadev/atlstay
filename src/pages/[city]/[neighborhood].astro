@@ -33,6 +33,7 @@ const heroImg = entry.data.heroImage && entry.data.heroImage in images
   : images.nbhdDefault;
 
 const cityName = entry.data.citySlug.charAt(0).toUpperCase() + entry.data.citySlug.slice(1);
+const seoTitle = `Airbnb Management in ${entry.data.name}, ${cityName}`;
 
 const schemas = [
   breadcrumbSchema([
@@ -49,7 +50,7 @@ const schemas = [
 ---
 
 <BaseLayout
-  title={entry.data.title}
+  title={seoTitle}
   description={entry.data.description}
   image={heroImg.src}
   schemas={schemas}
