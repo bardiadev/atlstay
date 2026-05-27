@@ -14,11 +14,21 @@ import LogoCloud from '@/components/ui/LogoCloud.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import TestimonialCard from '@/components/ui/TestimonialCard.astro';
 import NeighborhoodCard from '@/components/ui/NeighborhoodCard.astro';
+import ProjectionForm from '@/components/react/ProjectionForm';
+import { serviceSchema } from '@/lib/schema';
 import { site } from '@/config/site';
 import { services } from '@/data/services';
 import { testimonials } from '@/data/testimonials';
 import { homeFaqs } from '@/data/faqs';
 import { images } from '@/data/images';
+
+const homeSchemas = [
+  serviceSchema({
+    name: 'Short-term rental management',
+    description:
+      'Full-service Airbnb and Vrbo management for Atlanta and Georgia homeowners — listing, dynamic pricing, 24/7 guest care, cleaning, and transparent reporting.',
+  }),
+];
 
 // Show first 6 services on homepage
 const featuredServices = services.slice(0, 6);
@@ -108,11 +118,11 @@ const differentiators = [
 <BaseLayout
   title="Airbnb & Short-Term Rental Management in Atlanta"
   description="Premium short-term rental management in Atlanta. Professional listing, dynamic pricing, 24/7 guest care, and five-star turnovers — handled for you. Get a free rental projection."
+  schemas={homeSchemas}
 >
 
-  <!-- ─── HERO ─── (full-bleed, fits the viewport minus the sticky header) -->
-  <section class="relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden">
-    <!-- Full-bleed background image -->
+  <!-- ─── HERO ─── (copy + live projection form; viewport-fit on desktop) -->
+  <section class="relative isolate flex items-center overflow-hidden py-12 lg:min-h-[calc(100svh-5rem)] lg:py-0">
     <img
       src={images.heroHome.src}
       alt={images.heroHome.alt}
@@ -120,47 +130,48 @@ const differentiators = [
       fetchpriority="high"
       class="absolute inset-0 -z-20 h-full w-full object-cover object-center"
     />
-    <!-- Legibility scrims (forest-toned, keeps cream text crisp on any photo) -->
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-forest/95 via-forest/75 to-forest/30"></div>
-    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-forest/65 via-transparent to-forest/25"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-forest/95 via-forest/85 to-forest/60"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-forest/70 via-transparent to-forest/30"></div>
 
     <Container>
-      <div class="max-w-3xl">
-        <Badge variant="brass" class="mb-4">Atlanta's local short-term rental experts</Badge>
-        <h1 class="font-display text-[clamp(2rem,4.6vw,3.25rem)] font-medium leading-[1.07] tracking-tight text-balance text-cream">
-          Effortless Airbnb management in Atlanta.
-        </h1>
-        <p class="mt-4 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
-          Premium short-term rental management for local homeowners — listing, dynamic pricing, 24/7 guest care, cleaning, and five-star reviews handled for you, so your home earns more without the work.
-        </p>
-        <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
-          <Button href="/how-it-works/" variant="inverse" size="lg">See how it works</Button>
-        </div>
-        <p class="mt-4 text-sm text-cream/70">No sales pitch. No obligation — ever. Real Atlanta data within one business day.</p>
+      <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <!-- Left: copy -->
+        <div class="max-w-xl">
+          <Badge variant="brass" class="mb-4">Atlanta's local short-term rental experts</Badge>
+          <h1 class="font-display text-[clamp(2rem,4.4vw,3.25rem)] font-medium leading-[1.07] tracking-tight text-balance text-cream">
+            Effortless Airbnb management in Atlanta.
+          </h1>
+          <p class="mt-4 max-w-lg text-base leading-relaxed text-cream/85 sm:text-lg">
+            Premium short-term rental management for local homeowners — listing, pricing, 24/7 guest care, cleaning, and five-star reviews handled for you, so your home earns more without the work.
+          </p>
 
-        <dl class="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-cream/20 pt-6">
-          <div>
-            <dt class="font-display text-xl text-cream">5&#9733;</dt>
-            <dd class="mt-0.5 text-xs text-cream/70">Average guest rating</dd>
+          <dl class="mt-8 hidden flex-wrap gap-x-8 gap-y-3 border-t border-cream/20 pt-6 lg:flex">
+            <div><dt class="font-display text-xl text-cream">5&#9733;</dt><dd class="mt-0.5 text-xs text-cream/70">Average guest rating</dd></div>
+            <div><dt class="font-display text-xl text-cream">24/7</dt><dd class="mt-0.5 text-xs text-cream/70">Local guest support</dd></div>
+            <div><dt class="font-display text-xl text-cream">100s</dt><dd class="mt-0.5 text-xs text-cream/70">of five-star stays</dd></div>
+          </dl>
+
+          <div class="mt-6 hidden items-center gap-4 text-sm lg:flex">
+            <a href="/how-it-works/" class="font-medium text-cream underline-offset-4 hover:text-brass hover:underline">See how it works &rarr;</a>
+            <span class="text-cream/40">·</span>
+            <a href={site.contact.phoneHref} class="text-cream/80 transition-colors hover:text-brass">Call {site.contact.phone}</a>
           </div>
-          <div>
-            <dt class="font-display text-xl text-cream">24/7</dt>
-            <dd class="mt-0.5 text-xs text-cream/70">Local guest support</dd>
-          </div>
-          <div>
-            <dt class="font-display text-xl text-cream">100s</dt>
-            <dd class="mt-0.5 text-xs text-cream/70">of five-star stays</dd>
-          </div>
-        </dl>
+        </div>
+
+        <!-- Right: live projection form -->
+        <div class="w-full">
+          <p class="mb-3 flex items-center gap-2 text-sm font-medium text-cream">
+            <span class="inline-block h-2 w-2 rounded-full bg-brass"></span>
+            Free rental projection — about a minute
+          </p>
+          <ProjectionForm client:load />
+          <p class="mt-3 text-center text-xs text-cream/70">
+            No obligation — ever. Prefer to talk? Call
+            <a href={site.contact.phoneHref} class="underline underline-offset-2 hover:text-brass">{site.contact.phone}</a>.
+          </p>
+        </div>
       </div>
     </Container>
-
-    <div aria-hidden="true" class="absolute bottom-5 left-1/2 -translate-x-1/2 text-cream/55">
-      <svg class="h-6 w-6 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M12 5v13M6 12l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </div>
   </section>
 
   <!-- ─── LOGO CLOUD / PLATFORM STRIP ─── -->

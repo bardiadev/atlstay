@@ -1,5 +1,6 @@
 ---
 import { mainNav, primaryCta } from '../../data/navigation';
+import { site } from '../../config/site';
 import Logo from './Logo.astro';
 import Button from '../ui/Button.astro';
 ---
@@ -13,7 +14,8 @@ import Button from '../ui/Button.astro';
       ))}
     </nav>
 
-    <div class="hidden lg:block">
+    <div class="hidden items-center gap-5 lg:flex">
+      <a href={site.contact.phoneHref} class="hidden text-sm font-medium text-forest/80 transition-colors hover:text-forest xl:inline">{site.contact.phone}</a>
       <Button href={primaryCta.href}>{primaryCta.label}</Button>
     </div>
 
