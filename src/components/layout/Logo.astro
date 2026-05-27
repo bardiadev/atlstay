@@ -3,11 +3,19 @@ import { site } from '../../config/site';
 interface Props { variant?: 'dark' | 'light'; class?: string; }
 const { variant = 'dark', class: cls = '' } = Astro.props;
 const word = variant === 'light' ? 'text-cream' : 'text-forest';
+// Peak adapts to the background so it stays visible (forest on light, cream on dark).
+const peak = variant === 'light' ? '#F7F4EC' : '#14342B';
 ---
 <a href="/" class={`inline-flex items-center gap-2.5 ${cls}`} aria-label={`${site.brandName} — home`}>
-  <svg class="text-brass" width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16 5 L27 14 H5 Z" fill="currentColor" />
-    <path d="M9 14 H23 V26 H9 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+  <svg width="30" height="24" viewBox="0 0 120 96" aria-hidden="true">
+    <path d="M60 6 L112 90 L90 90 L60 33 L30 90 L8 90 Z" fill={peak} />
+    <path d="M10 84 L60 50 L110 84" fill="none" stroke="#C9A24B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    <g fill="#C9A24B">
+      <rect x="52" y="69" width="7" height="7" rx="1" />
+      <rect x="61" y="69" width="7" height="7" rx="1" />
+      <rect x="52" y="78" width="7" height="7" rx="1" />
+      <rect x="61" y="78" width="7" height="7" rx="1" />
+    </g>
   </svg>
   <span class={`font-display text-xl tracking-tight ${word}`}>{site.brandName}</span>
 </a>

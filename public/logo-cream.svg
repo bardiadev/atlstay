@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 116" role="img" aria-label="ATLStay">
+  <rect width="140" height="116" rx="20" fill="#F7F4EC" />
+  <g transform="translate(10,12)">
+    <path d="M60 6 L112 90 L90 90 L60 33 L30 90 L8 90 Z" fill="#14342B" />
+    <path d="M10 84 L60 50 L110 84" fill="none" stroke="#C9A24B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    <g fill="#C9A24B">
+      <rect x="52" y="69" width="7" height="7" rx="1" />
+      <rect x="61" y="69" width="7" height="7" rx="1" />
+      <rect x="52" y="78" width="7" height="7" rx="1" />
+      <rect x="61" y="78" width="7" height="7" rx="1" />
+    </g>
+  </g>
+</svg>

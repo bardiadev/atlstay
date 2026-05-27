@@ -55,11 +55,17 @@ h1, h2, h3, h4 {
   color: #1a2420;
 }
 
-/* Accessible focus ring */
+/* Accessible focus ring (keyboard navigation only) */
 :where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid var(--color-brass-600);
   outline-offset: 2px;
   border-radius: 2px;
+}
+/* Programmatic-only focus targets (tabindex="-1", e.g. step headings) must NOT
+   show a ring on load — fixes the gold box around the form heading on refresh. */
+[tabindex="-1"]:focus,
+[tabindex="-1"]:focus-visible {
+  outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
