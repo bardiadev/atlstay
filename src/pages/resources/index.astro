@@ -38,25 +38,21 @@ const categories = [...new Set(resources.map((r) => r.data.category))];
     breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Resources', path: '/resources/' }]}
   />
 
-  <!-- Category nav (visible if multiple categories) -->
-  {categories.length > 1 && (
-    <Section variant="white" class="py-6">
-      <Container>
-        <div class="flex flex-wrap gap-2">
-          {categories.map((cat) => (
-            <Badge variant="outline">{cat}</Badge>
-          ))}
-        </div>
-      </Container>
-    </Section>
-  )}
-
-  <!-- Resource cards -->
+  <!-- Resource cards + client-side topic filter -->
   <Section variant="cream">
     <Container>
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {categories.length > 1 && (
+        <div class="mb-10 flex flex-wrap items-center gap-2">
+          <span class="mr-1 text-xs font-semibold uppercase tracking-[0.18em] text-stone">Browse by topic</span>
+          <button type="button" data-filter="all" aria-pressed="true" class="cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium ring-1 ring-line text-stone transition-colors hover:text-forest hover:ring-brass/50 aria-pressed:bg-forest aria-pressed:text-cream aria-pressed:ring-forest">All</button>
+          {categories.map((cat) => (
+            <button type="button" data-filter={cat} aria-pressed="false" class="cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium ring-1 ring-line text-stone transition-colors hover:text-forest hover:ring-brass/50 aria-pressed:bg-forest aria-pressed:text-cream aria-pressed:ring-forest">{cat}</button>
+          ))}
+        </div>
+      )}
+      <div id="resource-grid" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {resources.map((entry) => (
-          <article class="flex flex-col rounded-2xl border border-line bg-white overflow-hidden shadow-sm transition-shadow hover:shadow-md">
+          <article data-category={entry.data.category} class="flex flex-col rounded-2xl border border-line bg-white overflow-hidden shadow-sm transition-shadow hover:shadow-md">
             <!-- Category badge -->
             <div class="px-6 pt-6">
               <Badge variant="brass">{entry.data.category}</Badge>
@@ -126,3 +122,18 @@ const categories = [...new Set(resources.map((r) => r.data.category))];
 
   <CTABand />
 </BaseLayout>
+
+<script>
+  // Client-side topic filter for the resource grid.
+  const chips = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const cards = document.querySelectorAll<HTMLElement>('#resource-grid [data-category]');
+  chips.forEach((chip) =>
+    chip.addEventListener('click', () => {
+      const f = chip.dataset.filter;
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+      cards.forEach((card) => {
+        card.style.display = f === 'all' || card.dataset.category === f ? '' : 'none';
+      });
+    }),
+  );
+</script>
