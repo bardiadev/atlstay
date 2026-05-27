@@ -24,6 +24,7 @@ export const footerNav: { heading: string; links: { label: string; href: string 
     heading: 'Services',
     links: [
       { label: 'Full-service management', href: '/services/' },
+      { label: 'Dynamic pricing & revenue', href: '/dynamic-pricing/' },
       { label: 'Free rental projection', href: '/rental-projection/' },
       { label: 'Areas we serve', href: '/areas-we-serve/' },
     ],

@@ -1,0 +1,181 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
+import StepList from '@/components/ui/StepList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
+import { site } from '@/config/site';
+
+const process = [
+  {
+    title: 'We reprice your calendar every single day',
+    text: 'Not once at setup — every day. Each morning we review the next 30–60 nights and adjust rates based on what changed in the market overnight: new bookings, competitor moves, fresh demand signals.',
+  },
+  {
+    title: 'We price every night individually',
+    text: 'A Tuesday in February and a Saturday during a sold-out convention are not the same night. We set each date on its own merits — never a lazy flat weekday/weekend rate.',
+  },
+  {
+    title: 'We price ahead of demand, not behind it',
+    text: 'We raise rates early when a big event or surge is coming, and protect occupancy in slow stretches before the gaps appear — so you capture the peaks and avoid empty nights.',
+  },
+  {
+    title: 'We pair software with a local human',
+    text: "Pricing tools surface the data; a local revenue manager who knows Atlanta makes the call. Algorithms miss context — a street festival, a marathon reroute, a new hotel opening down the block. We don't.",
+  },
+];
+
+const watchItems = [
+  'Major conventions at the Georgia World Congress Center',
+  'Braves, Falcons & Atlanta United home games',
+  'Concerts at State Farm Arena & Mercedes-Benz Stadium',
+  'Festivals — Dragon Con, Music Midtown, Shaky Knees',
+  'The Peachtree Road Race, marathons & college football',
+  'SEC Championship, Peach Bowl & the 2026 FIFA World Cup',
+  'Seasonality, school calendars & holiday windows',
+  'Competitor supply, rates & booking pace near you',
+  'Booking lead time & day-of-week demand curves',
+  'Last-minute demand spikes and weather events',
+];
+
+const faqs = [
+  {
+    q: 'Do you just set a pricing tool and forget it?',
+    a: "No — and that's the entire point. Most owners (and plenty of managers) install a pricing tool, set it once, and walk away. We actively manage pricing every day: a local revenue manager reviews your calendar, overrides the algorithm when local context calls for it, and adjusts ahead of demand.",
+  },
+  {
+    q: 'How often do my prices actually change?',
+    a: 'Daily. We review and adjust the upcoming weeks every day. As an event sells out, a competitor drops their rate, or a slow patch appears, your pricing responds the same day — not weeks later.',
+  },
+  {
+    q: 'What happens during big Atlanta events?',
+    a: "This is where the money is made. When a major convention, concert, or game is on the calendar, we raise your rates early — well before the date — to capture premium pricing while demand is high and supply is tight. Set-and-forget listings routinely leave hundreds a night on the table during these windows.",
+  },
+  {
+    q: 'Will you just slash prices to stay booked?',
+    a: 'No. The goal is the most revenue, not the most bookings. Sometimes that means holding a higher rate for a premium night; sometimes it means a smart, early discount to fill a gap before it goes empty. We optimize for what you actually take home.',
+  },
+  {
+    q: 'Is revenue management included, or an add-on?',
+    a: `It's included. Daily dynamic pricing and revenue management come standard in your all-inclusive management fee (from ${site.pricing.rate} of revenue) — never an extra charge.`,
+  },
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Dynamic Pricing', path: '/dynamic-pricing/' },
+  ]),
+  serviceSchema({
+    name: 'Short-term rental dynamic pricing & revenue management',
+    description:
+      'Daily dynamic pricing and revenue management for Atlanta short-term rentals — every night priced individually and updated every day around real demand and local events.',
+    serviceType: 'Revenue management',
+  }),
+];
+---
+
+<BaseLayout
+  title="Dynamic Pricing & Revenue Management for Atlanta Rentals"
+  description="The single biggest profit lever in short-term rentals. We reprice your Atlanta Airbnb every day — every night, around real demand and local events — to capture peak rates and avoid empty nights."
+  schemas={schemas}
+>
+  <PageHero
+    title="Dynamic pricing is the difference between a profitable rental and a forgotten one."
+    subtitle="It's the most overlooked part of short-term rental management — and the one that decides whether your home makes money or loses it. We reprice your calendar every single day."
+    eyebrow="Revenue management · the #1 profit lever"
+    imageKey="pricingDashboard"
+    breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Dynamic Pricing', path: '/dynamic-pricing/' }]}
+    cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
+    secondaryCta={{ label: 'See all services', href: '/services/' }}
+    size="lg"
+  />
+
+  <!-- The problem -->
+  <Section variant="white">
+    <Container size="narrow">
+      <Eyebrow>Why it matters more than anything else</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Set-and-forget pricing quietly bleeds money — every night.</h2>
+      <div class="mt-6 space-y-4 text-lg leading-relaxed text-ink/80">
+        <p>Most short-term rentals are priced once and barely touched again — a flat weekday rate, a flat weekend rate, maybe a seasonal nudge. It feels fine, because the losses are invisible. You never see the guest who booked your underpriced home for a sold-out convention weekend at half what they'd happily have paid. You never see the three empty nights a small, well-timed adjustment would have filled.</p>
+        <p>Two identical homes on the same street can earn wildly different amounts in a year — and the difference usually isn't the property. It's the pricing. One is managed every day around real demand. The other is on autopilot, leaving money on the table in both directions: underpriced when demand spikes, overpriced when it dips.</p>
+        <p class="font-medium text-forest">This is the single biggest lever in short-term rental profitability — and it's the one almost everyone ignores.</p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Process -->
+  <Section variant="cream">
+    <Container>
+      <div class="mx-auto max-w-2xl text-center">
+        <Eyebrow>How we manage your pricing</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">We don't set your price. We manage it — daily.</h2>
+        <p class="mt-4 text-ink/75">Revenue management is a daily discipline, not a one-time setup. Here's exactly how we run it for your home.</p>
+      </div>
+      <div class="mx-auto mt-12 max-w-3xl"><StepList steps={process} /></div>
+    </Container>
+  </Section>
+
+  <!-- What we watch -->
+  <Section variant="forest">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <div>
+          <Eyebrow class="text-brass">What we watch — every day</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">Atlanta's calendar is a goldmine. Most listings sleep right through it.</h2>
+          <p class="mt-5 text-cream/80">Atlanta runs on events — conventions, sports, concerts, festivals. Each one is a demand spike, and each spike is a chance to earn a premium rate. We track all of it and price your home ahead of the surge, not after it.</p>
+          <Button href="/rental-projection/" size="lg" class="mt-8">See what your home could earn</Button>
+        </div>
+        <ul class="grid gap-3 sm:grid-cols-2">
+          {watchItems.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="mt-0.5 h-5 w-5 flex-none text-brass" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0z" clip-rule="evenodd" /></svg>
+              <span class="text-sm text-cream/85">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why ours is different -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-2xl text-center">
+        <Eyebrow>Why ours is different</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Data tools, plus a local human who actually knows Atlanta.</h2>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <Card>
+          <h3 class="font-display text-lg text-forest">Algorithms alone miss context</h3>
+          <p class="mt-3 text-sm text-ink/75">Pricing software is great at patterns and blind to the street. It doesn't know a festival just rerouted traffic past your door, or that a new hotel flooded supply. A local manager does.</p>
+        </Card>
+        <Card>
+          <h3 class="font-display text-lg text-forest">Set-and-forget loses money</h3>
+          <p class="mt-3 text-sm text-ink/75">A tool installed once and ignored is barely better than a flat rate. The value is in the daily management — the overrides, the early moves, the constant attention.</p>
+        </Card>
+        <Card>
+          <h3 class="font-display text-lg text-forest">We do both, every day</h3>
+          <p class="mt-3 text-sm text-ink/75">We pair professional pricing data with a local revenue manager who reviews and adjusts your calendar daily. The best of the machine, and the best of the human.</p>
+        </Card>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Common questions</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Dynamic pricing — FAQs</h2>
+      <div class="mt-8"><FAQ items={faqs} /></div>
+    </Container>
+  </Section>
+
+  <CTABand heading="Find out what daily pricing could do for your home" text="Get a free, comps-based projection built around your property and your market's real demand — no sales pitch, no obligation." />
+</BaseLayout>

@@ -74,12 +74,12 @@ const schemas = [
 
 <BaseLayout
   title="Airbnb Management Pricing in Atlanta — Transparent, All-In"
-  description={`Keystone Stays charges ${site.pricing.rate} of booking revenue — all-inclusive, no hidden fees. See exactly what's included and what we never charge for.`}
+  description={`Keystone Stays starts at ${site.pricing.rate} of booking revenue — all-inclusive, no hidden fees. See exactly what's included and what we never charge for.`}
   schemas={schemas}
 >
   <PageHero
     title="Airbnb Management Pricing in Atlanta — Transparent, All-In"
-    subtitle="One flat management fee covers everything. See it before you sign, and it never changes without your knowledge."
+    subtitle={`One simple, all-inclusive fee — from ${site.pricing.rate} of revenue — covers everything. You see your exact rate before you sign, and it never changes without your knowledge.`}
     eyebrow="TRANSPARENT PRICING"
     imageKey="pricingDashboard"
     breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing/' }]}

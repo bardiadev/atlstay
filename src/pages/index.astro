@@ -104,7 +104,7 @@ const neighborhoods = [
 ];
 
 const differentiators = [
-  `${site.pricing.rate} management fee — ${site.pricing.rateNote}`,
+  `Management fee from ${site.pricing.rate} — ${site.pricing.rateNote}`,
   'Full-service: listing, guests, cleaning, maintenance, reviews',
   '24/7 local response — not a national call center',
   site.features.noLockIn ? 'No long-term contracts — stay because results speak' : 'Clear, simple agreements with no surprises',
@@ -263,6 +263,71 @@ const differentiators = [
     </Container>
   </Section>
 
+  <!-- ─── DYNAMIC PRICING SPOTLIGHT ─── -->
+  <Section variant="tint">
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <Eyebrow>The #1 profit lever</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Most hosts leave money on the table — every single night.</h2>
+          <p class="mt-5 text-lg leading-relaxed text-ink/80">
+            The biggest driver of what a short-term rental earns isn't the furniture or the photos — it's the <strong class="text-forest">pricing</strong>. And almost everyone sets it once and forgets it.
+          </p>
+          <p class="mt-4 leading-relaxed text-ink/75">
+            We don't. We reprice your calendar <strong class="text-forest">every single day</strong> — every night priced individually around real demand, Atlanta's event calendar, and what comparable homes are doing. We raise rates ahead of the convention you didn't know was coming, and protect occupancy before a slow week leaves you empty.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Button href="/dynamic-pricing/" size="lg">How our pricing works</Button>
+            <Button href="/rental-projection/" variant="ghost" size="lg">Get my free projection &rarr;</Button>
+          </div>
+        </div>
+        <div class="rounded-3xl border border-line bg-white p-8 shadow-sm">
+          <p class="font-display text-lg text-forest">What "managed daily" actually means</p>
+          <ul class="mt-5 space-y-4 text-sm">
+            {[
+              ['Every night priced individually', 'Never a lazy flat weekday/weekend rate.'],
+              ['Updated every single day', 'Your calendar is reviewed and adjusted daily — not once at setup.'],
+              ['Event-aware', 'Conventions, games, concerts, festivals — priced ahead of the surge.'],
+              ['Software plus a local human', 'Data tools, plus a revenue manager who actually knows Atlanta.'],
+            ].map(([t, dd]) => (
+              <li class="flex items-start gap-3">
+                <svg class="mt-0.5 h-5 w-5 flex-none text-brass-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0z" clip-rule="evenodd" /></svg>
+                <span class="text-ink/85"><span class="font-semibold text-forest">{t}</span> — {dd}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── PROBLEMS WE SOLVE ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-2xl text-center">
+        <Eyebrow>Problems we solve</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Hosting is full of ways to lose money. We close every one.</h2>
+        <p class="mt-4 text-ink/75">The gap between a property that thrives and one that drains you is rarely one big thing — it's a dozen small ones, handled or not.</p>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          { problem: 'Set-and-forget pricing', solution: 'We reprice every day around demand and events — the single biggest lever in what you earn.' },
+          { problem: 'Empty nights & weak occupancy', solution: 'Listed everywhere guests book, with daily pricing that keeps the calendar full at the right rate.' },
+          { problem: '2 a.m. guest messages', solution: '24/7 local guest communication — every message handled fast, so your reviews stay five-star.' },
+          { problem: 'Unreliable cleaners & messy turnovers', solution: 'Vetted local cleaning teams, a strict turnover checklist, and a quality check before every guest.' },
+          { problem: 'Maintenance emergencies', solution: 'A trusted local vendor network — we act first on urgent issues so a broken AC never becomes a bad review.' },
+          { problem: "It's become a second job", solution: 'We run the entire operation end to end. You stay an owner — never an operator.' },
+        ].map((p) => (
+          <div class="rounded-2xl border border-line bg-cream p-6">
+            <p class="text-xs font-semibold uppercase tracking-wider text-stone">The problem</p>
+            <h3 class="mt-1 font-display text-lg text-forest">{p.problem}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink/80"><span class="font-semibold text-brass-600">Our fix —</span> {p.solution}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
   <!-- ─── WHY KEYSTONE DIFFERENTIATORS ─── -->
   <Section variant="forest">
     <Container>
@@ -279,26 +344,29 @@ const differentiators = [
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
         <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
-          <div class="mb-4 font-display text-3xl text-brass">
-            {site.pricing.rate}
-          </div>
-          <h3 class="font-display text-lg text-cream">One clear fee</h3>
+          <div class="mb-4 font-display text-3xl text-brass">From {site.pricing.rate}</div>
+          <h3 class="font-display text-lg text-cream">One all-in fee</h3>
           <p class="mt-2 text-sm leading-relaxed text-cream/65">
-            {site.pricing.rateNote}. No setup costs, no surprise line items. You see the number before you sign anything.
+            {site.pricing.rateNote}. No setup costs, no surprise line items. Your exact rate depends on your property and market — and you see it before you sign.
           </p>
         </div>
 
         <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
-          <div class="mb-4 text-3xl">🏙</div>
-          <h3 class="font-display text-lg text-cream">Deep Atlanta roots</h3>
+          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brass/15 text-brass">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V4M3 16h14" /><path d="M6 12l3-3 2 2 4-5" /></svg>
+          </div>
+          <h3 class="font-display text-lg text-cream">Daily dynamic pricing</h3>
           <p class="mt-2 text-sm leading-relaxed text-cream/65">
-            We price around SEC Championship weekends, Braves post-seasons, and conventions the algorithms miss. Local expertise is the edge.
+            We reprice your calendar every day around Atlanta's events and demand — the biggest driver of what your home earns.
+            <a href="/dynamic-pricing/" class="text-brass underline-offset-2 hover:underline">See how &rarr;</a>
           </p>
         </div>
 
         {site.features.guarantee && (
           <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
-            <div class="mb-4 text-3xl">🛡</div>
+            <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brass/15 text-brass">
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2l6 2v5c0 4-2.7 7-6 9-3.3-2-6-5-6-9V4l6-2z" /><path d="M7.5 10l1.7 1.7L13 8" /></svg>
+            </div>
             <h3 class="font-display text-lg text-cream">{site.features.guaranteeText}</h3>
             <!-- CONFIRM guarantee terms with owner before publishing -->
             <p class="mt-2 text-sm leading-relaxed text-cream/65">
@@ -309,7 +377,9 @@ const differentiators = [
 
         {site.features.noLockIn && (
           <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
-            <div class="mb-4 text-3xl">🔓</div>
+            <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brass/15 text-brass">
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="12" height="8" rx="1.5" /><path d="M7 9V6.5a3 3 0 0 1 5.8-1.1" /></svg>
+            </div>
             <h3 class="font-display text-lg text-cream">No lock-in, ever</h3>
             <!-- CONFIRM no-lock-in terms with owner -->
             <p class="mt-2 text-sm leading-relaxed text-cream/65">
@@ -320,7 +390,9 @@ const differentiators = [
 
         {!site.features.guarantee && (
           <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
-            <div class="mb-4 text-3xl">📊</div>
+            <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brass/15 text-brass">
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7" /><circle cx="10" cy="10" r="3" /></svg>
+            </div>
             <h3 class="font-display text-lg text-cream">Performance-first model</h3>
             <p class="mt-2 text-sm leading-relaxed text-cream/65">
               We only earn when your home earns. Our incentives are perfectly aligned with yours — we succeed when you do.
@@ -330,7 +402,9 @@ const differentiators = [
 
         {!site.features.noLockIn && (
           <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
-            <div class="mb-4 text-3xl">💬</div>
+            <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brass/15 text-brass">
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h12v8H8l-4 3V5z" /></svg>
+            </div>
             <h3 class="font-display text-lg text-cream">Real people, real answers</h3>
             <p class="mt-2 text-sm leading-relaxed text-cream/65">
               24/7 local guest support from a team that knows your property — not a national call center following a script.

@@ -36,8 +36,8 @@ export const site = {
 
   // Pricing — radical transparency is a core differentiator. Set REAL rate.
   pricing: {
-    rate: '15%', // CONFIRM — single all-in management rate (placeholder)
-    rateNote: 'of booking revenue — all-inclusive, no hidden fees',
+    rate: '10%', // CONFIRM — base all-in rate; premium/large-scope markets may run higher
+    rateNote: 'of booking revenue — all-inclusive, with no hidden fees',
   },
 
   // Recommended differentiators — business decisions; confirm before publishing.
