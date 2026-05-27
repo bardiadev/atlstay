@@ -12,17 +12,33 @@ import PageHero from '@/components/ui/PageHero.astro';
 import { breadcrumbSchema, articleSchema } from '@/lib/schema';
 import { images } from '@/data/images';
 import type { ImageKey } from '@/data/images';
+import { site } from '@/config/site';
 
 export async function getStaticPaths() {
   const resources = await getCollection('resources', (entry) => !entry.data.draft);
-  return resources.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+  const sorted = [...resources].sort(
+    (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime(),
+  );
+  return resources.map((entry) => {
+    // Related = same category first, then most-recent others; up to 3.
+    const sameCat = sorted.filter((r) => r.id !== entry.id && r.data.category === entry.data.category);
+    const others = sorted.filter((r) => r.id !== entry.id && r.data.category !== entry.data.category);
+    const related = [...sameCat, ...others].slice(0, 3).map((r) => ({
+      id: r.id,
+      title: r.data.title,
+      category: r.data.category,
+      description: r.data.description,
+    }));
+    return { params: { slug: entry.id }, props: { entry, related } };
+  });
 }
 
-const { entry } = Astro.props;
+const { entry, related } = Astro.props;
 const { Content } = await render(entry);
+
+const dateFmt: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' };
+const published = entry.data.publishDate.toLocaleDateString('en-US', dateFmt);
+const updated = entry.data.updatedDate?.toLocaleDateString('en-US', dateFmt);
 
 const heroImageKey = entry.data.heroImage as ImageKey | undefined;
 const heroImg = heroImageKey && heroImageKey in images ? images[heroImageKey] : null;
@@ -67,9 +83,38 @@ const schemas = [
   <!-- Article body -->
   <Section variant="white">
     <Container size="narrow">
+      <!-- Byline (E-E-A-T) -->
+      <div class="mb-7 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-line pb-5 text-sm text-stone">
+        <span>By <span class="font-medium text-forest">the ATLStay Team</span></span>
+        <span aria-hidden="true">·</span>
+        <time datetime={entry.data.publishDate.toISOString()}>{published}</time>
+        {updated && (
+          <Fragment>
+            <span aria-hidden="true">·</span>
+            <span>Updated {updated}</span>
+          </Fragment>
+        )}
+        <span aria-hidden="true">·</span>
+        <span>{entry.data.category}</span>
+      </div>
+
       <Prose>
         <Content />
       </Prose>
+
+      <!-- About the author (E-E-A-T: real, owner-verified experience) -->
+      <div class="mt-12 flex items-start gap-4 rounded-2xl border border-line bg-cream/50 p-6">
+        <div class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-forest font-display text-base text-cream">AS</div>
+        <div>
+          <p class="font-display text-forest">Written by the ATLStay team</p>
+          <p class="mt-1 text-sm leading-relaxed text-ink/75">
+            We're a short-term rental management company based in Atlanta. Across our portfolio we manage
+            {' '}{site.stats.homes} homes, have earned {site.stats.reviews} five-star guest reviews, and bring
+            {' '}{site.stats.years} years of hands-on Atlanta hosting experience to every guide we publish.
+            {' '}<a href="/about/" class="font-medium text-brass-600 underline-offset-4 hover:underline">More about ATLStay →</a>
+          </p>
+        </div>
+      </div>
     </Container>
   </Section>
 
@@ -112,6 +157,29 @@ const schemas = [
       </div>
     </Container>
   </Section>
+
+  <!-- Related guides (internal linking) -->
+  {related.length > 0 && (
+    <Section variant="cream">
+      <Container>
+        <Eyebrow>Related guides</Eyebrow>
+        <h2 class="mt-3 font-display text-2xl text-forest sm:text-3xl">Keep reading</h2>
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((r) => (
+            <a
+              href={`/resources/${r.id}/`}
+              class="group flex flex-col rounded-2xl border border-line bg-white p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brass/60 hover:shadow-md"
+            >
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-brass-600">{r.category}</span>
+              <h3 class="mt-2 font-display text-lg leading-snug text-forest transition-colors group-hover:text-brass-600">{r.title}</h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-ink/75">{r.description}</p>
+              <span class="mt-4 text-sm font-medium text-brass-600">Read the guide &rarr;</span>
+            </a>
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )}
 
   <CTABand />
 </BaseLayout>
