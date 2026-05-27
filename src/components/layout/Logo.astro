@@ -6,8 +6,8 @@ const word = variant === 'light' ? 'text-cream' : 'text-forest';
 // Peak adapts to the background so it stays visible (forest on light, cream on dark).
 const peak = variant === 'light' ? '#F7F4EC' : '#14342B';
 ---
-<a href="/" class={`inline-flex items-center gap-2.5 ${cls}`} aria-label={`${site.brandName} — home`}>
-  <svg width="30" height="24" viewBox="0 0 120 96" aria-hidden="true">
+<a href="/" class={`group inline-flex items-center gap-2.5 lg:gap-3 ${cls}`} aria-label={`${site.brandName} — home`}>
+  <svg viewBox="0 0 120 96" class="h-7 w-auto lg:h-9" aria-hidden="true">
     <path d="M60 6 L112 90 L90 90 L60 33 L30 90 L8 90 Z" fill={peak} />
     <path d="M10 84 L60 50 L110 84" fill="none" stroke="#C9A24B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
     <g fill="#C9A24B">
@@ -17,5 +17,5 @@ const peak = variant === 'light' ? '#F7F4EC' : '#14342B';
       <rect x="61" y="78" width="7" height="7" rx="1" />
     </g>
   </svg>
-  <span class={`font-display text-xl tracking-tight ${word}`}>{site.brandName}</span>
+  <span class={`font-sans text-xl font-bold leading-none tracking-[-0.02em] lg:text-2xl ${word}`}>{site.brandName}</span>
 </a>
