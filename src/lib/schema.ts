@@ -26,6 +26,14 @@ export function organizationSchema() {
     name: site.brandName,
     url: site.domain,
     description: site.description,
+    slogan: site.tagline,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${site.domain}/icon-512.png`,
+      width: 512,
+      height: 512,
+    },
+    image: `${site.domain}/images/og-default.jpg`,
     ...(sameAs.length ? { sameAs } : {}),
     contactPoint: {
       '@type': 'ContactPoint',
@@ -33,6 +41,7 @@ export function organizationSchema() {
       telephone: site.contact.phone,
       email: site.contact.email,
       areaServed: 'US',
+      availableLanguage: 'English',
     },
   };
 }
@@ -47,6 +56,8 @@ export function localBusinessSchema(opts: { areaServed?: string[] } = {}) {
     name: site.brandName,
     url: site.domain,
     description: site.description,
+    image: `${site.domain}/images/og-default.jpg`,
+    logo: `${site.domain}/icon-512.png`,
     telephone: site.contact.phone,
     email: site.contact.email,
     address: postalAddress(),
