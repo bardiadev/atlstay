@@ -7,7 +7,7 @@ county: Douglas
 lat: 33.7940
 lng: -84.6605
 title: "Airbnb & Short-Term Rental Management in Lithia Springs, GA"
-description: "Expert short-term rental management in Lithia Springs, GA. Keystone Stays maximizes Airbnb earnings near Sweetwater Creek State Park and the I-20 west metro corridor."
+description: "Expert short-term rental management in Lithia Springs, GA. ATLStay maximizes Airbnb earnings near Sweetwater Creek State Park and the I-20 west metro corridor."
 intro: "Lithia Springs is Douglas County's most accessible community — sitting just off I-20 west of Atlanta, close to Sweetwater Creek State Park's hiking trails and waterfalls, and within easy reach of the west metro employment base. It occupies a quiet zone between Atlanta's density and the rural corridor west of Douglas County, making it a genuine outdoor-recreation basecamp that most west-metro communities can't claim."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,13 +19,13 @@ highlights:
   - "Relatively lower property costs in Douglas County improve investment returns compared to closer-in markets"
 faqs:
   - q: "Are short-term rentals allowed in Lithia Springs, GA?"
-    a: "Lithia Springs is an unincorporated community in Douglas County, so short-term rental regulations are set at the county level rather than by a city. Douglas County has its own zoning and registration requirements that owners must meet. Keystone Stays monitors county-level requirements and manages compliance. See our Atlanta-area STR regulations guide for broader regulatory context."
+    a: "Lithia Springs is an unincorporated community in Douglas County, so short-term rental regulations are set at the county level rather than by a city. Douglas County has its own zoning and registration requirements that owners must meet. ATLStay monitors county-level requirements and manages compliance. See our Atlanta-area STR regulations guide for broader regulatory context."
   - q: "What drives Airbnb demand in Lithia Springs?"
     a: "Sweetwater Creek State Park is the primary demand anchor. The park's trails, waterfall overlooks, and reservoir draw hikers, nature photographers, and outdoor families from across the metro. Guests who want a proper outdoor-recreation trip near Atlanta — with an early park start and evening return — prefer a nearby rental over driving from the city each day. Six Flags access adds family theme park demand on summer and holiday weekends."
   - q: "How important is the Sweetwater Creek location for STR marketing?"
     a: "Sweetwater Creek State Park is a legitimate destination for Atlanta-area outdoor recreation — the ruins of the New Manchester Manufacturing Company and the creek gorge trails have an unusual character for a state park this close to a major city. Guests who travel specifically for outdoor experiences near Atlanta are an identifiable, bookable segment. A property that markets itself clearly as the Sweetwater Creek basecamp occupies an uncrowded positioning."
   - q: "What guest types visit Lithia Springs?"
-    a: "Outdoor recreation visitors for Sweetwater Creek make up a meaningful weekend segment. Six Flags families represent summer and holiday-season demand. Business travelers and contractors working along the I-20 corridor and in Douglas County's distribution center base fill weekday occupancy. Keystone Stays prices and markets for all three profiles."
+    a: "Outdoor recreation visitors for Sweetwater Creek make up a meaningful weekend segment. Six Flags families represent summer and holiday-season demand. Business travelers and contractors working along the I-20 corridor and in Douglas County's distribution center base fill weekday occupancy. ATLStay prices and markets for all three profiles."
   - q: "What property types work well in Lithia Springs?"
     a: "Mid-size homes that can comfortably house an outdoor recreation group — with space for gear, good shower pressure, and a comfortable common area — perform well for the Sweetwater Creek audience. Properties with outdoor spaces like decks or yards add appeal. Functional, well-equipped spaces close to the I-20 interchange serve business travelers efficiently."
 order: 0

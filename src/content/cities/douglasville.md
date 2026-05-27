@@ -7,7 +7,7 @@ county: Douglas
 lat: 33.7515
 lng: -84.7477
 title: "Airbnb & Short-Term Rental Management in Douglasville, GA"
-description: "Expert short-term rental management in Douglasville, GA. Keystone Stays maximizes Airbnb earnings near Sweetwater Creek State Park, Lionsgate Studios, and Douglas County's growing market."
+description: "Expert short-term rental management in Douglasville, GA. ATLStay maximizes Airbnb earnings near Sweetwater Creek State Park, Lionsgate Studios, and Douglas County's growing market."
 intro: "Douglasville is Douglas County's county seat and west Atlanta's emerging destination — anchored by Sweetwater Creek State Park, known for the Stranger Things festival that brings fans from across the country, and quietly becoming a significant production market after Lionsgate Studios began leasing space in the county in 2023."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "25 miles from Atlanta — accessible metro location with a distinct western suburbs identity"
 faqs:
   - q: "Are short-term rentals allowed in Douglasville, GA?"
-    a: "Short-term rentals in Douglasville are subject to City of Douglasville and Douglas County ordinances covering zoning, registration, and operational requirements. Keystone Stays monitors Douglas County STR rules and handles compliance for all managed properties — contact us for current requirements."
+    a: "Short-term rentals in Douglasville are subject to City of Douglasville and Douglas County ordinances covering zoning, registration, and operational requirements. ATLStay monitors Douglas County STR rules and handles compliance for all managed properties — contact us for current requirements."
   - q: "What drives Airbnb demand in Douglasville?"
     a: "Douglasville has developed multiple distinct demand layers. Sweetwater Creek State Park — one of metro Atlanta's most significant natural areas — drives outdoor recreation stays from hikers, trail runners, and families throughout the year. The annual Stranger Things festival draws fans from across the country specifically for the show's downtown filming locations. Lionsgate Studios production work in Douglas County creates entertainment-industry stays. GreyStone Amphitheater concerts bring regional event demand. The growing residential base generates relocation and transition housing needs."
   - q: "How does the Stranger Things connection affect Douglasville's STR market?"

@@ -7,7 +7,7 @@ county: Fulton
 lat: 33.5671
 lng: -84.5810
 title: "Airbnb & Short-Term Rental Management in Fairburn, GA"
-description: "Expert short-term rental management in Fairburn, GA. Keystone Stays maximizes Airbnb earnings near the Georgia Renaissance Festival, film studios, and historic downtown."
+description: "Expert short-term rental management in Fairburn, GA. ATLStay maximizes Airbnb earnings near the Georgia Renaissance Festival, film studios, and historic downtown."
 intro: "Fairburn is one of south Fulton County's most historically distinctive communities — a small downtown with preserved Victorian and early-twentieth-century architecture, an active arts and event scene, and direct proximity to the Georgia Renaissance Festival, one of the largest recurring festival events in the state. Film production activity adds a second, growing demand layer that has followed Georgia's screen industry south of Atlanta."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "South Fulton County positioning with lower property acquisition costs than north Fulton equivalents"
 faqs:
   - q: "Are short-term rentals allowed in Fairburn, GA?"
-    a: "Short-term rentals in Fairburn are subject to City of Fairburn and Fulton County ordinances covering zoning, registration, and operating requirements. Rules are local and separate from Atlanta city regulations. Keystone Stays monitors requirements and manages compliance for all properties. See our Atlanta-area STR regulations guide for broader metro context."
+    a: "Short-term rentals in Fairburn are subject to City of Fairburn and Fulton County ordinances covering zoning, registration, and operating requirements. Rules are local and separate from Atlanta city regulations. ATLStay monitors requirements and manages compliance for all properties. See our Atlanta-area STR regulations guide for broader metro context."
   - q: "How big is the Georgia Renaissance Festival demand for Fairburn STRs?"
     a: "The Georgia Renaissance Festival runs for approximately seven weekends each spring at the Renaissance Festival Grounds in Fairburn. It is consistently one of the largest Renaissance events in the southeast, drawing crowds from across Georgia and neighboring states. Visitors who attend multiple festival weekends, or who travel significant distances, strongly prefer a local STR over hotels in Newnan or Atlanta. Festival weekends represent predictable, high-demand inventory opportunities that dynamic pricing should capture aggressively."
   - q: "What is historic downtown Fairburn like for STR marketing?"
@@ -27,7 +27,7 @@ faqs:
   - q: "What role does film production play in Fairburn's STR market?"
     a: "South Fulton County is within Georgia's active film production corridor, and film industry workers on extended location assignments prefer STR homes over hotel stays for multi-week projects. Fairburn's proximity to studio facilities and its airport-adjacent location make it attractive for production staff who need flexibility and space during long shoots."
   - q: "What guest types book in Fairburn?"
-    a: "Renaissance Festival attendees on spring weekends are a unique and predictable segment. Film and production workers represent a growing extended-stay market. Airport-adjacent travelers seeking south-side positioning book year-round. Historic downtown visitors and arts patrons add weekend leisure demand. Keystone Stays builds strategy across all these profiles."
+    a: "Renaissance Festival attendees on spring weekends are a unique and predictable segment. Film and production workers represent a growing extended-stay market. Airport-adjacent travelers seeking south-side positioning book year-round. Historic downtown visitors and arts patrons add weekend leisure demand. ATLStay builds strategy across all these profiles."
 order: 0
 published: true
 ---

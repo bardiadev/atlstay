@@ -23,7 +23,7 @@ faqs:
   - q: "What guests typically stay in Kirkwood properties?"
     a: "Kirkwood attracts families visiting Atlanta relatives, groups attending the Spring Fling or other east-side events, remote workers who want a quieter residential base, and east-side regulars who prefer the neighborhood's character over a hotel. Properties with yards and multiple bedrooms perform especially well."
   - q: "When is the Kirkwood Spring Fling, and how does it affect bookings?"
-    a: "The Kirkwood Spring Fling is typically held each spring and draws thousands of visitors to the neighborhood. It's one of Kirkwood's strongest annual booking windows. Keystone Stays flags event dates well in advance and prices accordingly so you capture the premium demand."
+    a: "The Kirkwood Spring Fling is typically held each spring and draws thousands of visitors to the neighborhood. It's one of Kirkwood's strongest annual booking windows. ATLStay flags event dates well in advance and prices accordingly so you capture the premium demand."
   - q: "What are the STR licensing rules for Kirkwood?"
     a: "Kirkwood falls within Atlanta city limits, so the City of Atlanta Short-Term Rental License applies — $150/year via atl311.com. The primary-residence requirement applies to at least one of your two permitted licenses. We handle the registration process as part of your onboarding."
   - q: "Is Kirkwood growing as an STR market?"
@@ -45,4 +45,4 @@ The Spring Fling is a dependable annual demand spike. One of Atlanta's most anti
 
 East Atlanta Village is a short drive or bike ride away — enough to give Kirkwood guests access to live music and east-side dining without putting them in the middle of EAV's nighttime energy. That balance is part of what makes the neighborhood work for a wider guest range.
 
-Keystone Stays manages Kirkwood properties to match what makes them special: community-rooted, architecturally genuine, and positioned for the guests who seek exactly that.
+ATLStay manages Kirkwood properties to match what makes them special: community-rooted, architecturally genuine, and positioned for the guests who seek exactly that.

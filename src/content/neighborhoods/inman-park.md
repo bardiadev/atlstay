@@ -2,7 +2,7 @@
 name: Inman Park
 slug: inman-park
 citySlug: atlanta
-title: "Airbnb Management in Inman Park, Atlanta | Keystone Stays"
+title: "Airbnb Management in Inman Park, Atlanta | ATLStay"
 description: "Premium short-term rental management in Inman Park, Atlanta. Historic Victorian homes, Krog Street Market, and BeltLine access create one of Atlanta's most sought-after STR neighborhoods."
 intro: "Inman Park was Atlanta's first planned suburb, and more than 130 years later it still has some of the city's most beautiful streetscapes — Victorian-era homes with wide front porches, enormous oak canopies, and a neighborhood identity strong enough to anchor one of Atlanta's best-loved annual festivals. For STR owners, the combination of architectural charm, Krog Street Market, and BeltLine access creates powerful demand."
 heroImage: "nbhdInmanPark"
@@ -21,12 +21,12 @@ attractions:
   - "Historic Victorian streetscapes — Edgewood Avenue and Waverly Way are among Atlanta's most photographed residential streets"
 faqs:
   - q: "What is the Inman Park Festival and how does it affect STR demand?"
-    a: "The Inman Park Festival is one of Atlanta's largest neighborhood street festivals, held annually in late April. It draws enormous crowds to the neighborhood for an entire weekend of arts, food, and tours of the historic homes. For STR owners in the area, this is one of the strongest demand and premium-pricing weekends of the year. Properties managed by Keystone Stays are priced to capture the full value of this event."
+    a: "The Inman Park Festival is one of Atlanta's largest neighborhood street festivals, held annually in late April. It draws enormous crowds to the neighborhood for an entire weekend of arts, food, and tours of the historic homes. For STR owners in the area, this is one of the strongest demand and premium-pricing weekends of the year. Properties managed by ATLStay are priced to capture the full value of this event."
   - q: "Are Victorian homes in Inman Park good candidates for short-term rental?"
     a: "Exceptionally so. Guests seeking authentically Atlanta-flavored experiences — as opposed to a generic hotel room or modern condo — specifically seek out historic homes in neighborhoods like Inman Park. A well-presented Victorian-era home with original details, a front porch, and walkable neighborhood access consistently commands above-market nightly rates on Airbnb."
   - q: "Do Inman Park properties need a City of Atlanta STR license?"
-    a: "Yes. Inman Park is within Atlanta city limits, so the standard STRL requirements apply: $150/year, maximum two licenses per owner with one being your primary residence, and license number must appear on your listing. Keystone Stays handles compliance guidance for every client."
-  - q: "How does Keystone Stays position Inman Park properties in listings?"
+    a: "Yes. Inman Park is within Atlanta city limits, so the standard STRL requirements apply: $150/year, maximum two licenses per owner with one being your primary residence, and license number must appear on your listing. ATLStay handles compliance guidance for every client."
+  - q: "How does ATLStay position Inman Park properties in listings?"
     a: "We lead with what makes Inman Park irreplaceable: the historic character, the specific walkability to Krog Street Market and the BeltLine, and the neighborhood's genuine community identity. Generic descriptions that could apply to any Atlanta neighborhood consistently underperform listings that help guests understand exactly what makes this neighborhood special."
 published: true
 ---
@@ -43,4 +43,4 @@ The BeltLine runs directly through Inman Park's edge, connecting the neighborhoo
 
 The Inman Park Festival is a calendar anchor. Held in late April, it draws one of Atlanta's largest neighborhood street-festival crowds to the area for an entire weekend. Historic home tours, arts and crafts vendors, food, and music fill the neighborhood. For STR owners, it's one of the strongest demand-and-rate weeks of the year.
 
-Keystone Stays has deep familiarity with Inman Park's guest profile and demand calendar. We present each property's authentic character compellingly, price around the neighborhood's specific events, and manage the details that earn five-star reviews in a neighborhood where guests arrive with high expectations.
+ATLStay has deep familiarity with Inman Park's guest profile and demand calendar. We present each property's authentic character compellingly, price around the neighborhood's specific events, and manage the details that earn five-star reviews in a neighborhood where guests arrive with high expectations.

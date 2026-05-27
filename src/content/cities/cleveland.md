@@ -7,8 +7,8 @@ county: White
 lat: 34.5970
 lng: -83.7632
 title: "Vacation Rental Management in Cleveland, GA"
-description: "Vacation rental management in Cleveland, GA — home of Babyland General, gateway to Mount Yonah, and a growing cabin market between Helen and Dahlonega. Keystone Stays handles your White County property."
-intro: "Cleveland anchors White County between two of North Georgia's most popular tourist towns — Helen and Dahlonega — with its own identity built around Babyland General Hospital, the birthplace of Cabbage Patch Kids, and the dramatic profile of Mount Yonah just to the north. Keystone Stays maximizes your cabin investment here."
+description: "Vacation rental management in Cleveland, GA — home of Babyland General, gateway to Mount Yonah, and a growing cabin market between Helen and Dahlonega. ATLStay handles your White County property."
+intro: "Cleveland anchors White County between two of North Georgia's most popular tourist towns — Helen and Dahlonega — with its own identity built around Babyland General Hospital, the birthplace of Cabbage Patch Kids, and the dramatic profile of Mount Yonah just to the north. ATLStay maximizes your cabin investment here."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -25,7 +25,7 @@ faqs:
   - q: "What is Babyland General and does it really drive tourism?"
     a: "Babyland General Hospital in Cleveland is the original birthplace of Cabbage Patch Kids, where Xavier Roberts created his cloth dolls in the 1970s. The facility — a converted medical clinic where dolls are 'born' in a theatrical setting — operates as a retail experience and museum that draws multigenerational family visitors who grew up with the toy. It's a genuinely unique attraction that has no equivalent anywhere in North Georgia. For families with young children or nostalgic adults, it's a specific trip motivator that adds a non-outdoor demand driver to the market."
   - q: "Are there short-term rental regulations in Cleveland and White County?"
-    a: "Yes. The City of Cleveland and White County each maintain STR frameworks, and requirements vary between city and unincorporated county properties. Keystone Stays walks every new client through the current requirements for their specific address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. The City of Cleveland and White County each maintain STR frameworks, and requirements vary between city and unincorporated county properties. ATLStay walks every new client through the current requirements for their specific address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
   - q: "What are the best cabin amenities in the Cleveland market?"
     a: "Hot tubs and mountain views are the baseline expectations in any North Georgia cabin market, and Cleveland is no exception. Given the market's hiking draw — particularly Mount Yonah — properties that can accommodate outdoor gear storage, have drying facilities, and offer a comfortable recovery experience after a hard day on the trail perform especially well with the outdoor recreation segment. For family bookings attracted by Babyland General, comfortable common areas and well-equipped kitchens matter more than they do in adult-only recreation markets."
 order: 0
@@ -50,4 +50,4 @@ Helen is 12 miles northeast. Dahlonega is 20 miles southwest. Unicoi State Park 
 
 ### Regulatory Landscape
 
-White County and the City of Cleveland each maintain STR frameworks. Keystone Stays handles compliance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader context.
+White County and the City of Cleveland each maintain STR frameworks. ATLStay handles compliance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader context.

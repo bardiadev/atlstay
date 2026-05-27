@@ -7,7 +7,7 @@ county: Barrow
 lat: 33.9926
 lng: -83.7202
 title: "Airbnb & Short-Term Rental Management in Winder, GA"
-description: "Expert short-term rental management in Winder, GA. Keystone Stays maximizes Airbnb earnings near Fort Yargo State Park and as Barrow County's growing county seat."
+description: "Expert short-term rental management in Winder, GA. ATLStay maximizes Airbnb earnings near Fort Yargo State Park and as Barrow County's growing county seat."
 intro: "Winder is Barrow County's county seat and one of northeast Georgia's more active growth communities, sitting at the junction of US-29 and US-316 and anchored by Fort Yargo State Park — one of Georgia's most visited state parks, offering lake swimming, kayaking, mountain biking, and camping in a setting that draws visitors from across the metro region and beyond."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "Northeast metro positioning with lower property costs than Gwinnett County equivalents while serving similar demand"
 faqs:
   - q: "Are short-term rentals allowed in Winder, GA?"
-    a: "Short-term rentals in Winder are subject to City of Winder and Barrow County ordinances covering zoning, permits, and operational requirements. Requirements are local and separate from Atlanta city regulations. Keystone Stays monitors Barrow County STR ordinances and handles compliance for managed properties. See our Atlanta-area STR regulations guide for broader regulatory context."
+    a: "Short-term rentals in Winder are subject to City of Winder and Barrow County ordinances covering zoning, permits, and operational requirements. Requirements are local and separate from Atlanta city regulations. ATLStay monitors Barrow County STR ordinances and handles compliance for managed properties. See our Atlanta-area STR regulations guide for broader regulatory context."
   - q: "What drives Airbnb demand in Winder, GA?"
     a: "Fort Yargo State Park is the primary leisure demand anchor — the park's lake, trails, and camping facilities draw visitors who prefer a STR base over campground facilities. As Barrow County's seat, Winder generates consistent weekday civic and business visitor demand. The Hwy 316 growth corridor between Winder and Atlanta brings contractor and corporate extended-stay demand. Proximity to Braselton's Road Atlanta and Château Élan adds event-weekend spillover potential."
   - q: "How significant is Fort Yargo State Park for STR demand?"

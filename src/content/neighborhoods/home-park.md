@@ -26,8 +26,8 @@ faqs:
   - q: "What type of properties are in Home Park?"
     a: "Home Park has a mix of older single-family bungalows, townhomes, and newer construction. The neighborhood is more residential than architecturally distinctive, which means the listing proposition leans on location — Georgia Tech proximity, Atlantic Station access, Midtown adjacency — rather than historic character. Properties that are clean, functional, and well-photographed perform reliably."
   - q: "What are the STR license requirements for Home Park?"
-    a: "Home Park is within Atlanta city limits. The citywide STRL applies: $150/year via atl311.com, two-license maximum per owner with a primary-residence requirement. Keystone Stays manages compliance for all properties under management."
-  - q: "How does Keystone Stays position Home Park listings?"
+    a: "Home Park is within Atlanta city limits. The citywide STRL applies: $150/year via atl311.com, two-license maximum per owner with a primary-residence requirement. ATLStay manages compliance for all properties under management."
+  - q: "How does ATLStay position Home Park listings?"
     a: "We lead with the locational advantages — Georgia Tech steps away, Atlantic Station across the street, Midtown within walking distance — and target the specific guest segments most likely to book: academic visitors, technology industry travelers, and Midtown-adjacent leisure guests. Location-led listings consistently outperform generic descriptions in this market."
 published: true
 ---
@@ -42,4 +42,4 @@ Georgia Tech is the most distinctive demand driver. The Institute generates a co
 
 The technology sector adds mid-week depth. Georgia Tech's role in Atlanta's startup and technology ecosystem — Coda (the office building adjacent to campus), the Advanced Technology Development Center, and the alumni network throughout Atlanta's tech industry — means corporate and industry visitors are in the neighborhood throughout the year. These guests often book three-to-five night stays, work from the listing during the day, and don't require constant attention. They value reliable WiFi and a comfortable workspace as much as they value proximity to nightlife.
 
-Keystone Stays builds Home Park listings around the location story and manages with the reliability that corporate and academic guests expect. We know the Georgia Tech calendar and we price around it.
+ATLStay builds Home Park listings around the location story and manages with the reliability that corporate and academic guests expect. We know the Georgia Tech calendar and we price around it.

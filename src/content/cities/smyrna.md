@@ -4,7 +4,7 @@ state: GA
 slug: smyrna
 region: metro
 title: "Airbnb & Short-Term Rental Management in Smyrna, GA"
-description: "Professional short-term rental management in Smyrna, GA. Keystone Stays optimizes your Airbnb for Smyrna's Braves-adjacent demand, Village Green events, and I-285 business travel."
+description: "Professional short-term rental management in Smyrna, GA. ATLStay optimizes your Airbnb for Smyrna's Braves-adjacent demand, Village Green events, and I-285 business travel."
 intro: "Smyrna punches above its weight as a short-term rental market — positioned between Truist Park, the Cobb Galleria, and the Cumberland/Galleria employment corridor, it offers owners a demand profile that stays active across the week, not just on weekends."
 heroImage: suburbHome
 neighborhoods: []
@@ -16,16 +16,16 @@ highlights:
   - "Cobb County STR compliance support included"
 faqs:
   - q: "Does Smyrna, GA require a permit for short-term rentals?"
-    a: "Smyrna operates under Cobb County and city of Smyrna regulations. Short-term rental rules may include registration or permitting requirements, zoning compliance, and safety standards. Local rules can change, so we recommend contacting the City of Smyrna or consulting with Keystone Stays — we track Cobb County and Smyrna STR requirements for all our clients and walk every new owner through the process."
+    a: "Smyrna operates under Cobb County and city of Smyrna regulations. Short-term rental rules may include registration or permitting requirements, zoning compliance, and safety standards. Local rules can change, so we recommend contacting the City of Smyrna or consulting with ATLStay — we track Cobb County and Smyrna STR requirements for all our clients and walk every new owner through the process."
   - q: "What makes Smyrna a strong Airbnb market?"
     a: "Smyrna's location is its primary advantage. The city sits at the convergence of major demand generators: Truist Park and the Battery Atlanta to the north, the Cumberland/Galleria employment hub on its eastern edge, and easy I-285 access to the rest of the metro. Truist Park alone brings dozens of high-demand game and event nights per year. The Cumberland Galleria area generates significant weekday business travel. And Smyrna's own Village Green area has developed into a walkable dining and gathering destination that drives local leisure demand."
   - q: "What types of properties work best as short-term rentals in Smyrna?"
     a: "Single-family homes and townhomes near the Village Green or with easy access to Truist Park perform well for leisure and sports-event travelers. Properties with home-office setups and quality furnishings attract the extended-stay business traveler from the Galleria corridor. Any home that can be positioned around multiple demand drivers — sports, business, and local dining — tends to achieve the strongest occupancy and rates."
-  - q: "How does Keystone Stays price around Braves home games?"
-    a: "We pull the full Braves home schedule and Battery Atlanta event calendar at the start of each season and set proactive rate adjustments for every major demand night. Platform algorithms often lag behind real market demand on these nights — active management captures the premium. Our flat management fee is 15% of booking revenue with no additional charges."
+  - q: "How does ATLStay price around Braves home games?"
+    a: "We pull the full Braves home schedule and Battery Atlanta event calendar at the start of each season and set proactive rate adjustments for every major demand night. Platform algorithms often lag behind real market demand on these nights — active management captures the premium. Our flat management fee is 10% of booking revenue with no additional charges."
   - q: "Is Smyrna good for extended corporate rentals?"
     a: "Yes. The Cumberland/Galleria employment corridor includes major office users across technology, healthcare, and professional services. Consultants and relocating professionals regularly look for furnished short-term rentals in Smyrna as an alternative to extended-stay hotels. A property set up for the business traveler — home office, quality internet, full kitchen — can attract longer, lower-turnover bookings that smooth out the revenue calendar."
-  - q: "What sets Keystone Stays apart from managing the listing myself?"
+  - q: "What sets ATLStay apart from managing the listing myself?"
     a: "Active management — calibrated pricing, professional listing presentation, 24/7 guest communication, and vetted cleaning teams — typically yields meaningfully better results than self-managed listings, especially in a market with as many event-driven demand spikes as Smyrna. You also reclaim the time and mental load of managing guests, turnovers, and pricing adjustments."
 order: 0
 published: true

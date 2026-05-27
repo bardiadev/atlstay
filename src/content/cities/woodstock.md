@@ -7,7 +7,7 @@ county: Cherokee
 lat: 34.1015
 lng: -84.5194
 title: "Airbnb & Short-Term Rental Management in Woodstock, GA"
-description: "Full-service Airbnb & short-term rental management in Woodstock, GA. Keystone Stays handles listings, pricing, and guests so you earn more."
+description: "Full-service Airbnb & short-term rental management in Woodstock, GA. ATLStay handles listings, pricing, and guests so you earn more."
 intro: "Woodstock's walkable downtown, the Outlet Shoppes at Atlanta, and a booming residential base have created one of Cherokee County's most active short-term rental markets — and one that rewards professional management."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -19,16 +19,16 @@ highlights:
   - "I-575 corridor access makes Woodstock a natural gateway for visitors headed further north"
 faqs:
   - q: "Are short-term rentals allowed in Woodstock, GA?"
-    a: "Short-term rentals in Woodstock fall under Cherokee County and City of Woodstock regulations. Permitting requirements and zoning rules can change, so we recommend verifying current requirements with Woodstock's planning department or reviewing our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). Keystone Stays stays current on local compliance for all managed properties."
+    a: "Short-term rentals in Woodstock fall under Cherokee County and City of Woodstock regulations. Permitting requirements and zoning rules can change, so we recommend verifying current requirements with Woodstock's planning department or reviewing our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). ATLStay stays current on local compliance for all managed properties."
   - q: "What drives Airbnb demand in Woodstock, GA?"
     a: "Woodstock has several distinct demand layers. Downtown Woodstock hosts a walkable restaurant and bar scene plus recurring events that drive weekend leisure stays. The Outlet Shoppes at Atlanta — nearly 100 brand-name stores just off I-575 — draws regional shoppers who stay overnight rather than make a single-day trip. Northside Hospital Cherokee's large campus generates a steady stream of medical-adjacent stays from patients, families, and visiting medical professionals. Blankets Creek mountain bike trails and other recreational assets pull outdoor visitors who want a non-hotel base."
   - q: "How much can I earn from a short-term rental in Woodstock?"
-    a: "Earnings depend on the home's size, condition, location, and how actively the listing is managed. Woodstock's multi-layered demand — leisure weekends, shopping visitors, medical stays, and outdoor recreation — gives well-managed properties opportunities throughout the week and year. Request a free projection from Keystone Stays to see what your specific home could realistically earn."
+    a: "Earnings depend on the home's size, condition, location, and how actively the listing is managed. Woodstock's multi-layered demand — leisure weekends, shopping visitors, medical stays, and outdoor recreation — gives well-managed properties opportunities throughout the week and year. Request a free projection from ATLStay to see what your specific home could realistically earn."
   - q: "Does the Outlet Shoppes at Atlanta affect Airbnb demand in Woodstock?"
     a: "It does. With nearly 100 outlet stores, the mall draws shoppers from across north Georgia and beyond, many of whom pair a shopping trip with a one- or two-night stay rather than a same-day drive. Properties within a convenient drive of the mall — essentially most of Woodstock — benefit from this demand, particularly on weekends and around major sales events."
-  - q: "What is Keystone Stays' management fee for Woodstock properties?"
+  - q: "What is ATLStay's management fee for Woodstock properties?"
     a: "Our all-in management starts from 10% of booking revenue, covering listing optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees or per-booking charges. Contact us for a quote specific to your property."
-  - q: "Can I block dates for personal use if Keystone Stays manages my Woodstock home?"
+  - q: "Can I block dates for personal use if ATLStay manages my Woodstock home?"
     a: "Yes. You retain full calendar control. Block any dates for personal or family use and we manage all bookings around those windows. No minimum availability requirements."
 order: 0
 published: true

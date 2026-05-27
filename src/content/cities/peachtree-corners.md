@@ -7,7 +7,7 @@ county: Gwinnett
 lat: 33.9699
 lng: -84.2213
 title: "Airbnb & Short-Term Rental Management in Peachtree Corners, GA"
-description: "Short-term rental management in Peachtree Corners, GA. Keystone Stays helps owners near Curiosity Lab, Technology Parkway, and The Forum earn more from their Airbnb."
+description: "Short-term rental management in Peachtree Corners, GA. ATLStay helps owners near Curiosity Lab, Technology Parkway, and The Forum earn more from their Airbnb."
 intro: "Peachtree Corners is Georgia's only designated smart city and home to Curiosity Lab — a live testing environment for autonomous vehicles, 5G infrastructure, and emerging mobility technology. That tech identity, combined with The Forum lifestyle center and one of Gwinnett's most affluent demographics, makes it one of the county's most compelling corporate STR markets."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "City of Peachtree Corners and Gwinnett County STR compliance support included"
 faqs:
   - q: "Does Peachtree Corners require a permit for short-term rentals?"
-    a: "Short-term rentals in Peachtree Corners are subject to City of Peachtree Corners and Gwinnett County regulations. Requirements may include registration, safety compliance, and zoning adherence. Local rules differ from Atlanta's and are subject to revision. Keystone Stays tracks Peachtree Corners STR compliance for all our clients. For a broader overview, visit /resources/atlanta-short-term-rental-regulations/."
+    a: "Short-term rentals in Peachtree Corners are subject to City of Peachtree Corners and Gwinnett County regulations. Requirements may include registration, safety compliance, and zoning adherence. Local rules differ from Atlanta's and are subject to revision. ATLStay tracks Peachtree Corners STR compliance for all our clients. For a broader overview, visit /resources/atlanta-short-term-rental-regulations/."
   - q: "What makes Peachtree Corners a strong short-term rental market?"
     a: "Peachtree Corners has Georgia's highest concentration of technology-company employment in suburban Gwinnett, anchored by Curiosity Lab and the Technology Parkway corporate campus. Technology professionals — engineers, program managers, visiting researchers, and consulting teams — have among the highest rates of short-term private rental preference of any corporate guest segment. Add an affluent residential demographic with high baseline standards and The Forum as a walkable dining destination, and Peachtree Corners supports a premium-tier STR market."
   - q: "What is Curiosity Lab and why does it matter for STR demand?"
     a: "Curiosity Lab at Peachtree Corners is a 1.5-mile autonomous-vehicle testing circuit and smart-city living lab at 147 Technology Parkway. It is operated in partnership with Georgia Tech and has attracted technology companies, researchers, and media attention from across the country. Companies testing technology at Curiosity Lab bring teams of engineers and project staff who need accommodation for days to weeks at a time — and who consistently prefer private residential rentals over business hotels."
   - q: "What types of properties perform best in Peachtree Corners?"
     a: "Peachtree Corners rewards premium properties. Well-staged homes with high-speed internet, dedicated workspace, updated appliances, and professional presentation consistently earn the highest ADRs in this market. The corporate guest segment values reliability and comfort above novelty — clean, well-equipped, and easy to access will outperform eccentric but inconvenient. Executive-level properties near Technology Parkway or The Forum can command above-market rates for extended-stay corporate bookings."
-  - q: "What is Keystone Stays' fee for Peachtree Corners properties?"
+  - q: "What is ATLStay's fee for Peachtree Corners properties?"
     a: "Our management rate starts from 10% of booking revenue with no hidden fees. We provide listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
 order: 0
 published: true

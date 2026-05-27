@@ -25,10 +25,10 @@ faqs:
   - q: "What is the Tellus Science Museum and who does it attract?"
     a: "Tellus Northwest Georgia Science Museum is a regional science and natural history museum featuring a planetarium, gem and mineral collections (Georgia has notable deposits), and interactive science exhibits. It draws significant family travel and school groups. STEM families from the Atlanta metro make Cartersville day trips or weekend stays centered on Tellus, particularly when the museum hosts special exhibitions or astronomy events."
   - q: "What are STR regulations in Cartersville?"
-    a: "Cartersville properties fall under Bartow County jurisdiction, and those within city limits are additionally subject to City of Cartersville ordinances. STR requirements have been established in Bartow County as the market has grown. Keystone Stays navigates the applicable requirements for each address. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
+    a: "Cartersville properties fall under Bartow County jurisdiction, and those within city limits are additionally subject to City of Cartersville ordinances. STR requirements have been established in Bartow County as the market has grown. ATLStay navigates the applicable requirements for each address. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
   - q: "How does Cartersville's Atlanta proximity affect the rental market?"
     a: "At 44 miles from Atlanta via I-75, Cartersville is within the Atlanta metro's practical weekend escape radius. The same Atlanta residents who drive to Lake Allatoona for boating, or who make cultural day trips to the Booth Museum, sometimes want a private home for the weekend rather than a day-trip. This proximity-drive demand fills shoulder weeks and off-peak weekends in ways that more remote Georgia markets cannot match."
-  - q: "What is Keystone Stays' management fee in Cartersville?"
+  - q: "What is ATLStay's management fee in Cartersville?"
     a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, lake-season and museum-event pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true

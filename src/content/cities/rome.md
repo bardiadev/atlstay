@@ -25,10 +25,10 @@ faqs:
   - q: "What is Rome's downtown scene?"
     a: "Rome's Broad Street has been through a substantial revitalization over the past decade. The city's historic downtown features independent restaurants, a performing arts center, galleries, and a walkable commercial strip anchored by the Chieftains Museum and the Rome Area History Museum. This emerging local character draws regional visitors — particularly from the Atlanta metro and from the Alabama border area — who come to Rome for a weekend getaway rather than specifically for Berry College or the rivers."
   - q: "What are STR regulations in Rome?"
-    a: "Rome properties fall under Floyd County jurisdiction, and those within city limits have City of Rome ordinance requirements as well. Keystone Stays navigates the applicable regulatory requirements for each property address. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
+    a: "Rome properties fall under Floyd County jurisdiction, and those within city limits have City of Rome ordinance requirements as well. ATLStay navigates the applicable regulatory requirements for each property address. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
   - q: "What property types work best in Rome?"
     a: "Homes near Berry College or within walking distance of downtown Broad Street perform best for leisure and event travelers. Properties with outdoor space and river proximity attract the outdoor recreation audience. Larger homes near the Berry campus capture multi-family graduation and homecoming groups. The medical and professional corridors near Redmond Regional Medical Center produce a quiet but consistent corporate and medical travel demand for furnished rental properties."
-  - q: "What is Keystone Stays' management fee in Rome?"
+  - q: "What is ATLStay's management fee in Rome?"
     a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, Berry College event pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true

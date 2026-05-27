@@ -25,7 +25,7 @@ faqs:
     a: "Westview attracts guests who've done Atlanta before and want something beyond the standard hotel experience. They're looking for a real neighborhood — walkable, with local character, close to the BeltLine but away from the tourist corridor. They tend to be thoughtful travelers who leave detailed, positive reviews when the property matches expectations."
   - q: "What are Atlanta's STR rules for Westview properties?"
     a: "Westview is within Atlanta city limits. The citywide STRL license applies: $150/year through atl311.com, with a limit of two licenses per owner and a primary-residence requirement on one license. We keep current with Atlanta's regulatory environment and guide owners through the licensing process."
-  - q: "How does Keystone Stays market a Westview property?"
+  - q: "How does ATLStay market a Westview property?"
     a: "We lead with the BeltLine connection and the neighborhood's bungalow character — the two things that make Westview genuinely distinct. Guests booking Westview should know they're getting direct trail access and a neighborhood with a real history and identity. We match that positioning with professional photography that captures what the neighborhood actually looks like."
 published: true
 ---
@@ -38,4 +38,4 @@ The BeltLine connection is the headline for guests. From Westview, the Westside 
 
 For property owners, the math in Westview looks different from more saturated markets. Acquisition and renovation costs remain lower than comparable Eastside neighborhoods, which means the percentage return on a well-managed STR can exceed what an owner might achieve in a more expensive zip code. The guests who discover Westview tend to be the type who leave positive, detailed reviews — they're not here by accident.
 
-Keystone Stays brings the same management discipline to Westview that we apply across Atlanta: local pricing expertise, professional photography that captures the neighborhood's genuine character, and attentive guest management that keeps reviews strong. We know the Westside market and we know which guests are looking for exactly what Westview offers.
+ATLStay brings the same management discipline to Westview that we apply across Atlanta: local pricing expertise, professional photography that captures the neighborhood's genuine character, and attentive guest management that keeps reviews strong. We know the Westside market and we know which guests are looking for exactly what Westview offers.

@@ -23,9 +23,9 @@ faqs:
   - q: "What guests are drawn to Candler Park specifically?"
     a: "Candler Park has the broadest guest mix on Atlanta's east side. Families love the park and pool access, couples appreciate the walkable neighborhood character, active guests use the Beltline and Freedom Park trail, and cultural travelers gravitate toward the Little Five Points proximity. It's a neighborhood that works for many different itineraries."
   - q: "When is the best booking season for Candler Park?"
-    a: "Summer is strong due to the pool and park, and the neighborhood's event calendar — including the Candler Park Fall Fest and the broader east-side festival season — drives autumn demand. Spring and fall are the busiest leisure seasons overall. Keystone Stays prices dynamically across all of these windows."
+    a: "Summer is strong due to the pool and park, and the neighborhood's event calendar — including the Candler Park Fall Fest and the broader east-side festival season — drives autumn demand. Spring and fall are the busiest leisure seasons overall. ATLStay prices dynamically across all of these windows."
   - q: "Is a short-term rental license required in Candler Park?"
-    a: "Yes — Candler Park is within Atlanta city limits. You'll need a City of Atlanta Short-Term Rental License ($150/year, atl311.com). Keystone Stays handles the licensing walkthrough as part of your onboarding."
+    a: "Yes — Candler Park is within Atlanta city limits. You'll need a City of Atlanta Short-Term Rental License ($150/year, atl311.com). ATLStay handles the licensing walkthrough as part of your onboarding."
   - q: "Do smaller craftsman homes in Candler Park earn as well as larger properties?"
     a: "Yes. Candler Park's smaller craftsman homes often outperform on a per-night basis because the character and neighborhood access are what guests are paying for, not square footage. Two-bedroom homes with period details and a porch typically earn strong rates when presented correctly."
   - q: "How does Little Five Points affect the guest experience?"
@@ -41,8 +41,8 @@ The craftsman housing stock reinforces that quality. Early-twentieth-century hom
 
 Little Five Points makes Candler Park more than just a quiet residential neighborhood. L5P is Atlanta's most distinct commercial district: independent record stores, vintage clothing, Variety Playhouse for concerts, and restaurants with identities that chain-hotel brochures can't replicate. Guests can walk to it from most Candler Park addresses, which gives properties here a cultural energy that the neighborhood's residential calm doesn't telegraph at first glance.
 
-The Beltline and Freedom Park trail connections add practical mobility. Guests can walk or bike to Inman Park for brunch, pedal to Ponce City Market for dinner, and access a network of parks and neighborhoods without ever needing to find parking. For leisure travelers making a first-time Atlanta visit, that freedom matters — and it's a genuine advantage Keystone Stays promotes in every Candler Park listing.
+The Beltline and Freedom Park trail connections add practical mobility. Guests can walk or bike to Inman Park for brunch, pedal to Ponce City Market for dinner, and access a network of parks and neighborhoods without ever needing to find parking. For leisure travelers making a first-time Atlanta visit, that freedom matters — and it's a genuine advantage ATLStay promotes in every Candler Park listing.
 
 Family demand is consistent year-round because the neighborhood infrastructure supports it. The pool and park draw families specifically, and multi-bedroom craftsman homes with yards are among the most searched property types on Airbnb for family visitors to Atlanta.
 
-Keystone Stays manages Candler Park properties to highlight everything that makes the neighborhood distinct — and to price those advantages correctly.
+ATLStay manages Candler Park properties to highlight everything that makes the neighborhood distinct — and to price those advantages correctly.

@@ -4,7 +4,7 @@ state: GA
 slug: johns-creek
 region: metro
 title: "Airbnb & Short-Term Rental Management in Johns Creek, GA"
-description: "Professional short-term rental management in Johns Creek, GA. Keystone Stays optimizes your Airbnb for Johns Creek's affluent family market, corporate demand, and event-driven stays."
+description: "Professional short-term rental management in Johns Creek, GA. ATLStay optimizes your Airbnb for Johns Creek's affluent family market, corporate demand, and event-driven stays."
 intro: "Johns Creek is one of the most affluent communities in Georgia — a city of large family homes, top-ranked schools, and a resident profile that generates strong demand from visiting families, medical professionals, and the corporate relocation market."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -16,17 +16,17 @@ highlights:
   - "Johns Creek and Fulton County STR compliance support included"
 faqs:
   - q: "Are short-term rentals permitted in Johns Creek, GA?"
-    a: "Short-term rentals in Johns Creek are subject to Fulton County and City of Johns Creek regulations. Local rules address registration, zoning compliance, safety requirements, and operational standards. Because Johns Creek is a relatively young city whose regulations have evolved since incorporation in 2006, we recommend checking current requirements with the City of Johns Creek or contacting Keystone Stays — we track local STR rules for all our north Fulton County markets."
+    a: "Short-term rentals in Johns Creek are subject to Fulton County and City of Johns Creek regulations. Local rules address registration, zoning compliance, safety requirements, and operational standards. Because Johns Creek is a relatively young city whose regulations have evolved since incorporation in 2006, we recommend checking current requirements with the City of Johns Creek or contacting ATLStay — we track local STR rules for all our north Fulton County markets."
   - q: "What drives short-term rental demand in Johns Creek?"
     a: "Johns Creek's demand is distinct from Atlanta's event-driven or leisure-dominant markets. The primary drivers are: families visiting or relocating for the renowned school district (Northview, Johns Creek, and Lambert high schools consistently rank among Georgia's best), medical professionals affiliated with Emory Johns Creek Hospital and nearby healthcare facilities, and corporate travelers from the technology and financial services employers along the GA-141/McGinnis Ferry corridor. Athletic and golf events at venues like Athletic Club Northeast add a sporting-event layer."
   - q: "What types of properties perform best as short-term rentals in Johns Creek?"
     a: "Larger family homes — four or more bedrooms with multiple bathrooms, outdoor space, and modern kitchens — perform exceptionally well for family relocation visits and multi-generational gatherings. Johns Creek's residential character means guests expect a higher baseline of quality than in more tourist-oriented markets. Well-staged, genuinely well-furnished homes with the amenities families actually use — good cookware, comfortable beds, outdoor play space — command premium rates and strong reviews."
   - q: "Is Johns Creek good for extended-stay corporate rentals?"
     a: "Yes. The McGinnis Ferry Road and Technology Park Atlanta corridor hosts significant technology and financial-services employment. Corporate relocation — when a new employee needs temporary housing while house-hunting in the school district — is a segment that Johns Creek captures more of than most Atlanta suburbs. These guests often book three to eight weeks at a time and are among the most considerate short-term rental occupants. A property configured for extended-stay comfort can capture this segment reliably."
-  - q: "How does Keystone Stays' fee structure work for Johns Creek?"
-    a: "Our all-in management rate is 15% of booking revenue with no setup fees or per-booking charges. The rate covers listing creation, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. For Johns Creek's larger homes — where turnovers require more coordination — our cleaning management is particularly valuable."
+  - q: "How does ATLStay's fee structure work for Johns Creek?"
+    a: "Our all-in management rate is 10% of booking revenue with no setup fees or per-booking charges. The rate covers listing creation, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. For Johns Creek's larger homes — where turnovers require more coordination — our cleaning management is particularly valuable."
   - q: "What makes Johns Creek different from other north Atlanta STR markets?"
-    a: "Johns Creek's residential character is more quiet and family-oriented than Alpharetta or Roswell. Guests booking here are typically looking for a home-like experience in a suburban setting — not nightlife proximity or historic-district charm. The market rewards properties that deliver genuine residential comfort and space over trendy design or downtown walkability. That's a different positioning challenge and one that Keystone Stays' local expertise is built to address."
+    a: "Johns Creek's residential character is more quiet and family-oriented than Alpharetta or Roswell. Guests booking here are typically looking for a home-like experience in a suburban setting — not nightlife proximity or historic-district charm. The market rewards properties that deliver genuine residential comfort and space over trendy design or downtown walkability. That's a different positioning challenge and one that ATLStay's local expertise is built to address."
 order: 0
 published: true
 ---

@@ -25,11 +25,11 @@ faqs:
   - q: "What guests book in Poncey-Highland?"
     a: "A wide mix: leisure travelers who want PCM access, couples visiting for the restaurant scene, cultural travelers combining the neighborhood with the High Museum or Woodruff Arts Center, and out-of-town guests visiting Atlanta friends who want to stay close to the action. Strong weekend demand with consistent midweek bookings as well."
   - q: "Are there STR licensing requirements in Poncey-Highland?"
-    a: "Yes — Poncey-Highland is within Atlanta city limits. A City of Atlanta Short-Term Rental License ($150/year, atl311.com) is required. Keystone Stays manages the entire licensing process as part of your onboarding."
+    a: "Yes — Poncey-Highland is within Atlanta city limits. A City of Atlanta Short-Term Rental License ($150/year, atl311.com) is required. ATLStay manages the entire licensing process as part of your onboarding."
   - q: "How does Ponce City Market affect nightly rates?"
     a: "Significantly. PCM's rooftop events, restaurant openings, and seasonal programming create booking windows throughout the year. We monitor the PCM event calendar, track comparable listing prices, and adjust your rates ahead of high-demand periods so you capture the premium rather than missing it."
   - q: "Is there a minimum stay that works well in Poncey-Highland?"
-    a: "Two-night minimums on weekends work well for most properties — they reduce turnover costs while maintaining strong occupancy. For special event weekends (Atlanta Pride, major PCM events), we evaluate whether single-night rates justify the cost. Keystone Stays manages minimum-stay rules dynamically rather than locking in a fixed policy."
+    a: "Two-night minimums on weekends work well for most properties — they reduce turnover costs while maintaining strong occupancy. For special event weekends (Atlanta Pride, major PCM events), we evaluate whether single-night rates justify the cost. ATLStay manages minimum-stay rules dynamically rather than locking in a fixed policy."
 published: true
 ---
 
@@ -43,4 +43,4 @@ The Beltline trailhead inside PCM is the neighborhood's second engine. Guests ca
 
 The Clermont and the Virginia-Highland edge give Poncey-Highland a nightlife and dining dimension that extends well past Ponce City Market's hours. The neighborhood doesn't go quiet after dinner — there's always something within walking distance.
 
-Keystone Stays manages Poncey-Highland properties with specific attention to PCM's programming calendar, the Beltline's peak seasons, and the neighborhood's event-driven demand windows. We price and present your property to capture what this location is actually worth.
+ATLStay manages Poncey-Highland properties with specific attention to PCM's programming calendar, the Beltline's peak seasons, and the neighborhood's event-driven demand windows. We price and present your property to capture what this location is actually worth.

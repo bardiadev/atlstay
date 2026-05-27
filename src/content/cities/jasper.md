@@ -7,8 +7,8 @@ county: Pickens
 lat: 34.4679
 lng: -84.4291
 title: "Vacation Rental Management in Jasper, GA"
-description: "Expert vacation rental management in Jasper, GA — Georgia's First Mountain City, Burnt Mountain, and an easy 60-mile drive from Atlanta. Keystone Stays handles your Pickens County cabin."
-intro: "Jasper is Georgia's self-described 'First Mountain City' — the southern gateway to North Georgia's mountain corridor, just 60 miles from Atlanta with genuine mountain character and Burnt Mountain Preserve in its backyard. Keystone Stays turns your Jasper-area property into a high-performing vacation rental."
+description: "Expert vacation rental management in Jasper, GA — Georgia's First Mountain City, Burnt Mountain, and an easy 60-mile drive from Atlanta. ATLStay handles your Pickens County cabin."
+intro: "Jasper is Georgia's self-described 'First Mountain City' — the southern gateway to North Georgia's mountain corridor, just 60 miles from Atlanta with genuine mountain character and Burnt Mountain Preserve in its backyard. ATLStay turns your Jasper-area property into a high-performing vacation rental."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -27,7 +27,7 @@ faqs:
   - q: "When is Jasper's strongest vacation rental season?"
     a: "Fall foliage is the peak, as it is across the North Georgia mountain corridor. But Jasper benefits from a particular dynamic: because it's closer to Atlanta, spontaneous weekend trips happen more frequently here than in markets requiring a longer commitment. A Friday afternoon decision to 'go to the mountains' often means Jasper gets booked when Blue Ridge or Ellijay have already filled. This proximity advantage compresses the booking window but keeps occupancy high across more of the year."
   - q: "Are there short-term rental regulations in Jasper and Pickens County?"
-    a: "Yes. The City of Jasper and Pickens County each maintain STR frameworks. Requirements vary between city and unincorporated county parcels. Keystone Stays walks every new client through the current requirements for their specific address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. The City of Jasper and Pickens County each maintain STR frameworks. Requirements vary between city and unincorporated county parcels. ATLStay walks every new client through the current requirements for their specific address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
 order: 0
 published: true
 ---
@@ -50,4 +50,4 @@ Jasper and Pickens County are the heart of Georgia's marble quarrying heritage �
 
 ### Regulatory Landscape
 
-The City of Jasper and Pickens County each maintain STR requirements. Keystone Stays handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context.
+The City of Jasper and Pickens County each maintain STR requirements. ATLStay handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context.

@@ -7,7 +7,7 @@ county: Fulton
 lat: 33.5871
 lng: -84.5424
 title: "Airbnb & Short-Term Rental Management in Union City, GA"
-description: "Expert short-term rental management in Union City, GA. Keystone Stays maximizes Airbnb earnings near Hartsfield-Jackson Airport and the south Fulton film and logistics corridor."
+description: "Expert short-term rental management in Union City, GA. ATLStay maximizes Airbnb earnings near Hartsfield-Jackson Airport and the south Fulton film and logistics corridor."
 intro: "Union City sits in south Fulton County, positioned close to Hartsfield-Jackson Atlanta International Airport and within the active film production and logistics corridor that has transformed south metro Atlanta over the past decade. Airport proximity, film industry activity, and a growing south Fulton employment base create a demand profile that differs significantly from typical suburban STR markets."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -19,13 +19,13 @@ highlights:
   - "Growing south Fulton residential and commercial base supporting contractor and relocation stay demand"
 faqs:
   - q: "Are short-term rentals allowed in Union City, GA?"
-    a: "Short-term rentals in Union City are subject to City of Union City and Fulton County regulations governing zoning, registration, and operations. Requirements are specific to Union City and separate from Atlanta city STR rules. Keystone Stays monitors local ordinances and handles compliance for managed properties. See our Atlanta-area STR regulations guide for broader context."
+    a: "Short-term rentals in Union City are subject to City of Union City and Fulton County regulations governing zoning, registration, and operations. Requirements are specific to Union City and separate from Atlanta city STR rules. ATLStay monitors local ordinances and handles compliance for managed properties. See our Atlanta-area STR regulations guide for broader context."
   - q: "How does Hartsfield-Jackson Airport affect STR demand in Union City?"
     a: "Union City's proximity to Hartsfield-Jackson makes it a practical option for several airport-related guest types: travelers with early departures or late arrivals who need a nearby overnight, airline crew seeking alternatives to airport hotels, international visitors who need more space than a hotel provides for extended layovers, and visitors to Atlanta who prefer south-side positioning for airport convenience. The airport is one of the world's busiest, making this proximity meaningful year-round."
   - q: "What role does film production play in Union City's STR market?"
     a: "Georgia's film tax credit has made the state — and particularly the I-20 and south metro corridors — one of the largest film production regions in the US. South Fulton County sees regular production activity. Film and television crews often prefer STR accommodations over hotel blocks for extended shoots, particularly for higher-production roles that need a real workspace and home environment during multi-week assignments. Union City's south Fulton position places it within this active production zone."
   - q: "What guest types typically book in Union City?"
-    a: "Airport-adjacent travelers, film and TV production workers, logistics industry employees on extended assignments, contractors working in south Fulton County's ongoing development, and families visiting area residents are the primary segments. Keystone Stays builds marketing and pricing strategies around all of these profiles."
+    a: "Airport-adjacent travelers, film and TV production workers, logistics industry employees on extended assignments, contractors working in south Fulton County's ongoing development, and families visiting area residents are the primary segments. ATLStay builds marketing and pricing strategies around all of these profiles."
   - q: "Is Union City a good location for a short-term rental investment?"
     a: "South Fulton County's combination of airport proximity, film industry activity, and logistics corridor growth creates durable, multi-source demand. Property costs are meaningfully lower than north Fulton or intown Atlanta, and the demand profile is less seasonal than purely leisure-driven markets."
 order: 0

@@ -7,7 +7,7 @@ county: DeKalb
 lat: 33.7123
 lng: -84.1051
 title: "Airbnb & Short-Term Rental Management in Lithonia, GA"
-description: "Professional STR management in Lithonia, GA. Keystone Stays helps hosts near Arabia Mountain and the Mall at Stonecrest earn more with expert local oversight."
+description: "Professional STR management in Lithonia, GA. ATLStay helps hosts near Arabia Mountain and the Mall at Stonecrest earn more with expert local oversight."
 intro: "Lithonia is the gateway to the Arabia Mountain National Heritage Area — one of Georgia's most underrated outdoor destinations — and its position at the eastern edge of DeKalb County gives STR hosts access to outdoor recreation travelers, extended-stay workers, and interstate-accessible corporate demand that larger suburban markets often overlook."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "DeKalb County STR compliance guidance included"
 faqs:
   - q: "Does Lithonia, GA require a short-term rental permit?"
-    a: "Lithonia is a city within DeKalb County with its own municipal government. STR regulations may be governed by the City of Lithonia, DeKalb County, or both. As local ordinances evolve, we recommend confirming current requirements with both the city and county before listing. Keystone Stays tracks regulatory changes across our eastern DeKalb County markets."
+    a: "Lithonia is a city within DeKalb County with its own municipal government. STR regulations may be governed by the City of Lithonia, DeKalb County, or both. As local ordinances evolve, we recommend confirming current requirements with both the city and county before listing. ATLStay tracks regulatory changes across our eastern DeKalb County markets."
   - q: "What drives short-term rental demand in Lithonia?"
     a: "Lithonia's primary demand driver is the Arabia Mountain National Heritage Area, a federally recognized landscape of granite monadnocks, wildflower meadows, and trail systems that draws hikers, cyclists, and nature travelers from across the region. The Heritage Area spans thousands of acres and offers experiences that are genuinely distinct from anywhere else in metro Atlanta. Lithonia's I-20 position also makes it accessible for corporate and extended-stay travelers working along the eastern corridor — distribution, logistics, and industrial operations generate quiet but consistent demand."
   - q: "What is Arabia Mountain and why do travelers visit it?"
     a: "Arabia Mountain is a granite monadnock rising from eastern DeKalb County, federally designated as part of a National Heritage Area that includes Arabia Mountain, Panola Mountain, and Davidson-Arabia Mountain Nature Preserve. The landscape — rare diamorpha wildflowers blooming on exposed granite, miles of multi-use trails, and an undeveloped character rare this close to Atlanta — draws eco-tourists, trail runners, birders, and anyone who wants genuine outdoor immersion within 20 miles of downtown Atlanta. Fall and spring wildflower seasons are peak draw periods."
   - q: "What types of homes perform well as STRs in Lithonia?"
     a: "Homes with outdoor features — decks, patios, fire pits, yard space — that complement the outdoor-recreation guest profile perform particularly well. Properties with space for couples, small families, or groups of hikers or cyclists align with the typical Arabia Mountain visitor. Clean, comfortable, and practical outperforms luxury in this market."
-  - q: "What is Keystone Stays' management fee in Lithonia?"
+  - q: "What is ATLStay's management fee in Lithonia?"
     a: "Our all-in rate starts from 10% of booking revenue, covering listing creation, dynamic pricing, photography, guest communication, cleaning oversight, and owner reporting. No setup fees."
 order: 0
 published: true

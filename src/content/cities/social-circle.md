@@ -7,7 +7,7 @@ county: Walton
 lat: 33.6562
 lng: -83.7182
 title: "Airbnb & Short-Term Rental Management in Social Circle, GA"
-description: "Expert short-term rental management in Social Circle, GA. Keystone Stays maximizes Airbnb earnings in this historic Walton County town near Hard Labor Creek State Park."
+description: "Expert short-term rental management in Social Circle, GA. ATLStay maximizes Airbnb earnings in this historic Walton County town near Hard Labor Creek State Park."
 intro: "Social Circle is one of those Georgia small towns that earns its visitors honestly — a name that gets people curious, a historic downtown that delivers on arrival, and Hard Labor Creek State Park just up the road with camping, fishing, golf, and equestrian trails. The combination of genuine historic character and outdoor recreation access makes Social Circle a rare STR market: a small town that people visit for the small town, not as a stop on the way to somewhere else."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "Approximately 45 miles east of Atlanta on I-20, making it an accessible but genuinely distinct weekend destination"
 faqs:
   - q: "Are short-term rentals allowed in Social Circle, GA?"
-    a: "Short-term rentals in Social Circle fall under City of Social Circle and Walton County ordinances covering zoning, permits, and operational requirements. Rules are local and separate from Atlanta city regulations. Keystone Stays monitors local requirements and manages compliance for all managed properties. See our Atlanta-area STR regulations guide for broader regulatory context."
+    a: "Short-term rentals in Social Circle fall under City of Social Circle and Walton County ordinances covering zoning, permits, and operational requirements. Rules are local and separate from Atlanta city regulations. ATLStay monitors local requirements and manages compliance for all managed properties. See our Atlanta-area STR regulations guide for broader regulatory context."
   - q: "What draws visitors to Social Circle?"
     a: "The Blue Willow Inn, a Georgia dining institution that has operated in a historic antebellum mansion for decades, draws visitors specifically to Social Circle for the dining experience. Hard Labor Creek State Park — a full-service state park with camping, an 18-hole golf course, equestrian trails, fishing lakes, and mountain biking — draws outdoor recreation visitors. The historic downtown character, with its preserved commercial streetscape and locally owned businesses, draws heritage travelers and Atlanta weekend escapees."
   - q: "How does Hard Labor Creek State Park affect STR demand?"

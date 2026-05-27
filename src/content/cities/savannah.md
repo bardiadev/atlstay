@@ -5,7 +5,7 @@ slug: savannah
 region: georgia
 title: "Vacation Rental Management in Savannah, GA"
 description: "Full-service vacation rental management in Savannah, GA. We handle pricing, guests, and turnovers — maximizing your revenue around St. Patrick's Day, weddings, and year-round tourism."
-intro: "Savannah is one of the South's most beloved travel destinations — with demand driven by River Street, historic squares, and the world's largest St. Patrick's Day celebration outside New York City. Keystone Stays helps you capture every high-value night."
+intro: "Savannah is one of the South's most beloved travel destinations — with demand driven by River Street, historic squares, and the world's largest St. Patrick's Day celebration outside New York City. ATLStay helps you capture every high-value night."
 heroImage: "savannah"
 neighborhoods: []
 highlights:
@@ -20,12 +20,12 @@ faqs:
   - q: "How much does St. Patrick's Day weekend affect nightly rates?"
     a: "St. Patrick's Day weekend in Savannah is one of the most dramatic demand spikes of any event in the Southeast. Nightly rates for well-positioned properties in and around the Historic District can reach multiples of a typical spring weekend rate. Properties that miss this window — through under-pricing, late listing optimization, or minimum-night mismanagement — leave their largest potential revenue event on the table. We prepare for it months in advance."
   - q: "Do I need a permit to operate a short-term rental in Savannah?"
-    a: "Yes. The City of Savannah requires a Business Tax Certificate and, in most cases, a Special Use Permit for short-term rentals in residential zones. Chatham County has its own requirements for properties in unincorporated areas. Regulations have evolved in recent years, and the rules differ by zoning district and property type. Keystone Stays keeps current on local requirements and walks every client through the licensing process at no extra charge. See our /resources/ section for an overview of Georgia STR regulations."
+    a: "Yes. The City of Savannah requires a Business Tax Certificate and, in most cases, a Special Use Permit for short-term rentals in residential zones. Chatham County has its own requirements for properties in unincorporated areas. Regulations have evolved in recent years, and the rules differ by zoning district and property type. ATLStay keeps current on local requirements and walks every client through the licensing process at no extra charge. See our /resources/ section for an overview of Georgia STR regulations."
   - q: "What types of properties perform best in Savannah?"
     a: "Historic row houses and carriage houses in the Landmark Historic District consistently attract premium guests who are specifically seeking the Savannah experience. Garden-level garden apartments with private courtyards perform especially well for couples and honeymoon travelers. Properties within walking distance of River Street and Forsyth Park command strong premiums. That said, the Victorian District and Ardsley Park attract guests who want the charm without the downtown congestion — and often at better acquisition prices for investors."
-  - q: "What is Keystone Stays' management fee?"
-    a: "Our all-in management rate is 15% of booking revenue. That covers listing creation and optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and detailed owner reporting. No setup fees, no per-booking charges."
-  - q: "Can I still use my Savannah property if I hire Keystone Stays?"
+  - q: "What is ATLStay's management fee?"
+    a: "Our all-in management rate is 10% of booking revenue. That covers listing creation and optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and detailed owner reporting. No setup fees, no per-booking charges."
+  - q: "Can I still use my Savannah property if I hire ATLStay?"
     a: "Absolutely. You retain full calendar control. Block any dates you want to use your property — whether for personal stays, family visits, or the SCAD art show you want to attend — and we manage around them with no penalties."
 order: 0
 published: true
@@ -55,4 +55,4 @@ Savannah's short-term rental regulations have been an evolving area. The city ha
 
 ### Why Local Management Wins Here
 
-Savannah's market is too nuanced for algorithmic management. The difference between a property priced correctly for St. Patrick's Day weekend and one that isn't can represent the equivalent of several months of normal revenue. The difference between a guest who leaves a glowing review about the "authentic Savannah experience" and one who complains about a maintenance issue that wasn't caught is a local team that inspects before check-in. That's what Keystone Stays provides.
+Savannah's market is too nuanced for algorithmic management. The difference between a property priced correctly for St. Patrick's Day weekend and one that isn't can represent the equivalent of several months of normal revenue. The difference between a guest who leaves a glowing review about the "authentic Savannah experience" and one who complains about a maintenance issue that wasn't caught is a local team that inspects before check-in. That's what ATLStay provides.

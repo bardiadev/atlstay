@@ -25,10 +25,10 @@ faqs:
   - q: "What outdoor recreation demand does Dalton attract?"
     a: "The Conasauga River, flowing from the Blue Ridge north of Dalton, is one of the premier cold-water fishing streams in Georgia. The Cohutta Wilderness and the Chattahoochee-Oconee National Forest flank Dalton to the east. The Appalachian Trail's southern terminus at Springer Mountain is approximately 60 miles southeast via US-76. These outdoor assets draw hikers, anglers, and backpackers who use Dalton as a supply point and base camp."
   - q: "What are STR regulations in Dalton?"
-    a: "Dalton properties fall under Whitfield County jurisdiction, and those within city limits are additionally subject to City of Dalton ordinances. STR requirements have developed as the market has grown. Keystone Stays navigates the applicable regulatory requirements for each address. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
+    a: "Dalton properties fall under Whitfield County jurisdiction, and those within city limits are additionally subject to City of Dalton ordinances. STR requirements have developed as the market has grown. ATLStay navigates the applicable regulatory requirements for each address. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
   - q: "What property types perform best in Dalton?"
     a: "Extended-stay properties — full kitchens, in-unit laundry, workspace, reliable parking — perform consistently for corporate and business travelers. Properties near the Crown Mill village (a historic textile mill complex converted to mixed use) attract leisure and cultural visitors. Homes with outdoor space or proximity to trail access attract the outdoor recreation audience. The mix of demand types rewards versatile property setups more than narrowly specialized ones."
-  - q: "What is Keystone Stays' management fee in Dalton?"
+  - q: "What is ATLStay's management fee in Dalton?"
     a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, corporate-travel pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true

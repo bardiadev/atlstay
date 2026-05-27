@@ -2,7 +2,7 @@
 name: Grant Park
 slug: grant-park
 citySlug: atlanta
-title: "Airbnb Management in Grant Park, Atlanta | Keystone Stays"
+title: "Airbnb Management in Grant Park, Atlanta | ATLStay"
 description: "Short-term rental management in Grant Park, Atlanta. Zoo Atlanta, the BeltLine Southside Trail, and strong value positioning make Grant Park one of Atlanta's best-value STR investment neighborhoods."
 intro: "Grant Park is one of Atlanta's oldest and most beloved neighborhoods — a place where Victorian homes line streets shaded by ancient oaks, just south of Zoo Atlanta and the park itself. The neighborhood draws a genuine community of visitors: zoo-goers and families, BeltLine Southside Trail users, and the growing creative class drawn by the neighborhood's authentic character and relative affordability."
 heroImage: "nbhdDefault"
@@ -25,7 +25,7 @@ faqs:
   - q: "How does the BeltLine Southside Trail affect Grant Park STR demand?"
     a: "The BeltLine's Southside Trail is still developing and will continue to enhance Grant Park's connectivity and desirability as it progresses. Properties with near-trail access are already marketing to the BeltLine-aware traveler demographic, and demand will strengthen as the trail reaches completion."
   - q: "What are the STR licensing requirements for Grant Park?"
-    a: "Grant Park is within Atlanta city limits: City of Atlanta STRL required at $150/year via atl311.com, maximum two licenses per owner, one must be primary residence, license number must appear on listing. Keystone Stays helps every client navigate compliance from the first conversation."
+    a: "Grant Park is within Atlanta city limits: City of Atlanta STRL required at $150/year via atl311.com, maximum two licenses per owner, one must be primary residence, license number must appear on listing. ATLStay helps every client navigate compliance from the first conversation."
   - q: "Grant Park seems less trendy than Old Fourth Ward or Midtown — does that hurt STR performance?"
     a: "Not at all — it simply means a different demand profile. Grant Park serves families, Zoo visitors, BeltLine users, and travelers who want an authentic residential Atlanta neighborhood at a fair price. That's a large, consistent market. Grant Park properties typically see excellent occupancy with a slightly lower nightly rate than O4W — often making up for it in volume and family group bookings."
 published: true
@@ -43,4 +43,4 @@ Oakland Cemetery adds an unexpected dimension to Grant Park's character. Many vi
 
 The BeltLine's Southside Trail is still being completed, but Grant Park's position as a BeltLine neighborhood is already attracting trail-focused travelers who see the neighborhood's connectivity as both a current amenity and a future advantage. Properties near trail access points will only become more valuable as the Southside segment reaches completion.
 
-Keystone Stays manages Grant Park properties with a clear understanding of the neighborhood's specific guest profile and demand calendar. We position listings around the Zoo, the BeltLine, and the authentic neighborhood character that makes Grant Park genuinely unique in the Atlanta market.
+ATLStay manages Grant Park properties with a clear understanding of the neighborhood's specific guest profile and demand calendar. We position listings around the Zoo, the BeltLine, and the authentic neighborhood character that makes Grant Park genuinely unique in the Atlanta market.

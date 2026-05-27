@@ -25,10 +25,10 @@ faqs:
   - q: "What guests book in Reynoldstown?"
     a: "Reynoldstown attracts active travelers who want Beltline access, brewery-and-food-focused weekend visitors, couples seeking a lively but less-touristy Atlanta base, and event travelers heading to Mercedes-Benz Stadium or State Farm Arena via MARTA. The neighborhood skews younger and more adventurous than Buckhead or Midtown."
   - q: "What STR license do I need for a Reynoldstown property?"
-    a: "Reynoldstown is within Atlanta city limits — you need a City of Atlanta Short-Term Rental License ($150/year, atl311.com). The primary-residence rule applies to at least one of your licenses. Keystone Stays manages the licensing process alongside your onboarding."
+    a: "Reynoldstown is within Atlanta city limits — you need a City of Atlanta Short-Term Rental License ($150/year, atl311.com). The primary-residence rule applies to at least one of your licenses. ATLStay manages the licensing process alongside your onboarding."
   - q: "How does the brewery scene affect my rental income?"
     a: "Weekend demand is strong, particularly Friday and Saturday nights when the taprooms are busiest. We price those nights to reflect peak demand and monitor the brewery event calendar — tap release events, large-format parties, and outdoor concerts — to ensure rates adjust accordingly."
-  - q: "Does Keystone Stays handle properties that aren't fully renovated yet?"
+  - q: "Does ATLStay handle properties that aren't fully renovated yet?"
     a: "We work with properties in a range of conditions. For Reynoldstown specifically, we'll advise on which improvements have the clearest ROI for your STR earnings before you list — sometimes a focused refresh is all it takes to unlock premium rates."
 published: true
 ---
@@ -43,4 +43,4 @@ Madison Yards changed the calculus for convenience. The Trader Joe's anchor and 
 
 The brewery scene is a legitimate demand driver. Monday Night Brewing's Garage taproom on the Westside gets the press, but Reynoldstown's own brewing establishments and its proximity to the east-side taproom cluster draw weekend visitors who are specifically building brewery-tour itineraries. Those guests book multi-night stays, and they're looking for a home base, not a hotel room.
 
-Keystone Stays manages Reynoldstown properties with an eye on the neighborhood's trajectory. We position listings to capture the demand that's already there — event travelers, Beltline users, brewery tourists — and we price for Reynoldstown's growing appeal rather than treating it like a generic east-side address.
+ATLStay manages Reynoldstown properties with an eye on the neighborhood's trajectory. We position listings to capture the demand that's already there — event travelers, Beltline users, brewery tourists — and we price for Reynoldstown's growing appeal rather than treating it like a generic east-side address.

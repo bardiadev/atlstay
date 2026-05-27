@@ -7,7 +7,7 @@ county: Cherokee
 lat: 34.3379
 lng: -84.3779
 title: "Airbnb & Short-Term Rental Management in Ball Ground, GA"
-description: "Short-term rental management in Ball Ground, GA. Keystone Stays maximizes your Airbnb earnings in Cherokee County's most charming small town."
+description: "Short-term rental management in Ball Ground, GA. ATLStay maximizes your Airbnb earnings in Cherokee County's most charming small town."
 intro: "Ball Ground is Cherokee County's most character-rich small town — a walkable historic downtown with murals, antiques, and a growing arts scene that draws visitors specifically looking for the antithesis of suburban Atlanta."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "Proximity to Canton and I-575 maintains connectivity without the suburban feel"
 faqs:
   - q: "Are short-term rentals allowed in Ball Ground, GA?"
-    a: "Short-term rentals in Ball Ground fall under Cherokee County's STR ordinance, which requires registration and compliance with safety and zoning requirements. Local rules can evolve as the area grows, so we recommend checking with Cherokee County's Development Service Center or reviewing our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). Keystone Stays handles compliance management for all our Ball Ground properties."
+    a: "Short-term rentals in Ball Ground fall under Cherokee County's STR ordinance, which requires registration and compliance with safety and zoning requirements. Local rules can evolve as the area grows, so we recommend checking with Cherokee County's Development Service Center or reviewing our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). ATLStay handles compliance management for all our Ball Ground properties."
   - q: "What makes Ball Ground a distinct STR market?"
     a: "Ball Ground is genuinely different from the larger Cherokee County suburbs. Its historic downtown — lined with antiques shops, craft food and drink establishments, and murals honoring the area's Native American heritage — attracts guests who are specifically seeking a small-town experience rather than a suburban one. The town also sits near several wedding venues, generating event-stay demand. These characteristics support a guest profile that values character over convenience, often resulting in stronger nightly rates for distinctive properties."
   - q: "How does the wedding venue scene affect Ball Ground STR demand?"
     a: "Ball Ground and its surroundings host several sought-after wedding and event venues. Wedding guests — bridal parties, out-of-town family, ceremony staff — need lodging for multiple nights, and they typically prefer something more personal than a hotel block. STR properties in Ball Ground are a natural fit for this demand, and the wedding calendar provides advance booking visibility."
   - q: "What kind of guests book in Ball Ground?"
     a: "Ball Ground tends to attract guests looking for authenticity: antique hunters making a weekend of it, couples drawn to the small-town character, wedding guests, and visitors using the town as a base for north Georgia day trips to wineries, orchards, or the mountains. This demographic tends to be a high-value, low-disruption guest profile."
-  - q: "What does Keystone Stays charge to manage a Ball Ground property?"
+  - q: "What does ATLStay charge to manage a Ball Ground property?"
     a: "Our all-in management starts from 10% of booking revenue — dynamic pricing, listing management, guest communication, cleaning coordination, and owner reporting. No setup fees. Contact us for a quote tailored to your specific home."
   - q: "Can I use my Ball Ground home myself during the year?"
     a: "Yes. You retain full calendar control. Block any dates you want and we manage all guest bookings around those windows."

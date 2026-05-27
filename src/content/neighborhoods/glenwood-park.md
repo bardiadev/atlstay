@@ -27,7 +27,7 @@ faqs:
     a: "Glenwood Park's housing stock is more homogeneous than other Atlanta neighborhoods — mostly townhomes and single-family homes built in the New Urbanist style. Properties with front porch access, preserved architectural character, and updated interiors perform best. The neighborhood's design quality creates a natural rate premium for properties that match that quality inside."
   - q: "What STR regulations apply in Glenwood Park?"
     a: "Glenwood Park is within Atlanta city limits. The standard citywide STRL applies: $150/year license via atl311.com, maximum two licenses per owner with primary-residence requirement. Check with your HOA as well — some Glenwood Park homeowners' associations have additional short-term rental policies."
-  - q: "How does Keystone Stays market Glenwood Park to maximize bookings?"
+  - q: "How does ATLStay market Glenwood Park to maximize bookings?"
     a: "We emphasize the neighborhood's distinctive design character and BeltLine access in every listing — these are the reasons guests choose Glenwood Park specifically. Professional photography that captures the neighborhood's streetscape and architectural details, combined with descriptions that speak to the design-conscious traveler, consistently outperform generic listings."
 published: true
 ---
@@ -42,4 +42,4 @@ The BeltLine Eastside Trail connection amplifies that walkable village feel with
 
 East Atlanta Village is the evening wildcard. EAV is one of Atlanta's most authentic neighborhood commercial strips — genuinely independent restaurants, bars, and music venues that have resisted the homogenization of busier corridors. From Glenwood Park, it's a short walk or a rideshare away, and it gives guests late-night options that complement the quieter neighborhood setting.
 
-Keystone Stays understands Glenwood Park's distinctive appeal and the guest profile it attracts. We market the neighborhood's design character explicitly and manage with the precision that keeps design-conscious guests satisfied.
+ATLStay understands Glenwood Park's distinctive appeal and the guest profile it attracts. We market the neighborhood's design character explicitly and manage with the precision that keeps design-conscious guests satisfied.

@@ -7,7 +7,7 @@ county: Paulding
 lat: 33.9237
 lng: -84.8408
 title: "Airbnb & Short-Term Rental Management in Dallas, GA"
-description: "Expert short-term rental management in Dallas, GA. Keystone Stays maximizes Airbnb earnings in fast-growing Paulding County and along the Silver Comet Trail corridor."
+description: "Expert short-term rental management in Dallas, GA. ATLStay maximizes Airbnb earnings in fast-growing Paulding County and along the Silver Comet Trail corridor."
 intro: "Dallas is the seat of Paulding County, one of metro Atlanta's fastest-growing counties over the past two decades. The Silver Comet Trail passes nearby, bringing cyclists and outdoor recreation visitors to a community that has expanded from a quiet rural county seat into a genuine west-metro destination with its own commercial base and growing event culture."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "Lower property costs than east- or south-side metro markets improve owner return on investment"
 faqs:
   - q: "Are short-term rentals allowed in Dallas, GA?"
-    a: "Short-term rentals in Dallas are subject to City of Dallas and Paulding County regulations covering zoning, registration, and operational requirements. Requirements are specific to the locality and separate from Atlanta city rules. Keystone Stays monitors Paulding County STR ordinances and handles compliance for managed properties. For metro Atlanta regulatory context, see our Atlanta-area STR regulations guide."
+    a: "Short-term rentals in Dallas are subject to City of Dallas and Paulding County regulations covering zoning, registration, and operational requirements. Requirements are specific to the locality and separate from Atlanta city rules. ATLStay monitors Paulding County STR ordinances and handles compliance for managed properties. For metro Atlanta regulatory context, see our Atlanta-area STR regulations guide."
   - q: "What drives Airbnb demand in Dallas, GA?"
     a: "Dallas has layered demand. The Silver Comet Trail brings cyclists and outdoor recreation guests who want a basecamp close to the trail for multi-day rides — the trail runs nearly 62 miles to the Alabama state line. Paulding County Amphitheater events draw concert audiences from across the metro. Construction and relocation activity from county growth brings contractor and corporate stay demand. As the county seat, Dallas generates government and business visitor stays year-round."
   - q: "Why does the Silver Comet Trail matter for STR demand?"

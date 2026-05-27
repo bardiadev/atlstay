@@ -7,7 +7,7 @@ county: Cobb
 lat: 33.8187
 lng: -84.5824
 title: "Airbnb & Short-Term Rental Management in Mableton, GA"
-description: "Short-term rental management in Mableton, GA. Keystone Stays handles your Airbnb in Cobb County's newest — and fastest-evolving — city."
+description: "Short-term rental management in Mableton, GA. ATLStay handles your Airbnb in Cobb County's newest — and fastest-evolving — city."
 intro: "Mableton became Georgia's newest city in 2023, and with that incorporation comes renewed investment, a growing arts and cultural identity, and a Silver Comet Trail running straight through town — a combination that's reshaping its STR market in real time."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "Mable House Arts Center adds a cultural destination layer to the market"
 faqs:
   - q: "Are short-term rentals allowed in Mableton, GA?"
-    a: "Mableton incorporated as a city in May 2023, and its local governance and STR regulations are still being established. Properties currently fall under applicable Cobb County STR ordinances while the new city develops its own framework. Because this regulatory environment is actively evolving, we strongly recommend staying current with local requirements. See our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/) for context and contact Keystone Stays for current compliance specifics."
+    a: "Mableton incorporated as a city in May 2023, and its local governance and STR regulations are still being established. Properties currently fall under applicable Cobb County STR ordinances while the new city develops its own framework. Because this regulatory environment is actively evolving, we strongly recommend staying current with local requirements. See our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/) for context and contact ATLStay for current compliance specifics."
   - q: "What drives STR demand in Mableton?"
     a: "Mableton's strongest demand anchor is the Mable House Barnes Amphitheatre, which hosts a spring-through-fall concert and event series. Concert nights drive short-notice bookings from attendees who prefer not to drive after a late show. The Silver Comet Trail's passage through the city adds a year-round outdoor recreation layer. Mableton's proximity to Atlanta via I-285 also supports business travel demand from the broader Cobb County corporate corridor."
   - q: "What is the Mable House Amphitheatre and how does it affect bookings?"
     a: "Mable House Barnes Amphitheatre is an outdoor performing arts venue on the grounds of the historic Mable House, a pre-Civil War plantation home on the National Register of Historic Places. The venue hosts a consistent concert and event calendar through the warm-weather season. Concert nights drive predictable demand spikes — guests who purchase tickets to evening shows often book a nearby STR to avoid driving home late, and out-of-town concertgoers use it as a full overnight stay."
   - q: "Is the Silver Comet Trail a significant demand driver in Mableton?"
     a: "Yes. The Silver Comet Trail begins in Smyrna and runs west through Mableton, making it one of the first substantial trail access points on the route. Cyclists beginning multi-day western Georgia rides, trail runners, and recreational users of all kinds find Mableton STR properties a convenient and comfortable trail base. Bike-friendly amenities — covered storage, outdoor wash areas, ground-floor access — are features worth investing in for this market."
-  - q: "What is Keystone Stays' fee for managing Mableton properties?"
+  - q: "What is ATLStay's fee for managing Mableton properties?"
     a: "Our all-in management starts from 10% of booking revenue — covering dynamic pricing, listing optimization, guest communication, cleaning oversight, and reporting. No setup fees. Contact us for a quote tailored to your property."
   - q: "Can I block off dates for personal use?"
     a: "Yes. You retain full calendar control and can block any dates for personal use at any time."

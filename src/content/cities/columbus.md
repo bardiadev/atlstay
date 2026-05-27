@@ -22,11 +22,11 @@ faqs:
   - q: "What is the Chattahoochee Whitewater Park and why does it matter for STR owners?"
     a: "The Chattahoochee Whitewater Park features the longest urban whitewater rafting course in the world — a reclaimed rapids section of the Chattahoochee River that runs through downtown Columbus. The course draws kayakers, rafters, and adventure sports visitors from across the Southeast and nationally. Competition events, training camps, and the general draw of a world-class urban whitewater facility generate a visitor segment that Columbus's hotel inventory was not built to serve well. Short-term rentals near the riverfront and downtown are particularly well-positioned for this market."
   - q: "Do I need a short-term rental permit in Columbus?"
-    a: "Yes. Columbus (which operates as a consolidated city-county government under Muscogee County) has STR-related requirements for operating legally. Keystone Stays reviews the current requirements for every Columbus client's property address and walks owners through the registration and compliance process. Requirements have been updated in recent years. See [/resources/](/resources/) for broader context on Georgia STR regulations."
+    a: "Yes. Columbus (which operates as a consolidated city-county government under Muscogee County) has STR-related requirements for operating legally. ATLStay reviews the current requirements for every Columbus client's property address and walks owners through the registration and compliance process. Requirements have been updated in recent years. See [/resources/](/resources/) for broader context on Georgia STR regulations."
   - q: "What types of Columbus properties perform best as vacation rentals?"
     a: "Properties in the downtown Historic District and in the neighborhoods near the riverfront perform best for leisure and whitewater tourism guests. Proximity to the Whitewater Park, RiverCenter, and the Chattahoochee Promenade is the primary location advantage for the adventure tourism and arts visitor market. For military travel, properties near Fort Moore's main gates (on the south side of Columbus and extending toward Phenix City) are preferred for TDY and family-visit guests who need to minimize commute time to the installation. Larger homes (3–5 bedrooms) serve family-visit and group military travel well."
-  - q: "What is Keystone Stays' management fee for Columbus properties?"
-    a: "Our all-in management rate is 15% of booking revenue. This covers listing optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
+  - q: "What is ATLStay's management fee for Columbus properties?"
+    a: "Our all-in management rate is 10% of booking revenue. This covers listing optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
 order: 0
 published: true
 ---
@@ -59,4 +59,4 @@ Columbus sits on the Alabama state line across the Chattahoochee from Phenix Cit
 
 ### Regulatory Environment
 
-Columbus operates under a consolidated city-county government (Muscogee County), and STR requirements apply to properties within this jurisdiction. Keystone Stays navigates the compliance process for every Columbus client. See [/resources/](/resources/) for general Georgia vacation rental regulatory context.
+Columbus operates under a consolidated city-county government (Muscogee County), and STR requirements apply to properties within this jurisdiction. ATLStay navigates the compliance process for every Columbus client. See [/resources/](/resources/) for general Georgia vacation rental regulatory context.

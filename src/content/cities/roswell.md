@@ -4,7 +4,7 @@ state: GA
 slug: roswell
 region: metro
 title: "Airbnb & Short-Term Rental Management in Roswell, GA"
-description: "Expert short-term rental management in Roswell, GA. Keystone Stays maximizes your Airbnb earnings with local pricing expertise, full-service turnovers, and 24/7 guest care."
+description: "Expert short-term rental management in Roswell, GA. ATLStay maximizes your Airbnb earnings with local pricing expertise, full-service turnovers, and 24/7 guest care."
 intro: "Roswell's beautifully preserved historic district, Chattahoochee River access, and thriving restaurant scene make it one of metro Atlanta's most sought-after destinations — and one of its most rewarding STR markets for owners who know how to position their property."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -16,14 +16,14 @@ highlights:
   - "Local regulation expertise keeps your listing compliant with Roswell city rules"
 faqs:
   - q: "Does Roswell, GA require a permit for short-term rentals?"
-    a: "Roswell has its own short-term rental ordinance. Property owners must obtain a city business license and comply with zoning and occupancy rules specific to Roswell's code. Requirements differ from Atlanta's — we recommend checking with the City of Roswell Community Development department or contacting Keystone Stays, as we track regulatory requirements across all of our metro-Atlanta markets."
+    a: "Roswell has its own short-term rental ordinance. Property owners must obtain a city business license and comply with zoning and occupancy rules specific to Roswell's code. Requirements differ from Atlanta's — we recommend checking with the City of Roswell Community Development department or contacting ATLStay, as we track regulatory requirements across all of our metro-Atlanta markets."
   - q: "What makes Roswell a good market for Airbnb rentals?"
     a: "Roswell has a rare combination of walkable historic charm and easy access to multiple demand generators. Canton Street draws dining and nightlife visitors from across the metro. The Old Mill district and Chattahoochee Nature Center attract history and nature travelers. Nearby Alpharetta hosts a growing technology and corporate sector that creates weekday business-travel demand. The city also hosts festivals, concerts, and events throughout the year that generate booking spikes."
   - q: "What types of homes rent best in Roswell?"
     a: "Historic homes near Canton Street or the Old Mill district command a premium for guests who want the Roswell character — original hardwoods, covered porches, walkable to dinner. Larger homes with modern updates and outdoor spaces perform well for family groups and friend gatherings. Properties near the Chattahoochee attract guests who want easy river access. Any home within walking distance of Canton Street nightlife typically books faster and at higher rates."
-  - q: "How does Keystone Stays price Roswell properties?"
-    a: "We build pricing strategies around Roswell's actual demand calendar — Canton Street events, Roswell Roots music festival, holiday lighting seasons, and the ebb and flow of leisure vs. business demand throughout the year. We don't apply a flat metro-Atlanta rate; each property gets a tailored pricing model. Our all-in management fee is 15% of booking revenue."
-  - q: "Will a Keystone Stays manager know Roswell's neighborhoods?"
+  - q: "How does ATLStay price Roswell properties?"
+    a: "We build pricing strategies around Roswell's actual demand calendar — Canton Street events, Roswell Roots music festival, holiday lighting seasons, and the ebb and flow of leisure vs. business demand throughout the year. We don't apply a flat metro-Atlanta rate; each property gets a tailored pricing model. Our all-in management fee is 10% of booking revenue."
+  - q: "Will a ATLStay manager know Roswell's neighborhoods?"
     a: "Yes. We serve clients across Roswell and know the difference between a Canton Street cottage and a Riverside neighborhood home in terms of positioning, guest profile, and pricing. That local knowledge is reflected in how we write listings, set rates, and communicate with guests."
   - q: "Can I still use my Roswell property personally?"
     a: "Completely. You control your calendar. Block any dates for personal use and we manage bookings around them. No minimums, no restrictions on your personal use."
@@ -53,4 +53,4 @@ Roswell sits directly adjacent to Alpharetta's technology corridor. When Alphare
 
 ### Regulation
 
-Roswell operates under its own municipal STR rules, which differ from those in Atlanta proper. For a broader overview of the Atlanta-area regulatory landscape, see our [STR regulations guide](/resources/atlanta-short-term-rental-regulations/). Keystone Stays handles the compliance process for every client and monitors for any city code changes.
+Roswell operates under its own municipal STR rules, which differ from those in Atlanta proper. For a broader overview of the Atlanta-area regulatory landscape, see our [STR regulations guide](/resources/atlanta-short-term-rental-regulations/). ATLStay handles the compliance process for every client and monitors for any city code changes.

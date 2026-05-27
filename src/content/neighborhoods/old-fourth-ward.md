@@ -2,7 +2,7 @@
 name: Old Fourth Ward
 slug: old-fourth-ward
 citySlug: atlanta
-title: "Airbnb Management in Old Fourth Ward, Atlanta | Keystone Stays"
+title: "Airbnb Management in Old Fourth Ward, Atlanta | ATLStay"
 description: "Expert short-term rental management in Old Fourth Ward, Atlanta. BeltLine access, Ponce City Market, and strong millennial travel demand make O4W one of Atlanta's top STR neighborhoods."
 intro: "Old Fourth Ward is the neighborhood that launched Atlanta's urban renaissance — home to the BeltLine's Eastside Trail, Ponce City Market, and the birthplace of Martin Luther King Jr. It's one of the most-searched Atlanta neighborhoods by Airbnb guests, and for good reason: the energy, location, and walkability are unmatched."
 heroImage: "nbhdOldFourthWard"
@@ -26,7 +26,7 @@ faqs:
     a: "Both condos and single-family homes perform well in O4W. The neighborhood has a mix of Victorian-era bungalows, modern loft condominiums, and new construction — all with strong appeal to the BeltLine-era traveler demographic. Properties with walkable BeltLine or PCM proximity command a premium."
   - q: "Are there short-term rental regulations specific to Old Fourth Ward?"
     a: "O4W falls within Atlanta city limits, so the standard City of Atlanta STRL requirements apply: $150/year license via atl311.com, maximum two licenses per owner with one being your primary residence. There are no O4W-specific overlay restrictions beyond the citywide ordinance as of May 2026 — though we always recommend staying current with city planning developments."
-  - q: "How does Keystone Stays market O4W properties to attract the right guests?"
+  - q: "How does ATLStay market O4W properties to attract the right guests?"
     a: "We emphasize what makes O4W unique: BeltLine access, walkability to PCM and the restaurant corridor, and the neighborhood's authentic Atlanta character. Professional listing photography that captures the area's energy — and descriptions that speak to what BeltLine-era travelers are actually looking for — consistently outperform generic listings that could describe any Atlanta neighborhood."
 published: true
 ---
@@ -43,4 +43,4 @@ The neighborhood's historical significance adds another layer. Old Fourth Ward i
 
 For property owners, O4W's blend of demand sources — BeltLine leisure travelers, PCM visitors, heritage tourists, creative-class weekenders — creates a resilient occupancy picture. Properties managed with attention to local character and walkability consistently outperform comparable listings that treat O4W as just another Atlanta zip code.
 
-Keystone Stays understands what makes O4W guests choose this neighborhood. We tell that story in every listing, price around the neighborhood's unique event calendar, and deliver the attentive local management that genuine O4W guests expect.
+ATLStay understands what makes O4W guests choose this neighborhood. We tell that story in every listing, price around the neighborhood's unique event calendar, and deliver the attentive local management that genuine O4W guests expect.

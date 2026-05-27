@@ -2,7 +2,7 @@
 name: Midtown
 slug: midtown
 citySlug: atlanta
-title: "Airbnb Management in Midtown Atlanta | Keystone Stays"
+title: "Airbnb Management in Midtown Atlanta | ATLStay"
 description: "Professional short-term rental management in Midtown Atlanta. Strong occupancy, world-class arts institutions, and proximity to Georgia Tech and major corporations drive year-round STR demand."
 intro: "Midtown is the cultural and commercial heart of Atlanta — home to Piedmont Park, the Fox Theatre, world-class museums, and some of the city's highest-rise residential towers. For short-term rental owners, it offers unmatched walkability, year-round demand from arts and event visitors, and a guest base that ranges from business travelers to weekend cultural tourists."
 heroImage: "nbhdMidtown"
@@ -25,8 +25,8 @@ faqs:
   - q: "Are there restrictions on short-term rentals in Midtown Atlanta?"
     a: "Midtown is within Atlanta city limits, subject to the City of Atlanta's Short-Term Rental License (STRL) requirements. The $150/year license is required, you may hold up to two STRLs (with one being your primary residence), and your license number must appear on your listing. Many Midtown high-rises also have HOA rules about short-term rentals — we help owners navigate both layers of compliance."
   - q: "I own a condo in a Midtown high-rise. Can I list it on Airbnb?"
-    a: "It depends on your HOA's governing documents. Some Midtown buildings permit short-term rentals; others prohibit or restrict them. We strongly recommend reviewing your condo association's rules before listing. Keystone Stays can help you understand both the city licensing requirements and any building-specific considerations."
-  - q: "How does Keystone Stays price Midtown properties for events at the Fox Theatre and Piedmont Park?"
+    a: "It depends on your HOA's governing documents. Some Midtown buildings permit short-term rentals; others prohibit or restrict them. We strongly recommend reviewing your condo association's rules before listing. ATLStay can help you understand both the city licensing requirements and any building-specific considerations."
+  - q: "How does ATLStay price Midtown properties for events at the Fox Theatre and Piedmont Park?"
     a: "Event-driven pricing is central to our Midtown strategy. We maintain a running calendar of Fox Theatre shows, Piedmont Park festivals, Georgia Tech home games, and major conventions nearby — and adjust nightly rates proactively to capture the demand surge. Owners who set-and-forget on platform default pricing routinely undercharge on these weekends."
 published: true
 ---
@@ -43,4 +43,4 @@ The tech employment story matters significantly for midweek occupancy. Google's 
 
 Piedmont Park anchors the neighborhood's leisure identity. Music Midtown brings tens of thousands of visitors to the park each September. Atlanta Pride fills the neighborhood every October. The Dogwood Festival, Atlanta BeltLine Lantern Parade, and Piedmont Park 5K all generate accommodation demand. Every one of those events represents a pricing opportunity for an actively managed property.
 
-Keystone Stays knows Midtown's event calendar, corporate demand patterns, and guest expectations intimately. We price each weekend on its own terms — not on a formula — and we present every property to the standard that Midtown's premium guests expect.
+ATLStay knows Midtown's event calendar, corporate demand patterns, and guest expectations intimately. We price each weekend on its own terms — not on a formula — and we present every property to the standard that Midtown's premium guests expect.

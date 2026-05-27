@@ -23,12 +23,12 @@ faqs:
   - q: "What guests rent in Druid Hills, and how long do they stay?"
     a: "Druid Hills has Atlanta's highest proportion of extended-stay guests — visiting professors, CDC contractors, medical families, and researchers typically book for a week or longer. That reduces turnover frequency and cleaning costs while maintaining strong monthly revenue. Leisure guests visiting Fernbank and Emory events fill shorter gaps."
   - q: "What can I earn renting my Druid Hills property as an STR?"
-    a: "Druid Hills properties command strong rates relative to the Atlanta average, particularly for extended academic and professional stays. Actual earnings depend on your property's size, condition, and proximity to Emory and Fernbank. Request a free custom projection from Keystone Stays for an estimate specific to your address."
+    a: "Druid Hills properties command strong rates relative to the Atlanta average, particularly for extended academic and professional stays. Actual earnings depend on your property's size, condition, and proximity to Emory and Fernbank. Request a free custom projection from ATLStay for an estimate specific to your address."
   - q: "Are STR licenses required in Druid Hills?"
-    a: "Most of Druid Hills falls within DeKalb County rather than Atlanta city limits — the licensing requirements and jurisdiction differ. Keystone Stays navigates the correct permitting pathway for your specific address before your listing launches."
+    a: "Most of Druid Hills falls within DeKalb County rather than Atlanta city limits — the licensing requirements and jurisdiction differ. ATLStay navigates the correct permitting pathway for your specific address before your listing launches."
   - q: "Is Druid Hills too formal or traditional to attract Airbnb guests?"
     a: "The opposite — the neighborhood's formality is a luxury asset. Guests who rent in Druid Hills are specifically seeking the Olmsted parkways, the estate character, and the prestige address. It's a niche, but it's a premium one that supports stronger nightly rates for well-presented properties."
-  - q: "How does Keystone Stays market Druid Hills to the right audience?"
+  - q: "How does ATLStay market Druid Hills to the right audience?"
     a: "We target academic and professional travelers through Airbnb and Vrbo's extended-stay programs, position listings to rank for Emory and CDC-adjacent searches, and use photography that captures the neighborhood's architectural distinction. That draws the longer-stay, lower-friction guests who perform best in Druid Hills."
 published: true
 ---
@@ -43,4 +43,4 @@ Fernbank Museum adds the family and cultural dimension. The museum and its adjac
 
 The architecture commands respect. Driving Miss Daisy wasn't filmed in Druid Hills by accident — the neighborhood's period estates and formal landscaping have a visual character that guests recognize and pay for. Properties that honor that character in their interiors earn strong nightly rates and the kind of reviews that compound into sustained listing quality over time.
 
-Keystone Stays manages Druid Hills properties with the extended-stay guest in mind, because that's where the market is strongest and where local expertise creates the most value.
+ATLStay manages Druid Hills properties with the extended-stay guest in mind, because that's where the market is strongest and where local expertise creates the most value.

@@ -7,7 +7,7 @@ county: Cobb
 lat: 33.8126
 lng: -84.6344
 title: "Airbnb & Short-Term Rental Management in Austell, GA"
-description: "Short-term rental management in Austell, GA. Keystone Stays handles your Airbnb near Six Flags Over Georgia in Cobb County."
+description: "Short-term rental management in Austell, GA. ATLStay handles your Airbnb near Six Flags Over Georgia in Cobb County."
 intro: "Austell's address next to Six Flags Over Georgia makes it one of metro Atlanta's most strategically located STR markets for family and group bookings — and the surrounding Cobb County access to Sweetwater Creek and the Silver Comet Trail keeps demand flowing outside park season."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "I-20 and I-285 interchange proximity makes Austell accessible from across metro Atlanta"
 faqs:
   - q: "Are short-term rentals allowed in Austell, GA?"
-    a: "Short-term rentals in Austell are governed by the City of Austell's local regulations and applicable Cobb County requirements. Local STR ordinances across Cobb County have been actively updated in recent years, so we recommend verifying current rules with the city or reviewing our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). Keystone Stays manages compliance for all our Austell properties."
+    a: "Short-term rentals in Austell are governed by the City of Austell's local regulations and applicable Cobb County requirements. Local STR ordinances across Cobb County have been actively updated in recent years, so we recommend verifying current rules with the city or reviewing our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). ATLStay manages compliance for all our Austell properties."
   - q: "Does being near Six Flags significantly affect STR demand in Austell?"
     a: "Very significantly. Six Flags Over Georgia and the adjacent Hurricane Harbor waterpark are located in Austell — the park's address is along Riverside Parkway in the city. Families visiting for multi-day experiences, season pass holders making overnight trips, and groups organizing theme-park outings all represent demand that flows directly to nearby STR properties. The parks' operating season runs spring through fall, with special event operations extending into autumn. Properties with enough bedrooms for family groups — three or more — perform especially well on park weekends."
   - q: "Is Sweetwater Creek State Park near Austell?"
     a: "Sweetwater Creek State Park borders Austell to the south and is one of the most popular state parks in Georgia, drawing hikers, paddlers, and outdoor recreation visitors from across metro Atlanta. Park visitors who want a home base rather than on-site camping find Austell properties a natural fit — close to the park entrance, with a full kitchen and more space than a hotel room."
   - q: "How much can I earn from a short-term rental in Austell?"
     a: "Earnings depend on property size, condition, and management quality. Six Flags proximity supports strong pricing on peak park weekends, while the broader Cobb County market and outdoor recreation access sustain baseline occupancy outside park season. Request a free projection from our team to see your specific home's potential."
-  - q: "What does Keystone Stays charge for managing Austell properties?"
+  - q: "What does ATLStay charge for managing Austell properties?"
     a: "Our all-in management starts from 10% of booking revenue — covering listing optimization, dynamic pricing, guest communication, cleaning oversight, and reporting. No setup fees or per-booking charges. Contact us for a quote specific to your home."
   - q: "Can I block off personal use dates?"
     a: "Yes. You retain full calendar control. Block any dates for personal or family use and we manage all bookings around those windows."

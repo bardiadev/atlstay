@@ -7,8 +7,8 @@ county: Towns
 lat: 34.9493
 lng: -83.7574
 title: "Vacation Rental Management in Hiawassee, GA"
-description: "Expert vacation rental management in Hiawassee, GA — Lake Chatuge waterfront and Brasstown Bald mountain access in Georgia's highest county. Keystone Stays maximizes your Towns County property."
-intro: "Hiawassee sits at the highest elevation of any county seat in Georgia, on the shores of Lake Chatuge with Brasstown Bald — the state's tallest peak — on the horizon. Keystone Stays manages your vacation property in one of North Georgia's most scenically spectacular markets."
+description: "Expert vacation rental management in Hiawassee, GA — Lake Chatuge waterfront and Brasstown Bald mountain access in Georgia's highest county. ATLStay maximizes your Towns County property."
+intro: "Hiawassee sits at the highest elevation of any county seat in Georgia, on the shores of Lake Chatuge with Brasstown Bald — the state's tallest peak — on the horizon. ATLStay manages your vacation property in one of North Georgia's most scenically spectacular markets."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -25,7 +25,7 @@ faqs:
   - q: "When does fall foliage hit in Hiawassee compared to other North Georgia markets?"
     a: "Hiawassee is typically one of the first North Georgia towns to see fall color — the high elevation (around 2,000 feet in town, with surrounding peaks much higher) means color often arrives two to three weeks before it reaches lower-elevation markets like Blue Ridge or Dahlonega. Savvy owners in Hiawassee can actually capture two peaks: early foliage demand from guests targeting high-elevation color, followed by a second wave from guests who missed peak color in other markets and are still chasing it. We account for this in our pricing calendar."
   - q: "Are there short-term rental regulations in Hiawassee and Towns County?"
-    a: "Yes. Towns County and the City of Hiawassee maintain STR frameworks that have been updated as the mountain market has grown. Requirements vary between incorporated city and unincorporated county parcels. Keystone Stays provides compliance guidance for every client based on their specific address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. Towns County and the City of Hiawassee maintain STR frameworks that have been updated as the mountain market has grown. Requirements vary between incorporated city and unincorporated county parcels. ATLStay provides compliance guidance for every client based on their specific address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
   - q: "Does the Georgia Mountain Fair significantly boost summer occupancy?"
     a: "Yes. The Georgia Mountain Fair, held each August at the fairgrounds in Hiawassee, is one of the longest-running mountain fairs in the region and draws consistent summer crowds. It extends summer peak demand in a market where the rest of the mountain cabin corridor is already strong. August in Hiawassee combines fair attendance, lake recreation, and guests starting to plan foliage-season returns — it's one of the stronger summer occupancy months in the North Georgia region."
 order: 0
@@ -52,4 +52,4 @@ The Georgia Mountain Fair, staged at the Hiawassee fairgrounds each August, exte
 
 ### Operating Here
 
-Towns County and the City of Hiawassee each maintain STR requirements. Keystone Stays provides compliance guidance specific to each client's property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia context.
+Towns County and the City of Hiawassee each maintain STR requirements. ATLStay provides compliance guidance specific to each client's property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia context.

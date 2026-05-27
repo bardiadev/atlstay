@@ -4,8 +4,8 @@ state: GA
 slug: atlanta
 region: atlanta
 title: "Airbnb & Short-Term Rental Management in Atlanta, GA"
-description: "Keystone Stays offers full-service short-term rental management in Atlanta. We handle everything — listing, pricing, guests, and turnovers — so you earn more, effortlessly."
-intro: "Atlanta's short-term rental market rewards owners who get the details right. Keystone Stays is the local management company built to make your home perform at the top of the market — with transparent pricing, genuine neighborhood expertise, and the hands-on care that national platforms simply can't match."
+description: "ATLStay offers full-service short-term rental management in Atlanta. We handle everything — listing, pricing, guests, and turnovers — so you earn more, effortlessly."
+intro: "Atlanta's short-term rental market rewards owners who get the details right. ATLStay is the local management company built to make your home perform at the top of the market — with transparent pricing, genuine neighborhood expertise, and the hands-on care that national platforms simply can't match."
 heroImage: "atlantaSkyline"
 neighborhoods:
   - buckhead
@@ -49,16 +49,16 @@ highlights:
   - "ATL permit compliance guidance included at no extra cost"
 faqs:
   - q: "Do I need a special license to rent my Atlanta home on Airbnb?"
-    a: "Yes. The City of Atlanta requires a Short-Term Rental License (STRL) issued through atl311.com, currently $150 per year. You may hold a maximum of two STRLs, and at least one property must be your primary residence. Your license number must appear on your listing. If your home is in unincorporated DeKalb County, a separate DeKalb STR license ($175/year) is required as of May 2026. Keystone Stays walks every new client through the compliance process."
+    a: "Yes. The City of Atlanta requires a Short-Term Rental License (STRL) issued through atl311.com, currently $150 per year. You may hold a maximum of two STRLs, and at least one property must be your primary residence. Your license number must appear on your listing. If your home is in unincorporated DeKalb County, a separate DeKalb STR license ($175/year) is required as of May 2026. ATLStay walks every new client through the compliance process."
   - q: "How much can I earn renting my Atlanta home short-term?"
     a: "Earnings vary considerably by neighborhood, bedroom count, season, and listing quality. Atlanta hosts a full calendar of high-demand events — SEC Championship, Peach Bowl, Atlanta United and Braves seasons, major conventions at the Georgia World Congress Center — that push nightly rates well above daily averages. The best way to know your specific property's potential is to request a free custom projection from our team."
-  - q: "What is Keystone Stays' management fee?"
-    a: "Our all-in management rate is 15% of booking revenue. That covers listing creation and optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees, no per-booking charges, no nickel-and-diming."
-  - q: "How does Keystone Stays handle pricing for big Atlanta events?"
+  - q: "What is ATLStay's management fee?"
+    a: "Our all-in management rate is 10% of booking revenue. That covers listing creation and optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees, no per-booking charges, no nickel-and-diming."
+  - q: "How does ATLStay handle pricing for big Atlanta events?"
     a: "Event-driven pricing is one of the most important levers in the Atlanta market. We track the full Atlanta event calendar — sporting events, conventions, concerts at State Farm Arena and Ameris Bank Amphitheatre, the Atlanta Film Festival, and more — and adjust nightly rates proactively. Owners who rely on platform default pricing routinely leave significant revenue on the table during peak weekends."
-  - q: "Can I still use my home if I hire Keystone Stays to manage it?"
+  - q: "Can I still use my home if I hire ATLStay to manage it?"
     a: "Absolutely. You retain full control of your calendar. Simply block the dates you want to use your home, and we manage around them. There are no required minimum availability windows."
-  - q: "Does Keystone Stays serve neighborhoods outside the city of Atlanta?"
+  - q: "Does ATLStay serve neighborhoods outside the city of Atlanta?"
     a: "Yes. We serve properties throughout metro Atlanta, including Decatur and other unincorporated DeKalb County addresses. We're actively adding more neighborhoods — contact us if you're in an area not listed and we'll let you know our current availability."
 order: 1
 published: true
@@ -85,7 +85,7 @@ The key rules:
 
 Properties in unincorporated DeKalb County — including much of Decatur — face a separate DeKalb County STR requirement effective May 20, 2026: $175 annually, with a 24-hour local contact designation required and historic district properties ineligible.
 
-Keystone Stays guides every client through the licensing process and stays current on regulatory changes so our owners are always compliant.
+ATLStay guides every client through the licensing process and stays current on regulatory changes so our owners are always compliant.
 
 ### Why Local Management Outperforms Remote Platforms
 

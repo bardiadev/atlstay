@@ -7,8 +7,8 @@ county: Gilmer
 lat: 34.6948
 lng: -84.4821
 title: "Cabin & Vacation Rental Management in Ellijay, GA"
-description: "Full-service cabin management in Ellijay, GA — apple country, Carters Lake, and some of North Georgia's most sought-after mountain properties. Keystone Stays handles everything."
-intro: "Ellijay is Georgia's Apple Capital — a cabin and mountain home market driven by a beloved October apple festival, Carters Lake recreation, and a downtown that draws Atlanta weekenders year-round. Keystone Stays turns your Gilmer County property into a consistently performing vacation rental."
+description: "Full-service cabin management in Ellijay, GA — apple country, Carters Lake, and some of North Georgia's most sought-after mountain properties. ATLStay handles everything."
+intro: "Ellijay is Georgia's Apple Capital — a cabin and mountain home market driven by a beloved October apple festival, Carters Lake recreation, and a downtown that draws Atlanta weekenders year-round. ATLStay turns your Gilmer County property into a consistently performing vacation rental."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -25,7 +25,7 @@ faqs:
   - q: "When are Ellijay's peak and off-peak seasons?"
     a: "Fall — September through November — is the market's crown season, combining apple orchard tourism, the Apple Festival, and foliage. Winter holiday weekends (Thanksgiving to New Year's) run a close second. Summer brings lake and outdoor recreation demand. Spring is a genuine shoulder period, though the Ellijay area's orchard scenery and mild temperatures attract trail runners, hikers, and cyclists. There is no deep off-season: Atlanta's proximity (under two hours for most of the metro) keeps weekend demand from fully collapsing in any month."
   - q: "Are there short-term rental rules in Gilmer County and Ellijay?"
-    a: "Yes. STR regulations in Gilmer County and within the City of Ellijay have been updated as mountain cabin demand has grown. Requirements differ between city and unincorporated county addresses. Keystone Stays provides compliance guidance for every new client based on their specific property location. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. STR regulations in Gilmer County and within the City of Ellijay have been updated as mountain cabin demand has grown. Requirements differ between city and unincorporated county addresses. ATLStay provides compliance guidance for every new client based on their specific property location. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
   - q: "What amenities matter most in Ellijay cabins?"
     a: "Hot tubs remain the single highest-ROI amenity — guests filter specifically for them. Game rooms (pool tables, foosball, arcade games) expand appeal to reunion and group bookings that generate large per-stay revenues. Outdoor fire pits and covered decks are expected on any cabin with meaningful outdoor space. The apple orchard proximity also means fully stocked kitchens perform well — guests pick apples and want to bake."
 order: 0
@@ -50,4 +50,4 @@ Ellijay cabins compete on outdoor experience: hot tubs, fire pits, game rooms, a
 
 ### Regulatory Landscape
 
-Gilmer County and the City of Ellijay both maintain STR requirements that owners must navigate. Keystone Stays handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia context.
+Gilmer County and the City of Ellijay both maintain STR requirements that owners must navigate. ATLStay handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia context.

@@ -131,4 +131,4 @@ Working with a professional property manager means you have a local team trackin
 
 ---
 
-*Managing compliance is one of the many details a professional manager handles. [See how Keystone Stays handles regulations, licensing, and tax remittance for Atlanta hosts](/services/) — or [get a free rental projection](/rental-projection/) to see what your home could earn.*
+*Managing compliance is one of the many details a professional manager handles. [See how ATLStay handles regulations, licensing, and tax remittance for Atlanta hosts](/services/) — or [get a free rental projection](/rental-projection/) to see what your home could earn.*

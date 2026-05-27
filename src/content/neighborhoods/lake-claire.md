@@ -25,10 +25,10 @@ faqs:
   - q: "Is Lake Claire too quiet to generate good STR demand?"
     a: "No. Lake Claire's appeal is its intentional calm — guests pay for it. Properties here attract a higher-quality, longer-stay guest profile that generates fewer complaints, better reviews, and lower turnover costs. The demand is real; it just skews toward guests who are actively choosing a residential experience over a tourist-district location."
   - q: "What are the STR licensing requirements for Lake Claire?"
-    a: "Lake Claire is within Atlanta city limits. You need a City of Atlanta Short-Term Rental License ($150/year, atl311.com). Keystone Stays walks you through the full process before your first listing goes live."
+    a: "Lake Claire is within Atlanta city limits. You need a City of Atlanta Short-Term Rental License ($150/year, atl311.com). ATLStay walks you through the full process before your first listing goes live."
   - q: "What types of properties perform best in Lake Claire?"
     a: "Character homes with outdoor space — a porch, a garden, a shaded yard — perform best. Lake Claire guests are choosing the neighborhood for its texture, and properties that reflect that (original details, natural materials, non-generic interiors) earn strong reviews and repeat guests."
-  - q: "How does Keystone Stays position a Lake Claire property differently?"
+  - q: "How does ATLStay position a Lake Claire property differently?"
     a: "We market Lake Claire's intentional quiet as an asset rather than a limitation. Listing copy and photography focus on the home's character, the neighborhood's community identity, and the walkable access to L5P and Candler Park. That positioning attracts the right guests and earns the best reviews."
 published: true
 ---
@@ -43,4 +43,4 @@ The location math is strong. From Lake Claire, guests can walk to Candler Park's
 
 For property owners, the guest profile is one of Lake Claire's advantages. Travelers who seek out this neighborhood tend toward longer stays, lower maintenance needs, and the kind of considered engagement that leads to five-star reviews. They're not looking for the closest hotel substitute — they're looking for the antidote to it.
 
-Keystone Stays understands how to market Lake Claire to the guests who will love it most. That means positioning the neighborhood's character accurately, attracting the right guest profile, and managing the property to the standard that protects your reviews and your rates.
+ATLStay understands how to market Lake Claire to the guests who will love it most. That means positioning the neighborhood's character accurately, attracting the right guest profile, and managing the property to the standard that protects your reviews and your rates.

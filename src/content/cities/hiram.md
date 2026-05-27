@@ -7,7 +7,7 @@ county: Paulding
 lat: 33.8757
 lng: -84.7622
 title: "Airbnb & Short-Term Rental Management in Hiram, GA"
-description: "Expert short-term rental management in Hiram, GA. Keystone Stays maximizes Airbnb earnings in Paulding County's retail hub near the Silver Comet Trail."
+description: "Expert short-term rental management in Hiram, GA. ATLStay maximizes Airbnb earnings in Paulding County's retail hub near the Silver Comet Trail."
 intro: "Hiram is Paulding County's retail and commercial hub, sitting at the intersection of US-278 and SR-92 and serving as the de facto commercial center for much of western Paulding County. The Silver Comet Trail runs through the community, the commercial corridor generates consistent contractor and business visitor demand, and Hiram's central position in the county makes it accessible to demand from multiple directions."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "Lower property costs than east-of-Atlanta equivalent markets while still within metro Atlanta demand zone"
 faqs:
   - q: "Are short-term rentals allowed in Hiram, GA?"
-    a: "Short-term rentals in Hiram are governed by City of Hiram and Paulding County ordinances covering zoning, permits, and operational requirements. Keystone Stays monitors local requirements and handles all compliance for managed properties. For broader metro Atlanta STR regulatory context, see our Atlanta-area STR regulations guide."
+    a: "Short-term rentals in Hiram are governed by City of Hiram and Paulding County ordinances covering zoning, permits, and operational requirements. ATLStay monitors local requirements and handles all compliance for managed properties. For broader metro Atlanta STR regulatory context, see our Atlanta-area STR regulations guide."
   - q: "What drives Airbnb demand in Hiram?"
     a: "Hiram's commercial concentration is the primary driver — business travelers, contractors, and corporate visitors working in Paulding County's commercial zone generate consistent weekday demand. Silver Comet Trail access adds a leisure recreation segment. Families visiting Paulding County residents — a large residential population without much hotel infrastructure nearby — often prefer a rental over driving to Marietta."
   - q: "How does Hiram's retail hub status affect STR demand?"

@@ -7,7 +7,7 @@ county: Coweta
 lat: 33.3807
 lng: -84.7997
 title: "Airbnb & Short-Term Rental Management in Newnan, GA"
-description: "Expert short-term rental management in Newnan, GA. Keystone Stays maximizes Airbnb earnings in Coweta County's historic downtown and growing I-85 southwest corridor."
+description: "Expert short-term rental management in Newnan, GA. ATLStay maximizes Airbnb earnings in Coweta County's historic downtown and growing I-85 southwest corridor."
 intro: "Newnan is Coweta County's county seat and one of metro Atlanta's most historically preserved communities — six National Register of Historic Places districts, an antebellum downtown that survived the Civil War largely intact, and a fast-growing I-85 southwest corridor that brings corporate and industrial demand to complement its heritage appeal."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "40 miles southwest of Atlanta — meaningful market separation from the saturated urban STR core"
 faqs:
   - q: "Are short-term rentals allowed in Newnan, GA?"
-    a: "Short-term rentals in Newnan are subject to City of Newnan and Coweta County ordinances covering zoning, registration, and operational requirements. Rules are specific to the locality and separate from Atlanta city regulations. Keystone Stays monitors Coweta County STR ordinances and handles compliance for all managed properties."
+    a: "Short-term rentals in Newnan are subject to City of Newnan and Coweta County ordinances covering zoning, registration, and operational requirements. Rules are specific to the locality and separate from Atlanta city regulations. ATLStay monitors Coweta County STR ordinances and handles compliance for all managed properties."
   - q: "What drives Airbnb demand in Newnan?"
     a: "Newnan has layered demand drivers. Historic heritage tourism is genuine — the six National Register districts and intact antebellum architecture draw visitors who travel specifically for the character of downtown Newnan. The I-85 southwest corridor brings corporate and industrial business travel from companies operating in Coweta County. Coweta County Medical Center generates healthcare visitor stays. Weekend events at the amphitheater and downtown venues add leisure demand. At 40 miles from Atlanta, Newnan is close enough to be metro-accessible but separated enough to have its own demand identity."
   - q: "Why does Newnan's historic preservation matter for STR owners?"
@@ -27,7 +27,7 @@ faqs:
   - q: "How does the I-85 corridor affect demand?"
     a: "Interstate 85 southwest of Atlanta has developed into a significant logistics, manufacturing, and industrial corridor. Companies operating in Coweta County generate consistent business travel that hotel inventory in Newnan doesn't always serve efficiently. A quality STR that caters to the business traveler — reliable internet, workspace, comfortable furnishings — fills a genuine gap and creates weekday occupancy to complement weekend heritage leisure demand."
   - q: "What property types work best in Newnan?"
-    a: "Properties in or adjacent to the historic districts perform strongly for heritage tourism and weekend stays. Larger homes with character architecture can command premiums for group visits and special occasions. Functional, well-equipped properties closer to the I-85 interchange capture business and contractor stays. Keystone Stays calibrates pricing and targeting across both segments."
+    a: "Properties in or adjacent to the historic districts perform strongly for heritage tourism and weekend stays. Larger homes with character architecture can command premiums for group visits and special occasions. Functional, well-equipped properties closer to the I-85 interchange capture business and contractor stays. ATLStay calibrates pricing and targeting across both segments."
 order: 0
 published: true
 ---

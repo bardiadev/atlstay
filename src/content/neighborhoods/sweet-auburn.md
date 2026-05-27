@@ -23,11 +23,11 @@ faqs:
   - q: "Who stays in Sweet Auburn, and why?"
     a: "Heritage travelers are Sweet Auburn's most consistent guest profile — visitors making a pilgrimage to the MLK sites, families on educational trips, and international visitors for whom Atlanta's civil-rights history is the primary draw. The neighborhood's active revival also draws culturally curious travelers who want to experience Atlanta's most historically significant corridor."
   - q: "Is Sweet Auburn safe and accessible for STR guests?"
-    a: "Yes. The neighborhood has seen significant investment in recent years, and the National Park Service presence creates a well-maintained and actively visited corridor. As with any urban neighborhood, we advise owners on property positioning and guest screening. Keystone Stays knows the neighborhood and manages for appropriate guest fit."
+    a: "Yes. The neighborhood has seen significant investment in recent years, and the National Park Service presence creates a well-maintained and actively visited corridor. As with any urban neighborhood, we advise owners on property positioning and guest screening. ATLStay knows the neighborhood and manages for appropriate guest fit."
   - q: "What are the STR licensing requirements in Sweet Auburn?"
-    a: "Sweet Auburn is within Atlanta city limits. A City of Atlanta Short-Term Rental License ($150/year, atl311.com) is required. Keystone Stays handles the licensing process during your onboarding."
+    a: "Sweet Auburn is within Atlanta city limits. A City of Atlanta Short-Term Rental License ($150/year, atl311.com) is required. ATLStay handles the licensing process during your onboarding."
   - q: "How does MLK holiday weekend affect bookings?"
-    a: "The Martin Luther King Jr. holiday weekend is one of Sweet Auburn's strongest annual booking windows, along with Black History Month. Demand spikes significantly during those periods, and properties positioned near the National Historic Site can earn strong rates. Keystone Stays plans pricing around these annual windows."
+    a: "The Martin Luther King Jr. holiday weekend is one of Sweet Auburn's strongest annual booking windows, along with Black History Month. Demand spikes significantly during those periods, and properties positioned near the National Historic Site can earn strong rates. ATLStay plans pricing around these annual windows."
   - q: "Is Sweet Auburn a good long-term STR investment?"
     a: "The neighborhood's historic significance, ongoing revival investment, and proximity to downtown create a compelling long-term case. Current supply of well-managed STRs is limited relative to the demand flowing to the MLK sites and Curb Market. Owners who establish a strong listing now benefit from limited competition."
 published: true
@@ -43,4 +43,4 @@ The Sweet Auburn Curb Market adds dimension to the neighborhood's appeal. Operat
 
 The neighborhood's revival is visible in real time. Restored buildings on Auburn Avenue, new hospitality investments, and the ongoing attention of preservation organizations mean Sweet Auburn is in a state of active transformation. Guests arriving now are experiencing a neighborhood with genuine momentum — history preserved and future being built simultaneously.
 
-Keystone Stays manages Sweet Auburn properties with an understanding of what draws guests here and what they need when they arrive. We position every listing to attract heritage travelers, educational groups, and culturally curious visitors who recognize the neighborhood's significance — and we manage the property to the standard that earns the reviews those guests leave.
+ATLStay manages Sweet Auburn properties with an understanding of what draws guests here and what they need when they arrive. We position every listing to attract heritage travelers, educational groups, and culturally curious visitors who recognize the neighborhood's significance — and we manage the property to the standard that earns the reviews those guests leave.

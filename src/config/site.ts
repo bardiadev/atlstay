@@ -1,5 +1,5 @@
 // =============================================================================
-// Keystone Stays — single source of truth for BUSINESS FACTS.
+// ATLStay — single source of truth for BUSINESS FACTS.
 // The owner sets these to REAL values. Anything marked `CONFIRM` is a sensible
 // placeholder pending owner confirmation; anything marked `INTEGRATE` needs
 // wiring to an external service. NEVER hardcode these facts inside pages.
@@ -7,17 +7,17 @@
 // =============================================================================
 
 export const site = {
-  brandName: 'Keystone Stays',
+  brandName: 'ATLStay',
   tagline: "Atlanta's home for effortless hosting.",
-  domain: 'https://www.keystonestays.com', // update before deploy
+  domain: 'https://atlstay.com', // update before deploy
   description:
     'Premium short-term rental management in Atlanta. We handle everything — listing, pricing, guests, cleaning, and five-star reviews — so your home earns more, effortlessly.',
 
   // Contact / NAP — used in footer + LocalBusiness schema. Set to REAL values.
   contact: {
-    phone: '(404) 555-0142', // CONFIRM — placeholder
-    phoneHref: 'tel:+14045550142', // CONFIRM
-    email: 'hello@keystonestays.com', // CONFIRM — placeholder
+    phone: '(678) 938-6413',
+    phoneHref: 'tel:+16789386413',
+    email: 'hello@atlstay.com', // CONFIRM — placeholder
     address: {
       street: '', // CONFIRM — blank omits street from schema
       city: 'Atlanta',

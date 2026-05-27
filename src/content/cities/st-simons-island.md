@@ -23,10 +23,10 @@ faqs:
   - q: "What types of properties perform best on St. Simons Island?"
     a: "Cottage-style homes within walking distance of East Beach and the Village commercial district attract the broadest guest base. Larger homes (4–6 bedrooms) capture family reunions and multi-family groups who book well in advance and pay premium rates for private outdoor space, outdoor showers, and proximity to the beach strand."
   - q: "Are there short-term rental regulations on St. Simons Island?"
-    a: "Yes. St. Simons Island properties fall under Glynn County jurisdiction, which has established requirements for vacation rentals including registration and occupancy rules. Regulations have evolved as the Golden Isles market has grown. Keystone Stays navigates current requirements for every client — STR rules vary by jurisdiction and we monitor for changes. See our resources at /resources/atlanta-short-term-rental-regulations/ for context on Georgia STR compliance."
+    a: "Yes. St. Simons Island properties fall under Glynn County jurisdiction, which has established requirements for vacation rentals including registration and occupancy rules. Regulations have evolved as the Golden Isles market has grown. ATLStay navigates current requirements for every client — STR rules vary by jurisdiction and we monitor for changes. See our resources at /resources/atlanta-short-term-rental-regulations/ for context on Georgia STR compliance."
   - q: "How does the Sea Island and Cloister effect impact rental demand?"
     a: "Sea Island's Forbes Five-Star Cloister resort generates a meaningful halo effect for St. Simons rentals. Guests priced out of resort accommodations, wedding parties using Sea Island venues, and extended-family trips that overflow resort capacity all represent rental demand that local properties can capture. Positioning and pricing that speaks to this premium audience is a meaningful edge."
-  - q: "What is Keystone Stays' management fee on the Georgia coast?"
+  - q: "What is ATLStay's management fee on the Georgia coast?"
     a: "Our all-in management rate starts at 10% of booking revenue and scales with property needs. That covers listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees."
   - q: "Can I block dates for my own use?"
     a: "Absolutely. You retain full calendar control. Block any dates for personal stays, family visits, or the golf tournament you want to attend — we manage around your schedule with no penalties."
@@ -52,8 +52,8 @@ The proximity to Jacksonville, Orlando, and Atlanta creates a reliable drive-mar
 
 ### Regulatory Landscape
 
-Glynn County governs STR operations on St. Simons Island, and requirements have evolved in step with the market's growth. Operating without proper registration carries compliance risk. Keystone Stays handles the regulatory groundwork for every property we manage and monitors for rule changes. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for a broader overview of Georgia vacation rental regulations.
+Glynn County governs STR operations on St. Simons Island, and requirements have evolved in step with the market's growth. Operating without proper registration carries compliance risk. ATLStay handles the regulatory groundwork for every property we manage and monitors for rule changes. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for a broader overview of Georgia vacation rental regulations.
 
 ### Why Active Management Wins Here
 
-The Golden Isles market rewards precision. A property priced correctly for spring break week versus a standard March weekend can represent the difference between a good year and a great one. A listing that communicates the Sea Island proximity, the East Beach walking distance, and the outdoor shower for post-beach rinse-offs will outperform a listing that leads with bedrooms and bathrooms. That local positioning intelligence is what Keystone Stays brings to every property we manage on the island.
+The Golden Isles market rewards precision. A property priced correctly for spring break week versus a standard March weekend can represent the difference between a good year and a great one. A listing that communicates the Sea Island proximity, the East Beach walking distance, and the outdoor shower for post-beach rinse-offs will outperform a listing that leads with bedrooms and bathrooms. That local positioning intelligence is what ATLStay brings to every property we manage on the island.

@@ -7,7 +7,7 @@ county: Barrow
 lat: 34.0137
 lng: -83.8277
 title: "Airbnb & Short-Term Rental Management in Auburn, GA"
-description: "Expert short-term rental management in Auburn, GA. Keystone Stays maximizes Airbnb earnings along the Hwy 316 growth corridor and historic downtown Barrow County."
+description: "Expert short-term rental management in Auburn, GA. ATLStay maximizes Airbnb earnings along the Hwy 316 growth corridor and historic downtown Barrow County."
 intro: "Auburn sits at the intersection of Barrow County's heritage and its future. The city's historic downtown core preserves an authentic small-town character while the Highway 316 corridor that runs nearby has become one of northeast Georgia's fastest-developing growth axes, connecting Athens and Atlanta and drawing residential, commercial, and institutional investment that brings its own accommodation demand."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "Northeast metro positioning between Atlanta and Athens captures both metro and university-town visitor demand"
 faqs:
   - q: "Are short-term rentals allowed in Auburn, GA?"
-    a: "Short-term rentals in Auburn are subject to City of Auburn and Barrow County ordinances covering zoning, registration, and operations. Requirements are local and separate from Atlanta city rules. Keystone Stays monitors Barrow County STR regulations and handles compliance for all managed properties. For metro Atlanta STR regulatory context, see our Atlanta-area STR regulations guide."
+    a: "Short-term rentals in Auburn are subject to City of Auburn and Barrow County ordinances covering zoning, registration, and operations. Requirements are local and separate from Atlanta city rules. ATLStay monitors Barrow County STR regulations and handles compliance for all managed properties. For metro Atlanta STR regulatory context, see our Atlanta-area STR regulations guide."
   - q: "What drives Airbnb demand in Auburn, GA?"
     a: "The Hwy 316 growth corridor is the primary demand driver — construction projects, commercial development, and corporate activity along this route generate consistent weekday extended-stay demand. Proximity to Braselton's Château Élan and Road Atlanta creates event-weekend spillover when those venues' own accommodation capacity is exceeded. University of Georgia visitors traveling the Hwy 316 corridor between Atlanta and Athens occasionally use Auburn as a stopping point."
   - q: "How does the Hwy 316 corridor affect demand?"

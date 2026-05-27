@@ -25,10 +25,10 @@ faqs:
   - q: "How do Tanger Outlets affect rental demand?"
     a: "Tanger Outlets Savannah in Pooler draws shopping-focused visitors — primarily from the Southeast drive market — who come for extended shopping weekends. This is a distinct demand segment from Savannah's cultural tourists and the airport-adjacent traveler. Properties near Tanger with easy parking and comfortable common spaces attract family groups who use Pooler as a shopping destination base, sometimes combining a Savannah historic district day trip."
   - q: "What are the STR regulations in Pooler?"
-    a: "Pooler falls under Chatham County jurisdiction, but as an incorporated city it has its own local ordinance requirements separate from unincorporated Chatham County rules. Requirements differ from the City of Savannah's STR framework. Keystone Stays navigates each property's applicable regulatory requirements. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
+    a: "Pooler falls under Chatham County jurisdiction, but as an incorporated city it has its own local ordinance requirements separate from unincorporated Chatham County rules. Requirements differ from the City of Savannah's STR framework. ATLStay navigates each property's applicable regulatory requirements. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
   - q: "What property types perform well in Pooler?"
     a: "Single-family homes with multiple bedrooms and good parking are the strongest performers — they accommodate the group travelers and extended-family stays that Pooler's museum and shopping demand generates. Properties within 5-10 minutes of the airport appeal specifically to the transit and corporate audience. Extended-stay amenities — full kitchens, in-unit laundry, workspace — meaningfully improve occupancy in a market with significant business travel demand."
-  - q: "What is Keystone Stays' management fee in Pooler?"
+  - q: "What is ATLStay's management fee in Pooler?"
     a: "Our all-in management rate starts at 10% of booking revenue. That includes listing optimization, dynamic pricing, 24/7 guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true

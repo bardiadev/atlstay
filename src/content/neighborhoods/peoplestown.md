@@ -24,10 +24,10 @@ faqs:
   - q: "How established is Peoplestown's STR market?"
     a: "Peoplestown's STR market is still developing, which creates opportunity. Properties managed with strong photography, accurate neighborhood context, and attentive hosting will stand out in a market where quality listings are still scarce. Early-stage markets reward owners who invest in presentation and management quality."
   - q: "Are there Atlanta STR license requirements for Peoplestown?"
-    a: "Yes. Peoplestown is within Atlanta city limits, so the citywide STRL applies: $150/year via atl311.com, maximum two licenses per owner with a primary-residence requirement on one license. Keystone Stays handles licensing guidance for all managed properties."
+    a: "Yes. Peoplestown is within Atlanta city limits, so the citywide STRL applies: $150/year via atl311.com, maximum two licenses per owner with a primary-residence requirement on one license. ATLStay handles licensing guidance for all managed properties."
   - q: "What will the BeltLine Southside Trail mean for Peoplestown STR demand?"
     a: "When the Southside Trail is complete, it will connect Peoplestown to Grant Park, Summerhill, Capitol View, and eventually the full 22-mile BeltLine loop. That kind of trail connectivity has driven sustained occupancy growth in every Atlanta neighborhood it has reached. Owners who establish listings now will have the review history that trail-era demand will reward."
-  - q: "What does Keystone Stays management cost in Peoplestown?"
+  - q: "What does ATLStay management cost in Peoplestown?"
     a: "Management starts from 10% of revenue. We'll provide a free rental projection for your specific Peoplestown property before you make any commitment — the numbers tell the story."
 published: true
 ---
@@ -42,4 +42,4 @@ The Georgia Avenue dining corridor in adjacent Summerhill extends the appeal. Ha
 
 The longer-term opportunity is the BeltLine Southside Trail. The planned trail will run along Peoplestown's perimeter, connecting the neighborhood to Grant Park, Summerhill, and eventually the full BeltLine loop. When that connection is complete, Peoplestown will have the same trail-access proposition that has driven sustained demand in every neighborhood the BeltLine has touched. Owners who establish now will have the review base and market positioning to capture that demand from day one.
 
-Keystone Stays understands the early-stage dynamics of neighborhoods like Peoplestown. We position listings to capture today's stadium and Georgia Avenue demand while building the review reputation that will pay dividends as the neighborhood's amenities expand.
+ATLStay understands the early-stage dynamics of neighborhoods like Peoplestown. We position listings to capture today's stadium and Georgia Avenue demand while building the review reputation that will pay dividends as the neighborhood's amenities expand.

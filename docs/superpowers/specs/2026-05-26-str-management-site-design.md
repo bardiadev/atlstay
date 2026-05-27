@@ -1,7 +1,7 @@
-# Keystone Stays — STR Management Marketing Site
+# ATLStay — STR Management Marketing Site
 ### Design Spec — 2026-05-26
 
-> Working brand name: **Keystone Stays** (centralized in config; trivially renamable).
+> Working brand name: **ATLStay** (centralized in config; trivially renamable).
 > This document is the authoritative contract for the build. All page-building agents must follow the design system, content rules, and file-ownership map defined here.
 
 ---
@@ -22,7 +22,7 @@ A market-dominating marketing website for a short-term-rental (STR) **property m
 
 ## 2. Brand
 
-- **Name:** Keystone Stays (config: `site.brandName`).
+- **Name:** ATLStay (config: `site.brandName`).
 - **Personality:** confident, warm, precise. Boutique-hotel hospitality, not corporate property management. "The most competent person in the room who also genuinely loves hosting."
 - **Tagline options (config):** "Atlanta's home for effortless hosting." / "Your home, hosted flawlessly." / "Five-star hosting, handled."
 - **Voice:** plain-spoken expertise. Short, confident sentences. Specific and local. Never hypey-empty; never corporate jargon.
@@ -92,7 +92,7 @@ These are non-negotiable guardrails (also stored in memory + global CLAUDE.md):
 2. Trust strip — review-platform marks + "X five-star stays" style framing (config-driven, vague-credible), press/logo cloud (placeholder).
 3. The problem/why-a-manager — self-managing pain → our solution.
 4. What we do (services overview, 4–6 cards linking to `/services/`).
-5. Why Keystone (the Local Authority differentiators: local expertise, transparent fee, guarantee, no lock-in, full-service).
+5. Why ATLStay (the Local Authority differentiators: local expertise, transparent fee, guarantee, no lock-in, full-service).
 6. How it works (3–4 step condensed → `/how-it-works/`).
 7. Local proof — "We know Atlanta" mini neighborhoods grid → `/areas-we-serve/`.
 8. Results framing / owner outcomes (vague-credible).

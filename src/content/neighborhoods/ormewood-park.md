@@ -24,10 +24,10 @@ faqs:
   - q: "What property types work best for STR in Ormewood Park?"
     a: "Craftsman bungalows and well-maintained single-family homes with outdoor space — a front porch, a backyard, a fire pit — perform exceptionally well. Guests who choose Ormewood Park are specifically looking for the residential character that these homes provide. Properties with documented historic character command rate premiums and earn stronger reviews."
   - q: "What STR regulations apply in Ormewood Park?"
-    a: "Ormewood Park is within Atlanta city limits. The citywide STRL license applies: $150/year through atl311.com, maximum two licenses per owner with a primary-residence requirement. Keystone Stays manages all compliance for properties under our management and stays current with city regulatory developments."
+    a: "Ormewood Park is within Atlanta city limits. The citywide STRL license applies: $150/year through atl311.com, maximum two licenses per owner with a primary-residence requirement. ATLStay manages all compliance for properties under our management and stays current with city regulatory developments."
   - q: "How does Ormewood Park's demand compare to higher-profile Atlanta neighborhoods?"
     a: "Ormewood Park trades headline name recognition for consistent, loyal demand. The neighborhood has a core audience of travelers — families visiting Zoo Atlanta, couples seeking residential character, south-side regulars — who return and leave detailed positive reviews. It doesn't have O4W's volume, but well-managed properties achieve strong occupancy rates and above-average review scores."
-  - q: "Can Keystone Stays give me a realistic earning estimate for my Ormewood Park property?"
+  - q: "Can ATLStay give me a realistic earning estimate for my Ormewood Park property?"
     a: "Yes. We'll build a free rental projection based on your specific property and current Ormewood Park market data. Visit our projection tool — no commitment required."
 published: true
 ---
@@ -42,4 +42,4 @@ The neighborhood's position between East Atlanta Village and Little Five Points 
 
 The BeltLine Southside Trail adds a growing-amenity argument. As the trail develops through this part of Atlanta, Ormewood Park's trail access will connect it more directly to the broader BeltLine network and the expanding south-side destination scene. Properties already managed with attention to this positioning will be well-positioned when that demand arrives at full strength.
 
-Keystone Stays knows Ormewood Park's guest profile well. We market to families, nature-oriented travelers, and guests seeking residential character — and we manage with the attentiveness that keeps them coming back and leaving reviews that build long-term occupancy.
+ATLStay knows Ormewood Park's guest profile well. We market to families, nature-oriented travelers, and guests seeking residential character — and we manage with the attentiveness that keeps them coming back and leaving reviews that build long-term occupancy.

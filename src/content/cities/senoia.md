@@ -7,7 +7,7 @@ county: Coweta
 lat: 33.3023
 lng: -84.5538
 title: "Airbnb & Short-Term Rental Management in Senoia, GA"
-description: "Expert short-term rental management in Senoia, GA. Keystone Stays maximizes Airbnb earnings in Walking Dead film tourism capital with downtown Georgian historic charm."
+description: "Expert short-term rental management in Senoia, GA. ATLStay maximizes Airbnb earnings in Walking Dead film tourism capital with downtown Georgian historic charm."
 intro: "Senoia is one of Georgia's most remarkable small-town transformations: a downtown that once had eight businesses now has over fifty, fueled almost entirely by its identity as the primary filming location for The Walking Dead and other major productions. Film tourism is the core demand driver, and for STR owners, that means a guest base that travels specifically to be in Senoia — a powerful position to occupy."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "Historic downtown character with well-preserved antebellum architecture reinforces destination appeal"
 faqs:
   - q: "Are short-term rentals allowed in Senoia, GA?"
-    a: "Short-term rentals in Senoia are governed by City of Senoia and Coweta County ordinances. Rules address zoning, registration, and operational requirements and are specific to the locality. Because Senoia's STR market is active relative to its size, local regulations may evolve. Keystone Stays monitors Coweta County and Senoia regulations and handles compliance for managed properties."
+    a: "Short-term rentals in Senoia are governed by City of Senoia and Coweta County ordinances. Rules address zoning, registration, and operational requirements and are specific to the locality. Because Senoia's STR market is active relative to its size, local regulations may evolve. ATLStay monitors Coweta County and Senoia regulations and handles compliance for managed properties."
   - q: "How does Walking Dead tourism drive Airbnb demand in Senoia?"
     a: "Senoia served as the location for Woodbury and other significant settings throughout The Walking Dead's run. Walking Dead filming tours — run by the Georgia Tour Company and others — draw an estimated 15,000+ visitors annually who travel specifically to walk filming locations. These guests need accommodation in Senoia to fully experience the destination, not just to pass through. They book online, they're motivated by the location, and they're a consistent year-round demand segment rather than a single seasonal spike."
   - q: "Is Walking Dead tourism still relevant now that the show has ended?"

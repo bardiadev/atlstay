@@ -7,7 +7,7 @@ county: Gwinnett
 lat: 33.9412
 lng: -84.2135
 title: "Airbnb & Short-Term Rental Management in Norcross, GA"
-description: "Short-term rental management in Norcross, GA. Keystone Stays maximizes Airbnb revenue for Norcross owners near the historic downtown, Peachtree Industrial Blvd corporate corridor, and I-85."
+description: "Short-term rental management in Norcross, GA. ATLStay maximizes Airbnb revenue for Norcross owners near the historic downtown, Peachtree Industrial Blvd corporate corridor, and I-85."
 intro: "Norcross is Gwinnett's most surprising city — a Victorian-era historic downtown with genuine walkable character sitting at the edge of one of metro Atlanta's densest corporate employment corridors. That contrast between old-town charm and corporate infrastructure creates a two-segment STR market that performs well across the full week."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "City of Norcross and Gwinnett County STR compliance support included"
 faqs:
   - q: "Does Norcross require a permit for short-term rentals?"
-    a: "Short-term rentals in Norcross are subject to City of Norcross and Gwinnett County regulations. Requirements may include registration, safety compliance, and zoning adherence. Local rules are distinct from Atlanta's and can change. Keystone Stays tracks Norcross and Gwinnett STR compliance for all our clients. For a broader overview, visit /resources/atlanta-short-term-rental-regulations/."
+    a: "Short-term rentals in Norcross are subject to City of Norcross and Gwinnett County regulations. Requirements may include registration, safety compliance, and zoning adherence. Local rules are distinct from Atlanta's and can change. ATLStay tracks Norcross and Gwinnett STR compliance for all our clients. For a broader overview, visit /resources/atlanta-short-term-rental-regulations/."
   - q: "What makes Norcross a good short-term rental market?"
     a: "Norcross works well for STRs because it has two demand profiles running simultaneously. The Peachtree Industrial Boulevard corridor — one of metro Atlanta's densest concentrations of business parks, distribution centers, and light industrial employment — generates consistent weekday corporate travel. Historic Downtown Norcross, with its Victorian-era brick buildings, local restaurants, and community events, draws weekend leisure visitors who want character and walkability without driving into Atlanta. The combination produces a more balanced demand curve than single-use suburban markets."
   - q: "What is Historic Downtown Norcross?"
     a: "Historic Downtown Norcross, centered on South Peachtree Street, is one of the best-preserved Victorian commercial districts in the Atlanta suburbs. Originally built as a railroad community in the 1870s and 1880s, the downtown features original brick storefronts, local restaurants, boutique retail, and a walkable streetscape. The city actively programs the area with events, and the architectural character is genuinely distinct from anything else in Gwinnett."
   - q: "How does the Peachtree Industrial Blvd corridor affect Norcross STR demand?"
     a: "Peachtree Industrial Boulevard runs through Norcross and carries one of the highest concentrations of business parks and corporate campuses in the northeast metro. Business travelers — including consultants, corporate trainers, project teams, and employees in temporary relocation — regularly prefer furnished private homes over extended-stay hotels when their engagement runs more than a few days. A well-positioned Norcross property can serve this corporate segment with a weekday occupancy floor that leisure properties can't match."
-  - q: "What is Keystone Stays' fee for Norcross properties?"
+  - q: "What is ATLStay's fee for Norcross properties?"
     a: "Our management rate starts from 10% of booking revenue with no hidden fees. We provide listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning management, and monthly owner reporting."
 order: 0
 published: true

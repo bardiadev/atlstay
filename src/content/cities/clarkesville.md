@@ -7,8 +7,8 @@ county: Habersham
 lat: 34.6063
 lng: -83.5217
 title: "Vacation Rental Management in Clarkesville, GA"
-description: "Expert vacation rental management in Clarkesville, GA — Habersham County's charming county seat with mountain foothills access, antique districts, and proximity to Helen and Tallulah Gorge. Keystone Stays handles your property."
-intro: "Clarkesville is Habersham County's oldest incorporated town — a walkable, historic downtown nestled in the foothills between Tallulah Gorge and the upper mountain corridor. Keystone Stays manages your Clarkesville-area vacation rental with the local market expertise that drives real revenue."
+description: "Expert vacation rental management in Clarkesville, GA — Habersham County's charming county seat with mountain foothills access, antique districts, and proximity to Helen and Tallulah Gorge. ATLStay handles your property."
+intro: "Clarkesville is Habersham County's oldest incorporated town — a walkable, historic downtown nestled in the foothills between Tallulah Gorge and the upper mountain corridor. ATLStay manages your Clarkesville-area vacation rental with the local market expertise that drives real revenue."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -25,7 +25,7 @@ faqs:
   - q: "How does Clarkesville's location benefit vacation rental guests?"
     a: "Habersham County sits between the upper mountain corridor (Rabun County, Hiawassee, Clayton) and the lower mountain foothills (Dahlonega, Helen, Cleveland). Properties in Clarkesville can serve as a base camp for guests exploring multiple areas — the county's central position means few North Georgia highlights are more than an hour's drive. Guests who want flexibility rather than being rooted in a single market often find Clarkesville's geography ideal."
   - q: "Are there short-term rental regulations in Clarkesville and Habersham County?"
-    a: "Yes. Both the City of Clarkesville and Habersham County maintain STR frameworks. Requirements vary between incorporated and unincorporated properties. Keystone Stays guides every new client through the requirements specific to their property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. Both the City of Clarkesville and Habersham County maintain STR frameworks. Requirements vary between incorporated and unincorporated properties. ATLStay guides every new client through the requirements specific to their property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
   - q: "What makes Clarkesville properties unique in the North Georgia market?"
     a: "The historic downtown character is genuinely rare in the North Georgia cabin corridor. Most mountain markets are cabin-and-nature experiences; Clarkesville offers a walkable, architecturally interesting town center that provides context and amenity beyond the outdoor recreation. For property owners, this means the staging and presentation of a Clarkesville property can lean more toward a curated home-away-from-home experience and less toward the purely outdoorsy cabin aesthetic that dominates Blue Ridge, Ellijay, and similar markets."
 order: 0
@@ -50,4 +50,4 @@ Habersham County's position between Rabun County's deep mountains and the lower 
 
 ### Regulatory Landscape
 
-The City of Clarkesville and Habersham County each have STR frameworks. Keystone Stays guides every client through specifics. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context.
+The City of Clarkesville and Habersham County each have STR frameworks. ATLStay guides every client through specifics. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context.

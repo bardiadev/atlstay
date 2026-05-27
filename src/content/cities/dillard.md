@@ -7,8 +7,8 @@ county: Rabun
 lat: 34.9715
 lng: -83.3837
 title: "Cabin & Vacation Rental Management in Dillard, GA"
-description: "Vacation rental management in Dillard, GA — the Dillard House legacy, Rabun County's northernmost mountain valley, and direct North Carolina border access. Keystone Stays handles your property."
-intro: "Dillard occupies Rabun County's northern valley below the North Carolina border — a small mountain community anchored by the legendary Dillard House restaurant and inn, surrounded by the Southern Appalachians at some of their most scenic. Keystone Stays manages your Dillard cabin with full local expertise."
+description: "Vacation rental management in Dillard, GA — the Dillard House legacy, Rabun County's northernmost mountain valley, and direct North Carolina border access. ATLStay handles your property."
+intro: "Dillard occupies Rabun County's northern valley below the North Carolina border — a small mountain community anchored by the legendary Dillard House restaurant and inn, surrounded by the Southern Appalachians at some of their most scenic. ATLStay manages your Dillard cabin with full local expertise."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -27,7 +27,7 @@ faqs:
   - q: "When is the strongest season in Dillard?"
     a: "Fall foliage and the Dillard House's fall season are the clear peak. Summer mountain escapes and the proximity to North Carolina drive strong June-August occupancy. Winter holiday weekends are reliable. Spring wildflower season attracts hikers and naturalists. The Dillard House's operating calendar — known for its famous family-style meals — functions as a secondary demand anchor that supplements seasonal outdoor recreation patterns."
   - q: "Are there short-term rental regulations in Dillard?"
-    a: "Yes. Dillard operates within Rabun County's STR framework, and both the City of Dillard and unincorporated county parcels have requirements that owners must meet. Keystone Stays provides guidance specific to each client's property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. Dillard operates within Rabun County's STR framework, and both the City of Dillard and unincorporated county parcels have requirements that owners must meet. ATLStay provides guidance specific to each client's property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
 order: 0
 published: true
 ---
@@ -50,4 +50,4 @@ The physical setting matters here. Dillard sits in a protected valley surrounded
 
 ### Regulatory Landscape
 
-Rabun County maintains STR requirements covering both incorporated Dillard and the unincorporated county. Keystone Stays provides compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia context.
+Rabun County maintains STR requirements covering both incorporated Dillard and the unincorporated county. ATLStay provides compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia context.

@@ -4,7 +4,7 @@ state: GA
 slug: peachtree-city
 region: metro
 title: "Airbnb & Short-Term Rental Management in Peachtree City, GA"
-description: "Expert short-term rental management in Peachtree City, GA. Keystone Stays maximizes earnings on your Airbnb with golf cart city demand, Trilith Studios stays, and more."
+description: "Expert short-term rental management in Peachtree City, GA. ATLStay maximizes earnings on your Airbnb with golf cart city demand, Trilith Studios stays, and more."
 intro: "Peachtree City is one of Georgia's most distinctive planned communities — 100 miles of golf cart paths, manicured lakes, and a neighbor to Trilith Studios make it a genuinely unusual short-term rental market where the right property commands premium rates from a guest base unlike anywhere else in metro Atlanta."
 heroImage: suburbHome
 neighborhoods: []
@@ -16,7 +16,7 @@ highlights:
   - "Fayette County STR compliance support included"
 faqs:
   - q: "Are short-term rentals allowed in Peachtree City, GA?"
-    a: "Short-term rentals in Peachtree City are subject to City of Peachtree City and Fayette County regulations. Local rules address zoning, registration, and operational requirements, and they are distinct from those in Atlanta. Because requirements can evolve, we recommend checking with the City of Peachtree City Community Development office or contacting Keystone Stays — we track Fayette County STR regulations and handle compliance for all our clients."
+    a: "Short-term rentals in Peachtree City are subject to City of Peachtree City and Fayette County regulations. Local rules address zoning, registration, and operational requirements, and they are distinct from those in Atlanta. Because requirements can evolve, we recommend checking with the City of Peachtree City Community Development office or contacting ATLStay — we track Fayette County STR regulations and handle compliance for all our clients."
   - q: "What drives Airbnb demand in Peachtree City?"
     a: "Peachtree City has a remarkably distinctive demand profile. Trilith Studios — one of the largest purpose-built film and television studios in North America — is located directly in Peachtree City and generates significant production crew, cast, and entertainment-industry demand for furnished housing. Naval Air Station Atlanta in nearby Marietta creates government and military-adjacent travel. The city's proximity to Hartsfield-Jackson (under 30 minutes) makes it attractive for early-morning flight travelers. And the golf cart paths, lakes, and overall character of the community create unique leisure demand from guests specifically seeking the Peachtree City experience."
   - q: "What makes Peachtree City's golf cart culture a selling point for STR owners?"
@@ -25,8 +25,8 @@ faqs:
     a: "Trilith Studios is one of the world's largest purpose-built studios outside of Hollywood, hosting major film and television productions. Productions bring cast, crew, writers, directors, and support staff who need furnished short-term housing for weeks or months at a time. This segment books longer stays, is less price-sensitive than leisure travelers, and generates lower turnover costs than nightly-stay leisure bookings. A property positioned for extended production stays can achieve exceptional income consistency."
   - q: "What types of homes perform best as short-term rentals in Peachtree City?"
     a: "Homes with golf cart access — ideally with a golf cart available for guest use — command the strongest premiums for leisure stays. Properties near the lakefront or Kedron area attract families and groups seeking the full Peachtree City experience. Larger, well-furnished homes attract Trilith production stays. Any property with reliable fast internet and a real workspace setup appeals to the professional segment given proximity to the airport."
-  - q: "What is Keystone Stays' management fee for Peachtree City properties?"
-    a: "Our all-in rate is 15% of booking revenue with no setup fees or per-booking charges. We cover listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting — including the extended-stay booking processes that are particularly relevant for the Trilith production segment."
+  - q: "What is ATLStay's management fee for Peachtree City properties?"
+    a: "Our all-in rate is 10% of booking revenue with no setup fees or per-booking charges. We cover listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting — including the extended-stay booking processes that are particularly relevant for the Trilith production segment."
 order: 0
 published: true
 ---

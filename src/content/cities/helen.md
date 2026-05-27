@@ -22,11 +22,11 @@ faqs:
   - q: "When does the tubing season run on the Chattahoochee?"
     a: "The Chattahoochee River tubing season through Helen typically runs from late spring through early fall, weather and water levels permitting. Summer weekends — particularly June through August — see the river lined with tubers and the adjacent rental market running at high occupancy. Tubing is one of the main demand drivers for summer Helen visits, and it creates a summer peak that complements rather than competes with the Oktoberfest fall season."
   - q: "Are there short-term rental regulations in Helen and White County?"
-    a: "Yes. The City of Helen and White County both have STR-related requirements that property owners must follow. As mountain cabin markets across North Georgia have grown, local governments have introduced or updated their frameworks. Requirements can differ between incorporated Helen and surrounding White County parcels. Keystone Stays reviews the current requirements for every property and keeps clients compliant as regulations evolve. See [/resources/](/resources/) for broader Georgia STR compliance context."
+    a: "Yes. The City of Helen and White County both have STR-related requirements that property owners must follow. As mountain cabin markets across North Georgia have grown, local governments have introduced or updated their frameworks. Requirements can differ between incorporated Helen and surrounding White County parcels. ATLStay reviews the current requirements for every property and keeps clients compliant as regulations evolve. See [/resources/](/resources/) for broader Georgia STR compliance context."
   - q: "What types of properties perform best as vacation rentals in Helen?"
     a: "Properties within walking distance of downtown Helen — the Bavarian village core, the river, and the main festival grounds — command the strongest premiums. Chalets and cabins with mountain or river views are the market's premium tier. Larger properties that can accommodate groups of 6–12 see some of the highest per-stay revenues during Oktoberfest weekends, when groups plan dedicated Helen trips. River-adjacent properties with outdoor space benefit year-round from the Chattahoochee's draw."
-  - q: "What is Keystone Stays' management fee?"
-    a: "Our all-in management rate is 15% of booking revenue. This covers listing optimization, dynamic pricing (including Oktoberfest and holiday surge pricing), 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
+  - q: "What is ATLStay's management fee?"
+    a: "Our all-in management rate is 10% of booking revenue. This covers listing optimization, dynamic pricing (including Oktoberfest and holiday surge pricing), 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
 order: 0
 published: true
 ---
@@ -55,4 +55,4 @@ Helen benefits from a peculiar dynamic: the very uniqueness of the destination d
 
 ### Regulatory Landscape
 
-White County and the City of Helen have each established STR requirements as mountain tourism has grown. Property addresses in incorporated Helen and those in surrounding White County parcels may face different rules. Keystone Stays ensures every client is properly registered and compliant. See [/resources/](/resources/) for general Georgia mountain market STR guidance.
+White County and the City of Helen have each established STR requirements as mountain tourism has grown. Property addresses in incorporated Helen and those in surrounding White County parcels may face different rules. ATLStay ensures every client is properly registered and compliant. See [/resources/](/resources/) for general Georgia mountain market STR guidance.

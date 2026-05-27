@@ -7,7 +7,7 @@ county: Henry
 lat: 33.3871
 lng: -84.2830
 title: "Airbnb & Short-Term Rental Management in Hampton, GA"
-description: "Expert short-term rental management in Hampton, GA. Keystone Stays maximizes Airbnb earnings around Atlanta Motor Speedway NASCAR events and Henry County demand."
+description: "Expert short-term rental management in Hampton, GA. ATLStay maximizes Airbnb earnings around Atlanta Motor Speedway NASCAR events and Henry County demand."
 intro: "Hampton is home to Atlanta Motor Speedway — now EchoPark Speedway — one of NASCAR's marquee tracks and a major event venue that creates intense, predictable demand spikes for short-term rentals. For owners with properties in the area, race weekends and speedway events represent some of the highest nightly rates achievable anywhere in the south metro."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "Henry County STR compliance support included with management"
 faqs:
   - q: "Are short-term rentals allowed in Hampton, GA?"
-    a: "Short-term rentals in Hampton fall under City of Hampton and Henry County ordinances governing zoning, registration, and operations. Requirements are specific to the locality. Keystone Stays tracks Henry County STR rules and manages compliance for all clients — contact us for current requirements before listing."
+    a: "Short-term rentals in Hampton fall under City of Hampton and Henry County ordinances governing zoning, registration, and operations. Requirements are specific to the locality. ATLStay tracks Henry County STR rules and manages compliance for all clients — contact us for current requirements before listing."
   - q: "How does Atlanta Motor Speedway affect Airbnb demand in Hampton?"
     a: "Atlanta Motor Speedway (operating as EchoPark Speedway) is one of the most significant demand drivers for any STR market in Georgia. NASCAR race weekends draw tens of thousands of fans, event staff, media crews, and team support personnel who need accommodation across the Henry County area. Hotels for radius fill quickly; well-positioned STR properties that book early command premium nightly rates significantly above baseline. The key is having dynamic pricing calibrated well in advance of the event calendar."
   - q: "Does the Speedway generate demand beyond NASCAR race weekends?"
     a: "Yes — significantly. Atlanta Motor Speedway hosts the Atlanta Air Show, the Georgia State Fair, the Summit Racing Equipment Atlanta Motorama, concerts, and other large-format events throughout the year. Each of these creates a demand spike that extends into Hampton and surrounding Henry County. A property near the Speedway benefits from multiple event windows per year, not just the NASCAR calendar."
   - q: "What property types work best in Hampton?"
     a: "Properties that can accommodate groups — multi-bedroom homes with open living areas, outdoor space, and easy parking — perform best for Speedway events where fans travel in parties. Comfortable, well-furnished homes with reliable wifi also capture the extended-stay contractor and business segments between events. Proximity to the Speedway is a clear marketing advantage, but any property in the Hampton area benefits from event pricing windows."
-  - q: "How does Keystone Stays manage event weekend pricing?"
+  - q: "How does ATLStay manage event weekend pricing?"
     a: "We use dynamic pricing tools calibrated to the EchoPark Speedway event calendar and competing accommodation inventory. Event weekends are identified months in advance, and rates are adjusted to capture demand at the right time — not so early that we price below market, not so late that we leave money in inventory. We also handle early booking minimums and cancellation policy settings that protect owners during high-demand windows."
 order: 0
 published: true

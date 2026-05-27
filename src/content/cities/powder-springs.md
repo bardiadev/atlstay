@@ -7,7 +7,7 @@ county: Cobb
 lat: 33.8597
 lng: -84.6854
 title: "Airbnb & Short-Term Rental Management in Powder Springs, GA"
-description: "Short-term rental management in Powder Springs, GA. Keystone Stays handles your Airbnb on the Silver Comet Trail in Cobb County."
+description: "Short-term rental management in Powder Springs, GA. ATLStay handles your Airbnb on the Silver Comet Trail in Cobb County."
 intro: "Powder Springs is Cobb County's trail town — the Silver Comet Trail runs directly through the city, bringing a year-round stream of cyclists and outdoor visitors who need a comfortable base rather than a roadside hotel."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "Quiet residential character appeals to guests seeking suburban calm with trail access"
 faqs:
   - q: "Are short-term rentals allowed in Powder Springs, GA?"
-    a: "Short-term rentals in Powder Springs are explicitly permitted in residential zones, but require compliance with applicable city and Cobb County regulations. Properties must maintain residential character and provide adequate off-street parking. Local rules can evolve, so we recommend reviewing current requirements or consulting our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). Keystone Stays tracks compliance for all managed properties."
+    a: "Short-term rentals in Powder Springs are explicitly permitted in residential zones, but require compliance with applicable city and Cobb County regulations. Properties must maintain residential character and provide adequate off-street parking. Local rules can evolve, so we recommend reviewing current requirements or consulting our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). ATLStay tracks compliance for all managed properties."
   - q: "How does the Silver Comet Trail affect STR demand in Powder Springs?"
     a: "The Silver Comet Trail is a 61.5-mile paved multi-use trail running from Smyrna to the Georgia-Alabama border, and it passes directly through Powder Springs. Cyclists, trail runners, and multi-day outdoor visitors planning end-to-end or segment rides use Powder Springs as a base or waypoint stop. This demand is calendar-spread across the year — not just summer — and cyclists specifically look for properties with secure bike storage, easy trail access, and outdoor wash areas."
   - q: "Is Six Flags a demand driver for Powder Springs STRs?"
     a: "Yes. Six Flags Over Georgia is close enough to Powder Springs that families attending the park often find STR properties here more spacious and less expensive than equivalent hotel rooms near the park. Multi-day park visitors who want a full kitchen, more space, and a home feel find Powder Springs a practical choice. This demand concentrates heavily in spring and summer operating seasons."
   - q: "What kind of guests book in Powder Springs?"
     a: "Primarily outdoor-recreation visitors (Silver Comet cyclists and trail users), families visiting Six Flags or Sweetwater Creek State Park, and sports event families attending regional competitions at McEachern and other Cobb County athletic facilities. The market also sees extended-stay demand from Cobb County's large corporate and healthcare employment base."
-  - q: "What is Keystone Stays' management fee in Powder Springs?"
+  - q: "What is ATLStay's management fee in Powder Springs?"
     a: "Our all-in management starts from 10% of booking revenue — covering dynamic pricing, listing management, guest communication, cleaning coordination, and owner reporting. No setup fees. Contact us for a quote tailored to your property."
   - q: "Can I use my Powder Springs home for personal use while it's managed?"
     a: "Yes. You retain full calendar control. Block any dates you want for personal use and we manage all bookings around those windows."

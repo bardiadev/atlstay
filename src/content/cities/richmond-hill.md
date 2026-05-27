@@ -23,10 +23,10 @@ faqs:
   - q: "What is the Ford Plantation and who does it attract?"
     a: "The Ford Plantation is a private residential community and sporting club on the former Henry Ford estate — 1,800 acres of lowcountry property featuring golf, hunting, fishing, and equestrian facilities. The surrounding area draws a sporting and outdoor leisure audience that looks for private home accommodations near the plantation and along the Ogeechee River corridor. These guests skew toward longer stays and premium properties."
   - q: "What are STR regulations in Richmond Hill?"
-    a: "Richmond Hill properties fall under Bryan County jurisdiction — a different regulatory environment from Chatham County (which governs Savannah). Bryan County has its own STR requirements, and the City of Richmond Hill has local ordinance layers for in-city properties. Keystone Stays navigates the applicable rules for each address. STR rules vary significantly by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
+    a: "Richmond Hill properties fall under Bryan County jurisdiction — a different regulatory environment from Chatham County (which governs Savannah). Bryan County has its own STR requirements, and the City of Richmond Hill has local ordinance layers for in-city properties. ATLStay navigates the applicable rules for each address. STR rules vary significantly by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context."
   - q: "What property types work well in Richmond Hill?"
     a: "Properties near the Ogeechee River and coastal waterways with dock access or water views attract the fishing and boating audience that is endemic to this area. Family homes with yards and outdoor space in Richmond Hill's residential neighborhoods appeal to Savannah-overflow guests who need more space than the city's historic row houses provide. Properties with easy I-95 access capture business travelers and corporate groups using Richmond Hill as a Savannah satellite base."
-  - q: "What is Keystone Stays' management fee?"
+  - q: "What is ATLStay's management fee?"
     a: "Our all-in management rate starts at 10% of booking revenue. That covers dynamic pricing, listing optimization, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
@@ -50,4 +50,4 @@ Guests who come to Richmond Hill for the fishing, the hunting leases, and the sl
 
 ### A Different Kind of Coastal Stay
 
-Richmond Hill's combination of wooded residential neighborhoods, river and marsh access, and Savannah proximity produces a rental profile that doesn't exist anywhere else in the coastal Georgia market. Keystone Stays manages the positioning, the pricing precision, and the operational quality that makes this market produce for its owners. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context.
+Richmond Hill's combination of wooded residential neighborhoods, river and marsh access, and Savannah proximity produces a rental profile that doesn't exist anywhere else in the coastal Georgia market. ATLStay manages the positioning, the pricing precision, and the operational quality that makes this market produce for its owners. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context.

@@ -25,9 +25,9 @@ faqs:
     a: "Single-family bungalows and Victorian-era homes are West End's signature properties and perform well with travelers who book specifically for the neighborhood's historic character. Well-maintained homes with outdoor space — a front porch, a backyard — consistently earn strong reviews from guests who want a genuine residential experience."
   - q: "Are there STR regulations specific to West End?"
     a: "West End falls within Atlanta city limits, so the citywide short-term rental license (STRL) applies: $150/year via atl311.com, maximum two licenses per owner with one being your primary residence. No West End-specific overlay restrictions exist as of May 2026, though we monitor Atlanta city planning closely for any updates."
-  - q: "How does Keystone Stays approach West End listings differently?"
+  - q: "How does ATLStay approach West End listings differently?"
     a: "We tell the West End story — not a generic Atlanta listing. That means emphasizing the BeltLine access, the HBCU calendar demand, the neighborhood's architectural character, and proximity to the growing Westside food scene. Guests who book West End on purpose are the most satisfied guests; our listings make the neighborhood's value unmistakable."
-  - q: "What does Keystone Stays charge to manage a West End property?"
+  - q: "What does ATLStay charge to manage a West End property?"
     a: "We offer flexible management starting from 10% of revenue. We'll build you a free rental projection before you commit to anything — visit our projection tool to see your West End property's realistic earning potential."
 published: true
 ---
@@ -42,4 +42,4 @@ The BeltLine Westside Trail is the second pillar. The trail is still expanding, 
 
 Then there's the character of the neighborhood itself. West End's Queen Anne and Victorian architecture is genuinely striking — homes that look like Atlanta looked before the city remade itself in glass and concrete. Guests who book a Victorian bungalow in West End are choosing an experience that a Midtown high-rise can't provide.
 
-Keystone Stays has deep knowledge of the Westside market and the seasonal patterns that drive West End occupancy. We position every listing to capture the full range of demand — HBCU visits, BeltLine weekends, and the steady leisure traffic drawn to Atlanta's west-side revival — and we manage with the attentiveness that keeps guests leaving five-star reviews.
+ATLStay has deep knowledge of the Westside market and the seasonal patterns that drive West End occupancy. We position every listing to capture the full range of demand — HBCU visits, BeltLine weekends, and the steady leisure traffic drawn to Atlanta's west-side revival — and we manage with the attentiveness that keeps guests leaving five-star reviews.

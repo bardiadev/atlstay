@@ -4,7 +4,7 @@ state: GA
 slug: dunwoody
 region: metro
 title: "Airbnb & Short-Term Rental Management in Dunwoody, GA"
-description: "Short-term rental management in Dunwoody, GA. Keystone Stays handles listing, pricing, and guests for Dunwoody owners — maximizing earnings in Atlanta's northern corporate suburb."
+description: "Short-term rental management in Dunwoody, GA. ATLStay handles listing, pricing, and guests for Dunwoody owners — maximizing earnings in Atlanta's northern corporate suburb."
 intro: "Dunwoody's Perimeter Center office market, walkable Village district, and upscale residential neighborhoods create a demand profile dominated by business travel — making it one of metro Atlanta's most stable and predictable STR markets for owners who know how to position for the corporate guest."
 heroImage: suburbHome
 neighborhoods: []
@@ -16,7 +16,7 @@ highlights:
   - "City of Dunwoody STR compliance support included"
 faqs:
   - q: "Does Dunwoody require a permit or license for short-term rentals?"
-    a: "Yes. The City of Dunwoody has its own short-term rental regulations that require property owners to register and comply with local zoning, safety, and operational standards. Dunwoody's rules are distinct from DeKalb County's. Because local requirements can be updated, we recommend reviewing the City of Dunwoody's Community Development resources or contacting Keystone Stays — we handle STR compliance for all our Dunwoody clients and stay current on any regulatory changes."
+    a: "Yes. The City of Dunwoody has its own short-term rental regulations that require property owners to register and comply with local zoning, safety, and operational standards. Dunwoody's rules are distinct from DeKalb County's. Because local requirements can be updated, we recommend reviewing the City of Dunwoody's Community Development resources or contacting ATLStay — we handle STR compliance for all our Dunwoody clients and stay current on any regulatory changes."
   - q: "What makes Dunwoody a good market for short-term rentals?"
     a: "Dunwoody's defining advantage as an STR market is the Perimeter Center employment zone. Major corporate offices in technology, financial services, consulting, and healthcare create consistent weekday demand for furnished rentals from professionals who are in the market for training, projects, or transitional housing. This corporate base gives Dunwoody a demand stability that markets relying solely on leisure tourism can't match. Weekend demand comes from the Dunwoody Village dining scene and proximity to Sandy Springs and Buckhead entertainment."
   - q: "What types of homes work best as Airbnb rentals in Dunwoody?"
@@ -25,8 +25,8 @@ faqs:
     a: "Yes — it's one of the market's distinctive strengths. Corporate extended-stay guests in Dunwoody often book for one to four weeks, reducing turnover frequency and providing more predictable income. These guests tend to generate fewer service requests, leave cleaner properties, and write straightforward reviews. We set up listings to attract this segment: professional photos, accurate descriptions of workspace amenities, and competitive pricing for longer stays."
   - q: "How does MARTA access affect Dunwoody STR bookings?"
     a: "The MARTA Gold Line serves Dunwoody and Medical Center stations, both in or directly adjacent to Dunwoody. For business travelers flying into Hartsfield-Jackson and heading to Perimeter Center meetings, MARTA is a genuinely practical alternative to renting a car. Properties within walkable distance of a station can be marketed explicitly to this segment, which is growing as companies increasingly discourage reimbursable rental cars for urban work trips."
-  - q: "What is Keystone Stays' management fee for Dunwoody properties?"
-    a: "Our all-in fee is 15% of booking revenue — no setup costs, no per-booking charges. The flat rate covers listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+  - q: "What is ATLStay's management fee for Dunwoody properties?"
+    a: "Our all-in fee is 10% of booking revenue — no setup costs, no per-booking charges. The flat rate covers listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
 order: 0
 published: true
 ---
@@ -41,7 +41,7 @@ Perimeter Center is the name given to the dense office corridor straddling the I
 
 For Dunwoody property owners, this means something that pure leisure markets can't offer: weekday demand that doesn't depend on weather, events, or season. A well-configured corporate rental in Dunwoody generates bookings on Tuesday nights in January, not just summer weekends.
 
-The extended-stay segment is particularly valuable. A four-week booking from a Perimeter Center consultant fills an entire month of occupancy, requires far fewer turnover cleanings than nightly bookings, and typically produces less wear on the property than a high-turnover leisure calendar. Positioning for this segment — with home-office setup, quality internet, and a fully stocked kitchen — requires intentional listing design that Keystone Stays handles for every client.
+The extended-stay segment is particularly valuable. A four-week booking from a Perimeter Center consultant fills an entire month of occupancy, requires far fewer turnover cleanings than nightly bookings, and typically produces less wear on the property than a high-turnover leisure calendar. Positioning for this segment — with home-office setup, quality internet, and a fully stocked kitchen — requires intentional listing design that ATLStay handles for every client.
 
 ### Dunwoody Village and the Weekend Leisure Layer
 

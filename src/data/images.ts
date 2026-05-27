@@ -8,7 +8,7 @@ export interface SiteImage {
 }
 
 export const images = {
-  ogDefault: { src: '/images/og-default.jpg', alt: 'Keystone Stays — premium short-term rental management in Atlanta' },
+  ogDefault: { src: '/images/og-default.jpg', alt: 'ATLStay — premium short-term rental management in Atlanta' },
 
   heroHome: { src: '/images/hero-home.jpg', alt: 'Sunlit, beautifully styled Atlanta living room ready for guests' },
   heroProjection: { src: '/images/hero-projection.jpg', alt: 'Bright modern interior of a managed Atlanta short-term rental' },
@@ -20,7 +20,7 @@ export const images = {
   guestExperience: { src: '/images/guest-experience.jpg', alt: 'Guests arriving at a welcoming Atlanta home' },
   photography: { src: '/images/photography.jpg', alt: 'Professionally photographed, light-filled living space' },
   ownerHandshake: { src: '/images/owner.jpg', alt: 'A homeowner reviewing results with their property manager' },
-  about: { src: '/images/about.jpg', alt: 'The Keystone Stays approach to local, hands-on hosting' },
+  about: { src: '/images/about.jpg', alt: 'The ATLStay approach to local, hands-on hosting' },
 
   nbhdBuckhead: { src: '/images/buckhead.jpg', alt: 'Upscale Buckhead, Atlanta neighborhood' },
   nbhdMidtown: { src: '/images/midtown.jpg', alt: 'Midtown Atlanta high-rises and Piedmont Park' },

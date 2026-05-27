@@ -7,7 +7,7 @@ county: Fulton
 lat: 33.6534
 lng: -84.4494
 title: "Airbnb & Short-Term Rental Management in College Park, GA"
-description: "Expert short-term rental management in College Park, GA. Keystone Stays maximizes Airbnb earnings in the ATL Airport District with film studios, MARTA access, and airport proximity."
+description: "Expert short-term rental management in College Park, GA. ATLStay maximizes Airbnb earnings in the ATL Airport District with film studios, MARTA access, and airport proximity."
 intro: "College Park straddles Fulton and Clayton counties at the edge of Hartsfield-Jackson Atlanta International Airport — making it one of Georgia's most transit-connected STR markets. Film studios in the historic college district, direct MARTA rail access to the airport, and a revitalizing main street create demand from multiple directions for owners who position their properties correctly."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -16,10 +16,10 @@ highlights:
   - "Film studios in Historic College Park draw production crews to a MARTA-walkable location"
   - "5 minutes from Hartsfield-Jackson — strongest airport-proximity demand in the south metro"
   - "Historic College Park main street revitalization creating an emerging local destination character"
-  - "Fulton County STR compliance support — airport-area requirements handled by Keystone Stays"
+  - "Fulton County STR compliance support — airport-area requirements handled by ATLStay"
 faqs:
   - q: "Are short-term rentals allowed in College Park, GA?"
-    a: "Short-term rentals in College Park are governed by City of College Park and Fulton County ordinances. Given the city's position within the ATL Airport District, local STR rules may include specific requirements around operations, registration, and occupancy. Keystone Stays monitors these regulations and handles compliance for all managed properties — contact us to verify current requirements before listing."
+    a: "Short-term rentals in College Park are governed by City of College Park and Fulton County ordinances. Given the city's position within the ATL Airport District, local STR rules may include specific requirements around operations, registration, and occupancy. ATLStay monitors these regulations and handles compliance for all managed properties — contact us to verify current requirements before listing."
   - q: "What drives Airbnb demand in College Park?"
     a: "College Park has exceptional demand diversity. Airport proximity — 5 minutes from the terminal — creates consistent airline crew layover, business transit, and early-flight demand year-round. MARTA College Park station gives transit-dependent travelers direct airport and downtown access without a rental car, attracting a specific guest segment that values walkability and transit connectivity. Film production studios near historic College Park generate entertainment-industry stays. The emerging main street adds local leisure demand."
   - q: "How does MARTA access affect College Park STR demand?"

@@ -4,7 +4,7 @@ state: GA
 slug: kennesaw
 region: metro
 title: "Airbnb & Short-Term Rental Management in Kennesaw, GA"
-description: "Full-service short-term rental management in Kennesaw, GA. Keystone Stays maximizes your earnings by capturing Kennesaw Mountain visitors, university events, and I-75 business travel."
+description: "Full-service short-term rental management in Kennesaw, GA. ATLStay maximizes your earnings by capturing Kennesaw Mountain visitors, university events, and I-75 business travel."
 intro: "Kennesaw blends Civil War history, an active university, and I-75 corridor business demand into a short-term rental market with year-round depth — anchored by Kennesaw Mountain National Battlefield and reinforced by a student and academic visitor base that keeps demand consistent across seasons."
 heroImage: suburbHome
 neighborhoods: []
@@ -16,15 +16,15 @@ highlights:
   - "Cobb County STR compliance guidance included"
 faqs:
   - q: "Does Kennesaw require a permit for short-term rentals?"
-    a: "Kennesaw properties are subject to City of Kennesaw and Cobb County short-term rental regulations. Local rules may include registration or permitting, zoning compliance, safety requirements, and operational standards. We recommend checking with the City of Kennesaw directly or contacting Keystone Stays — we monitor Cobb County and Kennesaw STR requirements for all our clients and handle the compliance process from the start."
+    a: "Kennesaw properties are subject to City of Kennesaw and Cobb County short-term rental regulations. Local rules may include registration or permitting, zoning compliance, safety requirements, and operational standards. We recommend checking with the City of Kennesaw directly or contacting ATLStay — we monitor Cobb County and Kennesaw STR requirements for all our clients and handle the compliance process from the start."
   - q: "What drives Airbnb demand in Kennesaw, GA?"
     a: "Kennesaw's demand comes from three primary sources. Kennesaw Mountain National Battlefield Park — one of the most visited National Park sites in Georgia — draws Civil War heritage visitors, hikers, and outdoor enthusiasts year-round. Kennesaw State University, with its large student population and active events calendar, generates parent visit stays, prospective-student tours, graduation weekends, and visiting academic and athletic event demand. The I-75/Barrett Parkway business corridor creates weekday corporate travel from the Town Center and Wildwood office markets."
   - q: "What types of homes perform well as short-term rentals in Kennesaw?"
     a: "Family-friendly homes near Kennesaw Mountain or with easy access to the KSU campus perform well for heritage visitors and university guests. Properties near the Barrett Parkway or Town Center corridor attract business travelers. Kennesaw's suburban character means guests typically expect comfortable, spacious, residential-style accommodation rather than boutique urban stays. Homes with guest amenities — well-stocked kitchens, comfortable beds, outdoor space — generate the reviews that drive long-term booking performance."
   - q: "How does Kennesaw State University affect STR demand?"
     a: "KSU is one of Georgia's largest universities, with an enrollment in the tens of thousands. Major university events — move-in weekend, Family Weekend, graduation ceremonies, homecoming, and athletic events including Division I football at Fifth Third Bank Stadium — each generate concentrated demand that significantly outpaces hotel supply in the local market. Managing pricing proactively around the KSU academic and events calendar is one of the clearest revenue opportunities for Kennesaw owners."
-  - q: "What is Keystone Stays' management fee for Kennesaw properties?"
-    a: "Our all-in rate is 15% of booking revenue with no setup fees or per-booking charges. Coverage includes listing creation, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+  - q: "What is ATLStay's management fee for Kennesaw properties?"
+    a: "Our all-in rate is 10% of booking revenue with no setup fees or per-booking charges. Coverage includes listing creation, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
   - q: "Is Kennesaw good for year-round short-term rental income?"
     a: "Yes, with the right management approach. The combination of Kennesaw Mountain (active across all seasons), KSU (academic calendar demand), and I-75 corridor business travel creates a demand calendar that doesn't collapse in the off-season the way pure leisure markets sometimes do. Summer hiking demand, fall football, spring graduation, and winter business travel all contribute to a more balanced annual occupancy profile."
 order: 0

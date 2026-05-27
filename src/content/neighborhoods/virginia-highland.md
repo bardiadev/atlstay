@@ -2,7 +2,7 @@
 name: Virginia-Highland
 slug: virginia-highland
 citySlug: atlanta
-title: "Airbnb Management in Virginia-Highland, Atlanta | Keystone Stays"
+title: "Airbnb Management in Virginia-Highland, Atlanta | ATLStay"
 description: "Short-term rental management in Virginia-Highland, Atlanta. This beloved walkable village neighborhood delivers steady occupancy from leisure travelers who love its independent restaurants and neighborhood character."
 intro: "Virginia-Highland is Atlanta's quintessential neighborhood-village: a walkable stretch of independent restaurants, wine bars, boutiques, and 1920s bungalows that feels nothing like a city of five million people. Guests who discover VaHi become devotees — and many return year after year, booking the same property for the same long weekend."
 heroImage: "nbhdDefault"
@@ -24,7 +24,7 @@ faqs:
     a: "VaHi's appeal is its authentic village character — it genuinely feels like a neighborhood, not a tourist destination or a hotel district. Guests come here for the specific experience of staying in an Atlanta neighborhood that locals actually love. That authenticity creates a guest profile that writes detailed, genuine reviews, returns for repeat stays, and refers the property to friends."
   - q: "Are short-term rentals common in Virginia-Highland?"
     a: "Yes. The neighborhood's stock of 1920s bungalows and craftsman homes makes it a natural fit for the Airbnb guest who wants a home, not a hotel room. Properties range from small studios and carriage houses to full 4-bedroom homes. All are subject to Atlanta city STRL requirements: $150/year license, maximum two licenses per owner."
-  - q: "How does Keystone Stays handle VaHi's seasonal demand patterns?"
+  - q: "How does ATLStay handle VaHi's seasonal demand patterns?"
     a: "VaHi has strong year-round leisure demand, with peaks around VaHi Summerfest, Piedmont Park festivals, and major restaurant events. We price each weekend based on the specific events and conditions affecting that week — not on a fixed seasonal formula. Off-peak weekdays get midweek corporate traveler positioning to keep occupancy strong year-round."
   - q: "My VaHi home is a historic 1920s bungalow. Is that an advantage or a challenge for STR management?"
     a: "A significant advantage, managed well. Historic bungalows have genuine character that commands a premium with the right guest. The key is professional photography that captures the home's specific warmth and detail, and a listing that speaks to the VaHi-specific experience rather than generic Atlanta amenities. Older homes sometimes require more attention to maintenance — which is exactly why active local management matters."
@@ -43,4 +43,4 @@ Virginia-Highland sits between Piedmont Park to the south and Morningside's farm
 
 The neighborhood's housing stock is predominantly 1920s bungalows, craftsman homes, and small apartment buildings — all with the authentic character that drives premium Airbnb rates when presented correctly. Historic detail, mature trees, and covered front porches are genuine amenities to guests who could be staying in a characterless hotel suite instead.
 
-Keystone Stays manages VaHi properties with deep respect for what makes them unique. We photograph the character, write listings that speak to the neighborhood-village experience, and price every weekend against the specific conditions that week — whether that's a Piedmont Park festival, a VaHi Summerfest, or a quiet September weekend when corporate midweek demand anchors the occupancy picture.
+ATLStay manages VaHi properties with deep respect for what makes them unique. We photograph the character, write listings that speak to the neighborhood-village experience, and price every weekend against the specific conditions that week — whether that's a Piedmont Park festival, a VaHi Summerfest, or a quiet September weekend when corporate midweek demand anchors the occupancy picture.

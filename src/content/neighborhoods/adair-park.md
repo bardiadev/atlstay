@@ -24,8 +24,8 @@ faqs:
   - q: "What properties do best in Adair Park?"
     a: "Well-restored Victorian and Craftsman-era homes are the neighborhood's flagship offering. Properties that preserve original character — hardwood floors, period trim, high ceilings — while adding modern comfort consistently earn premium rates and strong reviews. Even modest homes benefit from Adair Park's proximity to Lee + White and the BeltLine."
   - q: "Does Atlanta's STR license apply in Adair Park?"
-    a: "Yes. Adair Park is within Atlanta city limits, so the citywide STRL applies: $150 annual license via atl311.com, maximum two licenses per owner with one being your primary residence. Keystone Stays guides owners through the licensing process and monitors regulatory developments."
-  - q: "How does Keystone Stays position Adair Park listings?"
+    a: "Yes. Adair Park is within Atlanta city limits, so the citywide STRL applies: $150 annual license via atl311.com, maximum two licenses per owner with one being your primary residence. ATLStay guides owners through the licensing process and monitors regulatory developments."
+  - q: "How does ATLStay position Adair Park listings?"
     a: "We lead with two things: the Victorian architecture (great for photography and guest imagination) and the walk-to-Lee-+White proximity. These are the two things guests can't get anywhere else, and they're the reasons guests search specifically for Adair Park rather than a generic 'Atlanta' listing. Our photography and listing copy make both unmistakable."
   - q: "Can I see a rental projection for my Adair Park property?"
     a: "Absolutely. We offer free projections based on your specific property and Adair Park's current market data. Visit our projection tool to see realistic earning estimates before committing to anything."
@@ -40,4 +40,4 @@ The Victorian homes are the visual anchor. Adair Park was built out primarily in
 
 Lee + White and Monday Night Brewing define the walkable evening. Monday Night Brewing is one of Atlanta's most beloved craft breweries, and the Lee + White complex on Murphy Avenue SE has become a legitimate Westside destination for food, drink, and events. From an Adair Park property, that corridor is a pleasant walk along streets that give you the neighborhood rather than a parking garage. Guests who discover this don't just visit Lee + White — they often post about it, which means organic discovery for future bookings.
 
-The BeltLine Westside Trail ties it together. Trail access connects Adair Park guests to a broader network of destinations and creates the kind of walkable-city experience that short-term rental guests increasingly seek. Keystone Stays builds every Adair Park listing around these genuine advantages — and manages with the local knowledge to keep occupancy strong and guests genuinely happy.
+The BeltLine Westside Trail ties it together. Trail access connects Adair Park guests to a broader network of destinations and creates the kind of walkable-city experience that short-term rental guests increasingly seek. ATLStay builds every Adair Park listing around these genuine advantages — and manages with the local knowledge to keep occupancy strong and guests genuinely happy.

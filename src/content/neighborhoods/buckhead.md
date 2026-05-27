@@ -2,7 +2,7 @@
 name: Buckhead
 slug: buckhead
 citySlug: atlanta
-title: "Airbnb Management in Buckhead, Atlanta | Keystone Stays"
+title: "Airbnb Management in Buckhead, Atlanta | ATLStay"
 description: "Expert short-term rental management in Buckhead, Atlanta. We maximize revenue from one of Atlanta's most prestigious neighborhoods — upscale properties, corporate demand, and premium nightly rates."
 intro: "Buckhead is Atlanta's upscale village — high-end retail, acclaimed restaurants, luxury hotels, and some of the most polished residential real estate in the city. For short-term rental owners, it means premium nightly rates and a consistent mix of corporate and leisure guests who expect a five-star experience from the moment they arrive."
 heroImage: "nbhdBuckhead"
@@ -23,10 +23,10 @@ faqs:
   - q: "What kind of guests typically rent in Buckhead?"
     a: "Buckhead draws a premium mix: corporate travelers staying midweek, families visiting for weddings or special events, out-of-town guests attending Buckhead's restaurant scene, and travelers who want Atlanta's best location without a hotel. Properties with high-end finishes and professional presentation command the strongest nightly rates."
   - q: "What can I earn renting my Buckhead property on Airbnb?"
-    a: "Buckhead properties consistently earn premium rates compared to the Atlanta average, driven by the neighborhood's upscale profile and strong corporate demand. Actual earnings depend on your property size, finish level, and availability. Request a free custom projection from Keystone Stays for a specific estimate based on your address and comparable active listings."
+    a: "Buckhead properties consistently earn premium rates compared to the Atlanta average, driven by the neighborhood's upscale profile and strong corporate demand. Actual earnings depend on your property size, finish level, and availability. Request a free custom projection from ATLStay for a specific estimate based on your address and comparable active listings."
   - q: "Do I need a short-term rental license to list in Buckhead?"
-    a: "Yes. Buckhead is within Atlanta city limits, so you need a City of Atlanta Short-Term Rental License (STRL) — $150/year via atl311.com. You may hold up to two STRLs, and at least one must be your primary residence. Keystone Stays helps you navigate the full licensing process."
-  - q: "How does Keystone Stays manage turnovers in Buckhead?"
+    a: "Yes. Buckhead is within Atlanta city limits, so you need a City of Atlanta Short-Term Rental License (STRL) — $150/year via atl311.com. You may hold up to two STRLs, and at least one must be your primary residence. ATLStay helps you navigate the full licensing process."
+  - q: "How does ATLStay manage turnovers in Buckhead?"
     a: "Our vetted Buckhead cleaning team handles every turnover to a consistent hotel-quality standard — linens, restocking, staging, and a final walkthrough before every guest. In Buckhead's premium market, presentation standards directly affect your review scores and your rates."
 published: true
 ---
@@ -43,4 +43,4 @@ The event calendar matters enormously. Buckhead's concentration of private event
 
 For property owners, Buckhead's main advantage is rate premium. Properties with quality finishes and professional photography consistently command higher nightly rates than the Atlanta market average. Managing that premium requires attention to every detail: presentation, responsive guest communication, proactive pricing for peak weekends, and turnovers that actually meet the expectations of guests paying for a premium experience.
 
-Keystone Stays manages Buckhead properties with exactly that standard. We know the neighborhood's seasonal patterns, event calendar, and guest profile — and we price and present every property accordingly.
+ATLStay manages Buckhead properties with exactly that standard. We know the neighborhood's seasonal patterns, event calendar, and guest profile — and we price and present every property accordingly.

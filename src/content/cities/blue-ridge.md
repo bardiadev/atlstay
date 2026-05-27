@@ -5,7 +5,7 @@ slug: blue-ridge
 region: georgia
 title: "Vacation Rental Management in Blue Ridge, GA"
 description: "Full-service cabin and mountain vacation rental management in Blue Ridge, GA. Maximize your revenue through fall foliage season, winter getaways, and year-round mountain tourism."
-intro: "Blue Ridge is North Georgia's premier mountain destination — a small town surrounded by the Blue Ridge Mountains, the Toccoa River, and dozens of local wineries that draws visitors seeking cabin escapes year-round. Keystone Stays manages your mountain property like it's our own."
+intro: "Blue Ridge is North Georgia's premier mountain destination — a small town surrounded by the Blue Ridge Mountains, the Toccoa River, and dozens of local wineries that draws visitors seeking cabin escapes year-round. ATLStay manages your mountain property like it's our own."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -22,11 +22,11 @@ faqs:
   - q: "How does fall foliage season affect pricing and availability?"
     a: "Fall foliage is Blue Ridge's most powerful demand event — more predictable than a single-day festival because it spans several weeks. Peak color typically arrives in the Blue Ridge area between mid-October and early November, though the exact timing varies year to year with temperature patterns. We begin building occupancy for fall foliage months in advance and adjust rates dynamically as the season approaches. Properties that wait to set foliage-season rates until October are already at a disadvantage."
   - q: "Are there short-term rental regulations in Blue Ridge and Fannin County?"
-    a: "Yes. Both the City of Blue Ridge and Fannin County have short-term rental requirements that have been updated in recent years as mountain cabin markets have grown. Requirements vary between incorporated city limits and unincorporated county parcels. Operating without proper registration carries risk. Keystone Stays walks every new client through the current requirements for their specific property address and monitors for changes. See [/resources/](/resources/) for a general overview of Georgia STR compliance."
+    a: "Yes. Both the City of Blue Ridge and Fannin County have short-term rental requirements that have been updated in recent years as mountain cabin markets have grown. Requirements vary between incorporated city limits and unincorporated county parcels. Operating without proper registration carries risk. ATLStay walks every new client through the current requirements for their specific property address and monitors for changes. See [/resources/](/resources/) for a general overview of Georgia STR compliance."
   - q: "What amenities should I add to maximize my Blue Ridge cabin's revenue?"
     a: "Hot tubs are the highest-ROI amenity in the Blue Ridge cabin market — guests filter specifically for them, and hot tub-equipped cabins consistently achieve higher rates and occupancy. Fire pits (gas or wood) are expected on mountain properties with outdoor space. Game rooms (pool tables, arcade games, foosball) significantly expand the appeal to group bookings. High-speed WiFi and smart TVs are baseline requirements. Mountain or long-range views are the hardest-to-add amenity and the most valuable — if your property has them, they should be the first thing guests see in your listing."
-  - q: "What is Keystone Stays' management fee?"
-    a: "Our all-in rate is 15% of booking revenue. For cabin properties, this includes coordination of the more complex turnover requirements — hot tub servicing, outdoor amenity checks, firewood restocking coordination, and property condition monitoring — at no additional charge beyond the flat rate."
+  - q: "What is ATLStay's management fee?"
+    a: "Our all-in rate is 10% of booking revenue. For cabin properties, this includes coordination of the more complex turnover requirements — hot tub servicing, outdoor amenity checks, firewood restocking coordination, and property condition monitoring — at no additional charge beyond the flat rate."
 order: 0
 published: true
 ---
@@ -55,4 +55,4 @@ Maintenance is more complex in mountain cabins than in urban properties. Hot tub
 
 ### Regulatory Landscape
 
-Both the City of Blue Ridge and unincorporated Fannin County have adopted short-term rental frameworks that property owners must navigate. The rules have evolved as the mountain cabin market has grown, and requirements differ by location. Keystone Stays handles compliance guidance for every client — see [/resources/](/resources/) for more context on Georgia mountain market regulations.
+Both the City of Blue Ridge and unincorporated Fannin County have adopted short-term rental frameworks that property owners must navigate. The rules have evolved as the mountain cabin market has grown, and requirements differ by location. ATLStay handles compliance guidance for every client — see [/resources/](/resources/) for more context on Georgia mountain market regulations.

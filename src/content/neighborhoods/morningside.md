@@ -23,13 +23,13 @@ faqs:
   - q: "What guests stay in Morningside, and what are they looking for?"
     a: "Morningside draws Atlanta's most discerning leisure guests: couples looking for Atlanta's most livable in-town experience, families who want Piedmont Park access and residential calm, and visitors who've outgrown the hotel-district model and want a neighborhood that functions like a real community. The guest profile is upscale, low-friction, and review-conscious."
   - q: "What nightly rates can I expect for a Morningside property?"
-    a: "Morningside properties with strong presentation consistently earn above the Atlanta average, reflecting the neighborhood's upscale profile and in-town walkability. Rates vary by property size and condition. Request a free custom projection from Keystone Stays for a specific estimate."
+    a: "Morningside properties with strong presentation consistently earn above the Atlanta average, reflecting the neighborhood's upscale profile and in-town walkability. Rates vary by property size and condition. Request a free custom projection from ATLStay for a specific estimate."
   - q: "Do I need an STR license in Morningside?"
-    a: "Morningside is within Atlanta city limits. A City of Atlanta Short-Term Rental License ($150/year, atl311.com) is required. Keystone Stays handles the full registration process during your onboarding."
+    a: "Morningside is within Atlanta city limits. A City of Atlanta Short-Term Rental License ($150/year, atl311.com) is required. ATLStay handles the full registration process during your onboarding."
   - q: "Is the competition high in Morningside for STR properties?"
     a: "Morningside has fewer active STR listings than neighboring Virginia-Highland or Midtown — partly because ownership in the neighborhood skews toward long-term residents rather than investors. That limits supply while demand remains strong, which is favorable for owners who do list."
   - q: "What property features matter most for Morningside STR performance?"
-    a: "Outdoor space and period character are the biggest differentiators. Properties with a private garden, large porch, or screened outdoor area earn disproportionately strong reviews because they deliver something Morningside guests specifically seek — residential calm with outdoor connection. Keystone Stays emphasizes those features in photography and listing copy."
+    a: "Outdoor space and period character are the biggest differentiators. Properties with a private garden, large porch, or screened outdoor area earn disproportionately strong reviews because they deliver something Morningside guests specifically seek — residential calm with outdoor connection. ATLStay emphasizes those features in photography and listing copy."
 published: true
 ---
 
@@ -45,4 +45,4 @@ The family and couples market is the most consistent. Morningside's residential 
 
 Piedmont Park access amplifies everything. Guests who can walk to the park for a morning run, an afternoon picnic, or a summer concert at Piedmont Park don't need to build their Atlanta itinerary around driving and parking. That ease is a genuine amenity, and it's one of the first things Morningside guests mention in reviews.
 
-Keystone Stays manages Morningside properties with the care that a neighborhood this well-regarded demands.
+ATLStay manages Morningside properties with the care that a neighborhood this well-regarded demands.

@@ -7,7 +7,7 @@ county: Henry
 lat: 33.4473
 lng: -84.1469
 title: "Airbnb & Short-Term Rental Management in McDonough, GA"
-description: "Expert short-term rental management in McDonough, GA. Keystone Stays maximizes Airbnb earnings on Henry County's historic square and fast-growing I-75 south corridor."
+description: "Expert short-term rental management in McDonough, GA. ATLStay maximizes Airbnb earnings on Henry County's historic square and fast-growing I-75 south corridor."
 intro: "McDonough is Henry County's county seat and one of metro Atlanta's most compelling suburban growth stories — an 1823 courthouse square reimagined as a genuine destination, anchored by the Geranium Festival, Heritage Festival, and Christmas on the Square events that collectively draw tens of thousands of visitors who need somewhere to stay."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "Henry County STR compliance support included with every management agreement"
 faqs:
   - q: "Are short-term rentals allowed in McDonough, GA?"
-    a: "Short-term rentals in McDonough are governed by City of McDonough and Henry County ordinances covering zoning, registration, and operational requirements. Rules are specific to the locality and distinct from Atlanta city regulations. We recommend contacting Keystone Stays — we track Henry County STR ordinances and handle compliance for every managed property."
+    a: "Short-term rentals in McDonough are governed by City of McDonough and Henry County ordinances covering zoning, registration, and operational requirements. Rules are specific to the locality and distinct from Atlanta city regulations. We recommend contacting ATLStay — we track Henry County STR ordinances and handle compliance for every managed property."
   - q: "What drives Airbnb demand in McDonough?"
     a: "McDonough has strong, multi-layered demand. The historic courthouse square is a genuine destination that hosts large annual events — the Geranium Festival each May, the Heritage Festival in fall, and Christmas on the Square during the holidays — each drawing visitors from across Henry County and beyond who need accommodation. I-75 corridor business travel is consistent year-round. Healthcare visitors to the Henry County Medical Center add midweek demand. Film and TV productions that use the square as a backdrop bring entertainment-industry stays."
   - q: "Why does the historic square make McDonough a strong STR market?"
@@ -27,7 +27,7 @@ faqs:
   - q: "How has McDonough's growth affected the STR opportunity?"
     a: "McDonough's population growth — driven by I-75 accessibility and affordable land relative to the urban core — has consistently outpaced STR supply quality. The corporate and relocation travel accompanying that growth creates demand for quality short-term housing that the national chain hotel inventory doesn't always serve well. A well-positioned STR that caters to the business traveler and the weekend event visitor alike can outperform either market individually."
   - q: "What property types work best in McDonough?"
-    a: "Properties within a short drive of the historic square perform best for event and leisure stays. Larger homes or properties with clear workspace setups attract the corporate relocation and business traveler segment on I-75. Any property with easy I-75 access captures transit demand. Keystone Stays manages the full booking profile — from event weekend pricing to extended corporate stays."
+    a: "Properties within a short drive of the historic square perform best for event and leisure stays. Larger homes or properties with clear workspace setups attract the corporate relocation and business traveler segment on I-75. Any property with easy I-75 access captures transit demand. ATLStay manages the full booking profile — from event weekend pricing to extended corporate stays."
 order: 0
 published: true
 ---
@@ -48,6 +48,6 @@ I-75 made McDonough a viable commuter suburb, and corporate investment has follo
 
 ### Film Production Presence
 
-McDonough's picturesque square has attracted film and television production work, bringing entertainment-industry crews who need short-term housing for the duration of their engagement. Production stays book for weeks and generate lower turnover than leisure bookings — an efficient revenue segment for any Keystone-managed property.
+McDonough's picturesque square has attracted film and television production work, bringing entertainment-industry crews who need short-term housing for the duration of their engagement. Production stays book for weeks and generate lower turnover than leisure bookings — an efficient revenue segment for any ATLStay-managed property.
 
 Local STR rules in McDonough fall under Henry County and city ordinances. See our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/) for broader context.

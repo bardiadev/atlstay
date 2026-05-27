@@ -7,7 +7,7 @@ county: Walton
 lat: 33.7948
 lng: -83.7132
 title: "Airbnb & Short-Term Rental Management in Monroe, GA"
-description: "Expert short-term rental management in Monroe, GA. Keystone Stays maximizes Airbnb earnings in Walton County's antiques district and historic county seat."
+description: "Expert short-term rental management in Monroe, GA. ATLStay maximizes Airbnb earnings in Walton County's antiques district and historic county seat."
 intro: "Monroe is Walton County's historic county seat and one of east metro Atlanta's most authentically preserved small cities. The downtown antiques and collectibles district draws dealers and collectors from across Georgia and the Southeast, the historic courthouse square anchors a growing restaurant and boutique retail scene, and Monroe's 45-mile separation from Atlanta gives it a genuine small-town character that heritage travelers actively seek."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "45 miles east of Atlanta — far enough to feel genuinely different, close enough for a practical weekend escape from the city"
 faqs:
   - q: "Are short-term rentals allowed in Monroe, GA?"
-    a: "Short-term rentals in Monroe are subject to City of Monroe and Walton County ordinances covering registration, zoning, and operational requirements. Requirements are local and separate from Atlanta city regulations. Keystone Stays monitors local ordinances and manages compliance for all managed properties. For metro Atlanta STR regulatory context, see our Atlanta-area STR regulations guide."
+    a: "Short-term rentals in Monroe are subject to City of Monroe and Walton County ordinances covering registration, zoning, and operational requirements. Requirements are local and separate from Atlanta city regulations. ATLStay monitors local ordinances and manages compliance for all managed properties. For metro Atlanta STR regulatory context, see our Atlanta-area STR regulations guide."
   - q: "Who are the typical Airbnb guests in Monroe?"
     a: "Antique hunters and collectors making specific trips to Monroe's dealer district are a core segment — they may spend a full day or two exploring shops and prefer a rental over the drive back to Atlanta. Heritage travelers drawn to the historic square and preserved downtown architecture visit for the character. Weekend visitors from Atlanta seeking a small-town escape with good restaurants represent growing leisure demand. Business and civic visitors to the county seat add weekday demand."
   - q: "How significant is Monroe's antiques market?"

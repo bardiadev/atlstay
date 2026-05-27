@@ -7,8 +7,8 @@ county: Stephens
 lat: 34.5787
 lng: -83.3316
 title: "Vacation Rental Management in Toccoa, GA"
-description: "Vacation rental management in Toccoa, GA — home of the 186-foot Toccoa Falls, northeastern Georgia mountain foothills, and a growing weekend getaway market. Keystone Stays handles your Stephens County property."
-intro: "Toccoa anchors Stephens County in northeastern Georgia — a working mountain town built around a waterfall of remarkable scale, a college campus, and a regional identity as a gateway between the Georgia piedmont and the upper mountain corridor. Keystone Stays turns your Toccoa-area property into a consistent revenue performer."
+description: "Vacation rental management in Toccoa, GA — home of the 186-foot Toccoa Falls, northeastern Georgia mountain foothills, and a growing weekend getaway market. ATLStay handles your Stephens County property."
+intro: "Toccoa anchors Stephens County in northeastern Georgia — a working mountain town built around a waterfall of remarkable scale, a college campus, and a regional identity as a gateway between the Georgia piedmont and the upper mountain corridor. ATLStay turns your Toccoa-area property into a consistent revenue performer."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -27,7 +27,7 @@ faqs:
   - q: "What outdoor recreation is available near Toccoa?"
     a: "Beyond Toccoa Falls itself, Stephens County offers access to Tugaloo State Park on Lake Hartwell, the Chattooga River corridor (a scenic drive south), and proximity to the Rabun County waterfall and hiking network. The Tallulah Falls area is accessible. Toccoa also sits on the Chattahoochee-Oconee National Forest's edge, with forest roads and trails accessible to guests with vehicles. It's a genuine outdoor recreation market, not just a waterfall day-trip stop."
   - q: "Are there short-term rental regulations in Toccoa and Stephens County?"
-    a: "Yes. Toccoa and Stephens County each maintain STR frameworks. Requirements vary between city and unincorporated county properties. Keystone Stays guides every new client through the current requirements for their specific address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. Toccoa and Stephens County each maintain STR frameworks. Requirements vary between city and unincorporated county properties. ATLStay guides every new client through the current requirements for their specific address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
 order: 0
 published: true
 ---
@@ -52,4 +52,4 @@ Toccoa's position in Stephens County makes it a logical base for guests wanting 
 
 ### Regulatory Landscape
 
-The City of Toccoa and Stephens County each maintain STR requirements. Keystone Stays handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context.
+The City of Toccoa and Stephens County each maintain STR requirements. ATLStay handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia context.

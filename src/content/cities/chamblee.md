@@ -7,7 +7,7 @@ county: DeKalb
 lat: 33.8921
 lng: -84.2988
 title: "Airbnb & Short-Term Rental Management in Chamblee, GA"
-description: "Full-service STR management in Chamblee, GA. Keystone Stays maximizes earnings for Chamblee hosts on one of metro Atlanta's most celebrated food and culture corridors."
+description: "Full-service STR management in Chamblee, GA. ATLStay maximizes earnings for Chamblee hosts on one of metro Atlanta's most celebrated food and culture corridors."
 intro: "Chamblee sits at the epicenter of Buford Highway's internationally celebrated food corridor — the most diverse dining destination in the Southeast — with direct MARTA rail access and a revitalized downtown that give it a combination of demand drivers few metro suburbs can match."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "DeKalb County STR compliance expertise included"
 faqs:
   - q: "Does Chamblee, GA require a short-term rental permit?"
-    a: "The City of Chamblee has its own municipal government and STR regulations that are separate from DeKalb County's framework. As local ordinances can evolve, we recommend verifying current permit requirements with the City of Chamblee before listing. Keystone Stays monitors STR regulations across all our Chamblee and DeKalb County markets — we handle the compliance process for our clients."
+    a: "The City of Chamblee has its own municipal government and STR regulations that are separate from DeKalb County's framework. As local ordinances can evolve, we recommend verifying current permit requirements with the City of Chamblee before listing. ATLStay monitors STR regulations across all our Chamblee and DeKalb County markets — we handle the compliance process for our clients."
   - q: "What makes Chamblee such a strong STR market?"
     a: "Chamblee has two distinct advantages almost no other Atlanta suburb can claim simultaneously: direct MARTA rail access (Chamblee station on the Gold Line) and physical location on the Buford Highway corridor. Buford Highway is internationally recognized as one of the most diverse and celebrated food destinations in North America, drawing culinary travelers from across the region and country. That means Chamblee can attract guests who specifically plan a trip around the food scene — a niche with strong, repeat demand — while also being practical for car-free travelers arriving at Hartsfield-Jackson."
   - q: "Who typically books STRs in Chamblee?"
     a: "Chamblee attracts a mix of culinary travelers doing Buford Highway food tours, professionals visiting the CDC or Emory for extended projects, international visitors taking MARTA from the airport who want to avoid renting a car, and families visiting Chamblee's growing roster of international community events. The guest mix skews international and culture-forward, which tends to correlate with respectful stays and strong reviews."
   - q: "How does MARTA access affect bookings in Chamblee?"
     a: "Chamblee station is on the Gold Line, providing direct rail access into downtown Atlanta and to Hartsfield-Jackson International Airport. For international guests and domestic travelers who prefer transit, this is a meaningful selling point — one that should be highlighted in your listing title and description. Properties within easy walking distance of the Chamblee station command a real premium from this segment."
-  - q: "What is Keystone Stays' management fee in Chamblee?"
+  - q: "What is ATLStay's management fee in Chamblee?"
     a: "Our all-in rate starts from 10% of booking revenue, covering listing creation, dynamic pricing, photography, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees."
 order: 0
 published: true

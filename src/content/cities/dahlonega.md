@@ -7,8 +7,8 @@ county: Lumpkin
 lat: 34.5326
 lng: -83.9849
 title: "Vacation Rental Management in Dahlonega, GA"
-description: "Full-service vacation rental management in Dahlonega, GA — gold-rush downtown, Dahlonega Plateau wineries, and UNG-driven year-round demand. Keystone Stays maximizes your mountain property."
-intro: "Dahlonega is North Georgia's original mountain destination — America's first gold rush town, home to a thriving wine country AVA, and anchored by the University of North Georgia. Keystone Stays manages your vacation rental property like it's our own."
+description: "Full-service vacation rental management in Dahlonega, GA — gold-rush downtown, Dahlonega Plateau wineries, and UNG-driven year-round demand. ATLStay maximizes your mountain property."
+intro: "Dahlonega is North Georgia's original mountain destination — America's first gold rush town, home to a thriving wine country AVA, and anchored by the University of North Georgia. ATLStay manages your vacation rental property like it's our own."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -25,7 +25,7 @@ faqs:
   - q: "What types of properties work best in Dahlonega?"
     a: "Cabins and mountain homes with outdoor living features — covered porches with views, hot tubs, fire pits — lead the market. Wine-country proximity adds value to any property with elegant staging and a well-stocked kitchen for guests who want to bring bottles back from the wineries. Properties walkable to the downtown square command a meaningful premium, especially for couples. Larger cabins for group and reunion bookings generate some of the highest per-stay revenues in the market."
   - q: "Are there short-term rental regulations in Dahlonega and Lumpkin County?"
-    a: "Yes. The City of Dahlonega and unincorporated Lumpkin County each have their own STR frameworks, and requirements have evolved as the mountain market has grown. Keystone Stays walks every new client through the current requirements for their specific property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. The City of Dahlonega and unincorporated Lumpkin County each have their own STR frameworks, and requirements have evolved as the mountain market has grown. ATLStay walks every new client through the current requirements for their specific property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
   - q: "Does proximity to wineries actually affect nightly rates?"
     a: "Yes, meaningfully. Properties within a short drive of the Dahlonega Plateau AVA wineries can emphasize wine-country access in listing copy and attract a traveler segment willing to pay more for that experience. Couples planning a wine-tasting weekend are less price-sensitive than purely recreational travelers. We incorporate the winery angle into every Dahlonega listing's copy strategy."
 order: 0
@@ -50,4 +50,4 @@ Dahlonega's walkable square — anchored by the Gold Museum, lined with restaura
 
 ### Operating Here
 
-Lumpkin County and the City of Dahlonega each maintain STR frameworks that property owners must navigate. Requirements differ between city and county parcels. Keystone Stays handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context.
+Lumpkin County and the City of Dahlonega each maintain STR frameworks that property owners must navigate. Requirements differ between city and county parcels. ATLStay handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context.

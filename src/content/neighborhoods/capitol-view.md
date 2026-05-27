@@ -25,7 +25,7 @@ faqs:
     a: "A mix of value-conscious leisure travelers who want BeltLine access without Eastside pricing, visitors to the broader Westside corridor (Lee + White, West End), and guests drawn by Atlanta's ongoing neighborhood transformation narrative. Capitol View also benefits from stadium and downtown spillover during high-demand weekends when more central options are fully booked."
   - q: "What STR regulations apply in Capitol View?"
     a: "Capitol View is within Atlanta city limits. The citywide short-term rental license is required: $150/year via atl311.com, maximum two licenses per owner with one being your primary residence. We stay current with Atlanta's regulatory environment and handle all compliance guidance for owners we manage."
-  - q: "How does Keystone Stays handle a neighborhood that's still building its identity?"
+  - q: "How does ATLStay handle a neighborhood that's still building its identity?"
     a: "We tell the authentic Capitol View story — BeltLine access, proximity to the Westside's best destinations, and the genuine excitement of a neighborhood in transformation. Guests who book on the basis of real information become the neighborhood's best ambassadors. We avoid overpromising and focus on what Capitol View actually delivers right now."
 published: true
 ---
@@ -40,4 +40,4 @@ Lee + White is the anchor for evening demand. Monday Night Brewing's original lo
 
 The owner opportunity is in the math. Capitol View's acquisition and renovation costs are still lower than comparable Eastside markets, which means the percentage return on a well-managed STR can be strong even at rates below Inman Park or O4W. Guests discover Capitol View because it's adjacent to where they want to be — and they're often pleasantly surprised by what they find.
 
-Keystone Stays monitors Capitol View's development closely. We know when new businesses open, when BeltLine segments extend, and how neighborhood changes affect the guest experience. That local knowledge translates directly into better occupancy and stronger returns for owners who trust us with their Capitol View properties.
+ATLStay monitors Capitol View's development closely. We know when new businesses open, when BeltLine segments extend, and how neighborhood changes affect the guest experience. That local knowledge translates directly into better occupancy and stronger returns for owners who trust us with their Capitol View properties.

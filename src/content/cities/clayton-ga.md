@@ -7,8 +7,8 @@ county: Rabun
 lat: 34.8781
 lng: -83.4010
 title: "Vacation Rental Management in Clayton, GA"
-description: "Expert vacation rental management in Clayton, GA — Rabun County's waterfall corridor, Tiger Mountain Vineyards, and year-round mountain demand. Keystone Stays handles your property."
-intro: "Clayton is the heart of Rabun County — a mountain town ringed by some of Georgia's most spectacular waterfalls, bordered by Tallulah Gorge, and sitting within reach of a growing wine country corridor. Keystone Stays manages your Clayton-area cabin with the local knowledge the market demands."
+description: "Expert vacation rental management in Clayton, GA — Rabun County's waterfall corridor, Tiger Mountain Vineyards, and year-round mountain demand. ATLStay handles your property."
+intro: "Clayton is the heart of Rabun County — a mountain town ringed by some of Georgia's most spectacular waterfalls, bordered by Tallulah Gorge, and sitting within reach of a growing wine country corridor. ATLStay manages your Clayton-area cabin with the local knowledge the market demands."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -25,7 +25,7 @@ faqs:
   - q: "When is the strongest demand period in Clayton?"
     a: "Fall foliage is the clear peak — Rabun County's mountains produce reliable autumn color and the area sees strong cabin demand from mid-October through early November. Summer is competitive, driven by whitewater paddling, waterfall hiking, and lake recreation. Winter holidays (Thanksgiving through New Year's) are strong. Spring brings wildflower season and trail conditions that appeal to avid hikers. The Tallulah Gorge suspension bridge, open by permit on select weekends, creates specific high-demand weekend events."
   - q: "Are there short-term rental rules in Rabun County and Clayton?"
-    a: "Yes. Rabun County and the City of Clayton each have STR frameworks, and requirements differ between city and unincorporated county properties. Keystone Stays provides compliance guidance for every new client based on their specific property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. Rabun County and the City of Clayton each have STR frameworks, and requirements differ between city and unincorporated county properties. ATLStay provides compliance guidance for every new client based on their specific property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
   - q: "How does Clayton's wine scene compare to Dahlonega's?"
     a: "Rabun County's wine scene is smaller but growing, anchored by Tiger Mountain Vineyards and a handful of additional operations. It attracts a sophisticated traveler willing to pair mountain hiking with winery visits — a combination that Clayton markets well. The wine tourism overlay adds a demand driver that pure-outdoor mountain towns lack, extending appeal to guests who might not be hardcore hikers but want a scenic, activity-rich mountain experience."
 order: 0
@@ -50,4 +50,4 @@ Tiger Mountain Vineyards and the broader Rabun County wine corridor add a guest 
 
 ### Regulatory Landscape
 
-Rabun County and the City of Clayton each have STR requirements. Keystone Stays handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia STR context.
+Rabun County and the City of Clayton each have STR requirements. ATLStay handles compliance guidance for every client. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia STR context.

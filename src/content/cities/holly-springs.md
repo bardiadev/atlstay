@@ -7,7 +7,7 @@ county: Cherokee
 lat: 34.1740
 lng: -84.5013
 title: "Airbnb & Short-Term Rental Management in Holly Springs, GA"
-description: "Short-term rental management in Holly Springs, GA. Keystone Stays handles your Airbnb so you earn more from Cherokee County's growing market."
+description: "Short-term rental management in Holly Springs, GA. ATLStay handles your Airbnb so you earn more from Cherokee County's growing market."
 intro: "Nestled between Woodstock and Canton, Holly Springs punches above its size — LakePoint Sports Complex alone makes it a year-round destination for families traveling to youth tournaments, and the surrounding Cherokee County amenities fill out the booking calendar."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "Cherokee County's rapid residential growth brings extended-stay and relocation guests"
 faqs:
   - q: "Are short-term rentals allowed in Holly Springs, GA?"
-    a: "Short-term rentals in Holly Springs fall under Cherokee County's STR ordinance. Local regulations require registration and compliance with safety and zoning rules. Because ordinances in Cherokee County have been updated in recent years, we recommend confirming current requirements with the county or consulting our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). Keystone Stays manages compliance for all our Holly Springs properties."
+    a: "Short-term rentals in Holly Springs fall under Cherokee County's STR ordinance. Local regulations require registration and compliance with safety and zoning rules. Because ordinances in Cherokee County have been updated in recent years, we recommend confirming current requirements with the county or consulting our [Atlanta-area STR regulations guide](/resources/atlanta-short-term-rental-regulations/). ATLStay manages compliance for all our Holly Springs properties."
   - q: "What is LakePoint Sports Complex and how does it drive STR demand?"
     a: "LakePoint Sports is a large multi-sport tournament campus located in Emerson, just outside Holly Springs. It hosts hundreds of youth travel sports tournaments each year — baseball, softball, soccer, lacrosse, and more — drawing families from across the Southeast who need lodging for multi-day events. Holly Springs properties are among the most conveniently located options for LakePoint tournament families, and this demand is calendar-predictable, recurring, and group-size friendly."
   - q: "How much can I earn from a Holly Springs short-term rental?"
     a: "Earnings depend on home size, condition, and management quality. LakePoint tournament weekends create demand spikes that can support premium pricing for properties with enough bedrooms for families and groups. The best way to size your potential is a free projection from our team."
   - q: "What other demand drivers exist near Holly Springs?"
     a: "Beyond LakePoint, Holly Springs benefits from Blankets Creek's trail system (a regional mountain biking destination), proximity to the Outlet Shoppes at Atlanta, and the broader Cherokee County outdoor and leisure visitor base. The city's position between Woodstock and Canton also means it captures demand spillover from both markets when those areas are fully booked."
-  - q: "What does Keystone Stays charge for management in Holly Springs?"
+  - q: "What does ATLStay charge for management in Holly Springs?"
     a: "Our all-in management starts from 10% of booking revenue — covering dynamic pricing, listing optimization, guest communication, cleaning coordination, and owner reporting. No setup fees. Reach out for a quote based on your specific home."
   - q: "Can I block off weeks for family use?"
     a: "Yes. You keep full calendar control and can block any dates you want. We handle all guest bookings around your personal windows."

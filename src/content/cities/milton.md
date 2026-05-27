@@ -7,7 +7,7 @@ county: Fulton
 lat: 34.1322
 lng: -84.3007
 title: "Airbnb & Short-Term Rental Management in Milton, GA"
-description: "Premium STR management in Milton, GA. Keystone Stays serves Milton's affluent equestrian community with white-glove guest experiences and revenue-maximizing local expertise."
+description: "Premium STR management in Milton, GA. ATLStay serves Milton's affluent equestrian community with white-glove guest experiences and revenue-maximizing local expertise."
 intro: "Milton is metro Atlanta's premier equestrian and rural-luxury market — a Fulton County city of estate-lot properties, horse farms, and the Crabapple Village district where Birmingham Highway's white-fenced pastures meet an upscale dining and boutique retail scene unlike anything else in the metro."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "City of Milton STR compliance guidance included"
 faqs:
   - q: "Does Milton, GA require a short-term rental permit?"
-    a: "The City of Milton has its own municipal government and may have adopted STR regulations. As local ordinances can change, particularly in cities with strong residential character, we recommend confirming current requirements directly with the City of Milton before listing. Keystone Stays works closely with our Milton clients on compliance and monitors any regulatory updates in Fulton County's northern cities."
+    a: "The City of Milton has its own municipal government and may have adopted STR regulations. As local ordinances can change, particularly in cities with strong residential character, we recommend confirming current requirements directly with the City of Milton before listing. ATLStay works closely with our Milton clients on compliance and monitors any regulatory updates in Fulton County's northern cities."
   - q: "What makes Milton unique for short-term rental hosting?"
     a: "Milton is the only city in metro Atlanta where a guest can genuinely stay on a working horse farm or an estate property with acreage, equestrian trails, and rural privacy — while remaining within 30 minutes of Buckhead and 40 minutes of downtown Atlanta. That combination is extraordinarily rare and commands a significant pricing premium. Properties with land, horse facilities, or genuine rural character have essentially no competition within the metro area, allowing hosts to charge rates that reflect the experience's scarcity."
   - q: "What types of guests book STRs in Milton?"
     a: "Milton attracts equestrian travelers visiting for horse events and trail access, families seeking a rural retreat within range of Atlanta, corporate executives and visiting professionals who want estate privacy rather than hotel anonymity, and weddings and events overflow when nearby venues are booked. The guest profile skews affluent and selective — they pay more and expect more, but they also treat properties well and leave strong reviews when the experience matches their expectations."
   - q: "What is Crabapple, and why does it matter for STR demand?"
     a: "Crabapple is a historic village within Milton that has developed into a boutique retail and dining district. The Crabapple Farmers Market, annual Crabapple Fest, and a collection of local restaurants and shops make it a genuine destination for north Fulton County residents and visitors. Weekend events throughout the year generate accommodations demand from visitors who want to stay in the area rather than commute from Alpharetta or Roswell."
-  - q: "What does Keystone Stays charge for Milton properties?"
+  - q: "What does ATLStay charge for Milton properties?"
     a: "Our all-in rate starts from 10% of booking revenue. For premium estate properties with higher nightly rates, this structure means our fee scales with actual performance — we earn more when you earn more. The service covers listing creation, dynamic pricing, professional photography, guest communication, cleaning oversight, and detailed reporting."
 order: 0
 published: true

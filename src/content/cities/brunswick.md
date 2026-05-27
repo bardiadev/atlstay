@@ -23,10 +23,10 @@ faqs:
   - q: "What types of travelers book Brunswick vacation rentals?"
     a: "Brunswick attracts three distinct guest segments: island-overflow travelers who couldn't get island accommodations in peak periods; I-95 corridor travelers stopping between Jacksonville and Savannah for a night or weekend; and a growing set of travelers specifically drawn to Brunswick's own character — the restored Victorian homes, the Marshes of Glynn, and the emerging restaurant and bar scene. Each requires different listing positioning."
   - q: "What are short-term rental rules in Brunswick?"
-    a: "Brunswick properties fall under Glynn County jurisdiction, which has established STR registration requirements. The City of Brunswick has its own ordinance layer for properties within city limits. Keystone Stays navigates the applicable requirements for each property address. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia context."
+    a: "Brunswick properties fall under Glynn County jurisdiction, which has established STR registration requirements. The City of Brunswick has its own ordinance layer for properties within city limits. ATLStay navigates the applicable requirements for each property address. STR rules vary by jurisdiction — see [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia context."
   - q: "How does Brunswick compare to island properties for returns?"
     a: "Brunswick properties typically have lower acquisition costs than comparable St. Simons or Jekyll Island homes, which can produce competitive cash-on-cash returns even at lower nightly rates. The trade-off is that peak demand is lower and occupancy requires more active marketing. Operators who position Brunswick rentals correctly — emphasizing Golden Isles access, downtown walkability, and I-95 convenience — capture demand that purely passive listings miss."
-  - q: "What is Keystone Stays' management fee in Brunswick?"
+  - q: "What is ATLStay's management fee in Brunswick?"
     a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, dynamic pricing, guest communication, cleaning oversight, and owner reporting. No setup fees."
 order: 0
 published: true

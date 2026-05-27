@@ -26,8 +26,8 @@ faqs:
   - q: "What does the BeltLine Eastside Trail access mean for Edgewood occupancy?"
     a: "Trail access puts Edgewood guests on the most popular segment of Atlanta's BeltLine, connecting them to Ponce City Market, Old Fourth Ward, Inman Park, and Krog Street Market — the full east-side destination corridor. That connectivity means guests who book Edgewood for the nightlife also discover the trail, generating the kind of diverse, satisfied guest experience that drives strong reviews."
   - q: "What are Atlanta's STR requirements for Edgewood properties?"
-    a: "Edgewood is within Atlanta city limits. The citywide STRL applies: $150/year via atl311.com, two-license maximum per owner with a primary-residence requirement. Keystone Stays handles all licensing guidance for managed properties."
-  - q: "How does Keystone Stays manage noise and neighbor considerations in Edgewood?"
+    a: "Edgewood is within Atlanta city limits. The citywide STRL applies: $150/year via atl311.com, two-license maximum per owner with a primary-residence requirement. ATLStay handles all licensing guidance for managed properties."
+  - q: "How does ATLStay manage noise and neighbor considerations in Edgewood?"
     a: "We set clear house rules and guest expectations upfront. Properties near the Edgewood Avenue corridor attract nightlife visitors, and managing that well means being explicit about noise policies, check-in procedures, and neighbor relationships. Proactive management prevents the issues that damage owner relationships and listing reputations."
 published: true
 ---
@@ -42,4 +42,4 @@ Little Five Points, a short walk west, adds the kind of eclectic commercial stri
 
 The BeltLine Eastside Trail connection is the daytime amenity. Edgewood's proximity to the trail gives guests access to Inman Park, Krog Street Market, Old Fourth Ward, and eventually Ponce City Market without a car — the same trail corridor that has made the east side Atlanta's most desirable STR market. 
 
-Keystone Stays manages Edgewood properties with specific attention to the neighborhood's nightlife character. We set guest expectations accurately, establish house rules that protect neighbor relationships, and price around Edgewood's event calendar to maximize returns for owners who trust us with this distinctive market.
+ATLStay manages Edgewood properties with specific attention to the neighborhood's nightlife character. We set guest expectations accurately, establish house rules that protect neighbor relationships, and price around Edgewood's event calendar to maximize returns for owners who trust us with this distinctive market.

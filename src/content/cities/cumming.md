@@ -7,7 +7,7 @@ county: Forsyth
 lat: 34.2073
 lng: -84.1402
 title: "Airbnb & Short-Term Rental Management in Cumming, GA"
-description: "Expert Airbnb & STR management in Cumming, GA. Keystone Stays maximizes revenue for Cumming hosts near Lake Lanier with dynamic pricing and full-service management."
+description: "Expert Airbnb & STR management in Cumming, GA. ATLStay maximizes revenue for Cumming hosts near Lake Lanier with dynamic pricing and full-service management."
 intro: "Cumming is Forsyth County's sole incorporated city, and its position as the primary gateway to Lake Lanier's southern shores gives STR hosts access to one of Georgia's most powerful leisure-travel demand engines — year-round lake recreation, boating season, and a fast-growing retail and dining scene anchored by The Collection at Forsyth."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "Forsyth County STR compliance expertise included"
 faqs:
   - q: "Does Cumming, GA require a short-term rental permit?"
-    a: "The City of Cumming and Forsyth County each have regulatory authority that may apply to STR properties depending on location. Forsyth County's STR regulations and any city-level ordinances can change as the area continues rapid growth. We recommend verifying current requirements with both the City of Cumming and Forsyth County. Keystone Stays monitors regulations across our Forsyth County market."
+    a: "The City of Cumming and Forsyth County each have regulatory authority that may apply to STR properties depending on location. Forsyth County's STR regulations and any city-level ordinances can change as the area continues rapid growth. We recommend verifying current requirements with both the City of Cumming and Forsyth County. ATLStay monitors regulations across our Forsyth County market."
   - q: "How does Lake Lanier affect short-term rental demand in Cumming?"
     a: "Lake Lanier is a 38,000-acre Army Corps of Engineers reservoir that is one of the most heavily used lakes in the United States. It draws boaters, kayakers, anglers, swimmers, and lakeside vacationers from metro Atlanta and across the region. Cumming is the primary city gateway to the lake's southern and western shores, which means STR properties with lake proximity, dock access, or easy water access can command significant premium rates during the spring-through-fall boating season. Properties further from the water still benefit from the overflow — not every lake visitor finds a lakefront property."
   - q: "What is The Collection at Forsyth and how does it generate STR demand?"
     a: "The Collection at Forsyth is a large lifestyle retail and entertainment center in Cumming that includes restaurants, a movie theater, and an outdoor amphitheater. It generates event-driven overnight demand for concerts and entertainment events that attract visitors from outside the county. Cumming's proximity to The Collection — combined with the absence of a significant hotel supply — creates accommodation demand that STR hosts can serve effectively."
   - q: "What types of guests book STRs in Cumming?"
     a: "The guest mix in Cumming is driven heavily by lake recreation, particularly during summer: boating groups, family lake vacations, bachelor/bachelorette parties, and fishing trips. Off-season, the market shifts toward corporate travelers, families visiting Forsyth County's rapidly growing corporate park infrastructure, and individuals relocating to one of Georgia's fastest-growing counties. Properties with outdoor living space, dock access, or lake views command premium rates and strong occupancy during peak season."
-  - q: "What is Keystone Stays' management fee in Cumming?"
+  - q: "What is ATLStay's management fee in Cumming?"
     a: "Our all-in rate starts from 10% of booking revenue, covering listing creation, dynamic pricing, photography, 24/7 guest communication, cleaning oversight, and reporting. We manage seasonal pricing adjustments to capture Lake Lanier's peak-season demand spikes. No setup fees."
 order: 0
 published: true

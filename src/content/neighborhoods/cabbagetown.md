@@ -25,10 +25,10 @@ faqs:
   - q: "Is Cabbagetown a good STR market despite being a small, quiet neighborhood?"
     a: "Yes. Cabbagetown's small size actually works in its favor — there are relatively few STR properties competing for a guest base that specifically seeks out the neighborhood's aesthetic. Scarcity plus strong demand equals rate power for well-presented properties."
   - q: "What are the STR licensing requirements in Cabbagetown?"
-    a: "Cabbagetown is within Atlanta city limits, so you need a City of Atlanta Short-Term Rental License ($150/year via atl311.com). The primary-residence requirement applies — you may hold up to two STRLs. Keystone Stays helps you get licensed before your first guest arrives."
+    a: "Cabbagetown is within Atlanta city limits, so you need a City of Atlanta Short-Term Rental License ($150/year via atl311.com). The primary-residence requirement applies — you may hold up to two STRLs. ATLStay helps you get licensed before your first guest arrives."
   - q: "Does the mill-cottage style limit what I can earn on Airbnb?"
     a: "Not at all — it amplifies it. Smaller cottages with authentic architectural details and thoughtful interiors consistently outperform larger but generic Atlanta properties on nightly rate. Guests are paying for the experience, and Cabbagetown's character delivers that."
-  - q: "How does Keystone Stays market a Cabbagetown home differently?"
+  - q: "How does ATLStay market a Cabbagetown home differently?"
     a: "We lead with what makes Cabbagetown irreplaceable: the architecture, the Tunnel, the Beltline access. Our photography and listing copy are written to capture guests already searching for Atlanta's most atmospheric neighborhoods — not generic price-shoppers."
 published: true
 ---
@@ -43,4 +43,4 @@ Krog Street Market amplifies the neighborhood's appeal. The food hall is a desti
 
 The historic architecture is the biggest asset for STR owners willing to lean into it. Shotgun cottages and mill vernacular homes have original wood floors, front porches, and proportions that photograph unlike anything else in the Atlanta market. Properties that respect that character — good lighting, thoughtful furniture, minimal chain-hotel aesthetics — command consistent premiums from guests who search specifically for them.
 
-Keystone Stays manages Cabbagetown properties with an understanding of what makes them special and what guests expect when they book here.
+ATLStay manages Cabbagetown properties with an understanding of what makes them special and what guests expect when they book here.

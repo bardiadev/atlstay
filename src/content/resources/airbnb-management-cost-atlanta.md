@@ -108,7 +108,7 @@ The math is simpler than most people think. Compare:
 
 Beyond revenue, factor in what your time is actually worth. If you value your hours and want a truly passive investment, the management fee is the cost of that freedom.
 
-## What Keystone Stays Charges
+## What ATLStay Charges
 
 We charge a single, all-inclusive management rate — [see our pricing page](/pricing/) for the current figure. No setup fees. No hidden charges. No add-ons for cleaning coordination, maintenance calls, or damage handling. The rate is transparent upfront because we believe fee clarity is the foundation of a good owner relationship.
 

@@ -7,7 +7,7 @@ county: DeKalb
 lat: 33.8546
 lng: -84.2171
 title: "Airbnb & Short-Term Rental Management in Tucker, GA"
-description: "Full-service Airbnb & STR management in Tucker, GA. Keystone Stays maximizes revenue for Tucker hosts with dynamic pricing, local expertise, and hands-free oversight."
+description: "Full-service Airbnb & STR management in Tucker, GA. ATLStay maximizes revenue for Tucker hosts with dynamic pricing, local expertise, and hands-free oversight."
 intro: "Tucker's blend of established neighborhoods, convenient I-285/I-20 access, and a revitalized downtown makes it one of DeKalb County's most practical short-term rental markets — steady demand from corporate travelers, weekend visitors, and extended-stay guests who want suburban comfort without highway hotel prices."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,14 +19,14 @@ highlights:
   - "DeKalb County STR compliance guidance included with management"
 faqs:
   - q: "Does Tucker, GA require a permit for short-term rentals?"
-    a: "Tucker is an unincorporated community within DeKalb County, so properties in Tucker generally fall under DeKalb County's short-term rental regulations rather than a separate city ordinance. DeKalb County has adopted STR licensing requirements, and compliance standards can change. We recommend verifying current requirements with DeKalb County directly or reaching out to Keystone Stays — we track county-level STR rules and handle the compliance process for our clients."
+    a: "Tucker is an unincorporated community within DeKalb County, so properties in Tucker generally fall under DeKalb County's short-term rental regulations rather than a separate city ordinance. DeKalb County has adopted STR licensing requirements, and compliance standards can change. We recommend verifying current requirements with DeKalb County directly or reaching out to ATLStay — we track county-level STR rules and handle the compliance process for our clients."
   - q: "What drives short-term rental demand in Tucker?"
     a: "Tucker benefits from a practical mix of demand sources. Its position at the intersection of I-285 and I-20 makes it easy to reach from Hartsfield-Jackson and from anywhere inside the perimeter. Stone Mountain Park — one of Georgia's most-visited attractions — is minutes away, drawing families and weekend visitors. Downtown Tucker has developed a solid dining and craft-beer scene that brings its own audience. Corporate and relocation travelers appreciate the suburban setting and full-home amenities that hotels can't match."
   - q: "What types of homes perform well as STRs in Tucker?"
     a: "Single-family homes with space for families or small groups perform particularly well, given the proximity to Stone Mountain. Properties with home offices or business-traveler amenities capture the corporate market. Homes near Downtown Tucker or with updated kitchens and outdoor spaces consistently earn higher guest ratings and repeat bookings."
-  - q: "How does Keystone Stays handle pricing for Tucker properties?"
+  - q: "How does ATLStay handle pricing for Tucker properties?"
     a: "We use dynamic pricing tools that adjust nightly rates based on local demand signals — weekend spikes, Stone Mountain events, holiday periods, and seasonal patterns. A Tucker home priced correctly at peak times can significantly outperform one set at a flat monthly rate. We review pricing weekly and adjust to capture demand without leaving occupancy on the table."
-  - q: "What is Keystone Stays' management fee for Tucker?"
+  - q: "What is ATLStay's management fee for Tucker?"
     a: "Our all-in rate starts from 10% of booking revenue, scaling with the scope of services. That covers listing optimization, professional photography coordination, dynamic pricing, guest communication, cleaning oversight, and owner reporting — no setup fees or hidden charges."
 order: 0
 published: true

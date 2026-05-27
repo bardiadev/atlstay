@@ -2,7 +2,7 @@
 name: East Atlanta Village
 slug: east-atlanta-village
 citySlug: atlanta
-title: "Airbnb Management in East Atlanta Village | Keystone Stays"
+title: "Airbnb Management in East Atlanta Village | ATLStay"
 description: "Short-term rental management in East Atlanta Village. EAV's indie music scene, craft bars, and genuine neighborhood personality create strong STR demand from Atlanta's most adventurous travelers."
 intro: "East Atlanta Village isn't trying to be anything except what it is: one of Atlanta's most authentic neighborhood gathering places, with a music scene, a bar culture, and a community identity entirely its own. For STR owners, EAV offers a guest profile that prizes authenticity above amenities — and pays a fair premium for a genuine neighborhood experience."
 heroImage: "nbhdDefault"
@@ -25,8 +25,8 @@ faqs:
   - q: "Is East Atlanta Village good for short-term rentals, given its location south of the city core?"
     a: "Absolutely, though the profile is different from Midtown or Buckhead. EAV properties typically see strong occupancy during events like the Strut, weekend leisure travel from the music/bar scene, and steady longer-stay demand from guests working in south Atlanta. The lower entry price point can produce excellent returns relative to purchase cost."
   - q: "What are the STR regulations for East Atlanta Village?"
-    a: "EAV is within Atlanta city limits, so the standard City of Atlanta STRL requirements apply: $150/year license, maximum two licenses, one must be primary residence. Keystone Stays handles compliance guidance for all clients."
-  - q: "How does Keystone Stays present EAV properties to attract the right guests?"
+    a: "EAV is within Atlanta city limits, so the standard City of Atlanta STRL requirements apply: $150/year license, maximum two licenses, one must be primary residence. ATLStay handles compliance guidance for all clients."
+  - q: "How does ATLStay present EAV properties to attract the right guests?"
     a: "We position EAV listings for what they genuinely offer: neighborhood authenticity, proximity to the music and bar scene, and the specific character of one of Atlanta's most distinctive communities. That positioning attracts guests who will actually love the neighborhood — which means better reviews, better occupancy, and lower problem rates than if we tried to market the property to guests expecting Buckhead."
 published: true
 ---
@@ -43,4 +43,4 @@ The music scene creates year-round leisure demand that's genuinely independent o
 
 EAV's STR market is built on authentic character and honest value. Properties managed to present their genuine neighborhood appeal — not overselling, not underselling — attract exactly the guest who will love the experience and say so in their review. That guest-property fit is what generates the five-star occupancy foundation that every good STR needs.
 
-Keystone Stays manages EAV properties with that match in mind. We know the neighborhood's specific appeal, the events that drive its demand spikes, and the guest profile that produces great reviews and return stays.
+ATLStay manages EAV properties with that match in mind. We know the neighborhood's specific appeal, the events that drive its demand spikes, and the guest profile that produces great reviews and return stays.

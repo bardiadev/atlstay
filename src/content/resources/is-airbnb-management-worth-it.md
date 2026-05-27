@@ -117,4 +117,4 @@ The right manager should be able to answer all of these clearly and confidently.
 
 ---
 
-*Not sure what your Atlanta property could realistically earn — self-managed or managed? [Get a free rental projection from Keystone Stays](/rental-projection/). We'll give you an honest, comps-based picture of your property's potential — no sales pressure, no obligation.*
+*Not sure what your Atlanta property could realistically earn — self-managed or managed? [Get a free rental projection from ATLStay](/rental-projection/). We'll give you an honest, comps-based picture of your property's potential — no sales pressure, no obligation.*

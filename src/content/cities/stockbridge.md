@@ -7,7 +7,7 @@ county: Henry
 lat: 33.5443
 lng: -84.2338
 title: "Airbnb & Short-Term Rental Management in Stockbridge, GA"
-description: "Expert short-term rental management in Stockbridge, GA. Keystone Stays maximizes Airbnb earnings near Panola Mountain, I-75/I-675, and Henry County's growing south corridor."
+description: "Expert short-term rental management in Stockbridge, GA. ATLStay maximizes Airbnb earnings near Panola Mountain, I-75/I-675, and Henry County's growing south corridor."
 intro: "Stockbridge anchors the northern end of Henry County at the convergence of I-75 and I-675 — a rare dual-interstate position that makes it one of the most transit-accessible markets in the south metro. Add Panola Mountain State Park, a growing healthcare corridor, and sustained residential expansion, and you have a market with more depth than its profile suggests."
 heroImage: suburbHome
 neighborhoods: []
@@ -19,7 +19,7 @@ highlights:
   - "Henry County STR compliance support included with management"
 faqs:
   - q: "Are short-term rentals allowed in Stockbridge, GA?"
-    a: "Short-term rentals in Stockbridge are subject to City of Stockbridge and Henry County ordinances. Requirements cover zoning, registration, and operational rules that are specific to the locality. Keystone Stays monitors Henry County STR regulations and handles compliance for all managed properties — contact us for current requirements."
+    a: "Short-term rentals in Stockbridge are subject to City of Stockbridge and Henry County ordinances. Requirements cover zoning, registration, and operational rules that are specific to the locality. ATLStay monitors Henry County STR regulations and handles compliance for all managed properties — contact us for current requirements."
   - q: "What drives Airbnb demand in Stockbridge?"
     a: "Stockbridge benefits from its gateway position. I-75 and I-675 corridor business travel is consistent year-round. Panola Mountain State Park draws outdoor recreation visitors — hikers, nature photographers, families — for multi-day stays throughout the year. Henry County's healthcare corridor generates medical visitor and extended contractor stays. The broad residential growth in the area also creates demand from families relocating and needing short-term housing during home sales and purchases."
   - q: "What is Panola Mountain State Park and why does it matter for STR owners?"

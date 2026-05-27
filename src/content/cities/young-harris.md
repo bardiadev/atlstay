@@ -7,8 +7,8 @@ county: Towns
 lat: 34.9331
 lng: -83.8471
 title: "Cabin & Vacation Rental Management in Young Harris, GA"
-description: "Vacation rental management in Young Harris, GA — Lake Chatuge lakefront, Brasstown Bald access, and Young Harris College in Georgia's most elevated county. Keystone Stays handles everything."
-intro: "Young Harris wraps around the western edge of Lake Chatuge at high elevation in Towns County — a quiet college town with some of North Georgia's most coveted lakefront cabin positions and direct access to Brasstown Bald. Keystone Stays makes your property work harder every season."
+description: "Vacation rental management in Young Harris, GA — Lake Chatuge lakefront, Brasstown Bald access, and Young Harris College in Georgia's most elevated county. ATLStay handles everything."
+intro: "Young Harris wraps around the western edge of Lake Chatuge at high elevation in Towns County — a quiet college town with some of North Georgia's most coveted lakefront cabin positions and direct access to Brasstown Bald. ATLStay makes your property work harder every season."
 heroImage: "northGeorgia"
 neighborhoods: []
 highlights:
@@ -25,7 +25,7 @@ faqs:
   - q: "Does Young Harris College affect short-term rental demand?"
     a: "Yes, in a useful way. Young Harris College generates structured calendar events — graduation weekends, family visits, alumni events, and athletic competitions — that create demand peaks in spring and fall that supplement the foliage and lake calendars. These events often drive mid-week and early-week occupancy rather than just weekend bookings, which helps smooth out weekly revenue patterns."
   - q: "Are there short-term rental regulations for Young Harris properties?"
-    a: "Yes. Towns County and the City of Young Harris each have STR frameworks that owners must comply with, and requirements vary between city limits and unincorporated county parcels. Keystone Stays guides every client through the current requirements for their specific property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
+    a: "Yes. Towns County and the City of Young Harris each have STR frameworks that owners must comply with, and requirements vary between city limits and unincorporated county parcels. ATLStay guides every client through the current requirements for their specific property address. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for broader Georgia STR context."
   - q: "What amenities perform best in the Young Harris market?"
     a: "Lakefront access and private dock features are the highest-value amenities in Young Harris — if your property has them, they anchor your entire listing strategy. For properties without direct lake access, mountain-view decks, hot tubs, and fire pits are the next tier. The area's cooler evenings (a function of its elevation) make outdoor fire features especially valuable to guests seeking that mountain atmosphere."
 order: 0
@@ -52,4 +52,4 @@ At Towns County's elevation, fall color arrives before it reaches the lower moun
 
 ### Regulatory Landscape
 
-Towns County and the City of Young Harris each maintain STR requirements. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia STR context — Keystone Stays handles specifics for every client.
+Towns County and the City of Young Harris each maintain STR requirements. See [/resources/atlanta-short-term-rental-regulations/](/resources/atlanta-short-term-rental-regulations/) for Georgia STR context — ATLStay handles specifics for every client.
