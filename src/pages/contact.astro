@@ -17,13 +17,8 @@ const schemas = [
   ]),
 ];
 
-// INTEGRATE — wire this form to site.forms.projectionEndpoint or a dedicated
-// contact endpoint (Formspree, Netlify Forms, etc.) before launch.
-// The form currently submits to site.forms.projectionEndpoint if set.
-// If endpoint is empty, the form is shown but submit is handled gracefully
-// (no data is sent; a success message is shown via JS state).
-const formEndpoint = site.forms.projectionEndpoint || '';
-
+// Lead delivery routes through src/lib/leads.ts (Web3Forms when a key is set,
+// otherwise a graceful client-side success). See site.forms in config.
 const serviceAreaNeighborhoods = [
   'Buckhead', 'Midtown', 'Old Fourth Ward', 'Inman Park',
   'Virginia-Highland', 'Grant Park', 'East Atlanta Village', 'Decatur',
@@ -141,14 +136,10 @@ const serviceAreaNeighborhoods = [
           </h2>
           <p class="mt-2 text-ink/75">We read every message personally and respond with honest answers — not a brochure.</p>
 
-          <!-- INTEGRATE — wire to site.forms.projectionEndpoint or a dedicated contact endpoint before launch.
-               Add anti-spam / reCAPTCHA as needed on the backend. -->
           <form
             id="contact-form"
             class="mt-8 space-y-5"
             method="POST"
-            action={formEndpoint || undefined}
-            data-endpoint={formEndpoint}
             novalidate
           >
             <!-- Honeypot anti-spam field — hidden from real users -->
@@ -272,46 +263,62 @@ const serviceAreaNeighborhoods = [
 
 </BaseLayout>
 
-<!-- INTEGRATE — minimal inline script for graceful form handling.
-     Replace with a proper React island or server-side form if more complex
-     validation or integrations are needed. -->
+<!-- Lead delivery via the shared helper (Web3Forms when configured). -->
 <script>
+  import { sendLead } from '../lib/leads';
+
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const successEl = document.getElementById('contact-success');
   const errorEl = document.getElementById('contact-error');
+  const submitBtn = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const loadedAt = Date.now();
 
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const endpoint = form.dataset.endpoint;
+      if (errorEl) errorEl.classList.add('hidden');
 
-      // Honeypot check
+      // Bot defenses: honeypot + implausibly fast submit. Either → silent stop.
       const honeypot = form.querySelector<HTMLInputElement>('input[name="website"]');
-      if (honeypot && honeypot.value) return;
-
-      if (!endpoint) {
-        // No endpoint configured — show success message gracefully (dev/placeholder mode)
+      if ((honeypot && honeypot.value) || Date.now() - loadedAt < 3000) {
         form.style.display = 'none';
         if (successEl) successEl.classList.remove('hidden');
         return;
       }
 
-      try {
-        const data = new FormData(form);
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          body: data,
-          headers: { Accept: 'application/json' },
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          if (successEl) successEl.classList.remove('hidden');
-        } else {
-          throw new Error('Non-OK response');
-        }
-      } catch {
+      const fd = new FormData(form);
+      const name = String(fd.get('name') || '').trim();
+      const email = String(fd.get('email') || '').trim();
+      const message = String(fd.get('message') || '').trim();
+      if (!name || !email || !message) {
         if (errorEl) errorEl.classList.remove('hidden');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      const result = await sendLead(
+        {
+          name,
+          email,
+          phone: String(fd.get('phone') || ''),
+          message,
+        },
+        { subject: `New contact message — ${name}`, formName: 'ATLStay Contact Form' },
+      );
+
+      if (result.ok) {
+        form.style.display = 'none';
+        if (successEl) successEl.classList.remove('hidden');
+      } else {
+        if (errorEl) errorEl.classList.remove('hidden');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send message';
+        }
       }
     });
   }

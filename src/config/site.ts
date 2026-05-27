@@ -48,9 +48,17 @@ export const site = {
     marketRange: false, // keep OFF unless citing a sourced market range
   },
 
-  // Lead-form endpoint. Wire to Formspree/Netlify/etc.; '' = graceful no-op.
+  // Lead delivery. Leads email the owner via Web3Forms (free, no backend —
+  // perfect for a static Cloudflare Pages site). To turn ON lead emails:
+  //   1. Sign up at https://web3forms.com with hello@atlstay.com (60 sec).
+  //   2. Paste the Access Key below. That's it — both the projection form and
+  //      the contact form will start emailing every lead to that inbox.
+  // While blank, forms still work for the visitor (graceful success message)
+  // but no data leaves the browser. `projectionEndpoint` is an optional
+  // override for a custom POST endpoint (Formspree/Netlify) if ever preferred.
   forms: {
-    projectionEndpoint: '', // INTEGRATE — e.g. https://formspree.io/f/xxxxxx
+    web3formsKey: '', // INTEGRATE — paste your Web3Forms Access Key here
+    projectionEndpoint: '', // optional override — custom POST endpoint
   },
 
   // Real, owner-verified track record across the portfolio (10+ years).

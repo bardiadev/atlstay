@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { site } from '../../config/site';
+import { sendLead } from '../../lib/leads';
 
 type Priority = '' | 'income' | 'passive' | 'exploring';
 type Listed = '' | 'yes' | 'no';
@@ -48,6 +49,7 @@ export default function ProjectionForm() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const startedAt = useRef<number>(Date.now());
 
   useEffect(() => {
     headingRef.current?.focus();
@@ -86,21 +88,41 @@ export default function ProjectionForm() {
 
   const submit = async () => {
     if (!validate()) return;
-    if (data.company) {
+    // Bot defenses: honeypot field + implausibly fast completion. Either one
+    // shows the visitor a normal success but sends nothing.
+    const tooFast = Date.now() - startedAt.current < 3000;
+    if (data.company || tooFast) {
       setDone(true);
       return;
-    } // honeypot
+    }
     setSubmitting(true);
     try {
-      if (site.forms.projectionEndpoint) {
-        const { company, ...payload } = data;
-        await fetch(site.forms.projectionEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(payload),
-        });
+      const priorityLabel = priorities.find((p) => p.value === data.priority)?.label ?? '';
+      const result = await sendLead(
+        {
+          name: data.firstName,
+          email: data.email,
+          phone: data.phone,
+          property_address: data.address,
+          bedrooms: data.bedrooms,
+          bathrooms: data.bathrooms,
+          property_type: data.propertyType,
+          square_feet: data.sqft,
+          currently_listed: data.currentlyListed === 'yes' ? 'Yes' : data.currentlyListed === 'no' ? 'No' : '',
+          listed_on: data.platforms,
+          months_available_per_year: data.monthsAvailable,
+          owner_priority: priorityLabel,
+        },
+        {
+          subject: `New projection request — ${data.address || 'Atlanta property'}`,
+          formName: 'ATLStay Rental Projection',
+        },
+      );
+      if (result.ok) {
+        setDone(true);
+      } else {
+        setError('Something went wrong sending your details. Please call us and we’ll take care of it.');
       }
-      setDone(true);
     } catch {
       setError('Something went wrong sending your details. Please call us and we’ll take care of it.');
     } finally {
