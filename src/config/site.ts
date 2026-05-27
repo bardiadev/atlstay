@@ -65,9 +65,11 @@ export const site = {
   // full market list lives in the cities collection + /areas-we-serve/).
   serviceAreas: [
     'Atlanta, GA', 'Sandy Springs, GA', 'Roswell, GA', 'Alpharetta, GA',
-    'Marietta, GA', 'Brookhaven, GA', 'Dunwoody, GA', 'Decatur, GA',
-    'Johns Creek, GA', 'Savannah, GA', 'Blue Ridge, GA', 'Athens, GA',
-    'Georgia, US',
+    'Marietta, GA', 'Smyrna, GA', 'Brookhaven, GA', 'Dunwoody, GA',
+    'Johns Creek, GA', 'Kennesaw, GA', 'Duluth, GA', 'Peachtree City, GA',
+    'Stone Mountain, GA', 'Decatur, GA', 'Savannah, GA', 'Tybee Island, GA',
+    'Blue Ridge, GA', 'Helen, GA', 'Athens, GA', 'Lake Lanier, GA',
+    'Augusta, GA', 'Columbus, GA', 'Georgia, US',
   ],
 } as const;
 

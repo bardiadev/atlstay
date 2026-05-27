@@ -14,6 +14,7 @@ import CheckList from '@/components/ui/CheckList.astro';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
+import { cityGeo } from '@/data/cityGeo';
 
 export async function getStaticPaths() {
   const c = await getCollection('cities');
@@ -44,6 +45,12 @@ const nearby = allCities
 
 const heroKey: ImageKey = d.heroImage && d.heroImage in images ? (d.heroImage as ImageKey) : 'atlantaSkyline';
 
+// Region-aware, keyword-rich heading + local geo for schema
+const geo = cityGeo[d.slug];
+const isVacation = d.region === 'georgia';
+const heading = `${isVacation ? 'Vacation Rental & Airbnb Management' : 'Airbnb & Short-Term Rental Management'} in ${d.name}, ${d.state}`;
+const countyLine = geo?.county ? ` We manage homes across ${d.name} and ${geo.county} County.` : '';
+
 const schemas = [
   breadcrumbSchema([
     { name: 'Home', path: '/' },
@@ -51,15 +58,16 @@ const schemas = [
     { name: d.name, path: `/${d.slug}/` },
   ]),
   serviceSchema({
-    name: `Short-Term Rental Management in ${d.name}, ${d.state}`,
+    name: heading,
     description: d.description,
+    area: { name: `${d.name}, ${d.state}`, lat: geo?.lat, lng: geo?.lng, county: geo?.county },
   }),
 ];
 ---
 
 <BaseLayout title={d.title} description={d.description} image={images[heroKey].src} schemas={schemas}>
   <PageHero
-    title={`Short-Term Rental Management in ${d.name}, ${d.state}`}
+    title={heading}
     subtitle={d.intro}
     eyebrow={`${d.name} · Airbnb & Vrbo management`}
     imageKey={heroKey}
@@ -81,7 +89,7 @@ const schemas = [
           <Eyebrow>What we deliver</Eyebrow>
           <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Full-service management in {d.name}</h2>
           <p class="mt-4 text-ink/80">
-            Keystone Stays handles every part of your {d.name} short-term rental — listing creation and professional photography, dynamic pricing, 24/7 guest communication, cleaning, and turnovers. One transparent rate, {site.pricing.rateNote}.
+            Keystone Stays handles every part of your {d.name} short-term rental — listing creation and professional photography, dynamic pricing, 24/7 guest communication, cleaning, and turnovers. One transparent rate, {site.pricing.rateNote}.{countyLine}
           </p>
           <Button href="/services/" variant="secondary" class="mt-6">See all services &rarr;</Button>
         </div>

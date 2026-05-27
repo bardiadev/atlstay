@@ -71,7 +71,24 @@ export function websiteSchema() {
   };
 }
 
-export function serviceSchema(opts: { name: string; description: string; serviceType?: string }) {
+export function serviceSchema(opts: {
+  name: string;
+  description: string;
+  serviceType?: string;
+  /** Per-location targeting — adds GeoCoordinates + county for local SEO. */
+  area?: { name: string; lat?: number; lng?: number; county?: string };
+}) {
+  const a = opts.area;
+  const areaServed = a
+    ? {
+        '@type': 'City',
+        name: a.name,
+        ...(a.lat != null && a.lng != null
+          ? { geo: { '@type': 'GeoCoordinates', latitude: a.lat, longitude: a.lng } }
+          : {}),
+        ...(a.county ? { containedInPlace: { '@type': 'AdministrativeArea', name: `${a.county} County, GA` } } : {}),
+      }
+    : { '@type': 'City', name: `${site.contact.address.city}, ${site.contact.address.region}` };
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -79,7 +96,7 @@ export function serviceSchema(opts: { name: string; description: string; service
     description: opts.description,
     serviceType: opts.serviceType ?? 'Short-term rental management',
     provider: { '@id': ORG_ID },
-    areaServed: { '@type': 'City', name: `${site.contact.address.city}, ${site.contact.address.region}` },
+    areaServed,
   };
 }
 

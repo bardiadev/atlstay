@@ -10,6 +10,7 @@ import CTABand from '@/components/ui/CTABand.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 import { getCollection } from 'astro:content';
 import type { ImageKey } from '@/data/images';
+import { site } from '@/config/site';
 
 const nbhdOrder = ['buckhead', 'midtown', 'old-fourth-ward', 'inman-park', 'virginia-highland', 'grant-park', 'east-atlanta-village', 'decatur'];
 const neighborhoods = (await getCollection('neighborhoods', (e) => e.data.published && e.data.citySlug === 'atlanta'))
@@ -25,11 +26,26 @@ const georgia = cities.filter((c) => c.data.region === 'georgia').sort((a, b) =>
 
 const firstSentence = (s: string) => s.split('. ')[0].replace(/\.$/, '') + '.';
 
+const serviceAreaList = [
+  ...cities.map((c) => ({ name: `${c.data.name}, GA`, path: `/${c.data.slug}/` })),
+  ...neighborhoods.map((n) => ({ name: `${n.data.name}, Atlanta, GA`, path: `/atlanta/${n.data.slug}/` })),
+];
 const schemas = [
   breadcrumbSchema([
     { name: 'Home', path: '/' },
     { name: 'Areas We Serve', path: '/areas-we-serve/' },
   ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Areas served by Keystone Stays',
+    itemListElement: serviceAreaList.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: a.name,
+      url: new URL(a.path, site.domain).href,
+    })),
+  },
 ];
 ---
 
