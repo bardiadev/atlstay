@@ -1,8 +1,12 @@
 ---
 import { images, type ImageKey } from '../../data/images';
-interface Props { name: string; href: string; imageKey?: ImageKey; blurb?: string; }
-const { name, href, imageKey, blurb } = Astro.props;
-const img = imageKey ? images[imageKey] : images.nbhdDefault;
+interface Props { name: string; href: string; imageKey?: ImageKey; imageSrc?: string; imageAlt?: string; blurb?: string; }
+const { name, href, imageKey, imageSrc, imageAlt, blurb } = Astro.props;
+const img = imageSrc
+  ? { src: imageSrc, alt: imageAlt ?? `${name} — Atlanta short-term rental management` }
+  : imageKey
+    ? images[imageKey]
+    : images.nbhdDefault;
 ---
 <a href={href} class="group relative block overflow-hidden rounded-2xl border border-line bg-forest-50">
   <div class="aspect-[4/3] overflow-hidden">
