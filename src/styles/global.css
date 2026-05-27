@@ -12,7 +12,7 @@
   --color-forest-50: #eaf1ed;
 
   --color-brass: #c9a24b;
-  --color-brass-600: #b08a38;
+  --color-brass-600: #9a7422; /* deeper gold for AA on light: ~3.9:1 cream / ~4.3:1 white (was 2.9:1); used for eyebrows, icons, link/hover accents */
   --color-brass-50: #f7efd9;
 
   --color-cream: #f7f4ec;
