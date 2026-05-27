@@ -13,6 +13,9 @@ const cities = defineCollection({
       state: z.string(), // "GA"
       slug: z.string(), // "atlanta"
       region: z.enum(['atlanta', 'metro', 'georgia']).default('metro'),
+      county: z.string().optional(), // e.g. "Cobb" — powers local schema + copy
+      lat: z.number().optional(), // approx city-center latitude (GeoCoordinates)
+      lng: z.number().optional(), // approx city-center longitude
       title: z.string(), // SEO <title>
       description: z.string(), // meta description
       intro: z.string(), // hero subhead / lede

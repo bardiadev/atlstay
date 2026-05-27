@@ -26,6 +26,17 @@ const { Content } = await render(entry);
 const d = entry.data;
 const isAtlanta = d.region === 'atlanta';
 
+// Local geo (frontmatter first, then the cityGeo map) — powers schema + copy
+const mapGeo = cityGeo[d.slug];
+const lat = typeof d.lat === 'number' ? d.lat : mapGeo?.lat;
+const lng = typeof d.lng === 'number' ? d.lng : mapGeo?.lng;
+const county = d.county ?? mapGeo?.county;
+const countyOf = (c: typeof entry) => c.data.county ?? cityGeo[c.data.slug]?.county;
+
+const isVacation = d.region === 'georgia';
+const heading = `${isVacation ? 'Vacation Rental & Airbnb Management' : 'Airbnb & Short-Term Rental Management'} in ${d.name}, ${d.state}`;
+const countyLine = county ? ` We manage homes across ${d.name} and ${county} County.` : '';
+
 // Neighborhoods (Atlanta only)
 const allNeighborhoods = await getCollection('neighborhoods', (n) => n.data.published && n.data.citySlug === d.slug);
 const neighborhoodMap = Object.fromEntries(allNeighborhoods.map((n) => [n.data.slug, n]));
@@ -35,21 +46,17 @@ const nbhdImageMap: Record<string, ImageKey> = {
   'inman-park': 'nbhdInmanPark', decatur: 'nbhdDecatur',
 };
 
-// Nearby markets in the same region (internal linking)
+// Nearby markets — same county first, then same region (internal linking)
 const allCities = await getCollection('cities', (c) => c.data.published);
 const regionLabel = d.region === 'georgia' ? 'Across Georgia' : 'Metro Atlanta';
-const nearby = allCities
+const byName = (a: typeof entry, b: typeof entry) => a.data.name.localeCompare(b.data.name);
+const sameCounty = (county ? allCities.filter((c) => c.data.slug !== d.slug && countyOf(c) === county) : []).sort(byName);
+const sameRegion = allCities
   .filter((c) => c.data.slug !== d.slug && (isAtlanta ? c.data.region === 'metro' : c.data.region === d.region))
-  .sort((a, b) => a.data.name.localeCompare(b.data.name))
-  .slice(0, 8);
+  .sort(byName);
+const nearby = [...new Map([...sameCounty, ...sameRegion].map((c) => [c.data.slug, c])).values()].slice(0, 8);
 
 const heroKey: ImageKey = d.heroImage && d.heroImage in images ? (d.heroImage as ImageKey) : 'atlantaSkyline';
-
-// Region-aware, keyword-rich heading + local geo for schema
-const geo = cityGeo[d.slug];
-const isVacation = d.region === 'georgia';
-const heading = `${isVacation ? 'Vacation Rental & Airbnb Management' : 'Airbnb & Short-Term Rental Management'} in ${d.name}, ${d.state}`;
-const countyLine = geo?.county ? ` We manage homes across ${d.name} and ${geo.county} County.` : '';
 
 const schemas = [
   breadcrumbSchema([
@@ -60,7 +67,7 @@ const schemas = [
   serviceSchema({
     name: heading,
     description: d.description,
-    area: { name: `${d.name}, ${d.state}`, lat: geo?.lat, lng: geo?.lng, county: geo?.county },
+    area: { name: `${d.name}, ${d.state}`, lat, lng, county },
   }),
 ];
 ---
