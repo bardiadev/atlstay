@@ -90,8 +90,9 @@ const allSchemas = [
     <slot name="head" />
   </head>
   <body>
+    {!bare && <a href="#main" class="skip-link">Skip to content</a>}
     {!bare && <Header />}
-    <main>
+    <main id="main">
       <slot />
     </main>
     {!bare && <Footer />}

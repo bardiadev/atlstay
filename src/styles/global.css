@@ -68,6 +68,26 @@ h1, h2, h3, h4 {
   outline: none;
 }
 
+/* Skip-to-content link: hidden until keyboard-focused, then pinned top-left. */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--color-forest, #14342b);
+  color: var(--color-cream, #f7f4ec);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0.75rem;
+  outline: 2px solid var(--color-brass, #c9a24b);
+  outline-offset: 2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
