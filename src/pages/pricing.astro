@@ -8,6 +8,7 @@ import Button from '@/components/ui/Button.astro';
 import CheckList from '@/components/ui/CheckList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import RelatedReading from '@/components/ui/RelatedReading.astro';
 import { pricingFaqs } from '@/data/faqs';
 import { site } from '@/config/site';
 import { breadcrumbSchema } from '@/lib/schema';
@@ -258,6 +259,16 @@ const schemas = [
       </div>
     </Container>
   </Section>
+
+  <RelatedReading
+    variant="cream"
+    heading="Related reading on cost & value"
+    items={[
+      { title: "Airbnb Management Fees in Atlanta", desc: "How management pricing works, what's included, and how to judge if it's worth the cost.", href: "/resources/airbnb-management-cost-atlanta/" },
+      { title: "Is Airbnb Management Worth It?", desc: "The honest ROI picture — when the fee pays for itself, and when it doesn't.", href: "/resources/is-airbnb-management-worth-it/" },
+      { title: "Airbnb vs. Long-Term Rental in Atlanta", desc: "Which earns more after costs — and how to compare net income for your home.", href: "/resources/airbnb-vs-long-term-rental-atlanta/" },
+    ]}
+  />
 
   <CTABand
     heading="No hidden fees. No catch. Just results."

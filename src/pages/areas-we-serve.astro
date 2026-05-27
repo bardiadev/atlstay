@@ -7,6 +7,7 @@ import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Button from '@/components/ui/Button.astro';
 import NeighborhoodCard from '@/components/ui/NeighborhoodCard.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import RelatedReading from '@/components/ui/RelatedReading.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 import { getCollection } from 'astro:content';
 import type { ImageKey } from '@/data/images';
@@ -156,6 +157,16 @@ const schemas = [
       </div>
     </Container>
   </Section>
+
+  <RelatedReading
+    variant="white"
+    heading="Helpful guides for Atlanta owners"
+    items={[
+      { title: "Best Atlanta Neighborhoods for Airbnb", desc: "A tour of the areas with the strongest short-term rental demand across the city.", href: "/resources/best-atlanta-neighborhoods-for-airbnb/" },
+      { title: "Atlanta Short-Term Rental Regulations", desc: "Permits, licensing, and taxes to verify before you list your property.", href: "/resources/atlanta-short-term-rental-regulations/" },
+      { title: "Airbnb vs. Long-Term Rental in Atlanta", desc: "Which earns more for your property — and how to decide what fits your goals.", href: "/resources/airbnb-vs-long-term-rental-atlanta/" },
+    ]}
+  />
 
   <CTABand />
 </BaseLayout>

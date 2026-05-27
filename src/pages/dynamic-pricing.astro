@@ -9,6 +9,7 @@ import Card from '@/components/ui/Card.astro';
 import StepList from '@/components/ui/StepList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import RelatedReading from '@/components/ui/RelatedReading.astro';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { site } from '@/config/site';
 
@@ -176,6 +177,16 @@ const schemas = [
       <div class="mt-8"><FAQ items={faqs} /></div>
     </Container>
   </Section>
+
+  <RelatedReading
+    variant="white"
+    heading="Go deeper on revenue & pricing"
+    items={[
+      { title: "How Dynamic Pricing Increases Your Revenue", desc: "Why daily, demand-based pricing out-earns a static rate — and how the lift can beat the fee.", href: "/resources/how-dynamic-pricing-increases-airbnb-revenue/" },
+      { title: "Is Airbnb Management Worth It?", desc: "An honest look at whether professional management pays for itself for your property.", href: "/resources/is-airbnb-management-worth-it/" },
+      { title: "Best Atlanta Neighborhoods for Airbnb", desc: "Where short-term rental demand concentrates across the city — and why.", href: "/resources/best-atlanta-neighborhoods-for-airbnb/" },
+    ]}
+  />
 
   <CTABand heading="Find out what daily pricing could do for your home" text="Get a free, comps-based projection built around your property and your market's real demand — no sales pitch, no obligation." />
 </BaseLayout>
