@@ -169,7 +169,7 @@ export default function ProjectionForm() {
             />
           ))}
         </div>
-        <p className="mt-2 text-xs font-medium uppercase tracking-wider text-stone" role="status" aria-live="polite">
+        <p className="mt-2 text-center text-xs font-medium uppercase tracking-wider text-stone sm:text-left" role="status" aria-live="polite">
           Step {step} of {TOTAL} · {stepLabels[step - 1]}
         </p>
       </div>
@@ -325,22 +325,22 @@ export default function ProjectionForm() {
       )}
 
       {/* Nav */}
-      <div className="mt-7 flex items-center gap-3">
+      <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:items-center">
         {step > 1 && (
           <button type="button" onClick={back}
-            className="rounded-full px-4 py-3 text-sm font-medium text-stone transition-colors hover:text-forest">
+            className="self-center rounded-full px-4 py-3 text-sm font-medium text-stone transition-colors hover:text-forest sm:self-auto">
             ← Back
           </button>
         )}
-        <div className="flex-1" />
+        <div className="hidden flex-1 sm:block" />
         {step < TOTAL ? (
           <button type="button" onClick={next}
-            className="rounded-full bg-brass px-7 py-3 text-sm font-medium text-forest-900 shadow-sm transition-all hover:bg-brass-600 hover:shadow-md">
+            className="w-full rounded-full bg-brass px-7 py-3 text-sm font-medium text-forest-900 shadow-sm transition-all hover:bg-brass-600 hover:shadow-md sm:w-auto">
             {step === 1 ? 'Start my projection' : 'Next'}
           </button>
         ) : (
           <button type="button" onClick={submit} disabled={submitting}
-            className="rounded-full bg-brass px-7 py-3 text-sm font-medium text-forest-900 shadow-sm transition-all hover:bg-brass-600 hover:shadow-md disabled:opacity-60">
+            className="w-full rounded-full bg-brass px-7 py-3 text-sm font-medium text-forest-900 shadow-sm transition-all hover:bg-brass-600 hover:shadow-md disabled:opacity-60 sm:w-auto">
             {submitting ? 'Sending…' : 'Send me my free projection'}
           </button>
         )}

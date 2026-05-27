@@ -4,7 +4,7 @@ import { site } from '../../config/site';
 import Logo from './Logo.astro';
 import Button from '../ui/Button.astro';
 ---
-<header class="sticky top-0 z-50 border-b border-line/70 bg-cream/85 backdrop-blur-md">
+<header id="site-header" class="sticky top-0 z-50 border-b border-line/70 bg-cream/85 backdrop-blur-md transition-transform duration-300 will-change-transform">
   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
     <Logo />
 
@@ -44,3 +44,37 @@ import Button from '../ui/Button.astro';
     </details>
   </div>
 </header>
+
+<script>
+  // Auto-hide header: hide on scroll-down past a threshold, reveal on scroll-up.
+  const header = document.getElementById('site-header');
+  if (header) {
+    let last = window.scrollY;
+    let ticking = false;
+    const THRESHOLD = 90;
+    const update = () => {
+      const y = window.scrollY;
+      header.classList.toggle('shadow-md', y > 8);
+      const menuOpen = !!header.querySelector('details[open]');
+      if (y < THRESHOLD || menuOpen) {
+        header.classList.remove('-translate-y-full');
+      } else if (y > last + 4) {
+        header.classList.add('-translate-y-full'); // scrolling down → hide
+      } else if (y < last - 4) {
+        header.classList.remove('-translate-y-full'); // scrolling up → show
+      }
+      last = y;
+      ticking = false;
+    };
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      },
+      { passive: true },
+    );
+  }
+</script>

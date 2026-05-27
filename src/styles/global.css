@@ -23,6 +23,7 @@
   /* Type */
   --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-brand: "Bricolage Grotesque Variable", "Inter Variable", ui-sans-serif, sans-serif;
 
   /* Container */
   --breakpoint-3xl: 120rem;
