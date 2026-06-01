@@ -33,7 +33,7 @@ const TOTAL = 4;
 const stepLabels = ['Address', 'Property', 'Goals', 'Contact'];
 const bedroomOpts = ['Studio', '1', '2', '3', '4', '5+'];
 const bathroomOpts = ['1', '1.5', '2', '2.5', '3', '3+'];
-const propertyTypes = ['Entire house', 'Condo / Apartment', 'Townhouse', 'Cabin / Unique', 'Other'];
+const propertyTypes = ['House', 'Condo', 'Townhouse', 'Cabin', 'Other'];
 const platformOpts = ['Airbnb', 'Vrbo', 'Booking.com', 'Other'];
 const priorities: { value: Priority; label: string; desc: string }[] = [
   { value: 'income', label: 'Maximize income', desc: 'Earn as much as the home can' },
@@ -51,11 +51,20 @@ export default function ProjectionForm() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const listingRef = useRef<HTMLTextAreaElement>(null);
   const startedAt = useRef<number>(Date.now());
 
   useEffect(() => {
     headingRef.current?.focus();
   }, [step, done]);
+
+  // Auto-grow the listing-links textarea as lines are added.
+  useEffect(() => {
+    const el = listingRef.current;
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = `${el.scrollHeight}px`;
+  }, [data.listingUrl, data.currentlyListed, step]);
 
   const set = (patch: Partial<FormData>) => setData((d) => ({ ...d, ...patch }));
   const fail = (m: string) => {
@@ -216,7 +225,7 @@ export default function ProjectionForm() {
                   key={t}
                   type="button"
                   onClick={() => set({ propertyType: t })}
-                  className={`rounded-lg border px-3 py-2.5 text-sm transition-colors ${
+                  className={`whitespace-nowrap rounded-lg border px-3 py-2.5 text-sm transition-colors ${
                     data.propertyType === t
                       ? 'border-brass bg-brass-50 text-forest'
                       : 'border-line bg-white text-ink/80 hover:border-brass/50'
@@ -273,12 +282,13 @@ export default function ProjectionForm() {
               </div>
               <div>
                 <label htmlFor="listingUrl" className="mb-2 block text-sm font-medium text-forest">
-                  Listing link <span className="font-normal text-stone">(optional)</span>
+                  Listing link(s) <span className="font-normal text-stone">(optional)</span>
                 </label>
-                <input id="listingUrl" type="url" inputMode="url" autoComplete="off"
-                  className={inputCls} placeholder="https://airbnb.com/rooms/… · Vrbo · Booking.com"
+                <textarea id="listingUrl" ref={listingRef} rows={1} autoComplete="off"
+                  className={`${inputCls} resize-none overflow-hidden`}
+                  placeholder="Paste a link — Airbnb, Vrbo, or Booking.com"
                   value={data.listingUrl} onChange={(e) => set({ listingUrl: e.target.value })} />
-                <p className="mt-1.5 text-xs text-stone">Paste your Airbnb, Vrbo, or Booking.com link and we’ll review your live listing.</p>
+                <p className="mt-1.5 text-xs text-stone">Listing on more than one site, or have multiple units? Add each link on its own line.</p>
               </div>
             </div>
           )}

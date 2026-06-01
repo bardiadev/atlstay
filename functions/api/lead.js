@@ -166,6 +166,19 @@ function pickEmail(lead) {
 
 function renderValue(k, v) {
   const s = String(v);
+  // Multi-line values (e.g. several listing links) → render each line.
+  if (s.includes('\n')) {
+    return s
+      .split(/\r?\n/)
+      .map((ln) => ln.trim())
+      .filter(Boolean)
+      .map((ln) => renderLine(k, ln))
+      .join('<br>');
+  }
+  return renderLine(k, s);
+}
+
+function renderLine(k, s) {
   if (/coordinates/i.test(k)) {
     const q = encodeURIComponent(s.replace(/[^0-9.,\- ]/g, '').trim());
     return `${esc(s)} &nbsp;<a href="https://www.google.com/maps?q=${q}" style="color:${C.brassDeep};text-decoration:none;">View on map &#8599;</a>`;
