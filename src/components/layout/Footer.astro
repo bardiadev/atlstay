@@ -5,6 +5,7 @@ import Logo from './Logo.astro';
 const year = new Date().getFullYear();
 const a = site.contact.address;
 const loc = [a.city, a.region].filter(Boolean).join(', ');
+const mailing = a.street ? `${a.street}, ${a.city}, ${a.region} ${a.postalCode}`.trim() : '';
 ---
 <footer class="bg-forest text-cream/80">
   <div class="mx-auto max-w-7xl px-6 py-16 sm:px-8">
@@ -16,6 +17,9 @@ const loc = [a.city, a.region].filter(Boolean).join(', ');
           <a href={site.contact.phoneHref} class="block hover:text-brass">{site.contact.phone}</a>
           <a href={`mailto:${site.contact.email}`} class="block hover:text-brass">{site.contact.email}</a>
           {loc && <p class="text-cream/55">Serving {loc} &amp; metro Atlanta</p>}
+          {mailing && (
+            <address class="not-italic text-cream/45">{mailing}</address>
+          )}
         </div>
       </div>
 

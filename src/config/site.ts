@@ -19,13 +19,13 @@ export const site = {
     phoneHref: 'tel:+16789386413',
     email: 'hello@atlstay.com', // CONFIRM — placeholder
     address: {
-      street: '', // CONFIRM — blank omits street from schema
+      street: '3343 Peachtree Rd NE',
       city: 'Atlanta',
       region: 'GA',
-      postalCode: '', // CONFIRM
+      postalCode: '30326',
       country: 'US',
     },
-    geo: { lat: 33.749, lng: -84.388 }, // Atlanta center (approx; refine)
+    geo: { lat: 33.8487, lng: -84.3637 }, // Buckhead (matches mailing address for NAP consistency)
   },
 
   social: {
