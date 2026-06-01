@@ -11,7 +11,10 @@ import RelatedReading from '@/components/ui/RelatedReading.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 import { getCollection } from 'astro:content';
 import { assignCardStyles } from '@/lib/cardImage';
+import { counties } from '@/data/counties';
 import { site } from '@/config/site';
+
+const countyList = counties.filter((c) => c.published).sort((a, b) => a.name.localeCompare(b.name));
 
 const neighborhoods = (await getCollection('neighborhoods', (e) => e.data.published && e.data.citySlug === 'atlanta'))
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
@@ -112,6 +115,25 @@ const schemas = [
         {georgia.map((c, i) => (
           <NeighborhoodCard name={c.data.name} href={`/${c.data.slug}/`} gradient={gaStyles[i].gradient} icon={gaStyles[i].icon} blurb={firstSentence(c.data.intro)} />
         ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Browse by county -->
+  <Section variant="white">
+    <Container>
+      <div class="mb-8 max-w-3xl">
+        <Eyebrow>Browse by county</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Counties we serve</h2>
+        <p class="mt-4 text-ink/80">
+          Researching by county? We map every market we manage back to its county for owners working through the city-by-city regulatory landscape.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {countyList.map((c) => (
+          <a href={`/counties/${c.slug}/`} class="rounded-full border border-line bg-cream px-4 py-2 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">{c.name} County</a>
+        ))}
+        <a href="/counties/" class="rounded-full bg-forest px-4 py-2 text-sm text-cream transition-colors hover:bg-forest-700">All counties &rarr;</a>
       </div>
     </Container>
   </Section>

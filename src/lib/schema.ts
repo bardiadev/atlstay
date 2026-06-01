@@ -109,17 +109,26 @@ export function serviceSchema(opts: {
   description: string;
   serviceType?: string;
   /** Per-location targeting — adds GeoCoordinates + county for local SEO. */
-  area?: { name: string; lat?: number; lng?: number; county?: string };
+  area?: {
+    name: string;
+    type?: 'City' | 'AdministrativeArea';
+    lat?: number;
+    lng?: number;
+    county?: string;
+  };
 }) {
   const a = opts.area;
+  const areaType = a?.type ?? 'City';
   const areaServed = a
     ? {
-        '@type': 'City',
+        '@type': areaType,
         name: a.name,
         ...(a.lat != null && a.lng != null
           ? { geo: { '@type': 'GeoCoordinates', latitude: a.lat, longitude: a.lng } }
           : {}),
-        ...(a.county ? { containedInPlace: { '@type': 'AdministrativeArea', name: `${a.county} County, GA` } } : {}),
+        ...(a.county && areaType === 'City'
+          ? { containedInPlace: { '@type': 'AdministrativeArea', name: `${a.county} County, GA` } }
+          : {}),
       }
     : { '@type': 'City', name: `${site.contact.address.city}, ${site.contact.address.region}` };
   return {

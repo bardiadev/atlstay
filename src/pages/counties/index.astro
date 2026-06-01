@@ -1,0 +1,82 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import NeighborhoodCard from '@/components/ui/NeighborhoodCard.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { breadcrumbSchema, itemListSchema } from '@/lib/schema';
+import { assignCardStyles } from '@/lib/cardImage';
+import { counties } from '@/data/counties';
+
+const published = counties
+  .filter((c) => c.published)
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const styles = assignCardStyles(
+  published.map((c) => ({ slug: c.slug, region: 'metro' as const })),
+);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Areas We Serve', path: '/areas-we-serve/' },
+    { name: 'Counties', path: '/counties/' },
+  ]),
+  itemListSchema({
+    name: 'Georgia counties ATLStay serves',
+    items: published.map((c) => ({
+      name: `${c.name} County, ${c.state}`,
+      path: `/counties/${c.slug}/`,
+      description: c.tagline,
+    })),
+  }),
+];
+---
+
+<BaseLayout
+  title="Counties We Serve — Georgia Short-Term Rental Management"
+  description="ATLStay manages Airbnb and Vrbo properties across Georgia by county — Fulton, DeKalb, Cobb, Gwinnett, Cherokee, and beyond."
+  schemas={schemas}
+>
+  <PageHero
+    title="Vacation Rental Management by County"
+    subtitle="Georgia counties we manage short-term rentals across — each with its own demand mix, city portfolio, and regulatory landscape."
+    eyebrow="Counties we serve"
+    imageKey="atlantaSkyline"
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: 'Areas We Serve', path: '/areas-we-serve/' },
+      { name: 'Counties', path: '/counties/' },
+    ]}
+    cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
+    secondaryCta={{ label: 'All cities & neighborhoods', href: '/areas-we-serve/' }}
+    size="lg"
+  />
+
+  <Section variant="cream">
+    <Container size="wide">
+      <div class="mb-10 max-w-3xl">
+        <Eyebrow>Georgia coverage</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Counties ATLStay manages across</h2>
+        <p class="mt-4 text-ink/80">
+          Each county brings a distinctive short-term-rental market — anchored by its own employers, tourist draws, regulatory rules, and city portfolio. Click any county for local demand, regulations, and the cities we serve inside it.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {published.map((c, i) => (
+          <NeighborhoodCard
+            name={`${c.name} County`}
+            href={`/counties/${c.slug}/`}
+            gradient={styles[i].gradient}
+            icon={styles[i].icon}
+            blurb={c.tagline}
+          />
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand />
+</BaseLayout>
