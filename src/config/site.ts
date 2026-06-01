@@ -59,6 +59,11 @@ export const site = {
   forms: {
     web3formsKey: '3b77cc25-dd1c-48f9-b8bd-c30905d66335', // public client-side key — Web3Forms fallback inside the lead function
     projectionEndpoint: '/api/lead', // Cloudflare Function → branded Resend email (falls back to Web3Forms)
+    // Address autocomplete on the projection form. Get a free key (no credit
+    // card, 3,000/day) at https://www.geoapify.com → paste below. Strong US
+    // house-number coverage via OpenAddresses. BLANK = plain text field (always
+    // reliable; the visitor just types their address).
+    geoapifyKey: '',
   },
 
   // Real, owner-verified track record across the portfolio (10+ years).

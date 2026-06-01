@@ -184,7 +184,19 @@ export default function ProjectionForm() {
             What’s the address of your property?
           </h2>
           <p className="mt-2 text-sm text-ink/70">We’ll pull real, comparable Atlanta listings to build your projection.</p>
-          <AddressAutocomplete value={data.address} onChange={(v) => set({ address: v })} onEnter={next} />
+          {site.forms.geoapifyKey ? (
+            <AddressAutocomplete value={data.address} onChange={(v) => set({ address: v })} onEnter={next} />
+          ) : (
+            <input
+              type="text"
+              autoComplete="street-address"
+              className={`mt-5 ${inputCls}`}
+              placeholder="123 Peachtree St NE, Atlanta, GA"
+              value={data.address}
+              onChange={(e) => set({ address: e.target.value })}
+              onKeyDown={(e) => e.key === 'Enter' && next()}
+            />
+          )}
         </div>
       )}
 
@@ -355,9 +367,10 @@ export default function ProjectionForm() {
   );
 }
 
-// Free address autocomplete via Photon (komoot, OpenStreetMap) — no API key,
-// no signup, CORS-enabled. Biased to Atlanta. Degrades to plain typing if the
-// service is ever unreachable, so the field always works.
+// Address autocomplete via Geoapify (OpenAddresses + OSM — strong US
+// house-number coverage). Only mounted when site.forms.geoapifyKey is set;
+// otherwise the address step renders a plain text input. Biased to Atlanta,
+// filtered to the US. Degrades to plain typing if the service is unreachable.
 function AddressAutocomplete({
   value, onChange, onEnter,
 }: {
@@ -365,6 +378,7 @@ function AddressAutocomplete({
   onChange: (v: string) => void;
   onEnter: () => void;
 }) {
+  const GEOAPIFY_KEY = site.forms.geoapifyKey;
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
@@ -372,30 +386,30 @@ function AddressAutocomplete({
   const seq = useRef(0);
   const boxRef = useRef<HTMLDivElement>(null);
 
-  const format = (p: Record<string, string>): string => {
-    const line1 = [p.housenumber, p.street].filter(Boolean).join(' ') || p.name || '';
-    const city = p.city || p.town || p.village || p.locality || p.district || '';
-    const region = [p.state, p.postcode].filter(Boolean).join(' ');
+  const format = (r: Record<string, string>): string => {
+    const line1 = [r.housenumber, r.street].filter(Boolean).join(' ') || r.address_line1 || r.name || '';
+    const city = r.city || r.county || '';
+    const region = [r.state_code || r.state, r.postcode].filter(Boolean).join(' ');
     return [line1, city, region].filter(Boolean).join(', ');
   };
 
   const fetchSuggestions = (q: string) => {
-    if (q.trim().length < 4) {
+    if (q.trim().length < 3) {
       setSuggestions([]);
       setOpen(false);
       return;
     }
     const my = ++seq.current;
-    const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=6&lang=en&lat=33.749&lon=-84.388`;
+    const url =
+      `https://api.geoapify.com/v1/geocode/autocomplete?text=${encodeURIComponent(q)}` +
+      `&apiKey=${GEOAPIFY_KEY}&filter=countrycode:us&bias=proximity:-84.388,33.749&limit=6&format=json`;
     fetch(url)
       .then((r) => r.json())
       .then((data) => {
         if (my !== seq.current) return; // ignore stale responses
-        const feats = Array.isArray(data?.features) ? data.features : [];
-        const list = feats
-          .map((f: { properties: Record<string, string> }) => f.properties)
-          .filter((p: Record<string, string>) => !p.countrycode || String(p.countrycode).toUpperCase() === 'US')
-          .map(format)
+        const results = Array.isArray(data?.results) ? data.results : [];
+        const list = results
+          .map((r: Record<string, string>) => format(r))
           .filter((s: string, i: number, arr: string[]) => s && arr.indexOf(s) === i)
           .slice(0, 6);
         setSuggestions(list);
