@@ -91,4 +91,4 @@ Regulatory compliance is straightforward but required. Grant Park is in City of 
 
 ---
 
-*Interested in what your Grant Park home could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull genuine comparables from your area and give you an honest, comps-based picture with no pressure or obligation. Prefer a direct conversation? Call us at (678) 938-6413.*
+*Interested in what your Grant Park home could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull genuine comparables from your area and give you an honest, comps-based picture. Prefer a direct conversation? Call us at (678) 938-6413.*

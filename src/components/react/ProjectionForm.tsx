@@ -14,6 +14,7 @@ interface FormData {
   sqft: string;
   currentlyListed: Listed;
   platforms: string[];
+  listingUrl: string;
   monthsAvailable: string;
   priority: Priority;
   firstName: string;
@@ -24,7 +25,7 @@ interface FormData {
 
 const initial: FormData = {
   address: '', bedrooms: '', bathrooms: '', propertyType: '', sqft: '',
-  currentlyListed: '', platforms: [], monthsAvailable: '12', priority: '',
+  currentlyListed: '', platforms: [], listingUrl: '', monthsAvailable: '12', priority: '',
   firstName: '', email: '', phone: '', company: '',
 };
 
@@ -111,6 +112,7 @@ export default function ProjectionForm() {
           square_feet: data.sqft,
           currently_listed: data.currentlyListed === 'yes' ? 'Yes' : data.currentlyListed === 'no' ? 'No' : '',
           listed_on: data.platforms,
+          listing_url: data.listingUrl,
           months_available_per_year: data.monthsAvailable,
           owner_priority: priorityLabel,
         },
@@ -145,7 +147,7 @@ export default function ProjectionForm() {
         <p className="mx-auto mt-3 max-w-md text-ink/75">
           Thanks, {data.firstName || 'there'} — we’re pulling real comparable data for your
           {' '}{data.propertyType ? data.propertyType.toLowerCase() : 'home'} and will send your custom projection within
-          {' '}<strong className="text-forest">one business day</strong>. No sales call unless you want one.
+          {' '}<strong className="text-forest">one business day</strong>.
         </p>
         <p className="mt-6 text-sm text-stone">
           Questions now? Call{' '}
@@ -243,17 +245,28 @@ export default function ProjectionForm() {
             </div>
           </div>
           {data.currentlyListed === 'yes' && (
-            <div>
-              <span className="mb-2 block text-sm font-medium text-forest">Where is it listed?</span>
-              <div className="flex flex-wrap gap-2">
-                {platformOpts.map((p) => (
-                  <button key={p} type="button" onClick={() => togglePlatform(p)}
-                    className={`rounded-full border px-4 py-2 text-sm transition-colors ${
-                      data.platforms.includes(p) ? 'border-brass bg-brass-50 text-forest' : 'border-line text-ink/80 hover:border-brass/50'
-                    }`}>
-                    {p}
-                  </button>
-                ))}
+            <div className="space-y-4">
+              <div>
+                <span className="mb-2 block text-sm font-medium text-forest">Where is it listed?</span>
+                <div className="flex flex-wrap gap-2">
+                  {platformOpts.map((p) => (
+                    <button key={p} type="button" onClick={() => togglePlatform(p)}
+                      className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                        data.platforms.includes(p) ? 'border-brass bg-brass-50 text-forest' : 'border-line text-ink/80 hover:border-brass/50'
+                      }`}>
+                      {p}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label htmlFor="listingUrl" className="mb-2 block text-sm font-medium text-forest">
+                  Listing link <span className="font-normal text-stone">(optional)</span>
+                </label>
+                <input id="listingUrl" type="url" inputMode="url" autoComplete="off"
+                  className={inputCls} placeholder="https://airbnb.com/rooms/… · Vrbo · Booking.com"
+                  value={data.listingUrl} onChange={(e) => set({ listingUrl: e.target.value })} />
+                <p className="mt-1.5 text-xs text-stone">Paste your Airbnb, Vrbo, or Booking.com link and we’ll review your live listing.</p>
               </div>
             </div>
           )}
@@ -305,7 +318,7 @@ export default function ProjectionForm() {
             className="absolute left-[-9999px] h-0 w-0 opacity-0" value={data.company}
             onChange={(e) => set({ company: e.target.value })} />
           <p className="text-xs leading-relaxed text-stone">
-            No sales pitch. Just honest Atlanta data. No obligation — ever. We’ll reply within one business day.
+            We’ll reply within one business day with your custom projection.
           </p>
         </div>
       )}

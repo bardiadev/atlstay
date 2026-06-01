@@ -101,4 +101,4 @@ Professional management handles guide maintenance as part of the operational cad
 
 ---
 
-*Ready to see what a professionally managed Atlanta property could earn? [Get a free rental projection from ATLStay](/rental-projection/) — it's based on real comps for your address, takes a few minutes, and comes with no sales pitch. Or call us directly at (678) 938-6413.*
+*Ready to see what a professionally managed Atlanta property could earn? [Get a free rental projection from ATLStay](/rental-projection/) — it's based on real comps for your address and takes a few minutes. Or call us directly at (678) 938-6413.*

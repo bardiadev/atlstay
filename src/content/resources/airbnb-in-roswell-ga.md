@@ -93,4 +93,4 @@ See how [ATLStay approaches pricing strategy](/pricing/) and the broader [servic
 
 ---
 
-*Want an honest look at what your Roswell property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — real comps for your specific address, no sales pressure. Prefer to talk through the details? Call us at (678) 938-6413.*
+*Want an honest look at what your Roswell property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — real comps for your specific address. Prefer to talk through the details? Call us at (678) 938-6413.*

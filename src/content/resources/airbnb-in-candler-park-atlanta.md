@@ -84,4 +84,4 @@ On regulation: Candler Park falls within Atlanta's short-term rental licensing f
 
 ---
 
-*Curious what your Candler Park property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps for your specific property type and location and give you a straightforward, honest picture with no pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Curious what your Candler Park property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps for your specific property type and location and give you a straightforward, honest picture. Prefer to talk it through? Call us at (678) 938-6413.*

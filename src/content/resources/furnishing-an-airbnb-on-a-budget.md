@@ -88,4 +88,4 @@ If you're working through the numbers on a new property and want to understand t
 
 ---
 
-*Ready to see what your Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address, no sales pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Ready to see what your Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address. Prefer to talk it through? Call us at (678) 938-6413.*

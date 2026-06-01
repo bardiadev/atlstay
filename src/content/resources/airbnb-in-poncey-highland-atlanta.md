@@ -78,4 +78,4 @@ On regulation: Poncey-Highland is within the City of Atlanta's short-term rental
 
 ---
 
-*Ready to find out what your Poncey-Highland property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture with no sales pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Ready to find out what your Poncey-Highland property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture. Prefer to talk it through? Call us at (678) 938-6413.*

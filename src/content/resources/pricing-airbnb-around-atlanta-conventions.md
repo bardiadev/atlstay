@@ -81,4 +81,4 @@ For a realistic read on what your Atlanta property could earn, accounting for th
 
 ---
 
-*Ready to stop guessing and start capturing what your Atlanta property can actually earn during convention season? [Request a free rental projection](/rental-projection/) — no commitment, no sales pressure, just a comps-based picture of your realistic earnings. Or call us directly at (678) 938-6413.*
+*Ready to stop guessing and start capturing what your Atlanta property can actually earn during convention season? [Request a free rental projection](/rental-projection/) — no commitment, just a comps-based picture of your realistic earnings. Or call us directly at (678) 938-6413.*

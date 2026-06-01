@@ -18,7 +18,7 @@ const projectionFaqs = [
   },
   {
     q: 'Is there any cost or obligation?',
-    a: 'Zero cost, zero obligation. We provide the projection as a free service because we believe in earning your trust with honest information first. There\'s no sales call, no follow-up pressure, and no obligation to use ATLStay. If the numbers are compelling and you want to talk, we\'re here.',
+    a: 'Zero cost, zero obligation. We provide the projection as a free service because we believe in earning your trust with honest information first. Getting your projection doesn\'t commit you to using ATLStay in any way. If the numbers are compelling and you want to talk, we\'re here.',
   },
   {
     q: 'What information do you use to build the projection?',
@@ -49,14 +49,14 @@ const whatHappensNext = [
   },
   {
     title: 'If you\'re interested, we talk — on your terms',
-    text: 'If the numbers look good and you want to learn more, you can schedule a no-pressure call. We\'ll walk through the numbers, answer every question, and let you decide at your own pace.',
+    text: 'If the numbers look good and you want to learn more, you can schedule a call. We\'ll walk through the numbers, answer every question, and let you decide at your own pace.',
   },
 ];
 
 const objectionBlocks = [
   {
     icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
-    heading: 'No sales pitch. Just honest numbers.',
+    heading: 'Just honest numbers.',
     body: 'We deliver real, comps-based data — not a rosy estimate engineered to close a deal. If your home isn\'t a strong fit for short-term rental, we\'ll tell you that too.',
   },
   {
@@ -66,7 +66,7 @@ const objectionBlocks = [
   },
   {
     icon: 'M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z',
-    heading: 'No obligation — ever.',
+    heading: 'No obligation.',
     body: 'Getting your projection doesn\'t start a contract, trigger a follow-up call, or commit you to anything. It\'s free information to help you make a great decision.',
   },
 ];
@@ -108,7 +108,7 @@ const schemas = [
             {[
               'Real Atlanta neighborhood comps — not national averages',
               'Delivered by a local team member, not a calculator',
-              'No sales pitch. No obligation. No spam.',
+              'No obligation. No spam.',
               'Your projection in one business day',
             ].map((item) => (
               <li class="flex items-start gap-3 text-sm text-ink/75">
@@ -147,7 +147,7 @@ const schemas = [
         <div class="lg:sticky lg:top-8">
           <ProjectionForm client:load />
           <p class="mt-4 text-center text-xs text-stone">
-            Free. No obligation. No sales call unless you want one.
+            Free. No obligation. Delivered within one business day.
           </p>
         </div>
 
@@ -205,7 +205,7 @@ const schemas = [
         <div>
           <Eyebrow>What happens after you submit</Eyebrow>
           <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-            Three steps. No surprises. No pressure.
+            Three steps. No surprises.
           </h2>
           <p class="mt-4 leading-relaxed text-ink/75">
             Here's exactly what happens when you fill out the form — so there's nothing to wonder about.
@@ -274,7 +274,7 @@ const schemas = [
             Find out what your home could earn — in one business day.
           </h2>
           <p class="mt-4 text-lg text-cream/75">
-            A custom, comps-based projection from our Atlanta team. No algorithm. No sales pressure. Just honest numbers so you can make the best decision for your home.
+            A custom, comps-based projection from our Atlanta team. No algorithm — just honest numbers so you can make the best decision for your home.
           </p>
           <ul class="mt-6 space-y-2 text-sm text-cream/70">
             <li class="flex items-center gap-2">
@@ -287,7 +287,7 @@ const schemas = [
             </li>
             <li class="flex items-center gap-2">
               <span class="h-1.5 w-1.5 rounded-full bg-brass" />
-              No obligation. No sales call unless you want one.
+              No obligation to work with us.
             </li>
           </ul>
         </div>

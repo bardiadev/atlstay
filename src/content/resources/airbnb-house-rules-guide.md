@@ -99,4 +99,4 @@ If you're thinking about your property's overall positioning and what makes gues
 
 ---
 
-*Want to know what your Atlanta property could realistically earn with a professionally managed setup? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, no sales pressure. Prefer to talk? Call us at (678) 938-6413.*
+*Want to know what your Atlanta property could realistically earn with a professionally managed setup? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based. Prefer to talk? Call us at (678) 938-6413.*

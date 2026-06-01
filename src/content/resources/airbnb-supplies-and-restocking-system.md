@@ -91,4 +91,4 @@ The [services ATLStay provides](/services/) are built around this kind of operat
 
 ---
 
-*Curious what professional operations management could do for your Atlanta property's performance? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest numbers, no pressure. Or call us directly at (678) 938-6413.*
+*Curious what professional operations management could do for your Atlanta property's performance? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest numbers. Or call us directly at (678) 938-6413.*

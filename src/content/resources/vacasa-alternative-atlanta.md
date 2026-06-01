@@ -82,4 +82,4 @@ The honest answer is that the right manager depends on your property type, your 
 
 ---
 
-*Ready to see what your Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, honest, and no sales pressure. Prefer to talk through your options directly? Call us at (678) 938-6413.*
+*Ready to see what your Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based and honest. Prefer to talk through your options directly? Call us at (678) 938-6413.*

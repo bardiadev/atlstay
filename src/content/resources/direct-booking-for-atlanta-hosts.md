@@ -85,4 +85,4 @@ ATLStay manages direct booking channels alongside OTA listings as part of full-s
 
 ---
 
-*Want to see what your Atlanta property could realistically earn across OTA and direct channels? [Get a free rental projection from ATLStay](/rental-projection/) — we'll give you comps-based estimates with no sales pressure. Or call us directly at (678) 938-6413.*
+*Want to see what your Atlanta property could realistically earn across OTA and direct channels? [Get a free rental projection from ATLStay](/rental-projection/) — we'll give you comps-based estimates. Or call us directly at (678) 938-6413.*

@@ -85,4 +85,4 @@ See which Atlanta neighborhoods and properties are positioned best in our [best 
 
 ---
 
-*Curious what your property could earn on Atlanta Pride weekend and across the full year? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest numbers, no pressure. Or call us directly at (678) 938-6413.*
+*Curious what your property could earn on Atlanta Pride weekend and across the full year? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest numbers. Or call us directly at (678) 938-6413.*

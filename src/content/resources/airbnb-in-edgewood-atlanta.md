@@ -80,4 +80,4 @@ On regulation: Edgewood is within the City of Atlanta's short-term rental licens
 
 ---
 
-*Want to know what your Edgewood property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull actual comparables for your address and give you an honest, data-backed picture with no pressure. Prefer to call? Reach us at (678) 938-6413.*
+*Want to know what your Edgewood property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull actual comparables for your address and give you an honest, data-backed picture. Prefer to call? Reach us at (678) 938-6413.*

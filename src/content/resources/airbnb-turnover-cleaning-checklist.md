@@ -90,4 +90,4 @@ ATLStay's [full-service management](/services/) includes property-specific turno
 
 ---
 
-*Curious what your Atlanta property could realistically earn with consistent, hotel-grade turnover management? [Get a free rental projection from ATLStay](/rental-projection/) — no sales pitch, just real comps for your address. Or call us directly at (678) 938-6413.*
+*Curious what your Atlanta property could realistically earn with consistent, hotel-grade turnover management? [Get a free rental projection from ATLStay](/rental-projection/) — just real comps for your address. Or call us directly at (678) 938-6413.*

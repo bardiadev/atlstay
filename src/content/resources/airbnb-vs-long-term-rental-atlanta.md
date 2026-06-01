@@ -84,4 +84,4 @@ If you're converting a long-term rental to short-term, confirm the rules first. 
 
 ---
 
-*Want the short-term side of your comparison? [Get a free rental projection from ATLStay](/rental-projection/) — a real, comps-based estimate of what your Atlanta home could earn on Airbnb and Vrbo. No sales pressure, no obligation. Prefer to talk it through? Call (678) 938-6413.*
+*Want the short-term side of your comparison? [Get a free rental projection from ATLStay](/rental-projection/) — a real, comps-based estimate of what your Atlanta home could earn on Airbnb and Vrbo. Prefer to talk it through? Call (678) 938-6413.*

@@ -83,4 +83,4 @@ For a side-by-side look at how ATLStay compares to national management platforms
 
 ---
 
-*Want to see what your Atlanta property could realistically earn under professional local management? [Get a free rental projection from ATLStay](/rental-projection/) — honest comps, no sales pressure. Prefer a conversation first? Call us at (678) 938-6413.*
+*Want to see what your Atlanta property could realistically earn under professional local management? [Get a free rental projection from ATLStay](/rental-projection/) — honest comps. Prefer a conversation first? Call us at (678) 938-6413.*

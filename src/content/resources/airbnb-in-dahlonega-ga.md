@@ -94,4 +94,4 @@ Explore our [areas we serve](/areas-we-serve/) to see the full range of North Ge
 
 ---
 
-*Curious what your Dahlonega property could realistically earn across fall peak and the full year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest revenue picture with no pressure. Prefer to talk it through? Call (678) 938-6413.*
+*Curious what your Dahlonega property could realistically earn across fall peak and the full year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest revenue picture. Prefer to talk it through? Call (678) 938-6413.*

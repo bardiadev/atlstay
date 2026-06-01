@@ -88,4 +88,4 @@ The honest starting point is a comps-based view of what comparable properties in
 
 ---
 
-*Curious what your Sandy Springs property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your address and give you an honest picture with no sales pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Curious what your Sandy Springs property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your address and give you an honest picture. Prefer to talk it through? Call us at (678) 938-6413.*

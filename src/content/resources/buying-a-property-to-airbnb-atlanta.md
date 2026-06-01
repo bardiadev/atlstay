@@ -98,4 +98,4 @@ The [Airbnb vs. long-term rental Atlanta comparison](/resources/airbnb-vs-long-t
 
 ---
 
-*Evaluating a specific Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) before you close — we'll pull comps for the exact address and give you a realistic revenue range with no sales pressure. Prefer a direct conversation? Call (678) 938-6413.*
+*Evaluating a specific Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) before you close — we'll pull comps for the exact address and give you a realistic revenue range. Prefer a direct conversation? Call (678) 938-6413.*

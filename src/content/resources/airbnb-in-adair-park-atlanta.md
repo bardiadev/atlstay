@@ -78,4 +78,4 @@ On regulation: Adair Park falls within the City of Atlanta's short-term rental l
 
 ---
 
-*Curious what your Adair Park property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based number with no sales pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Curious what your Adair Park property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based number. Prefer to talk it through? Call us at (678) 938-6413.*

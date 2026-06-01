@@ -101,4 +101,4 @@ If your listing is underperforming relative to comparable properties — or if y
 
 ---
 
-*Curious what your property could earn with a fully optimized listing and professional management? [Get a free rental projection from ATLStay](/rental-projection/) — we'll give you a comps-based estimate with no sales pressure. You can also reach us directly at (678) 938-6413.*
+*Curious what your property could earn with a fully optimized listing and professional management? [Get a free rental projection from ATLStay](/rental-projection/) — we'll give you a comps-based estimate. You can also reach us directly at (678) 938-6413.*

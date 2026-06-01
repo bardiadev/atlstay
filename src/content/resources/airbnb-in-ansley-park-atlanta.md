@@ -82,4 +82,4 @@ On regulation: Ansley Park is within the City of Atlanta's short-term rental lic
 
 ---
 
-*Want to know what your Ansley Park property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your specific address and give you an honest picture with no sales pressure. Rather talk it through? Call us at (678) 938-6413.*
+*Want to know what your Ansley Park property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your specific address and give you an honest picture. Rather talk it through? Call us at (678) 938-6413.*

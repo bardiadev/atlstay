@@ -91,4 +91,4 @@ Revenue optimization is covered in more depth in our [Airbnb management cost gui
 
 ---
 
-*Want to see what your Atlanta property could realistically earn with a calibrated pricing strategy in place? [Get a free rental projection from ATLStay](/rental-projection/) — built from real comps for your specific address, with no sales pressure. Or call us directly at (678) 938-6413.*
+*Want to see what your Atlanta property could realistically earn with a calibrated pricing strategy in place? [Get a free rental projection from ATLStay](/rental-projection/) — built from real comps for your specific address,. Or call us directly at (678) 938-6413.*

@@ -90,4 +90,4 @@ The honest first step is a comps-based picture of what comparable Marietta prope
 
 ---
 
-*Ready to see what your Marietta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — real comps for your address, no sales pressure, no generic estimates. Rather talk it through? Call us at (678) 938-6413.*
+*Ready to see what your Marietta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — real comps for your address, no generic estimates. Rather talk it through? Call us at (678) 938-6413.*

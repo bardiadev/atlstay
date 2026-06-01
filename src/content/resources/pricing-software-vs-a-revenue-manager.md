@@ -80,4 +80,4 @@ The most reliable way to calibrate this conversation for your specific property 
 
 ---
 
-*Want to see what your Atlanta property could realistically earn with a managed revenue approach? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest numbers, no sales pressure. Or call us directly at (678) 938-6413.*
+*Want to see what your Atlanta property could realistically earn with a managed revenue approach? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest numbers. Or call us directly at (678) 938-6413.*

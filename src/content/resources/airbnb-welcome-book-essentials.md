@@ -82,4 +82,4 @@ If you're thinking through the full picture of what drives five-star outcomes, t
 
 ---
 
-*Wondering what your Atlanta Airbnb could realistically earn with professional management in place? [Get a free rental projection from ATLStay](/rental-projection/) — based on actual comparable listings, no pressure. Or reach us directly at (678) 938-6413.*
+*Wondering what your Atlanta Airbnb could realistically earn with professional management in place? [Get a free rental projection from ATLStay](/rental-projection/) — based on actual comparable listings. Or reach us directly at (678) 938-6413.*

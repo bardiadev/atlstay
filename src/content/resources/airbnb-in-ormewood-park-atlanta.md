@@ -78,4 +78,4 @@ On permits: Ormewood Park is within the City of Atlanta, and the city's short-te
 
 ---
 
-*Curious what your Ormewood Park home could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your specific address and give you an honest, comps-based range with no pressure. Prefer to talk first? Call us at (678) 938-6413.*
+*Curious what your Ormewood Park home could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your specific address and give you an honest, comps-based range. Prefer to talk first? Call us at (678) 938-6413.*

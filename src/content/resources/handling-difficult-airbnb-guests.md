@@ -96,4 +96,4 @@ If you're weighing the value of that kind of infrastructure, our [management ser
 
 ---
 
-*Curious what your Atlanta property could earn with professional management handling the hard parts? [Request a free rental projection from ATLStay](/rental-projection/) — comps-based, no sales pressure. Or call us directly at (678) 938-6413.*
+*Curious what your Atlanta property could earn with professional management handling the hard parts? [Request a free rental projection from ATLStay](/rental-projection/) — comps-based. Or call us directly at (678) 938-6413.*

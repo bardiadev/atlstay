@@ -94,4 +94,4 @@ Strong demand doesn't override the rules. Atlanta requires a short-term rental l
 
 ---
 
-*Wondering which Atlanta neighborhood — and which property — would perform best for you? [Get a free rental projection from ATLStay](/rental-projection/). We'll pull real comparable listings for your specific area and give you an honest, comps-based picture. No sales pressure, no obligation. Prefer to talk it through? Call us at (678) 938-6413.*
+*Wondering which Atlanta neighborhood — and which property — would perform best for you? [Get a free rental projection from ATLStay](/rental-projection/). We'll pull real comparable listings for your specific area and give you an honest, comps-based picture. Prefer to talk it through? Call us at (678) 938-6413.*

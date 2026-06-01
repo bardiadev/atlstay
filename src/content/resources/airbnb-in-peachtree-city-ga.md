@@ -87,4 +87,4 @@ You can also see how Peachtree City fits into our broader [service footprint acr
 
 ---
 
-*Curious what your Peachtree City home could earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we use real comparable listings in the area to give you an honest, comps-based picture with no sales pressure. Prefer to talk it through first? Call (678) 938-6413.*
+*Curious what your Peachtree City home could earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we use real comparable listings in the area to give you an honest, comps-based picture. Prefer to talk it through first? Call (678) 938-6413.*

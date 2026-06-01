@@ -90,4 +90,4 @@ The [services ATLStay provides](/services/) include the full management approach
 
 ---
 
-*Want to know what your Morningside property could realistically earn — including across the Piedmont Park festival calendar? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest, comps-based picture with no pressure. Or call us directly at (678) 938-6413.*
+*Want to know what your Morningside property could realistically earn — including across the Piedmont Park festival calendar? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest, comps-based picture. Or call us directly at (678) 938-6413.*

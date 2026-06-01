@@ -103,4 +103,4 @@ If you're evaluating whether a DeKalb County property makes financial sense as a
 
 ---
 
-*Questions about running a short-term rental in DeKalb County or the broader Atlanta area? [Request a free rental projection from ATLStay](/rental-projection/) — we'll give you an honest, comps-based revenue estimate with no pressure. You can also reach us directly at (678) 938-6413.*
+*Questions about running a short-term rental in DeKalb County or the broader Atlanta area? [Request a free rental projection from ATLStay](/rental-projection/) — we'll give you an honest, comps-based revenue estimate. You can also reach us directly at (678) 938-6413.*

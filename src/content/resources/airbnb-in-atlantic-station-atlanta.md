@@ -78,4 +78,4 @@ On regulation: all properties in Atlantic Station fall under Atlanta's short-ter
 
 ---
 
-*Curious what your Atlantic Station property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps for your specific building and unit type and give you an honest picture with no pressure. Prefer a conversation? Call us at (678) 938-6413.*
+*Curious what your Atlantic Station property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps for your specific building and unit type and give you an honest picture. Prefer a conversation? Call us at (678) 938-6413.*

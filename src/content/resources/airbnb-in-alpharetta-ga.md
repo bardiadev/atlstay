@@ -82,4 +82,4 @@ For owners who want to participate in the upside without managing the day-to-day
 
 ---
 
-*Curious what your Alpharetta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your specific address and walk you through an honest, comps-based range with no sales pressure. Prefer to talk first? Call us at (678) 938-6413.*
+*Curious what your Alpharetta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your specific address and walk you through an honest, comps-based range. Prefer to talk first? Call us at (678) 938-6413.*

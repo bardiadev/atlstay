@@ -86,4 +86,4 @@ For a broader look at running a compliant and profitable listing in Atlanta, see
 
 ---
 
-*Ready to understand what your Atlanta property could earn after taxes and expenses? [Get a free rental projection from ATLStay](/rental-projection/) — real comps for your address, no sales pressure. Questions? Call us at (678) 938-6413.*
+*Ready to understand what your Atlanta property could earn after taxes and expenses? [Get a free rental projection from ATLStay](/rental-projection/) — real comps for your address. Questions? Call us at (678) 938-6413.*

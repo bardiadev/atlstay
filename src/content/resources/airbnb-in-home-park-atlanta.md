@@ -86,4 +86,4 @@ The [services ATLStay provides](/services/) include managing the calendar strate
 
 ---
 
-*Want to see what your Home Park property could realistically earn across a full Georgia Tech calendar year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull actual comparable data for your address and give you an honest estimate with no pressure. Or call us at (678) 938-6413.*
+*Want to see what your Home Park property could realistically earn across a full Georgia Tech calendar year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull actual comparable data for your address and give you an honest estimate. Or call us at (678) 938-6413.*

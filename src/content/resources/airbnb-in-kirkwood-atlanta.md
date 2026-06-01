@@ -76,4 +76,4 @@ On regulation: Kirkwood is within the City of Atlanta's short-term rental licens
 
 ---
 
-*Want to know what your Kirkwood property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture with no sales pressure. Prefer to talk first? Call us at (678) 938-6413.*
+*Want to know what your Kirkwood property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture. Prefer to talk first? Call us at (678) 938-6413.*

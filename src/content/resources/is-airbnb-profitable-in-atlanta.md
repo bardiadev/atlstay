@@ -89,4 +89,4 @@ The single most useful data point before committing is a realistic projection ba
 
 ---
 
-*Want to see what your specific Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your address and give you an honest picture with no sales pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Want to see what your specific Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your address and give you an honest picture. Prefer to talk it through? Call us at (678) 938-6413.*

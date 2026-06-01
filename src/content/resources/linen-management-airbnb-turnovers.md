@@ -95,4 +95,4 @@ If you're evaluating whether professional management makes sense for your proper
 
 ---
 
-*Want to see what your Atlanta property could earn with professional operations behind it? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest analysis, no sales pressure. Or call us at (678) 938-6413.*
+*Want to see what your Atlanta property could earn with professional operations behind it? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest analysis. Or call us at (678) 938-6413.*

@@ -83,4 +83,4 @@ For further reading on operating a compliant Atlanta STR, our [Atlanta short-ter
 
 ---
 
-*Curious what your Atlanta property could earn as a properly-run short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — honest, comps-based estimates with no pressure. Or call us directly at (678) 938-6413.*
+*Curious what your Atlanta property could earn as a properly-run short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — honest, comps-based estimates. Or call us directly at (678) 938-6413.*

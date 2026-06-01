@@ -107,4 +107,4 @@ If you're weighing self-management against professional management, our [Airbnb 
 
 ---
 
-*Want a realistic, comps-based projection of what your Atlanta property could earn before you launch? [Get a free rental projection from ATLStay](/rental-projection/) — no sales pressure, just honest numbers based on comparable listings in your area. Prefer to talk through where to start? Call us at (678) 938-6413.*
+*Want a realistic, comps-based projection of what your Atlanta property could earn before you launch? [Get a free rental projection from ATLStay](/rental-projection/) — honest numbers based on comparable listings in your area. Prefer to talk through where to start? Call us at (678) 938-6413.*

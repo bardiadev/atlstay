@@ -98,4 +98,4 @@ If you want to understand what your specific property might realistically earn a
 
 ---
 
-*Ready to see what your Atlanta property could earn during college football season and beyond? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your specific address with no sales pressure. Questions? Call us at (678) 938-6413.*
+*Ready to see what your Atlanta property could earn during college football season and beyond? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your specific address. Questions? Call us at (678) 938-6413.*

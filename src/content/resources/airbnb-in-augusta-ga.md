@@ -95,4 +95,4 @@ The starting point is accurate data. Get a projection based on real comparable l
 
 ---
 
-*Want to see what your Augusta property could realistically earn across Masters week and the full year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comp data for your address and give you an honest picture with no pressure. Prefer to talk through the Augusta market directly? Call us at (678) 938-6413.*
+*Want to see what your Augusta property could realistically earn across Masters week and the full year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comp data for your address and give you an honest picture. Prefer to talk through the Augusta market directly? Call us at (678) 938-6413.*

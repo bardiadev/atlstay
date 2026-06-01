@@ -83,4 +83,4 @@ ATLStay's [full management services](/services/) include dynamic pricing, guest 
 
 ---
 
-*Curious what your Vinings property could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we use real comparable listings for your address to give you an honest range with no sales pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Curious what your Vinings property could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we use real comparable listings for your address to give you an honest range. Prefer to talk it through? Call us at (678) 938-6413.*

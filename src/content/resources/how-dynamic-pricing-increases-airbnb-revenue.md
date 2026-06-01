@@ -84,4 +84,4 @@ Every one of these is a fixable, recurring leak.
 
 ---
 
-*Curious what daily, professionally-managed pricing could do for your property? [Get a free rental projection from ATLStay](/rental-projection/) — a real, comps-based estimate built from comparable Atlanta listings. No sales pressure, no obligation. Prefer to talk it through? Call (678) 938-6413.*
+*Curious what daily, professionally-managed pricing could do for your property? [Get a free rental projection from ATLStay](/rental-projection/) — a real, comps-based estimate built from comparable Atlanta listings. Prefer to talk it through? Call (678) 938-6413.*

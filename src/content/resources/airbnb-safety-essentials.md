@@ -87,4 +87,4 @@ Your property's earning potential starts with guests feeling safe and cared for.
 
 ---
 
-*Ready to see what your Atlanta property could realistically earn with professional management behind it? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, no pressure, no obligation. Prefer to talk through your setup? Call us at (678) 938-6413.*
+*Ready to see what your Atlanta property could realistically earn with professional management behind it? [Get a free rental projection from ATLStay](/rental-projection/) — real comps. Prefer to talk through your setup? Call us at (678) 938-6413.*

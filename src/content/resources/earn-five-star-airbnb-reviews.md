@@ -82,4 +82,4 @@ If you want to understand what your property's earning potential actually looks 
 
 ---
 
-*Ready to see what your Atlanta property could earn under professional management? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, no pressure. Or call us directly at (678) 938-6413 to talk through your specific property.*
+*Ready to see what your Atlanta property could earn under professional management? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based. Or call us directly at (678) 938-6413 to talk through your specific property.*

@@ -126,4 +126,4 @@ The answers to these questions tell you far more than the headline rate.
 
 ---
 
-*Thinking about handing off your Atlanta property? [Get a free rental projection](/rental-projection/) — no sales pitch, just honest data on what your home could earn.*
+*Thinking about handing off your Atlanta property? [Get a free rental projection](/rental-projection/) — just honest data on what your home could earn.*

@@ -97,4 +97,4 @@ For more on the operating and regulatory environment for Atlanta hosts, our [Atl
 
 ---
 
-*Curious what your Atlanta property could realistically earn before factoring in expenses? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address with no sales pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Curious what your Atlanta property could realistically earn before factoring in expenses? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address. Prefer to talk it through? Call us at (678) 938-6413.*

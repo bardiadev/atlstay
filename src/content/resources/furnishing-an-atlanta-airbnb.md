@@ -89,4 +89,4 @@ Once your property is set up, a professional management partner handles the ongo
 
 ---
 
-*Ready to see what your Atlanta rental property could realistically earn before you furnish it? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address and give you an honest range with no sales pressure. Prefer to talk it through? Call us at (678) 938-6413.*
+*Ready to see what your Atlanta rental property could realistically earn before you furnish it? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address and give you an honest range. Prefer to talk it through? Call us at (678) 938-6413.*

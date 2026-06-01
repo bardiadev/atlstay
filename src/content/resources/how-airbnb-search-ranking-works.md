@@ -96,4 +96,4 @@ That's ultimately what professional management addresses: not a hack to game a s
 
 ---
 
-*Curious what your Atlanta property could realistically earn with properly managed listing performance? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, no pressure. Or call us directly at (678) 938-6413.*
+*Curious what your Atlanta property could realistically earn with properly managed listing performance? [Get a free rental projection from ATLStay](/rental-projection/) — real comps. Or call us directly at (678) 938-6413.*

@@ -91,4 +91,4 @@ For Atlanta owners who want to understand where their property sits relative to 
 
 ---
 
-*Want to see what your Atlanta property could realistically earn with a properly calibrated pricing strategy? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, address-specific, no pressure. Or reach us directly at (678) 938-6413.*
+*Want to see what your Atlanta property could realistically earn with a properly calibrated pricing strategy? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, address-specific. Or reach us directly at (678) 938-6413.*

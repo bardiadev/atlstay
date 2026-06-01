@@ -83,4 +83,4 @@ For owners who want to turn a compliant property into a well-run, high-performin
 
 ---
 
-*Have a compliant property and want to know what it could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — real comparable data for your address, no pressure. You can also reach us directly at (678) 938-6413.*
+*Have a compliant property and want to know what it could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — real comparable data for your address. You can also reach us directly at (678) 938-6413.*

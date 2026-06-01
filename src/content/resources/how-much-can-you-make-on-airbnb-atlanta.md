@@ -93,4 +93,4 @@ Understanding what goes into full-service [Airbnb management](/services/) is the
 
 ---
 
-*Ready to see what your Atlanta property could realistically earn? [Get a free, comps-based rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address and give you an honest range, no sales pressure. Prefer to talk through it first? Call us at (678) 938-6413.*
+*Ready to see what your Atlanta property could realistically earn? [Get a free, comps-based rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address and give you an honest range. Prefer to talk through it first? Call us at (678) 938-6413.*

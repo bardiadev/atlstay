@@ -92,4 +92,4 @@ To understand what this season realistically looks like for your specific proper
 
 ---
 
-*Want to know what your Atlanta property could realistically earn this holiday season? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your specific address and walk through the seasonal picture with no sales pressure. Prefer to talk? Call us at (678) 938-6413.*
+*Want to know what your Atlanta property could realistically earn this holiday season? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your specific address and walk through the seasonal picture. Prefer to talk? Call us at (678) 938-6413.*

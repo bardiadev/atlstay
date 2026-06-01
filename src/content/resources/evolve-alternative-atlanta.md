@@ -85,4 +85,4 @@ If you're comparing these options specifically, our [Evolve alternative comparis
 
 ---
 
-*Curious what full-service management would actually net you on your Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest numbers, no pressure. Or call us directly at (678) 938-6413.*
+*Curious what full-service management would actually net you on your Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — real comps, honest numbers. Or call us directly at (678) 938-6413.*

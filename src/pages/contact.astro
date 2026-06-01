@@ -29,13 +29,13 @@ const serviceAreaNeighborhoods = [
 
 <BaseLayout
   title="Contact ATLStay — Atlanta STR Management"
-  description={`Reach the ATLStay team at ${site.contact.phone} or ${site.contact.email}. We manage short-term rentals across Atlanta and metro neighborhoods. No sales pitch — just honest answers.`}
+  description={`Reach the ATLStay team at ${site.contact.phone} or ${site.contact.email}. We manage short-term rentals across Atlanta and metro neighborhoods. Just honest answers about your property.`}
   schemas={schemas}
 >
 
   <PageHero
     title="Contact ATLStay — Atlanta STR Management"
-    subtitle="Ready to get started or just have questions? We're easy to reach and we don't do sales calls — just honest conversations about your property."
+    subtitle="Ready to get started or just have questions? We're easy to reach — just honest conversations about your property."
     eyebrow="GET IN TOUCH"
     imageKey="atlantaSkyline"
     breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact/' }]}
@@ -222,7 +222,7 @@ const serviceAreaNeighborhoods = [
           <!-- Success / error state (handled by inline script below) -->
           <div id="contact-success" class="hidden mt-8 rounded-2xl bg-forest-50 p-6">
             <h3 class="font-display text-lg text-forest">Message received. Thank you.</h3>
-            <p class="mt-2 text-sm text-ink/75">We'll get back to you within one business day. No sales call unless you want one.</p>
+            <p class="mt-2 text-sm text-ink/75">We'll get back to you within one business day.</p>
           </div>
           <div id="contact-error" class="hidden mt-4 rounded-xl bg-red-50 p-4">
             <p class="text-sm text-red-700">Something went wrong sending your message. Please email us directly at <a href={`mailto:${site.contact.email}`} class="underline">{site.contact.email}</a> or call <a href={site.contact.phoneHref} class="underline">{site.contact.phone}</a>.</p>
@@ -246,8 +246,8 @@ const serviceAreaNeighborhoods = [
           <p class="mt-2 text-sm text-ink/70">Every decision we make is oriented toward owner outcomes. You're not a property number in our system — you're a partner we're genuinely invested in.</p>
         </Card>
         <Card>
-          <h3 class="font-display text-lg text-forest">No pressure, ever</h3>
-          <p class="mt-2 text-sm text-ink/70">We hate pushy sales calls. Ask us anything — about our process, our fee, our results — and you'll get a straight answer, not a pitch.</p>
+          <h3 class="font-display text-lg text-forest">Straight answers</h3>
+          <p class="mt-2 text-sm text-ink/70">Ask us anything — about our process, our fee, our results — and you'll get a straight, honest answer.</p>
         </Card>
       </div>
     </Container>

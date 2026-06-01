@@ -88,4 +88,4 @@ If you want to understand what your specific Lake Lanier property could realisti
 
 ---
 
-*Want to know what your Lake Lanier property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, specific to your property, no pressure. Prefer to talk through the lake market directly? Call us at (678) 938-6413.*
+*Want to know what your Lake Lanier property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, specific to your property. Prefer to talk through the lake market directly? Call us at (678) 938-6413.*

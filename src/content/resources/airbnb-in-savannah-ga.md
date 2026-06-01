@@ -91,4 +91,4 @@ For owners who don't live in Savannah or don't want to manage day-to-day operati
 
 ---
 
-*Want to know what your Savannah property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture with no sales pressure. Prefer to talk through your situation? Call us at (678) 938-6413.*
+*Want to know what your Savannah property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture. Prefer to talk through your situation? Call us at (678) 938-6413.*

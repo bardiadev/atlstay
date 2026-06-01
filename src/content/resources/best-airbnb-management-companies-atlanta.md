@@ -108,4 +108,4 @@ For context on how ATLStay approaches management, visit our [how it works](/how-
 
 ---
 
-*Ready to see what your Atlanta property could realistically earn under professional management? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, no sales pressure, no obligation. Prefer to talk it through? Call us at (678) 938-6413.*
+*Ready to see what your Atlanta property could realistically earn under professional management? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, no obligation. Prefer to talk it through? Call us at (678) 938-6413.*

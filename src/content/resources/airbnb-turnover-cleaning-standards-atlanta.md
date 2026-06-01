@@ -72,4 +72,4 @@ Turnovers and cleaning are part of [full-service management](/services/) at ATLS
 
 ---
 
-*Want your Atlanta home run at a true five-star operational standard — without lifting a finger? [Get a free rental projection from ATLStay](/rental-projection/). No sales pressure, no obligation. Prefer to talk it through? Call (678) 938-6413.*
+*Want your Atlanta home run at a true five-star operational standard — without lifting a finger? [Get a free rental projection from ATLStay](/rental-projection/). Prefer to talk it through? Call (678) 938-6413.*

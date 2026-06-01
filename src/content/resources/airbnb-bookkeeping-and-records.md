@@ -102,4 +102,4 @@ You can also review [how ATLStay's pricing works](/pricing/) and explore the ran
 
 ---
 
-*Curious what your Atlanta property could generate before you decide anything? [Get a free rental projection from ATLStay](/rental-projection/) — we'll build it from real comparable listings with no sales pressure attached. Prefer a direct conversation? Call us at (678) 938-6413.*
+*Curious what your Atlanta property could generate before you decide anything? [Get a free rental projection from ATLStay](/rental-projection/) — we'll build it from real comparable listings. Prefer a direct conversation? Call us at (678) 938-6413.*

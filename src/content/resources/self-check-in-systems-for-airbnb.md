@@ -102,4 +102,4 @@ If you're setting up self check-in for the first time or evaluating whether your
 
 ---
 
-*Want to know what your Atlanta property could realistically earn with professional operations and guest experience management? [Get a free projection from ATLStay](/rental-projection/) — honest comps, no pressure. Or call us directly at (678) 938-6413.*
+*Want to know what your Atlanta property could realistically earn with professional operations and guest experience management? [Get a free projection from ATLStay](/rental-projection/) — honest comps. Or call us directly at (678) 938-6413.*

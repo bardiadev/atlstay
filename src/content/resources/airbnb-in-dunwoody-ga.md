@@ -17,7 +17,7 @@ faqs:
   - q: "How does MARTA access affect my Dunwoody rental?"
     a: "It's a genuine selling point, especially for business travelers who are flying through Hartsfield-Jackson or working at MARTA-accessible offices. The Dunwoody and Medical Center MARTA stations on the Red and Gold lines connect guests to the airport and broader metro without a car. Highlighting this in your listing — and being specific about the walking or driving distance to the nearest station — can help you attract a guest segment that specifically filters for transit access."
   - q: "How do I know what my Dunwoody property could realistically earn?"
-    a: "The most reliable approach is a comps-based projection using comparable listings of the same type, size, and location in Dunwoody — not a national average or a generic metro-wide estimate. Request a free rental projection from ATLStay and we'll give you an honest picture based on what similar properties are actually earning, with no pressure to commit."
+    a: "The most reliable approach is a comps-based projection using comparable listings of the same type, size, and location in Dunwoody — not a national average or a generic metro-wide estimate. Request a free rental projection from ATLStay and we'll give you an honest picture based on what similar properties are actually earning, to commit."
 draft: false
 ---
 
@@ -78,4 +78,4 @@ If you're comparing Dunwoody to other Atlanta-area markets before deciding where
 
 ---
 
-*Curious what your Dunwoody property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps from comparable Dunwoody listings and give you an honest, no-pressure estimate. Prefer a conversation first? Call us at (678) 938-6413.*
+*Curious what your Dunwoody property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps from comparable Dunwoody listings and give you an honest estimate. Prefer a conversation first? Call us at (678) 938-6413.*

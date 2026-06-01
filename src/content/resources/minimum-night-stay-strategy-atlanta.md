@@ -81,4 +81,4 @@ Curious what a smarter pricing strategy could mean for your specific property's 
 
 ---
 
-*Ready to see what optimized pricing — including dynamic minimum stays — could realistically add to your Atlanta property's revenue? [Get a free projection from ATLStay](/rental-projection/) with no sales pressure attached. Prefer to talk through your situation? Call us at (678) 938-6413.*
+*Ready to see what optimized pricing — including dynamic minimum stays — could realistically add to your Atlanta property's revenue? [Get a free projection from ATLStay](/rental-projection/). Prefer to talk through your situation? Call us at (678) 938-6413.*

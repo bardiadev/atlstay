@@ -90,4 +90,4 @@ You can explore [how our management process works](/how-it-works/), review [what
 
 ---
 
-*Curious what your Acworth property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, no pressure, specific to your address. Or call us directly at (678) 938-6413.*
+*Curious what your Acworth property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, specific to your address. Or call us directly at (678) 938-6413.*

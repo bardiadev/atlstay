@@ -80,4 +80,4 @@ If you want to understand what your specific property could realistically earn �
 
 ---
 
-*Want to know what your Helen property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — real comparable listings, honest numbers, no pressure. Prefer to talk through the Helen market directly? Call us at (678) 938-6413.*
+*Want to know what your Helen property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — real comparable listings, honest numbers. Prefer to talk through the Helen market directly? Call us at (678) 938-6413.*

@@ -86,7 +86,7 @@ The right combination is automation for the routine and human presence for the r
 
 Strong communication raises your rating floor, but it works alongside the other factors that determine where you end up. A property that communicates well but has cleanliness issues will still get cleanliness complaints. A listing that communicates well but [isn't priced dynamically](/dynamic-pricing/) leaves revenue on the table in peak periods.
 
-If you're working through the full operational picture, the [resources section](/resources/) covers the other core elements — from what goes into a [five-star guest experience](/resources/earn-five-star-airbnb-reviews/) to what a professional [turnover cleaning standard](/resources/airbnb-turnover-cleaning-standards-atlanta/) actually involves. And if you want to understand what your Atlanta property could realistically earn with the right management behind it, the [rental projection tool](/rental-projection/) is the starting point — comps-based, no sales pressure.
+If you're working through the full operational picture, the [resources section](/resources/) covers the other core elements — from what goes into a [five-star guest experience](/resources/earn-five-star-airbnb-reviews/) to what a professional [turnover cleaning standard](/resources/airbnb-turnover-cleaning-standards-atlanta/) actually involves. And if you want to understand what your Atlanta property could realistically earn with the right management behind it, the [rental projection tool](/rental-projection/) is the starting point — comps-based.
 
 ---
 

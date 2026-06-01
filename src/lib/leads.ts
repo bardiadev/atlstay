@@ -42,6 +42,7 @@ function humanizeKey(k: string): string {
     .replace(/[_-]+/g, ' ')
     .replace(/\b\w/g, (c) => c.toUpperCase())
     .replace(/^Utm /, 'UTM ')
+    .replace(/\bUrl\b/g, 'URL')
     .trim();
 }
 

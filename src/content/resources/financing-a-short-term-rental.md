@@ -83,4 +83,4 @@ For a sense of what a specific Atlanta property might realistically earn, a comp
 
 ---
 
-*Ready to understand what your Atlanta property could realistically earn before you finalize your financing plan? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your specific address and give you an honest, comps-based range with no sales pressure. Questions? Call us at (678) 938-6413.*
+*Ready to understand what your Atlanta property could realistically earn before you finalize your financing plan? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your specific address and give you an honest, comps-based range. Questions? Call us at (678) 938-6413.*

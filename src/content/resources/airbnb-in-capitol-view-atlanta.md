@@ -76,4 +76,4 @@ On regulation: Capitol View is within the City of Atlanta, and the city's short-
 
 ---
 
-*Want to know what your Capitol View property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull actual comparable listings for your address and give you an honest, comps-based estimate with no sales pressure. Prefer to talk first? Call us at (678) 938-6413.*
+*Want to know what your Capitol View property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull actual comparable listings for your address and give you an honest, comps-based estimate. Prefer to talk first? Call us at (678) 938-6413.*

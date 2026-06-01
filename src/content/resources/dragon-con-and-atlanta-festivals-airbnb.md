@@ -98,4 +98,4 @@ Our [Atlanta event calendar for hosts](/resources/atlanta-event-calendar-for-hos
 
 ---
 
-*Curious what your Atlanta property could earn across Dragon Con weekend and the full festival calendar? [Get a free rental projection from ATLStay](/rental-projection/) — real comps for your specific address, no sales pressure. Rather talk it through? Call us at (678) 938-6413.*
+*Curious what your Atlanta property could earn across Dragon Con weekend and the full festival calendar? [Get a free rental projection from ATLStay](/rental-projection/) — real comps for your specific address. Rather talk it through? Call us at (678) 938-6413.*

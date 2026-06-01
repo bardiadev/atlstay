@@ -17,7 +17,7 @@ faqs:
   - q: "Is the Peachtree Corners market seasonal?"
     a: "Less so than event-driven markets. The Technology Park corporate base provides a relatively steady demand floor throughout the year, since business travel doesn't disappear in winter the way leisure demand does. There are softer periods — the late-year holiday stretch between Thanksgiving and New Year's typically sees reduced corporate travel — but the demand curve is flatter here than in neighborhoods dependent on Atlanta's event calendar."
   - q: "How do I find out what my Peachtree Corners property could earn?"
-    a: "A comps-based rental projection comparing your property to similar active listings in the Peachtree Corners market across a full calendar year is the most grounded starting point. ATLStay provides free projections using real comparable listing data — no inflated estimates, no sales pressure, just an honest range based on what properties like yours actually achieve."
+    a: "A comps-based rental projection comparing your property to similar active listings in the Peachtree Corners market across a full calendar year is the most grounded starting point. ATLStay provides free projections using real comparable listing data — no inflated estimates, just an honest range based on what properties like yours actually achieve."
 draft: false
 ---
 
