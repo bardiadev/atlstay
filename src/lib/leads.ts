@@ -201,13 +201,35 @@ export async function sendLead(
   fields: Record<string, FieldValue>,
   opts: { subject: string; formName: string },
 ): Promise<LeadResult> {
+  const endpoint = site.forms.projectionEndpoint;
   const key = site.forms.web3formsKey;
   const cleaned = clean(fields);
   const email = cleaned.email; // capture before relabeling for reply-to
   const intel = await collectLeadIntel(); // best-effort; never throws
+  const lead = relabel(cleaned); // pretty Title-Case labels
 
-  try {
-    if (key) {
+  // Preferred: our own endpoint (Cloudflare Function → branded Resend email,
+  // with its own Web3Forms fallback). On any failure, fall through so the lead
+  // is never lost.
+  if (endpoint) {
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ subject: opts.subject, form: opts.formName, replyto: email ?? '', lead, meta: intel }),
+      });
+      if (res.ok) {
+        const j = await res.json().catch(() => null);
+        if (!j || j.success !== false) return { ok: true };
+      }
+    } catch {
+      /* fall through to Web3Forms */
+    }
+  }
+
+  // Fallback: Web3Forms direct (flat fields). Also the path when no endpoint set.
+  if (key) {
+    try {
       const res = await fetch(WEB3FORMS_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -218,26 +240,16 @@ export async function sendLead(
           // Reply-To the lead's email when present so the owner can reply directly.
           ...(email ? { replyto: email } : {}),
           // Lead's own details first (pretty labels), then the intelligence block.
-          ...relabel(cleaned),
+          ...lead,
           ...intel,
         }),
       });
       const json = await res.json().catch(() => null);
       return { ok: Boolean(json?.success ?? res.ok) };
+    } catch {
+      return { ok: false };
     }
-
-    if (site.forms.projectionEndpoint) {
-      const res = await fetch(site.forms.projectionEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        // Custom endpoint gets machine keys + meta as a nested object.
-        body: JSON.stringify({ ...cleaned, form: opts.formName, meta: intel }),
-      });
-      return { ok: res.ok };
-    }
-
-    return { ok: true, skipped: true };
-  } catch {
-    return { ok: false };
   }
+
+  return { ok: true, skipped: true };
 }

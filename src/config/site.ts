@@ -57,8 +57,8 @@ export const site = {
   // but no data leaves the browser. `projectionEndpoint` is an optional
   // override for a custom POST endpoint (Formspree/Netlify) if ever preferred.
   forms: {
-    web3formsKey: '3b77cc25-dd1c-48f9-b8bd-c30905d66335', // public client-side key — delivers leads to the Web3Forms account inbox
-    projectionEndpoint: '', // optional override — custom POST endpoint
+    web3formsKey: '3b77cc25-dd1c-48f9-b8bd-c30905d66335', // public client-side key — Web3Forms fallback inside the lead function
+    projectionEndpoint: '/api/lead', // Cloudflare Function → branded Resend email (falls back to Web3Forms)
   },
 
   // Real, owner-verified track record across the portfolio (10+ years).
