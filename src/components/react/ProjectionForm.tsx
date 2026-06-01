@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { site } from '../../config/site';
 import { sendLead } from '../../lib/leads';
 
@@ -181,15 +182,7 @@ export default function ProjectionForm() {
             What’s the address of your property?
           </h2>
           <p className="mt-2 text-sm text-ink/70">We’ll pull real, comparable Atlanta listings to build your projection.</p>
-          <input
-            type="text"
-            autoComplete="street-address"
-            className={`mt-5 ${inputCls}`}
-            placeholder="123 Peachtree St NE, Atlanta, GA"
-            value={data.address}
-            onChange={(e) => set({ address: e.target.value })}
-            onKeyDown={(e) => e.key === 'Enter' && next()}
-          />
+          <AddressAutocomplete value={data.address} onChange={(v) => set({ address: v })} onEnter={next} />
         </div>
       )}
 
@@ -345,6 +338,154 @@ export default function ProjectionForm() {
           </button>
         )}
       </div>
+    </div>
+  );
+}
+
+// Free address autocomplete via Photon (komoot, OpenStreetMap) — no API key,
+// no signup, CORS-enabled. Biased to Atlanta. Degrades to plain typing if the
+// service is ever unreachable, so the field always works.
+function AddressAutocomplete({
+  value, onChange, onEnter,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  onEnter: () => void;
+}) {
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(-1);
+  const debounce = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const seq = useRef(0);
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  const format = (p: Record<string, string>): string => {
+    const line1 = [p.housenumber, p.street].filter(Boolean).join(' ') || p.name || '';
+    const city = p.city || p.town || p.village || p.locality || p.district || '';
+    const region = [p.state, p.postcode].filter(Boolean).join(' ');
+    return [line1, city, region].filter(Boolean).join(', ');
+  };
+
+  const fetchSuggestions = (q: string) => {
+    if (q.trim().length < 4) {
+      setSuggestions([]);
+      setOpen(false);
+      return;
+    }
+    const my = ++seq.current;
+    const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=6&lang=en&lat=33.749&lon=-84.388`;
+    fetch(url)
+      .then((r) => r.json())
+      .then((data) => {
+        if (my !== seq.current) return; // ignore stale responses
+        const feats = Array.isArray(data?.features) ? data.features : [];
+        const list = feats
+          .map((f: { properties: Record<string, string> }) => f.properties)
+          .filter((p: Record<string, string>) => !p.countrycode || String(p.countrycode).toUpperCase() === 'US')
+          .map(format)
+          .filter((s: string, i: number, arr: string[]) => s && arr.indexOf(s) === i)
+          .slice(0, 6);
+        setSuggestions(list);
+        setOpen(list.length > 0);
+        setActive(-1);
+      })
+      .catch(() => {
+        /* silent — field still works as plain text input */
+      });
+  };
+
+  const onInput = (v: string) => {
+    onChange(v);
+    clearTimeout(debounce.current);
+    debounce.current = setTimeout(() => fetchSuggestions(v), 280);
+  };
+
+  const choose = (s: string) => {
+    onChange(s);
+    setSuggestions([]);
+    setOpen(false);
+    setActive(-1);
+  };
+
+  const onKey = (e: ReactKeyboardEvent<HTMLInputElement>) => {
+    if (open && suggestions.length) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setActive((a) => Math.min(suggestions.length - 1, a + 1));
+        return;
+      }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setActive((a) => Math.max(0, a - 1));
+        return;
+      }
+      if (e.key === 'Enter') {
+        if (active >= 0) {
+          e.preventDefault();
+          choose(suggestions[active]);
+          return;
+        }
+        setOpen(false);
+        onEnter();
+        return;
+      }
+      if (e.key === 'Escape') {
+        setOpen(false);
+        setActive(-1);
+        return;
+      }
+    } else if (e.key === 'Enter') {
+      onEnter();
+    }
+  };
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (boxRef.current && !boxRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  return (
+    <div ref={boxRef} className="relative mt-5">
+      <input
+        type="text"
+        autoComplete="off"
+        role="combobox"
+        aria-expanded={open}
+        aria-autocomplete="list"
+        aria-controls="address-suggestions"
+        className={inputCls}
+        placeholder="123 Peachtree St NE, Atlanta, GA"
+        value={value}
+        onChange={(e) => onInput(e.target.value)}
+        onKeyDown={onKey}
+        onFocus={() => suggestions.length && setOpen(true)}
+      />
+      {open && suggestions.length > 0 && (
+        <ul
+          id="address-suggestions"
+          role="listbox"
+          className="absolute z-20 mt-1 max-h-64 w-full overflow-auto rounded-lg border border-line bg-white py-1 shadow-lg"
+        >
+          {suggestions.map((s, i) => (
+            <li
+              key={s}
+              role="option"
+              aria-selected={i === active}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                choose(s);
+              }}
+              onMouseEnter={() => setActive(i)}
+              className={`cursor-pointer px-4 py-2.5 text-sm ${i === active ? 'bg-brass-50 text-forest' : 'text-ink/80 hover:bg-cream'}`}
+            >
+              {s}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
