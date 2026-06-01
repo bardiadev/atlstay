@@ -4,6 +4,8 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { site } from '../config/site';
+import { counties } from '../data/counties';
+import { propertyTypes } from '../data/propertyTypes';
 
 const u = (path: string) => new URL(path, site.domain).href;
 
@@ -40,6 +42,20 @@ export const GET: APIRoute = async () => {
   L.push(`- [Areas we serve](${u('/areas-we-serve/')}): Full coverage map — intown Atlanta, metro Atlanta, and Georgia destination markets (${cities.length}+ markets).`);
   for (const c of top) {
     L.push(`- [${c.data.name} STR management](${u(`/${c.data.slug}/`)})`);
+  }
+  L.push('');
+  L.push('## Counties we serve');
+  L.push(`Each county has its own short-term-rental landscape — different employers, tourist draws, and city-by-city regulatory rules. ATLStay covers ${counties.length} Georgia counties.`);
+  L.push(`- [Counties we serve overview](${u('/counties/')})`);
+  for (const c of counties.filter((x) => x.published)) {
+    L.push(`- [${c.name} County STR management](${u(`/counties/${c.slug}/`)}): ${c.tagline}`);
+  }
+  L.push('');
+  L.push('## By property type');
+  L.push('We tune management to the asset class — different demand mixes, operational realities, and pricing logic per property type.');
+  L.push(`- [Browse by property type](${u('/manage/')})`);
+  for (const p of propertyTypes.filter((x) => x.published)) {
+    L.push(`- [${p.pluralName} STR management](${u(`/manage/${p.slug}/`)}): ${p.tagline}`);
   }
   L.push('');
   L.push('## Resources');

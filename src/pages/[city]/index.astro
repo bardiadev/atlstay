@@ -16,6 +16,7 @@ import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 import { cityGeo } from '@/data/cityGeo';
 import { assignCardStyles } from '@/lib/cardImage';
+import { cityCountyMap, countyBySlug } from '@/data/counties';
 
 export async function getStaticPaths() {
   const c = await getCollection('cities');
@@ -55,6 +56,10 @@ const sameRegion = allCities
   .filter((c) => c.data.slug !== d.slug && (isAtlanta ? c.data.region === 'metro' : c.data.region === d.region))
   .sort(byName);
 const nearby = [...new Map([...sameCounty, ...sameRegion].map((c) => [c.data.slug, c])).values()].slice(0, 8);
+
+// Parent county (if we have a county service page for this city).
+const cityCountySlug = cityCountyMap[d.slug];
+const cityCounty = cityCountySlug ? countyBySlug[cityCountySlug] : null;
 
 const heroKey: ImageKey = d.heroImage && d.heroImage in images ? (d.heroImage as ImageKey) : 'atlantaSkyline';
 
@@ -206,6 +211,9 @@ const schemas = [
           <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Nearby areas we manage</h2>
         </div>
         <div class="flex flex-wrap justify-center gap-3">
+          {cityCounty && (
+            <a href={`/counties/${cityCounty.slug}/`} class="rounded-full border border-brass/50 bg-brass-50 px-5 py-2.5 text-sm font-semibold text-brass-600 transition-colors hover:border-brass hover:bg-brass hover:text-forest-900">{cityCounty.name} County overview &rarr;</a>
+          )}
           {nearby.map((c) => (
             <a href={`/${c.data.slug}/`} class="rounded-full border border-line bg-cream px-5 py-2.5 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">{c.data.name}</a>
           ))}

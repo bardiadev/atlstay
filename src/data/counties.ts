@@ -455,7 +455,7 @@ export const counties: County[] = [
     countySeat: 'Monroe',
     geo: { lat: 33.7951, lng: -83.7129 },
     cities: ['monroe-ga', 'social-circle'],
-    tagline: 'Monroe and Social Circle — quiet historic east-metro charm',
+    tagline: 'Monroe and Social Circle, quiet historic east-metro charm',
     intro: "Walton County sits east of Atlanta — Monroe at the county seat and Social Circle as one of Georgia's most photogenic small downtowns. Both centers have meticulously preserved historic districts that draw weekend leisure travelers, wedding parties, and antique-shopping visitors. ATLStay manages owner properties across Monroe and Social Circle.",
     demand: "Walton's STR demand is anchored by historic-small-town leisure travel — Monroe's downtown square and Social Circle's preserved Main Street pull weekend visitors year-round. Weddings at restored historic venues drive booked-out weekends in shoulder seasons. Steady I-20 / US-78 corridor traffic adds weekday corporate base.",
     regulationsNote: "Walton County, Monroe, and Social Circle each regulate short-term rentals through zoning and city-level ordinances. Historic districts in both cities apply design and use restrictions that affect what properties qualify. We confirm zoning, historic-district treatment, and any HOA covenants before listing any Walton property.",
@@ -476,3 +476,18 @@ export const counties: County[] = [
     published: true,
   },
 ];
+
+// Reverse-lookup helpers built from `counties[].cities` so the two structures
+// never drift. Used by the [city]/index.astro template to render an "up to
+// county" link, and by llms.txt to enumerate counties per city.
+export const cityCountyMap: Record<string, string> = counties.reduce(
+  (acc, c) => {
+    for (const citySlug of c.cities) acc[citySlug] = c.slug;
+    return acc;
+  },
+  {} as Record<string, string>,
+);
+
+export const countyBySlug: Record<string, County> = Object.fromEntries(
+  counties.map((c) => [c.slug, c]),
+);

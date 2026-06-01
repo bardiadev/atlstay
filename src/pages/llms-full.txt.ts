@@ -4,6 +4,8 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { site } from '../config/site';
+import { counties } from '../data/counties';
+import { propertyTypes } from '../data/propertyTypes';
 
 const u = (path: string) => new URL(path, site.domain).href;
 const regionLabel: Record<string, string> = {
@@ -110,6 +112,43 @@ export const GET: APIRoute = async () => {
     L.push('Hyper-local management pages for Atlanta neighborhoods:');
     for (const n of neighborhoods) {
       L.push(`- ${n.data.name}: ${u(`/${n.data.citySlug}/${n.data.slug}/`)}`);
+    }
+  }
+
+  // ── Counties ──
+  const publishedCounties = counties.filter((c) => c.published);
+  if (publishedCounties.length) {
+    hr();
+    L.push('## Counties we serve');
+    L.push(
+      `ATLStay maps every market we manage back to its county. ${publishedCounties.length} Georgia counties are covered, each with its own demand mix, city portfolio, and regulatory landscape.`,
+    );
+    L.push(`Hub: ${u('/counties/')}`);
+    for (const c of publishedCounties) {
+      L.push('');
+      L.push(`### ${c.name} County, ${c.state}`);
+      L.push(`URL: ${u(`/counties/${c.slug}/`)}`);
+      L.push(`County seat: ${c.countySeat}.`);
+      if (c.cities.length) L.push(`Cities ATLStay manages here: ${c.cities.join(', ')}.`);
+      L.push(c.intro);
+    }
+  }
+
+  // ── Property types ──
+  const publishedTypes = propertyTypes.filter((p) => p.published);
+  if (publishedTypes.length) {
+    hr();
+    L.push('## Management by property type');
+    L.push(
+      'ATLStay tunes management to the asset — different property types have different demand mixes, operational realities, and pricing logic.',
+    );
+    L.push(`Hub: ${u('/manage/')}`);
+    for (const p of publishedTypes) {
+      L.push('');
+      L.push(`### ${p.pluralName}`);
+      L.push(`URL: ${u(`/manage/${p.slug}/`)}`);
+      L.push(`Markets: ${p.marketLabel}.`);
+      L.push(p.intro);
     }
   }
 
