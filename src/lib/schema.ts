@@ -3,6 +3,7 @@
 import { site } from '../config/site';
 
 const ORG_ID = `${site.domain}/#organization`;
+const SITE_ID = `${site.domain}/#website`;
 
 function postalAddress() {
   const a = site.contact.address;
@@ -79,13 +80,27 @@ export function localBusinessSchema(opts: { areaServed?: string[] } = {}) {
   };
 }
 
+/**
+ * WebSite schema + SearchAction. This is what lets Google show a sitelinks
+ * searchbox under our SERP listing for branded queries. The urlTemplate has to
+ * point at a real, working search results page — see /search/.
+ */
 export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': SITE_ID,
     url: site.domain,
     name: site.brandName,
     publisher: { '@id': ORG_ID },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${site.domain}/search/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 
@@ -118,11 +133,20 @@ export function serviceSchema(opts: {
   };
 }
 
+/**
+ * FAQPage schema. The Speakable spec marks the actual answer paragraphs (we
+ * tag them with `data-speakable` in the FAQ component) so voice/AI surfaces
+ * can quote them verbatim.
+ */
 export function faqPageSchema(faqs: { q: string; a: string }[]) {
   if (!faqs?.length) return null;
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['[data-speakable]'],
+    },
     mainEntity: faqs.map((f) => ({
       '@type': 'Question',
       name: f.q,
@@ -144,6 +168,11 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
   };
 }
 
+/**
+ * Article schema. Org-as-author is the honest default; pass `author` to emit
+ * a Person instead. `speakable: true` marks the H1 + any [data-speakable]
+ * elements as voice/AI-extractable.
+ */
 export function articleSchema(opts: {
   title: string;
   description: string;
@@ -151,17 +180,59 @@ export function articleSchema(opts: {
   datePublished?: string | Date;
   dateModified?: string | Date;
   image?: string;
+  author?: { name: string; jobTitle?: string; description?: string };
+  speakable?: boolean;
 }) {
+  const authorRef = opts.author
+    ? {
+        '@type': 'Person',
+        name: opts.author.name,
+        ...(opts.author.jobTitle ? { jobTitle: opts.author.jobTitle } : {}),
+        ...(opts.author.description ? { description: opts.author.description } : {}),
+        worksFor: { '@id': ORG_ID },
+      }
+    : { '@id': ORG_ID };
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: opts.title,
     description: opts.description,
     mainEntityOfPage: new URL(opts.path, site.domain).href,
-    author: { '@id': ORG_ID },
+    author: authorRef,
     publisher: { '@id': ORG_ID },
     ...(opts.datePublished ? { datePublished: new Date(opts.datePublished).toISOString() } : {}),
     ...(opts.dateModified ? { dateModified: new Date(opts.dateModified).toISOString() } : {}),
     ...(opts.image ? { image: new URL(opts.image, site.domain).href } : {}),
+    ...(opts.speakable
+      ? {
+          speakable: {
+            '@type': 'SpeakableSpecification',
+            cssSelector: ['h1', '[data-speakable]'],
+          },
+        }
+      : {}),
+  };
+}
+
+/**
+ * ItemList — for hub/directory pages. Lets SERP carousels and AI answer
+ * engines treat the page as an enumerated list of its items.
+ */
+export function itemListSchema(opts: {
+  name: string;
+  items: { name: string; path: string; description?: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: opts.name,
+    numberOfItems: opts.items.length,
+    itemListElement: opts.items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.name,
+      url: new URL(it.path, site.domain).href,
+      ...(it.description ? { description: it.description } : {}),
+    })),
   };
 }
