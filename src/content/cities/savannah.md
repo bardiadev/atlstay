@@ -7,7 +7,7 @@ title: "Vacation Rental Management in Savannah, GA"
 description: "Full-service vacation rental management in Savannah, GA. We handle pricing, guests, and turnovers — maximizing your revenue around St. Patrick's Day, weddings, and year-round tourism."
 intro: "Savannah is one of the South's most beloved travel destinations — with demand driven by River Street, historic squares, and the world's largest St. Patrick's Day celebration outside New York City. ATLStay helps you capture every high-value night."
 heroImage: "savannah"
-neighborhoods: []
+neighborhoods: ["historic-district", "victorian-district", "starland-district"]
 highlights:
   - "Event-calibrated pricing for St. Patrick's Day, Savannah Food & Wine Festival, and SCAD events"
   - "Deep local knowledge across the Historic District, Victorian District, and Ardsley Park"

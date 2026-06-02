@@ -7,7 +7,7 @@ title: "Airbnb & Short-Term Rental Management in Duluth, GA"
 description: "Short-term rental management in Duluth, GA. ATLStay maximizes earnings for Duluth owners with expert pricing, guest management, and local knowledge of Gwinnett's premier market."
 intro: "Duluth is the cultural and commercial hub of Gwinnett County — home to a thriving Korean-American community, Gas South District entertainment venue, and a growing tech sector that makes it one of northeast metro Atlanta's most compelling short-term rental markets."
 heroImage: metroAtlanta
-neighborhoods: []
+neighborhoods: ["downtown-duluth"]
 highlights:
   - "Gas South District (Infinite Energy Arena) events drive consistent concert and sports demand"
   - "Gwinnett's largest Korean-American community creates unique cultural tourism demand"

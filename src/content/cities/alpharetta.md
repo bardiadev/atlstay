@@ -7,7 +7,7 @@ title: "Airbnb & Short-Term Rental Management in Alpharetta, GA"
 description: "Short-term rental management in Alpharetta, GA. ATLStay optimizes your Airbnb listing for Alpharetta's tech-corridor demand, events, and weekend leisure market."
 intro: "Alpharetta has quietly become one of Georgia's most important technology hubs — and that corporate concentration, layered with Avalon's retail energy and a packed concert calendar at Ameris Bank Amphitheatre, makes it a genuinely strong year-round STR market."
 heroImage: suburbHome
-neighborhoods: []
+neighborhoods: ["avalon", "downtown-alpharetta", "windward"]
 highlights:
   - "Major tech and finance employers generate consistent weekday business-travel demand"
   - "Ameris Bank Amphitheatre concert season creates predictable summer rate spikes"

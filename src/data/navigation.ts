@@ -27,6 +27,7 @@ export const footerNav: { heading: string; links: { label: string; href: string 
       { label: 'Dynamic pricing & revenue', href: '/dynamic-pricing/' },
       { label: 'Free rental projection', href: '/rental-projection/' },
       { label: 'Airbnb management near you', href: '/airbnb-management-near-me/' },
+      { label: 'Near Atlanta landmarks', href: '/near/' },
       { label: 'Areas we serve', href: '/areas-we-serve/' },
     ],
   },

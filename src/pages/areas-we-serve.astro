@@ -13,10 +13,12 @@ import { getCollection } from 'astro:content';
 import { assignCardStyles } from '@/lib/cardImage';
 import { counties } from '@/data/counties';
 import { propertyTypes } from '@/data/propertyTypes';
+import { landmarks } from '@/data/landmarks';
 import { site } from '@/config/site';
 
 const countyList = counties.filter((c) => c.published).sort((a, b) => a.name.localeCompare(b.name));
 const propertyTypeList = propertyTypes.filter((p) => p.published);
+const landmarkList = landmarks.filter((l) => l.published);
 
 const neighborhoods = (await getCollection('neighborhoods', (e) => e.data.published && e.data.citySlug === 'atlanta'))
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
@@ -155,6 +157,25 @@ const schemas = [
           <a href={`/manage/${p.slug}/`} class="rounded-full border border-line bg-white px-4 py-2 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">{p.pluralName}</a>
         ))}
         <a href="/manage/" class="rounded-full bg-forest px-4 py-2 text-sm text-cream transition-colors hover:bg-forest-700">All property types &rarr;</a>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Browse by landmark -->
+  <Section variant="white">
+    <Container>
+      <div class="mb-8 max-w-3xl">
+        <Eyebrow>Browse by landmark</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Management near Atlanta's landmarks</h2>
+        <p class="mt-4 text-ink/80">
+          Searching by what's nearby? We manage the neighborhoods and cities around Atlanta's biggest demand engines — stadiums, the airport, universities, parks, and the lake.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {landmarkList.map((l) => (
+          <a href={`/near/${l.slug}/`} class="rounded-full border border-line bg-cream px-4 py-2 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">Near {l.name}</a>
+        ))}
+        <a href="/near/" class="rounded-full bg-forest px-4 py-2 text-sm text-cream transition-colors hover:bg-forest-700">All landmarks &rarr;</a>
       </div>
     </Container>
   </Section>

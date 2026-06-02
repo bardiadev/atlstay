@@ -10,7 +10,7 @@ title: "Vacation Rental Management in Dahlonega, GA"
 description: "Full-service vacation rental management in Dahlonega, GA — gold-rush downtown, Dahlonega Plateau wineries, and UNG-driven year-round demand. ATLStay maximizes your mountain property."
 intro: "Dahlonega is North Georgia's original mountain destination — America's first gold rush town, home to a thriving wine country AVA, and anchored by the University of North Georgia. ATLStay manages your vacation rental property like it's our own."
 heroImage: "northGeorgia"
-neighborhoods: []
+neighborhoods: ["downtown-dahlonega"]
 highlights:
   - "Dahlonega Plateau AVA wine tourism — 12+ tasting rooms and estate wineries within easy reach of every property"
   - "University of North Georgia creates shoulder-season demand from family visits, graduation weekends, and campus events"

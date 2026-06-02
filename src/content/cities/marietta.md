@@ -7,7 +7,7 @@ title: "Airbnb & Short-Term Rental Management in Marietta, GA"
 description: "Full-service short-term rental management in Marietta, GA. ATLStay handles your listing, pricing, guests, and turnovers — maximizing earnings on Marietta's Square and beyond."
 intro: "Marietta's historic Square, Civil War heritage sites, and position as Cobb County's civic heart create a layered demand picture that benefits STR owners willing to actively manage for the right guest — and the right nights."
 heroImage: metroAtlanta
-neighborhoods: []
+neighborhoods: ["marietta-square", "east-cobb"]
 highlights:
   - "Marietta Square's restaurants and events drive consistent weekend leisure bookings"
   - "Kennesaw Mountain and Civil War sites attract heritage and outdoor travelers"

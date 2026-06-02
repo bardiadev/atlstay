@@ -7,7 +7,7 @@ title: "Airbnb & Short-Term Rental Management in Sandy Springs, GA"
 description: "Full-service short-term rental management in Sandy Springs, GA. ATLStay handles pricing, guests, and turnovers so your property earns more with zero hassle."
 intro: "Sandy Springs sits at the heart of Atlanta's northern corporate corridor — a location that drives consistent weekday business-travel demand alongside strong weekend leisure bookings from Chattahoochee recreation seekers."
 heroImage: suburbHome
-neighborhoods: []
+neighborhoods: ["city-springs", "perimeter-sandy-springs"]
 highlights:
   - "Prime positioning between Perimeter Center and Buckhead draws steady corporate demand"
   - "Chattahoochee River National Recreation Area fuels outdoor-recreation stays"

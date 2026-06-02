@@ -10,7 +10,7 @@ title: "Airbnb & Short-Term Rental Management in Woodstock, GA"
 description: "Full-service Airbnb & short-term rental management in Woodstock, GA. ATLStay handles listings, pricing, and guests so you earn more."
 intro: "Woodstock's walkable downtown, the Outlet Shoppes at Atlanta, and a booming residential base have created one of Cherokee County's most active short-term rental markets — and one that rewards professional management."
 heroImage: metroAtlanta
-neighborhoods: []
+neighborhoods: ["downtown-woodstock"]
 highlights:
   - "Downtown Woodstock's restaurants, bars, and events drive strong weekend leisure bookings"
   - "The Outlet Shoppes at Atlanta — the closest outlet center to downtown — brings regional shopping visitors who need lodging"
