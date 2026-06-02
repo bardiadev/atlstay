@@ -102,10 +102,11 @@ const nbhdStyles = assignCardStyles(
 ---
 
 <BaseLayout
-  title="Atlanta Short-Term Rental Management"
+  title="Atlanta Short-Term Rental & Airbnb Management"
   description="Premium short-term rental management in Atlanta. Professional listing, dynamic pricing, 24/7 guest care, and five-star turnovers — handled for you. Get a free rental projection."
   schemas={homeSchemas}
 >
+  <link slot="head" rel="preload" as="image" href={images.heroHome.src} fetchpriority="high" />
 
   <!-- ─── HERO ─── (copy + live projection form; viewport-fit on desktop) -->
   <section class="relative isolate flex items-center overflow-hidden py-12 lg:min-h-[calc(100svh-5rem)] lg:py-0">
