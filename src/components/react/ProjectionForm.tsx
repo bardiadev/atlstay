@@ -373,6 +373,13 @@ export default function ProjectionForm() {
           </button>
         )}
       </div>
+
+      {step === TOTAL && (
+        <p className="mt-3 text-center text-xs text-stone">
+          Rather talk now?{' '}
+          <a href={site.contact.phoneHref} className="font-medium text-brass-600 hover:text-brass">Call {site.contact.phone}</a>
+        </p>
+      )}
     </div>
   );
 }

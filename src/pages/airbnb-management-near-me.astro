@@ -1,0 +1,131 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
+import { getCollection } from 'astro:content';
+import { site } from '@/config/site';
+
+const cities = await getCollection('cities', (c) => c.data.published);
+const metro = cities.filter((c) => c.data.region === 'metro').sort((a, b) => a.data.name.localeCompare(b.data.name)).slice(0, 12);
+const georgia = cities.filter((c) => c.data.region === 'georgia').sort((a, b) => a.data.name.localeCompare(b.data.name)).slice(0, 10);
+
+const faqs = [
+  {
+    q: 'Do you manage short-term rentals near me?',
+    a: `ATLStay manages Airbnb and Vrbo properties across metro Atlanta and Georgia's destination markets — intown Atlanta, the suburbs, the North Georgia mountains, the lakes, and the coast. If you own a property anywhere in Georgia, there's a strong chance we already manage nearby. Call ${site.contact.phone} and we'll tell you in two minutes.`,
+  },
+  {
+    q: 'Why does local short-term rental management matter?',
+    a: "National platforms price from national datasets and handle guests from distant call centers. Local management means pricing tuned to your exact market's demand calendar, vetted cleaners and maintenance crews nearby, and a team that actually knows why your block books differently than the next neighborhood over.",
+  },
+  {
+    q: 'How fast can you get started?',
+    a: 'Most owners go from first call to a live, optimized listing in about three to four weeks — readiness review, professional photography, dynamic pricing setup, and listing build across platforms. Call us and we can map your exact timeline on the spot.',
+  },
+  {
+    q: 'What does local management cost?',
+    a: `One transparent management fee ${site.pricing.rateNote}, starting from ${site.pricing.rate}. No hidden charges and no long-term lock-in — owners stay because of results.`,
+  },
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Airbnb Management Near Me', path: '/airbnb-management-near-me/' },
+  ]),
+  serviceSchema({
+    name: 'Short-term rental management near you — Atlanta & Georgia',
+    description:
+      'Local Airbnb and Vrbo management across metro Atlanta and Georgia. Dynamic pricing, 24/7 guest care, cleaning, and full-service operations near you.',
+  }),
+];
+---
+
+<BaseLayout
+  title="Airbnb Management Near Me — Atlanta & Georgia STR Managers"
+  description="Looking for Airbnb management near you? ATLStay runs full-service short-term rental management across metro Atlanta and Georgia — local pricing, 24/7 guest care, cleaning, and more. Call (678) 938-6413."
+  schemas={schemas}
+>
+  <PageHero
+    title="Short-Term Rental Management Near You"
+    subtitle="Wherever your property sits in metro Atlanta or Georgia, ATLStay manages it like locals — because we are. Dynamic pricing, 24/7 guest care, cleaning, and five-star operations, handled."
+    eyebrow="Airbnb management near me"
+    imageKey="atlantaSkyline"
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: 'Airbnb Management Near Me', path: '/airbnb-management-near-me/' },
+    ]}
+    cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
+    secondaryCta={{ label: `Call ${site.contact.phone}`, href: site.contact.phoneHref }}
+    size="lg"
+  />
+
+  <!-- Why local -->
+  <Section variant="cream">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-20">
+        <div>
+          <Eyebrow>Local beats national</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Management that actually knows your market</h2>
+          <p class="mt-4 text-ink/80">
+            "Near me" matters in short-term rentals more than almost any other service. Pricing, guest expectations, cleaning logistics, and local rules change block by block. ATLStay manages market by market across Georgia — {site.scale.ratingPhrase}, {site.stats.homes} homes managed over {site.stats.years} years.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Button href="/rental-projection/" size="lg">Get my free projection</Button>
+            <a href={site.contact.phoneHref} class="inline-flex items-center justify-center gap-2 rounded-full border border-forest px-6 py-3 text-sm font-semibold text-forest transition-colors hover:bg-white">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.14.38 2.35.58 3.6.58a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.24 1z"/></svg>
+              Call {site.contact.phone}
+            </a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-8">
+          <h3 class="font-display text-lg text-forest">What "local" gets you</h3>
+          <div class="mt-4">
+            <CheckList items={[
+              'Pricing tuned to your exact market’s demand calendar',
+              'Vetted local cleaning and maintenance crews nearby',
+              '24/7 guest communication from a team in your time zone',
+              'On-the-ground knowledge of local permits and STR rules',
+              'Listings written for the guest who wants your specific place',
+            ]} />
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Areas near you -->
+  <Section variant="white">
+    <Container>
+      <div class="mb-8 text-center">
+        <Eyebrow>Across Georgia</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Find management near you</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-ink/70">A sample of the markets we manage. Don't see yours? Call {site.contact.phone} — we're continually adding markets across Georgia.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[...metro, ...georgia].map((c) => (
+          <a href={`/${c.data.slug}/`} class="rounded-full border border-line bg-cream px-5 py-2.5 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">{c.data.name}</a>
+        ))}
+        <a href="/areas-we-serve/" class="rounded-full bg-forest px-5 py-2.5 text-sm text-cream transition-colors hover:bg-forest-700">All areas &amp; counties &rarr;</a>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ (emits FAQPage JSON-LD) -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Common questions</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Airbnb management near you — FAQs</h2>
+      <div class="mt-8"><FAQ items={faqs} /></div>
+    </Container>
+  </Section>
+
+  <CTABand heading="Talk to a local manager today" text="Get a free, comps-based rental projection — or just call and ask us anything about your property." />
+</BaseLayout>

@@ -41,7 +41,7 @@ export function organizationSchema() {
       contactType: 'customer service',
       telephone: site.contact.phone,
       email: site.contact.email,
-      areaServed: 'US',
+      areaServed: 'Georgia, US',
       availableLanguage: 'English',
     },
   };
@@ -69,6 +69,12 @@ export function localBusinessSchema(opts: { areaServed?: string[] } = {}) {
     },
     areaServed: areaServed.map((name) => ({ '@type': 'City', name })),
     priceRange: '$$',
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: site.reviews.ratingValue,

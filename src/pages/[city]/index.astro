@@ -154,7 +154,10 @@ const schemas = [
             </div>
           ))}
         </div>
-        <Button href="/rental-projection/" size="lg" class="mt-10">Get my free {d.name} projection</Button>
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button href="/rental-projection/" size="lg">Get my free {d.name} projection</Button>
+          <a href={site.contact.phoneHref} class="text-sm font-medium text-cream/80 transition-colors hover:text-brass">or call {site.contact.phone}</a>
+        </div>
       </div>
     </Container>
   </Section>
