@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import { site } from '../config/site';
 import { counties } from '../data/counties';
 import { propertyTypes } from '../data/propertyTypes';
+import { landmarks } from '../data/landmarks';
 
 const u = (path: string) => new URL(path, site.domain).href;
 const regionLabel: Record<string, string> = {
@@ -149,6 +150,23 @@ export const GET: APIRoute = async () => {
       L.push(`URL: ${u(`/manage/${p.slug}/`)}`);
       L.push(`Markets: ${p.marketLabel}.`);
       L.push(p.intro);
+    }
+  }
+
+  // ── Landmarks ──
+  const publishedLandmarks = landmarks.filter((l) => l.published);
+  if (publishedLandmarks.length) {
+    hr();
+    L.push('## Near Atlanta landmarks');
+    L.push(
+      'Short-term rental management near the landmarks that drive Atlanta demand — stadiums, the airport, universities, parks, and the lake.',
+    );
+    L.push(`Hub: ${u('/near/')}`);
+    for (const l of publishedLandmarks) {
+      L.push('');
+      L.push(`### Near ${l.name}`);
+      L.push(`URL: ${u(`/near/${l.slug}/`)}`);
+      L.push(l.intro);
     }
   }
 

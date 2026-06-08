@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import { site } from '../config/site';
 import { counties } from '../data/counties';
 import { propertyTypes } from '../data/propertyTypes';
+import { landmarks } from '../data/landmarks';
 
 const u = (path: string) => new URL(path, site.domain).href;
 
@@ -56,6 +57,13 @@ export const GET: APIRoute = async () => {
   L.push(`- [Browse by property type](${u('/manage/')})`);
   for (const p of propertyTypes.filter((x) => x.published)) {
     L.push(`- [${p.pluralName} STR management](${u(`/manage/${p.slug}/`)}): ${p.tagline}`);
+  }
+  L.push('');
+  L.push('## Near Atlanta landmarks');
+  L.push('Management near the demand engines that drive bookings — stadiums, the airport, universities, parks, and the lake.');
+  L.push(`- [Near Atlanta landmarks](${u('/near/')})`);
+  for (const l of landmarks.filter((x) => x.published)) {
+    L.push(`- [Airbnb management near ${l.name}](${u(`/near/${l.slug}/`)}): ${l.tagline}`);
   }
   L.push('');
   L.push('## Resources');

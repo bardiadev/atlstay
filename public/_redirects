@@ -1,4 +1,0 @@
-# Canonical host: force www → apex (non-www). Fixes the www/non-www duplicate
-# content + canonicalization issue flagged by SEO audits. Honored by Cloudflare
-# Pages. The :splat preserves the full path + the 301 is a permanent redirect.
-https://www.atlstay.com/* https://atlstay.com/:splat 301
