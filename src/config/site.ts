@@ -76,7 +76,7 @@ export const site = {
 
   // Aggregate rating from real five-star reviews across platforms (owner-verified).
   reviews: {
-    ratingValue: '4.9', // verified average across platforms; set your exact figure
+    ratingValue: '5.0', // shown in visible ReviewProof copy only (omitted from schema markup)
     reviewCount: 10000, // 10,000+ five-star reviews across platforms & years
     bestRating: '5',
   },
@@ -89,7 +89,7 @@ export const site = {
     portfolioPhrase: '450+ homes managed across our portfolio',
     staysPhrase: '10,000+ five-star guest reviews',
     bookingsPhrase: 'millions in bookings managed',
-    ratingPhrase: '4.9★ across 10,000+ reviews',
+    ratingPhrase: '5.0★ across 10,000+ reviews',
   },
 
   // Service areas for LocalBusiness areaServed schema (curated highlights; the

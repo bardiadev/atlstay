@@ -75,12 +75,10 @@ export function localBusinessSchema(opts: { areaServed?: string[] } = {}) {
       opens: '00:00',
       closes: '23:59',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: site.reviews.ratingValue,
-      reviewCount: site.reviews.reviewCount,
-      bestRating: site.reviews.bestRating,
-    },
+    // NOTE: aggregateRating intentionally omitted. Google restricts self-served
+    // review markup on a business's own LocalBusiness entity, and an unverifiable
+    // count on a new domain risks being ignored or flagged. The visible
+    // social-proof copy (ReviewProof) carries the rating instead.
     foundingDate: String(site.stats.foundingYear),
     parentOrganization: { '@id': ORG_ID },
   };
