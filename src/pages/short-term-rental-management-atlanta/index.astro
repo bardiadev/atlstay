@@ -1,0 +1,379 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import ReviewProof from '@/components/ui/ReviewProof.astro';
+import { site } from '@/config/site';
+import { breadcrumbSchema, serviceSchema, faqPageSchema } from '@/lib/schema';
+
+// ---------------------------------------------------------------------------
+// MONEY PAGE: "short-term / vacation rental management — Atlanta".
+// Deliberately NOT a rewrite of the Airbnb-management angle. The Airbnb page
+// owns the single-channel "list & host on Airbnb" intent; THIS page owns the
+// broader operator intent: multi-platform distribution (Airbnb + Vrbo +
+// Booking.com + direct), revenue/dynamic pricing, multi-jurisdiction
+// compliance, and property-type breadth (cabins, lake houses, condos…).
+// All numbers come ONLY from src/config/site.ts — no invented stats.
+// ---------------------------------------------------------------------------
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Short-Term Rental Management Atlanta', path: '/short-term-rental-management-atlanta/' },
+];
+
+// Full-service operations scope (broad, platform-agnostic — the STR angle).
+const fullService = [
+  'Multi-platform listing build & optimization',
+  'Airbnb + Vrbo + Booking.com distribution',
+  'Direct-booking channel for repeat guests',
+  'Calendar sync across every platform — no double-bookings',
+  'Nightly dynamic pricing & revenue strategy',
+  '24/7 guest communication & screening',
+  'Professional photography coordination',
+  'Hotel-grade cleaning & turnover management',
+  'Linen service & amenity restocking',
+  'Maintenance coordination with local vendors',
+  'Licensing & occupancy-tax compliance support',
+  'Transparent monthly owner statements & payouts',
+];
+
+// Property types we manage (links to /manage/ breadth).
+const propertyTypes = [
+  { name: 'Intown condos & lofts', blurb: 'Buckhead, Midtown, and Old Fourth Ward units priced for business and event demand.' },
+  { name: 'Single-family homes', blurb: 'Suburban metro homes that draw families, relocations, and longer stays.' },
+  { name: 'North Georgia cabins', blurb: 'Blue Ridge and Ellijay getaways managed for seasonal mountain demand.' },
+  { name: 'Lake houses', blurb: 'Lake Lanier and lakefront properties with summer-peak revenue strategy.' },
+  { name: 'Luxury & large-group homes', blurb: 'High-amenity properties positioned for premium nightly rates.' },
+  { name: 'Coastal & destination stays', blurb: 'Savannah and Tybee Island homes managed for vacation-market demand.' },
+];
+
+// 6 real FAQs — answers use only site.ts facts; dollar questions point to the
+// free projection rather than citing fabricated earnings.
+const faqs = [
+  {
+    q: 'What does short-term rental management in Atlanta cost?',
+    a: `One flat, all-in rate of ${site.pricing.rate} ${site.pricing.rateNote}. That single fee covers multi-platform distribution, dynamic pricing, 24/7 guest care, cleaning coordination, and monthly reporting — no setup fees, no add-ons, no long-term lock-in.`,
+  },
+  {
+    q: 'Which platforms will my property be listed on?',
+    a: `We distribute your home across Airbnb, Vrbo, and Booking.com, plus a direct-booking channel for repeat guests — all synced to one calendar so you're never double-booked. Each listing is optimized for that platform's algorithm so you capture demand wherever guests are searching.`,
+  },
+  {
+    q: 'How is short-term rental management different from just hosting on Airbnb?',
+    a: `Hosting on a single platform leaves revenue on the table. Full short-term rental management means multi-channel distribution, nightly revenue management tuned to Atlanta's demand calendar, compliance across city and county rules, and complete operations — so your home performs like a professionally run asset, not a side listing.`,
+  },
+  {
+    q: 'Do you handle short-term rental licensing and permits?',
+    a: `Yes. Requirements differ across the City of Atlanta and surrounding counties, and operating without the right permits can mean steep fines. We guide every owner through licensing and occupancy-tax registration for their specific jurisdiction and stay current as the rules change. See our Atlanta permit guide for the details.`,
+  },
+  {
+    q: 'What types of properties do you manage?',
+    a: `Intown condos and lofts, suburban single-family homes, North Georgia cabins, lake houses, luxury and large-group homes, and coastal destination stays. With ${site.stats.homes} homes under management across ${site.stats.years} years, we tailor pricing and operations to each property type and market.`,
+  },
+  {
+    q: 'How do I find out what my Atlanta property could earn?',
+    a: `Get a free, comps-based rental projection. We build it from real local data for your specific property and market — not a generic estimate — and deliver it within one business day. There's no obligation, and you can reach us directly at ${site.contact.phone}.`,
+  },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbs),
+  serviceSchema({
+    name: 'Short-term rental management in Atlanta',
+    description:
+      'Full-service short-term and vacation rental management in Atlanta — multi-platform distribution, dynamic pricing, multi-jurisdiction compliance, and complete operations.',
+    serviceType: 'Vacation rental management',
+    area: {
+      name: 'Atlanta, GA',
+      lat: site.contact.geo.lat,
+      lng: site.contact.geo.lng,
+    },
+  }),
+  faqPageSchema(faqs),
+];
+---
+
+<BaseLayout
+  title="Short-Term Rental Management Atlanta"
+  description="Full-service short-term & vacation rental management in Atlanta — multi-platform distribution, dynamic pricing, and compliance, all for one flat 10% fee."
+  schemas={schemas}
+>
+  <PageHero
+    title="Short-Term Rental Management in Atlanta"
+    subtitle="Multi-platform distribution, revenue-maximizing pricing, and full-service operations for your Atlanta vacation rental — built and run by a local team, all for one flat fee."
+    eyebrow="Vacation rental management · Atlanta"
+    imageKey="atlantaSkyline"
+    breadcrumbs={breadcrumbs}
+    size="lg"
+  />
+
+  <!-- Intro: what STR full-service covers (primary keyword in the H2 + body) -->
+  <Section variant="cream">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-20">
+        <div>
+          <Eyebrow>The full operator's stack</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            What short-term rental management in Atlanta actually includes
+          </h2>
+          <p class="mt-4 text-ink/80">
+            Short-term rental management is more than a listing on one app. ATLStay runs your Atlanta
+            vacation rental as a revenue asset — distributed across every major platform, priced nightly
+            against live demand, kept compliant with local rules, and operated end-to-end. One transparent
+            rate, {site.pricing.rateNote}.
+          </p>
+          <p class="mt-4 text-ink/80">
+            We're a local Atlanta team with {site.stats.years} years of hands-on hosting and
+            {' '}{site.stats.homes} homes under management. You stay the owner; we handle the operating.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
+            <a href={site.contact.phoneHref} class="text-sm font-medium text-forest underline-offset-4 transition-colors hover:text-brass-600 hover:underline">or call {site.contact.phone}</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-8">
+          <h3 class="font-display text-lg text-forest">Included in your flat rate</h3>
+          <div class="mt-4"><CheckList items={fullService} columns={1} /></div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Differentiator 1: Multi-platform distribution -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-2xl text-center">
+        <Eyebrow>Multi-platform advantage</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          One home, everywhere guests book
+        </h2>
+        <p class="mt-4 text-ink/75">
+          Listing on a single channel caps your demand. We distribute and optimize your property across
+          every major platform — then sync the calendar so a booking anywhere updates everywhere.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: 'Airbnb', blurb: 'The largest STR marketplace — optimized for search ranking and Superhost-level reviews.' },
+          { name: 'Vrbo', blurb: 'Reaches families and longer-stay travelers who book differently than Airbnb guests.' },
+          { name: 'Booking.com', blurb: 'Captures international and last-minute demand that other platforms miss.' },
+          { name: 'Direct booking', blurb: 'A repeat-guest channel that builds loyalty and reduces platform reliance.' },
+        ].map((c) => (
+          <div class="rounded-2xl border border-line bg-cream p-6">
+            <div class="font-display text-lg text-forest">{c.name}</div>
+            <p class="mt-2 text-sm text-ink/70">{c.blurb}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <p class="mx-auto max-w-2xl text-sm text-ink/70">
+          Choosing between channels for your specific home? Read our breakdown of
+          {' '}<a href="/resources/airbnb-vs-vrbo-for-atlanta-hosts/" class="font-medium text-brass-600 underline-offset-4 hover:underline">Airbnb vs. Vrbo for Atlanta hosts</a>.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Differentiator 2: Revenue / dynamic pricing -->
+  <Section variant="forest">
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <Eyebrow class="text-brass">Revenue management</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+            Priced every night for maximum revenue — not just maximum rate
+          </h2>
+          <p class="mt-5 text-cream/80">
+            A great short-term rental isn't the one with the highest nightly price — it's the one that earns
+            the most across the whole calendar. We manage your rates every single night using live demand
+            signals, Atlanta's event calendar (Braves games, conventions, SEC Championship, World Cup
+            matches), and competitive data — pushing rates up when the city is in demand and filling the
+            gaps strategically.
+          </p>
+          <p class="mt-4 text-cream/80">
+            That's revenue management, not a set-and-forget price. It's the difference between a listing and
+            a managed asset.
+          </p>
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Button href="/dynamic-pricing/" size="lg">How our dynamic pricing works</Button>
+            <a href="/rental-projection/" class="text-sm font-medium text-cream/85 underline-offset-4 transition-colors hover:text-brass hover:underline">See your projection &rarr;</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-cream/15 bg-cream/5 p-8">
+          <h3 class="font-display text-lg text-brass">What drives a night's price</h3>
+          <ul class="mt-4 space-y-3 text-cream/80">
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brass"></span>Live local demand & booking pace</li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brass"></span>Atlanta's event & convention calendar</li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brass"></span>Seasonality and day-of-week patterns</li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brass"></span>Competitive set in your neighborhood</li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brass"></span>Minimum-stay & gap-night strategy</li>
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Differentiator 3: Compliance by jurisdiction -->
+  <Section variant="cream">
+    <Container>
+      <div class="rounded-2xl border border-line bg-white px-8 py-10">
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <Eyebrow>Compliance by jurisdiction</Eyebrow>
+            <h2 class="mt-3 font-display text-2xl text-forest sm:text-3xl">
+              Licensing handled — wherever your property sits
+            </h2>
+            <p class="mt-4 text-ink/80">
+              Short-term rental rules in Georgia aren't one rulebook — they change by city and county.
+              The City of Atlanta requires a Short-Term Rental License; surrounding counties run their own
+              programs, occupancy taxes, and local-contact requirements. Getting it wrong can mean steep
+              fines or a shut-down listing.
+            </p>
+            <p class="mt-3 text-ink/80">
+              We guide every owner through the exact requirements for their jurisdiction, register occupancy
+              taxes, and stay current as the rules evolve — so your rental operates cleanly from day one.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <Button href="/resources/atlanta-short-term-rental-permit-guide/" variant="secondary" class="w-full text-center">Atlanta STR permit guide &rarr;</Button>
+            <Button href="/counties/" variant="secondary" class="w-full text-center">Rules by county &rarr;</Button>
+            <a href="/resources/short-term-rental-taxes-atlanta-owners/" class="block rounded-full border border-line px-6 py-3 text-center text-sm font-medium text-forest transition-colors hover:border-brass/50 hover:text-brass-600">Short-term rental taxes for owners &rarr;</a>
+            <a href="/resources/how-to-start-an-airbnb-in-georgia/" class="block rounded-full border border-line px-6 py-3 text-center text-sm font-medium text-forest transition-colors hover:border-brass/50 hover:text-brass-600">How to start an STR in Georgia &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Differentiator 4: Property types we manage -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-2xl text-center">
+        <Eyebrow>Property types we manage</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          From intown condos to mountain cabins
+        </h2>
+        <p class="mt-4 text-ink/75">
+          Different properties draw different guests and demand cycles. We tailor pricing, distribution, and
+          operations to each — across metro Atlanta and Georgia's destination markets.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {propertyTypes.map((p) => (
+          <div class="rounded-2xl border border-line bg-cream p-6">
+            <div class="font-display text-lg text-forest">{p.name}</div>
+            <p class="mt-2 text-sm text-ink/70">{p.blurb}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <Button href="/manage/" variant="secondary">See every property type we manage &rarr;</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Social proof (honest aggregate, no fabricated quotes) -->
+  <Section variant="cream">
+    <Container>
+      <ReviewProof />
+    </Container>
+  </Section>
+
+  <!-- Process + projection -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-2xl text-center">
+        <Eyebrow>How it works</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          From first call to first payout
+        </h2>
+        <p class="mt-4 text-ink/75">
+          Onboarding is straightforward and fully handled. Most owners go from first conversation to a live,
+          multi-platform listing in about three to four weeks.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl border border-line bg-cream p-8">
+          <div class="font-display text-2xl text-brass-600">1</div>
+          <div class="mt-2 font-display text-lg text-forest">Free projection</div>
+          <p class="mt-2 text-sm text-ink/70">We build a comps-based estimate of what your specific Atlanta property could earn — delivered within one business day.</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-cream p-8">
+          <div class="font-display text-2xl text-brass-600">2</div>
+          <div class="mt-2 font-display text-lg text-forest">Setup & compliance</div>
+          <p class="mt-2 text-sm text-ink/70">Photography, listing build across platforms, dynamic-pricing setup, and licensing for your jurisdiction — all coordinated by us.</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-cream p-8">
+          <div class="font-display text-2xl text-brass-600">3</div>
+          <div class="mt-2 font-display text-lg text-forest">Go live & earn</div>
+          <p class="mt-2 text-sm text-ink/70">Your home goes live everywhere guests book. We run the day-to-day; you get transparent monthly statements and payouts.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <Button href="/how-it-works/" variant="secondary">See the full process &rarr;</Button>
+        <Button href="/rental-projection/" size="md">Get my free rental projection</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ (faqPageSchema is emitted via BaseLayout schemas; disable the
+       component's own emitter to avoid duplicate FAQPage markup) -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Common questions</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Short-term rental management FAQ</h2>
+      <div class="mt-10">
+        <FAQ items={faqs} emitSchema={false} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Internal links: pricing, services, areas, near, + related Airbnb page -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="/pricing/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Transparent pricing &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">One flat {site.pricing.rate} of revenue, all-in. See exactly what you pay and what you keep.</p>
+        </a>
+        <a href="/services/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Full-service details &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">Every part of management, broken down — listing, pricing, guests, cleaning, and reporting.</p>
+        </a>
+        <a href="/areas-we-serve/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Areas we serve &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">Metro Atlanta neighborhoods plus Georgia's mountain, lake, and coastal markets.</p>
+        </a>
+        <a href="/near/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Near Atlanta landmarks &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">Managing a property near a stadium, convention center, or attraction? Start here.</p>
+        </a>
+        <a href="/dynamic-pricing/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Dynamic pricing &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">How nightly, demand-based revenue management lifts your earnings over the full year.</p>
+        </a>
+        <a href="/atlanta-airbnb-management/" class="group rounded-2xl border border-brass/30 bg-brass-50 p-6 transition-all hover:border-brass/60 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Related: Airbnb management &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">Focused specifically on hosting and managing your home on Airbnb? See our Airbnb management page.</p>
+        </a>
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand
+    heading="See what your Atlanta short-term rental could earn"
+    text="Get a free, comps-based projection from a local team that runs homes across metro Atlanta and Georgia — delivered within one business day."
+  />
+</BaseLayout>

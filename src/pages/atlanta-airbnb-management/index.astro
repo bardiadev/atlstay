@@ -1,0 +1,445 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import ReviewProof from '@/components/ui/ReviewProof.astro';
+import { site } from '@/config/site';
+import { breadcrumbSchema, serviceSchema, faqPageSchema } from '@/lib/schema';
+
+// ---------------------------------------------------------------------------
+// Keyword-exact full-service money page for "Atlanta Airbnb management".
+// Content integrity: every fact comes from src/config/site.ts. No invented
+// earnings, occupancy, ADR, testimonials, or review counts. No aggregateRating
+// schema — visible ReviewProof copy carries the rating instead.
+// ---------------------------------------------------------------------------
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Atlanta Airbnb Management', path: '/atlanta-airbnb-management/' },
+];
+
+const faqs = [
+  {
+    q: 'How much does Atlanta Airbnb management cost?',
+    a: `ATLStay charges one flat ${site.pricing.rate} of booking revenue — ${site.pricing.rateNote}. There's no separate onboarding charge, no cleaning markup, no maintenance-coordination surcharge, and no monthly software fee. You only pay when your home earns, and every owner statement shows revenue, fee, and net payout line by line. For a full breakdown see our pricing page.`,
+  },
+  {
+    q: 'Is hiring an Atlanta Airbnb management company worth it?',
+    a: `For most owners, yes. Self-managing means handling pricing, 24/7 guest messages, turnovers, restocking, maintenance, and reviews yourself — a real second job. Full-service management hands all of that to a local team and frees your time, while professional pricing and listing optimization work to protect your revenue. The honest answer depends on your specific property, which is exactly what a free rental projection is for.`,
+  },
+  {
+    q: 'Do you manage both Airbnb and Vrbo listings?',
+    a: `Yes. We list and optimize your home on Airbnb, Vrbo, and Booking.com, with synced calendars so you're never double-booked. Each platform's algorithm rewards different things, so we tune your listing for all of them to maximize how often guests find and book your home.`,
+  },
+  {
+    q: 'What areas of Atlanta do you cover?',
+    a: `We manage short-term rentals across the city — Buckhead, Midtown, Old Fourth Ward, Inman Park, Virginia-Highland, and beyond — plus the wider metro. Our team is Atlanta-based, so pricing and turnovers are handled by people who actually know your neighborhood. See our areas-we-serve page for the full market list.`,
+  },
+  {
+    q: 'What does full-service Airbnb management actually include?',
+    a: `Everything it takes to run a top-performing listing: professional listing creation and photography coordination, nightly dynamic pricing, 24/7 guest communication, hotel-grade cleaning and turnover management, linen and amenity restocking, maintenance coordination with trusted local vendors, multi-platform distribution, review management, and transparent monthly owner statements. One team, one fee.`,
+  },
+  {
+    q: 'Am I locked into a long-term contract?',
+    a: `No. ATLStay operates with no long-term lock-in — we'd rather earn your business every month through results and service than hold you to a contract. And your calendar stays yours: block any dates for personal stays, family visits, or maintenance whenever you like.`,
+  },
+  {
+    q: 'How experienced is ATLStay at managing Atlanta rentals?',
+    a: `ATLStay was founded in ${site.stats.foundingYear} and brings ${site.stats.years} years of hands-on Atlanta hosting experience. Across our portfolio we manage ${site.stats.homes} homes and have earned ${site.stats.reviews} five-star guest reviews at a ${site.reviews.ratingValue}-star average — a track record built on consistent, local, full-service operations.`,
+  },
+];
+
+const fullService = [
+  'Listing creation, copywriting & SEO optimization',
+  'Professional photography coordination',
+  'Nightly dynamic pricing & revenue strategy',
+  '24/7 guest communication & support',
+  'Hotel-grade cleaning & turnover management',
+  'Quality inspection between every stay',
+  'Linen service & amenity restocking',
+  'Maintenance coordination with trusted local vendors',
+  'Airbnb, Vrbo & Booking.com distribution',
+  'Multi-calendar sync — zero double-bookings',
+  'Review management & reputation strategy',
+  'Transparent monthly owner statements & payouts',
+];
+
+// Fair, qualitative comparison — no fabricated numbers, just what each model
+// realistically asks of an owner.
+const comparison = [
+  {
+    label: 'Who does the daily work',
+    atlstay: 'Our local team — start to finish',
+    diy: 'You — every message, every turnover',
+    national: 'Split between you and a remote team',
+  },
+  {
+    label: 'Nightly pricing',
+    atlstay: 'Active dynamic pricing around Atlanta demand & events',
+    diy: 'Manual guesswork or a basic tool',
+    national: 'National algorithm, little local feel',
+  },
+  {
+    label: 'Guest support',
+    atlstay: '24/7, handled for you',
+    diy: 'You, at every hour',
+    national: 'Call center, no Atlanta context',
+  },
+  {
+    label: 'Cleaning & turnovers',
+    atlstay: 'Coordinated & inspected, included',
+    diy: 'You hire & schedule cleaners',
+    national: 'Often your responsibility or an add-on',
+  },
+  {
+    label: 'Local market knowledge',
+    atlstay: 'Atlanta-based; knows your neighborhood',
+    diy: 'Limited to your own experience',
+    national: 'Remote, dataset-driven',
+  },
+  {
+    label: 'Pricing structure',
+    atlstay: `One flat ${site.pricing.rate}, all-inclusive`,
+    diy: 'No fee, but all the time & risk',
+    national: 'Base rate plus common add-on fees',
+  },
+];
+
+const steps = [
+  {
+    n: '1',
+    title: 'Get your free projection',
+    body: 'Tell us about your home and we build a free, comps-based rental projection from real Atlanta data — no obligation.',
+  },
+  {
+    n: '2',
+    title: 'We launch your listing',
+    body: 'Photography, listing copy, dynamic pricing, and multi-platform setup — we handle onboarding so your home goes live optimized.',
+  },
+  {
+    n: '3',
+    title: 'You collect payouts',
+    body: 'We run the day-to-day — guests, cleaning, maintenance, reviews — and send transparent monthly statements with your net payout.',
+  },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbs),
+  serviceSchema({
+    name: 'Atlanta Airbnb management',
+    description:
+      'Full-service Airbnb and short-term rental management in Atlanta — listing, dynamic pricing, 24/7 guests, cleaning, maintenance, and reporting for one flat all-inclusive fee.',
+    area: {
+      name: `${site.contact.address.city}, ${site.contact.address.region}`,
+      lat: site.contact.geo.lat,
+      lng: site.contact.geo.lng,
+    },
+  }),
+  faqPageSchema(faqs),
+];
+---
+
+<BaseLayout
+  title="Atlanta Airbnb Management Company"
+  description="Full-service Atlanta Airbnb management — listing, dynamic pricing, 24/7 guests, cleaning, and maintenance for one flat 10% all-in fee. Free rental projection."
+  schemas={schemas}
+>
+  <PageHero
+    title="Atlanta Airbnb Management, Fully Handled"
+    subtitle="Airbnb property management in Atlanta from a local, full-service team — listing, pricing, guests, cleaning, and maintenance, all run for you under one transparent fee."
+    eyebrow="Atlanta Airbnb management"
+    imageKey="atlantaSkyline"
+    breadcrumbs={breadcrumbs}
+    size="lg"
+  />
+
+  <!-- Intro + keyword-rich opening -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <div class="text-center">
+        <Eyebrow>Full-service, local, transparent</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          The definitive way to run an Atlanta Airbnb
+        </h2>
+      </div>
+      <p class="mt-6 text-lg leading-relaxed text-ink/80">
+        ATLStay is a full-service <strong>Atlanta Airbnb management</strong> company built for
+        owners who want the income of a short-term rental without the second job. We are an
+        Atlanta-based team handling Airbnb property management end to end — listing creation and
+        photography, nightly dynamic pricing, 24/7 guest communication, hotel-grade cleaning,
+        maintenance coordination, and clear monthly payouts — all for one flat
+        {' '}{site.pricing.rate} of booking revenue, {site.pricing.rateNote}.
+      </p>
+      <p class="mt-4 text-ink/75">
+        With {site.stats.years} years hosting across Atlanta, {site.stats.homes} homes under
+        management, and {site.stats.reviews} five-star guest reviews, we bring real local operating
+        experience to every property. Curious what your home could earn? The fastest answer is a
+        {' '}<a href="/rental-projection/" class="font-medium text-brass-600 underline-offset-4 hover:underline">free rental projection</a> — comps-based, built on Atlanta data, no obligation.
+      </p>
+    </Container>
+  </Section>
+
+  <!-- (2) What full-service includes -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>What full-service includes</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Everything your Atlanta Airbnb needs — handled by one team
+        </h2>
+        <p class="mt-4 text-ink/75">
+          National managers often unbundle the work into add-ons. With ATLStay, every item below is
+          included in your single management rate — nothing held back, nothing billed separately.
+        </p>
+      </div>
+      <div class="mx-auto mt-12 max-w-3xl">
+        <CheckList items={fullService} columns={2} />
+      </div>
+      <div class="mt-10 text-center">
+        <Button href="/services/" size="lg">See the full service in detail</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- (3) Transparent 10% pricing -->
+  <Section variant="tint">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <div>
+          <Eyebrow>Transparent pricing</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            One flat {site.pricing.rate}. No hidden fees.
+          </h2>
+          <p class="mt-4 text-ink/80">
+            Your management fee is {site.pricing.rate} of booking revenue — {site.pricing.rateNote}.
+            That means no onboarding charge, no cleaning markup, no maintenance-coordination
+            surcharge, and no monthly software fee. We earn when you earn, and every owner statement
+            shows revenue, fee, and net payout line by line.
+          </p>
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Button href="/pricing/" size="lg">See transparent pricing</Button>
+            <a href={site.contact.phoneHref} class="text-sm font-medium text-forest transition-colors hover:text-brass-600">or call {site.contact.phone}</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-8 shadow-sm">
+          <div class="text-center">
+            <p class="font-display text-6xl leading-none text-forest">{site.pricing.rate}</p>
+            <p class="mt-2 text-sm text-stone">all-inclusive management fee</p>
+          </div>
+          <div class="mt-7 border-t border-line pt-6">
+            <CheckList
+              items={[
+                'No onboarding or setup fee',
+                'No cleaning or restocking markup',
+                'No maintenance-coordination surcharge',
+                'No long-term contract lock-in',
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- (4) Why local + full-service beats DIY & national managers (comparison) -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>Local & full-service vs. the alternatives</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Why local, full-service management wins
+        </h2>
+        <p class="mt-4 text-ink/75">
+          Self-managing and national half-service platforms both leave real work — and real risk —
+          on your plate. Here's an honest look at how the three approaches compare.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-12 max-w-5xl overflow-x-auto">
+        <table class="w-full border-collapse text-left text-sm">
+          <thead>
+            <tr class="border-b border-line">
+              <th class="py-4 pr-4 font-display text-base font-medium text-forest"></th>
+              <th class="rounded-t-xl bg-forest px-4 py-4 font-display text-base font-medium text-cream">ATLStay (local, full-service)</th>
+              <th class="px-4 py-4 font-display text-base font-medium text-forest">Self-managing</th>
+              <th class="px-4 py-4 font-display text-base font-medium text-forest">National / half-service</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((row, i) => (
+              <tr class={`border-b border-line align-top ${i % 2 === 1 ? 'bg-cream/40' : ''}`}>
+                <td class="py-4 pr-4 font-medium text-forest">{row.label}</td>
+                <td class="bg-forest/5 px-4 py-4 text-ink/85">{row.atlstay}</td>
+                <td class="px-4 py-4 text-ink/70">{row.diy}</td>
+                <td class="px-4 py-4 text-ink/70">{row.national}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="mx-auto max-w-2xl text-sm text-ink/70">
+          Comparing managers? Our guide to the
+          {' '}<a href="/resources/best-airbnb-management-companies-atlanta/" class="font-medium text-brass-600 underline-offset-4 hover:underline">best Airbnb management companies in Atlanta</a>
+          {' '}and
+          {' '}<a href="/resources/co-hosting-vs-full-management/" class="font-medium text-brass-600 underline-offset-4 hover:underline">co-hosting vs. full management</a>
+          {' '}lay out the trade-offs in detail.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- (5) Dynamic pricing as the revenue lever -->
+  <Section variant="forest">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow class="text-brass">The revenue lever</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+          Dynamic pricing is where Atlanta revenue is won
+        </h2>
+        <p class="mt-5 text-lg text-cream/80">
+          A flat nightly rate leaves money on the table — both on high-demand weekends and on the
+          quiet nights that go unbooked. We price every night individually around live demand, the
+          Atlanta event calendar, and competitive data, adjusting up when the city is busy and
+          filling gaps strategically. The goal is always maximum revenue, not just maximum rate.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl bg-forest-700 p-8">
+          <div class="font-display text-xl text-brass">Priced every night</div>
+          <p class="mt-3 text-cream/75">No static rates. Each night is set on its own merits as demand shifts.</p>
+        </div>
+        <div class="rounded-2xl bg-forest-700 p-8">
+          <div class="font-display text-xl text-brass">Built around Atlanta events</div>
+          <p class="mt-3 text-cream/75">
+            Conventions, big games, festivals, and the
+            {' '}<a href="/world-cup-2026-atlanta/" class="underline underline-offset-4 hover:text-brass">2026 World Cup in Atlanta</a>
+            {' '}all move rates — we plan for them.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-forest-700 p-8">
+          <div class="font-display text-xl text-brass">Revenue, not just rate</div>
+          <p class="mt-3 text-cream/75">We balance nightly price and occupancy to grow total earnings across the month.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="/dynamic-pricing/" size="lg">How our dynamic pricing works</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- (6) Review proof -->
+  <Section variant="cream">
+    <Container>
+      <ReviewProof />
+    </Container>
+  </Section>
+
+  <!-- (7) Simple 3-step process -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>How it works</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Getting started takes three simple steps
+        </h2>
+      </div>
+
+      <div class="mt-12 grid gap-8 sm:grid-cols-3">
+        {steps.map((step) => (
+          <div class="rounded-2xl border border-line bg-cream/40 p-8">
+            <div class="flex h-11 w-11 items-center justify-center rounded-full bg-forest font-display text-lg text-cream">{step.n}</div>
+            <h3 class="mt-5 font-display text-xl text-forest">{step.title}</h3>
+            <p class="mt-3 text-ink/75">{step.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
+        <a href="/how-it-works/" class="text-sm font-medium text-forest transition-colors hover:text-brass-600">See the full onboarding process &rarr;</a>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- (8) Areas served -->
+  <Section variant="tint">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>Where we manage</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Serving Atlanta and the wider metro
+        </h2>
+        <p class="mt-4 text-ink/75">
+          From in-town neighborhoods like Buckhead, Midtown, Old Fourth Ward, and Virginia-Highland
+          to the surrounding suburbs and counties, our local team covers the markets where Atlanta
+          guests actually book.
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        <a href="/atlanta/" class="rounded-full border border-brass/50 bg-brass-50 px-5 py-2.5 text-sm font-semibold text-brass-600 transition-colors hover:border-brass hover:bg-brass hover:text-forest-900">Atlanta Airbnb management &rarr;</a>
+        <a href="/areas-we-serve/" class="rounded-full border border-line bg-white px-5 py-2.5 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">All areas we serve</a>
+        <a href="/near/" class="rounded-full border border-line bg-white px-5 py-2.5 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">Search near a landmark</a>
+        <a href="/counties/" class="rounded-full border border-line bg-white px-5 py-2.5 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">Browse by county</a>
+        <a href="/manage/" class="rounded-full border border-line bg-white px-5 py-2.5 text-sm text-forest transition-colors hover:border-brass hover:text-brass-600">Management by property type</a>
+      </div>
+
+      <p class="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
+        Choosing where to buy or list? See the
+        {' '}<a href="/resources/best-atlanta-neighborhoods-for-airbnb/" class="font-medium text-brass-600 underline-offset-4 hover:underline">best Atlanta neighborhoods for Airbnb</a>.
+      </p>
+    </Container>
+  </Section>
+
+  <!-- (9) FAQ — schema emitted via BaseLayout's faqPageSchema, so suppress here -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Common questions</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Atlanta Airbnb management FAQ</h2>
+      <div class="mt-10">
+        <FAQ items={faqs} emitSchema={false} />
+      </div>
+      <p class="mt-8 text-sm text-ink/70">
+        Want the deeper dives? Read
+        {' '}<a href="/resources/airbnb-management-cost-atlanta/" class="font-medium text-brass-600 underline-offset-4 hover:underline">how much Atlanta Airbnb management costs</a>
+        {' '}and
+        {' '}<a href="/resources/is-airbnb-management-worth-it/" class="font-medium text-brass-600 underline-offset-4 hover:underline">whether Airbnb management is worth it</a>.
+      </p>
+    </Container>
+  </Section>
+
+  <!-- Related / internal links -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-6 sm:grid-cols-3">
+        <a href="/short-term-rental-management-atlanta/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Short-term rental management &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">The same full-service approach, framed for Atlanta short-term rental owners.</p>
+        </a>
+        <a href="/manage/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Management by property type &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">Condos, luxury homes, cabins, and more — see how we tailor management to your property.</p>
+        </a>
+        <a href="/pricing/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Transparent pricing &rarr;</div>
+          <p class="mt-2 text-sm text-ink/70">One clear {site.pricing.rate} rate. See exactly what you pay — and what you keep.</p>
+        </a>
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand
+    heading="See what your Atlanta home could earn"
+    text="Get a free, comps-based rental projection from a local Atlanta team — no obligation, delivered within one business day."
+  />
+</BaseLayout>

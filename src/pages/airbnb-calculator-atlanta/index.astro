@@ -1,0 +1,269 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import ReviewProof from '@/components/ui/ReviewProof.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import { breadcrumbSchema, faqPageSchema } from '@/lib/schema';
+import { images } from '@/data/images';
+import { site } from '@/config/site';
+
+// What actually moves Atlanta STR income — all qualitative, ZERO numbers.
+const incomeDrivers = [
+  {
+    title: 'Location & neighborhood',
+    body: 'A home steps from the BeltLine, Midtown, or Mercedes-Benz Stadium books on a completely different curve than one in a quiet suburb. Demand, guest mix, and the rates that hold are set street by street — not citywide. Your exact address matters more than any metro average.',
+  },
+  {
+    title: 'Seasonality & Atlanta events',
+    body: `Atlanta's calendar drives demand: conventions downtown, Braves and Falcons home games, Dragon Con, college football weekends, and the FIFA World Cup 2026 matches coming to Mercedes-Benz Stadium. The right strategy captures those surges instead of leaving them on the table.`,
+  },
+  {
+    title: 'Property type & quality',
+    body: 'Studio condo, Craftsman bungalow, or a family home with a yard — each draws a different guest and a different length of stay. Layout, sleeping capacity, parking, and finish level all shape how often a home books and what guests will happily pay.',
+  },
+  {
+    title: 'Professional management & dynamic pricing',
+    body: 'A listing left on autopilot leaves money behind. We price every night against live demand, fill gaps strategically, keep reviews five-star, and optimize the listing for each platform — the difference between a home that earns and one that just sits booked at the wrong rate.',
+  },
+];
+
+const calculatorFaqs = [
+  {
+    q: 'How much can I make on Airbnb in Atlanta?',
+    a: `Honestly, it depends — there is no single number, and any tool that spits one out instantly is guessing. What your Atlanta home can earn comes down to your exact address and neighborhood, your property type and size, the season, and how well it's managed and priced. The accurate way to find out is a free, custom projection built from real comparable listings near you. Tell us about your property and our Atlanta team will send you one.`,
+  },
+  {
+    q: 'Is this an instant Atlanta Airbnb calculator?',
+    a: `No — and that's deliberate. Instant calculators apply broad metro averages to your address, which can be wildly off for any specific home. Instead, a real member of our Atlanta team builds your projection from actual comparable listings in your neighborhood — same size, type, and quality tier — and emails it to you, usually within one business day.`,
+  },
+  {
+    q: 'Why is a custom projection more accurate than a generic calculator?',
+    a: `A generic calculator does not know that your Inman Park block books differently than Buckhead, or that BeltLine access two streets over changes everything. Our projection is grounded in real comps from your specific area and factors in Atlanta's seasonality and event demand — so you get numbers you can actually plan around, not a flattened citywide average.`,
+  },
+  {
+    q: 'Is the rental projection free, and is there any obligation?',
+    a: `Completely free, with zero obligation. We provide it because we'd rather earn your trust with honest information first. Requesting a projection doesn't start a contract or commit you to working with ATLStay — it's just useful information to help you make a confident decision about your home.`,
+  },
+  {
+    q: 'My Atlanta home isn\'t listed yet. Can I still get a projection?',
+    a: `Absolutely — most projections we deliver are for homes considering short-term rental for the first time. We model what your property could earn as a professionally managed Airbnb and walk you through the realistic upside, seasonality, and timeline so you can decide with clear eyes.`,
+  },
+  {
+    q: 'What information do you use to build my projection?',
+    a: `We pull real comparable active listings from your Atlanta neighborhood — properties with similar bedrooms, type, and quality level — and factor in local demand, seasonality, and upcoming events. You receive a grounded, property-specific estimate, not a best-case scenario engineered to close a deal.`,
+  },
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Atlanta Airbnb Calculator', path: '/airbnb-calculator-atlanta/' },
+  ]),
+  faqPageSchema(calculatorFaqs),
+];
+---
+
+<BaseLayout
+  title="Atlanta Airbnb Calculator — Free Income Estimate"
+  description="Use our Atlanta Airbnb calculator to estimate what your home could earn — a free, custom projection built from real comparable listings by our local team."
+  image={images.heroProjection.src}
+  schemas={schemas}
+>
+  <PageHero
+    title="Atlanta Airbnb Calculator: estimate what your home could earn"
+    subtitle="Estimate what your Atlanta home could earn — a free, custom projection built from real comparable listings, not a generic guess. Tell us about your property and our local team gets to work."
+    eyebrow="Atlanta Airbnb calculator"
+    imageKey="heroProjection"
+    breadcrumbs={[
+      { name: 'Home', path: '/' },
+      { name: 'Atlanta Airbnb Calculator', path: '/airbnb-calculator-atlanta/' },
+    ]}
+  />
+
+  <!-- =============================================
+       INTRO: frame the keyword honestly
+       ============================================= -->
+  <Section variant="white">
+    <Container size="narrow">
+      <div class="text-center">
+        <Eyebrow>How much can I make on Airbnb in Atlanta?</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          The honest answer: it depends — so we built you a real one.
+        </h2>
+      </div>
+      <div class="mx-auto mt-6 max-w-2xl space-y-4 text-center text-lg leading-relaxed text-ink/80">
+        <p>
+          "How much can I make on Airbnb in Atlanta?" is the right question — but no instant
+          calculator can answer it well. A single citywide number applied to your address can be
+          wildly off, because what your home earns is set by your exact neighborhood, your property
+          type, the season, and how it's priced and managed.
+        </p>
+        <p>
+          So instead of a generic guess, the form above is your Atlanta Airbnb calculator done
+          properly: tell us about your property and a real member of our local team builds a
+          custom projection from actual comparable listings near you — usually within one
+          business day, free and with no obligation.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       WHY CUSTOM BEATS A GENERIC CALCULATOR
+       ============================================= -->
+  <Section variant="tint">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>Why a custom projection beats a generic calculator</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Real comps from your block — not a metro average with your address plugged in.
+        </h2>
+        <p class="mt-4 leading-relaxed text-ink/80">
+          Online Airbnb calculators run on broad benchmarks, often city-wide or metro-wide. They
+          don't know that your Old Fourth Ward block books differently than Buckhead, or that
+          BeltLine access two streets over changes the math. Our local team does — and we build
+          your projection from there.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="font-display text-lg text-forest">Real comparable listings</div>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">
+            We pull actual comps from your specific Atlanta neighborhood — same bedroom count,
+            property type, and quality tier — instead of flattening your home into a citywide
+            average.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="font-display text-lg text-forest">Daily dynamic pricing built in</div>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">
+            We model how a professionally managed listing performs with rates set every night
+            against live demand — not a single static guess that ignores Atlanta's peaks and
+            valleys.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="font-display text-lg text-forest">Your exact address & neighborhood</div>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">
+            Two homes a mile apart can earn very differently. We project from where your home
+            actually is — its street, its access, its guest draw — so the estimate fits your
+            property, not a region.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="/rental-projection/" size="lg">Get my free rental projection</Button>
+        <p class="mt-3 text-sm text-ink/60">
+          Prefer to see the method first?{' '}
+          <a href="/resources/how-we-calculate-your-rental-projection/" class="font-medium text-brass-600 underline-offset-4 hover:underline">See how we calculate your projection &rarr;</a>
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       WHAT DRIVES YOUR ATLANTA STR INCOME (qualitative)
+       ============================================= -->
+  <Section variant="cream">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>What actually drives your income</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          What actually drives your Atlanta short-term rental income
+        </h2>
+        <p class="mt-4 leading-relaxed text-ink/75">
+          No two Atlanta homes earn alike. These are the factors that decide what yours can do —
+          and the reason a real projection beats a one-size-fits-all number.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
+        {incomeDrivers.map((d) => (
+          <div class="rounded-2xl border border-line bg-white p-7 shadow-sm">
+            <h3 class="font-display text-xl text-forest">{d.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink/75">{d.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mx-auto mt-10 max-w-3xl rounded-2xl border border-brass/30 bg-brass-50 p-6 text-center">
+        <p class="text-sm leading-relaxed text-ink/75">
+          Want to go deeper before you request a projection? Read up on the{' '}
+          <a href="/resources/best-atlanta-neighborhoods-for-airbnb/" class="font-medium text-brass-600 underline-offset-4 hover:underline">best Atlanta neighborhoods for Airbnb</a>,{' '}
+          <a href="/resources/best-time-to-list-airbnb-atlanta/" class="font-medium text-brass-600 underline-offset-4 hover:underline">the best time to list</a>, and how our{' '}
+          <a href="/dynamic-pricing/" class="font-medium text-brass-600 underline-offset-4 hover:underline">dynamic pricing</a> turns Atlanta's demand swings into revenue.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       SOCIAL PROOF (aggregate, owner-verified)
+       ============================================= -->
+  <Section variant="white">
+    <Container>
+      <ReviewProof heading="Owners across Atlanta trust our numbers." />
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       FAQ (FAQPage JSON-LD emitted once via BaseLayout schemas)
+       ============================================= -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>Common questions</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        Atlanta Airbnb calculator — FAQs
+      </h2>
+      <div class="mt-10">
+        <FAQ items={calculatorFaqs} emitSchema={false} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- =============================================
+       INTERNAL LINKS
+       ============================================= -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-6 sm:grid-cols-3">
+        <a href="/how-it-works/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">How it works →</div>
+          <p class="mt-2 text-sm text-ink/70">From first conversation to first payout — exactly how ATLStay manages your Atlanta home.</p>
+        </a>
+        <a href="/pricing/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Pricing →</div>
+          <p class="mt-2 text-sm text-ink/70">One transparent, all-inclusive rate. See exactly what you pay — and what you keep.</p>
+        </a>
+        <a href="/atlanta/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Atlanta management →</div>
+          <p class="mt-2 text-sm text-ink/70">Full-service Airbnb management built around Atlanta's neighborhoods and demand cycles.</p>
+        </a>
+        <a href="/areas-we-serve/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Areas we serve →</div>
+          <p class="mt-2 text-sm text-ink/70">Buckhead, Midtown, Inman Park, Old Fourth Ward, and more across metro Atlanta.</p>
+        </a>
+        <a href="/world-cup-2026-atlanta/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">World Cup 2026 →</div>
+          <p class="mt-2 text-sm text-ink/70">Atlanta hosts FIFA World Cup 2026 matches. See what it could mean for hosts.</p>
+        </a>
+        <a href="/resources/airbnb-management-cost-atlanta/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+          <div class="font-display text-lg text-forest group-hover:text-brass-600">Management cost →</div>
+          <p class="mt-2 text-sm text-ink/70">What Airbnb management actually costs in Atlanta — explained plainly, no fine print.</p>
+        </a>
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand
+    heading="Skip the guesswork — get a real Atlanta projection"
+    text="Our local team builds a custom, comps-based projection for your exact home and sends it within one business day. Free, no obligation."
+  />
+</BaseLayout>
