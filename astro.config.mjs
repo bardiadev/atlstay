@@ -14,7 +14,7 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       lastmod: new Date(),
-      filter: (page) => !page.includes('/dashboard'),
+      filter: (page) => !page.includes('/boroto'),
       serialize(item) {
         const u = item.url;
         if (u === 'https://atlstay.com/') item.priority = 1.0;

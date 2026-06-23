@@ -2,9 +2,10 @@
 // =============================================================================
 // ATLStay — PRIVATE SEO / content command center. Built from the site's own
 // real data (content collections + data files); no fabricated metrics. Kept out
-// of search: noindexed (BaseLayout noindex), Disallow /dashboard/ in robots.txt,
+// of search: noindexed (BaseLayout noindex), Disallow /boroto/ in robots.txt,
 // excluded from the sitemap (astro.config.mjs filter), and not linked anywhere.
-// It is still a public static URL — for true privacy add HTTP Basic Auth.
+// Access is gated by HTTP Basic Auth at the edge (see functions/_middleware.js,
+// BOROTO_USER / BOROTO_PASS) so the URL is not publicly viewable.
 // =============================================================================
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Container from '../../components/ui/Container.astro';
