@@ -67,7 +67,8 @@ function telegramText({ form, lead, meta }) {
   const page = M['Submitted from page'] || '';
   const loc = M['Approx. location'] || '';
 
-  const lines = [`🏠 <b>ATLStay</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
+  const sep = '━━━━━━━━━━━━━━━━';
+  const lines = [sep, `🏠 <b>ATLStay</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
   const contact = [];
   if (phone) contact.push(`📞 ${tgEscape(phone)}`);
   if (email) contact.push(`✉️ ${tgEscape(email)}`);
@@ -78,6 +79,7 @@ function telegramText({ form, lead, meta }) {
   if (page) ctx.push(tgEscape(page.replace(/^https?:\/\/[^/]+/, '') || page));
   if (loc) ctx.push(tgEscape(loc));
   if (ctx.length) lines.push(`<i>${ctx.join('  ·  ')}</i>`);
+  lines.push(sep);
   return lines.join('\n');
 }
 
