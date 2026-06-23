@@ -34,6 +34,28 @@ export const site = {
     linkedin: '', // CONFIRM
   },
 
+  // Parent / operating company. ATLStay is a SECONDARY SEO brand; the real
+  // company is Silverstone Management LLC (ssmproperty.com), which owns the
+  // Google Business Profile. We link UP to it (parentOrganization + footer)
+  // rather than claiming its GBP reviews as ATLStay's own.
+  company: {
+    legalName: 'Silverstone Management LLC',
+    name: 'SilverStone Management',
+    url: 'https://ssmproperty.com',
+    phone: '(404) 751-7841',
+    phoneHref: 'tel:+14047517841',
+    gbpUrl: 'https://share.google/UvKPapN7lSie0J1ta',
+    mapsUrl: 'https://www.google.com/maps/place/SilverStone+Management+LLC/@33.9078682,-84.4876078,17z',
+    address: {
+      street: '1355 Terrell Mill Rd, Building 1480',
+      city: 'Marietta',
+      region: 'GA',
+      postalCode: '30067',
+      country: 'US',
+    },
+    geo: { lat: 33.9078682, lng: -84.4876078 },
+  },
+
   // Pricing — radical transparency is a core differentiator. Set REAL rate.
   pricing: {
     rate: '10%', // CONFIRM — base all-in rate; premium/large-scope markets may run higher

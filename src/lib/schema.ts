@@ -4,6 +4,10 @@ import { site } from '../config/site';
 
 const ORG_ID = `${site.domain}/#organization`;
 const SITE_ID = `${site.domain}/#website`;
+// Parent/operating company — Silverstone Management LLC (ssmproperty.com), which
+// owns the Google Business Profile. ATLStay is its secondary SEO brand and
+// references it as parentOrganization (without claiming its GBP reviews).
+const SILVERSTONE_ID = `${site.company.url}/#organization`;
 
 function postalAddress() {
   const a = site.contact.address;
@@ -36,6 +40,8 @@ export function organizationSchema() {
     },
     image: `${site.domain}/images/og-default.jpg`,
     ...(sameAs.length ? { sameAs } : {}),
+    // ATLStay is a secondary brand operated by Silverstone Management LLC.
+    parentOrganization: { '@id': SILVERSTONE_ID },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
@@ -44,6 +50,32 @@ export function organizationSchema() {
       areaServed: 'Georgia, US',
       availableLanguage: 'English',
     },
+  };
+}
+
+/** Silverstone Management LLC — the real parent company (ssmproperty.com) that
+ *  owns the Google Business Profile. Emitted site-wide so ATLStay's Organization
+ *  and LocalBusiness reference it as their parent, without claiming its GBP
+ *  reviews as ATLStay's own. */
+export function parentOrganizationSchema() {
+  const c = site.company;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': SILVERSTONE_ID,
+    name: c.name,
+    legalName: c.legalName,
+    url: c.url,
+    telephone: c.phone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: c.address.street,
+      addressLocality: c.address.city,
+      addressRegion: c.address.region,
+      postalCode: c.address.postalCode,
+      addressCountry: c.address.country,
+    },
+    sameAs: [c.url, c.mapsUrl].filter(Boolean),
   };
 }
 

@@ -42,6 +42,33 @@ const C = {
   muted: '#6b7770',
 };
 
+/* ── CORS ── Let the Silverstone/SSMProperty site post leads to this shared
+ * endpoint so both sites fire the EXACT same email + Telegram pipeline. Only
+ * our own origins are allowed; everything else gets no CORS header. */
+const ALLOWED_ORIGINS = new Set([
+  'https://ssmproperty.com',
+  'https://www.ssmproperty.com',
+  'https://atlstay.com',
+  'https://www.atlstay.com',
+]);
+function corsHeaders(origin) {
+  return origin && ALLOWED_ORIGINS.has(origin)
+    ? { 'Access-Control-Allow-Origin': origin, Vary: 'Origin' }
+    : {};
+}
+export function onRequestOptions(context) {
+  const origin = context.request.headers.get('Origin');
+  return new Response(null, {
+    status: 204,
+    headers: {
+      ...corsHeaders(origin),
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Max-Age': '86400',
+    },
+  });
+}
+
 /* ── Telegram lead notification (best-effort; never blocks or throws) ──
  * Pings the owner's personal notifier bot on every submission. Reads
  * TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID from env; no-ops silently if either is
@@ -68,7 +95,9 @@ function telegramText({ form, lead, meta }) {
   const loc = M['Approx. location'] || '';
 
   const sep = '━━━━━━━━━━━━━━━━';
-  const lines = [`🏠 <b>ATLStay</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
+  // Label the source site so SSMProperty leads are distinguishable from ATLStay.
+  const sourceBrand = /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay';
+  const lines = [`🏠 <b>${tgEscape(sourceBrand)}</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
   const contact = [];
   if (phone) contact.push(`📞 ${tgEscape(phone)}`);
   if (email) contact.push(`✉️ ${tgEscape(email)}`);
@@ -100,12 +129,13 @@ async function sendTelegram(env, text) {
 
 export async function onRequestPost(context) {
   const { request, env } = context;
+  const cors = corsHeaders(request.headers.get('Origin'));
 
   let payload;
   try {
     payload = await request.json();
   } catch {
-    return json({ success: false, error: 'Invalid JSON' }, 400);
+    return json({ success: false, error: 'Invalid JSON' }, 400, cors);
   }
 
   const subject = payload?.subject || 'New ATLStay lead';
@@ -149,7 +179,7 @@ export async function onRequestPost(context) {
             html: buildLeadEmail({ lead }),
           }).catch(() => {});
         }
-        return json({ success: true, via: 'resend' });
+        return json({ success: true, via: 'resend' }, 200, cors);
       }
       // Resend returned non-2xx → fall through to Web3Forms.
     } catch {
@@ -160,18 +190,18 @@ export async function onRequestPost(context) {
   // ── Fallback: Web3Forms (guarantees delivery) ──
   if (cfg.web3formsKey) {
     const ok = await sendWeb3forms(cfg.web3formsKey, { subject, formName, replyto, lead, meta });
-    return json({ success: ok, via: 'web3forms' });
+    return json({ success: ok, via: 'web3forms' }, 200, cors);
   }
 
-  return json({ success: false, error: 'No delivery method configured' }, 500);
+  return json({ success: false, error: 'No delivery method configured' }, 500, cors);
 }
 
 /* ───────────────────────── delivery ───────────────────────── */
 
-function json(obj, status = 200) {
+function json(obj, status = 200, extra = {}) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', ...extra },
   });
 }
 

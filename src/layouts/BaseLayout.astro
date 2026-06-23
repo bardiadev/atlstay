@@ -8,7 +8,7 @@ import Footer from '../components/layout/Footer.astro';
 import CallBar from '../components/layout/CallBar.astro';
 import { site } from '../config/site';
 import { pageTitle, clampDescription, canonical, absoluteImage, type SeoProps } from '../lib/seo';
-import { organizationSchema, websiteSchema, localBusinessSchema } from '../lib/schema';
+import { organizationSchema, websiteSchema, localBusinessSchema, parentOrganizationSchema } from '../lib/schema';
 
 interface Props extends SeoProps {
   /** Extra page-specific JSON-LD objects (breadcrumbs, article, service, faq…). */
@@ -36,6 +36,7 @@ const metaDescription = clampDescription(description);
 
 // Sitewide org/website/localbusiness once; pages add their own via `schemas`.
 const allSchemas = [
+  parentOrganizationSchema(),
   organizationSchema(),
   websiteSchema(),
   localBusinessSchema(),
