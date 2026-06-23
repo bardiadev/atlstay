@@ -1,0 +1,379 @@
+---
+// =============================================================================
+// ATLStay — PRIVATE SEO / content command center. Built from the site's own
+// real data (content collections + data files); no fabricated metrics. Kept out
+// of search: noindexed (BaseLayout noindex), Disallow /dashboard/ in robots.txt,
+// excluded from the sitemap (astro.config.mjs filter), and not linked anywhere.
+// It is still a public static URL — for true privacy add HTTP Basic Auth.
+// =============================================================================
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/ui/Container.astro';
+import { getCollection } from 'astro:content';
+import { site } from '../../config/site';
+import { counties } from '../../data/counties';
+import { propertyTypes } from '../../data/propertyTypes';
+import { landmarks } from '../../data/landmarks';
+import { pageTitle } from '../../lib/seo';
+
+const wc = (s: unknown) => (s ? String(s).trim().split(/\s+/).filter(Boolean).length : 0);
+const sevRank: Record<string, number> = { high: 3, med: 2, low: 1 };
+
+type Flag = { sev: 'high' | 'med' | 'low'; msg: string };
+interface Rec {
+  label: string; url: string;
+  titleLen: number | null; descLen: number | null;
+  bodyWords: number; faqCount: number; flags: Flag[];
+}
+
+function rec(o: {
+  label: string; url: string; title?: string | null; description?: string | null;
+  bodyWords?: number; faqCount?: number; thinAt?: number | null;
+}): Rec {
+  const { label, url, title = null, description = null, bodyWords = 0, faqCount = 0, thinAt = null } = o;
+  const flags: Flag[] = [];
+  if (title != null) {
+    const tlen = pageTitle(title).length;
+    if (tlen > 60) flags.push({ sev: 'med', msg: `Title ${tlen} chars (>60, may truncate)` });
+  }
+  if (description != null) {
+    const d = description.length;
+    if (d === 0) flags.push({ sev: 'high', msg: 'No meta description' });
+    else if (d < 70) flags.push({ sev: 'med', msg: `Description ${d} chars (thin)` });
+    else if (d > 185) flags.push({ sev: 'med', msg: `Description ${d} chars (too long)` });
+    else if (d > 165) flags.push({ sev: 'low', msg: `Description ${d} chars (tighten)` });
+  }
+  if (thinAt != null && bodyWords < thinAt) flags.push({ sev: 'med', msg: `Thin content (~${bodyWords} words)` });
+  if (faqCount === 0) flags.push({ sev: 'low', msg: 'No FAQs' });
+  return {
+    label, url,
+    titleLen: title != null ? pageTitle(title).length : null,
+    descLen: description != null ? description.length : null,
+    bodyWords, faqCount, flags,
+  };
+}
+
+// ── Pull every page type from real data ──────────────────────────────────────
+const cities = await getCollection('cities', (c) => c.data.published !== false);
+const neighborhoods = await getCollection('neighborhoods', (n) => n.data.published !== false);
+const resourcesPub = await getCollection('resources', (r) => !r.data.draft);
+const resourcesDraft = await getCollection('resources', (r) => r.data.draft);
+
+const cityRecs = cities.map((c) =>
+  rec({ label: `${c.data.name}, ${c.data.state}`, url: `/${c.data.slug}/`, title: c.data.title, description: c.data.description, bodyWords: wc(c.data.intro), faqCount: (c.data.faqs || []).length, thinAt: 30 }),
+);
+const nbRecs = neighborhoods.map((n) =>
+  rec({ label: n.data.name, url: `/${n.data.citySlug}/${n.data.slug}/`, title: n.data.title, description: n.data.description, bodyWords: wc(n.data.intro), faqCount: (n.data.faqs || []).length, thinAt: 30 }),
+);
+const countyRecs = counties.filter((c) => c.published).map((c) =>
+  rec({ label: `${c.name} County`, url: `/counties/${c.slug}/`, bodyWords: wc(c.intro) + wc(c.demand) + wc(c.regulationsNote), faqCount: c.faqs.length, thinAt: 150 }),
+);
+const typeRecs = propertyTypes.filter((p) => p.published).map((p) =>
+  rec({ label: p.pluralName, url: `/manage/${p.slug}/`, bodyWords: wc(p.intro) + wc(p.demand) + wc(p.operations), faqCount: p.faqs.length, thinAt: 180 }),
+);
+const landmarkRecs = landmarks.filter((l) => l.published).map((l) =>
+  rec({ label: `Near ${l.shortName || l.name}`, url: `/near/${l.slug}/`, bodyWords: wc(l.intro) + wc(l.demand), faqCount: l.faqs.length, thinAt: 110 }),
+);
+const resourceRecs = resourcesPub.map((r) =>
+  rec({ label: r.data.title, url: `/resources/${r.id}/`, title: r.data.title, description: r.data.description, bodyWords: wc((r as any).body), faqCount: (r.data.faqs || []).length, thinAt: 350 }),
+);
+
+const staticPages = [
+  'Home /', 'Services /services/', 'Pricing /pricing/', 'How it works /how-it-works/',
+  'Dynamic pricing /dynamic-pricing/', 'Rental projection /rental-projection/',
+  'Areas we serve /areas-we-serve/', 'Airbnb mgmt near me /airbnb-management-near-me/',
+  'World Cup 2026 /world-cup-2026-atlanta/', 'About /about/', 'Contact /contact/',
+  'Counties hub /counties/', 'Property types hub /manage/', 'Near landmarks hub /near/',
+  'Resources hub /resources/', 'Compare hub /compare/', 'Search /search/',
+  'Privacy /privacy/', 'Terms /terms/',
+].map((s) => { const i = s.lastIndexOf(' '); return { label: s.slice(0, i), url: s.slice(i + 1) }; });
+
+const sections = [
+  { key: 'city', title: 'City / market pages', recs: cityRecs, note: 'Flag: intro under 30 words' },
+  { key: 'nb', title: 'Neighborhood pages', recs: nbRecs, note: 'Flag: intro under 30 words' },
+  { key: 'county', title: 'County pages', recs: countyRecs, note: 'Title/desc generated in template' },
+  { key: 'type', title: 'Property-type pages', recs: typeRecs, note: 'Title/desc generated in template' },
+  { key: 'landmark', title: '"Near landmark" pages', recs: landmarkRecs, note: 'Title/desc generated in template' },
+  { key: 'resource', title: 'Resource / blog articles', recs: resourceRecs, note: 'Flag: article body under 350 words' },
+];
+
+// ── Roll-ups ────────────────────────────────────────────────────────────────
+const allRecs = sections.flatMap((s) => s.recs);
+const locationCount = cityRecs.length + nbRecs.length + countyRecs.length + typeRecs.length + landmarkRecs.length;
+const totalPages = allRecs.length + staticPages.length;
+const withFaqs = allRecs.filter((r) => r.faqCount > 0).length;
+const flagged = allRecs.filter((r) => r.flags.length > 0);
+const maxSev = (r: Rec) => Math.max(0, ...r.flags.map((f) => sevRank[f.sev]));
+const highRecs = flagged.filter((r) => r.flags.some((f) => f.sev === 'high'));
+const medRecs = flagged.filter((r) => maxSev(r) === sevRank.med);
+const lowRecs = flagged.filter((r) => maxSev(r) === sevRank.low);
+const prioritized = [...flagged].sort((a, b) => maxSev(b) - maxSev(a) || a.url.localeCompare(b.url));
+
+const summary = sections.map((s) => {
+  const f = s.recs.filter((r) => r.flags.length > 0);
+  const avg = s.recs.length ? Math.round(s.recs.reduce((n, r) => n + r.bodyWords, 0) / s.recs.length) : 0;
+  return {
+    title: s.title, count: s.recs.length, flagged: f.length,
+    high: s.recs.filter((r) => r.flags.some((x) => x.sev === 'high')).length,
+    avgWords: avg, withFaqs: s.recs.filter((r) => r.faqCount > 0).length,
+  };
+});
+
+const infra = [
+  ['XML sitemap', '/sitemap-index.xml — auto-generated, priority-weighted'],
+  ['robots.txt', 'Allows all + AI crawlers; /dashboard/ disallowed'],
+  ['Canonical tags', 'Self-referencing on every page'],
+  ['OpenGraph + Twitter', 'Full social-card set in BaseLayout'],
+  ['JSON-LD schema', 'Organization, WebSite, LocalBusiness, Service, Article, FAQ, Breadcrumb, ItemList'],
+  ['llms.txt + llms-full.txt', 'AI answer-engine knowledge base'],
+  ['www → apex 301', 'Cloudflare middleware'],
+  ['Performance', 'WebP images, LCP preload, inlined CSS, font-display swap'],
+  ['GA4 analytics', site.analytics.gaId],
+];
+const hasSocial = !!(site.social.instagram || site.social.facebook || site.social.linkedin);
+const ownerTodo = [
+  ['Google Search Console', 'Verify the domain + submit the sitemap. Needed to see real rankings/impressions — and to wire a live data panel here.'],
+  ['Google Business Profile', 'Create + verify. Unlocks the Maps / local pack for "Atlanta Airbnb management" — the highest-intent local search.'],
+  ['Bing Webmaster Tools', 'Verify + submit sitemap (free; also feeds ChatGPT & Copilot answers).'],
+  ['Backlinks + citations', 'A brand-new domain has almost no authority — this is the #1 reason a technically-perfect site does not rank yet.'],
+  ['Google reviews', 'Earn real reviews on the GBP. Strongest local trust signal; never fabricate any.'],
+  ['Social profiles', hasSocial ? 'Set in config.' : 'Empty in site config (Instagram / Facebook / LinkedIn) — fill them to populate sameAs schema.'],
+];
+
+const tools: [string, string][] = [
+  ['Google Search Console', 'https://search.google.com/search-console'],
+  ['PageSpeed Insights', 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fatlstay.com'],
+  ['Rich Results Test', 'https://search.google.com/test/rich-results?url=https%3A%2F%2Fatlstay.com'],
+  ['Schema validator', 'https://validator.schema.org/'],
+  ['Bing Webmaster Tools', 'https://www.bing.com/webmasters'],
+  ['Google Business Profile', 'https://business.google.com/'],
+];
+
+const buildDate = new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
+const sevClass: Record<string, string> = {
+  high: 'bg-red-100 text-red-800', med: 'bg-amber-100 text-amber-800', low: 'bg-stone-200 text-stone-700',
+};
+const card = 'rounded-2xl border border-line bg-white p-5 shadow-sm';
+---
+
+<BaseLayout title="SEO Dashboard" description="Private ATLStay SEO & content command center." noindex={true} bare={true}>
+  <div class="min-h-screen bg-cream pb-20">
+    <!-- Top bar -->
+    <header class="sticky top-0 z-20 border-b border-forest-700 bg-forest text-cream">
+      <Container size="wide" class="flex flex-wrap items-center justify-between gap-3 py-3">
+        <div class="flex items-baseline gap-3">
+          <span class="font-brand text-lg font-semibold tracking-tight">ATLStay</span>
+          <span class="text-cream/60">·</span>
+          <span class="text-sm font-medium text-cream/90">SEO &amp; Content Dashboard</span>
+        </div>
+        <div class="flex items-center gap-4 text-xs text-cream/70">
+          <span>Private · noindex</span>
+          <a href="/" class="rounded-lg bg-brass px-3 py-1.5 font-semibold text-forest-900 transition hover:bg-brass-50">View live site →</a>
+        </div>
+      </Container>
+    </header>
+
+    <Container size="wide" class="pt-8">
+      <div class="mb-2 flex flex-wrap items-end justify-between gap-2">
+        <h1 class="font-display text-3xl font-medium text-forest">Site overview</h1>
+        <p class="text-xs text-stone">Generated {buildDate} · refreshes on every deploy</p>
+      </div>
+      <p class="mb-6 max-w-3xl text-sm text-stone">
+        Live inventory and on-page health of every page on atlstay.com, built straight from the site's own
+        content. Rankings/impressions aren't shown yet — connect Google Search Console (below) to add live search data.
+      </p>
+
+      <!-- Top-line metric cards -->
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        {[
+          ['Total pages', totalPages],
+          ['Location pages', locationCount],
+          ['Articles', resourceRecs.length],
+          ['Pages with FAQs', withFaqs],
+          ['Flagged', flagged.length],
+          ['Critical', highRecs.length],
+        ].map(([label, n]) => (
+          <div class={card}>
+            <div class="font-display text-3xl font-medium text-forest">{n}</div>
+            <div class="mt-1 text-xs font-medium uppercase tracking-wide text-stone">{label}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Two-column: health by type + infra -->
+      <div class="mt-8 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
+        <div class={card}>
+          <h2 class="font-display text-xl text-forest">On-page health by type</h2>
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="border-b border-line text-xs uppercase tracking-wide text-stone">
+                <tr>
+                  <th class="py-2 pr-3 font-medium">Type</th>
+                  <th class="py-2 pr-3 text-right font-medium">Pages</th>
+                  <th class="py-2 pr-3 text-right font-medium">Avg words</th>
+                  <th class="py-2 pr-3 text-right font-medium">FAQs</th>
+                  <th class="py-2 text-right font-medium">Flagged</th>
+                </tr>
+              </thead>
+              <tbody>
+                {summary.map((s) => (
+                  <tr class="border-b border-line/60">
+                    <td class="py-2 pr-3 font-medium text-ink">{s.title}</td>
+                    <td class="py-2 pr-3 text-right tabular-nums">{s.count}</td>
+                    <td class="py-2 pr-3 text-right tabular-nums text-stone">{s.avgWords}</td>
+                    <td class="py-2 pr-3 text-right tabular-nums text-stone">{s.withFaqs}/{s.count}</td>
+                    <td class="py-2 text-right tabular-nums">
+                      {s.flagged === 0
+                        ? <span class="text-green-700">0</span>
+                        : <span>{s.flagged}{s.high > 0 && <span class="text-red-700"> · {s.high}!</span>}</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-xs text-stone">Static/core pages ({staticPages.length}) audited manually. "Avg words" is intro/body copy, a proxy for depth.</p>
+        </div>
+
+        <div class={card}>
+          <h2 class="font-display text-xl text-forest">SEO foundation</h2>
+          <ul class="mt-4 space-y-2 text-sm">
+            {infra.map(([label, detail]) => (
+              <li class="flex gap-2">
+                <span class="mt-0.5 text-green-600">✓</span>
+                <span><span class="font-medium text-ink">{label}</span> <span class="text-stone">— {detail}</span></span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Owner action items: the real ranking levers -->
+      <div class="mt-6 rounded-2xl border border-brass/40 bg-brass-50/50 p-5">
+        <h2 class="font-display text-xl text-forest">Why we're not ranking yet — owner action items</h2>
+        <p class="mt-1 text-sm text-stone">The site's on-page SEO is strong. For a new domain, rankings come from <strong>authority + local presence</strong>, which live off-site:</p>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          {ownerTodo.map(([label, detail], i) => (
+            <div class="rounded-xl border border-line bg-white p-4">
+              <div class="flex items-center gap-2">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-forest text-xs font-semibold text-cream">{i + 1}</span>
+                <span class="font-semibold text-ink">{label}</span>
+              </div>
+              <p class="mt-2 text-sm text-stone">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Prioritized fix list -->
+      <div class="mt-6 rounded-2xl border border-line bg-white p-5 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h2 class="font-display text-xl text-forest">On-page fixes</h2>
+          <div class="flex gap-2 text-xs">
+            <span class="rounded-full bg-red-100 px-2 py-1 font-medium text-red-800">{highRecs.length} critical</span>
+            <span class="rounded-full bg-amber-100 px-2 py-1 font-medium text-amber-800">{medRecs.length} medium</span>
+            <span class="rounded-full bg-stone-200 px-2 py-1 font-medium text-stone-700">{lowRecs.length} low</span>
+          </div>
+        </div>
+        {prioritized.length === 0 ? (
+          <p class="mt-3 text-sm text-green-700">No on-page issues flagged. 🎉</p>
+        ) : (
+          <div class="mt-4 max-h-96 overflow-y-auto rounded-xl border border-line">
+            <table class="w-full text-left text-sm">
+              <tbody>
+                {prioritized.map((r) => (
+                  <tr class="border-b border-line/60 last:border-0">
+                    <td class="py-2 pl-3 pr-2">
+                      <a href={r.url} class="font-medium text-forest underline-offset-2 hover:underline">{r.url}</a>
+                      <span class="ml-2 text-xs text-stone">{r.label}</span>
+                    </td>
+                    <td class="py-2 pr-3 text-right">
+                      <span class="inline-flex flex-wrap justify-end gap-1">
+                        {r.flags.map((f) => <span class={`rounded px-1.5 py-0.5 text-[11px] ${sevClass[f.sev]}`}>{f.msg}</span>)}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+
+      <!-- Full inventory (collapsible per type) -->
+      <h2 class="mt-10 mb-3 font-display text-2xl text-forest">Full page inventory</h2>
+      <div class="space-y-3">
+        {sections.map((s) => (
+          <details class="group rounded-2xl border border-line bg-white shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4">
+              <span class="font-medium text-ink">{s.title}
+                <span class="ml-2 text-sm text-stone">({s.recs.length})</span>
+              </span>
+              <span class="flex items-center gap-3 text-xs text-stone">
+                {s.note}
+                <span class="transition group-open:rotate-180">▾</span>
+              </span>
+            </summary>
+            <div class="max-h-[28rem] overflow-y-auto border-t border-line">
+              <table class="w-full text-left text-sm">
+                <thead class="sticky top-0 bg-cream text-xs uppercase tracking-wide text-stone">
+                  <tr>
+                    <th class="py-2 pl-4 pr-3 font-medium">Page</th>
+                    <th class="py-2 pr-3 text-right font-medium">Title</th>
+                    <th class="py-2 pr-3 text-right font-medium">Desc</th>
+                    <th class="py-2 pr-3 text-right font-medium">Words</th>
+                    <th class="py-2 pr-3 text-right font-medium">FAQ</th>
+                    <th class="py-2 pr-4 text-right font-medium">Flags</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[...s.recs].sort((a, b) => maxSev(b) - maxSev(a) || a.url.localeCompare(b.url)).map((r) => (
+                    <tr class="border-b border-line/50">
+                      <td class="py-2 pl-4 pr-3">
+                        <a href={r.url} class="text-forest underline-offset-2 hover:underline">{r.url}</a>
+                      </td>
+                      <td class="py-2 pr-3 text-right tabular-nums text-stone">{r.titleLen ?? '—'}</td>
+                      <td class="py-2 pr-3 text-right tabular-nums text-stone">{r.descLen ?? '—'}</td>
+                      <td class="py-2 pr-3 text-right tabular-nums text-stone">{r.bodyWords}</td>
+                      <td class="py-2 pr-3 text-right tabular-nums text-stone">{r.faqCount}</td>
+                      <td class="py-2 pr-4 text-right">
+                        {r.flags.length === 0
+                          ? <span class="text-green-600">✓</span>
+                          : <span class="inline-flex flex-wrap justify-end gap-1">{r.flags.map((f) => <span class={`rounded px-1.5 py-0.5 text-[11px] ${sevClass[f.sev]}`}>{f.msg}</span>)}</span>}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </details>
+        ))}
+
+        <details class="rounded-2xl border border-line bg-white shadow-sm">
+          <summary class="cursor-pointer list-none p-4 font-medium text-ink">Core / static pages <span class="ml-2 text-sm text-stone">({staticPages.length})</span></summary>
+          <div class="border-t border-line p-4">
+            <ul class="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+              {staticPages.map((p) => (
+                <li><a href={p.url} class="text-sm text-forest underline-offset-2 hover:underline">{p.url}</a> <span class="text-xs text-stone">{p.label}</span></li>
+              ))}
+            </ul>
+            {resourcesDraft.length > 0 && <p class="mt-3 text-xs text-stone">{resourcesDraft.length} resource draft(s) not yet published.</p>}
+          </div>
+        </details>
+      </div>
+
+      <!-- External tools -->
+      <h2 class="mt-10 mb-3 font-display text-2xl text-forest">Tools &amp; rank tracking</h2>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {tools.map(([label, href]) => (
+          <a href={href} target="_blank" rel="noopener" class="rounded-xl border border-line bg-white p-4 text-sm font-medium text-forest shadow-sm transition hover:border-brass hover:shadow">
+            {label} <span class="text-stone">↗</span>
+          </a>
+        ))}
+      </div>
+      <p class="mt-4 max-w-3xl text-xs text-stone">
+        Want live keyword rankings, impressions, and click data inside this dashboard? It requires connecting this
+        property in Google Search Console. Once that's verified, a live data panel can be wired in here.
+      </p>
+    </Container>
+  </div>
+</BaseLayout>

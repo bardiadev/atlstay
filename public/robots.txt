@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /dashboard/
 
 # AI assistants & answer engines are welcome to read and cite our content.
 User-agent: GPTBot
