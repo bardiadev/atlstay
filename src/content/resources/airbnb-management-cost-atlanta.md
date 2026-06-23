@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Fees in Atlanta: What You'll Actually Pay"
+title: "Airbnb Management Fees in Atlanta"
 description: "A complete guide to Atlanta Airbnb management fees — how pricing works, what's included, what to watch out for, and how to evaluate whether a manager is worth the cost."
 category: "Investing & ROI"
 publishDate: 2026-05-26

@@ -24,7 +24,10 @@ export const footerNav: { heading: string; links: { label: string; href: string 
     heading: 'Services',
     links: [
       { label: 'Full-service management', href: '/services/' },
+      { label: 'Atlanta Airbnb management', href: '/atlanta-airbnb-management/' },
+      { label: 'Short-term rental management', href: '/short-term-rental-management-atlanta/' },
       { label: 'Dynamic pricing & revenue', href: '/dynamic-pricing/' },
+      { label: 'Airbnb income calculator', href: '/airbnb-calculator-atlanta/' },
       { label: 'Free rental projection', href: '/rental-projection/' },
       { label: 'Airbnb management near you', href: '/airbnb-management-near-me/' },
       { label: 'Near Atlanta landmarks', href: '/near/' },

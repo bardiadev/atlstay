@@ -2,7 +2,7 @@
 name: Downtown Alpharetta
 slug: downtown-alpharetta
 citySlug: alpharetta
-title: "Airbnb Management in Downtown Alpharetta, Alpharetta | ATLStay"
+title: "Airbnb Management in Downtown Alpharetta, GA"
 description: "Short-term rental management in Downtown Alpharetta. ATLStay maximizes revenue around historic Main Street, City Center, the Alpha Loop, and Alpharetta's walkable events calendar."
 intro: "Downtown Alpharetta pairs a historic Main Street with City Center, a newer district of restaurants, shops, and gathering space connected by the Alpha Loop trail. The result is a genuinely walkable small-town core inside one of metro Atlanta's most affluent suburbs — a setting short-term rental guests respond to, and one with a steady events calendar that creates booking spikes."
 heroImage: suburbHome

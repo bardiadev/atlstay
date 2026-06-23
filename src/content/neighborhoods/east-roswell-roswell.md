@@ -2,7 +2,7 @@
 name: East Roswell
 slug: east-roswell
 citySlug: roswell
-title: "Airbnb Management in East Roswell, Roswell | ATLStay"
+title: "Airbnb Management in East Roswell, Roswell"
 description: "Short-term rental management in East Roswell. ATLStay maximizes revenue from East Roswell's residential neighborhoods, Chattahoochee River access, and GA-400 corporate demand."
 intro: "East Roswell is the city's residential side — established family neighborhoods, parks, and easy Chattahoochee River and GA-400 access. It trades Canton Street's nightlife for space, quiet, and convenience, which makes it a natural fit for short-term rental guests who want a comfortable home base: corporate travelers, relocating families, and groups in town for sports, reunions, and river recreation."
 heroImage: suburbHome

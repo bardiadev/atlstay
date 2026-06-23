@@ -2,7 +2,7 @@
 name: Downtown Dahlonega
 slug: downtown-dahlonega
 citySlug: dahlonega
-title: "Airbnb Management in Downtown Dahlonega, Dahlonega | ATLStay"
+title: "Airbnb Management in Downtown Dahlonega, Dahlonega"
 description: "Short-term rental management in downtown Dahlonega, GA. Gold-rush square, North Georgia wine country, and UNG drive year-round demand. We maximize your revenue."
 intro: "Downtown Dahlonega is built around one of the most photographed town squares in Georgia — a gold-rush-era courthouse, now the Gold Museum, ringed by wine-tasting rooms, restaurants, and shops. For short-term rental owners, a property walkable to the square is premium inventory: it puts guests at the center of the wine-country scene, the gold-rush history, and a downtown that stays busy through every season, with the University of North Georgia right at the edge."
 heroImage: "northGeorgia"

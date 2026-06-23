@@ -2,7 +2,7 @@
 name: Candler Park
 slug: candler-park
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Candler Park, Atlanta"
+title: "Airbnb Management in Candler Park, Atlanta"
 description: "Expert STR management in Candler Park, Atlanta — craftsman homes around the park and golf course, Little Five Points adjacency, and Beltline access."
 intro: "Candler Park is a neighborhood built around a park — literally. The green space, golf course, and pool that anchor the neighborhood give it a quality of life guests can feel the moment they arrive. Add Little Five Points a few blocks away and Beltline connectivity, and you have a neighborhood that works equally well for families, couples, and cultural travelers."
 heroImage: "nbhdDefault"

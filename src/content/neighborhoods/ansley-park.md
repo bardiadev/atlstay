@@ -2,7 +2,7 @@
 name: Ansley Park
 slug: ansley-park
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Ansley Park, Atlanta"
+title: "Airbnb Management in Ansley Park, Atlanta"
 description: "Expert STR management in Ansley Park, Atlanta — historic affluent neighborhood bordering Piedmont Park, the High Museum, and Woodruff Arts Center."
 intro: "Ansley Park is Atlanta's original planned neighborhood — formal streets, arts-and-crafts estates, and a location that borders both Piedmont Park and the Woodruff Arts Center campus. For STR guests, it's the most culturally connected residential address in the city."
 heroImage: "nbhdDefault"

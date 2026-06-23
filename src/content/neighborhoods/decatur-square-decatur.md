@@ -2,7 +2,7 @@
 name: Decatur Square
 slug: decatur-square
 citySlug: decatur
-title: "Airbnb Management in Decatur Square, Decatur | ATLStay"
+title: "Airbnb Management in Decatur Square, Decatur"
 description: "Short-term rental management around Decatur Square, GA. Walkable downtown, acclaimed dining, festivals, and MARTA make it a top family-friendly STR market."
 intro: "Decatur Square is the walkable heart of the City of Decatur — a courthouse green ringed by an acclaimed restaurant scene, independent shops, and a calendar of festivals, with a MARTA rail station that puts all of Atlanta within easy reach. For short-term rental owners, it is one of the metro's most appealing markets: family-friendly, transit-connected, and anchored by a downtown that draws visitors specifically for the food, the events, and the small-city charm."
 heroImage: "metroAtlanta"

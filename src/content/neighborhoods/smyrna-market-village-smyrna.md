@@ -2,7 +2,7 @@
 name: Smyrna Market Village
 slug: smyrna-market-village
 citySlug: smyrna
-title: "Airbnb Management in Smyrna Market Village, Smyrna | ATLStay"
+title: "Airbnb Management in Smyrna Market Village, Smyrna"
 description: "Short-term rental management around Smyrna Market Village. ATLStay maximizes revenue from Smyrna's walkable downtown and its proximity to The Battery and Truist Park."
 intro: "Smyrna Market Village is the walkable heart of Smyrna's downtown — a compact district of restaurants, shops, and gathering space around the village green and community center. Its real advantage for short-term rental owners is location: it pairs a charming, walkable town center with close proximity to The Battery and Truist Park, blending steady local-leisure demand with Braves game-day and event spikes."
 heroImage: suburbHome

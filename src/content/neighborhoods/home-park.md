@@ -2,7 +2,7 @@
 name: Home Park
 slug: home-park
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Home Park, Atlanta"
+title: "Airbnb Management in Home Park, Atlanta"
 description: "Expert STR management in Home Park, Atlanta. Georgia Tech campus, Atlantic Station, and Midtown adjacency create reliable year-round Airbnb and short-term rental demand."
 intro: "Home Park is Atlanta's most consistently underrated STR neighborhood — a residential community packed between Georgia Tech's campus and Atlantic Station, adjacent to Midtown, with year-round demand driven by academic visitors, technology conferences, corporate travel, and the appeal of walkable access to one of Atlanta's busiest mixed-use districts. It's not the flashiest neighborhood, but the fundamentals are exceptional."
 heroImage: "nbhdDefault"

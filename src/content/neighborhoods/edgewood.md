@@ -2,7 +2,7 @@
 name: Edgewood
 slug: edgewood
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Edgewood, Atlanta"
+title: "Airbnb Management in Edgewood, Atlanta"
 description: "Expert STR management in Edgewood, Atlanta. Edgewood Retail District, BeltLine access, proximity to Little Five Points and Kirkwood drive strong nightlife-and-culture guest demand."
 intro: "Edgewood is Atlanta's east-side sweet spot — a neighborhood between Little Five Points and Kirkwood with its own retail and nightlife district, direct BeltLine connectivity, and a residential fabric of historic bungalows that gives guests the authentic Atlanta neighborhood experience they're searching for. It draws a specific, loyal guest profile who books for the neighborhood, not just the city."
 heroImage: "nbhdDefault"

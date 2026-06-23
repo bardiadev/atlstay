@@ -2,7 +2,7 @@
 name: Downtown Buford
 slug: downtown-buford
 citySlug: buford
-title: "Airbnb Management in Downtown Buford, Buford | ATLStay"
+title: "Airbnb Management in Downtown Buford, Buford"
 description: "Short-term rental management in Downtown Buford. ATLStay maximizes revenue from historic downtown Buford, the Mall of Georgia, and Lake Lanier access with strong family demand."
 intro: "Downtown Buford pairs a historic, walkable main street — anchored by the Tannery Row arts district and a growing dining scene — with two of the area's biggest draws nearby: the Mall of Georgia and Lake Lanier. For short-term rental owners, that combination produces a steady flow of family, shopping, and lake-recreation guests, plus event and corporate demand from the broader northeast metro."
 heroImage: suburbHome

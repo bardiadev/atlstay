@@ -2,7 +2,7 @@
 name: West Midtown
 slug: west-midtown
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in West Midtown, Atlanta"
+title: "Airbnb Management in West Midtown, Atlanta"
 description: "Premium STR management in West Midtown, Atlanta — the Westside warehouse district with galleries, Westside Provisions, top restaurants, and Topgolf."
 intro: "West Midtown is Atlanta's coolest repurposed district — converted warehouses turned galleries and chef-driven restaurants, anchored by Westside Provisions and one of the city's most walkable dining corridors. For STR owners, it's a property market where design-forward spaces command strong weekend premiums and creative travelers actively seek out the neighborhood."
 heroImage: "nbhdDefault"

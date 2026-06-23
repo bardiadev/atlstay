@@ -2,7 +2,7 @@
 name: Ormewood Park
 slug: ormewood-park
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Ormewood Park, Atlanta"
+title: "Airbnb Management in Ormewood Park, Atlanta"
 description: "Expert STR management in Ormewood Park, Atlanta. BeltLine Southside Trail, Grant Park adjacency, bungalow character, and family-friendly appeal create reliable Airbnb demand."
 intro: "Ormewood Park is Atlanta's quietly beloved south-side neighborhood — a canopy-covered community of Craftsman bungalows between Grant Park and the BeltLine Southside Trail. Guests who find Ormewood Park tend to become loyal repeats: it has the neighborhood character and residential feel that travelers are increasingly choosing over hotel stays, plus Zoo Atlanta and the Grant Park Farmers Market within walking distance."
 heroImage: "nbhdDefault"

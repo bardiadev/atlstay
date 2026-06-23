@@ -2,7 +2,7 @@
 name: Grant Park
 slug: grant-park
 citySlug: atlanta
-title: "Airbnb Management in Grant Park, Atlanta | ATLStay"
+title: "Airbnb Management in Grant Park, Atlanta"
 description: "Short-term rental management in Grant Park, Atlanta. Zoo Atlanta, the BeltLine Southside Trail, and strong value positioning make Grant Park one of Atlanta's best-value STR investment neighborhoods."
 intro: "Grant Park is one of Atlanta's oldest and most beloved neighborhoods — a place where Victorian homes line streets shaded by ancient oaks, just south of Zoo Atlanta and the park itself. The neighborhood draws a genuine community of visitors: zoo-goers and families, BeltLine Southside Trail users, and the growing creative class drawn by the neighborhood's authentic character and relative affordability."
 heroImage: "nbhdDefault"

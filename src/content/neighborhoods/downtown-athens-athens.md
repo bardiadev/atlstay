@@ -2,7 +2,7 @@
 name: Downtown Athens
 slug: downtown-athens
 citySlug: athens
-title: "Airbnb Management in Downtown Athens, Athens | ATLStay"
+title: "Airbnb Management in Downtown Athens, Athens"
 description: "Short-term rental management in downtown Athens, GA. Walk to UGA, the Georgia Theatre, and the 40 Watt. We maximize revenue around football and the music scene."
 intro: "Downtown Athens is where the University of Georgia meets one of America's great music towns — a compact, walkable grid of bars, restaurants, record stores, and legendary live-music venues that sits right against North Campus. For short-term rental owners, a downtown property is built for two of the market's best guests: football-weekend visitors who want to walk to Sanford Stadium, and music travelers chasing a show at the 40 Watt or the Georgia Theatre."
 heroImage: "athensGa"

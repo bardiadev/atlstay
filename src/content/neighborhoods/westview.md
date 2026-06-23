@@ -2,7 +2,7 @@
 name: Westview
 slug: westview
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Westview, Atlanta"
+title: "Airbnb Management in Westview, Atlanta"
 description: "STR management in Westview, Atlanta. BeltLine Westside Trail, historic bungalows, and undervalued entry points make Westview one of Atlanta's best owner-investor neighborhoods."
 intro: "Westview is the Westside neighborhood that savvy Atlanta homeowners are watching closely — a compact historic district with Craftsman bungalows, genuine community character, and direct BeltLine Westside Trail access that is drawing a new wave of guests who've already done Old Fourth Ward and want something more authentic."
 heroImage: "nbhdDefault"

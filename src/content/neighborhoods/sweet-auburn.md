@@ -2,7 +2,7 @@
 name: Sweet Auburn
 slug: sweet-auburn
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Sweet Auburn, Atlanta"
+title: "Airbnb Management in Sweet Auburn, Atlanta"
 description: "Expert STR management in Sweet Auburn, Atlanta — MLK National Historic Site, civil-rights heritage, Sweet Auburn Curb Market, and rising cultural destination."
 intro: "Sweet Auburn is one of America's most historically significant urban corridors — the birthplace of Dr. Martin Luther King Jr., home to Ebenezer Baptist Church, and the commercial heart of Atlanta's Black community during the civil-rights era. Today it's a rising cultural destination where historic preservation and neighborhood revival are happening simultaneously."
 heroImage: "nbhdDefault"

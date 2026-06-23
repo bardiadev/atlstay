@@ -2,7 +2,7 @@
 name: Downtown Duluth
 slug: downtown-duluth
 citySlug: duluth
-title: "Airbnb Management in Downtown Duluth, Duluth | ATLStay"
+title: "Airbnb Management in Downtown Duluth, Duluth"
 description: "Short-term rental management in Downtown Duluth. ATLStay maximizes revenue from the Duluth Town Green, the nearby Gas South District, festivals, and northeast-corridor corporate demand."
 intro: "Downtown Duluth is anchored by the Town Green — a walkable civic plaza ringed by restaurants, shops, and an amphitheater that hosts concerts, festivals, and markets through the year. With the Gas South District and its arena and convention center close by, plus the corporate strength of the I-85 northeast corridor, downtown Duluth gives short-term rental owners a mix of events, leisure, and business demand."
 heroImage: suburbHome

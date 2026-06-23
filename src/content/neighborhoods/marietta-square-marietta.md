@@ -2,7 +2,7 @@
 name: Marietta Square
 slug: marietta-square
 citySlug: marietta
-title: "Airbnb Management in Marietta Square, Marietta | ATLStay"
+title: "Airbnb Management in Marietta Square, Marietta"
 description: "Short-term rental management around Marietta Square. ATLStay maximizes revenue from the historic Square's theaters, dining, festivals, and Civil War heritage in Cobb County."
 intro: "Marietta Square is one of metro Atlanta's most charming historic town centers — a classic courthouse square ringed by restaurants, theaters, galleries, and shops, with Civil War heritage woven through the surrounding district. It draws a steady stream of leisure, festival, and heritage visitors, and for short-term rental owners a walkable home near the Square commands attention in a market built on character."
 heroImage: metroAtlanta

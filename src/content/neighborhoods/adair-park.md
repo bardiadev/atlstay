@@ -2,7 +2,7 @@
 name: Adair Park
 slug: adair-park
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Adair Park, Atlanta"
+title: "Airbnb Management in Adair Park, Atlanta"
 description: "STR management in Adair Park, Atlanta. BeltLine Westside Trail, Lee + White brewery district, and stunning Victorian homes create strong Airbnb demand."
 intro: "Adair Park is a Victorian-era gem on Atlanta's Westside — a neighborhood of ornate historic homes tucked between the BeltLine Westside Trail and the Lee + White food and brewery district. Guests who book here get authentic Atlanta architecture, direct trail access, and some of the best craft beer in the South within walking distance."
 heroImage: "nbhdDefault"

@@ -2,7 +2,7 @@
 name: City Springs
 slug: city-springs
 citySlug: sandy-springs
-title: "Airbnb Management in City Springs, Sandy Springs | ATLStay"
+title: "Airbnb Management in City Springs, Sandy Springs"
 description: "Short-term rental management around City Springs in Sandy Springs. ATLStay maximizes revenue from the civic and performing-arts center and walkable downtown Sandy Springs district."
 intro: "City Springs gave Sandy Springs a real downtown — a civic and performing-arts center surrounded by a walkable district of restaurants, shops, residences, and the Sandy Springs Performing Arts Center. It anchors a market that blends arts-and-events demand with the corporate strength of the surrounding Perimeter area, giving short-term rental owners near City Springs an unusually well-rounded booking calendar."
 heroImage: suburbHome

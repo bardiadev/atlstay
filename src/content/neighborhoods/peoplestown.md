@@ -2,7 +2,7 @@
 name: Peoplestown
 slug: peoplestown
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Peoplestown, Atlanta"
+title: "Airbnb Management in Peoplestown, Atlanta"
 description: "STR management in Peoplestown, Atlanta. South Atlanta revival, stadium adjacency, BeltLine Southside Trail proximity, and authentic neighborhood character draw Airbnb guests."
 intro: "Peoplestown is a south-Atlanta neighborhood in active transformation — a historic community between Georgia State Stadium and the planned BeltLine Southside Trail, where longtime residents and new investment are coexisting in a neighborhood that feels genuinely alive. Guests who book Peoplestown are getting Atlanta's authentic south side, not a curated version of it."
 heroImage: "nbhdDefault"

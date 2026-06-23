@@ -2,7 +2,7 @@
 name: Historic Roswell
 slug: historic-roswell
 citySlug: roswell
-title: "Airbnb Management in Historic Roswell, Roswell | ATLStay"
+title: "Airbnb Management in Historic Roswell, Roswell"
 description: "Short-term rental management in Historic Roswell. ATLStay maximizes revenue around the Canton Street district, Roswell Mill, Vickery Creek, and Roswell's dining, arts, and wedding scene."
 intro: "Historic Roswell is the walkable heart of the city — Canton Street's restaurant row, the preserved antebellum homes of the historic district, and the mill ruins and waterfall along Vickery Creek. It is one of metro Atlanta's most characterful destinations, and for short-term rental owners that character translates directly into a guest pool willing to pay a premium for an authentic, walkable stay."
 heroImage: suburbHome

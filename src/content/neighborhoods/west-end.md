@@ -2,7 +2,7 @@
 name: West End
 slug: west-end
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in West End, Atlanta"
+title: "Airbnb Management in West End, Atlanta"
 description: "Expert STR management in West End, Atlanta. Historic Westside charm, BeltLine Westside Trail access, and AUC proximity drive year-round Airbnb demand."
 intro: "West End is one of Atlanta's oldest and most storied neighborhoods — a historic Westside community with Victorian architecture, the BeltLine's Westside Trail, and deep cultural roots anchored by the Atlanta University Center. Guests who book here aren't just passing through Atlanta; they're choosing to be in it."
 heroImage: "nbhdDefault"

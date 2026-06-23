@@ -2,7 +2,7 @@
 name: Buckhead
 slug: buckhead
 citySlug: atlanta
-title: "Airbnb Management in Buckhead, Atlanta | ATLStay"
+title: "Airbnb Management in Buckhead, Atlanta"
 description: "Expert short-term rental management in Buckhead, Atlanta. We maximize revenue from one of Atlanta's most prestigious neighborhoods — upscale properties, corporate demand, and premium nightly rates."
 intro: "Buckhead is Atlanta's upscale village — high-end retail, acclaimed restaurants, luxury hotels, and some of the most polished residential real estate in the city. For short-term rental owners, it means premium nightly rates and a consistent mix of corporate and leisure guests who expect a five-star experience from the moment they arrive."
 heroImage: "nbhdBuckhead"

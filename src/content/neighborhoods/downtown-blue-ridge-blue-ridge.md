@@ -2,7 +2,7 @@
 name: Downtown Blue Ridge
 slug: downtown-blue-ridge
 citySlug: blue-ridge
-title: "Airbnb Management in Downtown Blue Ridge, Blue-ridge | ATLStay"
+title: "Airbnb Management in Downtown Blue Ridge, GA"
 description: "Short-term rental management in downtown Blue Ridge, GA. Walk to the Scenic Railway, shops, and dining. We maximize revenue through fall foliage and beyond."
 intro: "Downtown Blue Ridge is the walkable heart of North Georgia's premier mountain town — a depot district anchored by the Blue Ridge Scenic Railway and lined with shops, galleries, wine-tasting rooms, and restaurants. For short-term rental owners, a property in or near downtown commands a premium: guests want to park once, ride the train, and walk to dinner without driving the mountain roads."
 heroImage: "northGeorgia"

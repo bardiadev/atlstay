@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Savannah: What You'll Actually Pay"
+title: "Airbnb Management Cost in Savannah"
 description: "A clear guide to Savannah Airbnb management costs: how pricing works, what's included, full-service vs. cheap base rates, and how to judge a manager's value."
 category: "Investing & ROI"
 publishDate: 2026-05-12

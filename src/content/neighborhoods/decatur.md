@@ -2,7 +2,7 @@
 name: Decatur
 slug: decatur
 citySlug: atlanta
-title: "Airbnb Management in Decatur, GA | ATLStay"
+title: "Airbnb Management in Decatur, GA"
 description: "Expert short-term rental management in Decatur, Georgia. Walkable downtown square, acclaimed dining, Agnes Scott College, and a distinct community identity drive strong STR demand."
 intro: "Decatur operates almost as its own city — a walkable downtown square, acclaimed restaurants, a strong independent business community, and a personality entirely distinct from Atlanta proper. For short-term rental owners, Decatur's identity and its anchor institutions (Agnes Scott College, the county government complex, and the downtown dining scene) create reliable, year-round demand."
 heroImage: "nbhdDecatur"

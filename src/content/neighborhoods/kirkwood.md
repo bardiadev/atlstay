@@ -2,7 +2,7 @@
 name: Kirkwood
 slug: kirkwood
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Kirkwood, Atlanta"
+title: "Airbnb Management in Kirkwood, Atlanta"
 description: "Expert STR management in Kirkwood, Atlanta — historic bungalows, a tight-knit family-friendly community, and the beloved Kirkwood Spring Fling festival."
 intro: "Kirkwood is one of Atlanta's most cohesive historic neighborhoods — early twentieth-century bungalows on wide lots, a genuine main street along Hosea Williams Drive, and a community identity strong enough to fill the streets every spring for the Kirkwood Spring Fling. Guests come here for authenticity, and STR owners benefit from a neighborhood that keeps reinventing its appeal without losing its character."
 heroImage: "nbhdDefault"

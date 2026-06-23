@@ -2,7 +2,7 @@
 name: Aska Adventure Area
 slug: aska-adventure-area
 citySlug: blue-ridge
-title: "Airbnb Management in Aska Adventure Area, Blue-ridge | ATLStay"
+title: "Airbnb Management in Aska Adventure Area, Blue Ridge"
 description: "Cabin rental management in the Aska Adventure Area near Blue Ridge, GA. Toccoa River, hiking, and trout fishing drive demand for secluded mountain cabins."
 intro: "The Aska Adventure Area is the recreation heart of the Blue Ridge cabin market — a corridor along Aska Road south of town where the Toccoa River, miles of hiking and mountain-bike trails, and trout streams draw outdoor travelers. For short-term rental owners, this is classic secluded-cabin country: properties sell on river access, mountain views, hot tubs, and the feeling of being genuinely away while still minutes from downtown Blue Ridge."
 heroImage: "northGeorgia"

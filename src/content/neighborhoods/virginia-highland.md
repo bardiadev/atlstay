@@ -2,7 +2,7 @@
 name: Virginia-Highland
 slug: virginia-highland
 citySlug: atlanta
-title: "Airbnb Management in Virginia-Highland, Atlanta | ATLStay"
+title: "Airbnb Management in Virginia-Highland, Atlanta"
 description: "Short-term rental management in Virginia-Highland, Atlanta. This beloved walkable village neighborhood delivers steady occupancy from leisure travelers who love its independent restaurants and neighborhood character."
 intro: "Virginia-Highland is Atlanta's quintessential neighborhood-village: a walkable stretch of independent restaurants, wine bars, boutiques, and 1920s bungalows that feels nothing like a city of five million people. Guests who discover VaHi become devotees — and many return year after year, booking the same property for the same long weekend."
 heroImage: "nbhdDefault"

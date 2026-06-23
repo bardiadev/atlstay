@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Sandy Springs: What You'll Pay"
+title: "Airbnb Management Cost in Sandy Springs"
 description: "A guide to Sandy Springs STR management costs: how pricing works, what's included, full-service vs. cheap rates, and how to judge value in a corporate market."
 category: "Investing & ROI"
 publishDate: 2026-05-27

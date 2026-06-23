@@ -2,7 +2,7 @@
 name: Downtown Helen
 slug: downtown-helen
 citySlug: helen
-title: "Airbnb Management in Downtown Helen, Helen | ATLStay"
+title: "Airbnb Management in Downtown Helen, Helen"
 description: "Short-term rental management in downtown Helen, GA — the Bavarian alpine village. Maximize Oktoberfest, Chattahoochee tubing, and year-round festival demand."
 intro: "Downtown Helen is the Bavarian alpine village that made the town one of Georgia's most-visited destinations — cobblestone streets, fachwerk facades, German restaurants, and the Chattahoochee River running right through the middle. For short-term rental owners, a property in or walkable to the village core is prime inventory: guests come specifically for the downtown experience, the festivals, and the tubing, and they want to be in the middle of it."
 heroImage: "northGeorgia"

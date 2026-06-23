@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Roswell: What You'll Actually Pay"
+title: "Airbnb Management Cost in Roswell"
 description: "A guide to Roswell Airbnb management costs: how pricing works, what's included, full-service vs. cheap rates, and how to judge value in a historic-charm market."
 category: "Investing & ROI"
 publishDate: 2026-05-24

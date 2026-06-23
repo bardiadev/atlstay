@@ -2,7 +2,7 @@
 name: Reynoldstown
 slug: reynoldstown
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Reynoldstown, Atlanta"
+title: "Airbnb Management in Reynoldstown, Atlanta"
 description: "Premium STR management in Reynoldstown, Atlanta — Beltline Eastside access, craft breweries, Madison Yards, and one of Atlanta's fastest-reviving neighborhoods."
 intro: "Reynoldstown is Atlanta's revival story in real time — a formerly industrial east-side neighborhood now anchored by the Beltline Eastside Trail, Madison Yards mixed-use development, and a growing cluster of breweries that have become weekend destinations in their own right. Owners who get in now are positioned ahead of a demand curve that's already rising."
 heroImage: "nbhdDefault"

@@ -2,7 +2,7 @@
 name: Summerhill
 slug: summerhill
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Summerhill, Atlanta"
+title: "Airbnb Management in Summerhill, Atlanta"
 description: "Expert STR management in Summerhill, Atlanta. Georgia Avenue revival, Georgia State Stadium, and BeltLine Southside access drive strong year-round Airbnb demand."
 intro: "Summerhill is Atlanta's south-side comeback story. Once home to Atlanta-Fulton County Stadium (where Hank Aaron hit 714), the neighborhood is now anchored by Georgia Avenue's emerging restaurant and retail corridor, Georgia State University's stadium complex, and a coming stretch of BeltLine Southside Trail that will connect it to Grant Park and the Eastside. For STR owners, that's a combination worth paying attention to."
 heroImage: "nbhdDefault"

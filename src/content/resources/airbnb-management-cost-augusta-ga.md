@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Augusta, GA: What You'll Pay"
+title: "Airbnb Management Cost in Augusta, GA"
 description: "A guide to Augusta, GA short-term rental management costs: how pricing works, what's included, full-service vs. cheap rates, and how to value Masters Week."
 category: "Investing & ROI"
 publishDate: 2026-05-20

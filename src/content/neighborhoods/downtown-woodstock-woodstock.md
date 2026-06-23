@@ -2,7 +2,7 @@
 name: Downtown Woodstock
 slug: downtown-woodstock
 citySlug: woodstock
-title: "Airbnb Management in Downtown Woodstock, Woodstock | ATLStay"
+title: "Airbnb Management in Downtown Woodstock, Woodstock"
 description: "Short-term rental management in Downtown Woodstock. ATLStay maximizes revenue from Woodstock's walkable music and dining scene, the Outlet Shoppes, and strong weekend family demand."
 intro: "Downtown Woodstock has become one of north metro Atlanta's most popular small-town destinations — a walkable main street packed with restaurants, breweries, live music, and an outdoor amphitheater, all a short drive from the Outlet Shoppes at Atlanta. For short-term rental owners, it combines a lively events-and-music calendar with steady weekend family and leisure demand from across Cherokee County and beyond."
 heroImage: suburbHome

@@ -2,7 +2,7 @@
 name: Poncey-Highland
 slug: poncey-highland
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Poncey-Highland, Atlanta"
+title: "Airbnb Management in Poncey-Highland, Atlanta"
 description: "Premium STR management in Poncey-Highland, Atlanta — steps from Ponce City Market, the Beltline, The Clermont Hotel, and Virginia-Highland's dining corridor."
 intro: "Poncey-Highland is the most central of Atlanta's in-town neighborhoods — the corner where Ponce City Market, the Beltline Eastside Trail, The Clermont, and Virginia-Highland's restaurant row all converge. STR guests here don't need a car, and they don't want one."
 heroImage: "nbhdDefault"

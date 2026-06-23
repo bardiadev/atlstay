@@ -2,7 +2,7 @@
 name: Perimeter
 slug: perimeter-sandy-springs
 citySlug: sandy-springs
-title: "Airbnb Management in Perimeter, Sandy Springs | ATLStay"
+title: "Airbnb Management in Perimeter, Sandy Springs"
 description: "Short-term rental management in the Perimeter district of Sandy Springs. ATLStay maximizes revenue from the Perimeter business hub, Pill Hill medical centers, and corporate demand."
 intro: "The Perimeter district is one of metro Atlanta's largest business centers — a dense cluster of corporate headquarters, the Pill Hill hospital complex, and Perimeter Mall, all built around the I-285 and GA-400 interchange. For short-term rental owners, it is a corporate-and-medical demand engine: steady weekday business travel layered with patients, families, and traveling medical professionals who need comfortable, longer stays."
 heroImage: suburbHome

@@ -2,7 +2,7 @@
 name: East Cobb
 slug: east-cobb
 citySlug: marietta
-title: "Airbnb Management in East Cobb, Marietta | ATLStay"
+title: "Airbnb Management in East Cobb, Marietta"
 description: "Short-term rental management in East Cobb. ATLStay maximizes revenue from affluent East Cobb's top schools, parks, and strong family-gathering and relocation demand near Marietta."
 intro: "East Cobb is one of metro Atlanta's most affluent and well-regarded residential areas — top-rated schools, mature neighborhoods, abundant parks, and easy access to both Marietta and the wider metro. It isn't a nightlife district; its strength is space, quiet, and quality, which makes it a natural fit for short-term rental guests who want a comfortable family home base for relocations, reunions, sports, and special occasions."
 heroImage: suburbHome

@@ -2,7 +2,7 @@
 name: Morningside
 slug: morningside
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Morningside, Atlanta"
+title: "Airbnb Management in Morningside, Atlanta"
 description: "Premium STR management in Morningside, Atlanta — upscale family enclave, Morningside Village, Piedmont Park access, and Virginia-Highland proximity."
 intro: "Morningside is one of Atlanta's most coveted in-town residential addresses — a neighborhood of well-maintained Tudor and craftsman homes, an acclaimed village commercial corridor, and easy Piedmont Park access. Guests who stay here are experiencing the Atlanta that Atlantans actually want to live in."
 heroImage: "nbhdDefault"

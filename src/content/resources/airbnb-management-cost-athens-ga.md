@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Athens, GA: What You'll Pay"
+title: "Airbnb Management Cost in Athens, GA"
 description: "A clear guide to Athens, GA Airbnb management costs: how pricing works, what's included, full-service vs. cheap rates, and how to judge value in a college town."
 category: "Investing & ROI"
 publishDate: 2026-05-13

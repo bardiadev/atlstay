@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Columbus, GA: What You'll Pay"
+title: "Airbnb Management Cost in Columbus, GA"
 description: "A clear guide to Columbus, GA short-term rental management costs: how pricing works, what's included, full-service vs. cheap rates, and how to judge value."
 category: "Investing & ROI"
 publishDate: 2026-05-08

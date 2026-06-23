@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Alpharetta: What You'll Actually Pay"
+title: "Airbnb Management Cost in Alpharetta"
 description: "A guide to Alpharetta STR management costs: how pricing works, what's included, full-service vs. cheap rates, and how to judge value in a tech-corridor market."
 category: "Investing & ROI"
 publishDate: 2026-05-18

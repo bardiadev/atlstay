@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Blue Ridge: What Cabin Owners Pay"
+title: "Airbnb Management Cost in Blue Ridge"
 description: "A guide to Blue Ridge cabin management costs: how STR pricing works, what's included, full-service vs. cheap rates, and how to judge value in the mountains."
 category: "Investing & ROI"
 publishDate: 2026-05-09

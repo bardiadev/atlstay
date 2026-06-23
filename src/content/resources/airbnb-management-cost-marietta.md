@@ -1,5 +1,5 @@
 ---
-title: "Airbnb Management Cost in Marietta: What You'll Actually Pay"
+title: "Airbnb Management Cost in Marietta"
 description: "A guide to Marietta Airbnb management costs: how pricing works, what's included, full-service vs. cheap rates, and how to judge value in a multi-demand market."
 category: "Investing & ROI"
 publishDate: 2026-05-21

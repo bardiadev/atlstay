@@ -2,7 +2,7 @@
 name: Castleberry Hill
 slug: castleberry-hill
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Castleberry Hill, Atlanta"
+title: "Airbnb Management in Castleberry Hill, Atlanta"
 description: "Expert STR management in Castleberry Hill, Atlanta — arts and loft district adjacent to Mercedes-Benz Stadium, State Farm Arena, and the CNN Center."
 intro: "Castleberry Hill is Atlanta's arts district — repurposed warehouses converted to lofts and galleries, anchored by the First Fridays art walk and sitting steps from Mercedes-Benz Stadium. No other Atlanta neighborhood puts guests closer to major events while delivering the city's most authentic creative-district character."
 heroImage: "nbhdDefault"

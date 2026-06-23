@@ -2,7 +2,7 @@
 name: Capitol View
 slug: capitol-view
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Capitol View, Atlanta"
+title: "Airbnb Management in Capitol View, Atlanta"
 description: "STR management in Capitol View, Atlanta. One of the fastest-growing Beltline Westside neighborhoods, with Lee + White access and rising guest demand."
 intro: "Capitol View is one of Atlanta's fastest-moving neighborhoods — a Westside community on the BeltLine Westside Trail corridor where historic homes and rapid appreciation are arriving in the same season. Guests who book here get value pricing, genuine neighborhood character, and walkable access to the Lee + White district that defines Atlanta's Westside renaissance."
 heroImage: "nbhdDefault"

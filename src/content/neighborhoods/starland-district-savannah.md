@@ -2,7 +2,7 @@
 name: Starland District
 slug: starland-district
 citySlug: savannah
-title: "Airbnb Management in Starland District, Savannah | ATLStay"
+title: "Airbnb Management in Starland District, Savannah"
 description: "Short-term rental management in Savannah's Starland District. Arts, dining, and the Bull Street corridor draw creative travelers — we maximize your revenue."
 intro: "The Starland District is Savannah's creative quarter — a stretch of the Bull Street corridor south of Forsyth Park reshaped by murals, independent restaurants, breweries, galleries, and SCAD energy. For short-term rental owners it reaches a distinct guest: younger, design-minded travelers who want a walkable, locally rooted neighborhood over the tour-bus core, and who increasingly choose Starland as their Savannah home base."
 heroImage: "savannah"

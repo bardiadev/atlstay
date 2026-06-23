@@ -2,7 +2,7 @@
 name: Atlantic Station
 slug: atlantic-station
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Atlantic Station, Atlanta"
+title: "Airbnb Management in Atlantic Station, Atlanta"
 description: "Expert STR management in Atlantic Station, Atlanta. Mixed-use high-rise living, Midtown adjacency, walkable retail and events, and easy highway access create strong year-round Airbnb demand."
 intro: "Atlantic Station is Atlanta's urban mixed-use experiment that worked. Built on the site of a former steel mill, the 138-acre development delivers walkable access to retail, restaurants, a cinema, and regular event programming — with Midtown's cultural institutions and the Georgia Tech campus within easy reach. For STR guests, it offers a uniquely self-contained Atlanta experience in a modern, walkable environment."
 heroImage: "nbhdDefault"

@@ -2,7 +2,7 @@
 name: Lake Claire
 slug: lake-claire
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Lake Claire, Atlanta"
+title: "Airbnb Management in Lake Claire, Atlanta"
 description: "Boutique STR management in Lake Claire, Atlanta — a quiet communal pocket near Candler Park, Little Five Points, and the Beltline."
 intro: "Lake Claire is Atlanta's best-kept secret: a compact, walkable neighborhood with a strong communal identity tucked between Candler Park and Little Five Points. Guests discover it by word of mouth or by looking past the more-famous neighbors — and the ones who do come back."
 heroImage: "nbhdDefault"

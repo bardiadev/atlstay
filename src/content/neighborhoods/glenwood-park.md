@@ -2,7 +2,7 @@
 name: Glenwood Park
 slug: glenwood-park
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Glenwood Park, Atlanta"
+title: "Airbnb Management in Glenwood Park, Atlanta"
 description: "STR management in Glenwood Park, Atlanta. New Urbanist walkable village design, BeltLine Eastside access, and a curated dining scene create premium Airbnb demand."
 intro: "Glenwood Park is one of Atlanta's most intentionally designed neighborhoods — a New Urbanist development built from scratch in the 2000s with walkability and community as first principles. The result is a neighborhood that feels like a small town dropped inside Atlanta: front porches, pedestrian-scale streets, a curated restaurant and retail corridor, and BeltLine Eastside Trail access that connects it to the rest of the city."
 heroImage: "nbhdDefault"

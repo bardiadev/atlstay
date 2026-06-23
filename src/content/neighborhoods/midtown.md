@@ -2,7 +2,7 @@
 name: Midtown
 slug: midtown
 citySlug: atlanta
-title: "Airbnb Management in Midtown Atlanta | ATLStay"
+title: "Airbnb Management in Midtown Atlanta"
 description: "Professional short-term rental management in Midtown Atlanta. Strong occupancy, world-class arts institutions, and proximity to Georgia Tech and major corporations drive year-round STR demand."
 intro: "Midtown is the cultural and commercial heart of Atlanta — home to Piedmont Park, the Fox Theatre, world-class museums, and some of the city's highest-rise residential towers. For short-term rental owners, it offers unmatched walkability, year-round demand from arts and event visitors, and a guest base that ranges from business travelers to weekend cultural tourists."
 heroImage: "nbhdMidtown"

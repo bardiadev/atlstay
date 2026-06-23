@@ -2,7 +2,7 @@
 name: Avalon
 slug: avalon
 citySlug: alpharetta
-title: "Airbnb Management in Avalon, Alpharetta | ATLStay"
+title: "Airbnb Management in Avalon, Alpharetta"
 description: "Short-term rental management in Avalon, Alpharetta. ATLStay maximizes revenue around the Avalon mixed-use district, Ameris Bank Amphitheatre concerts, and GA-400 corporate demand."
 intro: "Avalon is Alpharetta's walkable downtown-by-design — a mixed-use district where boutique retail, chef-driven restaurants, a boutique hotel, and residences sit within a few blocks of one another. For short-term rental owners, proximity to Avalon means access to a guest pool that wants to park once and walk everywhere, plus reliable corporate overflow from the GA-400 tech corridor."
 heroImage: suburbHome

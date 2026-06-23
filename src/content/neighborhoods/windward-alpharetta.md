@@ -2,7 +2,7 @@
 name: Windward
 slug: windward
 citySlug: alpharetta
-title: "Airbnb Management in Windward, Alpharetta | ATLStay"
+title: "Airbnb Management in Windward, Alpharetta"
 description: "Short-term rental management in the Windward area of Alpharetta. ATLStay maximizes revenue from the Windward Parkway corporate corridor, Lake Windward, and GA-400 business travel."
 intro: "Windward is north Alpharetta's corporate-and-family corridor, organized around Windward Parkway and the GA-400 interchange. Office parks, the master-planned community surrounding Lake Windward, and quiet established neighborhoods sit side by side here — a setting that produces dependable weekday business-travel demand alongside a stable family and relocation segment for short-term rental owners."
 heroImage: suburbHome

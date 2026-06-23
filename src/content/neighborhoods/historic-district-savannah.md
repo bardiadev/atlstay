@@ -2,7 +2,7 @@
 name: Historic District
 slug: historic-district
 citySlug: savannah
-title: "Airbnb Management in Historic District, Savannah | ATLStay"
+title: "Airbnb Management in Historic District, Savannah"
 description: "Short-term rental management in Savannah's Historic District. We maximize revenue around the squares, River Street, St. Patrick's Day, and year-round tourism."
 intro: "Savannah's Historic District is the heart of one of America's most-visited small cities — twenty-some landscaped squares, the River Street waterfront, and a walkable grid of preserved row houses and carriage houses shaded by live oaks. For short-term rental owners it is prime, high-demand inventory: guests come specifically to stay inside the district, within walking distance of the squares and the river, and they pay a premium for the address."
 heroImage: "savannah"

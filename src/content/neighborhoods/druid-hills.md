@@ -2,7 +2,7 @@
 name: Druid Hills
 slug: druid-hills
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Druid Hills, Atlanta"
+title: "Airbnb Management in Druid Hills, Atlanta"
 description: "Expert STR management in Druid Hills, Atlanta — Olmsted-designed parkways, Emory University, CDC, Fernbank Museum, and landmark estate homes."
 intro: "Druid Hills is Atlanta's most formal historic neighborhood — Frederick Law Olmsted's parkway system, deep lots, and homes that became famous as the setting for Driving Miss Daisy. For STR owners, it means an affluent, institution-adjacent address with consistent demand from Emory, the CDC, and Fernbank."
 heroImage: "nbhdDefault"

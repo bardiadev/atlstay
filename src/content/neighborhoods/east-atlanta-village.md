@@ -2,7 +2,7 @@
 name: East Atlanta Village
 slug: east-atlanta-village
 citySlug: atlanta
-title: "Airbnb Management in East Atlanta Village | ATLStay"
+title: "Airbnb Management in East Atlanta Village"
 description: "Short-term rental management in East Atlanta Village. EAV's indie music scene, craft bars, and genuine neighborhood personality create strong STR demand from Atlanta's most adventurous travelers."
 intro: "East Atlanta Village isn't trying to be anything except what it is: one of Atlanta's most authentic neighborhood gathering places, with a music scene, a bar culture, and a community identity entirely its own. For STR owners, EAV offers a guest profile that prizes authenticity above amenities — and pays a fair premium for a genuine neighborhood experience."
 heroImage: "nbhdDefault"

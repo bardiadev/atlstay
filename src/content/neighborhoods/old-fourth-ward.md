@@ -2,7 +2,7 @@
 name: Old Fourth Ward
 slug: old-fourth-ward
 citySlug: atlanta
-title: "Airbnb Management in Old Fourth Ward, Atlanta | ATLStay"
+title: "Airbnb Management in Old Fourth Ward, Atlanta"
 description: "Expert short-term rental management in Old Fourth Ward, Atlanta. BeltLine access, Ponce City Market, and strong millennial travel demand make O4W one of Atlanta's top STR neighborhoods."
 intro: "Old Fourth Ward is the neighborhood that launched Atlanta's urban renaissance — home to the BeltLine's Eastside Trail, Ponce City Market, and the birthplace of Martin Luther King Jr. It's one of the most-searched Atlanta neighborhoods by Airbnb guests, and for good reason: the energy, location, and walkability are unmatched."
 heroImage: "nbhdOldFourthWard"

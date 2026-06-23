@@ -2,7 +2,7 @@
 name: Victorian District
 slug: victorian-district
 citySlug: savannah
-title: "Airbnb Management in Victorian District, Savannah | ATLStay"
+title: "Airbnb Management in Victorian District, Savannah"
 description: "Short-term rental management in Savannah's Victorian District — historic homes south of Forsyth Park, walkable to downtown, strong year-round STR demand."
 intro: "Just south of Forsyth Park, Savannah's Victorian District is a neighborhood of gingerbread-trimmed wood-frame homes from the late 1800s — one of the largest intact Victorian-era districts in the country. For short-term rental owners it offers a compelling combination: genuine historic character, an easy walk to the squares and River Street, and acquisition prices that are often more attainable than the Landmark Historic District."
 heroImage: "savannah"

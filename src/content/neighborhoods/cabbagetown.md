@@ -2,7 +2,7 @@
 name: Cabbagetown
 slug: cabbagetown
 citySlug: atlanta
-title: "Airbnb & Short-Term Rental Management in Cabbagetown, Atlanta"
+title: "Airbnb Management in Cabbagetown, Atlanta"
 description: "Expert STR management in Cabbagetown, Atlanta — historic mill cottages, Krog Street Tunnel street art, and direct Beltline Eastside Trail access."
 intro: "Cabbagetown is Atlanta's most visually distinctive neighborhood — a grid of narrow shotgun cottages built for Fulton Bag & Cotton Mill workers, now draped in murals, anchored by the Krog Street Tunnel, and bordered by the Beltline Eastside Trail. Guests don't stumble into Cabbagetown; they seek it out."
 heroImage: "nbhdDefault"

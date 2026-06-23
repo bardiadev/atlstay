@@ -2,7 +2,7 @@
 name: Five Points
 slug: five-points-athens
 citySlug: athens
-title: "Airbnb Management in Five Points, Athens | ATLStay"
+title: "Airbnb Management in Five Points, Athens"
 description: "Short-term rental management in Five Points, Athens, GA. Walkable neighborhood near UGA — ideal for families and game weekends. We maximize your revenue."
 intro: "Five Points is one of Athens's most beloved neighborhoods — a walkable village of shops and restaurants surrounded by tree-lined residential streets, just south of the University of Georgia campus. For short-term rental owners, it hits a sweet spot: close enough to Sanford Stadium for game-day demand, residential and quiet enough for visiting families, and anchored by a charming commercial node that guests can walk to for coffee and dinner."
 heroImage: "athensGa"

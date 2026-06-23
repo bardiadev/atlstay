@@ -2,7 +2,7 @@
 name: Inman Park
 slug: inman-park
 citySlug: atlanta
-title: "Airbnb Management in Inman Park, Atlanta | ATLStay"
+title: "Airbnb Management in Inman Park, Atlanta"
 description: "Premium short-term rental management in Inman Park, Atlanta. Historic Victorian homes, Krog Street Market, and BeltLine access create one of Atlanta's most sought-after STR neighborhoods."
 intro: "Inman Park was Atlanta's first planned suburb, and more than 130 years later it still has some of the city's most beautiful streetscapes — Victorian-era homes with wide front porches, enormous oak canopies, and a neighborhood identity strong enough to anchor one of Atlanta's best-loved annual festivals. For STR owners, the combination of architectural charm, Krog Street Market, and BeltLine access creates powerful demand."
 heroImage: "nbhdInmanPark"
