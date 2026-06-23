@@ -68,7 +68,7 @@ function telegramText({ form, lead, meta }) {
   const loc = M['Approx. location'] || '';
 
   const sep = '━━━━━━━━━━━━━━━━';
-  const lines = [sep, `🏠 <b>ATLStay</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
+  const lines = [`🏠 <b>ATLStay</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
   const contact = [];
   if (phone) contact.push(`📞 ${tgEscape(phone)}`);
   if (email) contact.push(`✉️ ${tgEscape(email)}`);
