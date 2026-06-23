@@ -38,7 +38,14 @@ export async function onRequest(context) {
     return Response.redirect(url.toString(), 301);
   }
 
-  // 2. Basic Auth gate for the private dashboard at /boroto
+  // 2. The dashboard moved from /dashboard to /boroto. Bounce any lingering
+  //    links — and stale edge-cached copies of the old page — to the new,
+  //    auth-gated location. Runs in the Function, ahead of asset serving.
+  if (url.pathname === '/dashboard' || url.pathname.startsWith('/dashboard/')) {
+    return Response.redirect(new URL('/boroto/', url.origin).toString(), 301);
+  }
+
+  // 3. Basic Auth gate for the private dashboard at /boroto
   if (url.pathname === '/boroto' || url.pathname.startsWith('/boroto/')) {
     const expectedPass = context.env.BOROTO_PASS;
     if (!expectedPass) return unauthorized(); // fail closed — never expose unprotected
