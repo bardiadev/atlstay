@@ -6,7 +6,7 @@ region: georgia
 county: Chatham
 lat: 32.1155
 lng: -81.2471
-title: "Airbnb & Short-Term Rental Management in Pooler, GA"
+title: "Airbnb Management in Pooler, GA"
 description: "Expert short-term rental management in Pooler, GA. Capture Savannah/Hilton Head airport travelers, Tanger Outlets visitors, and Mighty Eighth museum guests with optimized STR management."
 intro: "Pooler is one of the fastest-growing cities in Georgia — a Chatham County suburb anchored by Savannah/Hilton Head International Airport, Tanger Outlets, and the National Museum of the Mighty Eighth Air Force. Demand is business-driven, institutional, and year-round."
 heroImage: "georgiaCoast"

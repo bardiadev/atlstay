@@ -6,7 +6,7 @@ region: metro
 county: DeKalb
 lat: 33.8921
 lng: -84.2988
-title: "Airbnb & Short-Term Rental Management in Chamblee, GA"
+title: "Airbnb Management in Chamblee, GA"
 description: "Full-service STR management in Chamblee, GA. ATLStay maximizes earnings for Chamblee hosts on one of metro Atlanta's most celebrated food and culture corridors."
 intro: "Chamblee sits at the epicenter of Buford Highway's internationally celebrated food corridor — the most diverse dining destination in the Southeast — with direct MARTA rail access and a revitalized downtown that give it a combination of demand drivers few metro suburbs can match."
 heroImage: metroAtlanta

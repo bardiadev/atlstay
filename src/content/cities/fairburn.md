@@ -6,7 +6,7 @@ region: metro
 county: Fulton
 lat: 33.5671
 lng: -84.5810
-title: "Airbnb & Short-Term Rental Management in Fairburn, GA"
+title: "Airbnb Management in Fairburn, GA"
 description: "Expert short-term rental management in Fairburn, GA. ATLStay maximizes Airbnb earnings near the Georgia Renaissance Festival, film studios, and historic downtown."
 intro: "Fairburn is one of south Fulton County's most historically distinctive communities — a small downtown with preserved Victorian and early-twentieth-century architecture, an active arts and event scene, and direct proximity to the Georgia Renaissance Festival, one of the largest recurring festival events in the state. Film production activity adds a second, growing demand layer that has followed Georgia's screen industry south of Atlanta."
 heroImage: suburbHome

@@ -3,7 +3,7 @@ name: Atlanta
 state: GA
 slug: atlanta
 region: atlanta
-title: "Airbnb & Short-Term Rental Management in Atlanta, GA"
+title: "Airbnb Management in Atlanta, GA"
 description: "ATLStay offers full-service short-term rental management in Atlanta. We handle everything — listing, pricing, guests, and turnovers — so you earn more, effortlessly."
 intro: "Atlanta's short-term rental market rewards owners who get the details right. ATLStay is the local management company built to make your home perform at the top of the market — with transparent pricing, genuine neighborhood expertise, and the hands-on care that national platforms simply can't match."
 heroImage: "atlantaSkyline"

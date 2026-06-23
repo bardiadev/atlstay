@@ -6,7 +6,7 @@ region: metro
 county: Hall
 lat: 34.2979
 lng: -83.8241
-title: "Airbnb & Short-Term Rental Management in Gainesville, GA"
+title: "Airbnb Management in Gainesville, GA"
 description: "Short-term rental management in Gainesville, GA. ATLStay optimizes your Airbnb for Lake Lanier's north shore, medical-center demand, and Hall County events."
 intro: "Gainesville sits at the north end of Lake Lanier as the seat of Hall County — a real city with its own downtown square, a major regional hospital system, and a college campus, layered on top of the lake's heavy summer tourism. That mix gives short-term rental owners something the pure lake markets don't have: a steady, year-round demand base beneath the seasonal peaks."
 heroImage: lakeLanier

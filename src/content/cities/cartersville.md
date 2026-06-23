@@ -6,7 +6,7 @@ region: georgia
 county: Bartow
 lat: 34.1661
 lng: -84.8006
-title: "Airbnb & Short-Term Rental Management in Cartersville, GA"
+title: "Airbnb Management in Cartersville, GA"
 description: "Short-term rental management in Cartersville, GA. Lake Allatoona, the Booth Western Art Museum, and Tellus Science Museum anchor demand 44 miles northwest of Atlanta."
 intro: "Cartersville sits 44 miles northwest of Atlanta at the intersection of I-75 and US-41 — the historic Western and Atlantic Railroad corridor. Lake Allatoona's 270 miles of Corps of Engineers shoreline, two nationally recognized museums, and Atlanta day-tripper proximity create a multi-driver STR market with year-round demand."
 heroImage: "georgiaCity"

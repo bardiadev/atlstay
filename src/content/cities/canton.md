@@ -6,7 +6,7 @@ region: metro
 county: Cherokee
 lat: 34.2368
 lng: -84.4908
-title: "Airbnb & Short-Term Rental Management in Canton, GA"
+title: "Airbnb Management in Canton, GA"
 description: "Expert short-term rental management in Canton, GA. ATLStay maximizes your Airbnb earnings in Cherokee County's fastest-growing city."
 intro: "Canton is Cherokee County's seat and one of metro Atlanta's fastest-growing cities — a downtown revival, expanding corporate presence along Riverstone Parkway, and proximity to north Georgia recreation make it a well-rounded STR market."
 heroImage: suburbHome

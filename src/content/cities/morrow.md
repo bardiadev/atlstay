@@ -6,7 +6,7 @@ region: metro
 county: Clayton
 lat: 33.5832
 lng: -84.3394
-title: "Airbnb & Short-Term Rental Management in Morrow, GA"
+title: "Airbnb Management in Morrow, GA"
 description: "Expert short-term rental management in Morrow, GA. ATLStay maximizes Airbnb earnings with Clayton State University demand, airport proximity, and Georgia Archives visitors."
 intro: "Morrow is a compact, well-connected Clayton County city that often goes unnoticed in STR conversations — but its combination of university presence, Georgia Archives, Southlake Mall retail corridor, and a 12-mile drive to Hartsfield-Jackson gives property owners access to demand drivers most small cities would envy."
 heroImage: suburbHome

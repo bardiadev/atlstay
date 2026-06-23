@@ -6,7 +6,7 @@ region: metro
 county: Fulton
 lat: 34.1322
 lng: -84.3007
-title: "Airbnb & Short-Term Rental Management in Milton, GA"
+title: "Airbnb Management in Milton, GA"
 description: "Premium STR management in Milton, GA. ATLStay serves Milton's affluent equestrian community with white-glove guest experiences and revenue-maximizing local expertise."
 intro: "Milton is metro Atlanta's premier equestrian and rural-luxury market — a Fulton County city of estate-lot properties, horse farms, and the Crabapple Village district where Birmingham Highway's white-fenced pastures meet an upscale dining and boutique retail scene unlike anything else in the metro."
 heroImage: suburbHome

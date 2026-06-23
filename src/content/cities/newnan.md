@@ -6,7 +6,7 @@ region: metro
 county: Coweta
 lat: 33.3807
 lng: -84.7997
-title: "Airbnb & Short-Term Rental Management in Newnan, GA"
+title: "Airbnb Management in Newnan, GA"
 description: "Expert short-term rental management in Newnan, GA. ATLStay maximizes Airbnb earnings in Coweta County's historic downtown and growing I-85 southwest corridor."
 intro: "Newnan is Coweta County's county seat and one of metro Atlanta's most historically preserved communities — six National Register of Historic Places districts, an antebellum downtown that survived the Civil War largely intact, and a fast-growing I-85 southwest corridor that brings corporate and industrial demand to complement its heritage appeal."
 heroImage: suburbHome

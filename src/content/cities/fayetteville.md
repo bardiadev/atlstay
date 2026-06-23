@@ -6,7 +6,7 @@ region: metro
 county: Fayette
 lat: 33.4487
 lng: -84.4549
-title: "Airbnb & Short-Term Rental Management in Fayetteville, GA"
+title: "Airbnb Management in Fayetteville, GA"
 description: "Expert short-term rental management in Fayetteville, GA. ATLStay maximizes Airbnb earnings near Trilith Studios, Trilith LIVE, and Fayette County's growing destination profile."
 intro: "Fayetteville is Fayette County's county seat and sits at the center of one of Georgia's most dramatic transformations — a quiet suburb reshaped by Trilith Studios, the largest purpose-built film campus in North America, and a surrounding mixed-use district that is becoming a genuine destination in its own right."
 heroImage: suburbHome

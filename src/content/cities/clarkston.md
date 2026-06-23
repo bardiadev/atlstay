@@ -6,7 +6,7 @@ region: metro
 county: DeKalb
 lat: 33.8096
 lng: -84.2396
-title: "Airbnb & Short-Term Rental Management in Clarkston, GA"
+title: "Airbnb Management in Clarkston, GA"
 description: "Expert Airbnb & short-term rental management in Clarkston, GA. ATLStay serves hosts near Clarkston's diverse community, Emory, and CDC with full-service oversight."
 intro: "Clarkston's remarkable cultural diversity, proximity to Emory University and the CDC, and positioning as the Ellis Island of the South create a uniquely layered short-term rental demand profile — one that rewards hosts who understand exactly who is traveling here and why."
 heroImage: suburbHome

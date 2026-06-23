@@ -6,7 +6,7 @@ region: metro
 county: Fulton
 lat: 33.6601
 lng: -84.4102
-title: "Airbnb & Short-Term Rental Management in Hapeville, GA"
+title: "Airbnb Management in Hapeville, GA"
 description: "Expert short-term rental management in Hapeville, GA. ATLStay maximizes Airbnb earnings near Porsche North America HQ, Aerotropolis, and Hartsfield-Jackson airport."
 intro: "Hapeville is the smallest of the ATL Airport District cities but arguably the most interesting from an STR demand perspective — it sits directly adjacent to Hartsfield-Jackson, hosts Porsche North America's headquarters and Experience Center, and is home to the Aerotropolis Atlanta redevelopment of the former Ford Assembly Plant. Corporate demand here is genuine and unusually premium."
 heroImage: metroAtlanta

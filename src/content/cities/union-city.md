@@ -6,7 +6,7 @@ region: metro
 county: Fulton
 lat: 33.5871
 lng: -84.5424
-title: "Airbnb & Short-Term Rental Management in Union City, GA"
+title: "Airbnb Management in Union City, GA"
 description: "Expert short-term rental management in Union City, GA. ATLStay maximizes Airbnb earnings near Hartsfield-Jackson Airport and the south Fulton film and logistics corridor."
 intro: "Union City sits in south Fulton County, positioned close to Hartsfield-Jackson Atlanta International Airport and within the active film production and logistics corridor that has transformed south metro Atlanta over the past decade. Airport proximity, film industry activity, and a growing south Fulton employment base create a demand profile that differs significantly from typical suburban STR markets."
 heroImage: metroAtlanta

@@ -6,7 +6,7 @@ region: metro
 county: Barrow
 lat: 34.0137
 lng: -83.8277
-title: "Airbnb & Short-Term Rental Management in Auburn, GA"
+title: "Airbnb Management in Auburn, GA"
 description: "Expert short-term rental management in Auburn, GA. ATLStay maximizes Airbnb earnings along the Hwy 316 growth corridor and historic downtown Barrow County."
 intro: "Auburn sits at the intersection of Barrow County's heritage and its future. The city's historic downtown core preserves an authentic small-town character while the Highway 316 corridor that runs nearby has become one of northeast Georgia's fastest-developing growth axes, connecting Athens and Atlanta and drawing residential, commercial, and institutional investment that brings its own accommodation demand."
 heroImage: suburbHome

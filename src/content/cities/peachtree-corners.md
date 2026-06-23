@@ -6,7 +6,7 @@ region: metro
 county: Gwinnett
 lat: 33.9699
 lng: -84.2213
-title: "Airbnb & Short-Term Rental Management in Peachtree Corners, GA"
+title: "Airbnb Management in Peachtree Corners, GA"
 description: "Short-term rental management in Peachtree Corners, GA. ATLStay helps owners near Curiosity Lab, Technology Parkway, and The Forum earn more from their Airbnb."
 intro: "Peachtree Corners is Georgia's only designated smart city and home to Curiosity Lab — a live testing environment for autonomous vehicles, 5G infrastructure, and emerging mobility technology. That tech identity, combined with The Forum lifestyle center and one of Gwinnett's most affluent demographics, makes it one of the county's most compelling corporate STR markets."
 heroImage: metroAtlanta

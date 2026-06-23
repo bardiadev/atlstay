@@ -6,7 +6,7 @@ region: metro
 county: Clayton
 lat: 33.5215
 lng: -84.3538
-title: "Airbnb & Short-Term Rental Management in Jonesboro, GA"
+title: "Airbnb Management in Jonesboro, GA"
 description: "Expert short-term rental management in Jonesboro, GA. ATLStay maximizes earnings on your Airbnb near Gone with the Wind heritage sites and Clayton County demand drivers."
 intro: "Jonesboro is Clayton County's county seat and one of Georgia's most historically layered communities — home to the Road to Tara Museum, Stately Oaks Plantation, and the antebellum heritage trail that draws literary tourists from around the world. For STR owners, that heritage combined with strong airport-adjacent demand and an underserved local market creates a genuine opportunity."
 heroImage: suburbHome

@@ -3,7 +3,7 @@ name: Peachtree City
 state: GA
 slug: peachtree-city
 region: metro
-title: "Airbnb & Short-Term Rental Management in Peachtree City, GA"
+title: "Airbnb Management in Peachtree City, GA"
 description: "Expert short-term rental management in Peachtree City, GA. ATLStay maximizes earnings on your Airbnb with golf cart city demand, Trilith Studios stays, and more."
 intro: "Peachtree City is one of Georgia's most distinctive planned communities — 100 miles of golf cart paths, manicured lakes, and a neighbor to Trilith Studios make it a genuinely unusual short-term rental market where the right property commands premium rates from a guest base unlike anywhere else in metro Atlanta."
 heroImage: suburbHome

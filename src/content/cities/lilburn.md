@@ -6,7 +6,7 @@ region: metro
 county: Gwinnett
 lat: 33.8901
 lng: -84.1430
-title: "Airbnb & Short-Term Rental Management in Lilburn, GA"
+title: "Airbnb Management in Lilburn, GA"
 description: "Short-term rental management in Lilburn, GA. ATLStay helps Lilburn owners earn more from their Airbnb with local pricing expertise, Old Town demand, and Stone Mountain proximity."
 intro: "Lilburn is a quietly charming Gwinnett city where a revitalized Old Town district, Stone Mountain Park proximity, and a growing family demographic combine to support steady short-term rental demand year-round."
 heroImage: suburbHome

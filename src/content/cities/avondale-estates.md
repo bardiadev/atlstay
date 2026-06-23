@@ -6,7 +6,7 @@ region: metro
 county: DeKalb
 lat: 33.7715
 lng: -84.2671
-title: "Airbnb & Short-Term Rental Management in Avondale Estates, GA"
+title: "Airbnb Management in Avondale Estates, GA"
 description: "Premium STR management in Avondale Estates, GA. ATLStay helps hosts in Atlanta's charming Tudor village community earn more with less effort."
 intro: "Avondale Estates is metro Atlanta's most architecturally distinctive small city — a 1920s planned Tudor village with a brewpub district, walkable downtown, and proximity to Decatur's cultural orbit that makes it genuinely appealing to the short-term traveler who wants character over chain hotels."
 heroImage: suburbHome

@@ -6,7 +6,7 @@ region: metro
 county: Gwinnett
 lat: 34.1207
 lng: -84.0044
-title: "Airbnb & Short-Term Rental Management in Buford, GA"
+title: "Airbnb Management in Buford, GA"
 description: "Short-term rental management in Buford, GA. ATLStay grows revenue for Buford owners near Mall of Georgia, Lake Lanier, and Coolray Field — three of northeast metro Atlanta's biggest demand drivers."
 intro: "Buford holds a rare hand for a suburban Atlanta city: the Mall of Georgia (one of the Southeast's largest malls), Lake Lanier access minutes to the north, and Coolray Field nearby. That combination of retail destination, water recreation, and sports venues creates a demand mix that few Gwinnett markets can match."
 heroImage: metroAtlanta

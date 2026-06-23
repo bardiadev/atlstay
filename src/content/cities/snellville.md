@@ -6,7 +6,7 @@ region: metro
 county: Gwinnett
 lat: 33.8573
 lng: -84.0199
-title: "Airbnb & Short-Term Rental Management in Snellville, GA"
+title: "Airbnb Management in Snellville, GA"
 description: "Short-term rental management in Snellville, GA. ATLStay grows revenue for Snellville owners with dynamic pricing, The Grove at Towne Center events, and the Gwinnett Environmental & Heritage Center."
 intro: "Snellville is a southeast Gwinnett city with a strong community identity, a purpose-built downtown district anchored by The Grove at Towne Center, and proximity to the Gwinnett Environmental and Heritage Center — a combination that supports year-round STR demand from leisure and family travelers."
 heroImage: suburbHome

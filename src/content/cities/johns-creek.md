@@ -3,7 +3,7 @@ name: Johns Creek
 state: GA
 slug: johns-creek
 region: metro
-title: "Airbnb & Short-Term Rental Management in Johns Creek, GA"
+title: "Airbnb Management in Johns Creek, GA"
 description: "Professional short-term rental management in Johns Creek, GA. ATLStay optimizes your Airbnb for Johns Creek's affluent family market, corporate demand, and event-driven stays."
 intro: "Johns Creek is one of the most affluent communities in Georgia — a city of large family homes, top-ranked schools, and a resident profile that generates strong demand from visiting families, medical professionals, and the corporate relocation market."
 heroImage: metroAtlanta

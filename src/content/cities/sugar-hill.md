@@ -6,7 +6,7 @@ region: metro
 county: Gwinnett
 lat: 34.1065
 lng: -84.0335
-title: "Airbnb & Short-Term Rental Management in Sugar Hill, GA"
+title: "Airbnb Management in Sugar Hill, GA"
 description: "Short-term rental management in Sugar Hill, GA. ATLStay helps Sugar Hill owners maximize Airbnb revenue around The Bowl amphitheater, Eagle Theatre, and E Center events."
 intro: "Sugar Hill has built one of the most impressive entertainment districts in suburban Gwinnett — The Bowl outdoor amphitheater, the Eagle Theatre, and the E Center collectively host over 200 events per year. For short-term rental owners, that calendar is a revenue engine."
 heroImage: suburbHome

@@ -6,7 +6,7 @@ region: metro
 county: Cobb
 lat: 33.8126
 lng: -84.6344
-title: "Airbnb & Short-Term Rental Management in Austell, GA"
+title: "Airbnb Management in Austell, GA"
 description: "Short-term rental management in Austell, GA. ATLStay handles your Airbnb near Six Flags Over Georgia in Cobb County."
 intro: "Austell's address next to Six Flags Over Georgia makes it one of metro Atlanta's most strategically located STR markets for family and group bookings — and the surrounding Cobb County access to Sweetwater Creek and the Silver Comet Trail keeps demand flowing outside park season."
 heroImage: suburbHome

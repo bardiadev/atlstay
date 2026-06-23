@@ -6,7 +6,7 @@ region: metro
 county: Newton
 lat: 33.5968
 lng: -83.8602
-title: "Airbnb & Short-Term Rental Management in Covington, GA"
+title: "Airbnb Management in Covington, GA"
 description: "Expert short-term rental management in Covington, GA. ATLStay maximizes Airbnb earnings in the 'Hollywood of the South' — film tourism, historic square, and Vampire Diaries fans."
 intro: "Covington holds a rare distinction in the metro Atlanta STR market: it is simultaneously a film production hub and a genuine heritage destination. The Newton County seat's historic square has served as the backdrop for The Vampire Diaries and dozens of other productions, creating an ongoing stream of film-tourism visitors who travel to Covington specifically because of what they've seen on screen — and a production industry base that keeps film and TV crews in the area year-round."
 heroImage: metroAtlanta

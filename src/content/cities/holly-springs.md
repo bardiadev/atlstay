@@ -6,7 +6,7 @@ region: metro
 county: Cherokee
 lat: 34.1740
 lng: -84.5013
-title: "Airbnb & Short-Term Rental Management in Holly Springs, GA"
+title: "Airbnb Management in Holly Springs, GA"
 description: "Short-term rental management in Holly Springs, GA. ATLStay handles your Airbnb so you earn more from Cherokee County's growing market."
 intro: "Nestled between Woodstock and Canton, Holly Springs punches above its size — LakePoint Sports Complex alone makes it a year-round destination for families traveling to youth tournaments, and the surrounding Cherokee County amenities fill out the booking calendar."
 heroImage: metroAtlanta

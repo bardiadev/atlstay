@@ -6,7 +6,7 @@ region: metro
 county: Cobb
 lat: 33.8648
 lng: -84.4644
-title: "Airbnb & Short-Term Rental Management in Vinings, GA"
+title: "Airbnb Management in Vinings, GA"
 description: "Premium short-term rental management in Vinings, GA. ATLStay handles your Airbnb near Truist Park and the Battery in upscale Cobb County."
 intro: "Vinings is Cobb County's most upscale STR market — a quiet, tree-lined community steps from Truist Park and the Battery Atlanta, with easy access to Buckhead and commanding some of the highest nightly rates in the county."
 heroImage: suburbHome

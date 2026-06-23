@@ -6,7 +6,7 @@ region: metro
 county: Gwinnett
 lat: 33.9572
 lng: -83.9884
-title: "Airbnb & Short-Term Rental Management in Lawrenceville, GA"
+title: "Airbnb Management in Lawrenceville, GA"
 description: "Short-term rental management in Lawrenceville, GA. ATLStay maximizes revenue for Lawrenceville owners with expert pricing around the historic square, Northside Hospital, and Gwinnett courts."
 intro: "Lawrenceville is the seat of Gwinnett County — home to its historic courthouse square, the county's largest medical complex, and the Gwinnett Justice & Administration Center. That combination of institutional traffic and a revitalizing downtown makes it one of the most dependable demand bases in the metro."
 heroImage: metroAtlanta

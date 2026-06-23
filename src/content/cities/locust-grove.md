@@ -6,7 +6,7 @@ region: metro
 county: Henry
 lat: 33.3459
 lng: -84.1091
-title: "Airbnb & Short-Term Rental Management in Locust Grove, GA"
+title: "Airbnb Management in Locust Grove, GA"
 description: "Expert short-term rental management in Locust Grove, GA. ATLStay captures Tanger Outlets visitor demand and I-75 south corridor stays in Henry County."
 intro: "Locust Grove sits along I-75 in southern Henry County — home to the Tanger Outlets shopping destination, Noah's Ark Animal Sanctuary, and a growing residential base that has followed the corridor south from McDonough and Atlanta. It draws a steady mix of regional visitors and interstate travelers that most nearby STR markets don't see."
 heroImage: metroAtlanta

@@ -6,7 +6,7 @@ region: metro
 county: Cobb
 lat: 33.8597
 lng: -84.6854
-title: "Airbnb & Short-Term Rental Management in Powder Springs, GA"
+title: "Airbnb Management in Powder Springs, GA"
 description: "Short-term rental management in Powder Springs, GA. ATLStay handles your Airbnb on the Silver Comet Trail in Cobb County."
 intro: "Powder Springs is Cobb County's trail town — the Silver Comet Trail runs directly through the city, bringing a year-round stream of cyclists and outdoor visitors who need a comfortable base rather than a roadside hotel."
 heroImage: metroAtlanta

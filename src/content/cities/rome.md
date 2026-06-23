@@ -6,7 +6,7 @@ region: georgia
 county: Floyd
 lat: 34.2570
 lng: -85.1647
-title: "Airbnb & Short-Term Rental Management in Rome, GA"
+title: "Airbnb Management in Rome, GA"
 description: "Short-term rental management in Rome, GA. Berry College, the Coosa River outdoor recreation corridor, and the Appalachian foothills drive year-round vacation rental demand."
 intro: "Rome, Georgia is the Northwest Georgia regional hub — a three-river city at the convergence of the Etowah and Oostanaula Rivers, 60 miles northwest of Atlanta in the Appalachian foothills. Berry College, outdoor recreation, and a revitalized downtown produce a demand profile that is more diverse than most Georgia secondary markets."
 heroImage: "georgiaCity"

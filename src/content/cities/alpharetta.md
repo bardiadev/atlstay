@@ -3,7 +3,7 @@ name: Alpharetta
 state: GA
 slug: alpharetta
 region: metro
-title: "Airbnb & Short-Term Rental Management in Alpharetta, GA"
+title: "Airbnb Management in Alpharetta, GA"
 description: "Short-term rental management in Alpharetta, GA. ATLStay optimizes your Airbnb listing for Alpharetta's tech-corridor demand, events, and weekend leisure market."
 intro: "Alpharetta has quietly become one of Georgia's most important technology hubs — and that corporate concentration, layered with Avalon's retail energy and a packed concert calendar at Ameris Bank Amphitheatre, makes it a genuinely strong year-round STR market."
 heroImage: suburbHome

@@ -6,7 +6,7 @@ region: metro
 county: Cobb
 lat: 34.0659
 lng: -84.6769
-title: "Airbnb & Short-Term Rental Management in Acworth, GA"
+title: "Airbnb Management in Acworth, GA"
 description: "Full-service Airbnb & short-term rental management in Acworth, GA. ATLStay turns your lakeside or downtown property into consistent income."
 intro: "Acworth is Cobb County's lake town — Lake Acworth and Lake Allatoona give it a water-access identity unlike any other metro Atlanta market, and that distinctiveness drives a STR demand profile built around outdoor recreation rather than just suburban convenience."
 heroImage: suburbHome

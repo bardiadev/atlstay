@@ -3,7 +3,7 @@ name: Roswell
 state: GA
 slug: roswell
 region: metro
-title: "Airbnb & Short-Term Rental Management in Roswell, GA"
+title: "Airbnb Management in Roswell, GA"
 description: "Expert short-term rental management in Roswell, GA. ATLStay maximizes your Airbnb earnings with local pricing expertise, full-service turnovers, and 24/7 guest care."
 intro: "Roswell's beautifully preserved historic district, Chattahoochee River access, and thriving restaurant scene make it one of metro Atlanta's most sought-after destinations — and one of its most rewarding STR markets for owners who know how to position their property."
 heroImage: metroAtlanta

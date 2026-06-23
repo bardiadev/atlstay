@@ -6,7 +6,7 @@ region: metro
 county: Walton
 lat: 33.6562
 lng: -83.7182
-title: "Airbnb & Short-Term Rental Management in Social Circle, GA"
+title: "Airbnb Management in Social Circle, GA"
 description: "Expert short-term rental management in Social Circle, GA. ATLStay maximizes Airbnb earnings in this historic Walton County town near Hard Labor Creek State Park."
 intro: "Social Circle is one of those Georgia small towns that earns its visitors honestly — a name that gets people curious, a historic downtown that delivers on arrival, and Hard Labor Creek State Park just up the road with camping, fishing, golf, and equestrian trails. The combination of genuine historic character and outdoor recreation access makes Social Circle a rare STR market: a small town that people visit for the small town, not as a stop on the way to somewhere else."
 heroImage: suburbHome

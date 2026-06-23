@@ -6,7 +6,7 @@ region: metro
 county: Fulton
 lat: 33.6534
 lng: -84.4494
-title: "Airbnb & Short-Term Rental Management in College Park, GA"
+title: "Airbnb Management in College Park, GA"
 description: "Expert short-term rental management in College Park, GA. ATLStay maximizes Airbnb earnings in the ATL Airport District with film studios, MARTA access, and airport proximity."
 intro: "College Park straddles Fulton and Clayton counties at the edge of Hartsfield-Jackson Atlanta International Airport — making it one of Georgia's most transit-connected STR markets. Film studios in the historic college district, direct MARTA rail access to the airport, and a revitalizing main street create demand from multiple directions for owners who position their properties correctly."
 heroImage: metroAtlanta

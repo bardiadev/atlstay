@@ -6,7 +6,7 @@ region: georgia
 county: Bibb
 lat: 32.8381
 lng: -83.6347
-title: "Airbnb & Short-Term Rental Management in Macon, GA"
+title: "Airbnb Management in Macon, GA"
 description: "Expert short-term rental management in Macon, GA. Cherry Blossom Festival, Mercer University events, and a growing music heritage tourism scene drive year-round demand."
 intro: "Macon is the Cherry Blossom Capital of the World, Georgia's most underrated music heritage city, and the home of Mercer University — three distinct demand drivers that combine to produce a vacation rental market with genuine year-round legs and a spring festival peak unlike anything else in central Georgia."
 heroImage: "georgiaCity"

@@ -6,7 +6,7 @@ region: metro
 county: Walton
 lat: 33.7948
 lng: -83.7132
-title: "Airbnb & Short-Term Rental Management in Monroe, GA"
+title: "Airbnb Management in Monroe, GA"
 description: "Expert short-term rental management in Monroe, GA. ATLStay maximizes Airbnb earnings in Walton County's antiques district and historic county seat."
 intro: "Monroe is Walton County's historic county seat and one of east metro Atlanta's most authentically preserved small cities. The downtown antiques and collectibles district draws dealers and collectors from across Georgia and the Southeast, the historic courthouse square anchors a growing restaurant and boutique retail scene, and Monroe's 45-mile separation from Atlanta gives it a genuine small-town character that heritage travelers actively seek."
 heroImage: suburbHome

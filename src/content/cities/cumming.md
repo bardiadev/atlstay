@@ -6,7 +6,7 @@ region: metro
 county: Forsyth
 lat: 34.2073
 lng: -84.1402
-title: "Airbnb & Short-Term Rental Management in Cumming, GA"
+title: "Airbnb Management in Cumming, GA"
 description: "Expert Airbnb & STR management in Cumming, GA. ATLStay maximizes revenue for Cumming hosts near Lake Lanier with dynamic pricing and full-service management."
 intro: "Cumming is Forsyth County's sole incorporated city, and its position as the primary gateway to Lake Lanier's southern shores gives STR hosts access to one of Georgia's most powerful leisure-travel demand engines — year-round lake recreation, boating season, and a fast-growing retail and dining scene anchored by The Collection at Forsyth."
 heroImage: suburbHome

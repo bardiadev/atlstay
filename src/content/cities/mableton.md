@@ -6,7 +6,7 @@ region: metro
 county: Cobb
 lat: 33.8187
 lng: -84.5824
-title: "Airbnb & Short-Term Rental Management in Mableton, GA"
+title: "Airbnb Management in Mableton, GA"
 description: "Short-term rental management in Mableton, GA. ATLStay handles your Airbnb in Cobb County's newest — and fastest-evolving — city."
 intro: "Mableton became Georgia's newest city in 2023, and with that incorporation comes renewed investment, a growing arts and cultural identity, and a Silver Comet Trail running straight through town — a combination that's reshaping its STR market in real time."
 heroImage: metroAtlanta

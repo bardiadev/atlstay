@@ -6,7 +6,7 @@ region: georgia
 county: Whitfield
 lat: 34.7698
 lng: -84.9702
-title: "Airbnb & Short-Term Rental Management in Dalton, GA"
+title: "Airbnb Management in Dalton, GA"
 description: "Short-term rental management in Dalton, GA — the Carpet Capital of the World. Corporate travel, Chickamauga battlefield visitors, and Appalachian Trail access drive demand."
 intro: "Dalton is one of the most industrially significant small cities in the United States — the Carpet Capital of the World, which produces the majority of the flooring installed in American homes. That industrial identity creates persistent corporate travel demand that other Northwest Georgia markets simply don't have."
 heroImage: "georgiaCity"

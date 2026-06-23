@@ -6,7 +6,7 @@ region: metro
 county: Barrow
 lat: 33.9926
 lng: -83.7202
-title: "Airbnb & Short-Term Rental Management in Winder, GA"
+title: "Airbnb Management in Winder, GA"
 description: "Expert short-term rental management in Winder, GA. ATLStay maximizes Airbnb earnings near Fort Yargo State Park and as Barrow County's growing county seat."
 intro: "Winder is Barrow County's county seat and one of northeast Georgia's more active growth communities, sitting at the junction of US-29 and US-316 and anchored by Fort Yargo State Park — one of Georgia's most visited state parks, offering lake swimming, kayaking, mountain biking, and camping in a setting that draws visitors from across the metro region and beyond."
 heroImage: suburbHome

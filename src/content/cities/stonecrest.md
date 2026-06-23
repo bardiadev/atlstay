@@ -6,7 +6,7 @@ region: metro
 county: DeKalb
 lat: 33.6842
 lng: -84.1372
-title: "Airbnb & Short-Term Rental Management in Stonecrest, GA"
+title: "Airbnb Management in Stonecrest, GA"
 description: "Expert Airbnb & STR management in Stonecrest, GA. ATLStay helps Stonecrest hosts maximize revenue with dynamic pricing, full-service oversight, and local DeKalb expertise."
 intro: "Stonecrest — DeKalb County's newest city, incorporated in 2017 — is a fast-growing community anchored by the Mall at Stonecrest retail and entertainment complex, with I-20 access and a young civic identity that is drawing both residents and investment to what was once purely suburban commercial territory."
 heroImage: suburbHome

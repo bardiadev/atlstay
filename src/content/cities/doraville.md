@@ -6,7 +6,7 @@ region: metro
 county: DeKalb
 lat: 33.9032
 lng: -84.2710
-title: "Airbnb & Short-Term Rental Management in Doraville, GA"
+title: "Airbnb Management in Doraville, GA"
 description: "Expert short-term rental management in Doraville, GA. ATLStay helps hosts near Assembly Atlanta and Buford Highway maximize bookings with hands-free management."
 intro: "Doraville is in the middle of one of metro Atlanta's most significant redevelopment stories — the 127-acre Assembly Atlanta studio complex is transforming a former GM plant into a film production hub, and that film industry activity is already creating steady, above-average short-term rental demand from production crews, talent, and industry workers."
 heroImage: metroAtlanta

@@ -6,7 +6,7 @@ region: metro
 county: Coweta
 lat: 33.3023
 lng: -84.5538
-title: "Airbnb & Short-Term Rental Management in Senoia, GA"
+title: "Airbnb Management in Senoia, GA"
 description: "Expert short-term rental management in Senoia, GA. ATLStay maximizes Airbnb earnings in Walking Dead film tourism capital with downtown Georgian historic charm."
 intro: "Senoia is one of Georgia's most remarkable small-town transformations: a downtown that once had eight businesses now has over fifty, fueled almost entirely by its identity as the primary filming location for The Walking Dead and other major productions. Film tourism is the core demand driver, and for STR owners, that means a guest base that travels specifically to be in Senoia — a powerful position to occupy."
 heroImage: suburbHome

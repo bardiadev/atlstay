@@ -6,7 +6,7 @@ region: metro
 county: Cherokee
 lat: 34.1015
 lng: -84.5194
-title: "Airbnb & Short-Term Rental Management in Woodstock, GA"
+title: "Airbnb Management in Woodstock, GA"
 description: "Full-service Airbnb & short-term rental management in Woodstock, GA. ATLStay handles listings, pricing, and guests so you earn more."
 intro: "Woodstock's walkable downtown, the Outlet Shoppes at Atlanta, and a booming residential base have created one of Cherokee County's most active short-term rental markets — and one that rewards professional management."
 heroImage: metroAtlanta

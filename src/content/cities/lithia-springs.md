@@ -6,7 +6,7 @@ region: metro
 county: Douglas
 lat: 33.7940
 lng: -84.6605
-title: "Airbnb & Short-Term Rental Management in Lithia Springs, GA"
+title: "Airbnb Management in Lithia Springs, GA"
 description: "Expert short-term rental management in Lithia Springs, GA. ATLStay maximizes Airbnb earnings near Sweetwater Creek State Park and the I-20 west metro corridor."
 intro: "Lithia Springs is Douglas County's most accessible community — sitting just off I-20 west of Atlanta, close to Sweetwater Creek State Park's hiking trails and waterfalls, and within easy reach of the west metro employment base. It occupies a quiet zone between Atlanta's density and the rural corridor west of Douglas County, making it a genuine outdoor-recreation basecamp that most west-metro communities can't claim."
 heroImage: suburbHome

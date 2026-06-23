@@ -6,7 +6,7 @@ region: metro
 county: Gwinnett
 lat: 33.9887
 lng: -83.8980
-title: "Airbnb & Short-Term Rental Management in Dacula, GA"
+title: "Airbnb Management in Dacula, GA"
 description: "Short-term rental management in Dacula, GA. ATLStay grows revenue for Dacula owners with dynamic pricing, youth sports tournament demand, and Gwinnett's eastern growth corridor."
 intro: "Dacula anchors Gwinnett's eastern residential corridor — a rapidly growing family market with major youth sports infrastructure, one of the most competitive school zones in the county, and a household demographic that drives strong extended-stay and tournament-travel demand."
 heroImage: suburbHome

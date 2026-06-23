@@ -6,7 +6,7 @@ region: metro
 county: Henry
 lat: 33.5443
 lng: -84.2338
-title: "Airbnb & Short-Term Rental Management in Stockbridge, GA"
+title: "Airbnb Management in Stockbridge, GA"
 description: "Expert short-term rental management in Stockbridge, GA. ATLStay maximizes Airbnb earnings near Panola Mountain, I-75/I-675, and Henry County's growing south corridor."
 intro: "Stockbridge anchors the northern end of Henry County at the convergence of I-75 and I-675 — a rare dual-interstate position that makes it one of the most transit-accessible markets in the south metro. Add Panola Mountain State Park, a growing healthcare corridor, and sustained residential expansion, and you have a market with more depth than its profile suggests."
 heroImage: suburbHome

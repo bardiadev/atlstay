@@ -6,7 +6,7 @@ region: metro
 county: Henry
 lat: 33.4473
 lng: -84.1469
-title: "Airbnb & Short-Term Rental Management in McDonough, GA"
+title: "Airbnb Management in McDonough, GA"
 description: "Expert short-term rental management in McDonough, GA. ATLStay maximizes Airbnb earnings on Henry County's historic square and fast-growing I-75 south corridor."
 intro: "McDonough is Henry County's county seat and one of metro Atlanta's most compelling suburban growth stories — an 1823 courthouse square reimagined as a genuine destination, anchored by the Geranium Festival, Heritage Festival, and Christmas on the Square events that collectively draw tens of thousands of visitors who need somewhere to stay."
 heroImage: suburbHome

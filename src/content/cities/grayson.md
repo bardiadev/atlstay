@@ -6,7 +6,7 @@ region: metro
 county: Gwinnett
 lat: 33.8933
 lng: -83.9556
-title: "Airbnb & Short-Term Rental Management in Grayson, GA"
+title: "Airbnb Management in Grayson, GA"
 description: "Short-term rental management in Grayson, GA. ATLStay helps Grayson owners earn more from Airbnb in one of southeast Gwinnett's fastest-growing family markets."
 intro: "Grayson is a small city in southeast Gwinnett that sits at the center of the county's fastest-growing residential corridor — a family-oriented market where demand is driven by visitors, relocating households, and extended-stay guests supporting Gwinnett's ongoing growth."
 heroImage: suburbHome

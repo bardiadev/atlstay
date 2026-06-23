@@ -6,7 +6,7 @@ region: metro
 county: Cherokee
 lat: 34.3379
 lng: -84.3779
-title: "Airbnb & Short-Term Rental Management in Ball Ground, GA"
+title: "Airbnb Management in Ball Ground, GA"
 description: "Short-term rental management in Ball Ground, GA. ATLStay maximizes your Airbnb earnings in Cherokee County's most charming small town."
 intro: "Ball Ground is Cherokee County's most character-rich small town — a walkable historic downtown with murals, antiques, and a growing arts scene that draws visitors specifically looking for the antithesis of suburban Atlanta."
 heroImage: suburbHome

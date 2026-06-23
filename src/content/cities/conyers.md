@@ -6,7 +6,7 @@ region: metro
 county: Rockdale
 lat: 33.6676
 lng: -84.0177
-title: "Airbnb & Short-Term Rental Management in Conyers, GA"
+title: "Airbnb Management in Conyers, GA"
 description: "Professional STR management in Conyers, GA. ATLStay helps Conyers hosts near the Georgia International Horse Park and Monastery of the Holy Spirit maximize bookings."
 intro: "Conyers anchors Rockdale County with two of Georgia's most distinctive attractions — the Georgia International Horse Park, built for the 1996 Atlanta Olympics, and the Monastery of the Holy Spirit — creating an event-driven and heritage-tourism demand profile that sets it apart from every other metro Atlanta suburb."
 heroImage: suburbHome

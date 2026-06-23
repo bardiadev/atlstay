@@ -6,7 +6,7 @@ region: metro
 county: Paulding
 lat: 33.9237
 lng: -84.8408
-title: "Airbnb & Short-Term Rental Management in Dallas, GA"
+title: "Airbnb Management in Dallas, GA"
 description: "Expert short-term rental management in Dallas, GA. ATLStay maximizes Airbnb earnings in fast-growing Paulding County and along the Silver Comet Trail corridor."
 intro: "Dallas is the seat of Paulding County, one of metro Atlanta's fastest-growing counties over the past two decades. The Silver Comet Trail passes nearby, bringing cyclists and outdoor recreation visitors to a community that has expanded from a quiet rural county seat into a genuine west-metro destination with its own commercial base and growing event culture."
 heroImage: suburbHome

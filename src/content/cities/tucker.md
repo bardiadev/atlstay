@@ -6,7 +6,7 @@ region: metro
 county: DeKalb
 lat: 33.8546
 lng: -84.2171
-title: "Airbnb & Short-Term Rental Management in Tucker, GA"
+title: "Airbnb Management in Tucker, GA"
 description: "Full-service Airbnb & STR management in Tucker, GA. ATLStay maximizes revenue for Tucker hosts with dynamic pricing, local expertise, and hands-free oversight."
 intro: "Tucker's blend of established neighborhoods, convenient I-285/I-20 access, and a revitalized downtown makes it one of DeKalb County's most practical short-term rental markets — steady demand from corporate travelers, weekend visitors, and extended-stay guests who want suburban comfort without highway hotel prices."
 heroImage: suburbHome

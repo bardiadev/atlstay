@@ -6,7 +6,7 @@ region: metro
 county: Fulton
 lat: 33.6796
 lng: -84.4394
-title: "Airbnb & Short-Term Rental Management in East Point, GA"
+title: "Airbnb Management in East Point, GA"
 description: "Expert short-term rental management in East Point, GA. ATLStay maximizes Airbnb earnings in the ATL Airport District with Tyler Perry Studios demand and film production stays."
 intro: "East Point is part of the ATL Airport District — the cluster of Fulton County cities that encircle Hartsfield-Jackson Atlanta International Airport, the world's busiest airport. Tyler Perry Studios is located in East Point, and the combination of airport adjacency, film production presence, and rapid investment in the historic district creates a market with multiple, distinct demand layers operating simultaneously."
 heroImage: metroAtlanta

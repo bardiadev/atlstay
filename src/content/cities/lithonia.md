@@ -6,7 +6,7 @@ region: metro
 county: DeKalb
 lat: 33.7123
 lng: -84.1051
-title: "Airbnb & Short-Term Rental Management in Lithonia, GA"
+title: "Airbnb Management in Lithonia, GA"
 description: "Professional STR management in Lithonia, GA. ATLStay helps hosts near Arabia Mountain and the Mall at Stonecrest earn more with expert local oversight."
 intro: "Lithonia is the gateway to the Arabia Mountain National Heritage Area — one of Georgia's most underrated outdoor destinations — and its position at the eastern edge of DeKalb County gives STR hosts access to outdoor recreation travelers, extended-stay workers, and interstate-accessible corporate demand that larger suburban markets often overlook."
 heroImage: suburbHome

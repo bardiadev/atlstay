@@ -6,7 +6,7 @@ region: metro
 county: Henry
 lat: 33.3871
 lng: -84.2830
-title: "Airbnb & Short-Term Rental Management in Hampton, GA"
+title: "Airbnb Management in Hampton, GA"
 description: "Expert short-term rental management in Hampton, GA. ATLStay maximizes Airbnb earnings around Atlanta Motor Speedway NASCAR events and Henry County demand."
 intro: "Hampton is home to Atlanta Motor Speedway — now EchoPark Speedway — one of NASCAR's marquee tracks and a major event venue that creates intense, predictable demand spikes for short-term rentals. For owners with properties in the area, race weekends and speedway events represent some of the highest nightly rates achievable anywhere in the south metro."
 heroImage: suburbHome

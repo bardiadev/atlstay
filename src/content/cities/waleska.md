@@ -6,7 +6,7 @@ region: metro
 county: Cherokee
 lat: 34.3178
 lng: -84.5522
-title: "Airbnb & Short-Term Rental Management in Waleska, GA"
+title: "Airbnb Management in Waleska, GA"
 description: "Short-term rental management in Waleska, GA. ATLStay handles your Airbnb in this quiet Cherokee County retreat near Reinhardt University."
 intro: "Waleska is Cherokee County's most secluded market — a small town anchored by Reinhardt University and surrounded by the pastoral foothills of north Georgia, drawing guests who want genuine quiet and distance from the suburban corridor."
 heroImage: metroAtlanta

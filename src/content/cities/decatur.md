@@ -6,7 +6,7 @@ region: metro
 county: DeKalb
 lat: 33.7748
 lng: -84.2963
-title: "Airbnb & Short-Term Rental Management in Decatur, GA"
+title: "Airbnb Management in Decatur, GA"
 description: "Short-term rental management in Decatur, GA. ATLStay optimizes your Airbnb for Decatur's walkable square, festival calendar, Emory-and-CDC demand, and family-travel market."
 intro: "Decatur is its own city — a walkable, festival-loving DeKalb County downtown just east of Atlanta, with a beloved square, an award-winning restaurant scene, and a steady stream of visitors drawn by Emory, Agnes Scott, and one of the Southeast's best small-town calendars. For short-term rental owners, that mix delivers a genuinely well-rounded booking year."
 heroImage: nbhdDecatur

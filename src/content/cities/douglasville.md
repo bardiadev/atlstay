@@ -6,7 +6,7 @@ region: metro
 county: Douglas
 lat: 33.7515
 lng: -84.7477
-title: "Airbnb & Short-Term Rental Management in Douglasville, GA"
+title: "Airbnb Management in Douglasville, GA"
 description: "Expert short-term rental management in Douglasville, GA. ATLStay maximizes Airbnb earnings near Sweetwater Creek State Park, Lionsgate Studios, and Douglas County's growing market."
 intro: "Douglasville is Douglas County's county seat and west Atlanta's emerging destination — anchored by Sweetwater Creek State Park, known for the Stranger Things festival that brings fans from across the country, and quietly becoming a significant production market after Lionsgate Studios began leasing space in the county in 2023."
 heroImage: suburbHome
