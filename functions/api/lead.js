@@ -42,6 +42,60 @@ const C = {
   muted: '#6b7770',
 };
 
+/* ── Telegram lead notification (best-effort; never blocks or throws) ──
+ * Pings the owner's personal notifier bot on every submission. Reads
+ * TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID from env; no-ops silently if either is
+ * unset (safe to deploy before the secrets exist). The token is never logged. */
+function tgEscape(s) {
+  return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function telegramText({ form, lead, meta }) {
+  const L = lead || {};
+  const M = meta || {};
+  const get = (re) => {
+    for (const [k, v] of Object.entries(L)) if (re.test(k) && String(v).trim()) return String(v);
+    return '';
+  };
+  const isContact = /contact/i.test(form || '');
+  const title = isContact ? 'New contact message' : 'New rental projection lead';
+  const name = get(/name/i) || 'Someone';
+  const phone = get(/phone/i);
+  const email = get(/email/i);
+  const addr = get(/address/i);
+  const message = get(/message/i);
+  const page = M['Submitted from page'] || '';
+  const loc = M['Approx. location'] || '';
+
+  const lines = [`🏠 <b>ATLStay</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
+  const contact = [];
+  if (phone) contact.push(`📞 ${tgEscape(phone)}`);
+  if (email) contact.push(`✉️ ${tgEscape(email)}`);
+  if (contact.length) lines.push(contact.join('  ·  '));
+  if (addr) lines.push(`📍 ${tgEscape(addr)}`);
+  if (message) lines.push(`💬 ${tgEscape(message.length > 280 ? message.slice(0, 280) + '…' : message)}`);
+  const ctx = [];
+  if (page) ctx.push(tgEscape(page.replace(/^https?:\/\/[^/]+/, '') || page));
+  if (loc) ctx.push(tgEscape(loc));
+  if (ctx.length) lines.push(`<i>${ctx.join('  ·  ')}</i>`);
+  return lines.join('\n');
+}
+
+async function sendTelegram(env, text) {
+  const token = env.TELEGRAM_BOT_TOKEN;
+  const chatId = env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) return; // safe no-op until the secrets are set
+  try {
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML', disable_web_page_preview: true }),
+    });
+  } catch {
+    /* best-effort — never throw, never block the lead */
+  }
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -57,6 +111,12 @@ export async function onRequestPost(context) {
   const replyto = payload?.replyto || '';
   const lead = payload?.lead || {};
   const meta = payload?.meta || {};
+
+  // Notify the owner on Telegram for every submission — fire-and-forget so it
+  // never blocks or breaks the lead, and fired here so it lands even if email
+  // delivery later hiccups (the message carries the lead details itself).
+  const notify = sendTelegram(env, telegramText({ form: formName, lead, meta }));
+  if (typeof context.waitUntil === 'function') context.waitUntil(notify);
 
   const cfg = {
     resendKey: env.RESEND_API_KEY || '',
