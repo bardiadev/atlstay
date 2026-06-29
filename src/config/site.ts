@@ -42,8 +42,8 @@ export const site = {
     legalName: 'Silverstone Management LLC',
     name: 'SilverStone Management',
     url: 'https://ssmproperty.com',
-    phone: '(404) 751-7841',
-    phoneHref: 'tel:+14047517841',
+    phone: '(678) 938-6413',
+    phoneHref: 'tel:+16789386413',
     gbpUrl: 'https://share.google/UvKPapN7lSie0J1ta',
     mapsUrl: 'https://www.google.com/maps/place/SilverStone+Management+LLC/@33.9078682,-84.4876078,17z',
     address: {
