@@ -1,5 +1,6 @@
 // Barrel for the service-line axis. Import `serviceLines` everywhere.
 import type { ServiceLine, ServiceCategory } from './types';
+import type { ProjectionFormVariant } from '../../components/react/ProjectionForm';
 import { site } from '../../config/site';
 import { longTermServices } from './longTerm';
 import { midTermServices } from './midTerm';
@@ -76,6 +77,22 @@ export function feeLine(category: ServiceCategory): string {
     default:
       return 'One management fee, quoted for your property in writing before you sign anything — no onboarding charge, no markup on maintenance, and no surprise line items.';
   }
+}
+
+/**
+ * Which set of questions the lead form should ask on this service's pages.
+ *
+ * The form is one shared React island across ~900 pages; asking an HOA board
+ * how many bedrooms it has, or an office landlord whether it's on Airbnb, loses
+ * the lead. Anything without its own question set falls back to 'short-term',
+ * which is the site-wide default and must stay the default.
+ * (Type-only import — erased at build, so no runtime coupling to the island.)
+ */
+export function formVariantFor(s: ServiceLine): ProjectionFormVariant {
+  if (s.slug === 'hoa-management') return 'hoa';
+  if (s.category === 'commercial') return 'commercial';
+  if (s.category === 'long-term') return 'long-term';
+  return 'short-term';
 }
 
 /** Heading for the mid-page lead-capture band, phrased for the audience. */

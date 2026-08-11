@@ -13,7 +13,7 @@ import CheckList from '@/components/ui/CheckList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
-import { serviceLines, findService, feeLine, formBandHeading } from '@/data/serviceLines';
+import { serviceLines, findService, feeLine, formBandHeading, formVariantFor } from '@/data/serviceLines';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
@@ -36,6 +36,10 @@ const related = service.relatedServices
 const heroKey = (service.heroImageKey && service.heroImageKey in images
   ? service.heroImageKey
   : 'serviceManagement') as ImageKey;
+
+// Fit the lead form's questions to what this page actually sells, and tag every
+// lead with the service so the owner knows which page it came from.
+const formVariant = formVariantFor(service);
 
 const breadcrumbs = [
   { name: 'Home', path: '/' },
@@ -61,6 +65,8 @@ const schemas = [
     imageKey={heroKey}
     breadcrumbs={breadcrumbs}
     secondaryCta={{ label: 'See what’s included', href: '#included' }}
+    formVariant={formVariant}
+    serviceName={service.name}
   />
 
   <!-- Who it's for -->
@@ -108,6 +114,8 @@ const schemas = [
           eyebrow="Free projection · about a minute"
           heading={formBandHeading(service)}
           text="Tell us about the property and we’ll come back with real numbers and a plan for it — written by a person on our team, within one business day."
+          formVariant={formVariant}
+          serviceName={service.name}
         />
       )}
     </Fragment>
@@ -209,6 +217,8 @@ const schemas = [
     eyebrow="Ready when you are"
     heading="Start with the numbers, not a sales call."
     text="No obligation and no pressure. Send us the property and we’ll come back with what it could realistically earn — then you decide whether a conversation is worth having."
+    formVariant={formVariant}
+    serviceName={service.name}
   />
 
   <!-- Related services + resources -->

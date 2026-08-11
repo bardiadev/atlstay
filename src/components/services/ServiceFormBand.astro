@@ -13,6 +13,7 @@ import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import Eyebrow from '../ui/Eyebrow.astro';
 import ProjectionForm from '../react/ProjectionForm';
+import type { ProjectionFormVariant } from '../react/ProjectionForm';
 import { site } from '../../config/site';
 
 interface Props {
@@ -21,13 +22,26 @@ interface Props {
   eyebrow?: string;
   /** 'forest' reads as a strong break; 'tint' is quieter for mid-page use. */
   variant?: 'forest' | 'tint';
+  /** Fit the lead form's questions to the service being sold. Omit = short-term (site default). */
+  formVariant?: ProjectionFormVariant;
+  /** Submitted as "Service Interest" so the owner sees which page the lead came from. */
+  serviceName?: string;
 }
 const {
   heading = 'What could your property earn?',
   text = 'Tell us about it and we’ll build a free, comps-based projection — a real person, not an algorithm, back to you within one business day.',
   eyebrow = 'Free projection · about a minute',
   variant = 'forest',
+  formVariant,
+  serviceName,
 } = Astro.props;
+
+// Spread conditionally: passing `variant={undefined}` would serialise a null
+// into the island's props and defeat the component's default.
+const formProps = {
+  ...(formVariant ? { variant: formVariant } : {}),
+  ...(serviceName ? { serviceName } : {}),
+};
 
 const dark = variant === 'forest';
 ---
@@ -51,7 +65,7 @@ const dark = variant === 'forest';
         </p>
       </div>
       <div class="w-full">
-        <ProjectionForm client:visible />
+        <ProjectionForm client:visible {...formProps} />
       </div>
     </div>
   </Container>
