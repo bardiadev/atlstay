@@ -104,6 +104,19 @@ function telegramText({ form, lead, meta }) {
   if (contact.length) lines.push(contact.join('  ·  '));
   if (addr) lines.push(`📍 ${tgEscape(addr)}`);
   if (message) lines.push(`💬 ${tgEscape(message.length > 280 ? message.slice(0, 280) + '…' : message)}`);
+  // Everything the blocks above didn't already show, so a field added to any
+  // form can never be silently dropped from the notification. The named fields
+  // stay pinned at the top for scannability; the rest follow in submit order.
+  const shown = [/name/i, /phone/i, /email/i, /address/i, /message/i];
+  const rest = [];
+  for (const [k, v] of Object.entries(L)) {
+    const val = String(v == null ? '' : v).trim();
+    if (!val) continue;
+    if (shown.some((re) => re.test(k))) continue;
+    rest.push(`• <b>${tgEscape(k)}:</b> ${tgEscape(val.length > 160 ? val.slice(0, 160) + '…' : val)}`);
+  }
+  if (rest.length) lines.push(rest.join('\n'));
+
   const ctx = [];
   if (page) ctx.push(tgEscape(page.replace(/^https?:\/\/[^/]+/, '') || page));
   if (loc) ctx.push(tgEscape(loc));
