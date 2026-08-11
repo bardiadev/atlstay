@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical Airbnb management fee in Savannah?"
-    a: "Full-service short-term rental management generally ranges from about 18% to 40% of gross booking revenue, with genuinely full-service operators clustering around 20–25%. In a high-tourism market like Savannah, where active event pricing and frequent historic-property turnovers matter, the value gap between a hands-on manager and a thin-service one is wide. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service short-term rental management generally ranges from about 18% to 40% of gross booking revenue, with genuinely full-service operators clustering around 20–25%. In a high-tourism market like Savannah, where active event pricing and frequent historic-property turnovers matter, the value gap between a hands-on manager and a thin-service one is wide. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Savannah Airbnb management fees include?"
     a: "A full-service fee should cover listing creation and optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic and event-based pricing, 24/7 guest communication, cleaning coordination, restocking, maintenance coordination, and monthly owner reporting. In Savannah specifically, watch for whether St. Patrick's Day and wedding-season pricing strategy is included or treated as an extra."
   - q: "Why does management matter more for a Savannah short-term rental?"
     a: "Savannah's demand is concentrated around high-value windows — St. Patrick's Day weekend, the spring and fall shoulder seasons, SCAD events, and a steady stream of destination weddings. Capturing those nights at the right rate, with the right minimum-stay rules, is where most owner revenue is won or lost. A manager earning their fee is the one who prices the calendar proactively rather than letting the platform default decide."
-  - q: "Is a 10% all-inclusive rate too good to be true?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true?"
     a: "No — it reflects a deliberately lean, owner-first model rather than a thin service tier. The key question for any quote is what's actually bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance is almost always easier to evaluate than a low headline base rate with a menu of extras attached."
   - q: "Are Savannah Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, alongside related costs like cleaning, supplies, and platform fees. Savannah owners should also track local lodging and occupancy taxes separately. Consult a tax professional familiar with Georgia short-term rental rules to capture every eligible deduction."
@@ -67,7 +67,7 @@ That richness is exactly why under-management is so costly here. A property that
 
 ## What ATLStay Charges
 
-We charge a single, all-inclusive rate of 10% of booking revenue — [see our pricing page](/pricing/) for details. No setup fees, no per-booking charges, and no add-ons for cleaning coordination, maintenance calls, or damage handling. That includes the work that actually moves the needle in Savannah: event-calibrated pricing, historic-property turnover oversight, and full guest management.
+We charge a single all-inclusive rate of 10–15% of booking revenue — [see our pricing page](/pricing/) for details. No setup fees, no per-booking charges, and no add-ons for cleaning coordination, maintenance calls, or damage handling. That includes the work that actually moves the needle in Savannah: event-calibrated pricing, historic-property turnover oversight, and full guest management.
 
 ## Questions to Ask Any Savannah Manager
 

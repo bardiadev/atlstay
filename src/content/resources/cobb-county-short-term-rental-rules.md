@@ -70,7 +70,7 @@ For the broader regional picture of how metro-Atlanta jurisdictions approach the
 
 Short-term rental regulation in Cobb County and its cities continues to evolve. **Rules change frequently — confirm current requirements with Cobb County, or with the City of Marietta, Smyrna, Kennesaw, or Acworth as applicable, before listing your property or renewing any registration.** A figure or rule that was accurate last year may not be accurate today.
 
-This is exactly the kind of moving target a local management partner is built to handle. ATLStay tracks local requirements across our entire service area and guides owners through the compliance process for their specific address — without pretending to replace your attorney or CPA when a question genuinely calls for one. See [how our services work](/services/) and [how we handle the management process](/how-it-works/). Our all-inclusive management fee is 10% of booking revenue.
+This is exactly the kind of moving target a local management partner is built to handle. ATLStay tracks local requirements across our entire service area and guides owners through the compliance process for their specific address — without pretending to replace your attorney or CPA when a question genuinely calls for one. See [how our services work](/services/) and [how we handle the management process](/how-it-works/). Our all-inclusive management fee is 10–15% of booking revenue.
 
 ---
 

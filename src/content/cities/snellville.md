@@ -27,7 +27,7 @@ faqs:
   - q: "What types of properties work best as short-term rentals in Snellville?"
     a: "Snellville's market favors three- and four-bedroom homes with outdoor space — properties suited to families and small groups. The extended-stay segment (relocating families, corporate transitions, medical stays) is also active. Properties near the Hwy 78 / Scenic Highway corridors or within a few miles of The Grove benefit from the event-demand overlay on top of a steady family-leisure base."
   - q: "What is ATLStay's fee structure for Snellville properties?"
-    a: "Our management rate starts from 10% of booking revenue — no hidden fees. That covers listing optimization, professional photography coordination, dynamic pricing around the Snellville event calendar, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+    a: "Our management rate is 10–15% of booking revenue — no hidden fees. That covers listing optimization, professional photography coordination, dynamic pricing around the Snellville event calendar, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
 order: 0
 published: true
 ---

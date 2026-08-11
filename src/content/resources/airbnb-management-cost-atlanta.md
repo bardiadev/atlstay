@@ -39,7 +39,7 @@ The biggest driver of fee variation is what's actually included.
 | Partial / co-hosting | 10–18% | Listing, pricing, bookings — owner handles local operations |
 | Listing-only | 5–10% flat or one-time | Listing creation and initial setup only |
 
-A 10% fee sounds attractive until you realize you're still coordinating cleaners, handling midnight lockout calls, and managing supplies. For most owners who want genuinely passive income, full-service is the only model that delivers what it promises.
+A listing-only or co-hosting fee sounds attractive until you realize you're still coordinating cleaners, handling midnight lockout calls, and managing supplies. For most owners who want genuinely passive income, full-service is the only model that delivers what it promises.
 
 ## What Full-Service Should Include
 

@@ -27,7 +27,7 @@ faqs:
   - q: "Does the Outlet Shoppes at Atlanta affect Airbnb demand in Woodstock?"
     a: "It does. With nearly 100 outlet stores, the mall draws shoppers from across north Georgia and beyond, many of whom pair a shopping trip with a one- or two-night stay rather than a same-day drive. Properties within a convenient drive of the mall — essentially most of Woodstock — benefit from this demand, particularly on weekends and around major sales events."
   - q: "What is ATLStay's management fee for Woodstock properties?"
-    a: "Our all-in management starts from 10% of booking revenue, covering listing optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees or per-booking charges. Contact us for a quote specific to your property."
+    a: "Our all-in management is 10–15% of booking revenue, covering listing optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees or per-booking charges. Contact us for a quote specific to your property."
   - q: "Can I block dates for personal use if ATLStay manages my Woodstock home?"
     a: "Yes. You retain full calendar control. Block any dates for personal or family use and we manage all bookings around those windows. No minimum availability requirements."
 order: 0

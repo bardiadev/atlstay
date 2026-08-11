@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license in the Perimeter district?"
     a: "The Perimeter district spans the City of Sandy Springs and nearby Dunwoody, so the applicable short-term rental rules depend on your exact address — a registration or license may be required. Because requirements differ by jurisdiction and can change, we recommend confirming current rules with the relevant city. ATLStay handles compliance for our clients."
   - q: "Is Perimeter a good market for extended-stay and medical-travel rentals?"
-    a: "Yes — it's one of the strongest in the metro for both. The corporate offices drive relocation and project-based stays, and the Pill Hill hospitals generate steady demand from patients, families, and traveling medical professionals who need comfortable housing for weeks at a time. A well-configured home — real workspace, fast internet, quality bedding, full kitchen, easy access — wins these longer bookings. Our all-inclusive management fee is 10% of booking revenue."
+    a: "Yes — it's one of the strongest in the metro for both. The corporate offices drive relocation and project-based stays, and the Pill Hill hospitals generate steady demand from patients, families, and traveling medical professionals who need comfortable housing for weeks at a time. A well-configured home — real workspace, fast internet, quality bedding, full kitchen, easy access — wins these longer bookings. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

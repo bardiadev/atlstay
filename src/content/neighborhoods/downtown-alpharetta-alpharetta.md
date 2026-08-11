@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license in downtown Alpharetta?"
     a: "Downtown Alpharetta falls under the City of Alpharetta's short-term rental ordinance, so a registration or license may be required. The rules have changed as the market matured, so we recommend verifying current requirements with the City of Alpharetta Community Development department. ATLStay manages the compliance process for our clients."
   - q: "How does ATLStay take advantage of downtown's events calendar?"
-    a: "We map the downtown events schedule — farmers markets, concerts on the green, food truck nights, and seasonal festivals — and price proactively for the weekends that draw the most visitors. Owners relying on default platform pricing routinely undercharge on event weekends. Our all-inclusive management fee is 10% of booking revenue."
+    a: "We map the downtown events schedule — farmers markets, concerts on the green, food truck nights, and seasonal festivals — and price proactively for the weekends that draw the most visitors. Owners relying on default platform pricing routinely undercharge on event weekends. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

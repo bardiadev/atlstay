@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license in East Roswell?"
     a: "East Roswell is within the City of Roswell, which regulates short-term rentals under its own ordinance, so a business license or registration and compliance with zoning and occupancy rules may be required. Requirements can change, so we recommend confirming current rules with the City of Roswell Community Development department. ATLStay handles compliance for our clients."
   - q: "Is East Roswell better for corporate or leisure guests?"
-    a: "It serves both, which is part of its strength. Weekdays bring corporate travelers and longer-stay professionals via GA-400, while weekends and warm seasons add families in for river recreation, sports, and reunions — plus leisure guests who want a quiet base near Historic Roswell. A well-set-up home captures both segments. Our all-inclusive management fee is 10% of booking revenue."
+    a: "It serves both, which is part of its strength. Weekdays bring corporate travelers and longer-stay professionals via GA-400, while weekends and warm seasons add families in for river recreation, sports, and reunions — plus leisure guests who want a quiet base near Historic Roswell. A well-set-up home captures both segments. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

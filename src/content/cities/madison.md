@@ -29,7 +29,7 @@ faqs:
   - q: "What types of properties perform best in Madison?"
     a: "Antebellum and Victorian homes in or adjacent to the National Register historic district are the market's premium inventory — guests come to Madison for the architectural experience, and a period home in the right location delivers exactly what they came for. Equestrian properties and horse-farm estates in the Morgan County countryside attract a niche but high-value audience that overlaps with the Augusta National Masters crowd (Madison is 90 minutes from Augusta). Renovated cottages and carriage houses appeal to couples seeking the authentic Madison experience in an intimate setting."
   - q: "What is ATLStay's management fee in Madison?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, event-season pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing optimization, event-season pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

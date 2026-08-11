@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical Airbnb management fee in Roswell?"
-    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Roswell blends walkable historic-district leisure demand with weekday business travel from the nearby Alpharetta tech corridor, so range matters. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Roswell blends walkable historic-district leisure demand with weekday business travel from the nearby Alpharetta tech corridor, so range matters. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Roswell Airbnb management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. In Roswell, confirm the rate includes pricing tuned to Canton Street events, festivals like Roswell Roots, and the leisure-versus-business demand mix rather than a flat baseline."
   - q: "Why does management matter in a market like Roswell?"
     a: "Roswell pairs a walkable historic district with multiple demand generators — Canton Street's restaurant row, the Old Mill and Chattahoochee parks, and proximity to Alpharetta's corporate sector. Positioning and pricing differ between a Canton Street cottage and a Riverside-area home. A manager who knows those distinctions captures more than one applying a generic metro rate."
-  - q: "Is a 10% all-inclusive rate too good to be true?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true?"
     a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras layered on."
   - q: "Are Roswell Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Roswell owners should also account for local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
@@ -67,7 +67,7 @@ Beyond Canton Street, demand comes from several directions. The Old Mill distric
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Tailored, demand-aware pricing is part of the rate, not an upsell.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Tailored, demand-aware pricing is part of the rate, not an upsell.
 
 ## Questions to Ask Any Roswell Manager
 

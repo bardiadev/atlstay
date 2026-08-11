@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical Airbnb management fee in Marietta?"
-    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Marietta's layered demand — Square events, Braves games at nearby Truist Park, business travel, and heritage tourism — rewards a manager who prices the whole calendar. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Marietta's layered demand — Square events, Braves games at nearby Truist Park, business travel, and heritage tourism — rewards a manager who prices the whole calendar. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Marietta Airbnb management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. In Marietta, confirm the rate includes proactive pricing for the Truist Park and Battery Atlanta event calendar and for Marietta Square events, not just a flat baseline."
   - q: "Why does management matter in a market like Marietta?"
     a: "Marietta has several independent demand drivers — the historic Square, Kennesaw Mountain visitors, Dobbins and Lockheed business travel, and Truist Park just minutes away with 81 Braves home games plus events at the Battery. Each creates its own booking spikes. A manager who tracks and prices those events captures meaningfully more than one relying on platform defaults."
-  - q: "Is a 10% all-inclusive rate too good to be true?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true?"
     a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached."
   - q: "Are Marietta Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Marietta owners should also account for Cobb County and local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
@@ -67,7 +67,7 @@ Beyond the Square, the demand is genuinely multi-layered. Kennesaw Mountain Nati
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Proactive event pricing for the Braves calendar and Square events is part of the rate, not an upsell.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Proactive event pricing for the Braves calendar and Square events is part of the rate, not an upsell.
 
 ## Questions to Ask Any Marietta Manager
 

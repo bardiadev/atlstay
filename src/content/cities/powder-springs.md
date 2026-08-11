@@ -27,7 +27,7 @@ faqs:
   - q: "What kind of guests book in Powder Springs?"
     a: "Primarily outdoor-recreation visitors (Silver Comet cyclists and trail users), families visiting Six Flags or Sweetwater Creek State Park, and sports event families attending regional competitions at McEachern and other Cobb County athletic facilities. The market also sees extended-stay demand from Cobb County's large corporate and healthcare employment base."
   - q: "What is ATLStay's management fee in Powder Springs?"
-    a: "Our all-in management starts from 10% of booking revenue — covering dynamic pricing, listing management, guest communication, cleaning coordination, and owner reporting. No setup fees. Contact us for a quote tailored to your property."
+    a: "Our all-in management is 10–15% of booking revenue — covering dynamic pricing, listing management, guest communication, cleaning coordination, and owner reporting. No setup fees. Contact us for a quote tailored to your property."
   - q: "Can I use my Powder Springs home for personal use while it's managed?"
     a: "Yes. You retain full calendar control. Block any dates you want for personal use and we manage all bookings around those windows."
 order: 0

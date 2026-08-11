@@ -56,7 +56,7 @@ The reliable sequence: confirm jurisdiction with property records; complete perm
 
 ## How ATLStay Helps Blue Ridge Cabin Owners
 
-Most Blue Ridge cabins are owned by people who live an hour or more away, which makes staying current on shifting local requirements — and meeting them operationally — a real burden. ATLStay tracks the requirements across the markets we manage and guides owners through compliance for their specific cabin, while still deferring to your attorney or CPA when a question needs licensed professional advice. Our fee is a straightforward 10% all-inclusive.
+Most Blue Ridge cabins are owned by people who live an hour or more away, which makes staying current on shifting local requirements — and meeting them operationally — a real burden. ATLStay tracks the requirements across the markets we manage and guides owners through compliance for their specific cabin, while still deferring to your attorney or CPA when a question needs licensed professional advice. Our fee is a straightforward 10–15%, all-inclusive.
 
 For the demand side of a Blue Ridge cabin — seasonality, amenities, and what makes a listing perform — see our [Blue Ridge cabin guide](/resources/airbnb-in-blue-ridge-ga/), our [North Georgia cabin management overview](/resources/cabin-rental-management-north-georgia/), and our [Blue Ridge property management page](/blue-ridge/). The [Georgia short-term rental regulations guide](/resources/georgia-short-term-rental-regulations-guide/) ties the cluster together.
 

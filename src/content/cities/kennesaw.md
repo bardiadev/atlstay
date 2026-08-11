@@ -24,7 +24,7 @@ faqs:
   - q: "How does Kennesaw State University affect STR demand?"
     a: "KSU is one of Georgia's largest universities, with an enrollment in the tens of thousands. Major university events — move-in weekend, Family Weekend, graduation ceremonies, homecoming, and athletic events including Division I football at Fifth Third Bank Stadium — each generate concentrated demand that significantly outpaces hotel supply in the local market. Managing pricing proactively around the KSU academic and events calendar is one of the clearest revenue opportunities for Kennesaw owners."
   - q: "What is ATLStay's management fee for Kennesaw properties?"
-    a: "Our all-in rate is 10% of booking revenue with no setup fees or per-booking charges. Coverage includes listing creation, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+    a: "Our all-in rate is 10–15% of booking revenue with no setup fees or per-booking charges. Coverage includes listing creation, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
   - q: "Is Kennesaw good for year-round short-term rental income?"
     a: "Yes, with the right management approach. The combination of Kennesaw Mountain (active across all seasons), KSU (academic calendar demand), and I-75 corridor business travel creates a demand calendar that doesn't collapse in the off-season the way pure leisure markets sometimes do. Summer hiking demand, fall football, spring graduation, and winter business travel all contribute to a more balanced annual occupancy profile."
 order: 0

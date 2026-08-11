@@ -27,7 +27,7 @@ faqs:
   - q: "What types of guests book STRs in Cumming?"
     a: "The guest mix in Cumming is driven heavily by lake recreation, particularly during summer: boating groups, family lake vacations, bachelor/bachelorette parties, and fishing trips. Off-season, the market shifts toward corporate travelers, families visiting Forsyth County's rapidly growing corporate park infrastructure, and individuals relocating to one of Georgia's fastest-growing counties. Properties with outdoor living space, dock access, or lake views command premium rates and strong occupancy during peak season."
   - q: "What is ATLStay's management fee in Cumming?"
-    a: "Our all-in rate starts from 10% of booking revenue, covering listing creation, dynamic pricing, photography, 24/7 guest communication, cleaning oversight, and reporting. We manage seasonal pricing adjustments to capture Lake Lanier's peak-season demand spikes. No setup fees."
+    a: "Our all-in rate is 10–15% of booking revenue, covering listing creation, dynamic pricing, photography, 24/7 guest communication, cleaning oversight, and reporting. We manage seasonal pricing adjustments to capture Lake Lanier's peak-season demand spikes. No setup fees."
 order: 0
 published: true
 ---

@@ -29,7 +29,7 @@ faqs:
   - q: "How does Lake Hartwell compare to Lake Lanier for STR investment?"
     a: "Lake Hartwell offers different opportunity than Lake Lanier. Hartwell is larger (56,000 acres vs. 38,000 at Lanier), is less crowded relative to its size, and has the Clemson football demand driver that Lanier lacks. Acquisition costs in the Hartwell area are generally lower than comparable Lanier properties. The trade-off is less proximity to a major metro — Atlanta is about 100 miles west, making Hartwell more destination-drive than the 45-minute Lanier."
   - q: "What is ATLStay's management fee on Lake Hartwell?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, Clemson-weekend and summer peak pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing optimization, Clemson-weekend and summer peak pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

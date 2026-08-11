@@ -29,7 +29,7 @@ faqs:
   - q: "Does ATLStay handle the Gwinnett County STR registration process?"
     a: "Yes. We guide owners through the applicable city and county registration steps, help prepare the property for any required safety inspections, and stay current on Gwinnett County and City of Lawrenceville rule changes. Our goal is to keep your listing fully compliant and operating without interruption."
   - q: "What is ATLStay's fee structure for Lawrenceville properties?"
-    a: "Our management rate starts from 10% of booking revenue — all-in, with no hidden fees. That covers listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+    a: "Our management rate is 10–15% of booking revenue — all-in, with no hidden fees. That covers listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
 order: 0
 published: true
 ---

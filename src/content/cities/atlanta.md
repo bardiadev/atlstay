@@ -53,7 +53,7 @@ faqs:
   - q: "How much can I earn renting my Atlanta home short-term?"
     a: "Earnings vary considerably by neighborhood, bedroom count, season, and listing quality. Atlanta hosts a full calendar of high-demand events — SEC Championship, Peach Bowl, Atlanta United and Braves seasons, major conventions at the Georgia World Congress Center — that push nightly rates well above daily averages. The best way to know your specific property's potential is to request a free custom projection from our team."
   - q: "What is ATLStay's management fee?"
-    a: "Our all-in management rate is 10% of booking revenue. That covers listing creation and optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees, no per-booking charges, no nickel-and-diming."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing creation and optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees, no per-booking charges, no nickel-and-diming."
   - q: "How does ATLStay handle pricing for big Atlanta events?"
     a: "Event-driven pricing is one of the most important levers in the Atlanta market. We track the full Atlanta event calendar — sporting events, conventions, concerts at State Farm Arena and Ameris Bank Amphitheatre, the Atlanta Film Festival, and more — and adjust nightly rates proactively. Owners who rely on platform default pricing routinely leave significant revenue on the table during peak weekends."
   - q: "Can I still use my home if I hire ATLStay to manage it?"

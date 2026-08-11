@@ -45,7 +45,7 @@ The reliable due-diligence sequence: confirm jurisdiction with property records;
 
 ## How ATLStay Helps Savannah Owners Stay Compliant
 
-A detailed city ordinance, location-specific eligibility, layered taxes, and parallel HOA and historic-district rules is exactly the environment where local expertise earns its keep. ATLStay tracks the requirements across the markets we manage and guides owners through compliance for their specific property — while still pointing you to your attorney or CPA when a question calls for licensed professional advice. Our fee is a straightforward 10% all-inclusive.
+A detailed city ordinance, location-specific eligibility, layered taxes, and parallel HOA and historic-district rules is exactly the environment where local expertise earns its keep. ATLStay tracks the requirements across the markets we manage and guides owners through compliance for their specific property — while still pointing you to your attorney or CPA when a question calls for licensed professional advice. Our fee is a straightforward 10–15%, all-inclusive.
 
 For the demand side of a Savannah property — guest profile, seasonality, and what makes a listing perform — see our [Savannah host's guide](/resources/airbnb-in-savannah-ga/) and [Savannah property management page](/savannah/). The [Georgia short-term rental regulations guide](/resources/georgia-short-term-rental-regulations-guide/) ties the whole cluster together.
 

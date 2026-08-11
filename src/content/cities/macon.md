@@ -29,7 +29,7 @@ faqs:
   - q: "What types of properties work well in Macon?"
     a: "Historic Intown homes — particularly Victorian, Greek Revival, and Italianate properties in the College Hill and Vineville neighborhoods — perform best. These homes deliver the architectural character that Macon's cultural tourism audience expects. Proximity to the Allman Brothers museum, the Otis Redding Foundation, and the Cherry Blossom Festival parade route are meaningful positional advantages. Properties with off-street parking are at a premium during festival weekend."
   - q: "What is ATLStay's management fee in Macon?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, Cherry Blossom Festival peak pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing optimization, Cherry Blossom Festival peak pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

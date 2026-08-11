@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a license to run a short-term rental near Avalon?"
     a: "Avalon is within the City of Alpharetta, which regulates short-term rentals under its own ordinance. A registration or license may be required, and rules have evolved as the market has grown. We recommend verifying current requirements with the City of Alpharetta Community Development department, and ATLStay handles the compliance process for our clients."
   - q: "How does ATLStay price for Ameris Bank Amphitheatre concert nights?"
-    a: "Concert nights are among the most predictable demand spikes in north Atlanta. We track the full amphitheater calendar and raise rates proactively before the booking platforms catch up, which is where self-managed listings most often leave money on the table. Our all-inclusive management fee is 10% of booking revenue."
+    a: "Concert nights are among the most predictable demand spikes in north Atlanta. We track the full amphitheater calendar and raise rates proactively before the booking platforms catch up, which is where self-managed listings most often leave money on the table. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

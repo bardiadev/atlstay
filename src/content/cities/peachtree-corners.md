@@ -27,7 +27,7 @@ faqs:
   - q: "What types of properties perform best in Peachtree Corners?"
     a: "Peachtree Corners rewards premium properties. Well-staged homes with high-speed internet, dedicated workspace, updated appliances, and professional presentation consistently earn the highest ADRs in this market. The corporate guest segment values reliability and comfort above novelty — clean, well-equipped, and easy to access will outperform eccentric but inconvenient. Executive-level properties near Technology Parkway or The Forum can command above-market rates for extended-stay corporate bookings."
   - q: "What is ATLStay's fee for Peachtree Corners properties?"
-    a: "Our management rate starts from 10% of booking revenue with no hidden fees. We provide listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+    a: "Our management rate is 10–15% of booking revenue with no hidden fees. We provide listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
 order: 0
 published: true
 ---

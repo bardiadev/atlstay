@@ -29,7 +29,7 @@ faqs:
   - q: "What property types perform well in Pooler?"
     a: "Single-family homes with multiple bedrooms and good parking are the strongest performers — they accommodate the group travelers and extended-family stays that Pooler's museum and shopping demand generates. Properties within 5-10 minutes of the airport appeal specifically to the transit and corporate audience. Extended-stay amenities — full kitchens, in-unit laundry, workspace — meaningfully improve occupancy in a market with significant business travel demand."
   - q: "What is ATLStay's management fee in Pooler?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That includes listing optimization, dynamic pricing, 24/7 guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That includes listing optimization, dynamic pricing, 24/7 guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

@@ -29,7 +29,7 @@ faqs:
   - q: "What property types perform best in Dalton?"
     a: "Extended-stay properties — full kitchens, in-unit laundry, workspace, reliable parking — perform consistently for corporate and business travelers. Properties near the Crown Mill village (a historic textile mill complex converted to mixed use) attract leisure and cultural visitors. Homes with outdoor space or proximity to trail access attract the outdoor recreation audience. The mix of demand types rewards versatile property setups more than narrowly specialized ones."
   - q: "What is ATLStay's management fee in Dalton?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, corporate-travel pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing optimization, corporate-travel pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

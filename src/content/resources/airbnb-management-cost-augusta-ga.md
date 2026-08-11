@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical short-term rental management fee in Augusta?"
-    a: "Full-service management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Augusta is unusual: a single week — the Masters Tournament — can represent a large share of a property's annual revenue, so pricing that week correctly is the central management event of the year. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Augusta is unusual: a single week — the Masters Tournament — can represent a large share of a property's annual revenue, so pricing that week correctly is the central management event of the year. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Augusta short-term rental management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. In Augusta, confirm that Masters Week pricing strategy — daily rates, minimum-night requirements, and listing positioning — is part of the standard rate with no event surcharge."
   - q: "Why does management matter so much in Augusta?"
     a: "No other Georgia city has a demand event like the Masters. Augusta National hosts the tournament each April, and the entire region runs at capacity. Well-positioned properties can generate a significant portion of their annual revenue in that single week — but only if minimum nights, daily rates, and positioning are handled correctly. Beyond the Masters, medical-district and military demand provide a year-round base. A manager who handles both captures far more than one relying on defaults."
-  - q: "Is a 10% all-inclusive rate too good to be true?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true?"
     a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no Masters-Week surcharge is far easier to evaluate than a low base rate with extras attached for the one week that matters most."
   - q: "Are Augusta short-term rental management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Augusta owners should also account for Richmond County and local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
@@ -67,7 +67,7 @@ But Augusta has real year-round demand that distinguishes it from a pure event m
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no Masters-Week surcharge. Masters pricing strategy — the single most important management event in the Augusta calendar — is part of the standard rate.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no Masters-Week surcharge. Masters pricing strategy — the single most important management event in the Augusta calendar — is part of the standard rate.
 
 ## Questions to Ask Any Augusta Manager
 

@@ -75,12 +75,12 @@ const schemas = [
 
 <BaseLayout
   title="Airbnb Management Pricing in Atlanta — Transparent, All-In"
-  description={`ATLStay starts at ${site.pricing.rate} of booking revenue — all-inclusive, no hidden fees. See exactly what's included and what we never charge for.`}
+  description={`ATLStay charges ${site.pricing.rate} of booking revenue — all-inclusive, no hidden fees. See exactly what's included and what we never charge for.`}
   schemas={schemas}
 >
   <PageHero
     title="Airbnb Management Pricing in Atlanta — Transparent, All-In"
-    subtitle={`One simple, all-inclusive fee — from ${site.pricing.rate} of revenue — covers everything. You see your exact rate before you sign, and it never changes without your knowledge.`}
+    subtitle={`One simple, all-inclusive fee — ${site.pricing.rate} of revenue — covers everything. Where you land in that range depends on your property; you see your exact rate before you sign, and it never changes without your knowledge.`}
     eyebrow="TRANSPARENT PRICING"
     imageKey="pricingDashboard"
     breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing/' }]}
@@ -89,6 +89,53 @@ const schemas = [
   />
 
   <!-- What's included -->
+  <!-- Where you land inside the range -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
+        <div class="rounded-3xl border border-line bg-cream p-8 text-center sm:p-10">
+          <p class="font-display text-5xl leading-none tracking-tight whitespace-nowrap text-forest sm:text-6xl">{site.pricing.rate}</p>
+          <p class="mt-3 text-sm text-stone">of booking revenue — all-inclusive</p>
+          <div class="mx-auto mt-6 h-px w-12 bg-line"></div>
+          <p class="mt-6 text-sm leading-relaxed text-ink/70">
+            One rate covers the entire service. Your exact number is quoted in writing before you sign — and it never changes without your knowledge.
+          </p>
+        </div>
+
+        <div>
+          <Eyebrow>How your rate is set</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            Why a range, and not one number
+          </h2>
+          <p class="mt-4 leading-relaxed text-ink/75">
+            A one-bedroom condo in Midtown and a six-bedroom lake house with a hot tub are not the same job. Pretending otherwise means one owner subsidizes the other. So we quote each property honestly inside a published band — {site.pricing.rateFrom} to {site.pricing.rateHigh} — instead of advertising a headline number we'd have to walk back later.
+          </p>
+          <dl class="mt-8 space-y-6">
+            <div class="border-l-2 border-brass/40 pl-5">
+              <dt class="font-display text-lg text-forest">Size and layout</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-ink/70">More bedrooms and bathrooms mean longer turnovers, more linens, more inspection surface, and more guest questions. Smaller, simpler homes sit toward the {site.pricing.rateFrom} end.</dd>
+            </div>
+            <div class="border-l-2 border-brass/40 pl-5">
+              <dt class="font-display text-lg text-forest">Operational scope</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-ink/70">Hot tubs, pools, yards, docks, and high-touch amenities carry real recurring service load. So do properties that need frequent vendor coordination.</dd>
+            </div>
+            <div class="border-l-2 border-brass/40 pl-5">
+              <dt class="font-display text-lg text-forest">Market and travel time</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-ink/70">A property inside the Perimeter is cheaper to service than a cabin two hours out. Distance, local vendor depth, and how tightly a market's demand swings all factor in.</dd>
+            </div>
+            <div class="border-l-2 border-brass/40 pl-5">
+              <dt class="font-display text-lg text-forest">Portfolio size</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-ink/70">Owners with several properties under our management get the efficiencies that come with it, reflected in the rate.</dd>
+            </div>
+          </dl>
+          <p class="mt-8 text-sm leading-relaxed text-ink/60">
+            Whatever the number, it is the <em class="not-italic font-medium text-forest">only</em> number. Everything on this page stays included at either end of the range.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
   <Section variant="cream">
     <Container>
       <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">

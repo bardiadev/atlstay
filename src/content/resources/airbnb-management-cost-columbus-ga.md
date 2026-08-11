@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical short-term rental management fee in Columbus?"
-    a: "Full-service management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Columbus has several independent demand streams — Fort Moore military travel, whitewater and adventure tourism, and downtown riverfront leisure — so a manager who serves all three keeps occupancy steadier than a single-segment approach. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Columbus has several independent demand streams — Fort Moore military travel, whitewater and adventure tourism, and downtown riverfront leisure — so a manager who serves all three keeps occupancy steadier than a single-segment approach. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Columbus short-term rental management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. In Columbus, confirm the listing is configured for both extended-stay military travelers and short-stay adventure and arts visitors, since those guests want different things and book differently."
   - q: "Why does management matter in a market like Columbus?"
     a: "Columbus has multiple, relatively independent demand drivers. Fort Moore — one of the country's largest Army installations — generates year-round military travel that's fairly insensitive to season. The Chattahoochee whitewater course draws adventure tourists, and the revitalized riverfront brings arts and dining visitors. A manager who positions and prices for each segment captures demand a leisure-only operator would miss entirely."
-  - q: "Is a 10% all-inclusive rate too good to be true?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true?"
     a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached."
   - q: "Are Columbus short-term rental management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Columbus owners should also account for Muscogee County and local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
@@ -67,7 +67,7 @@ The second engine is adventure tourism. The Chattahoochee whitewater course thro
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Multi-segment pricing across military, adventure, and arts demand is part of the rate, not an upsell.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Multi-segment pricing across military, adventure, and arts demand is part of the rate, not an upsell.
 
 ## Questions to Ask Any Columbus Manager
 

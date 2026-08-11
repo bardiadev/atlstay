@@ -28,7 +28,7 @@ faqs:
   - q: "What will the BeltLine Southside Trail mean for Peoplestown STR demand?"
     a: "When the Southside Trail is complete, it will connect Peoplestown to Grant Park, Summerhill, Capitol View, and eventually the full 22-mile BeltLine loop. That kind of trail connectivity has driven sustained occupancy growth in every Atlanta neighborhood it has reached. Owners who establish listings now will have the review history that trail-era demand will reward."
   - q: "What does ATLStay management cost in Peoplestown?"
-    a: "Management starts from 10% of revenue. We'll provide a free rental projection for your specific Peoplestown property before you make any commitment — the numbers tell the story."
+    a: "Management is 10–15% of revenue. We'll provide a free rental projection for your specific Peoplestown property before you make any commitment — the numbers tell the story."
 published: true
 ---
 

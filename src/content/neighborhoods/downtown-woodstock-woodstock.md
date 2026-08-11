@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license in downtown Woodstock?"
     a: "Downtown Woodstock is within the City of Woodstock, which regulates short-term rentals under its own ordinance, so a registration or license and compliance with local rules may be required. Requirements can change, so we recommend confirming current rules with the City of Woodstock. ATLStay manages compliance for our clients."
   - q: "How does ATLStay price for Woodstock's events and concerts?"
-    a: "We track downtown Woodstock's events calendar — amphitheater concerts, festivals, brewery events, and seasonal markets — and price proactively for the weekends that draw the biggest crowds. Owners on default pricing routinely undercharge on event weekends. Our all-inclusive management fee is 10% of booking revenue."
+    a: "We track downtown Woodstock's events calendar — amphitheater concerts, festivals, brewery events, and seasonal markets — and price proactively for the weekends that draw the biggest crowds. Owners on default pricing routinely undercharge on event weekends. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

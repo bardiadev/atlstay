@@ -58,7 +58,7 @@ const propertyTypes = [
 const faqs = [
   {
     q: 'What does short-term rental management in Atlanta cost?',
-    a: `One flat, all-in rate of ${site.pricing.rate} ${site.pricing.rateNote}. That single fee covers multi-platform distribution, dynamic pricing, 24/7 guest care, cleaning coordination, and monthly reporting — no setup fees, no add-ons, no long-term lock-in.`,
+    a: `One all-in rate of ${site.pricing.rate} ${site.pricing.rateNote}. Where your property lands in that range depends on its size, scope, and market, and you see the exact number in writing before you sign. That single fee covers multi-platform distribution, dynamic pricing, 24/7 guest care, cleaning coordination, and monthly reporting — no setup fees, no add-ons, no long-term lock-in.`,
   },
   {
     q: 'Which platforms will my property be listed on?',
@@ -101,12 +101,12 @@ const schemas = [
 
 <BaseLayout
   title="Short-Term Rental Management Atlanta"
-  description="Full-service short-term & vacation rental management in Atlanta — multi-platform distribution, dynamic pricing, and compliance, all for one flat 10% fee."
+  description="Full-service short-term & vacation rental management in Atlanta — multi-platform distribution, dynamic pricing, and compliance, all for one all-in 10–15% fee."
   schemas={schemas}
 >
   <PageHero
     title="Short-Term Rental Management in Atlanta"
-    subtitle="Multi-platform distribution, revenue-maximizing pricing, and full-service operations for your Atlanta vacation rental — built and run by a local team, all for one flat fee."
+    subtitle="Multi-platform distribution, revenue-maximizing pricing, and full-service operations for your Atlanta vacation rental — built and run by a local team, all for one all-inclusive fee."
     eyebrow="Vacation rental management · Atlanta"
     imageKey="atlantaSkyline"
     breadcrumbs={breadcrumbs}
@@ -138,7 +138,7 @@ const schemas = [
           </div>
         </div>
         <div class="rounded-2xl border border-line bg-white p-8">
-          <h3 class="font-display text-lg text-forest">Included in your flat rate</h3>
+          <h3 class="font-display text-lg text-forest">Included in your all-in rate</h3>
           <div class="mt-4"><CheckList items={fullService} columns={1} /></div>
         </div>
       </div>
@@ -346,7 +346,7 @@ const schemas = [
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/pricing/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
           <div class="font-display text-lg text-forest group-hover:text-brass-600">Transparent pricing &rarr;</div>
-          <p class="mt-2 text-sm text-ink/70">One flat {site.pricing.rate} of revenue, all-in. See exactly what you pay and what you keep.</p>
+          <p class="mt-2 text-sm text-ink/70">One all-in rate, {site.pricing.rate} of revenue. See exactly what you pay and what you keep.</p>
         </a>
         <a href="/services/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
           <div class="font-display text-lg text-forest group-hover:text-brass-600">Full-service details &rarr;</div>

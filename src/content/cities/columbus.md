@@ -26,7 +26,7 @@ faqs:
   - q: "What types of Columbus properties perform best as vacation rentals?"
     a: "Properties in the downtown Historic District and in the neighborhoods near the riverfront perform best for leisure and whitewater tourism guests. Proximity to the Whitewater Park, RiverCenter, and the Chattahoochee Promenade is the primary location advantage for the adventure tourism and arts visitor market. For military travel, properties near Fort Moore's main gates (on the south side of Columbus and extending toward Phenix City) are preferred for TDY and family-visit guests who need to minimize commute time to the installation. Larger homes (3–5 bedrooms) serve family-visit and group military travel well."
   - q: "What is ATLStay's management fee for Columbus properties?"
-    a: "Our all-in management rate is 10% of booking revenue. This covers listing optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
+    a: "Our all-in management rate is 10–15% of booking revenue. This covers listing optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
 order: 0
 published: true
 ---

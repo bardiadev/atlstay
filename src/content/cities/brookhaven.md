@@ -24,7 +24,7 @@ faqs:
   - q: "What kinds of homes perform best as short-term rentals in Brookhaven?"
     a: "Homes near the Buford Highway corridor, Oglethorpe University, or with MARTA walkability perform well across multiple guest profiles. Properties with accessible, comfortable living spaces and full kitchens attract medical-family and extended-stay guests. Homes with outdoor space and modern finishes appeal to the leisure and corporate segments. Brookhaven's residential quality means that a well-prepared home can command genuinely premium rates."
   - q: "What is ATLStay's fee for Brookhaven properties?"
-    a: "Our all-in rate is 10% of booking revenue. That covers listing creation and optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning and turnover oversight, and owner reporting. No setup fees, no per-booking charges."
+    a: "Our all-in rate is 10–15% of booking revenue. That covers listing creation and optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning and turnover oversight, and owner reporting. No setup fees, no per-booking charges."
   - q: "Is Brookhaven served by MARTA, and does that affect bookings?"
     a: "Yes — the MARTA Gold Line serves Brookhaven/Oglethorpe University and Chamblee stations, both within Brookhaven's borders. For guests traveling from Hartsfield-Jackson who prefer not to rent a car, or inbound visitors doing day trips into Atlanta, MARTA access is a meaningful listing differentiator. We highlight transit access in listings for properties near the stations."
 order: 0

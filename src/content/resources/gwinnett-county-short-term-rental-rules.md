@@ -67,7 +67,7 @@ Owners put in this effort because Gwinnett is a deep, diversified market — the
 
 Short-term rental regulation across Gwinnett is genuinely in motion, with cities adopting and refining ordinances. **Rules change frequently — confirm current requirements with the City of Duluth, Lawrenceville, Suwanee, or Buford as applicable, or with Gwinnett County, before listing your property or renewing any registration.** Don't rely on a figure or rule from a blog post, including this one, as your final word.
 
-That ongoing change is precisely where a local management partner earns its keep. ATLStay tracks local requirements across our service area and walks each owner through the right process for their exact address — while still pointing you to an attorney or CPA when a question truly calls for one. See [how our services work](/services/) and [how the process runs](/how-it-works/). Our all-inclusive management fee is 10% of booking revenue.
+That ongoing change is precisely where a local management partner earns its keep. ATLStay tracks local requirements across our service area and walks each owner through the right process for their exact address — while still pointing you to an attorney or CPA when a question truly calls for one. See [how our services work](/services/) and [how the process runs](/how-it-works/). Our all-inclusive management fee is 10–15% of booking revenue.
 
 ---
 

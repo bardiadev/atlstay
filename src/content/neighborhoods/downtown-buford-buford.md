@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license in downtown Buford?"
     a: "Downtown Buford is within the City of Buford, which regulates short-term rentals under its own ordinance, so a registration or license and compliance with local rules may be required. Requirements can change, so we recommend confirming current rules with the City of Buford. ATLStay manages compliance for our clients."
   - q: "How does ATLStay handle Buford's seasonal lake demand?"
-    a: "Lake Lanier demand peaks hard in the warm season and softens in the off months, so flat pricing leaves money on the table in summer and bookings empty in winter. We price proactively to the lake season, holidays, and area events, and position the listing to capture shopping and family demand year-round. Our all-inclusive management fee is 10% of booking revenue."
+    a: "Lake Lanier demand peaks hard in the warm season and softens in the off months, so flat pricing leaves money on the table in summer and bookings empty in winter. We price proactively to the lake season, holidays, and area events, and position the listing to capture shopping and family demand year-round. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

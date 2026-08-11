@@ -27,7 +27,7 @@ faqs:
   - q: "Is Canton a good market for short-term rental investment?"
     a: "Cherokee County's status as Georgia's fastest-growing county supports long-term STR market health. Canton as the county seat benefits from continued commercial and residential investment that brings new demand streams. Growth markets carry regulatory uncertainty — local STR rules can tighten as communities grow — so professional compliance management matters here."
   - q: "What is ATLStay's management fee in Canton?"
-    a: "Our all-in management starts from 10% of booking revenue, covering dynamic pricing, listing management, guest communication, cleaning oversight, and reporting. No setup fees. Contact us for a quote specific to your property."
+    a: "Our all-in management is 10–15% of booking revenue, covering dynamic pricing, listing management, guest communication, cleaning oversight, and reporting. No setup fees. Contact us for a quote specific to your property."
   - q: "Can I still use my Canton home if ATLStay manages it?"
     a: "Yes. You keep full calendar control. Block any dates you want for personal use and we manage all guest bookings around those windows."
 order: 0

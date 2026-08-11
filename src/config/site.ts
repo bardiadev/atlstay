@@ -56,10 +56,17 @@ export const site = {
     geo: { lat: 33.9078682, lng: -84.4876078 },
   },
 
-  // Pricing — radical transparency is a core differentiator. Set REAL rate.
+  // Pricing — radical transparency is a core differentiator.
+  // The fee is a RANGE: every property is quoted inside 10–15% depending on
+  // size, scope, market, and service load. Use `rate` for the honest range,
+  // `rateFrom` for "starting at" copy, and `rateHigh` for ceiling/comparison
+  // copy. Never describe the fee as "flat" — it is a quoted range.
   pricing: {
-    rate: '10%', // CONFIRM — base all-in rate; premium/large-scope markets may run higher
+    rate: '10–15%', // all-in quoted range — the owner sees their exact rate before signing
+    rateFrom: '10%', // entry point of the range
+    rateHigh: '15%', // top of the range
     rateNote: 'of booking revenue — all-inclusive, with no hidden fees',
+    rateBasis: 'Your exact rate depends on your property, its size and scope, and your market — quoted up front, in writing, before you sign anything.',
   },
 
   // Recommended differentiators — business decisions; confirm before publishing.

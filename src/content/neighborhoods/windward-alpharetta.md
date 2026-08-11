@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license in the Windward area?"
     a: "The Windward area is within the City of Alpharetta, which regulates short-term rentals under its own ordinance, so a registration or license may be required. Requirements have evolved over time, so we recommend confirming current rules with the City of Alpharetta Community Development department. ATLStay handles compliance for our clients."
   - q: "Is Windward a good market for extended-stay corporate rentals?"
-    a: "Yes — it's one of the area's defining characteristics. The Windward Parkway office corridor drives steady demand from consultants, trainees, and corporate transferees who want furnished housing for weeks or months. A well-configured home — real workspace, fast internet, quality bedding, a properly stocked kitchen — can win longer bookings that reduce turnover and stabilize income. Our all-inclusive management fee is 10% of booking revenue."
+    a: "Yes — it's one of the area's defining characteristics. The Windward Parkway office corridor drives steady demand from consultants, trainees, and corporate transferees who want furnished housing for weeks or months. A well-configured home — real workspace, fast internet, quality bedding, a properly stocked kitchen — can win longer bookings that reduce turnover and stabilize income. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

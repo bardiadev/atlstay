@@ -24,7 +24,7 @@ faqs:
   - q: "What types of Tybee Island properties perform best as vacation rentals?"
     a: "Oceanfront and ocean-view properties with outdoor living space — decks, screened porches, outdoor showers — consistently top the market. Beach cottages with 3–5 bedrooms and parking for multiple vehicles are the sweet spot for family groups. Creek-side properties appeal to guests interested in fishing, kayaking, and a quieter experience. Properties within walking distance of the Strand and the North Beach area benefit from easy access to restaurants and the beach pavilion."
   - q: "What is ATLStay's management fee for Tybee Island properties?"
-    a: "Our all-in management rate is 10% of booking revenue, covering listing creation and optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. Coastal properties require attentive maintenance oversight — we coordinate proactively so small issues don't become guest complaints."
+    a: "Our all-in management rate is 10–15% of booking revenue, covering listing creation and optimization, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. Coastal properties require attentive maintenance oversight — we coordinate proactively so small issues don't become guest complaints."
   - q: "Can I block personal-use dates during summer peak season?"
     a: "Yes — you retain full calendar control. Many Tybee owners use their properties personally during peak season and rent the balance. We work around your personal calendar with no penalties or required minimum-availability windows."
 order: 0

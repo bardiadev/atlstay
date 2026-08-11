@@ -26,7 +26,7 @@ faqs:
   - q: "Is Athens only a strong STR market during football season?"
     a: "No — football season is the peak, but Athens has genuine year-round demand that distinguishes it from pure event markets. UGA's 40,000+ student enrollment means a constant flow of family visitors. The Athens music scene — anchored by the 40 Watt Club, Creature Comforts Brewing, and a nationally recognized live music culture — draws visitors from across Georgia and the Southeast outside of football season. The city also has a growing food and restaurant scene. Football season earns the highest rates, but a well-managed Athens property earns throughout the year."
   - q: "What is ATLStay's management fee for Athens properties?"
-    a: "Our all-in management rate is 10% of booking revenue, covering listing optimization, dynamic football-calendar pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
+    a: "Our all-in management rate is 10–15% of booking revenue, covering listing optimization, dynamic football-calendar pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
 order: 0
 published: true
 ---

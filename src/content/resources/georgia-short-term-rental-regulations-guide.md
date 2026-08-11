@@ -95,7 +95,7 @@ Run the five layers in order: confirm jurisdiction with property records and dir
 
 ## How ATLStay Helps Owners Stay Compliant Across Georgia
 
-Five independent layers, set differently in every jurisdiction and revised on no fixed schedule, is a lot to track — especially for owners who do not live next to their property. ATLStay manages short-term rentals across Atlanta and Georgia and tracks the local requirements that apply in the markets we serve, guiding owners through the compliance steps for their specific address. We are not a substitute for your attorney or CPA when a question calls for licensed professional advice; we are the management partner that keeps you on the right side of the rules operationally. Our fee is a straightforward 10% all-inclusive.
+Five independent layers, set differently in every jurisdiction and revised on no fixed schedule, is a lot to track — especially for owners who do not live next to their property. ATLStay manages short-term rentals across Atlanta and Georgia and tracks the local requirements that apply in the markets we serve, guiding owners through the compliance steps for their specific address. We are not a substitute for your attorney or CPA when a question calls for licensed professional advice; we are the management partner that keeps you on the right side of the rules operationally. Our fee is a straightforward 10–15%, all-inclusive.
 
 To see what your specific property could realistically earn before you commit to any costs, the best starting point is a comps-based projection for your exact address. Explore the [areas we serve](/areas-we-serve/) and review [how our management works](/how-it-works/).
 

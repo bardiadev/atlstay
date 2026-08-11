@@ -26,7 +26,7 @@ faqs:
   - q: "What types of properties perform best as vacation rentals in Helen?"
     a: "Properties within walking distance of downtown Helen — the Bavarian village core, the river, and the main festival grounds — command the strongest premiums. Chalets and cabins with mountain or river views are the market's premium tier. Larger properties that can accommodate groups of 6–12 see some of the highest per-stay revenues during Oktoberfest weekends, when groups plan dedicated Helen trips. River-adjacent properties with outdoor space benefit year-round from the Chattahoochee's draw."
   - q: "What is ATLStay's management fee?"
-    a: "Our all-in management rate is 10% of booking revenue. This covers listing optimization, dynamic pricing (including Oktoberfest and holiday surge pricing), 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
+    a: "Our all-in management rate is 10–15% of booking revenue. This covers listing optimization, dynamic pricing (including Oktoberfest and holiday surge pricing), 24/7 guest communication, cleaning oversight, maintenance coordination, and owner reporting. No setup fees or per-booking charges."
 order: 0
 published: true
 ---

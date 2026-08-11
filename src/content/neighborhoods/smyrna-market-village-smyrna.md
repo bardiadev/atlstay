@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license near Smyrna Market Village?"
     a: "Smyrna Market Village is within the City of Smyrna, which regulates short-term rentals under its own ordinance, so a registration or license and compliance with local rules may be required. Requirements can change, so we recommend confirming current rules with the City of Smyrna. ATLStay manages compliance for our clients."
   - q: "How does ATLStay price for Braves games and Battery events?"
-    a: "Truist Park game days and major Battery concerts and events are among the most reliable demand spikes in the area. We track the Braves schedule and the Battery's event calendar and price proactively for those nights, where self-managed listings most often undercharge. Our all-inclusive management fee is 10% of booking revenue."
+    a: "Truist Park game days and major Battery concerts and events are among the most reliable demand spikes in the area. We track the Braves schedule and the Battery's event calendar and price proactively for those nights, where self-managed listings most often undercharge. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

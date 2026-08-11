@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license near City Springs?"
     a: "City Springs is within the City of Sandy Springs, which regulates short-term rentals under its own ordinance, so a registration or license and compliance with local rules may be required. Requirements can change, so we recommend confirming current rules with the City of Sandy Springs. ATLStay manages compliance for our clients."
   - q: "How does ATLStay price for City Springs events and shows?"
-    a: "We track the Sandy Springs Performing Arts Center calendar and City Springs programming — concerts, theater runs, festivals, and seasonal events — and price proactively for the nights that draw the biggest audiences. Owners on default pricing often undercharge on event nights. Our all-inclusive management fee is 10% of booking revenue."
+    a: "We track the Sandy Springs Performing Arts Center calendar and City Springs programming — concerts, theater runs, festivals, and seasonal events — and price proactively for the nights that draw the biggest audiences. Owners on default pricing often undercharge on event nights. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

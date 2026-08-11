@@ -69,7 +69,7 @@ Owners work through these steps because Forsyth's demand is strong — Lake Lani
 
 Short-term rental regulation in Forsyth, and the covenant landscape around Lake Lanier, can change. **Rules change frequently — confirm current requirements with Forsyth County, or the City of Cumming as applicable, and confirm your HOA covenants, before listing your property or renewing any registration.** Don't treat a figure or rule from a blog post, including this one, as your final word.
 
-That layered picture is where a local management partner helps. ATLStay tracks local requirements across our service area and walks each owner through the right process — government and covenant — for their exact address, while still pointing you to an attorney or CPA when a question calls for one. See [how our services work](/services/) and [how the process runs](/how-it-works/). Our all-inclusive management fee is 10% of booking revenue.
+That layered picture is where a local management partner helps. ATLStay tracks local requirements across our service area and walks each owner through the right process — government and covenant — for their exact address, while still pointing you to an attorney or CPA when a question calls for one. See [how our services work](/services/) and [how the process runs](/how-it-works/). Our all-inclusive management fee is 10–15% of booking revenue.
 
 ---
 

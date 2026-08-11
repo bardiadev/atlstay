@@ -27,12 +27,12 @@ export const GET: APIRoute = async () => {
   L.push(`# ${site.brandName}`);
   L.push('');
   L.push(
-    `> ${site.description} ${site.scale.ratingPhrase}; ${site.stats.homes} homes managed over ${site.stats.years} years. Transparent all-inclusive pricing from ${site.pricing.rate} of booking revenue — no hidden fees.`,
+    `> ${site.description} ${site.scale.ratingPhrase}; ${site.stats.homes} homes managed over ${site.stats.years} years. Transparent all-inclusive pricing at ${site.pricing.rate} of booking revenue — no hidden fees.`,
   );
   L.push('');
   L.push('## Core pages');
   L.push(`- [Short-term rental management services](${u('/services/')}): Everything included in full-service Airbnb & Vrbo management — listing, dynamic pricing, 24/7 guest care, cleaning, maintenance, and review management.`);
-  L.push(`- [Pricing](${u('/pricing/')}): One transparent, all-inclusive management fee from ${site.pricing.rate} of booking revenue — no hidden charges, no long-term contract.`);
+  L.push(`- [Pricing](${u('/pricing/')}): One transparent, all-inclusive management fee of ${site.pricing.rate} of booking revenue — no hidden charges, no long-term contract.`);
   L.push(`- [Dynamic pricing](${u('/dynamic-pricing/')}): Daily, demand-driven rate optimization around Atlanta conventions, concerts, and sports — the most overlooked driver of STR revenue.`);
   L.push(`- [Free rental projection](${u('/rental-projection/')}): Request a custom, comps-based estimate of what your home could earn, delivered by a local expert within one business day.`);
   L.push(`- [How it works](${u('/how-it-works/')}): The owner journey from projection to onboarding to monthly payouts.`);

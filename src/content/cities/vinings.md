@@ -27,7 +27,7 @@ faqs:
   - q: "What is the Battery Atlanta and how does it drive bookings?"
     a: "The Battery Atlanta is the mixed-use development surrounding Truist Park — a walkable district of restaurants, bars, retail, a hotel, offices, and residential units. Crucially for STR demand, the Battery hosts a year-round events calendar that operates completely independently of the Braves baseball schedule. Live concerts, food and beverage events, and private gatherings at Battery venues create demand on nights when there's no game at all."
   - q: "What is ATLStay's management fee for Vinings properties?"
-    a: "Our all-in management starts from 10% of booking revenue — covering dynamic pricing across the full Braves and Battery events calendar, listing optimization, guest communication, cleaning oversight, and reporting. No setup fees. Contact us for a quote tailored to your property."
+    a: "Our all-in management is 10–15% of booking revenue — covering dynamic pricing across the full Braves and Battery events calendar, listing optimization, guest communication, cleaning oversight, and reporting. No setup fees. Contact us for a quote tailored to your property."
   - q: "Can I restrict bookings to certain guests or keep personal use dates?"
     a: "You retain full calendar control. Block any dates for personal use, and we manage all guest bookings around those windows. We also vet guests and maintain standards consistent with Vinings' premium character."
 order: 0

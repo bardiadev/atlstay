@@ -28,7 +28,7 @@ faqs:
   - q: "How does ATLStay approach West End listings differently?"
     a: "We tell the West End story — not a generic Atlanta listing. That means emphasizing the BeltLine access, the HBCU calendar demand, the neighborhood's architectural character, and proximity to the growing Westside food scene. Guests who book West End on purpose are the most satisfied guests; our listings make the neighborhood's value unmistakable."
   - q: "What does ATLStay charge to manage a West End property?"
-    a: "We offer flexible management starting from 10% of revenue. We'll build you a free rental projection before you commit to anything — visit our projection tool to see your West End property's realistic earning potential."
+    a: "We offer flexible management at 10–15% of revenue. We'll build you a free rental projection before you commit to anything — visit our projection tool to see your West End property's realistic earning potential."
 published: true
 ---
 

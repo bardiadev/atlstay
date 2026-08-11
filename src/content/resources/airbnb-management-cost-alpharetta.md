@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical Airbnb management fee in Alpharetta?"
-    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Alpharetta blends weekday corporate demand with weekend leisure and concert spikes, so a manager who prices for both segments earns their keep. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Alpharetta blends weekday corporate demand with weekend leisure and concert spikes, so a manager who prices for both segments earns their keep. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Alpharetta Airbnb management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. In Alpharetta, confirm the rate includes proactive pricing for Ameris Bank Amphitheatre concert nights and that the listing is configured for extended-stay corporate guests, not just weekend leisure."
   - q: "Why does management matter in a corporate market like Alpharetta?"
     a: "Alpharetta's demand is diverse — tech and fintech business travel during the week, Ameris Bank Amphitheatre concerts and Avalon visitors on weekends, plus affluent local staycation demand. Each segment wants different things from a listing and prices differently. A manager who tunes the calendar across all of them captures more than one applying a flat suburban rate."
-  - q: "Is a 10% all-inclusive rate too good to be true?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true?"
     a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real test of any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached for every service."
   - q: "Are Alpharetta Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Alpharetta owners should also account for local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
@@ -67,7 +67,7 @@ On top of it sit reliable leisure spikes. Ameris Bank Amphitheatre brings a summ
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Proactive concert-night and event pricing is part of the rate, not an upsell.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Proactive concert-night and event pricing is part of the rate, not an upsell.
 
 ## Questions to Ask Any Alpharetta Manager
 

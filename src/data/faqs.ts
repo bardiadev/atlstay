@@ -5,7 +5,7 @@ export interface Faq { q: string; a: string }
 export const homeFaqs: Faq[] = [
   {
     q: 'How much does your management cost?',
-    a: `Our management fee starts at ${site.pricing.rate} of booking revenue — all-inclusive, with no setup fees or hidden charges. Premium and larger-scope homes can run a little higher; either way, you’ll always see your exact rate before you sign anything.`,
+    a: `Our management fee is ${site.pricing.rate} of booking revenue — all-inclusive, with no setup fees or hidden charges. Where you land in that range depends on your property, its size and scope, and your market. Smaller, simpler homes sit at the ${site.pricing.rateFrom} end; larger or higher-touch properties run toward ${site.pricing.rateHigh}. Either way, you’ll see your exact rate in writing before you sign anything.`,
   },
   {
     q: 'What exactly do you handle?',
@@ -34,7 +34,7 @@ export const homeFaqs: Faq[] = [
 export const pricingFaqs: Faq[] = [
   {
     q: 'Are there any hidden or upfront fees?',
-    a: `No. Our pricing is all-inclusive — from ${site.pricing.rate} of revenue, with no onboarding fees, no markup on cleaning, and no surprise line items.`,
+    a: `No. Our pricing is all-inclusive — ${site.pricing.rate} of revenue and nothing else, with no onboarding fees, no markup on cleaning, and no surprise line items.`,
   },
   {
     q: 'What’s included in the management fee?',

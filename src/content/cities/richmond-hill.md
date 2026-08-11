@@ -27,7 +27,7 @@ faqs:
   - q: "What property types work well in Richmond Hill?"
     a: "Properties near the Ogeechee River and coastal waterways with dock access or water views attract the fishing and boating audience that is endemic to this area. Family homes with yards and outdoor space in Richmond Hill's residential neighborhoods appeal to Savannah-overflow guests who need more space than the city's historic row houses provide. Properties with easy I-95 access capture business travelers and corporate groups using Richmond Hill as a Savannah satellite base."
   - q: "What is ATLStay's management fee?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers dynamic pricing, listing optimization, guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers dynamic pricing, listing optimization, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

@@ -27,7 +27,7 @@ faqs:
   - q: "What types of guests are most common in Avondale Estates STRs?"
     a: "The guest mix skews toward culture-oriented leisure travelers, professionals visiting Emory and the CDC, Decatur overflow (especially during Decaturbook and AJC Decatur Book Festival), and family visitors who prefer a home-like setting. The small-city character and walkable core tend to attract guests who stay longer and leave better reviews than transient hotel-centric travelers."
   - q: "What is ATLStay's management fee in Avondale Estates?"
-    a: "Our all-in rate starts from 10% of booking revenue. This covers listing optimization, dynamic pricing, professional photography coordination, 24/7 guest support, cleaning oversight, and detailed owner reporting — with no setup fees."
+    a: "Our all-in rate is 10–15% of booking revenue. This covers listing optimization, dynamic pricing, professional photography coordination, 24/7 guest support, cleaning oversight, and detailed owner reporting — with no setup fees."
 order: 0
 published: true
 ---

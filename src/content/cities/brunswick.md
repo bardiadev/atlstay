@@ -27,7 +27,7 @@ faqs:
   - q: "How does Brunswick compare to island properties for returns?"
     a: "Brunswick properties typically have lower acquisition costs than comparable St. Simons or Jekyll Island homes, which can produce competitive cash-on-cash returns even at lower nightly rates. The trade-off is that peak demand is lower and occupancy requires more active marketing. Operators who position Brunswick rentals correctly — emphasizing Golden Isles access, downtown walkability, and I-95 convenience — capture demand that purely passive listings miss."
   - q: "What is ATLStay's management fee in Brunswick?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, dynamic pricing, guest communication, cleaning oversight, and owner reporting. No setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing optimization, dynamic pricing, guest communication, cleaning oversight, and owner reporting. No setup fees."
 order: 0
 published: true
 ---

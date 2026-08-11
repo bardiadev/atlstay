@@ -25,7 +25,7 @@ faqs:
   - q: "What kind of property performs best in Gainesville?"
     a: "It depends on the demand you're targeting. Lake-access and near-lake homes earn the strongest summer premiums and suit families and groups. For the steadier medical and academic demand, well-appointed homes and furnished units near the medical center and downtown perform well for extended stays — good workspace, reliable internet, and quality kitchens matter for the longer-stay guest. Many Gainesville owners do best with a property that can serve both the seasonal lake market and year-round extended stays."
   - q: "How does ATLStay manage Gainesville short-term rentals?"
-    a: "Full-service: listing creation and photography, dynamic pricing tuned to both the lake season and the steady medical/academic base, 24/7 guest communication, vetted local cleaning and turnovers, and review management. Our all-in management fee is 10% of booking revenue with no hidden charges, and you keep full control of your calendar for personal use."
+    a: "Full-service: listing creation and photography, dynamic pricing tuned to both the lake season and the steady medical/academic base, 24/7 guest communication, vetted local cleaning and turnovers, and review management. Our all-in management fee is 10–15% of booking revenue with no hidden charges, and you keep full control of your calendar for personal use."
   - q: "Are there short-term rental rules I should know about in Gainesville?"
     a: "Gainesville and Hall County regulate short-term rentals, and lake-adjacent communities frequently carry HOA covenants that restrict or prohibit STR. Requirements can include registration, zoning compliance, and occupancy taxes, and they change over time. We confirm the right path for your specific address during onboarding and always recommend verifying current requirements with the City of Gainesville or Hall County before listing."
 order: 0
@@ -42,4 +42,4 @@ But the part owners often underestimate is Gainesville's base demand. Northeast 
 
 For owners, the opportunity is to manage a property that serves both sides of that market — capturing the lake's summer peaks while filling the shoulder seasons and winter with medical and academic extended stays. That requires pricing that flexes with the lake calendar, a listing positioned for more than one guest type, and the local operational network to keep turnovers and reviews consistent.
 
-ATLStay manages Gainesville properties with exactly that dual-market strategy in mind. One transparent management fee of 10% of booking revenue covers everything, and you keep full control of your calendar.
+ATLStay manages Gainesville properties with exactly that dual-market strategy in mind. One transparent management fee of 10–15% of booking revenue covers everything, and you keep full control of your calendar.

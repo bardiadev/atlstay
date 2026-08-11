@@ -27,7 +27,7 @@ faqs:
   - q: "What kind of guests book in Ball Ground?"
     a: "Ball Ground tends to attract guests looking for authenticity: antique hunters making a weekend of it, couples drawn to the small-town character, wedding guests, and visitors using the town as a base for north Georgia day trips to wineries, orchards, or the mountains. This demographic tends to be a high-value, low-disruption guest profile."
   - q: "What does ATLStay charge to manage a Ball Ground property?"
-    a: "Our all-in management starts from 10% of booking revenue — dynamic pricing, listing management, guest communication, cleaning coordination, and owner reporting. No setup fees. Contact us for a quote tailored to your specific home."
+    a: "Our all-in management is 10–15% of booking revenue — dynamic pricing, listing management, guest communication, cleaning coordination, and owner reporting. No setup fees. Contact us for a quote tailored to your specific home."
   - q: "Can I use my Ball Ground home myself during the year?"
     a: "Yes. You retain full calendar control. Block any dates you want and we manage all guest bookings around those windows."
 order: 0

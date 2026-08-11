@@ -26,7 +26,7 @@ faqs:
   - q: "Is Masters Week income enough to justify purchasing an Augusta property for short-term rental?"
     a: "Masters Week income is a genuine outlier — the kind of demand spike that changes the return math on an investment property. But we recommend evaluating Augusta investment properties on their year-round income potential, with Masters Week as the peak rather than the sole driver. Augusta's medical district demand, Fort Eisenhower-related travel, and event calendar provide a meaningful base of bookings across the year. A property that earns well only during Masters Week and sits largely idle otherwise has a weaker return profile than one that captures both the peak and the year-round floor."
   - q: "What is ATLStay's management fee for Augusta properties?"
-    a: "Our all-in management rate is 10% of booking revenue. This includes Masters Week pricing strategy and optimization — the most important single management event in the Augusta calendar — as part of the standard rate with no event surcharges."
+    a: "Our all-in management rate is 10–15% of booking revenue. This includes Masters Week pricing strategy and optimization — the most important single management event in the Augusta calendar — as part of the standard rate with no event surcharges."
 order: 0
 published: true
 ---

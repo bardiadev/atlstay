@@ -27,7 +27,7 @@ faqs:
   - q: "How much can I earn from a short-term rental in Austell?"
     a: "Earnings depend on property size, condition, and management quality. Six Flags proximity supports strong pricing on peak park weekends, while the broader Cobb County market and outdoor recreation access sustain baseline occupancy outside park season. Request a free projection from our team to see your specific home's potential."
   - q: "What does ATLStay charge for managing Austell properties?"
-    a: "Our all-in management starts from 10% of booking revenue — covering listing optimization, dynamic pricing, guest communication, cleaning oversight, and reporting. No setup fees or per-booking charges. Contact us for a quote specific to your home."
+    a: "Our all-in management is 10–15% of booking revenue — covering listing optimization, dynamic pricing, guest communication, cleaning oversight, and reporting. No setup fees or per-booking charges. Contact us for a quote specific to your home."
   - q: "Can I block off personal use dates?"
     a: "Yes. You retain full calendar control. Block any dates for personal or family use and we manage all bookings around those windows."
 order: 0

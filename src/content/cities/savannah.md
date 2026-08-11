@@ -24,7 +24,7 @@ faqs:
   - q: "What types of properties perform best in Savannah?"
     a: "Historic row houses and carriage houses in the Landmark Historic District consistently attract premium guests who are specifically seeking the Savannah experience. Garden-level garden apartments with private courtyards perform especially well for couples and honeymoon travelers. Properties within walking distance of River Street and Forsyth Park command strong premiums. That said, the Victorian District and Ardsley Park attract guests who want the charm without the downtown congestion — and often at better acquisition prices for investors."
   - q: "What is ATLStay's management fee?"
-    a: "Our all-in management rate is 10% of booking revenue. That covers listing creation and optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and detailed owner reporting. No setup fees, no per-booking charges."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing creation and optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, maintenance coordination, and detailed owner reporting. No setup fees, no per-booking charges."
   - q: "Can I still use my Savannah property if I hire ATLStay?"
     a: "Absolutely. You retain full calendar control. Block any dates you want to use your property — whether for personal stays, family visits, or the SCAD art show you want to attend — and we manage around them with no penalties."
 order: 0

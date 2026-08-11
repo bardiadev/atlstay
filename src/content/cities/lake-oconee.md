@@ -29,7 +29,7 @@ faqs:
   - q: "How does Lake Oconee compare to Lake Lanier for STR investors?"
     a: "Lake Oconee and Lake Lanier serve different audiences. Lake Lanier's strength is proximity to Atlanta and mass recreational appeal. Lake Oconee's strength is the Reynolds development, the Ritz-Carlton, and the associated premium demographic — a more affluent, golf-focused guest base that consistently pays higher nightly rates for the right property. Acquisition costs are higher at Oconee, but so is the revenue ceiling for well-positioned properties."
   - q: "What is ATLStay's management fee at Lake Oconee?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, dynamic pricing, golf-season event pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing optimization, dynamic pricing, golf-season event pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

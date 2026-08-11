@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license in East Cobb?"
     a: "East Cobb spans unincorporated Cobb County and parts of nearby cities, so the applicable short-term rental rules depend on your exact address — a registration or license may be required. Because requirements differ by jurisdiction and can change, we recommend confirming current rules with Cobb County or the relevant city. ATLStay handles compliance for our clients."
   - q: "Is East Cobb a good market for extended-stay rentals?"
-    a: "Yes. The combination of top-rated schools and an affluent, relocation-heavy profile drives steady demand for furnished housing from families and corporate transferees settling into the area. A well-set-up home — real workspace, fast internet, quality bedding, a properly stocked kitchen, comfortable space for a family — can win longer bookings that reduce turnover. Our all-inclusive management fee is 10% of booking revenue."
+    a: "Yes. The combination of top-rated schools and an affluent, relocation-heavy profile drives steady demand for furnished housing from families and corporate transferees settling into the area. A well-set-up home — real workspace, fast internet, quality bedding, a properly stocked kitchen, comfortable space for a family — can win longer bookings that reduce turnover. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

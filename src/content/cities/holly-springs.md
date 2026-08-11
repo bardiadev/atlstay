@@ -27,7 +27,7 @@ faqs:
   - q: "What other demand drivers exist near Holly Springs?"
     a: "Beyond LakePoint, Holly Springs benefits from Blankets Creek's trail system (a regional mountain biking destination), proximity to the Outlet Shoppes at Atlanta, and the broader Cherokee County outdoor and leisure visitor base. The city's position between Woodstock and Canton also means it captures demand spillover from both markets when those areas are fully booked."
   - q: "What does ATLStay charge for management in Holly Springs?"
-    a: "Our all-in management starts from 10% of booking revenue — covering dynamic pricing, listing optimization, guest communication, cleaning coordination, and owner reporting. No setup fees. Reach out for a quote based on your specific home."
+    a: "Our all-in management is 10–15% of booking revenue — covering dynamic pricing, listing optimization, guest communication, cleaning coordination, and owner reporting. No setup fees. Reach out for a quote based on your specific home."
   - q: "Can I block off weeks for family use?"
     a: "Yes. You keep full calendar control and can block any dates you want. We handle all guest bookings around your personal windows."
 order: 0

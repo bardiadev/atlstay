@@ -27,7 +27,7 @@ faqs:
   - q: "What is Coolray Field and how does it affect Buford STRs?"
     a: "Coolray Field is the home of the Gwinnett Stripers, the Triple-A affiliate of the Atlanta Braves. Located on Buford Drive near the I-985 interchange, it hosts a full minor-league baseball season with multiple home stands from April through September. Game nights — especially weekends and promotional events — drive localized accommodation demand. Baseball families in particular often prefer the space of a private home rental to hotel stays."
   - q: "What is ATLStay's fee for Buford properties?"
-    a: "Our management rate starts from 10% of booking revenue with no hidden fees. We cover listing optimization, photography coordination, dynamic pricing across Buford's multi-driver demand calendar, 24/7 guest communication, cleaning management, and monthly owner reporting."
+    a: "Our management rate is 10–15% of booking revenue with no hidden fees. We cover listing optimization, photography coordination, dynamic pricing across Buford's multi-driver demand calendar, 24/7 guest communication, cleaning management, and monthly owner reporting."
 order: 0
 published: true
 ---

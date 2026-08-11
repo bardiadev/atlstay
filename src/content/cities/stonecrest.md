@@ -27,7 +27,7 @@ faqs:
   - q: "How far is Stonecrest from downtown Atlanta?"
     a: "Stonecrest sits roughly 20 miles east of downtown Atlanta via I-20. The drive is convenient but does not include MARTA rail access, so properties here appeal primarily to guests with cars. The Arabia Mountain National Heritage Area is accessible within 15–20 minutes, adding an outdoor recreation dimension to the market."
   - q: "What is ATLStay's management fee in Stonecrest?"
-    a: "Our all-in rate starts from 10% of booking revenue, covering listing optimization, dynamic pricing, photography coordination, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees or hidden charges."
+    a: "Our all-in rate is 10–15% of booking revenue, covering listing optimization, dynamic pricing, photography coordination, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees or hidden charges."
 order: 0
 published: true
 ---

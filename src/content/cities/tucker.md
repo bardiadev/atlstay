@@ -27,7 +27,7 @@ faqs:
   - q: "How does ATLStay handle pricing for Tucker properties?"
     a: "We use dynamic pricing tools that adjust nightly rates based on local demand signals — weekend spikes, Stone Mountain events, holiday periods, and seasonal patterns. A Tucker home priced correctly at peak times can significantly outperform one set at a flat monthly rate. We review pricing weekly and adjust to capture demand without leaving occupancy on the table."
   - q: "What is ATLStay's management fee for Tucker?"
-    a: "Our all-in rate starts from 10% of booking revenue, scaling with the scope of services. That covers listing optimization, professional photography coordination, dynamic pricing, guest communication, cleaning oversight, and owner reporting — no setup fees or hidden charges."
+    a: "Our all-in rate is 10–15% of booking revenue, scaling with the scope of services. That covers listing optimization, professional photography coordination, dynamic pricing, guest communication, cleaning oversight, and owner reporting — no setup fees or hidden charges."
 order: 0
 published: true
 ---

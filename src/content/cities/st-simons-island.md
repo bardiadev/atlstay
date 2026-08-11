@@ -27,7 +27,7 @@ faqs:
   - q: "How does the Sea Island and Cloister effect impact rental demand?"
     a: "Sea Island's Forbes Five-Star Cloister resort generates a meaningful halo effect for St. Simons rentals. Guests priced out of resort accommodations, wedding parties using Sea Island venues, and extended-family trips that overflow resort capacity all represent rental demand that local properties can capture. Positioning and pricing that speaks to this premium audience is a meaningful edge."
   - q: "What is ATLStay's management fee on the Georgia coast?"
-    a: "Our all-in management rate starts at 10% of booking revenue and scales with property needs. That covers listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue and scales with property needs. That covers listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees."
   - q: "Can I block dates for my own use?"
     a: "Absolutely. You retain full calendar control. Block any dates for personal stays, family visits, or the golf tournament you want to attend — we manage around your schedule with no penalties."
 order: 0

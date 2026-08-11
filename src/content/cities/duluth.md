@@ -24,7 +24,7 @@ faqs:
   - q: "What types of properties perform best as Airbnb rentals in Duluth?"
     a: "Homes near the Town Green or Gas South District benefit from proximity to Duluth's primary leisure and event demand generators. Properties with modern finishes and amenities attract both the business-travel and leisure segments. Duluth's residential neighborhoods tend toward well-maintained suburban homes with outdoor space — the kind that performs well for family and group stays. Korean-focused stays may prefer proximity to the Buford Highway or Duluth Hwy corridor for dining access."
   - q: "What is ATLStay's management fee for Duluth properties?"
-    a: "Our all-in rate is 10% of booking revenue — covering listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting. No setup fees, no per-booking charges."
+    a: "Our all-in rate is 10–15% of booking revenue — covering listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting. No setup fees, no per-booking charges."
   - q: "Can I host international guests in Duluth and manage language barriers?"
     a: "Yes. Duluth attracts visitors from Korea, China, and across the Korean diaspora who visit for cultural, culinary, and family reasons. ATLStay handles all guest communication and is experienced with guests whose primary language isn't English. Clear, welcoming listing design and communication protocols are part of how we manage every property."
 order: 0

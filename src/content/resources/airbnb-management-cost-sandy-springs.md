@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical Airbnb management fee in Sandy Springs?"
-    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Sandy Springs leans heavily on weekday corporate demand from Perimeter Center, with weekend leisure on top, so consistent occupancy management matters. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Sandy Springs leans heavily on weekday corporate demand from Perimeter Center, with weekend leisure on top, so consistent occupancy management matters. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Sandy Springs Airbnb management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. In Sandy Springs, confirm the listing is configured for extended-stay corporate travelers — home-office setup, reliable internet, real-cooking kitchen — and that pricing reflects the weekday-driven calendar."
   - q: "Why does management matter in a corporate market like Sandy Springs?"
     a: "Sandy Springs has two demand streams: steady weekday business travel from Perimeter Center, one of the Southeast's largest suburban office markets, and weekend leisure from Chattahoochee recreation and Buckhead proximity. Business demand shows up on Tuesday nights and during multi-week projects, not just weekends. A manager who fills midweek gaps and configures for corporate guests earns their fee through occupancy a leisure-only approach would miss."
-  - q: "Is a 10% all-inclusive rate too good to be true?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true?"
     a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached."
   - q: "Are Sandy Springs Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Sandy Springs owners should also account for local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
@@ -67,7 +67,7 @@ A second stream rounds out the calendar: weekend leisure drawn to the Chattahooc
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Corporate-calendar pricing and midweek occupancy management are part of the rate, not an upsell.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning coordination or maintenance. Corporate-calendar pricing and midweek occupancy management are part of the rate, not an upsell.
 
 ## Questions to Ask Any Sandy Springs Manager
 

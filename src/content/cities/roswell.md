@@ -22,7 +22,7 @@ faqs:
   - q: "What types of homes rent best in Roswell?"
     a: "Historic homes near Canton Street or the Old Mill district command a premium for guests who want the Roswell character — original hardwoods, covered porches, walkable to dinner. Larger homes with modern updates and outdoor spaces perform well for family groups and friend gatherings. Properties near the Chattahoochee attract guests who want easy river access. Any home within walking distance of Canton Street nightlife typically books faster and at higher rates."
   - q: "How does ATLStay price Roswell properties?"
-    a: "We build pricing strategies around Roswell's actual demand calendar — Canton Street events, Roswell Roots music festival, holiday lighting seasons, and the ebb and flow of leisure vs. business demand throughout the year. We don't apply a flat metro-Atlanta rate; each property gets a tailored pricing model. Our all-in management fee is 10% of booking revenue."
+    a: "We build pricing strategies around Roswell's actual demand calendar — Canton Street events, Roswell Roots music festival, holiday lighting seasons, and the ebb and flow of leisure vs. business demand throughout the year. We don't apply a flat metro-Atlanta rate; each property gets a tailored pricing model. Our all-in management fee is 10–15% of booking revenue."
   - q: "Will a ATLStay manager know Roswell's neighborhoods?"
     a: "Yes. We serve clients across Roswell and know the difference between a Canton Street cottage and a Riverside neighborhood home in terms of positioning, guest profile, and pricing. That local knowledge is reflected in how we write listings, set rates, and communicate with guests."
   - q: "Can I still use my Roswell property personally?"

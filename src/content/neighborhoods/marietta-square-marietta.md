@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license near Marietta Square?"
     a: "Marietta Square is within the City of Marietta, which regulates short-term rentals under its own ordinance, so a registration or license and compliance with local rules may be required. Requirements can change, so we recommend confirming current rules with the City of Marietta. ATLStay manages compliance for our clients."
   - q: "How does ATLStay price for Marietta Square's festivals and events?"
-    a: "We track the Square's full events calendar — festivals, concerts at the Strand, art walks, and seasonal programming — and price proactively for the weekends that draw the biggest crowds, plus Truist Park game days nearby. Owners on default pricing routinely undercharge on these dates. Our all-inclusive management fee is 10% of booking revenue."
+    a: "We track the Square's full events calendar — festivals, concerts at the Strand, art walks, and seasonal programming — and price proactively for the weekends that draw the biggest crowds, plus Truist Park game days nearby. Owners on default pricing routinely undercharge on these dates. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

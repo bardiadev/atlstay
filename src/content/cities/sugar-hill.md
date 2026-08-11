@@ -27,7 +27,7 @@ faqs:
   - q: "What types of properties work best in Sugar Hill?"
     a: "Homes near the downtown entertainment corridor benefit most directly from event-night demand. Properties with outdoor space, covered seating, and a comfortable living configuration work well for the leisure groups and couples that The Bowl and Eagle Theatre attract. Northern Sugar Hill properties within reach of Lake Lanier also benefit from water-recreation seasonal demand in spring and summer."
   - q: "What is ATLStay's fee for Sugar Hill properties?"
-    a: "Our management rate starts from 10% of booking revenue with no hidden fees. We handle listing optimization, photography coordination, dynamic pricing around Sugar Hill's event calendar, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+    a: "Our management rate is 10–15% of booking revenue with no hidden fees. We handle listing optimization, photography coordination, dynamic pricing around Sugar Hill's event calendar, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
 order: 0
 published: true
 ---

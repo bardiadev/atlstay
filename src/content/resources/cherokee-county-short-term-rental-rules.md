@@ -65,7 +65,7 @@ Owners work through these steps because the demand is real. Woodstock's walkable
 
 Short-term rental regulation in a fast-growing county like Cherokee can move quickly. **Rules change frequently — confirm current requirements with Cherokee County, or with the City of Canton or Woodstock as applicable, before listing your property or renewing any registration.** Don't treat a figure or rule from a blog post, including this one, as your final word.
 
-That moving target is where a local management partner helps most. ATLStay tracks local requirements across our service area and walks each owner through the right process for their exact address — while still directing you to an attorney or CPA when a question genuinely calls for one. See [how our services work](/services/) and [how the process runs](/how-it-works/). Our all-inclusive management fee is 10% of booking revenue.
+That moving target is where a local management partner helps most. ATLStay tracks local requirements across our service area and walks each owner through the right process for their exact address — while still directing you to an attorney or CPA when a question genuinely calls for one. See [how our services work](/services/) and [how the process runs](/how-it-works/). Our all-inclusive management fee is 10–15% of booking revenue.
 
 ---
 

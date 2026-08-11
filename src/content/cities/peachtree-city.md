@@ -26,7 +26,7 @@ faqs:
   - q: "What types of homes perform best as short-term rentals in Peachtree City?"
     a: "Homes with golf cart access — ideally with a golf cart available for guest use — command the strongest premiums for leisure stays. Properties near the lakefront or Kedron area attract families and groups seeking the full Peachtree City experience. Larger, well-furnished homes attract Trilith production stays. Any property with reliable fast internet and a real workspace setup appeals to the professional segment given proximity to the airport."
   - q: "What is ATLStay's management fee for Peachtree City properties?"
-    a: "Our all-in rate is 10% of booking revenue with no setup fees or per-booking charges. We cover listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting — including the extended-stay booking processes that are particularly relevant for the Trilith production segment."
+    a: "Our all-in rate is 10–15% of booking revenue with no setup fees or per-booking charges. We cover listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting — including the extended-stay booking processes that are particularly relevant for the Trilith production segment."
 order: 0
 published: true
 ---

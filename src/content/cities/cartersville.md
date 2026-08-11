@@ -29,7 +29,7 @@ faqs:
   - q: "How does Cartersville's Atlanta proximity affect the rental market?"
     a: "At 44 miles from Atlanta via I-75, Cartersville is within the Atlanta metro's practical weekend escape radius. The same Atlanta residents who drive to Lake Allatoona for boating, or who make cultural day trips to the Booth Museum, sometimes want a private home for the weekend rather than a day-trip. This proximity-drive demand fills shoulder weeks and off-peak weekends in ways that more remote Georgia markets cannot match."
   - q: "What is ATLStay's management fee in Cartersville?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, lake-season and museum-event pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing optimization, lake-season and museum-event pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

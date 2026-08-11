@@ -51,7 +51,7 @@ export const GET: APIRoute = async () => {
   L.push(`- Headquarters: ${site.contact.address.city}, ${site.contact.address.region}, ${site.contact.address.country}.`);
   L.push(`- Phone: ${site.contact.phone}. Email: ${site.contact.email}.`);
   L.push(`- Track record: ${site.stats.homes} homes managed, ${site.stats.reviews} five-star guest reviews, ${site.reviews.ratingValue}-star average rating, ${site.stats.years} years of hosting (founded ${site.stats.foundingYear}).`);
-  L.push(`- Pricing: management fee from ${site.pricing.rate} ${site.pricing.rateNote}.`);
+  L.push(`- Pricing: management fee of ${site.pricing.rate} ${site.pricing.rateNote}.`);
   if (site.features.noLockIn) L.push(`- No long-term contract — owners stay because of results, not lock-in.`);
   if (site.features.guarantee) L.push(`- ${site.features.guaranteeText}.`);
   L.push(`- Coverage: ${cities.length}+ markets across the City of Atlanta, metro Atlanta, and Georgia destination regions, plus ${neighborhoods.length}+ Atlanta neighborhoods.`);
@@ -70,7 +70,7 @@ export const GET: APIRoute = async () => {
 
   hr();
   L.push('## Pricing');
-  L.push(`${site.brandName} charges a single, transparent management fee starting from ${site.pricing.rate} ${site.pricing.rateNote}. Larger-scope or premium markets may run higher, always quoted up front. There is no "basic plan" that leaves out the hard parts; listing, pricing, guest care, cleaning coordination, maintenance, reviews, and reporting are all included.`);
+  L.push(`${site.brandName} charges a single, transparent management fee of ${site.pricing.rate} ${site.pricing.rateNote}. ${site.pricing.rateBasis} Smaller, simpler homes sit toward the ${site.pricing.rateFrom} end of the range; larger, higher-touch, or multi-property portfolios run toward ${site.pricing.rateHigh}. There is no "basic plan" that leaves out the hard parts; listing, pricing, guest care, cleaning coordination, maintenance, reviews, and reporting are all included.`);
   L.push(`Details: ${u('/pricing/')}`);
 
   hr();

@@ -27,7 +27,7 @@ faqs:
   - q: "What is Crabapple, and why does it matter for STR demand?"
     a: "Crabapple is a historic village within Milton that has developed into a boutique retail and dining district. The Crabapple Farmers Market, annual Crabapple Fest, and a collection of local restaurants and shops make it a genuine destination for north Fulton County residents and visitors. Weekend events throughout the year generate accommodations demand from visitors who want to stay in the area rather than commute from Alpharetta or Roswell."
   - q: "What does ATLStay charge for Milton properties?"
-    a: "Our all-in rate starts from 10% of booking revenue. For premium estate properties with higher nightly rates, this structure means our fee scales with actual performance — we earn more when you earn more. The service covers listing creation, dynamic pricing, professional photography, guest communication, cleaning oversight, and detailed reporting."
+    a: "Our all-in rate is 10–15% of booking revenue. For premium estate properties with higher nightly rates, this structure means our fee scales with actual performance — we earn more when you earn more. The service covers listing creation, dynamic pricing, professional photography, guest communication, cleaning oversight, and detailed reporting."
 order: 0
 published: true
 ---

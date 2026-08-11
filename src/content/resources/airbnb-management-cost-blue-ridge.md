@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical cabin management fee in Blue Ridge?"
-    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Cabins carry heavier operational requirements than typical homes — hot tub servicing, outdoor amenity checks, firewood and supply coordination — so service depth matters even more here. ATLStay's rate is a flat 10% of booking revenue, all-inclusive, including the extra cabin turnover work."
+    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Cabins carry heavier operational requirements than typical homes — hot tub servicing, outdoor amenity checks, firewood and supply coordination — so service depth matters even more here. ATLStay's rate is a 10–15% of booking revenue, all-inclusive, including the extra cabin turnover work."
   - q: "What do Blue Ridge cabin management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography that leads with mountain or river views, dynamic and seasonal pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. For cabins specifically, it should also include hot tub servicing coordination, outdoor amenity inspection, and property condition monitoring — confirm these aren't billed as extras."
   - q: "Why does management matter so much for a Blue Ridge cabin?"
     a: "Blue Ridge demand is driven by a predictable but movable fall-foliage peak, a strong holiday season, and steady year-round weekend traffic from Atlanta. Pricing the foliage window correctly — it shifts by a week or two each year with the weather — is where serious revenue is made. Cabins also have complex turnovers; a missed hot tub service or firewood restock shows up directly in reviews and repeat bookings."
-  - q: "Is a 10% all-inclusive rate realistic for a cabin?"
+  - q: "Is a 10–15% all-inclusive rate realistic for a cabin?"
     a: "Yes. It reflects a lean, owner-first model rather than a stripped-down service tier. Because cabins involve more moving parts, the real test of any quote is whether the harder coordination work — hot tub upkeep, outdoor amenities, seasonal supply runs — is genuinely included or quietly added later. A flat all-in rate with no add-ons is easier to evaluate than a low base rate with a long list of extras."
   - q: "Are Blue Ridge cabin management fees tax deductible?"
     a: "Yes. Management fees on a cabin rented for profit are a deductible business expense, along with cleaning, supplies, hot tub maintenance, and platform fees. North Georgia cabin owners should also track lodging and occupancy taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
@@ -67,7 +67,7 @@ The foliage peak is what makes management here a genuine skill rather than a che
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning, hot tub coordination, outdoor amenity checks, or maintenance. The harder cabin turnover work is part of the rate, not an upsell.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning, hot tub coordination, outdoor amenity checks, or maintenance. The harder cabin turnover work is part of the rate, not an upsell.
 
 ## Questions to Ask Any Blue Ridge Manager
 

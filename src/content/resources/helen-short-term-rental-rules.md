@@ -56,7 +56,7 @@ The reliable sequence: confirm jurisdiction with property records; complete perm
 
 ## How ATLStay Helps Helen Owners Stay Compliant
 
-Many Helen cabin and chalet owners live elsewhere — often in metro Atlanta — which makes staying current on shifting local requirements, and meeting them through high-volume festival weekends, a genuine challenge. ATLStay tracks the requirements across the markets we manage and guides owners through compliance for their specific property, while still deferring to your attorney or CPA when a question calls for licensed professional advice. Our fee is a straightforward 10% all-inclusive.
+Many Helen cabin and chalet owners live elsewhere — often in metro Atlanta — which makes staying current on shifting local requirements, and meeting them through high-volume festival weekends, a genuine challenge. ATLStay tracks the requirements across the markets we manage and guides owners through compliance for their specific property, while still deferring to your attorney or CPA when a question calls for licensed professional advice. Our fee is a straightforward 10–15%, all-inclusive.
 
 For the demand side of a Helen property — Oktoberfest and seasonal demand, the right setup, and what makes a listing perform — see our [Helen owner's guide](/resources/airbnb-in-helen-ga/), our [North Georgia cabin management overview](/resources/cabin-rental-management-north-georgia/), and our [Helen property management page](/helen/). The [Georgia short-term rental regulations guide](/resources/georgia-short-term-rental-regulations-guide/) ties the cluster together.
 

@@ -27,7 +27,7 @@ faqs:
   - q: "What property types perform best on Jekyll Island?"
     a: "Oceanfront and oceanside cottages in the residential areas command the strongest rates during summer. Properties near the Jekyll Island Club Historic District attract guests drawn to the Gilded Age mansion district and the island's unique history as a retreat for Rockefellers, Vanderbilts, and Morgans. Larger homes with outdoor space and bike storage appeal to the active-family segment that the island's extensive trail network draws."
   - q: "What is ATLStay's management fee?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That includes listing optimization, dynamic pricing, guest communication, cleaning coordination, and owner reporting. No setup fees or per-booking charges."
+    a: "Our all-in management rate is 10–15% of booking revenue. That includes listing optimization, dynamic pricing, guest communication, cleaning coordination, and owner reporting. No setup fees or per-booking charges."
   - q: "How does the Jekyll Island Club historic district affect rental demand?"
     a: "The Jekyll Island Club — a National Historic Landmark district with Victorian cottages and a restored clubhouse hotel — is a major draw for history-focused travelers and architecture enthusiasts. This audience is less seasonal and more likely to book shoulder-month stays. Properties within or near the Historic District can market to this segment explicitly, capturing demand that pure beach-vacation listings miss."
 order: 0

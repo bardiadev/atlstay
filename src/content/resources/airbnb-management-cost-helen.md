@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical short-term rental management fee in Helen?"
-    a: "Full-service management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Helen's revenue is heavily concentrated in the extended Oktoberfest season and summer tubing months, so pricing those windows well is where most owner income is decided. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Helen's revenue is heavily concentrated in the extended Oktoberfest season and summer tubing months, so pricing those windows well is where most owner income is decided. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Helen Airbnb management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. In Helen, confirm that Oktoberfest surge pricing and summer tubing-season strategy are part of the rate rather than treated as extras, and that cabin and chalet turnover needs are covered."
   - q: "Why does management matter so much in Helen specifically?"
     a: "Helen has one of the longest festival seasons in North America — Oktoberfest typically runs from mid-September into early November — plus a distinct summer tubing peak on the Chattahoochee. That gives the market two demand engines that need separate pricing strategies. A manager who plans those seasons months ahead captures far more than one relying on platform defaults."
-  - q: "Is a 10% all-inclusive rate too good to be true in Helen?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true in Helen?"
     a: "No — it reflects a lean, owner-first model, not a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with Oktoberfest surcharges, cleaning fees, and coordination markups layered on."
   - q: "Are Helen short-term rental management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Helen owners should also track Georgia lodging and local occupancy taxes separately. Consult a tax professional familiar with short-term rental rules to capture every eligible deduction."
@@ -67,7 +67,7 @@ The market is built on two overlapping seasons. Oktoberfest, one of the longest 
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning, maintenance, or Oktoberfest "surge" handling. Festival and tubing-season pricing strategy is part of the rate, not an upsell.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning, maintenance, or Oktoberfest "surge" handling. Festival and tubing-season pricing strategy is part of the rate, not an upsell.
 
 ## Questions to Ask Any Helen Manager
 

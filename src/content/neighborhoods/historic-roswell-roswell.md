@@ -27,7 +27,7 @@ faqs:
   - q: "Do I need a short-term rental license in Historic Roswell?"
     a: "Historic Roswell falls under the City of Roswell's short-term rental ordinance, so a business license or registration and compliance with zoning and occupancy rules may be required. Requirements differ from Atlanta's and can change, so we recommend confirming current rules with the City of Roswell Community Development department. ATLStay manages compliance for our clients."
   - q: "How does ATLStay price for Roswell's events and weddings?"
-    a: "We build pricing around Roswell's real demand calendar — Canton Street weekends, festival dates, music programming, and the steady wedding schedule at historic venues. We don't apply a flat rate; each property gets a tailored model that captures the peaks. Our all-inclusive management fee is 10% of booking revenue."
+    a: "We build pricing around Roswell's real demand calendar — Canton Street weekends, festival dates, music programming, and the steady wedding schedule at historic venues. We don't apply a flat rate; each property gets a tailored model that captures the peaks. Our all-inclusive management fee is 10–15% of booking revenue."
 published: true
 ---
 

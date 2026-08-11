@@ -58,7 +58,7 @@ The reliable sequence: confirm the governing authority (almost always the Unifie
 
 ## How ATLStay Helps Athens Owners Stay Compliant
 
-A consolidated government simplifies one question, but Athens still layers zoning-specific eligibility, near-campus scrutiny, operating standards, taxes, and parallel HOA rules — and a game-day market makes staying on top of all of it harder for an owner who does not live locally. ATLStay tracks the requirements across the markets we manage and guides owners through compliance for their specific property, while still pointing you to your attorney or CPA when a question needs licensed professional advice. Our fee is a straightforward 10% all-inclusive.
+A consolidated government simplifies one question, but Athens still layers zoning-specific eligibility, near-campus scrutiny, operating standards, taxes, and parallel HOA rules — and a game-day market makes staying on top of all of it harder for an owner who does not live locally. ATLStay tracks the requirements across the markets we manage and guides owners through compliance for their specific property, while still pointing you to your attorney or CPA when a question needs licensed professional advice. Our fee is a straightforward 10–15%, all-inclusive.
 
 For the demand side of an Athens property — UGA game-day and graduation demand, the right setup, and pricing across the calendar — see our [Athens host's guide](/resources/airbnb-in-athens-ga/) and [Athens property management page](/athens/). The [Georgia short-term rental regulations guide](/resources/georgia-short-term-rental-regulations-guide/) ties the cluster together.
 

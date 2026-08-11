@@ -27,7 +27,7 @@ faqs:
   - q: "What kind of guests book in Waleska?"
     a: "Primarily two profiles: Reinhardt University visitors (families, event attendees, academic travelers) and retreat/escape seekers — couples, small groups, and remote workers looking for a genuine off-suburban experience within an hour of Atlanta. Both segments tend to be higher-value and lower-disruption than transient leisure travelers."
   - q: "What is ATLStay's management fee for Waleska?"
-    a: "Our all-in management starts from 10% of booking revenue — covering listing, pricing, guest communication, cleaning coordination, and reporting. No setup fees. Contact us for a quote based on your specific property."
+    a: "Our all-in management is 10–15% of booking revenue — covering listing, pricing, guest communication, cleaning coordination, and reporting. No setup fees. Contact us for a quote based on your specific property."
   - q: "Can I use my Waleska home personally while ATLStay manages it?"
     a: "Yes. You retain full calendar control. Block any dates for personal use and we handle all guest bookings around those windows."
 order: 0

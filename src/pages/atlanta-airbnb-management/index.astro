@@ -27,7 +27,7 @@ const breadcrumbs = [
 const faqs = [
   {
     q: 'How much does Atlanta Airbnb management cost?',
-    a: `ATLStay charges one flat ${site.pricing.rate} of booking revenue — ${site.pricing.rateNote}. There's no separate onboarding charge, no cleaning markup, no maintenance-coordination surcharge, and no monthly software fee. You only pay when your home earns, and every owner statement shows revenue, fee, and net payout line by line. For a full breakdown see our pricing page.`,
+    a: `ATLStay charges one all-in rate of ${site.pricing.rate} of booking revenue — ${site.pricing.rateNote}. Where your property lands in that range depends on its size, scope, and market; smaller, simpler homes sit near ${site.pricing.rateFrom} and larger or higher-touch properties run toward ${site.pricing.rateHigh}. You always see your exact rate in writing before you sign. There's no separate onboarding charge, no cleaning markup, no maintenance-coordination surcharge, and no monthly software fee. You only pay when your home earns, and every owner statement shows revenue, fee, and net payout line by line. For a full breakdown see our pricing page.`,
   },
   {
     q: 'Is hiring an Atlanta Airbnb management company worth it?',
@@ -105,7 +105,7 @@ const comparison = [
   },
   {
     label: 'Pricing structure',
-    atlstay: `One flat ${site.pricing.rate}, all-inclusive`,
+    atlstay: `One all-in rate, ${site.pricing.rate}`,
     diy: 'No fee, but all the time & risk',
     national: 'Base rate plus common add-on fees',
   },
@@ -134,7 +134,7 @@ const schemas = [
   serviceSchema({
     name: 'Atlanta Airbnb management',
     description:
-      'Full-service Airbnb and short-term rental management in Atlanta — listing, dynamic pricing, 24/7 guests, cleaning, maintenance, and reporting for one flat all-inclusive fee.',
+      'Full-service Airbnb and short-term rental management in Atlanta — listing, dynamic pricing, 24/7 guests, cleaning, maintenance, and reporting for one all-inclusive fee.',
     area: {
       name: `${site.contact.address.city}, ${site.contact.address.region}`,
       lat: site.contact.geo.lat,
@@ -147,7 +147,7 @@ const schemas = [
 
 <BaseLayout
   title="Atlanta Airbnb Management Company"
-  description="Full-service Atlanta Airbnb management — listing, dynamic pricing, 24/7 guests, cleaning, and maintenance for one flat 10% all-in fee. Free rental projection."
+  description="Full-service Atlanta Airbnb management — listing, dynamic pricing, 24/7 guests, cleaning, and maintenance for one all-in 10–15% fee. Free rental projection."
   schemas={schemas}
 >
   <PageHero
@@ -173,7 +173,7 @@ const schemas = [
         owners who want the income of a short-term rental without the second job. We are an
         Atlanta-based team handling Airbnb property management end to end — listing creation and
         photography, nightly dynamic pricing, 24/7 guest communication, hotel-grade cleaning,
-        maintenance coordination, and clear monthly payouts — all for one flat
+        maintenance coordination, and clear monthly payouts — all for one all-in rate of
         {' '}{site.pricing.rate} of booking revenue, {site.pricing.rateNote}.
       </p>
       <p class="mt-4 text-ink/75">
@@ -207,20 +207,22 @@ const schemas = [
     </Container>
   </Section>
 
-  <!-- (3) Transparent 10% pricing -->
+  <!-- (3) Transparent all-in pricing -->
   <Section variant="tint">
     <Container>
       <div class="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div>
           <Eyebrow>Transparent pricing</Eyebrow>
           <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-            One flat {site.pricing.rate}. No hidden fees.
+            {site.pricing.rate}, all-in. No hidden fees.
           </h2>
           <p class="mt-4 text-ink/80">
             Your management fee is {site.pricing.rate} of booking revenue — {site.pricing.rateNote}.
-            That means no onboarding charge, no cleaning markup, no maintenance-coordination
-            surcharge, and no monthly software fee. We earn when you earn, and every owner statement
-            shows revenue, fee, and net payout line by line.
+            Where you land in that range depends on your property, its size and scope, and your
+            market — and you see the exact number in writing before you sign. That single rate means
+            no onboarding charge, no cleaning markup, no maintenance-coordination surcharge, and no
+            monthly software fee. We earn when you earn, and every owner statement shows revenue,
+            fee, and net payout line by line.
           </p>
           <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button href="/pricing/" size="lg">See transparent pricing</Button>
@@ -229,8 +231,9 @@ const schemas = [
         </div>
         <div class="rounded-2xl border border-line bg-white p-8 shadow-sm">
           <div class="text-center">
-            <p class="font-display text-6xl leading-none text-forest">{site.pricing.rate}</p>
+            <p class="font-display text-5xl leading-none tracking-tight text-forest whitespace-nowrap sm:text-6xl">{site.pricing.rate}</p>
             <p class="mt-2 text-sm text-stone">all-inclusive management fee</p>
+            <p class="mt-3 text-xs leading-relaxed text-stone">Quoted for your property — you see your exact rate before you sign.</p>
           </div>
           <div class="mt-7 border-t border-line pt-6">
             <CheckList
@@ -432,7 +435,7 @@ const schemas = [
         </a>
         <a href="/pricing/" class="group rounded-2xl border border-line bg-cream p-6 transition-all hover:border-brass/50 hover:shadow-sm">
           <div class="font-display text-lg text-forest group-hover:text-brass-600">Transparent pricing &rarr;</div>
-          <p class="mt-2 text-sm text-ink/70">One clear {site.pricing.rate} rate. See exactly what you pay — and what you keep.</p>
+          <p class="mt-2 text-sm text-ink/70">One clear all-in rate, {site.pricing.rate}. See exactly what you pay — and what you keep.</p>
         </a>
       </div>
     </Container>

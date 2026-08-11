@@ -26,7 +26,7 @@ faqs:
   - q: "How does MARTA access affect Dunwoody STR bookings?"
     a: "The MARTA Gold Line serves Dunwoody and Medical Center stations, both in or directly adjacent to Dunwoody. For business travelers flying into Hartsfield-Jackson and heading to Perimeter Center meetings, MARTA is a genuinely practical alternative to renting a car. Properties within walkable distance of a station can be marketed explicitly to this segment, which is growing as companies increasingly discourage reimbursable rental cars for urban work trips."
   - q: "What is ATLStay's management fee for Dunwoody properties?"
-    a: "Our all-in fee is 10% of booking revenue — no setup costs, no per-booking charges. The flat rate covers listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+    a: "Our all-in fee is 10–15% of booking revenue — no setup costs, no per-booking charges. That rate covers listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
 order: 0
 published: true
 ---

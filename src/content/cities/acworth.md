@@ -27,7 +27,7 @@ faqs:
   - q: "How much can I earn short-term renting my Acworth home?"
     a: "Earnings depend heavily on whether your property has lake access, its size, and how it's managed. Lake-access properties perform particularly well in spring and summer. Year-round, Old Town Acworth's character and proximity to LakePoint and north Georgia recreation sustain a baseline occupancy that many suburban markets can't match. Request a free projection to see your specific home's realistic potential."
   - q: "What is ATLStay's fee for managing Acworth properties?"
-    a: "Our all-in management starts from 10% of booking revenue — covering dynamic pricing, listing optimization, guest communication, cleaning oversight, and owner reporting. No setup fees or per-booking charges. Contact us for a quote specific to your property."
+    a: "Our all-in management is 10–15% of booking revenue — covering dynamic pricing, listing optimization, guest communication, cleaning oversight, and owner reporting. No setup fees or per-booking charges. Contact us for a quote specific to your property."
   - q: "Can I still use my Acworth home for personal use?"
     a: "Yes. You keep full control of your calendar. Block any dates for personal or family use and we manage all bookings around those windows."
 order: 0

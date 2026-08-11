@@ -27,7 +27,7 @@ faqs:
   - q: "What types of properties perform best as Airbnb rentals in Suwanee?"
     a: "Suwanee's market rewards premium presentation. Homes with updated kitchens, designer finishes, outdoor entertaining space, and high-speed internet perform well across both the family leisure and corporate segments. Properties near the Town Center or within established neighborhoods with good school ratings attract longer stays from relocating families. The bar for what counts as 'acceptable' is higher here than in most Gwinnett markets."
   - q: "What is ATLStay's management fee for Suwanee properties?"
-    a: "Our management rate starts from 10% of booking revenue with no hidden fees. We provide listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
+    a: "Our management rate is 10–15% of booking revenue with no hidden fees. We provide listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and monthly owner reporting."
 order: 0
 published: true
 ---

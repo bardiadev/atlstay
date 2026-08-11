@@ -29,7 +29,7 @@ faqs:
   - q: "What property types work best in Rome?"
     a: "Homes near Berry College or within walking distance of downtown Broad Street perform best for leisure and event travelers. Properties with outdoor space and river proximity attract the outdoor recreation audience. Larger homes near the Berry campus capture multi-family graduation and homecoming groups. The medical and professional corridors near Redmond Regional Medical Center produce a quiet but consistent corporate and medical travel demand for furnished rental properties."
   - q: "What is ATLStay's management fee in Rome?"
-    a: "Our all-in management rate starts at 10% of booking revenue. That covers listing optimization, Berry College event pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
+    a: "Our all-in management rate is 10–15% of booking revenue. That covers listing optimization, Berry College event pricing, guest communication, cleaning coordination, and owner reporting — no setup fees."
 order: 0
 published: true
 ---

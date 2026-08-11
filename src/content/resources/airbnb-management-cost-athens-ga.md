@@ -7,12 +7,12 @@ heroImage: "pricingDashboard"
 featured: false
 faqs:
   - q: "What is a typical Airbnb management fee in Athens?"
-    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Athens revenue is concentrated around UGA football Saturdays and graduation weekends, so pricing those events correctly is where most owner income is decided. ATLStay's rate is a flat 10% of booking revenue, all-inclusive."
+    a: "Full-service short-term rental management generally runs about 18% to 40% of gross booking revenue, clustering around 20–25% for hands-on operators. Athens revenue is concentrated around UGA football Saturdays and graduation weekends, so pricing those events correctly is where most owner income is decided. ATLStay's rate is a 10–15% of booking revenue, all-inclusive."
   - q: "What do Athens Airbnb management fees include?"
     a: "A full-service fee should cover listing optimization across Airbnb, VRBO, and Booking.com, professional photography, dynamic pricing, 24/7 guest communication, cleaning coordination, restocking, and maintenance. In Athens specifically, confirm that game-by-game football pricing and graduation-weekend strategy are part of the rate, not treated as event surcharges."
   - q: "Why does management matter so much in Athens?"
     a: "UGA football is the single largest demand driver in the Athens market — roughly seven home games a season at Sanford Stadium, each its own pricing event, with rivalry games and Homecoming commanding the highest rates. Add graduation, parents' weekends, and move-in dates, and you have a calendar of high-value windows. A manager who prices each game as the schedule firms up captures far more than one relying on platform defaults."
-  - q: "Is a 10% all-inclusive rate too good to be true?"
+  - q: "Is a 10–15% all-inclusive rate too good to be true?"
     a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning, maintenance, or 'game weekend' handling is far easier to evaluate than a low base rate with extras attached."
   - q: "Are Athens Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Athens owners should also account for local lodging and occupancy taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
@@ -67,7 +67,7 @@ But Athens isn't only a football market. Spring graduation brings thousands of f
 
 ## What ATLStay Charges
 
-We charge a flat 10% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning, maintenance, or "game weekend" handling. Game-by-game football pricing is part of the rate, not an upsell.
+We charge a 10–15% of booking revenue, all-inclusive — [see our pricing page](/pricing/). No setup fees, no per-booking charges, and no add-ons for cleaning, maintenance, or "game weekend" handling. Game-by-game football pricing is part of the rate, not an upsell.
 
 ## Questions to Ask Any Athens Manager
 

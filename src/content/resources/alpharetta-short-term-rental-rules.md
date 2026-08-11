@@ -62,7 +62,7 @@ Owners do this work because Alpharetta's demand is genuinely diverse: weekday co
 
 Alpharetta has updated its short-term rental rules as the market has matured, and it may again. **Rules change frequently — confirm current requirements with the City of Alpharetta Community Development department before listing your property or renewing any registration.** Don't treat a figure or rule from a blog post, including this one, as your final word.
 
-That moving target is exactly where a local management partner helps. ATLStay tracks local requirements across our service area and walks each owner through Alpharetta's current process for their specific address — while still pointing you to an attorney or CPA when a question genuinely calls for one. See [how our services work](/services/) and [how the process runs](/how-it-works/). Our all-inclusive management fee is 10% of booking revenue.
+That moving target is exactly where a local management partner helps. ATLStay tracks local requirements across our service area and walks each owner through Alpharetta's current process for their specific address — while still pointing you to an attorney or CPA when a question genuinely calls for one. See [how our services work](/services/) and [how the process runs](/how-it-works/). Our all-inclusive management fee is 10–15% of booking revenue.
 
 ---
 
