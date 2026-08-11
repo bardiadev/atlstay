@@ -26,6 +26,7 @@ import CTABand from '@/components/ui/CTABand.astro';
 import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { serviceLines, findService, feeLine, formVariantFor } from '@/data/serviceLines';
 import { counties } from '@/data/counties';
+import { notesFor } from '@/data/serviceNotes';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
@@ -79,6 +80,9 @@ const boardAudience = service.slug === 'hoa-management';
 // Fit the lead form's questions to what this page actually sells, and tag every
 // lead with the service so the owner knows which page it came from.
 const formVariant = formVariantFor(service);
+// Verifiable, service-specific local detail. Empty for combinations with no
+// genuine local story — see src/data/serviceNotes.ts.
+const localNotes = notesFor(service.slug, d.slug);
 // City names beginning with a vowel sound ("an Alpharetta community").
 const article = /^[aeiou]/i.test(d.name) ? 'an' : 'a';
 
@@ -229,6 +233,20 @@ const schemas = [
           </div>
         </div>
       ))}
+      {/* Local substance specific to THIS service in THIS city. Renders only
+          where a real, verifiable local story exists — a missing entry is
+          deliberate, not an oversight. */}
+      {localNotes.length > 0 && (
+        <div class="mt-10 rounded-2xl border-l-2 border-brass/50 bg-white/60 p-6 sm:p-8">
+          <h3 class="font-display text-xl text-forest">
+            What {service.name.toLowerCase()} looks like in {d.name} specifically
+          </h3>
+          <div class="mt-4 space-y-4">
+            {localNotes.map((p) => <p class="leading-relaxed text-ink/80">{p}</p>)}
+          </div>
+        </div>
+      )}
+
       <div class="mt-10">
         <Button href={`/services/${service.slug}/`} size="lg">
           Full {service.name.toLowerCase()} details
