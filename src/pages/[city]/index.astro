@@ -16,6 +16,7 @@ import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 import { cityGeo } from '@/data/cityGeo';
 import { assignCardStyles } from '@/lib/cardImage';
+import { firstSentence } from '@/lib/text';
 import { cityCountyMap, countyBySlug } from '@/data/counties';
 
 export async function getStaticPaths() {
@@ -126,7 +127,7 @@ const schemas = [
         </div>
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {orderedNeighborhoods.map((n, i) => (
-            <NeighborhoodCard name={n.data.name} href={`/${d.slug}/${n.data.slug}/`} gradient={nbhdStyles[i].gradient} icon={nbhdStyles[i].icon} blurb={n.data.intro.split('.')[0] + '.'} />
+            <NeighborhoodCard name={n.data.name} href={`/${d.slug}/${n.data.slug}/`} gradient={nbhdStyles[i].gradient} icon={nbhdStyles[i].icon} blurb={firstSentence(n.data.intro)} />
           ))}
         </div>
       </Container>

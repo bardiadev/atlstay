@@ -11,6 +11,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import { breadcrumbSchema, serviceSchema, itemListSchema } from '@/lib/schema';
 import { assignCardStyles } from '@/lib/cardImage';
+import { firstSentence } from '@/lib/text';
 import { propertyTypes } from '@/data/propertyTypes';
 import { site } from '@/config/site';
 
@@ -42,7 +43,7 @@ const marketCards = [
     href: `/${c.data.slug}/`,
     slug: c.data.slug,
     region: c.data.region,
-    blurb: c.data.intro.split('.')[0] + '.',
+    blurb: firstSentence(c.data.intro),
   })),
   ...neighborhoodsIn.map((n) => ({
     kind: 'neighborhood' as const,
@@ -50,7 +51,7 @@ const marketCards = [
     href: `/${n.data.citySlug}/${n.data.slug}/`,
     slug: n.data.slug,
     region: 'atlanta' as const,
-    blurb: n.data.intro.split('.')[0] + '.',
+    blurb: firstSentence(n.data.intro),
   })),
 ];
 
@@ -58,11 +59,8 @@ const styles = assignCardStyles(marketCards.map((m) => ({ slug: m.slug, region: 
 
 const heading = `${type.headlineKeyword} — Atlanta & Georgia`;
 const seoTitle = `${type.name} STR Management, Atlanta & Georgia`;
-const seoDesc =
-  `${type.intro.split('.')[0]}. ATLStay handles full-service ${type.name.toLowerCase()} rental management across ${type.marketLabel}.`.slice(
-    0,
-    160,
-  );
+// BaseLayout clamps to 158 chars at a word boundary — don't hard-slice here.
+const seoDesc = `${firstSentence(type.intro)} ATLStay handles full-service ${type.name.toLowerCase()} rental management across ${type.marketLabel}.`;
 
 const schemas = [
   breadcrumbSchema([

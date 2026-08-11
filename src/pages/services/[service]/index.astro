@@ -1,0 +1,249 @@
+---
+// Service-line landing page — the SERVICE axis of the site.
+// Hero embeds the live projection form by default (PageHero, no `hideForm`),
+// matching every other landing page on the site.
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
+import { serviceLines, findService } from '@/data/serviceLines';
+import { images, type ImageKey } from '@/data/images';
+import { site } from '@/config/site';
+import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
+
+export async function getStaticPaths() {
+  return serviceLines.map((s) => ({ params: { service: s.slug }, props: { service: s } }));
+}
+
+const { service } = Astro.props;
+
+const allCities = await getCollection('cities', (c) => c.data.published);
+const citiesIn = service.marketCities
+  .map((slug) => allCities.find((c) => c.data.slug === slug))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+const related = service.relatedServices
+  .map((slug) => findService(slug))
+  .filter((s): s is NonNullable<typeof s> => Boolean(s));
+
+const heroKey = (service.heroImageKey && service.heroImageKey in images
+  ? service.heroImageKey
+  : 'serviceManagement') as ImageKey;
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services/' },
+  { name: service.name, path: `/services/${service.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbs),
+  serviceSchema({
+    name: service.headlineKeyword,
+    description: service.seoDescription,
+    serviceType: service.name,
+  }),
+];
+---
+
+<BaseLayout title={service.seoTitle} description={service.seoDescription} schemas={schemas}>
+  <PageHero
+    title={service.headlineKeyword}
+    subtitle={service.intro}
+    eyebrow={service.eyebrow}
+    imageKey={heroKey}
+    breadcrumbs={breadcrumbs}
+    secondaryCta={{ label: 'See what’s included', href: '#included' }}
+  />
+
+  <!-- Who it's for -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+        <div>
+          <Eyebrow>Who this is for</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">{service.tagline}</h2>
+          <p class="mt-4 leading-relaxed text-ink/75">
+            Every property is different. These are the owners this service was built around — if one
+            of them sounds like you, we should talk.
+          </p>
+          <div class="mt-8">
+            <Button href="/rental-projection/" size="lg">Get my free projection</Button>
+          </div>
+        </div>
+        <ul class="space-y-4">
+          {service.forWhom.map((item) => (
+            <li class="flex items-start gap-4 rounded-2xl border border-line bg-cream p-5">
+              <span class="mt-1.5 h-2 w-2 flex-none rounded-full bg-brass"></span>
+              <span class="text-ink/80">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Body sections, with the lead form re-offered partway through so a reader
+       deep in a 1,500-word page never has to scroll back to the hero. -->
+  {service.sections.map((sec, i) => (
+    <Fragment>
+      <Section variant={i % 2 === 0 ? 'cream' : 'white'}>
+        <Container size="narrow">
+          <h2 class="font-display text-3xl text-forest sm:text-4xl">{sec.heading}</h2>
+          <div class="mt-5 space-y-4">
+            {sec.body.map((p) => <p class="leading-relaxed text-ink/80">{p}</p>)}
+          </div>
+        </Container>
+      </Section>
+      {i === 1 && (
+        <ServiceFormBand
+          variant="tint"
+          eyebrow="Free projection · about a minute"
+          heading={`What would your property earn with ${service.name.toLowerCase()}?`}
+          text="Tell us about the property and we’ll build a free, comps-based projection for it — written by a real person on our team, back to you within one business day."
+        />
+      )}
+    </Fragment>
+  ))}
+
+  <!-- What's included -->
+  <Section variant="forest" id="included">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow class="text-brass">What’s included</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
+          One rate. The whole service.
+        </h2>
+        <p class="mt-4 text-cream/75">
+          {site.pricing.rate} {site.pricing.rateNote} — quoted for your property, in writing, before
+          you sign anything.
+        </p>
+      </div>
+      <div class="mx-auto mt-10 max-w-3xl">
+        <ul class="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+          {service.included.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-cream/85">
+              <svg class="mt-0.5 h-5 w-5 flex-none text-brass" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 10.5l2.5 2.5L14 7.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="10" cy="10" r="8.25" />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="mt-10 text-center">
+        <Button href="/pricing/" variant="inverse" size="lg">See transparent pricing</Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Markets -->
+  {citiesIn.length > 0 && (
+    <Section variant="white">
+      <Container>
+        <div class="mx-auto max-w-3xl text-center">
+          <Eyebrow>Where we work</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            {service.name} across metro Atlanta &amp; Georgia
+          </h2>
+          <p class="mt-4 text-ink/75">
+            We run this service in the markets below. Don’t see yours? Call
+            {' '}<a href={site.contact.phoneHref} class="font-medium text-brass-600 hover:text-brass">{site.contact.phone}</a>
+            {' '}— we’re continually adding markets.
+          </p>
+        </div>
+        <div class="mt-10 flex flex-wrap justify-center gap-2.5">
+          {citiesIn.map((c) => (
+            <a
+              href={`/${c.data.slug}/`}
+              class="rounded-full border border-line bg-cream px-4 py-2 text-sm text-ink/75 transition-colors hover:border-brass/50 hover:text-brass-600"
+            >{c.data.name}</a>
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- FAQs -->
+  {service.faqs.length > 0 && (
+    <Section variant="cream">
+      <Container size="narrow">
+        <Eyebrow>Common questions</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          {service.name} — answered
+        </h2>
+        <div class="mt-8"><FAQ items={service.faqs} /></div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Sources — content integrity, shown openly -->
+  {service.sources.length > 0 && (
+    <Section variant="white">
+      <Container size="narrow">
+        <h2 class="font-display text-xl text-forest">Sources</h2>
+        <p class="mt-2 text-sm text-ink/60">
+          Every figure on this page is linked to its original source, with the date we checked it.
+        </p>
+        <ol class="mt-5 space-y-3 text-sm">
+          {service.sources.map((s) => (
+            <li class="text-ink/70">
+              <span>{s.claim}</span>{' '}
+              <a href={s.url} target="_blank" rel="noopener nofollow" class="text-brass-600 underline-offset-2 hover:underline">{s.publisher}</a>
+              <span class="text-ink/45"> · {s.asOf}</span>
+            </li>
+          ))}
+        </ol>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Third form placement: after the proof/FAQ block, at peak intent -->
+  <ServiceFormBand
+    variant="forest"
+    eyebrow="Ready when you are"
+    heading="Start with the numbers, not a sales call."
+    text="No obligation and no pressure. Send us the property and we’ll come back with what it could realistically earn — then you decide whether a conversation is worth having."
+  />
+
+  <!-- Related services + resources -->
+  <Section variant="cream">
+    <Container>
+      <Eyebrow>Keep exploring</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Related services</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {related.map((r) => (
+          <a href={`/services/${r.slug}/`} class="group rounded-2xl border border-line bg-white p-6 transition-all hover:border-brass/50 hover:shadow-sm">
+            <div class="font-display text-lg text-forest group-hover:text-brass-600">{r.name} &rarr;</div>
+            <p class="mt-2 text-sm text-ink/70">{r.tagline}</p>
+          </a>
+        ))}
+      </div>
+
+      {service.relatedResources.length > 0 && (
+        <div class="mt-12">
+          <h3 class="font-display text-xl text-forest">Further reading</h3>
+          <ul class="mt-4 grid gap-2.5 sm:grid-cols-2">
+            {service.relatedResources.map((slug) => (
+              <li>
+                <a href={`/resources/${slug}/`} class="text-sm text-ink/70 underline-offset-4 transition-colors hover:text-brass-600 hover:underline">
+                  {slug.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase())}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </Container>
+  </Section>
+
+  <CTABand />
+</BaseLayout>

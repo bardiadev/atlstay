@@ -1,0 +1,58 @@
+---
+// Repeatable in-page lead form band.
+//
+// The hero already carries a ProjectionForm (via PageHero). This component is
+// for the ADDITIONAL placements further down a long page, so an owner never has
+// to scroll back up to convert. Email is deliberately the fallback, not the
+// primary path — the form is the funnel.
+//
+// Hydration: `client:visible`, NOT `client:load`. A page carries several of
+// these, and eagerly hydrating every one would ship the island's JS multiple
+// times on first paint. Below the fold they hydrate as they're scrolled to.
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import ProjectionForm from '../react/ProjectionForm';
+import { site } from '../../config/site';
+
+interface Props {
+  heading?: string;
+  text?: string;
+  eyebrow?: string;
+  /** 'forest' reads as a strong break; 'tint' is quieter for mid-page use. */
+  variant?: 'forest' | 'tint';
+}
+const {
+  heading = 'What could your property earn?',
+  text = 'Tell us about it and we’ll build a free, comps-based projection — a real person, not an algorithm, back to you within one business day.',
+  eyebrow = 'Free projection · about a minute',
+  variant = 'forest',
+} = Astro.props;
+
+const dark = variant === 'forest';
+---
+<Section variant={variant}>
+  <Container>
+    <div class="grid items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
+      <div class={dark ? '' : 'lg:pr-4'}>
+        <Eyebrow class={dark ? 'text-brass' : ''}>{eyebrow}</Eyebrow>
+        <h2 class={`mt-3 font-display text-3xl sm:text-4xl ${dark ? 'text-cream' : 'text-forest'}`}>
+          {heading}
+        </h2>
+        <p class={`mt-4 max-w-lg leading-relaxed ${dark ? 'text-cream/75' : 'text-ink/75'}`}>
+          {text}
+        </p>
+        <p class={`mt-6 text-sm ${dark ? 'text-cream/60' : 'text-ink/60'}`}>
+          Free, no obligation. Prefer to talk?{' '}
+          <a
+            href={site.contact.phoneHref}
+            class={`font-medium underline-offset-2 hover:underline ${dark ? 'text-cream' : 'text-brass-600'}`}
+          >Call {site.contact.phone}</a>
+        </p>
+      </div>
+      <div class="w-full">
+        <ProjectionForm client:visible />
+      </div>
+    </div>
+  </Container>
+</Section>

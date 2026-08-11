@@ -2,6 +2,10 @@
 import { footerNav } from '../../data/navigation';
 import { site } from '../../config/site';
 import Logo from './Logo.astro';
+// Column headings are <h2>: the footer is a top-level landmark, so h3/h4 would
+// skip a level after the page's last <h2> — and after the <h1> on /404/ and
+// /search/, which have no <h2> of their own. Visually identical: global.css
+// styles h1–h4 the same and the size comes from the Tailwind classes.
 const year = new Date().getFullYear();
 const a = site.contact.address;
 const loc = [a.city, a.region].filter(Boolean).join(', ');
@@ -9,7 +13,11 @@ const mailing = a.street ? `${a.street}, ${a.city}, ${a.region} ${a.postalCode}`
 ---
 <footer class="bg-forest text-cream/80">
   <div class="mx-auto max-w-7xl px-6 py-16 sm:px-8">
-    <div class="grid gap-12 lg:grid-cols-[1.5fr_repeat(4,1fr)]">
+    <!-- Brand block, then the nav columns in their own wrapping grid. The nav
+         grid is column-count agnostic on purpose: footerNav has grown from 4 to
+         6 columns as the service lines landed, and a fixed `repeat(4,1fr)` track
+         list silently overflowed the extras onto a broken row. -->
+    <div class="grid gap-12 lg:grid-cols-[1.3fr_2.7fr]">
       <div>
         <Logo variant="light" />
         <p class="mt-4 max-w-xs text-sm text-cream/65">{site.description}</p>
@@ -26,9 +34,10 @@ const mailing = a.street ? `${a.street}, ${a.city}, ${a.region} ${a.postalCode}`
         </div>
       </div>
 
+      <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
       {footerNav.map((col) => (
         <div>
-          <h4 class="font-display text-sm text-cream">{col.heading}</h4>
+          <h2 class="font-display text-sm text-cream">{col.heading}</h2>
           <ul class="mt-4 space-y-2.5">
             {col.links.map((l) => (
               <li><a href={l.href} class="text-sm text-cream/65 transition-colors hover:text-brass">{l.label}</a></li>
@@ -36,6 +45,7 @@ const mailing = a.street ? `${a.street}, ${a.city}, ${a.region} ${a.postalCode}`
           </ul>
         </div>
       ))}
+      </div>
     </div>
 
     <div class="mt-14 flex flex-col items-start justify-between gap-4 border-t border-cream/15 pt-8 text-xs text-cream/55 sm:flex-row sm:items-center">

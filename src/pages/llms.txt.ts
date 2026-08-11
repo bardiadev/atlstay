@@ -7,6 +7,7 @@ import { site } from '../config/site';
 import { counties } from '../data/counties';
 import { propertyTypes } from '../data/propertyTypes';
 import { landmarks } from '../data/landmarks';
+import { serviceLines, serviceCategories, servicesByCategory } from '../data/serviceLines';
 
 const u = (path: string) => new URL(path, site.domain).href;
 
@@ -31,13 +32,27 @@ export const GET: APIRoute = async () => {
   );
   L.push('');
   L.push('## Core pages');
-  L.push(`- [Short-term rental management services](${u('/services/')}): Everything included in full-service Airbnb & Vrbo management — listing, dynamic pricing, 24/7 guest care, cleaning, maintenance, and review management.`);
+  L.push(`- [All management services](${u('/services/')}): Every service line — short-term, long-term, mid-term/furnished, commercial, multi-family, and booking-channel management.`);
   L.push(`- [Pricing](${u('/pricing/')}): One transparent, all-inclusive management fee of ${site.pricing.rate} of booking revenue — no hidden charges, no long-term contract.`);
   L.push(`- [Dynamic pricing](${u('/dynamic-pricing/')}): Daily, demand-driven rate optimization around Atlanta conventions, concerts, and sports — the most overlooked driver of STR revenue.`);
   L.push(`- [Free rental projection](${u('/rental-projection/')}): Request a custom, comps-based estimate of what your home could earn, delivered by a local expert within one business day.`);
   L.push(`- [How it works](${u('/how-it-works/')}): The owner journey from projection to onboarding to monthly payouts.`);
   L.push(`- [About ${site.brandName}](${u('/about/')}): The local authority on Atlanta short-term rentals.`);
   L.push(`- [Contact](${u('/contact/')}): Phone ${site.contact.phone}, email ${site.contact.email}.`);
+  L.push('');
+  L.push('## Services we provide');
+  L.push(
+    `${site.brandName} is the short-term-rental brand of ${site.company.legalName}, a licensed Georgia real estate brokerage. The business manages property across the full range of rental terms — nightly, 30-plus days, and annual leases — for residential, multi-family, and commercial owners. ${serviceLines.length} distinct service lines:`,
+  );
+  for (const cat of serviceCategories) {
+    const lines = servicesByCategory(cat.key);
+    if (lines.length === 0) continue;
+    L.push('');
+    L.push(`### ${cat.label} — ${cat.blurb}`);
+    for (const s of lines) {
+      L.push(`- [${s.name}](${u(`/services/${s.slug}/`)}): ${s.seoDescription}`);
+    }
+  }
   L.push('');
   L.push('## Service areas');
   L.push(`- [Areas we serve](${u('/areas-we-serve/')}): Full coverage map — intown Atlanta, metro Atlanta, and Georgia destination markets (${cities.length}+ markets).`);

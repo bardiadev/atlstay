@@ -45,7 +45,7 @@ highlights:
   - "Dynamic pricing calibrated to Atlanta's event-driven demand spikes"
   - "Full-service turnovers with our vetted Atlanta cleaning teams"
   - "24/7 guest communication so you never wake up to a problem"
-  - "Transparent flat-rate fee — no hidden charges, no surprises"
+  - "Transparent all-in rate — no hidden charges, no surprises"
   - "ATL permit compliance guidance included at no extra cost"
 faqs:
   - q: "Do I need a special license to rent my Atlanta home on Airbnb?"

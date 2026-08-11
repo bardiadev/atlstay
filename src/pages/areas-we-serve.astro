@@ -11,6 +11,7 @@ import RelatedReading from '@/components/ui/RelatedReading.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 import { getCollection } from 'astro:content';
 import { assignCardStyles } from '@/lib/cardImage';
+import { firstSentence } from '@/lib/text';
 import { counties } from '@/data/counties';
 import { propertyTypes } from '@/data/propertyTypes';
 import { landmarks } from '@/data/landmarks';
@@ -31,8 +32,6 @@ const georgia = cities.filter((c) => c.data.region === 'georgia').sort((a, b) =>
 const nbhdStyles = assignCardStyles(neighborhoods.map((n) => ({ slug: n.data.slug, region: 'atlanta' })));
 const metroStyles = assignCardStyles(metro.map((c) => ({ slug: c.data.slug, region: 'metro' })));
 const gaStyles = assignCardStyles(georgia.map((c) => ({ slug: c.data.slug, region: 'georgia' })));
-
-const firstSentence = (s: string) => s.split('. ')[0].replace(/\.$/, '') + '.';
 
 const serviceAreaList = [
   ...cities.map((c) => ({ name: `${c.data.name}, GA`, path: `/${c.data.slug}/` })),

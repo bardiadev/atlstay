@@ -2,10 +2,12 @@ import { site } from '../config/site';
 
 export const DEFAULT_OG_IMAGE = '/images/og-default.jpg';
 
-/** Brand-suffixed page title. Drops the brand suffix when it would push the
- *  title past ~60 chars (Google's SERP display limit) so titles never truncate. */
+/** Brand-suffixed page title. Skips the suffix when the title already names the
+ *  brand (no "ATLStay … | ATLStay"), and drops it when it would push the title
+ *  past ~60 chars (Google's SERP display limit) so titles never truncate. */
 export function pageTitle(title?: string): string {
   if (!title) return `${site.brandName} — ${site.tagline}`;
+  if (title.includes(site.brandName)) return title;
   const withBrand = `${title} | ${site.brandName}`;
   return withBrand.length <= 60 ? withBrand : title;
 }

@@ -10,6 +10,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import { breadcrumbSchema, serviceSchema, itemListSchema } from '@/lib/schema';
 import { assignCardStyles } from '@/lib/cardImage';
+import { firstSentence } from '@/lib/text';
 import { landmarks } from '@/data/landmarks';
 import { site } from '@/config/site';
 
@@ -24,7 +25,8 @@ const styles = assignCardStyles(landmark.nearby.map((n) => ({ slug: n.href, regi
 
 const heading = `Airbnb & Short-Term Rental Management Near ${landmark.name}`;
 const seoTitle = `Airbnb Management Near ${landmark.shortName ?? landmark.name}`;
-const seoDesc = `${landmark.intro.split('. ')[0]}. ATLStay manages short-term rentals near ${landmark.name} — call ${site.contact.phone}.`.slice(0, 160);
+// BaseLayout clamps to 158 chars at a word boundary — don't hard-slice here.
+const seoDesc = `${firstSentence(landmark.intro)} ATLStay manages short-term rentals near ${landmark.name} — call ${site.contact.phone}.`;
 
 const schemas = [
   breadcrumbSchema([

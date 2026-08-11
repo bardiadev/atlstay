@@ -1,0 +1,260 @@
+---
+// Service × city pages — the programmatic layer beneath each service line.
+//
+// ANTI-THIN-CONTENT CONTRACT (read before editing):
+// Google's spam policy treats mass-produced near-duplicate location pages as
+// "scaled content abuse" and "doorway abuse". Every page built here therefore
+// carries real, city-SPECIFIC substance that is false for every other city:
+//   1. the city's own hand-written intro from the cities collection
+//   2. its real county, and the county page it belongs to
+//   3. its hand-written highlights
+//   4. its own FAQs (unique per city, authored in the collection)
+//   5. its real neighbourhoods, linked
+// The service supplies the framing and the operational detail; the city
+// supplies the facts. If a city entry ever loses that substance, it should drop
+// out of this route rather than ship a template with a name swapped in.
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import Button from '@/components/ui/Button.astro';
+import CheckList from '@/components/ui/CheckList.astro';
+import FAQ from '@/components/ui/FAQ.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
+import { serviceLines, findService } from '@/data/serviceLines';
+import { images, type ImageKey } from '@/data/images';
+import { site } from '@/config/site';
+import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
+
+export async function getStaticPaths() {
+  const cities = await getCollection('cities', (c) => c.data.published);
+  const paths = [];
+  for (const service of serviceLines) {
+    for (const slug of service.marketCities) {
+      const city = cities.find((c) => c.data.slug === slug);
+      // Only build where the city has real, hand-written substance to carry.
+      if (!city || !city.data.intro) continue;
+      paths.push({ params: { service: service.slug, city: slug }, props: { service, city } });
+    }
+  }
+  return paths;
+}
+
+const { service, city } = Astro.props;
+const d = city.data;
+
+const [allNeighborhoods] = await Promise.all([
+  getCollection('neighborhoods', (n) => n.data.published),
+]);
+const hoods = allNeighborhoods.filter((n) => n.data.citySlug === d.slug);
+
+const related = service.relatedServices
+  .map((s) => findService(s))
+  .filter((s): s is NonNullable<typeof s> => Boolean(s));
+
+// Sibling cities for this service — real internal linking, not a tag cloud.
+const siblingSlugs = service.marketCities.filter((s) => s !== d.slug).slice(0, 12);
+
+const heroKey = (d.heroImage && d.heroImage in images
+  ? d.heroImage
+  : service.heroImageKey && service.heroImageKey in images
+    ? service.heroImageKey
+    : 'georgiaCity') as ImageKey;
+
+const heading = `${service.name} in ${d.name}, ${d.state}`;
+const seoTitle = `${service.name} in ${d.name}, ${d.state}`.slice(0, 60);
+const seoDescription =
+  `${service.name} in ${d.name}, ${d.state} by a licensed local team — ${service.tagline.replace(/\.$/, '')}. Get a free projection for your property.`.slice(
+    0,
+    155,
+  );
+
+const countyPath = d.county ? `/counties/${d.county.toLowerCase().replace(/\s+/g, '-')}/` : null;
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services/' },
+  { name: service.name, path: `/services/${service.slug}/` },
+  { name: d.name, path: `/services/${service.slug}/${d.slug}/` },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbs),
+  serviceSchema({
+    name: heading,
+    description: seoDescription,
+    serviceType: service.name,
+    area: {
+      name: `${d.name}, ${d.state}`,
+      type: 'City',
+      lat: d.lat,
+      lng: d.lng,
+      county: d.county,
+    },
+  }),
+];
+---
+
+<BaseLayout title={seoTitle} description={seoDescription} schemas={schemas}>
+  <PageHero
+    title={heading}
+    subtitle={service.intro}
+    eyebrow={`${service.eyebrow} · ${d.name}`}
+    imageKey={heroKey}
+    breadcrumbs={breadcrumbs}
+  />
+
+  <!-- City-specific substance: the city's own hand-written lede -->
+  <Section variant="white">
+    <Container size="narrow">
+      <Eyebrow>{d.name}, {d.state}</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        Why {d.name} — and what it means for your property
+      </h2>
+      <p class="mt-5 leading-relaxed text-ink/80">{d.intro}</p>
+      {d.county && (
+        <p class="mt-4 leading-relaxed text-ink/75">
+          {d.name} sits in <a href={countyPath} class="font-medium text-brass-600 underline-offset-2 hover:underline">{d.county} County</a>,
+          which sets much of the regulatory and tax picture for property here. We track those rules
+          per address rather than per city, because they rarely stop neatly at a city line.
+        </p>
+      )}
+      {d.highlights.length > 0 && (
+        <div class="mt-8 rounded-2xl border border-line bg-cream p-6 sm:p-8">
+          <h3 class="font-display text-lg text-forest">What stands out about {d.name}</h3>
+          <div class="mt-4"><CheckList items={[...d.highlights]} columns={1} /></div>
+        </div>
+      )}
+    </Container>
+  </Section>
+
+  <!-- The service, applied here -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <h2 class="font-display text-3xl text-forest sm:text-4xl">
+        How {service.name.toLowerCase()} works in {d.name}
+      </h2>
+      {service.sections.slice(0, 2).map((sec) => (
+        <div class="mt-8">
+          <h3 class="font-display text-xl text-forest">{sec.heading}</h3>
+          <div class="mt-3 space-y-4">
+            {sec.body.slice(0, 2).map((p) => <p class="leading-relaxed text-ink/80">{p}</p>)}
+          </div>
+        </div>
+      ))}
+      <div class="mt-10">
+        <Button href={`/services/${service.slug}/`} size="lg">
+          Full {service.name.toLowerCase()} details
+        </Button>
+      </div>
+    </Container>
+  </Section>
+
+  <ServiceFormBand
+    variant="tint"
+    eyebrow={`Free projection · ${d.name}`}
+    heading={`What could your ${d.name} property earn?`}
+    text={`Send us the address and we’ll build a free, comps-based projection using real ${d.name} data — from a person on our team, back to you within one business day.`}
+  />
+
+  <!-- What's included -->
+  <Section variant="forest">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow class="text-brass">Included in {d.name}</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">One rate. The whole service.</h2>
+        <p class="mt-4 text-cream/75">
+          {site.pricing.rate} {site.pricing.rateNote} — quoted for your property before you sign.
+        </p>
+      </div>
+      <div class="mx-auto mt-10 max-w-3xl">
+        <ul class="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+          {service.included.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-cream/85">
+              <svg class="mt-0.5 h-5 w-5 flex-none text-brass" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 10.5l2.5 2.5L14 7.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="10" cy="10" r="8.25" />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Neighbourhoods (real, per-city) -->
+  {hoods.length > 0 && (
+    <Section variant="white">
+      <Container>
+        <Eyebrow>Neighbourhoods</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Where we work in {d.name}
+        </h2>
+        <div class="mt-8 flex flex-wrap gap-2.5">
+          {hoods.map((n) => (
+            <a href={`/${d.slug}/${n.data.slug}/`} class="rounded-full border border-line bg-cream px-4 py-2 text-sm text-ink/75 transition-colors hover:border-brass/50 hover:text-brass-600">
+              {n.data.name}
+            </a>
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- The city's own FAQs — unique per city -->
+  {d.faqs.length > 0 && (
+    <Section variant="cream">
+      <Container size="narrow">
+        <Eyebrow>{d.name} questions</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Owning and renting in {d.name}
+        </h2>
+        <div class="mt-8"><FAQ items={[...d.faqs]} /></div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Cross-links: other services here, same service elsewhere -->
+  <Section variant="white">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+          <h2 class="font-display text-2xl text-forest">Other services in {d.name}</h2>
+          <ul class="mt-5 space-y-2.5">
+            {related.map((r) => (
+              <li>
+                <a href={`/services/${r.slug}/${d.slug}/`} class="text-sm text-ink/75 underline-offset-4 transition-colors hover:text-brass-600 hover:underline">
+                  {r.name} in {d.name}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a href={`/${d.slug}/`} class="text-sm text-ink/75 underline-offset-4 transition-colors hover:text-brass-600 hover:underline">
+                Short-term rental management in {d.name}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-display text-2xl text-forest">{service.name} nearby</h2>
+          <div class="mt-5 flex flex-wrap gap-2">
+            {siblingSlugs.map((s) => (
+              <a href={`/services/${service.slug}/${s}/`} class="rounded-full border border-line px-3.5 py-1.5 text-xs text-ink/70 transition-colors hover:border-brass/50 hover:text-brass-600">
+                {s.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <CTABand
+    heading={`Get a free projection for your ${d.name} property`}
+    text="No obligation, no pressure — just the numbers, from a local team that manages here."
+  />
+</BaseLayout>

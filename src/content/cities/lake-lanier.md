@@ -26,7 +26,7 @@ faqs:
   - q: "What amenities most impact Lake Lanier rental revenue?"
     a: "After dock access, the highest-value amenities at Lanier are: private pool or hot tub (extends the season beyond swimming weather), outdoor living space with lake views, multiple bedrooms and bathrooms for group use, and a well-equipped kitchen for multi-day stays. Kayak and paddleboard storage or rental access is a growing demand factor. Properties that provide or facilitate boat access — through a slip, a launch, or a pontoon rental relationship — can market to the core Lanier boating audience directly."
   - q: "What is ATLStay's management fee for Lake Lanier properties?"
-    a: "Our all-in management rate is 10–15% of booking revenue. Lake properties require specific maintenance attention — dock inspections, water-adjacent exterior care, and seasonal prep — which we coordinate through our local operations network at no additional charge beyond the flat management rate."
+    a: "Our all-in management rate is 10–15% of booking revenue. Lake properties require specific maintenance attention — dock inspections, water-adjacent exterior care, and seasonal prep — which we coordinate through our local operations network at no additional charge beyond the management rate."
 order: 0
 published: true
 ---

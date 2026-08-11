@@ -11,6 +11,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import { breadcrumbSchema, serviceSchema, itemListSchema } from '@/lib/schema';
 import { assignCardStyles } from '@/lib/cardImage';
+import { firstSentence } from '@/lib/text';
 import { counties } from '@/data/counties';
 import { site } from '@/config/site';
 
@@ -34,11 +35,8 @@ const styles = assignCardStyles(
 
 const heading = `Vacation Rental & Airbnb Management in ${county.name} County, ${county.state}`;
 const seoTitle = `${county.name} County Airbnb Management, GA`;
-const seoDesc =
-  `${county.intro.split('.')[0]}. ATLStay handles full-service short-term rental management across ${county.name} County.`.slice(
-    0,
-    160,
-  );
+// BaseLayout clamps to 158 chars at a word boundary — don't hard-slice here.
+const seoDesc = `${firstSentence(county.intro)} ATLStay handles full-service short-term rental management across ${county.name} County.`;
 
 const schemas = [
   breadcrumbSchema([
@@ -127,7 +125,7 @@ const schemas = [
               href={`/${c.data.slug}/`}
               gradient={styles[i].gradient}
               icon={styles[i].icon}
-              blurb={c.data.intro.split('.')[0] + '.'}
+              blurb={firstSentence(c.data.intro)}
             />
           ))}
         </div>

@@ -7,6 +7,7 @@ import { site } from '../config/site';
 import { counties } from '../data/counties';
 import { propertyTypes } from '../data/propertyTypes';
 import { landmarks } from '../data/landmarks';
+import { serviceLines, serviceCategories, servicesByCategory } from '../data/serviceLines';
 
 const u = (path: string) => new URL(path, site.domain).href;
 const regionLabel: Record<string, string> = {
@@ -68,6 +69,32 @@ export const GET: APIRoute = async () => {
   L.push('- Transparent monthly owner reporting and payouts.');
   L.push(`More: ${u('/services/')}`);
 
+  hr();
+  L.push('## Services');
+  L.push(
+    `${site.brandName} is the short-term-rental brand of ${site.company.legalName}, a licensed Georgia real estate brokerage. Holding a Georgia real estate licence is what legally permits leasing, tenant placement, and rent collection on an owner's behalf (O.C.G.A. § 43-40-1) — so the business spans the full range of rental terms, not only nightly stays. There are ${serviceLines.length} distinct service lines.`,
+  );
+  for (const cat of serviceCategories) {
+    const lines = servicesByCategory(cat.key);
+    if (lines.length === 0) continue;
+    L.push('');
+    L.push(`### ${cat.label}`);
+    L.push(cat.blurb);
+    for (const s of lines) {
+      L.push('');
+      L.push(`#### ${s.name} — ${u(`/services/${s.slug}/`)}`);
+      L.push(s.intro);
+      if (s.forWhom.length) L.push(`Best for: ${s.forWhom.join('; ')}.`);
+      if (s.included.length) L.push(`Included: ${s.included.join('; ')}.`);
+      for (const sec of s.sections) {
+        L.push(`**${sec.heading}** ${sec.body.join(' ')}`);
+      }
+      for (const f of s.faqs) L.push(`Q: ${f.q} A: ${f.a}`);
+      for (const src of s.sources) {
+        L.push(`Source — ${src.claim} (${src.publisher}, ${src.asOf}): ${src.url}`);
+      }
+    }
+  }
   hr();
   L.push('## Pricing');
   L.push(`${site.brandName} charges a single, transparent management fee of ${site.pricing.rate} ${site.pricing.rateNote}. ${site.pricing.rateBasis} Smaller, simpler homes sit toward the ${site.pricing.rateFrom} end of the range; larger, higher-touch, or multi-property portfolios run toward ${site.pricing.rateHigh}. There is no "basic plan" that leaves out the hard parts; listing, pricing, guest care, cleaning coordination, maintenance, reviews, and reporting are all included.`);
