@@ -1,7 +1,9 @@
 // Approximate city-center coordinates + county for each market. Public
 // geographic data, used for GeoCoordinates + areaServed in structured data
 // (a strong local-SEO signal). Keyed by the city's collection slug.
-export interface CityGeo { lat: number; lng: number; county: string }
+// `county` is optional: a few markets (Lake Lanier) span several counties, and
+// naming one would be inaccurate. Consumers already read it with `?.`.
+export interface CityGeo { lat: number; lng: number; county?: string }
 
 export const cityGeo: Record<string, CityGeo> = {
   atlanta: { lat: 33.749, lng: -84.388, county: 'Fulton' },
@@ -22,7 +24,13 @@ export const cityGeo: Record<string, CityGeo> = {
   'blue-ridge': { lat: 34.8643, lng: -84.3241, county: 'Fannin' },
   helen: { lat: 34.7015, lng: -83.7251, county: 'White' },
   athens: { lat: 33.9519, lng: -83.3576, county: 'Clarke' },
-  'lake-lanier': { lat: 34.2979, lng: -83.8241, county: 'Hall' },
+  // No county on purpose. Lake Lanier is a 38,000-acre reservoir spanning Hall,
+  // Forsyth, Dawson, Gwinnett and Lumpkin — naming one contradicted the page's
+  // own copy ("crosses Hall, Forsyth, Gwinnett, and Dawson counties… no
+  // one-size-fits-all compliance answer"), and the lake's centre point is
+  // actually in Forsyth, not the Hall this used to claim. Coordinates corrected
+  // to the lake centre; the old pair was Gainesville's.
+  'lake-lanier': { lat: 34.24, lng: -83.95 },
   augusta: { lat: 33.4735, lng: -82.0105, county: 'Richmond' },
   columbus: { lat: 32.461, lng: -84.9877, county: 'Muscogee' },
 };
