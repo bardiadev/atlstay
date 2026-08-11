@@ -47,7 +47,7 @@ export const hoaServices: ServiceLine[] = [
     seoDescription:
       'HOA and community association management across metro Atlanta: assessments, covenants, vendors, and board reporting. Request a written proposal.',
     intro:
-      'Silverstone Management runs homeowner and community associations across metro Atlanta — assessment billing and collections, covenant and architectural enforcement, vendor and common-area oversight, meeting and election support, and financials a volunteer treasurer can actually reconcile. Boards do not shop for rental projections, so whatever the form on this page is labelled, what a board gets back from us is a management proposal. Send us the community name, the number of doors, and when your current contract renews, and a real person replies within one business day.',
+      'Silverstone Management runs homeowner and community associations across metro Atlanta — assessment billing and collections, covenant and architectural enforcement, vendor and common-area oversight, meeting and election support, and financials a volunteer treasurer can actually reconcile. Boards do not shop for rental projections, so this page asks the questions a board can actually answer and sends back a written management proposal. Tell us the community name, the number of doors, and when your current contract renews, and a real person replies within one business day.',
 
     forWhom: [
       'Boards of 20 to 80-door communities the national management firms treat as an afterthought — subdivisions in Suwanee, townhome courts in Smyrna, small condo buildings in Brookhaven.',

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { site } from '../../config/site';
 import { sendLead } from '../../lib/leads';
@@ -79,7 +79,9 @@ const priorities: { value: Priority; label: string; desc: string }[] = [
   { value: 'passive', label: 'Truly passive', desc: 'Hands-off — handled for me' },
   { value: 'exploring', label: 'Just exploring', desc: 'Curious what it could earn' },
 ];
-const assetTypes = ['Office', 'Retail', 'Flex or industrial', 'Mixed-use', 'Medical office', 'Other'];
+// 'Multi-family' matters: the multi-family service line uses the commercial
+// question set, and without it an owner of a fourplex has nothing to pick.
+const assetTypes = ['Multi-family', 'Office', 'Retail', 'Flex or industrial', 'Mixed-use', 'Medical office', 'Other'];
 const occupancyOpts = ['Fully leased', 'Partly leased', 'Vacant', 'Not sure'];
 const associationTypes = ['HOA', 'Condominium', 'Townhome', 'Mixed'];
 const changeReasons = [
@@ -194,6 +196,11 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
   // `?? 'short-term'` (not just a default param) so a serialized `null` prop
   // from Astro can never knock the form off its default behaviour.
   const kind: ProjectionFormVariant = variant ?? 'short-term';
+  // Service pages render this island up to three times (hero + two bands), so
+  // fixed element ids would collide and a <label> click would focus the FIRST
+  // form's input instead of its own. useId() gives each instance its own prefix.
+  const uid = useId();
+  const fid = (name: string) => `${uid}-${name}`;
   const copy = COPY[kind] ?? COPY['short-term'];
   const [step, setStep] = useState(1);
   const [data, setData] = useState<FormData>(initial);
@@ -382,7 +389,7 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
         ) : kind === 'commercial' ? (
           <p className="mx-auto mt-3 max-w-md text-ink/75">
             Thanks, {data.firstName || 'there'} — we’re pulling real comparable data for your
-            {' '}{data.assetType ? data.assetType.toLowerCase() : 'property'} and will send your custom projection within
+            {' '}{data.assetType && data.assetType !== 'Other' ? `${data.assetType.toLowerCase()} property` : 'property'} and will send your custom projection within
             {' '}<strong className="text-forest">one business day</strong>.
           </p>
         ) : (
@@ -453,20 +460,20 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
             <>
               {/* Square footage leads here — it drives the numbers more than anything else on this step. */}
               <div>
-                <label htmlFor="sqft" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor={fid('sqft')} className="mb-2 block text-sm font-medium text-forest">
                   Approximate square footage <span className="font-normal text-stone">(optional)</span>
                 </label>
-                <input id="sqft" type="number" inputMode="numeric" className={inputCls} placeholder="e.g. 12,000"
+                <input id={fid('sqft')} type="number" inputMode="numeric" className={inputCls} placeholder="e.g. 12,000"
                   value={data.sqft} onChange={(e) => set({ sqft: e.target.value })}
                   onKeyDown={(e) => e.key === 'Enter' && next()} />
                 <p className="mt-1.5 text-xs text-stone">Rentable square feet, near enough — it’s the biggest single driver of the number we come back with.</p>
               </div>
               <Pills label="Asset type" options={assetTypes} value={data.assetType} onSelect={(v) => set({ assetType: v })} />
               <div>
-                <label htmlFor="unitCount" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor={fid('unitCount')} className="mb-2 block text-sm font-medium text-forest">
                   Number of units or suites <span className="font-normal text-stone">(optional)</span>
                 </label>
-                <input id="unitCount" type="number" inputMode="numeric" className={inputCls} placeholder="e.g. 8"
+                <input id={fid('unitCount')} type="number" inputMode="numeric" className={inputCls} placeholder="e.g. 8"
                   value={data.unitCount} onChange={(e) => set({ unitCount: e.target.value })}
                   onKeyDown={(e) => e.key === 'Enter' && next()} />
               </div>
@@ -474,8 +481,8 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
           ) : kind === 'hoa' ? (
             <>
               <div>
-                <label htmlFor="doors" className="mb-2 block text-sm font-medium text-forest">How many doors?</label>
-                <input id="doors" type="number" inputMode="numeric" className={inputCls} placeholder="e.g. 180"
+                <label htmlFor={fid('doors')} className="mb-2 block text-sm font-medium text-forest">How many doors?</label>
+                <input id={fid('doors')} type="number" inputMode="numeric" className={inputCls} placeholder="e.g. 180"
                   value={data.doors} onChange={(e) => set({ doors: e.target.value })}
                   onKeyDown={(e) => e.key === 'Enter' && next()} />
                 <p className="mt-1.5 text-xs text-stone">Units in the association — homes, condos, or townhomes.</p>
@@ -506,10 +513,10 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
                 </div>
               </div>
               <div>
-                <label htmlFor="sqft" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor={fid('sqft')} className="mb-2 block text-sm font-medium text-forest">
                   Square footage <span className="font-normal text-stone">(optional)</span>
                 </label>
-                <input id="sqft" type="number" inputMode="numeric" className={inputCls} placeholder="e.g. 1,800"
+                <input id={fid('sqft')} type="number" inputMode="numeric" className={inputCls} placeholder="e.g. 1,800"
                   value={data.sqft} onChange={(e) => set({ sqft: e.target.value })} />
               </div>
             </>
@@ -537,10 +544,10 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
               />
               {data.currentlyManaged === 'yes' && (
                 <div>
-                  <label htmlFor="contractEnd" className="mb-2 block text-sm font-medium text-forest">
+                  <label htmlFor={fid('contractEnd')} className="mb-2 block text-sm font-medium text-forest">
                     When does the current contract end? <span className="font-normal text-stone">(optional)</span>
                   </label>
-                  <input id="contractEnd" type="text" autoComplete="off" className={inputCls} placeholder="e.g. December, or month-to-month"
+                  <input id={fid('contractEnd')} type="text" autoComplete="off" className={inputCls} placeholder="e.g. December, or month-to-month"
                     value={data.contractEnd} onChange={(e) => set({ contractEnd: e.target.value })}
                     onKeyDown={(e) => e.key === 'Enter' && next()} />
                 </div>
@@ -551,18 +558,18 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
             <>
               <YesNo label="Is there a tenant in place right now?" value={data.tenantInPlace} onSelect={(v) => set({ tenantInPlace: v })} />
               <div>
-                <label htmlFor="currentRent" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor={fid('currentRent')} className="mb-2 block text-sm font-medium text-forest">
                   What’s it renting for today? <span className="font-normal text-stone">(optional)</span>
                 </label>
-                <input id="currentRent" type="text" autoComplete="off" className={inputCls} placeholder="e.g. $2,400/mo"
+                <input id={fid('currentRent')} type="text" autoComplete="off" className={inputCls} placeholder="e.g. $2,400/mo"
                   value={data.currentRent} onChange={(e) => set({ currentRent: e.target.value })}
                   onKeyDown={(e) => e.key === 'Enter' && next()} />
               </div>
               <div>
-                <label htmlFor="availableFrom" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor={fid('availableFrom')} className="mb-2 block text-sm font-medium text-forest">
                   When is it available? <span className="font-normal text-stone">(optional)</span>
                 </label>
-                <input id="availableFrom" type="text" autoComplete="off" className={inputCls} placeholder="e.g. Now, or March"
+                <input id={fid('availableFrom')} type="text" autoComplete="off" className={inputCls} placeholder="e.g. Now, or March"
                   value={data.availableFrom} onChange={(e) => set({ availableFrom: e.target.value })}
                   onKeyDown={(e) => e.key === 'Enter' && next()} />
               </div>
@@ -598,10 +605,10 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="listingUrl" className="mb-2 block text-sm font-medium text-forest">
+                    <label htmlFor={fid('listingUrl')} className="mb-2 block text-sm font-medium text-forest">
                       Listing link(s) <span className="font-normal text-stone">(optional)</span>
                     </label>
-                    <textarea id="listingUrl" ref={listingRef} rows={1} autoComplete="off"
+                    <textarea id={fid('listingUrl')} ref={listingRef} rows={1} autoComplete="off"
                       className={`${inputCls} resize-none overflow-hidden`}
                       placeholder="Paste a link — Airbnb, Vrbo, or Booking.com"
                       value={data.listingUrl} onChange={(e) => set({ listingUrl: e.target.value })} />
@@ -640,20 +647,20 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
             {copy.step4Heading}
           </h2>
           <div>
-            <label htmlFor="firstName" className="mb-2 block text-sm font-medium text-forest">First name</label>
-            <input id="firstName" type="text" autoComplete="given-name" className={inputCls} placeholder="Jordan"
+            <label htmlFor={fid('firstName')} className="mb-2 block text-sm font-medium text-forest">First name</label>
+            <input id={fid('firstName')} type="text" autoComplete="given-name" className={inputCls} placeholder="Jordan"
               value={data.firstName} onChange={(e) => set({ firstName: e.target.value })} />
           </div>
           <div>
-            <label htmlFor="email" className="mb-2 block text-sm font-medium text-forest">Email</label>
-            <input id="email" type="email" autoComplete="email" className={inputCls} placeholder="you@email.com"
+            <label htmlFor={fid('email')} className="mb-2 block text-sm font-medium text-forest">Email</label>
+            <input id={fid('email')} type="email" autoComplete="email" className={inputCls} placeholder="you@email.com"
               value={data.email} onChange={(e) => set({ email: e.target.value })} />
           </div>
           <div>
-            <label htmlFor="phone" className="mb-2 block text-sm font-medium text-forest">
+            <label htmlFor={fid('phone')} className="mb-2 block text-sm font-medium text-forest">
               Phone <span className="font-normal text-stone">(optional — lets us deliver it faster)</span>
             </label>
-            <input id="phone" type="tel" autoComplete="tel" className={inputCls} placeholder="(404) 555-0123"
+            <input id={fid('phone')} type="tel" autoComplete="tel" className={inputCls} placeholder="(404) 555-0123"
               value={data.phone} onChange={(e) => set({ phone: e.target.value })} />
           </div>
           {/* Honeypot */}
