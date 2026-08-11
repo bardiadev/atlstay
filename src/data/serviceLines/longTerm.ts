@@ -91,6 +91,15 @@ export const longTermServices: ServiceLine[] = [
         ],
       },
       {
+        heading: "Out-of-State Owners and Georgia's 2025 Broker Requirement",
+        body: [
+          'If you own the property from another state, one 2025 change is worth knowing about. House Bill 399 created O.C.G.A. § 44-7-25, which says that a landlord who is not a resident of Georgia and who owns or operates single-family or duplex residential rental property here shall employ a broker licensed under Chapter 40 of Title 43. There is no unit threshold anywhere in the section — it turns on where the landlord lives, not on how many doors they own.',
+          'The section does two things. Subsection (a) states the requirement, and lets the broker sit outside Georgia only if that broker employs at least one person located in this state who is responsible for receiving, coordinating, managing, and responding to tenant communications about maintenance and other issues. Subsection (b) switches off two of the self-management exemptions in § 43-40-29(a) — paragraphs (7) and (8) — for these owners, which is the route many out-of-state owners previously used to run a property themselves.',
+          'It is worth being equally precise about what the statute does not say. It contains no penalty clause of its own. It does not define residency for an LLC or trust that holds title. It does not prescribe a form of agreement or any filing with the state. The consequences that do exist come from the surrounding license law: § 43-40-30 makes acting in the capacity of a licensee without a license unlawful, and § 43-40-24(a) bars an unlicensed person from suing in Georgia courts to collect compensation for acts covered by that chapter — a bar pointed at an unlicensed manager chasing a fee, not at a landlord collecting rent.',
+          'For most owners in this position the practical answer is an ordinary one: a written management agreement with a Georgia-licensed brokerage, and a real local operation answering the phone. That is what this service is, and we work through a licensed Georgia brokerage. We are not attorneys and none of this is legal advice — if your property is held in an entity, or you are unsure whether the section describes you at all, that is a question for a Georgia attorney. Our resource guide on the requirement walks through the text section by section, including the parts we could not verify.',
+        ],
+      },
+      {
         heading: 'Rent, Delinquency, and Evictions — Done the Legal Way',
         body: [
           'Rent is due on the 1st. Our workflow starts before it is late: automated reminders, online payment, and a dated late-notice sequence that begins the day the grace period ends. Most delinquencies resolve inside the first week, for the unglamorous reason that somebody actually followed up.',
@@ -154,6 +163,14 @@ export const longTermServices: ServiceLine[] = [
         a: 'Not necessarily — plenty of single-property owners self-manage well, particularly if they live nearby, have a reliable handyman, and enjoy the work. It stops making sense when any of three things are true: you live out of the area, the property is your largest asset and you are managing it casually, or you have already had a tenant issue you did not know how to handle. One badly documented deposit dispute or one botched eviction filing generally costs more than a year of management.',
       },
       {
+        q: 'I live outside Georgia. Does the state require me to use a licensed broker?',
+        a: 'For a specific group of owners, yes. O.C.G.A. § 44-7-25(a), created by House Bill 399 in 2025, says a landlord who is not a Georgia resident and who owns or operates single-family or duplex residential rental property in the state shall employ a broker licensed under Chapter 40 of Title 43. There is no unit threshold, so one rental house is described the same way as twenty. The section does not define what residency means for an LLC or trust that holds title, which is the most common open question and one for a Georgia attorney rather than a manager. This is general information, not legal advice.',
+      },
+      {
+        q: 'Can my property manager be based outside Georgia?',
+        a: 'The statute allows it, with a condition attached. Section 44-7-25(a) says the broker may or may not reside in Georgia, but if the broker does not, the broker shall employ at least one person located in this state responsible for receiving, coordinating, managing, and responding to tenant communications about maintenance and other issues. Two details get misreported: the enrolled text puts that duty on the broker rather than the owner, and it requires a person located here without saying that person must personally hold a license. Either way, it is a fair question to ask any out-of-state manager — who is your Georgia person, and what hours do they actually cover?',
+      },
+      {
         q: 'Can I switch my property from short-term rental to a long-term lease?',
         a: 'Yes, and it is one of the more common conversions we handle — usually after an HOA covenant change, a local ordinance change, or simple operator fatigue. The mechanics differ: furniture comes out or gets sold, the listing strategy changes completely, the pricing model shifts from nightly to a twelve-month band, and the compliance layer around deposits and inspections switches on. We will model both paths honestly for your specific property, including the cases where staying short-term is the better call.',
       },
@@ -202,6 +219,34 @@ export const longTermServices: ServiceLine[] = [
         url: 'https://codes.findlaw.com/ga/title-43-professions-and-businesses/ga-code-sect-43-40-1.html',
         asOf: 'Retrieved August 2026',
       },
+      {
+        claim:
+          'O.C.G.A. § 44-7-25(a), created by HB 399 (2025), requires a landlord who is not a resident of Georgia and who owns or operates single-family or duplex residential rental properties in the state to employ a broker licensed under Chapter 40 of Title 43. If the broker does not reside in Georgia, the broker must employ at least one person located within the state responsible for receiving, coordinating, managing, and responding to tenant communications about maintenance and other issues.',
+        publisher: 'Office of the Governor of Georgia — signed text of House Bill 399 (2025)',
+        url: 'https://gov.georgia.gov/document/2025-signed-legislation/hb-399/download',
+        asOf: 'Enrolled text read August 2026',
+      },
+      {
+        claim:
+          'O.C.G.A. § 44-7-25(b) provides that the exemptions in paragraphs (7) and (8) of § 43-40-29(a) do not apply to non-resident landlords of single-family or duplex Georgia rental property. The section as enacted contains no penalty clause of its own.',
+        publisher: 'Office of the Governor of Georgia — signed text of House Bill 399 (2025)',
+        url: 'https://gov.georgia.gov/document/2025-signed-legislation/hb-399/download',
+        asOf: 'Enrolled text read August 2026',
+      },
+      {
+        claim:
+          'HB 399 contains no effective-date section, and under O.C.G.A. § 1-3-4(a)(1) an Act approved on or after January 1 and before July 1 of a calendar year becomes effective on July 1 of that year. Legislative trackers record the signature as May 14, 2025 and the effective date as July 1, 2025; we could not confirm the signature date on a Georgia state government page.',
+        publisher: 'Official Code of Georgia Annotated § 1-3-4 (via FindLaw); BillTrack50 bill history for GA HB 399',
+        url: 'https://codes.findlaw.com/ga/title-1-general-provisions/ga-code-sect-1-3-4/',
+        asOf: 'Retrieved August 2026',
+      },
+      {
+        claim:
+          'O.C.G.A. § 43-40-24(a) bars any person from bringing or maintaining an action in Georgia courts to collect compensation for the performance of acts covered by the real estate license chapter without alleging and proving they were a licensed broker when the cause of action arose.',
+        publisher: 'Official Code of Georgia Annotated § 43-40-24 (via FindLaw)',
+        url: 'https://codes.findlaw.com/ga/title-43-professions-and-businesses/ga-code-sect-43-40-24/',
+        asOf: 'Retrieved August 2026',
+      },
     ],
 
     marketCities: [
@@ -214,6 +259,7 @@ export const longTermServices: ServiceLine[] = [
       'jonesboro', 'morrow', 'stockbridge', 'mcdonough',
     ],
     relatedResources: [
+      'georgia-out-of-state-landlord-broker-requirement',
       'airbnb-vs-long-term-rental-atlanta',
       'short-term-rental-exit-strategy',
       'is-airbnb-profitable-in-atlanta',
@@ -358,6 +404,10 @@ export const longTermServices: ServiceLine[] = [
         a: 'Ask us this directly and we will put the answer in the written agreement before you sign — any placement guarantee, its length, and exactly what it covers. We would rather define it precisely up front than have you rely on a promise made on a phone call. Be equally direct with every other company you are comparing, and get their answer in writing too.',
       },
       {
+        q: 'I live out of state — can I use placement only and manage it myself?',
+        a: 'Read one Georgia statute before you decide. O.C.G.A. § 44-7-25, created by House Bill 399 in 2025, says a landlord who is not a Georgia resident and who owns or operates single-family or duplex residential rental property here shall employ a broker licensed under Chapter 40 of Title 43 — and it switches off two of the self-management exemptions in § 43-40-29(a) for those owners. Placement-only ends with us handing the tenancy back to you, so whether that arrangement fits a non-resident owner is genuinely fact specific, including how residency is determined when an LLC or trust holds title, which the statute does not define. Ask a Georgia attorney before settling on placement-only. If the answer points toward ongoing management instead, that is a service we also run.',
+      },
+      {
         q: 'Can I switch to full management later?',
         a: 'Easily. The property is already documented, the lease is already one of ours, the screening file is on record, and we know the tenant — so there is none of the usual mid-tenancy handover mess. Plenty of owners start with placement, discover that maintenance calls are less charming than expected, and move to full management at the first renewal.',
       },
@@ -388,6 +438,13 @@ export const longTermServices: ServiceLine[] = [
         url: 'https://codes.findlaw.com/ga/title-44-property/ga-code-sect-44-7-36.html',
         asOf: 'Retrieved August 2026',
       },
+      {
+        claim:
+          'O.C.G.A. § 44-7-25, created by HB 399 (2025), requires a landlord who is not a resident of Georgia and who owns or operates single-family or duplex residential rental properties in the state to employ a broker licensed under Chapter 40 of Title 43, and provides that the exemptions in paragraphs (7) and (8) of § 43-40-29(a) do not apply to those landlords.',
+        publisher: 'Office of the Governor of Georgia — signed text of House Bill 399 (2025)',
+        url: 'https://gov.georgia.gov/document/2025-signed-legislation/hb-399/download',
+        asOf: 'Enrolled text read August 2026',
+      },
     ],
 
     marketCities: [
@@ -399,6 +456,7 @@ export const longTermServices: ServiceLine[] = [
       'newnan',
     ],
     relatedResources: [
+      'georgia-out-of-state-landlord-broker-requirement',
       'airbnb-vs-long-term-rental-atlanta',
       'short-term-rental-exit-strategy',
     ],
