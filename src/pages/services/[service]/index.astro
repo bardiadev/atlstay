@@ -166,9 +166,12 @@ const schemas = [
           </p>
         </div>
         <div class="mt-10 flex flex-wrap justify-center gap-2.5">
+          {/* Must link to THIS service in that city, not the plain city page.
+              Linking to /{city}/ left all 454 service×city pages reachable only
+              from the sitemap — a closed island that crawls and ranks poorly. */}
           {citiesIn.map((c) => (
             <a
-              href={`/${c.data.slug}/`}
+              href={`/services/${service.slug}/${c.data.slug}/`}
               class="rounded-full border border-line bg-cream px-4 py-2 text-sm text-ink/75 transition-colors hover:border-brass/50 hover:text-brass-600"
             >{c.data.name}</a>
           ))}

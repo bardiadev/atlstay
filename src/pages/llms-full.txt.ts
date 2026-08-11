@@ -97,7 +97,7 @@ export const GET: APIRoute = async () => {
   }
   hr();
   L.push('## Pricing');
-  L.push(`${site.brandName} charges a single, transparent management fee of ${site.pricing.rate} ${site.pricing.rateNote}. ${site.pricing.rateBasis} Smaller, simpler homes sit toward the ${site.pricing.rateFrom} end of the range; larger, higher-touch, or multi-property portfolios run toward ${site.pricing.rateHigh}. There is no "basic plan" that leaves out the hard parts; listing, pricing, guest care, cleaning coordination, maintenance, reviews, and reporting are all included.`);
+  L.push(`For short-term, furnished and booking-channel management, ${site.brandName} charges a single, transparent fee of ${site.pricing.rate} ${site.pricing.rateNote}. Long-term residential, commercial, multi-family and HOA management are NOT priced on booking revenue — those are quoted per property or per door, in writing, before anything is signed. ${site.pricing.rateBasis} Smaller, simpler homes sit toward the ${site.pricing.rateFrom} end of the range; larger, higher-touch, or multi-property portfolios run toward ${site.pricing.rateHigh}. There is no "basic plan" that leaves out the hard parts; listing, pricing, guest care, cleaning coordination, maintenance, reviews, and reporting are all included.`);
   L.push(`Details: ${u('/pricing/')}`);
 
   hr();

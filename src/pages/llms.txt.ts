@@ -28,12 +28,12 @@ export const GET: APIRoute = async () => {
   L.push(`# ${site.brandName}`);
   L.push('');
   L.push(
-    `> ${site.description} ${site.scale.ratingPhrase}; ${site.stats.homes} homes managed over ${site.stats.years} years. Transparent all-inclusive pricing at ${site.pricing.rate} of booking revenue — no hidden fees.`,
+    `> ${site.description} ${site.scale.ratingPhrase}; ${site.stats.homes} homes managed over ${site.stats.years} years. Short-term and furnished management is priced at ${site.pricing.rate} of booking revenue, all-inclusive; long-term, commercial and HOA management is quoted per property or per door. No hidden fees either way.`,
   );
   L.push('');
   L.push('## Core pages');
   L.push(`- [All management services](${u('/services/')}): Every service line — short-term, long-term, mid-term/furnished, commercial, multi-family, and booking-channel management.`);
-  L.push(`- [Pricing](${u('/pricing/')}): One transparent, all-inclusive management fee of ${site.pricing.rate} of booking revenue — no hidden charges, no long-term contract.`);
+  L.push(`- [Pricing](${u('/pricing/')}): One transparent, all-inclusive fee — ${site.pricing.rate} of booking revenue for short-term and furnished management, quoted per property or per door for long-term, commercial and HOA. No hidden charges, no long-term contract.`);
   L.push(`- [Dynamic pricing](${u('/dynamic-pricing/')}): Daily, demand-driven rate optimization around Atlanta conventions, concerts, and sports — the most overlooked driver of STR revenue.`);
   L.push(`- [Free rental projection](${u('/rental-projection/')}): Request a custom, comps-based estimate of what your home could earn, delivered by a local expert within one business day.`);
   L.push(`- [How it works](${u('/how-it-works/')}): The owner journey from projection to onboarding to monthly payouts.`);
@@ -87,7 +87,7 @@ export const GET: APIRoute = async () => {
   }
   L.push('');
   L.push('## Special');
-  L.push(`- [FIFA World Cup 2026 hosting in Atlanta](${u('/world-cup-2026-atlanta/')}): Capturing the biggest demand surge Atlanta has seen — hosting for owners during the 2026 World Cup.`);
+  L.push(`- [Atlanta big-event hosting: the World Cup playbook](${u('/world-cup-2026-atlanta/')}): What hosting the 2026 FIFA World Cup taught us about pricing an Atlanta home for a major event, and how it applies to the dates still ahead.`);
   L.push('');
   L.push('## Notes');
   L.push(`- ${site.brandName} manages other owners' short-term rentals full-service for a fee; we also operate select properties directly.`);

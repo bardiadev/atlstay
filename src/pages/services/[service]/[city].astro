@@ -25,6 +25,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { serviceLines, findService, feeLine, formVariantFor } from '@/data/serviceLines';
+import { counties } from '@/data/counties';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
@@ -56,7 +57,15 @@ const related = service.relatedServices
   .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
 // Sibling cities for this service — real internal linking, not a tag cloud.
-const siblingSlugs = service.marketCities.filter((s) => s !== d.slug).slice(0, 12);
+// ROTATE the window by this city's own index instead of always slicing the
+// first 12: a fixed slice meant only the first 13 cities in each marketCities
+// array could ever receive a sibling link, leaving 44 pages with zero inbound
+// links sitewide. Rotating guarantees every city is linked from somewhere.
+const cityIdx = Math.max(0, service.marketCities.indexOf(d.slug));
+const others = service.marketCities.filter((s) => s !== d.slug);
+const siblingSlugs = others.length <= 12
+  ? others
+  : Array.from({ length: 12 }, (_, i) => others[(cityIdx + i) % others.length]);
 
 const heroKey = (d.heroImage && d.heroImage in images
   ? d.heroImage
@@ -73,8 +82,52 @@ const formVariant = formVariantFor(service);
 // City names beginning with a vowel sound ("an Alpharetta community").
 const article = /^[aeiou]/i.test(d.name) ? 'an' : 'a';
 
+// City FAQs were authored for short-term rentals, and 65 of the 100 city files
+// quote the STR fee ("10-15% of booking revenue"). Long-term, commercial and
+// HOA work is priced per property or per door — so on those pages that FAQ is a
+// FALSE PRICE, and it was being emitted into FAQPage structured data as well.
+// Drop any city FAQ quoting a revenue-share fee unless the service is actually
+// priced that way. Same category split as feeLine().
+const revenueShare = ['short-term', 'mid-term', 'platform'].includes(service.category);
+const quotesRevenueShare = (s: string) =>
+  /booking revenue|%\s*of\s*(the\s*)?(booking\s*)?revenue|\d+\s*[–—-]\s*\d+\s*%/i.test(s);
+const cityFaqs = revenueShare
+  ? [...d.faqs]
+  : d.faqs.filter((f) => !quotesRevenueShare(f.a) && !quotesRevenueShare(f.q));
+
 const heading = `${service.name} in ${d.name}, ${d.state}`;
-const seoTitle = `${service.name} in ${d.name}, ${d.state}`.slice(0, 60);
+
+// Titles: a hard .slice(0, 60) chopped 35 pages mid-word ("…Management in Alph").
+// Fall back to the service's SHORT name before truncating, and if it still
+// doesn't fit, cut on a word boundary so the title always reads as words.
+// The city is always kept — it's what makes the title distinct from the hub's
+// (4 hubs are already Atlanta-scoped, so an unqualified title collided).
+// Explicit compact labels for the service names too long to fit a city after
+// them. Derived shortening isn't enough — "Direct Booking & Multi-Channel
+// Distribution" has no "Management" suffix to strip, and cutting the string
+// blind ate the city name ("…in Sandy"), which is the one part that must
+// survive: it's what distinguishes this title from the hub's.
+const SHORT_LABEL: Record<string, string> = {
+  'direct-booking': 'Direct Booking Management',
+  'marriott-homes-villas': 'Marriott Homes & Villas',
+  'hoa-management': 'HOA Management',
+  'multi-family-property-management': 'Multi-Family Management',
+  'commercial-property-management': 'Commercial Management',
+  'corporate-housing-management': 'Corporate Housing',
+  'mid-term-rental-management': 'Mid-Term Rental Management',
+  'long-term-rental-management': 'Long-Term Rental Management',
+  'film-production-housing': 'Film & Production Housing',
+};
+const place = `${d.name}, ${d.state}`;
+const titleCandidates = [
+  `${service.name} in ${place}`,
+  `${SHORT_LABEL[service.slug] ?? service.name} in ${place}`,
+  `${(SHORT_LABEL[service.slug] ?? service.name).replace(/ Management$/i, '')} in ${place}`,
+];
+// Last resort still keeps the whole city — it trims the service label, not the place.
+const seoTitle =
+  titleCandidates.find((t) => t.length <= 60) ??
+  `${(SHORT_LABEL[service.slug] ?? service.name).slice(0, Math.max(8, 57 - place.length)).replace(/\s+\S*$/, '')} in ${place}`;
 // Deliberately says "local team", not "licensed team". The group operates
 // through more than one entity and the licensing posture differs by service
 // line, so a blanket licensing claim in a sitewide-templated meta description
@@ -88,7 +141,14 @@ const seoDescription = boardAudience
   ? `${service.name} in ${d.name}, ${d.state} from a local Atlanta team. Request a written management proposal for your community.`
   : `${service.name} in ${d.name}, ${d.state} from a local Atlanta team. Get a free projection for your property.`;
 
-const countyPath = d.county ? `/counties/${d.county.toLowerCase().replace(/\s+/g, '-')}/` : null;
+// Only link a county that actually has a page — the cities collection names
+// counties we don't publish (Pickens, Lumpkin, Gilmer, Hall…), and linking them
+// blind produced internal 404s. The county sentence still renders either way.
+const countySlug = d.county ? d.county.toLowerCase().replace(/\s+/g, '-') : null;
+const countyPath =
+  countySlug && counties.some((c) => c.slug === countySlug && c.published)
+    ? `/counties/${countySlug}/`
+    : null;
 
 const breadcrumbs = [
   { name: 'Home', path: '/' },
@@ -232,14 +292,14 @@ const schemas = [
   )}
 
   <!-- The city's own FAQs — unique per city -->
-  {d.faqs.length > 0 && (
+  {cityFaqs.length > 0 && (
     <Section variant="cream">
       <Container size="narrow">
         <Eyebrow>{d.name} questions</Eyebrow>
         <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
           Owning and renting in {d.name}
         </h2>
-        <div class="mt-8"><FAQ items={[...d.faqs]} /></div>
+        <div class="mt-8"><FAQ items={cityFaqs} /></div>
       </Container>
     </Section>
   )}
@@ -251,13 +311,23 @@ const schemas = [
         <div>
           <h2 class="font-display text-2xl text-forest">Other services in {d.name}</h2>
           <ul class="mt-5 space-y-2.5">
-            {related.map((r) => (
-              <li>
-                <a href={`/services/${r.slug}/${d.slug}/`} class="text-sm text-ink/75 underline-offset-4 transition-colors hover:text-brass-600 hover:underline">
-                  {r.name} in {d.name}
-                </a>
-              </li>
-            ))}
+            {/* Only link the city-level page when that service actually covers
+                this city — otherwise fall back to its hub. Linking blind
+                produced 352 internal 404s, because a related service's
+                marketCities list rarely matches this one's. */}
+            {related.map((r) => {
+              const hasCity = r.marketCities.includes(d.slug);
+              return (
+                <li>
+                  <a
+                    href={hasCity ? `/services/${r.slug}/${d.slug}/` : `/services/${r.slug}/`}
+                    class="text-sm text-ink/75 underline-offset-4 transition-colors hover:text-brass-600 hover:underline"
+                  >
+                    {hasCity ? `${r.name} in ${d.name}` : r.name}
+                  </a>
+                </li>
+              );
+            })}
             <li>
               <a href={`/${d.slug}/`} class="text-sm text-ink/75 underline-offset-4 transition-colors hover:text-brass-600 hover:underline">
                 Short-term rental management in {d.name}

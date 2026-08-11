@@ -32,6 +32,7 @@ export const footerNav: { heading: string; links: { label: string; href: string 
       { label: 'Atlanta Airbnb management', href: '/atlanta-airbnb-management/' },
       { label: 'Short-term rental management', href: '/short-term-rental-management-atlanta/' },
       { label: 'Vrbo management', href: '/services/vrbo-management/' },
+      { label: 'Marriott Homes & Villas', href: '/services/marriott-homes-villas/' },
       { label: 'Direct booking & channels', href: '/services/direct-booking/' },
       { label: 'Dynamic pricing & revenue', href: '/dynamic-pricing/' },
       { label: 'By property type', href: '/manage/' },
@@ -45,6 +46,7 @@ export const footerNav: { heading: string; links: { label: string; href: string 
       { label: 'Tenant placement & leasing', href: '/services/tenant-placement/' },
       { label: 'Commercial property management', href: '/services/commercial-property-management/' },
       { label: 'Multi-family management', href: '/services/multi-family-property-management/' },
+      { label: 'HOA & community associations', href: '/services/hoa-management/' },
       { label: 'Investor & realtor services', href: '/services/investor-services/' },
     ],
   },
@@ -56,6 +58,7 @@ export const footerNav: { heading: string; links: { label: string; href: string 
       { label: 'Travel nurse housing', href: '/services/travel-nurse-housing/' },
       { label: 'Insurance & displacement', href: '/services/insurance-housing/' },
       { label: 'Film & production housing', href: '/services/film-production-housing/' },
+      { label: 'Student & university housing', href: '/services/student-housing/' },
     ],
   },
   {
