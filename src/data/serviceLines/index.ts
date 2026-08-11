@@ -3,6 +3,7 @@ import type { ServiceLine, ServiceCategory } from './types';
 import { longTermServices } from './longTerm';
 import { midTermServices } from './midTerm';
 import { platformServices } from './platform';
+import { hoaServices } from './hoa';
 
 export type { ServiceLine, ServiceCategory, ServiceFaq, ServiceSection, ServiceSource } from './types';
 
@@ -10,6 +11,7 @@ export const serviceLines: ServiceLine[] = [
   ...longTermServices,
   ...midTermServices,
   ...platformServices,
+  ...hoaServices,
 ].filter((s) => s.published);
 
 /** Display order + copy for the category groupings on the /services/ hub. */
