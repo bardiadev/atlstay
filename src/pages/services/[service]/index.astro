@@ -13,7 +13,7 @@ import CheckList from '@/components/ui/CheckList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
-import { serviceLines, findService } from '@/data/serviceLines';
+import { serviceLines, findService, feeLine, formBandHeading } from '@/data/serviceLines';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
@@ -106,8 +106,8 @@ const schemas = [
         <ServiceFormBand
           variant="tint"
           eyebrow="Free projection · about a minute"
-          heading={`What would your property earn with ${service.name.toLowerCase()}?`}
-          text="Tell us about the property and we’ll build a free, comps-based projection for it — written by a real person on our team, back to you within one business day."
+          heading={formBandHeading(service)}
+          text="Tell us about the property and we’ll come back with real numbers and a plan for it — written by a person on our team, within one business day."
         />
       )}
     </Fragment>
@@ -121,10 +121,7 @@ const schemas = [
         <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
           One rate. The whole service.
         </h2>
-        <p class="mt-4 text-cream/75">
-          {site.pricing.rate} {site.pricing.rateNote} — quoted for your property, in writing, before
-          you sign anything.
-        </p>
+        <p class="mt-4 text-cream/75">{feeLine(service.category)}</p>
       </div>
       <div class="mx-auto mt-10 max-w-3xl">
         <ul class="grid gap-x-8 gap-y-3 sm:grid-cols-2">

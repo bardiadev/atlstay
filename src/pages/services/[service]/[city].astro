@@ -24,7 +24,7 @@ import CheckList from '@/components/ui/CheckList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
-import { serviceLines, findService } from '@/data/serviceLines';
+import { serviceLines, findService, feeLine } from '@/data/serviceLines';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
@@ -63,6 +63,12 @@ const heroKey = (d.heroImage && d.heroImage in images
   : service.heroImageKey && service.heroImageKey in images
     ? service.heroImageKey
     : 'georgiaCity') as ImageKey;
+
+// HOA/community pages are read by a board, not a single property owner — the
+// lead-capture copy has to match that or it reads as a mismatched template.
+const boardAudience = service.slug === 'hoa-management';
+// City names beginning with a vowel sound ("an Alpharetta community").
+const article = /^[aeiou]/i.test(d.name) ? 'an' : 'a';
 
 const heading = `${service.name} in ${d.name}, ${d.state}`;
 const seoTitle = `${service.name} in ${d.name}, ${d.state}`.slice(0, 60);
@@ -155,9 +161,17 @@ const schemas = [
 
   <ServiceFormBand
     variant="tint"
-    eyebrow={`Free projection · ${d.name}`}
-    heading={`What could your ${d.name} property earn?`}
-    text={`Send us the address and we’ll build a free, comps-based projection using real ${d.name} data — from a person on our team, back to you within one business day.`}
+    eyebrow={boardAudience ? `Proposal request · ${d.name}` : `Free projection · ${d.name}`}
+    heading={
+      boardAudience
+        ? `Managing ${article} ${d.name} community?`
+        : `What could your ${d.name} property earn?`
+    }
+    text={
+      boardAudience
+        ? `Send us the community's details and we'll come back with a written management proposal built around ${d.name} — no obligation, and no pressure on your board.`
+        : `Send us the address and we'll come back with real numbers for it, using actual ${d.name} data — from a person on our team, within one business day.`
+    }
   />
 
   <!-- What's included -->
@@ -166,9 +180,7 @@ const schemas = [
       <div class="mx-auto max-w-3xl text-center">
         <Eyebrow class="text-brass">Included in {d.name}</Eyebrow>
         <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">One rate. The whole service.</h2>
-        <p class="mt-4 text-cream/75">
-          {site.pricing.rate} {site.pricing.rateNote} — quoted for your property before you sign.
-        </p>
+        <p class="mt-4 text-cream/75">{feeLine(service.category)}</p>
       </div>
       <div class="mx-auto mt-10 max-w-3xl">
         <ul class="grid gap-x-8 gap-y-3 sm:grid-cols-2">

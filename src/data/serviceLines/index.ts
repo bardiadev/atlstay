@@ -1,5 +1,6 @@
 // Barrel for the service-line axis. Import `serviceLines` everywhere.
 import type { ServiceLine, ServiceCategory } from './types';
+import { site } from '../../config/site';
 import { longTermServices } from './longTerm';
 import { midTermServices } from './midTerm';
 import { platformServices } from './platform';
@@ -53,4 +54,33 @@ export function servicesByCategory(cat: ServiceCategory): ServiceLine[] {
 
 export function findService(slug: string): ServiceLine | undefined {
   return serviceLines.find((s) => s.slug === slug);
+}
+
+/**
+ * How the fee is described on a service page.
+ *
+ * `site.pricing.rate` is the SHORT-TERM rate — a percentage of *booking
+ * revenue*. That is simply untrue for long-term, commercial and HOA work,
+ * which are priced per property or per door, per month. Printing the booking
+ * -revenue rate on those pages would publish a wrong business fact, so the
+ * copy is chosen by category and only ever states a number where it applies.
+ */
+export function feeLine(category: ServiceCategory): string {
+  switch (category) {
+    case 'short-term':
+    case 'platform':
+    case 'mid-term':
+      return `${site.pricing.rate} ${site.pricing.rateNote} — quoted for your property, in writing, before you sign anything.`;
+    case 'commercial':
+    case 'long-term':
+    default:
+      return 'One management fee, quoted for your property in writing before you sign anything — no onboarding charge, no markup on maintenance, and no surprise line items.';
+  }
+}
+
+/** Heading for the mid-page lead-capture band, phrased for the audience. */
+export function formBandHeading(s: ServiceLine): string {
+  if (s.slug === 'hoa-management') return 'What would it take to manage your community properly?';
+  if (s.category === 'commercial') return `What would ${s.name} look like for your asset?`;
+  return `What could your property earn with ${s.name}?`;
 }
