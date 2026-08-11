@@ -3,6 +3,9 @@ name: Blue Ridge
 state: GA
 slug: blue-ridge
 region: georgia
+county: Fannin
+lat: 34.8683
+lng: -84.3211
 title: "Vacation Rental Management in Blue Ridge, GA"
 description: "Full-service cabin and mountain vacation rental management in Blue Ridge, GA. Maximize your revenue through fall foliage season, winter getaways, and year-round mountain tourism."
 intro: "Blue Ridge is North Georgia's premier mountain destination — a small town surrounded by the Blue Ridge Mountains, the Toccoa River, and dozens of local wineries that draws visitors seeking cabin escapes year-round. ATLStay manages your mountain property like it's our own."

@@ -3,6 +3,9 @@ name: Helen
 state: GA
 slug: helen
 region: georgia
+county: White
+lat: 34.7025
+lng: -83.7275
 title: "Vacation Rental Management in Helen, GA"
 description: "Vacation rental management in Helen, GA — the Bavarian alpine village of the Blue Ridge. Maximize Oktoberfest revenue and year-round mountain tourism with expert local management."
 intro: "Helen is Georgia's most unusual vacation destination: a full-scale Bavarian alpine village in the Blue Ridge Mountains, home to one of the longest Oktoberfest celebrations in North America. The result is a vacation rental market driven by festival demand, tubing season, and year-round novelty tourism."

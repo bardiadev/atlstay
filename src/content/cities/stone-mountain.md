@@ -3,6 +3,9 @@ name: Stone Mountain
 state: GA
 slug: stone-mountain
 region: metro
+county: DeKalb
+lat: 33.8081
+lng: -84.1703
 title: "Airbnb Management in Stone Mountain, GA"
 description: "Short-term rental management in Stone Mountain, GA. ATLStay optimizes your Airbnb for Stone Mountain Park visitors, Atlanta proximity, and year-round outdoor tourism."
 intro: "Stone Mountain is named for one of Georgia's most visited tourist attractions — and that landmark, drawing millions of visitors annually, creates a tourist-driven STR demand foundation that most Atlanta suburbs simply can't replicate."

@@ -3,6 +3,9 @@ name: Columbus
 state: GA
 slug: columbus
 region: georgia
+county: Muscogee
+lat: 32.4922
+lng: -84.9403
 title: "Airbnb Management in Columbus, GA"
 description: "Full-service Airbnb and vacation rental management in Columbus, GA. Maximize Fort Moore, whitewater, and Chattahoochee riverfront demand with expert local management."
 intro: "Columbus combines a revitalized downtown riverfront, the nation's longest urban whitewater course, and proximity to Fort Moore — one of the largest Army installations in the country — into a short-term rental market driven by adventure tourism, military travel, and a growing events calendar."

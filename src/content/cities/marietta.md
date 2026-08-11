@@ -3,6 +3,9 @@ name: Marietta
 state: GA
 slug: marietta
 region: metro
+county: Cobb
+lat: 33.9533
+lng: -84.5406
 title: "Airbnb Management in Marietta, GA"
 description: "Full-service short-term rental management in Marietta, GA. ATLStay handles your listing, pricing, guests, and turnovers — maximizing earnings on Marietta's Square and beyond."
 intro: "Marietta's historic Square, Civil War heritage sites, and position as Cobb County's civic heart create a layered demand picture that benefits STR owners willing to actively manage for the right guest — and the right nights."

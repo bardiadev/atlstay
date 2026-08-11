@@ -3,6 +3,9 @@ name: Smyrna
 state: GA
 slug: smyrna
 region: metro
+county: Cobb
+lat: 33.8719
+lng: -84.5183
 title: "Airbnb Management in Smyrna, GA"
 description: "Professional short-term rental management in Smyrna, GA. ATLStay optimizes your Airbnb for Smyrna's Braves-adjacent demand, Village Green events, and I-285 business travel."
 intro: "Smyrna punches above its weight as a short-term rental market — positioned between Truist Park, the Cobb Galleria, and the Cumberland/Galleria employment corridor, it offers owners a demand profile that stays active across the week, not just on weekends."

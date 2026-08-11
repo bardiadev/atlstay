@@ -3,6 +3,9 @@ name: Augusta
 state: GA
 slug: augusta
 region: georgia
+county: Richmond
+lat: 33.4700
+lng: -81.9750
 title: "Vacation Rental Management in Augusta, GA"
 description: "Expert vacation rental management in Augusta, GA. Capitalize on Masters Week — the most lucrative STR event in Georgia — and year-round medical district demand."
 intro: "Augusta hosts the Masters Tournament every April — the single most in-demand week for short-term rentals anywhere in Georgia, with nightly rates unlike any other event in the state. ATLStay builds your Augusta property's entire revenue strategy around Masters Week and optimizes every other week of the year."

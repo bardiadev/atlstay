@@ -3,6 +3,9 @@ name: Brookhaven
 state: GA
 slug: brookhaven
 region: metro
+county: DeKalb
+lat: 33.8592
+lng: -84.3389
 title: "Airbnb Management in Brookhaven, GA"
 description: "Expert short-term rental management in Brookhaven, GA. ATLStay maximizes earnings for Brookhaven STR owners with local pricing expertise and full-service management."
 intro: "Brookhaven is one of metro Atlanta's most desirable residential addresses — and that desirability, anchored by Buford Highway's dining scene, Children's Healthcare proximity, and direct MARTA access, translates into a consistent, premium-yielding short-term rental market."

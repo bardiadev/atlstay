@@ -3,6 +3,9 @@ name: Athens
 state: GA
 slug: athens
 region: georgia
+county: Clarke
+lat: 33.9496
+lng: -83.3701
 title: "Airbnb Management in Athens, GA"
 description: "Full-service Airbnb and vacation rental management in Athens, GA. Maximize revenue around UGA football weekends, graduation, and year-round demand from Georgia's college town."
 intro: "Athens is one of the Southeast's great college towns — home to the University of Georgia, a nationally recognized music scene, and a short-term rental market driven by football Saturdays, graduation weekends, and a steady flow of visitors drawn to a city that is consistently more than the sum of its academic parts."

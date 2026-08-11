@@ -3,6 +3,9 @@ name: Tybee Island
 state: GA
 slug: tybee-island
 region: georgia
+county: Chatham
+lat: 32.0075
+lng: -80.8450
 title: "Vacation Rental Management in Tybee Island, GA"
 description: "Expert beach vacation rental management on Tybee Island, GA. Maximize your summer bookings and shoulder-season revenue with full-service local management."
 intro: "Tybee Island is Georgia's beach — a tight-knit barrier island community just 18 miles from Savannah where beach houses, oceanfront cottages, and creek-side retreats drive a seasonal rental market that rewards great management."

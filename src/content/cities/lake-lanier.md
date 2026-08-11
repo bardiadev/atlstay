@@ -3,6 +3,8 @@ name: Lake Lanier
 state: GA
 slug: lake-lanier
 region: georgia
+lat: 34.2400
+lng: -83.9500
 title: "Vacation Rental Management at Lake Lanier, GA"
 description: "Expert lake house vacation rental management at Lake Lanier, GA. Maximize summer boating season and year-round lakefront demand with full-service local management."
 intro: "Lake Lanier is Georgia's most popular lake and one of the most visited Corps of Engineers lakes in the United States — a 38,000-acre reservoir just 45 minutes north of Atlanta where lake houses, waterfront cottages, and dock-equipped retreats drive a summer-dominated rental market with strong year-round legs."

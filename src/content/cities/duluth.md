@@ -3,6 +3,9 @@ name: Duluth
 state: GA
 slug: duluth
 region: metro
+county: Gwinnett
+lat: 34.0053
+lng: -84.1492
 title: "Airbnb Management in Duluth, GA"
 description: "Short-term rental management in Duluth, GA. ATLStay maximizes earnings for Duluth owners with expert pricing, guest management, and local knowledge of Gwinnett's premier market."
 intro: "Duluth is the cultural and commercial hub of Gwinnett County — home to a thriving Korean-American community, Gas South District entertainment venue, and a growing tech sector that makes it one of northeast metro Atlanta's most compelling short-term rental markets."
