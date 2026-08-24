@@ -7,6 +7,7 @@
 import Container from './Container.astro';
 import Button from './Button.astro';
 import { images, type ImageKey } from '../../data/images';
+import { metaFor, srcsetFor } from '../../data/imageMeta';
 import { site } from '../../config/site';
 import ProjectionForm from '../react/ProjectionForm';
 import type { ProjectionFormVariant } from '../react/ProjectionForm';
@@ -58,15 +59,27 @@ const boardForm = formVariant === 'hoa';
 
 const centered = hideForm && align === 'center';
 const minH = hideForm ? { sm: 'min-h-[32vh]', md: 'min-h-[44vh]', lg: 'min-h-[56vh]' }[size] : '';
+
+const heroMeta = metaFor(img.src);
+const heroSrcset = srcsetFor(img.src);
 ---
 <section class={`relative isolate flex items-center overflow-hidden py-12 sm:py-16 ${minH}`}>
+  <!-- Responsive hero. The width/height are the image's REAL intrinsic size
+       (from src/data/imageMeta.ts): these used to be hard-coded 1920x1080 while
+       no image was actually that shape — seven are portrait — so browsers
+       reserved the wrong box on every page. srcset lets a phone fetch a
+       phone-sized file instead of up to 618KB. `sizes` is 100vw because the
+       image is a full-bleed background. -->
   <img
     src={img.src}
+    srcset={heroSrcset || undefined}
+    sizes={heroSrcset ? '100vw' : undefined}
     alt={img.alt}
-    width="1920"
-    height="1080"
+    width={heroMeta?.w ?? 1600}
+    height={heroMeta?.h ?? 1067}
     loading="eager"
     fetchpriority="high"
+    decoding="async"
     class="absolute inset-0 -z-20 h-full w-full object-cover object-center"
   />
   <div class="absolute inset-0 -z-10 bg-gradient-to-r from-forest/95 via-forest/85 to-forest/60"></div>

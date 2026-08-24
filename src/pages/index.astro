@@ -19,6 +19,7 @@ import { assignCardStyles } from '@/lib/cardImage';
 import { site } from '@/config/site';
 import { services } from '@/data/services';
 import { homeFaqs } from '@/data/faqs';
+import { metaFor, srcsetFor } from '@/data/imageMeta';
 import { images } from '@/data/images';
 
 const homeSchemas = [
@@ -99,6 +100,8 @@ const nbhdStyles = assignCardStyles(
   neighborhoods.map((n) => ({ slug: n.href.split('/').filter(Boolean).pop() ?? n.name, region: 'atlanta' })),
 );
 
+const heroMeta = metaFor(images.heroHome.src);
+const heroSrcset = srcsetFor(images.heroHome.src);
 ---
 
 <BaseLayout
@@ -106,15 +109,31 @@ const nbhdStyles = assignCardStyles(
   description="Premium short-term rental management in Atlanta. Professional listing, dynamic pricing, 24/7 guest care, and five-star turnovers — handled for you. Get a free rental projection."
   schemas={homeSchemas}
 >
-  <link slot="head" rel="preload" as="image" href={images.heroHome.src} fetchpriority="high" />
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    href={images.heroHome.src}
+    imagesrcset={heroSrcset || undefined}
+    imagesizes={heroSrcset ? '100vw' : undefined}
+    fetchpriority="high"
+  />
 
   <!-- ─── HERO ─── (copy + live projection form; viewport-fit on desktop) -->
   <section class="relative isolate flex items-center overflow-hidden py-12 lg:min-h-[calc(100svh-5rem)] lg:py-0">
+    <!-- Real intrinsic size + srcset: this img previously declared no
+         dimensions at all (so the browser reserved nothing and the layout
+         shifted) and shipped one full-size file to every device. -->
     <img
       src={images.heroHome.src}
+      srcset={heroSrcset || undefined}
+      sizes={heroSrcset ? '100vw' : undefined}
       alt={images.heroHome.alt}
+      width={heroMeta?.w ?? 1400}
+      height={heroMeta?.h ?? 2100}
       loading="eager"
       fetchpriority="high"
+      decoding="async"
       class="absolute inset-0 -z-20 h-full w-full object-cover object-center"
     />
     <div class="absolute inset-0 -z-10 bg-gradient-to-r from-forest/95 via-forest/85 to-forest/60"></div>
