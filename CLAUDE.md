@@ -28,6 +28,33 @@ live outside the repo; `.gitignore` blocks `backlog*.json` and friends.
   `LEAD_IMPORT_KEY` Pages secret: it backdates `received_at` and suppresses the
   email, but still stores and still alerts Telegram, in chronological order.
 
+## Email is sent by the BROWSER, never by the server
+Web3Forms is client-side-only on the free plan. It nonetheless answers a
+Cloudflare Worker with HTTP 200 `"Form submitted successfully!"` **and delivers
+nothing** — verified repeatedly 2026-08-24, not even to spam.
+- `src/lib/leads.ts` must ALWAYS post its own copy to Web3Forms, regardless of
+  what `/api/lead` reports. It used to skip that when the endpoint claimed
+  success, which is exactly how leads got stored and Telegram-alerted with no
+  email at all and nothing flagging it.
+- `/api/lead`'s `success` means **the lead is safe** (stored + alerted), NOT
+  that an email went out. Never make it claim otherwise.
+- `email_ok` stays NULL for server attempts. Web3Forms' reply is kept in
+  `email_debug` for diagnosis only — it is not evidence of delivery.
+- Consequence to accept: if the visitor's browser dies mid-submit there is no
+  email, but D1 and Telegram still have the lead.
+
+## Fail-soft must never be silent
+`storeLead` swallows every error so a database problem cannot lose a lead. That
+is right, but on 2026-08-24 a broken INSERT (column list and bindings had
+drifted out of step — 15 columns, 16 values) made EVERY submission fail to
+store, and it looked identical to a healthy lead for half an hour.
+- `test/leadstore.test.mjs` runs storeLead against a D1 stand-in that rejects a
+  binding-count mismatch the way D1 does. Keep it passing.
+- A card for an unsaved lead now says **"NOT SAVED TO THE DASHBOARD"**. Never
+  let a swallowed failure render as a normal card again.
+- When editing SQL by find-and-replace, assert the replacement actually applied.
+  The bug shipped because a pattern silently didn't match.
+
 ## The Telegram lead board (two-way sync)
 The card in the leads group IS the workspace, not a notification. One message
 per lead, rewritten in place forever, with action buttons everyone can use.
