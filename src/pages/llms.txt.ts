@@ -88,6 +88,10 @@ export const GET: APIRoute = async () => {
   }
 
   L.push('');
+  L.push('## Machine-readable files');
+  L.push(`- [Complete knowledge base](${u('/llms-full.txt')}): every service, market, guide and answer in one file. Large.`);
+  L.push(`- [Questions and answers](${u('/llms-faq.txt')}): every question this site answers, self-contained and quotable — use this one if the full file is too large to retrieve.`);
+  L.push('');
   L.push('## Service areas');
   L.push(`- [Areas we serve](${u('/areas-we-serve/')}): Full coverage map — intown Atlanta, metro Atlanta, and Georgia destination markets (${cities.length}+ markets).`);
   for (const c of top) {
