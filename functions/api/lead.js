@@ -126,7 +126,9 @@ export function telegramText({ form, lead, meta, leadId, when, kind }) {
   const brand = /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay';
   const isMessage = (kind || kindOf(form)) === 'message';
   const title = isMessage ? 'New message' : 'New lead';
-  const rule = '━━━━━━━━━━━━━━━━━━';
+  // Short enough to guarantee one line in Telegram's mobile message width —
+  // the 18-char version wrapped to two lines under the brand/title line.
+  const rule = '━━━━━━━━━';
 
   const out = [];
   out.push(`${isMessage ? '✉️' : '🏠'} <b>${tgEscape(brand)}</b> — ${tgEscape(title)}`);
