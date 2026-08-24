@@ -1,7 +1,7 @@
 # Telegram Lead Board — two-way sync between the group and the Lead Desk
 
 **Date:** 2026-08-24
-**Status:** approved, ready to build
+**Status:** built, deployed and verified live 2026-08-24
 
 ## The problem
 

@@ -28,6 +28,34 @@ live outside the repo; `.gitignore` blocks `backlog*.json` and friends.
   `LEAD_IMPORT_KEY` Pages secret: it backdates `received_at` and suppresses the
   email, but still stores and still alerts Telegram, in chronological order.
 
+## The Telegram lead board (two-way sync)
+The card in the leads group IS the workspace, not a notification. One message
+per lead, rewritten in place forever, with action buttons everyone can use.
+- **`@SSM_Lead_bot` (`TELEGRAM_LEAD_BOT_TOKEN`) carries this, and it must stay
+  dedicated.** Receiving button presses needs `setWebhook`, and that setting is
+  GLOBAL to a bot — pointing Brandon's universal notification bot at this site
+  would hijack updates belonging to his unrelated projects. `TELEGRAM_BOT_TOKEN`
+  remains only as a send fallback.
+- **`functions/api/_card.js` is a pure function of (lead, events)** and BOTH
+  directions render through it. That is what stops the card and the Lead Desk
+  from disagreeing — don't add a second place that formats a card.
+- **`lead_events` is append-only.** Several partners can tap the same card at
+  once; an INSERT is atomic where read-modify-write on a JSON blob loses races.
+  Never "tidy" it into a column on `leads`.
+- **Never use `deleteMessage` to replace a stale card.** Editing a bot's own
+  message has no time limit, but deletion is capped at 48 hours and would fail
+  on exactly the old cards needing repair. `editCards()` heals by posting a
+  replacement and repointing `tg_cards`.
+- **The webhook has two independent gates** (Telegram's secret header, and an
+  allowlist on the originating chat) and always answers 200 so Telegram never
+  retry-loops. `test/webhook.test.mjs` proves a failed gate writes nothing and
+  leaks nothing — keep it passing.
+- Telegram deliberately omits IP/ISP/OS/browser/screen/user-agent/referrer and
+  any Lead Desk link: partners have no dashboard login. That detail belongs in
+  the email and the dashboard.
+- Privacy mode stays ON for the bot. It still receives its own button presses
+  and replies to its own cards; turning it off would only add group noise.
+
 ## No web-app manifest
 A manifest with `display: standalone` is what makes browsers offer to install
 the site as an app. It was interrupting real visitors, so it is gone. Do not
