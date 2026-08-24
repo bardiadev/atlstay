@@ -96,9 +96,13 @@ if (!TOKEN) {
   console.log('     SKIPPED — LEAD_BOT_TOKEN not set, so cards still show test activity');
 } else {
   const { renderCard, fromRow } = await import('../functions/api/_card.js');
-  let redrawn = 0, failed = 0;
+  // Card addresses are read LIVE, not from the snapshot: cards get re-posted
+  // over time (and are re-posted whenever someone clears the group), so the
+  // snapshot's message ids go stale while the database's stay current.
+  const current = new Map(sql('SELECT id, tg_cards FROM leads').map((r) => [r.id, r.tg_cards]));
+  let redrawn = 0, failed = 0, stale = false;
   for (const r of snapshot) {
-    const cards = (() => { try { return JSON.parse(r.tg_cards || '[]'); } catch { return []; } })();
+    const cards = (() => { try { return JSON.parse(current.get(r.id) || r.tg_cards || '[]'); } catch { return []; } })();
     const { text, reply_markup } = renderCard(fromRow({ ...r, ...PRISTINE }), []);
     for (const c of cards) {
       if (!commit) { console.log(`    [dry-run] would redraw ${r.name} → card #${c.mid}`); continue; }
@@ -110,10 +114,22 @@ if (!TOKEN) {
       const b = await res.json().catch(() => ({}));
       // "not modified" means it was already pristine — that counts as success.
       if (b.ok || /not modified/i.test(b.description || '')) { redrawn++; }
-      else { failed++; console.log(`     ! ${r.name} card #${c.mid}: ${b.description}`); }
+      else {
+        failed++;
+        console.log(`     ! ${r.name} card #${c.mid}: ${b.description}`);
+        if (/not found/i.test(b.description || '')) stale = true;
+      }
     }
   }
-  if (commit) console.log(`     ${redrawn} card(s) redrawn${failed ? `, ${failed} failed` : ''}`);
+  if (commit) {
+    console.log(`     ${redrawn} card(s) redrawn${failed ? `, ${failed} failed` : ''}`);
+    if (stale) {
+      console.log('\n     Those cards no longer exist — the group was cleared.');
+      console.log('     Re-post them with the key-gated repost:');
+      console.log('       curl -s -X POST https://atlstay.com/api/lead -H "Content-Type: application/json" \\');
+      console.log('         -d \'{"importKey":"<LEAD_IMPORT_KEY>","action":"repost","force":true}\'');
+    }
+  }
 }
 
 console.log(commit ? '\nBoard reset. Ready for partners.' : '\nDry run complete — nothing changed.');
