@@ -24,3 +24,9 @@ pnpm-debug.log*
 .vscode/
 .idea/
 *.swp
+
+# Lead backlog / import files — real customer names, emails, phones and IPs.
+# This repository is public; keep these outside the working tree entirely.
+backlog*.json
+lead-backlog*.json
+*.leads.json

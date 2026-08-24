@@ -11,18 +11,20 @@ t('projection form → lead',        kindOf('ATLStay Rental Projection'), 'lead'
 t('HOA form → lead',               kindOf('ATLStay HOA Enquiry'), 'lead');
 t('undefined → lead',              kindOf(undefined), 'lead');
 
-// Lauren's real message — the full body must survive intact.
-const LONG = `Hi!
+// A long multi-paragraph body — modelled on a real vendor pitch, which is the
+// shape that used to get cut off at 400 chars. Invented details only: this file
+// is public, so no real sender's name, address or message ever goes in here.
+const LONG = `Hi there!
 
-I wanted to introduce myself and Foothills Pine Straw & Mulch. We work directly with commercial properties throughout Metro Atlanta providing pine straw and mulch installation without the additional landscape-company markup.
-If you have any shopping centers or commercial properties coming up for a refresh, I'd love the opportunity to provide pricing.
-We can handle the entire process, including property measurements/counts, pricing, delivery and installation.
-If you already know your approximate bale count or mulch yardage, along with the property address and scope, send it my way and I can get pricing started. If not, no problem — we can visit the property and get the measurements/counts for you.
+I wanted to introduce myself and Example Landscape Supply. We work directly with commercial properties across the metro area providing mulch and pine straw installation without the usual middleman markup.
+If you have any shopping centres or commercial properties coming up for a refresh, I would welcome the chance to quote.
+We can handle the whole process, including measurements, pricing, delivery and installation.
+If you already know your approximate coverage, along with the property address and scope, send it over and I can get pricing started. If not, no problem — we can visit and take the measurements for you.
 Thank you!`;
 
 const msg = telegramText({
   form: 'ATLStay Contact Form',
-  lead: { Name: 'Lauren Carroll', Email: 'BD@foothillspinestraw.com', Phone: '16782000735', Message: LONG },
+  lead: { Name: 'Alex Rivera', Email: 'sales@example.com', Phone: '14045550142', Message: LONG },
   meta: { 'Submitted from page': 'https://atlstay.com/contact/', Referrer: 'https://atlstay.com/about/', Device: 'Desktop' },
   leadId: 'abc-123',
   when: new Date('2026-08-24T16:18:21.862Z'),
@@ -31,21 +33,21 @@ const msg = telegramText({
 
 t('message header, not lead',      /New message/.test(msg), true);
 t('envelope icon for a message',   msg.startsWith('✉️'), true);
-t('FULL body present (not cut)',   msg.includes('measurements/counts for you.'), true);
+t('FULL body present (not cut)',   msg.includes('take the measurements for you.'), true);
 t('no truncation ellipsis',        msg.includes('…'), false);
 t('original EST time shown',       /12:18 PM EDT/.test(msg), true);
 t('NOT stamped with today',        /Aug 24, 2026 at 12:18 PM/.test(msg), true);
 t('exact source page included',    msg.includes('https://atlstay.com/contact/'), true);
 t('referrer included',             msg.includes('atlstay.com/about/'), true);
-t('phone is a tap target',         msg.includes('href="tel:16782000735"'), true);
-t('email is a tap target',         msg.includes('href="mailto:BD@foothillspinestraw.com"'), true);
+t('phone is a tap target',         msg.includes('href="tel:14045550142"'), true);
+t('email is a tap target',         msg.includes('href="mailto:sales@example.com"'), true);
 t('deep link to the record',       msg.includes('/boroto/leads/#abc-123'), true);
 t('within Telegram 4096 limit',    msg.length < 4096, true);
 
 // A real lead keeps the lead treatment.
 const leadMsg = telegramText({
   form: 'ATLStay Rental Projection',
-  lead: { Name: 'Rudy', Email: 'r@example.com', 'Service Interest': 'HOA & Community Association Management', Doors: '48' },
+  lead: { Name: 'Sam Taylor', Email: 'sam@example.com', 'Service Interest': 'HOA & Community Association Management', Doors: '48' },
   meta: { 'Submitted from page': 'https://atlstay.com/services/hoa-management/cumming/' },
   leadId: 'x', when: new Date('2026-08-14T23:31:14.827Z'), kind: 'lead',
 });
