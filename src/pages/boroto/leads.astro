@@ -1,0 +1,274 @@
+---
+// Lead Desk — the workspace. Reads /boroto/api (same Basic Auth gate).
+// Deep-linkable: /boroto/leads/#<lead-id> opens that lead, which is what the
+// Telegram alert links to.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/config/site';
+---
+<BaseLayout title="Lead Desk" description="Private lead workspace." noindex={true} bare={true}>
+  <div class="min-h-screen bg-cream">
+    <header class="border-b border-line bg-white">
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5">
+        <div>
+          <h1 class="font-display text-2xl text-forest">Lead Desk</h1>
+          <p class="mt-0.5 text-sm text-stone">{site.brandName} &amp; {site.company.name}</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="addBtn" class="rounded-full border border-line px-4 py-2 text-sm text-ink/75 transition-colors hover:border-brass/60 hover:text-brass-600">+ Add lead</button>
+          <a href="/boroto/" class="text-sm text-ink/60 underline-offset-4 hover:text-brass-600 hover:underline">SEO dashboard</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-6 py-8">
+      <!-- counts -->
+      <div id="counts" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5"></div>
+
+      <div class="mt-6 flex items-center gap-3">
+        <input id="search" type="search" placeholder="Search name, email, phone or address…"
+          class="w-full max-w-md rounded-lg border border-line bg-white px-4 py-2.5 text-sm text-ink outline-none focus:border-brass" />
+        <span id="listLabel" class="text-sm text-stone"></span>
+      </div>
+
+      <div id="list" class="mt-5"></div>
+      <div id="detail" class="mt-5 hidden"></div>
+    </main>
+  </div>
+
+  <script is:inline define:vars={{ phone: site.contact.phone }}>
+    const API = '/boroto/api';
+    const $ = (s) => document.querySelector(s);
+    const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const STATUS = { new:'New', proposal_sent:'Proposal sent', won:'Won', lost:'Lost' };
+    let filter = '';
+
+    const fmt = (iso) => {
+      if (!iso) return '—';
+      const d = new Date(iso);
+      if (isNaN(d)) return iso;
+      return d.toLocaleString('en-US', { month:'short', day:'numeric', year:'numeric', hour:'numeric', minute:'2-digit' });
+    };
+    const ago = (iso) => {
+      if (!iso) return '';
+      const days = Math.floor((Date.now() - new Date(iso)) / 86400000);
+      if (isNaN(days)) return '';
+      return days === 0 ? 'today' : days === 1 ? 'yesterday' : days + ' days ago';
+    };
+
+    async function api(qs) { const r = await fetch(API + qs); return r.json(); }
+    async function post(body) {
+      const r = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+      return r.json();
+    }
+
+    /* ── list view ── */
+    async function loadList() {
+      const q = $('#search').value.trim();
+      const data = await api(`?action=list${filter ? '&status=' + encodeURIComponent(filter) : ''}${q ? '&q=' + encodeURIComponent(q) : ''}`);
+      if (data.error) { $('#list').innerHTML = `<p class="text-sm text-red-700">${esc(data.error)}</p>`; return; }
+
+      const c = data.counts || {};
+      const card = (key, label, n, tone) => `
+        <button data-filter="${key}" class="rounded-xl border ${filter===key?'border-brass bg-brass-50':'border-line bg-white'} p-4 text-left transition-colors hover:border-brass/60">
+          <div class="font-display text-3xl ${tone}">${n}</div>
+          <div class="mt-1 text-xs uppercase tracking-wide text-stone">${label}</div>
+        </button>`;
+      $('#counts').innerHTML =
+        card('', 'All', (c.new||0)+(c.proposal_sent||0)+(c.won||0)+(c.lost||0), 'text-forest') +
+        card('new', 'New', c.new||0, 'text-brass-600') +
+        card('proposal_sent', 'Proposal sent', c.proposal_sent||0, 'text-forest') +
+        card('quiet', 'Gone quiet', c.quiet||0, (c.quiet ? 'text-red-700' : 'text-stone')) +
+        card('won', 'Won', c.won||0, 'text-green-700');
+
+      const rows = data.leads || [];
+      $('#listLabel').textContent = rows.length + (rows.length === 1 ? ' lead' : ' leads');
+      $('#list').innerHTML = rows.length ? `
+        <div class="overflow-hidden rounded-xl border border-line bg-white">
+          <table class="w-full text-left text-sm">
+            <thead class="border-b border-line bg-cream/60 text-xs uppercase tracking-wide text-stone">
+              <tr><th class="px-4 py-3">Received</th><th class="px-4 py-3">Name</th><th class="px-4 py-3">Service</th><th class="px-4 py-3">Where</th><th class="px-4 py-3">Brand</th><th class="px-4 py-3">Status</th></tr>
+            </thead>
+            <tbody>${rows.map((r) => `
+              <tr data-id="${esc(r.id)}" class="cursor-pointer border-b border-line/60 transition-colors hover:bg-cream/50">
+                <td class="px-4 py-3 whitespace-nowrap ${!r.first_viewed_at ? 'font-semibold text-forest' : 'text-ink/70'}">
+                  ${!r.first_viewed_at ? '<span class="mr-1.5 inline-block h-2 w-2 rounded-full bg-brass align-middle"></span>' : ''}${esc(ago(r.received_at))}
+                </td>
+                <td class="px-4 py-3 font-medium text-forest">${esc(r.name || '—')}</td>
+                <td class="px-4 py-3 text-ink/70">${esc(r.service_interest || '—')}</td>
+                <td class="px-4 py-3 text-ink/60">${esc((r.address || '').slice(0, 40) || '—')}</td>
+                <td class="px-4 py-3"><span class="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/70">${esc(r.brand)}</span></td>
+                <td class="px-4 py-3"><span class="rounded-full border border-line px-2.5 py-0.5 text-xs text-ink/75">${esc(STATUS[r.status] || r.status)}</span></td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>` : '<p class="rounded-xl border border-line bg-white p-8 text-center text-sm text-stone">Nothing here.</p>';
+
+      $('#list').querySelectorAll('tr[data-id]').forEach((tr) =>
+        tr.addEventListener('click', () => { location.hash = tr.dataset.id; }));
+      document.querySelectorAll('#counts button').forEach((b) =>
+        b.addEventListener('click', () => { filter = b.dataset.filter; loadList(); }));
+    }
+
+    /* ── detail view ── */
+    const panel = (title, rows) => {
+      const body = rows.filter(([, v]) => String(v ?? '').trim()).map(([k, v]) =>
+        `<div class="flex gap-4 border-b border-line/50 py-2 last:border-0">
+           <dt class="w-44 flex-none text-xs uppercase tracking-wide text-stone">${esc(k)}</dt>
+           <dd class="text-sm text-ink/85 break-words">${v}</dd>
+         </div>`).join('');
+      return body ? `<section class="rounded-xl border border-line bg-white p-5">
+          <h3 class="font-display text-lg text-forest">${esc(title)}</h3>
+          <dl class="mt-3">${body}</dl></section>` : '';
+    };
+
+    async function loadDetail(id) {
+      const data = await api(`?action=get&id=${encodeURIComponent(id)}`);
+      if (data.error) { location.hash = ''; return; }
+      const L = data.lead, lead = L.raw_lead || {}, meta = L.raw_meta || {};
+
+      const linkify = (k, v) => {
+        const s = String(v);
+        if (/email/i.test(k) && s.includes('@')) return `<a class="text-brass-600 hover:underline" href="mailto:${esc(s)}">${esc(s)}</a>`;
+        if (/phone/i.test(k)) return `<a class="text-brass-600 hover:underline" href="tel:${esc(s.replace(/[^0-9+]/g,''))}">${esc(s)}</a>`;
+        if (/^https?:\/\//.test(s)) return `<a class="text-brass-600 hover:underline break-all" target="_blank" rel="noopener" href="${esc(s)}">${esc(s)}</a>`;
+        return esc(s);
+      };
+
+      // Split the submitted answers: contact vs everything about the property.
+      const contactRe = /name|email|phone/i;
+      const contact = Object.entries(lead).filter(([k]) => contactRe.test(k)).map(([k,v]) => [k, linkify(k,v)]);
+      const property = Object.entries(lead).filter(([k]) => !contactRe.test(k) && !/service interest/i.test(k)).map(([k,v]) => [k, linkify(k,v)]);
+
+      const sourceRe = /page|referrer|utm|source/i;
+      const source = Object.entries(meta).filter(([k]) => sourceRe.test(k)).map(([k,v]) => [k, linkify(k,v)]);
+      const session = Object.entries(meta).filter(([k]) => !sourceRe.test(k)).map(([k,v]) => [k, linkify(k,v)]);
+
+      const dupes = (data.duplicates || []);
+      const addr = L.address || '';
+
+      $('#detail').innerHTML = `
+        <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <button id="back" class="text-sm text-ink/60 hover:text-brass-600">&larr; All leads</button>
+          <div class="flex flex-wrap gap-2">
+            ${Object.entries(STATUS).map(([k, label]) => `
+              <button data-status="${k}" class="rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${L.status===k?'bg-forest text-cream':'border border-line bg-white text-ink/70 hover:border-brass/60'}">${label}</button>`).join('')}
+          </div>
+        </div>
+
+        ${dupes.length ? `<div class="mb-4 rounded-xl border border-brass/50 bg-brass-50 p-4 text-sm text-ink/80">
+          <strong class="text-forest">Possible duplicate.</strong> This person has ${dupes.length} other submission${dupes.length>1?'s':''}:
+          ${dupes.map(d => `<a class="ml-1 text-brass-600 underline" href="#${esc(d.id)}">${esc(fmt(d.received_at))}${d.service_interest ? ' · ' + esc(d.service_interest) : ''}</a>`).join(', ')}
+        </div>` : ''}
+
+        <div class="rounded-xl border border-line bg-white p-6">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <h2 class="font-display text-3xl text-forest">${esc(L.name || 'Unnamed lead')}</h2>
+              ${L.service_interest ? `<p class="mt-1 text-brass-600">${esc(L.service_interest)}</p>` : ''}
+              <p class="mt-2 text-sm text-stone">${esc(L.brand)} · received ${esc(fmt(L.received_at))} (${esc(ago(L.received_at))})</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button id="copyAll" class="rounded-full bg-brass px-4 py-2 text-sm font-medium text-forest transition-colors hover:bg-brass-600 hover:text-cream">Copy everything</button>
+              ${addr ? `<a target="_blank" rel="noopener" href="https://app.airdna.co/data/us?search=${encodeURIComponent(addr)}" class="rounded-full border border-line px-4 py-2 text-sm text-ink/75 hover:border-brass/60">Open in AirDNA</a>` : ''}
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 grid gap-4 lg:grid-cols-2">
+          ${panel('Contact', contact)}
+          ${panel('The property', property)}
+          ${panel('Where they came from', source)}
+          ${panel('Their session', session)}
+        </div>
+
+        <div class="mt-4 grid gap-4 lg:grid-cols-2">
+          <section class="rounded-xl border border-line bg-white p-5">
+            <h3 class="font-display text-lg text-forest">Timeline</h3>
+            <dl class="mt-3">
+              ${[['Came in', fmt(L.received_at)],
+                 ['You first opened it', fmt(L.first_viewed_at)],
+                 ['Proposal sent', fmt(L.proposal_sent_at)],
+                 ['Sent to', esc(L.proposal_sent_to || '')],
+                 ['Last updated', fmt(L.updated_at)]]
+                .filter(([,v]) => v && v !== '—')
+                .map(([k,v]) => `<div class="flex gap-4 border-b border-line/50 py-2 last:border-0">
+                   <dt class="w-44 flex-none text-xs uppercase tracking-wide text-stone">${esc(k)}</dt>
+                   <dd class="text-sm text-ink/85">${v}</dd></div>`).join('')}
+            </dl>
+            <label class="mt-4 block text-xs uppercase tracking-wide text-stone">Who did you send the proposal to?</label>
+            <input id="sentTo" value="${esc(L.proposal_sent_to || '')}" placeholder="dana@example.com"
+              class="mt-1.5 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-brass" />
+          </section>
+
+          <section class="rounded-xl border border-line bg-white p-5">
+            <h3 class="font-display text-lg text-forest">Your notes</h3>
+            <textarea id="notes" rows="9" placeholder="Anything worth remembering…"
+              class="mt-3 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-brass">${esc(L.notes || '')}</textarea>
+            <p id="saveState" class="mt-2 text-xs text-stone">Saves automatically.</p>
+          </section>
+        </div>`;
+
+      $('#list').classList.add('hidden');
+      $('#counts').parentElement.querySelectorAll('#counts, #search').forEach(() => {});
+      $('#detail').classList.remove('hidden');
+
+      $('#back').addEventListener('click', () => { location.hash = ''; });
+
+      $('#copyAll').addEventListener('click', async () => {
+        const line = (k, v) => `${k}: ${v}`;
+        const txt = [
+          `LEAD — ${L.name || 'Unnamed'} (${L.brand})`,
+          `Received: ${fmt(L.received_at)}`,
+          L.service_interest ? `Service: ${L.service_interest}` : '',
+          '', '--- What they submitted ---',
+          ...Object.entries(lead).map(([k, v]) => line(k, v)),
+          '', '--- Where they came from ---',
+          ...Object.entries(meta).map(([k, v]) => line(k, v)),
+          L.notes ? `\n--- My notes ---\n${L.notes}` : '',
+        ].filter(Boolean).join('\n');
+        await navigator.clipboard.writeText(txt);
+        const b = $('#copyAll'); const old = b.textContent;
+        b.textContent = 'Copied ✓'; setTimeout(() => { b.textContent = old; }, 1600);
+      });
+
+      $('#detail').querySelectorAll('button[data-status]').forEach((b) =>
+        b.addEventListener('click', async () => {
+          await post({ id: L.id, status: b.dataset.status, proposal_sent_to: $('#sentTo').value.trim() });
+          loadDetail(L.id);
+        }));
+
+      let t;
+      const save = () => {
+        clearTimeout(t);
+        $('#saveState').textContent = 'Saving…';
+        t = setTimeout(async () => {
+          await post({ id: L.id, notes: $('#notes').value, proposal_sent_to: $('#sentTo').value.trim() });
+          $('#saveState').textContent = 'Saved.';
+        }, 700);
+      };
+      $('#notes').addEventListener('input', save);
+      $('#sentTo').addEventListener('input', save);
+    }
+
+    /* ── manual add, for the backlog stuck in email ── */
+    $('#addBtn').addEventListener('click', async () => {
+      const name = prompt('Name?'); if (name === null) return;
+      const email = prompt('Email?') || '';
+      const phone = prompt('Phone?') || '';
+      const address = prompt('Property / community address?') || '';
+      const service_interest = prompt('Service they want? (e.g. HOA, Airbnb management)') || '';
+      const r = await post({ action:'create', name, email, phone, address, service_interest });
+      if (r.ok) location.hash = r.id; else alert(r.error || 'Could not add');
+    });
+
+    /* ── routing ── */
+    function route() {
+      const id = location.hash.replace(/^#/, '');
+      if (id) { loadDetail(id); }
+      else { $('#detail').classList.add('hidden'); $('#list').classList.remove('hidden'); loadList(); }
+    }
+    window.addEventListener('hashchange', route);
+    let st; $('#search').addEventListener('input', () => { clearTimeout(st); st = setTimeout(loadList, 250); });
+    route();
+  </script>
+</BaseLayout>

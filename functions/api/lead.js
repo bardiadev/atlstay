@@ -16,10 +16,16 @@
  *                    Default: "ATLStay Leads <onboarding@resend.dev>" (test mode —
  *                    delivers only to the Resend account owner until a domain is
  *                    verified; also gates the lead confirmation email).
- *   WEB3FORMS_KEY    (optional) Fallback access key. Default: site public key.
+ *   WEB3FORMS_KEY    (optional) Comma-separated access keys — one per destination
+ *                    inbox, since a free Web3Forms key delivers to exactly one
+ *                    address and CC is a paid feature. Default: site public key.
+ *                    NOTE: with RESEND_API_KEY unset this is the LIVE delivery
+ *                    path, not a fallback.
  *
  * No build step: Cloudflare Pages auto-deploys /functions as serverless routes.
  */
+
+import { storeLead } from './_leadStore.js';
 
 const DEFAULTS = {
   toEmail: 'hello@bardia.dev',
@@ -77,7 +83,7 @@ function tgEscape(s) {
   return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function telegramText({ form, lead, meta }) {
+function telegramText({ form, lead, meta, leadId }) {
   const L = lead || {};
   const M = meta || {};
   const get = (re) => {
@@ -85,29 +91,38 @@ function telegramText({ form, lead, meta }) {
     return '';
   };
   const isContact = /contact/i.test(form || '');
-  const title = isContact ? 'New contact message' : 'New rental projection lead';
   const name = get(/name/i) || 'Someone';
   const phone = get(/phone/i);
   const email = get(/email/i);
   const addr = get(/address/i);
   const message = get(/message/i);
+  const service = get(/service interest/i);
   const page = M['Submitted from page'] || '';
   const loc = M['Approx. location'] || '';
+  const device = M['Device'] || '';
+  const localTime = M['Submitted (their local time)'] || '';
 
-  const sep = '━━━━━━━━━━━━━━━━';
   // Label the source site so SSMProperty leads are distinguishable from ATLStay.
   const sourceBrand = /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay';
+  const title = isContact ? 'New contact message' : 'New lead';
+
   const lines = [`🏠 <b>${tgEscape(sourceBrand)}</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
+
+  // The single most useful triage fact: an HOA board and a house owner need
+  // completely different responses, so the category leads.
+  if (service) lines.push(`🏷 <b>${tgEscape(service)}</b>`);
+
   const contact = [];
   if (phone) contact.push(`📞 ${tgEscape(phone)}`);
   if (email) contact.push(`✉️ ${tgEscape(email)}`);
   if (contact.length) lines.push(contact.join('  ·  '));
   if (addr) lines.push(`📍 ${tgEscape(addr)}`);
   if (message) lines.push(`💬 ${tgEscape(message.length > 280 ? message.slice(0, 280) + '…' : message)}`);
-  // Everything the blocks above didn't already show, so a field added to any
-  // form can never be silently dropped from the notification. The named fields
-  // stay pinned at the top for scannability; the rest follow in submit order.
-  const shown = [/name/i, /phone/i, /email/i, /address/i, /message/i];
+
+  // Every remaining answer they gave, so a new form field can never be silently
+  // dropped. Forensic detail (user agent, screen size…) is deliberately NOT here
+  // — it belongs on the dashboard, not on a phone.
+  const shown = [/name/i, /phone/i, /email/i, /address/i, /message/i, /service interest/i];
   const rest = [];
   for (const [k, v] of Object.entries(L)) {
     const val = String(v == null ? '' : v).trim();
@@ -118,25 +133,38 @@ function telegramText({ form, lead, meta }) {
   if (rest.length) lines.push(rest.join('\n'));
 
   const ctx = [];
-  if (page) ctx.push(tgEscape(page.replace(/^https?:\/\/[^/]+/, '') || page));
   if (loc) ctx.push(tgEscape(loc));
+  if (device) ctx.push(tgEscape(String(device).toLowerCase()));
+  if (localTime) ctx.push(tgEscape(localTime));
+  if (page) ctx.push(tgEscape(page.replace(/^https?:\/\/[^/]+/, '') || page));
   if (ctx.length) lines.push(`<i>${ctx.join('  ·  ')}</i>`);
-  lines.push(sep);
+
+  if (leadId) lines.push(`<a href="${DEFAULTS.domain}/boroto/leads/#${tgEscape(leadId)}">▸ Open in dashboard</a>`);
+
+  lines.push('━━━━━━━━━━━━━━━━');
   return lines.join('\n');
 }
 
 async function sendTelegram(env, text) {
   const token = env.TELEGRAM_BOT_TOKEN;
-  const chatId = env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) return; // safe no-op until the secrets are set
-  try {
-    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML', disable_web_page_preview: true }),
-    });
-  } catch {
-    /* best-effort — never throw, never block the lead */
+  const raw = env.TELEGRAM_CHAT_ID;
+  if (!token || !raw) return; // safe no-op until the secrets are set
+  // Comma-separated so leads can go to a group AND a personal chat during a
+  // switchover, and so reverting is a config change rather than a deploy.
+  // NOTE: this bot is shared with the owner's other, unrelated projects. Only
+  // ever call sendMessage here — never setWebhook or getUpdates, which are
+  // global to the bot and would break those projects' notifications.
+  const chatIds = String(raw).split(',').map((c) => c.trim()).filter(Boolean);
+  for (const chat_id of chatIds) {
+    try {
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id, text, parse_mode: 'HTML', disable_web_page_preview: true }),
+      });
+    } catch {
+      /* best-effort — never throw, never block the lead */
+    }
   }
 }
 
@@ -157,10 +185,15 @@ export async function onRequestPost(context) {
   const lead = payload?.lead || {};
   const meta = payload?.meta || {};
 
+  // Persist to D1 first so the Telegram alert can link straight to the lead.
+  // storeLead never throws and returns '' if D1 is unbound or failing — the
+  // lead must still reach the owner when storage is broken.
+  const leadId = await storeLead(env, { formName, lead, meta, subject });
+
   // Notify the owner on Telegram for every submission — fire-and-forget so it
   // never blocks or breaks the lead, and fired here so it lands even if email
   // delivery later hiccups (the message carries the lead details itself).
-  const notify = sendTelegram(env, telegramText({ form: formName, lead, meta }));
+  const notify = sendTelegram(env, telegramText({ form: formName, lead, meta, leadId }));
   if (typeof context.waitUntil === 'function') context.waitUntil(notify);
 
   const cfg = {
@@ -175,7 +208,7 @@ export async function onRequestPost(context) {
     try {
       const ownerRes = await sendResend(cfg.resendKey, {
         from: cfg.fromEmail,
-        to: [cfg.toEmail],
+        to: cfg.toEmail.split(',').map((e) => e.trim()).filter(Boolean),
         reply_to: replyto || undefined,
         subject,
         html: buildOwnerEmail({ formName, replyto, lead, meta }),
@@ -200,10 +233,18 @@ export async function onRequestPost(context) {
     }
   }
 
-  // ── Fallback: Web3Forms (guarantees delivery) ──
+  // ── Web3Forms (this is the live path today — Resend is unconfigured) ──
+  // WEB3FORMS_KEY is comma-separated. Each free Web3Forms access key delivers to
+  // the one address it was registered with, and multi-recipient CC is a paid
+  // feature — so a second free key is how a second inbox gets its own copy.
+  // Delivery counts as successful if ANY key accepts it; a lead is never lost
+  // because one inbox's key is bad.
   if (cfg.web3formsKey) {
-    const ok = await sendWeb3forms(cfg.web3formsKey, { subject, formName, replyto, lead, meta });
-    return json({ success: ok, via: 'web3forms' }, 200, cors);
+    const keys = cfg.web3formsKey.split(',').map((k) => k.trim()).filter(Boolean);
+    const results = await Promise.all(
+      keys.map((k) => sendWeb3forms(k, { subject, formName, replyto, lead, meta })),
+    );
+    return json({ success: results.some(Boolean), via: 'web3forms', delivered: results.filter(Boolean).length }, 200, cors);
   }
 
   return json({ success: false, error: 'No delivery method configured' }, 500, cors);
