@@ -84,7 +84,7 @@ export const comparisons: Comparison[] = [
     competitor: 'Evolve',
     headline: 'A full-service alternative to Evolve in Atlanta',
     summary:
-      'Evolve’s model leaves a lot of the day-to-day to the owner. We’re genuinely full-service — you do nothing, and a local team handles everything end to end.',
+      'Evolve publishes a 10% headline rate — but by their own description it covers the listing and the guest messaging, and leaves cleaning, maintenance and local property care for you to arrange and pay for. Our rate is the whole cost of having the home managed, not the starting point.',
     theirModel: [
       'A lighter-touch model where owners still coordinate cleaning, guests, and logistics themselves',
       'A national brand rather than a local Atlanta operator',
@@ -111,6 +111,21 @@ export const comparisons: Comparison[] = [
         label: 'What the fee covers',
         theirs: 'Listing creation and optimisation, dynamic pricing, distribution, and guest communication. Cleaning, maintenance and on-the-ground property care remain the owner\'s responsibility to arrange.',
         ours: 'Everything, including cleaning coordination, maintenance and on-the-ground care',
+        source: { publisher: 'Evolve', url: 'https://evolve.com/blog/homeowner-tips/how-much-should-i-pay-for-vacation-rental-management', asOf: '2026-08-24' },
+      },
+      {
+        // The row that makes the comparison like-for-like. A published 10% and a
+        // published 10-15% are not the same product, and saying so is both true
+        // and a far better argument than hiding their number would have been.
+        label: 'What you still pay for separately',
+        theirs: 'Cleaning, maintenance, restocking and local property oversight are arranged and paid for by the owner, on top of the management fee.',
+        ours: 'Nothing. Our rate is the whole cost of managing the property.',
+        source: { publisher: 'Evolve', url: 'https://evolve.com/blog/homeowner-tips/how-much-should-i-pay-for-vacation-rental-management', asOf: '2026-08-24' },
+      },
+      {
+        label: 'The honest comparison',
+        theirs: 'A published 10% covers the listing and the guest messaging. It is not the total cost of having a property managed.',
+        ours: 'One all-inclusive rate covering the listing, the pricing, the guests and everything physical the home needs.',
         source: { publisher: 'Evolve', url: 'https://evolve.com/blog/homeowner-tips/how-much-should-i-pay-for-vacation-rental-management', asOf: '2026-08-24' },
       },
       {
