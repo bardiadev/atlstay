@@ -26,6 +26,8 @@
  */
 
 import { storeLead, kindOf } from './_leadStore.js';
+import { renderCard, fromSubmission } from './_card.js';
+import { sendCard } from './_telegram.js';
 
 const DEFAULTS = {
   toEmail: 'hello@bardia.dev',
@@ -75,174 +77,11 @@ export function onRequestOptions(context) {
   });
 }
 
-/* ── Telegram lead notification (best-effort; never blocks or throws) ──
- * Pings the owner's personal notifier bot on every submission. Reads
- * TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID from env; no-ops silently if either is
- * unset (safe to deploy before the secrets exist). The token is never logged. */
-
-/** Format an instant in US Eastern time, 12-hour, e.g. "Aug 24, 2026 at 5:10 PM EDT".
- *  The owner operates in Atlanta; UTC is noise and the visitor's own local time
- *  can be any zone, so every human-facing timestamp is normalised to Eastern. */
-function easternStamp(d = new Date()) {
-  try {
-    const parts = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'America/New_York',
-      month: 'short', day: 'numeric', year: 'numeric',
-      hour: 'numeric', minute: '2-digit', hour12: true,
-      timeZoneName: 'short',
-    }).formatToParts(d);
-    const g = (t) => (parts.find((p) => p.type === t) || {}).value || '';
-    return `${g('month')} ${g('day')}, ${g('year')} at ${g('hour')}:${g('minute')} ${g('dayPeriod')} ${g('timeZoneName')}`;
-  } catch {
-    return d.toISOString();
-  }
-}
-
-function tgEscape(s) {
-  return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
-export function telegramText({ form, lead, meta, leadId, when, kind }) {
-  const L = lead || {};
-  const M = meta || {};
-  const get = (src, re) => {
-    for (const [k, v] of Object.entries(src)) if (re.test(k) && String(v).trim()) return String(v).trim();
-    return '';
-  };
-
-  const name     = get(L, /name/i) || 'Someone';
-  const phone    = get(L, /phone/i);
-  const email    = get(L, /email/i);
-  const addr     = get(L, /address/i);
-  const message  = get(L, /message/i);
-  const service  = get(L, /service interest/i);
-  const page     = get(M, /submitted from page/i);
-  const referrer = get(M, /referrer/i);
-  const loc      = get(M, /approx\. location/i);
-  const device   = get(M, /^device$/i);
-  const browser  = get(M, /^browser$/i);
-  const localTs  = get(M, /their local time/i);
-
-  const brand = /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay';
-  const isMessage = (kind || kindOf(form)) === 'message';
-  const title = isMessage ? 'New message' : 'New lead';
-  // Short enough to guarantee one line in Telegram's mobile message width —
-  // the 18-char version wrapped to two lines under the brand/title line.
-  const rule = '━━━━━━━━━';
-
-  const out = [];
-  out.push(`${isMessage ? '✉️' : '🏠'} <b>${tgEscape(brand)}</b> — ${tgEscape(title)}`);
-  out.push(rule);
-
-  // Category first: an HOA board and a homeowner need completely different replies.
-  if (service) out.push(`🏷 <b>${tgEscape(service)}</b>`);
-
-  // Contact block — phone and email as real tap targets.
-  out.push('');
-  out.push(`👤 <b>${tgEscape(name)}</b>`);
-  if (phone) out.push(`📞 <a href="tel:${tgEscape(phone.replace(/[^0-9+]/g, ''))}">${tgEscape(phone)}</a>`);
-  if (email) out.push(`✉️ <a href="mailto:${tgEscape(email)}">${tgEscape(email)}</a>`);
-  if (addr)  out.push(`📍 ${tgEscape(addr)}`);
-  // Sent in full — a truncated message defeats the purpose of the alert.
-  // Telegram's hard cap is 4096 chars for the whole message; 2500 leaves ample
-  // room for every other block below and is longer than any real enquiry.
-  if (message) {
-    out.push('');
-    out.push(`💬 ${tgEscape(message.length > 2500 ? message.slice(0, 2500) + '…' : message)}`);
-  }
-
-  // Everything else they answered. Nothing is dropped — a new form field shows
-  // up here automatically without touching this file.
-  const shown = [/name/i, /phone/i, /email/i, /address/i, /message/i, /service interest/i];
-  const details = Object.entries(L)
-    .filter(([k, v]) => String(v ?? '').trim() && !shown.some((re) => re.test(k)))
-    .map(([k, v]) => {
-      const val = String(v).trim();
-      return `• <b>${tgEscape(k)}:</b> ${tgEscape(val.length > 200 ? val.slice(0, 200) + '…' : val)}`;
-    });
-  if (details.length) { out.push(''); out.push('📋 <b>Details</b>'); out.push(...details); }
-
-  // The exact page that produced the lead — full URL, tappable.
-  if (page) {
-    out.push('');
-    out.push('🔗 <b>Came from</b>');
-    out.push(`<a href="${tgEscape(page)}">${tgEscape(page)}</a>`);
-    if (referrer) out.push(`<i>referrer: ${tgEscape(referrer)}</i>`);
-  }
-
-  // Eastern time is the one the owner actually reasons in — show it plainly.
-  out.push('');
-  out.push(`🕐 <b>${tgEscape(easternStamp(when instanceof Date && !isNaN(when) ? when : new Date()))}</b>`);
-  const ctx = [loc, device, browser, localTs ? `their time ${localTs}` : ''].filter(Boolean).map(tgEscape);
-  if (ctx.length) out.push(`<i>${ctx.join(' · ')}</i>`);
-
-  // Everything the email carries that isn't already above, so the alert is a
-  // complete substitute for opening the inbox. Kept to one compact line and
-  // placed last, because none of it is needed to actually reply to a lead.
-  const usedMeta = [/submitted from page/i, /referrer/i, /approx\. location/i,
-                    /^device$/i, /^browser$/i, /their local time/i, /\(utc\)/i];
-  const tech = Object.entries(M)
-    .filter(([k, v]) => String(v ?? '').trim() && !usedMeta.some((re) => re.test(k)))
-    .map(([k, v]) => {
-      const val = String(v).trim();
-      return `${tgEscape(k)}: ${tgEscape(val.length > 90 ? val.slice(0, 90) + '…' : val)}`;
-    });
-  if (tech.length) { out.push(''); out.push(`🔧 <i>${tech.join(' · ')}</i>`); }
-
-  if (leadId) {
-    out.push('');
-    out.push(`<a href="${DEFAULTS.domain}/boroto/leads/#${tgEscape(leadId)}">▸ Open in Lead Desk</a>`);
-  }
-  out.push(rule);
-  return out.join('\n');
-}
-
-async function sendTelegram(env, text) {
-  const token = env.TELEGRAM_BOT_TOKEN;
-  const raw = env.TELEGRAM_CHAT_ID;
-  if (!token || !raw) return [];
-  // Comma-separated so leads can go to a group AND a personal chat during a
-  // switchover, and so reverting is a config change rather than a deploy.
-  // NOTE: this bot is shared with the owner's other, unrelated projects. Only
-  // ever call sendMessage here — never setWebhook or getUpdates, which are
-  // global to the bot and would break those projects' notifications.
-  const chatIds = String(raw).split(',').map((c) => c.trim()).filter(Boolean);
-  const results = [];
-  for (const chat_id of chatIds) {
-    try {
-      const r = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id, text, parse_mode: 'HTML', disable_web_page_preview: true }),
-      });
-      let body = await r.json().catch(() => ({}));
-      // Telegram silently reassigns a group's id when it is upgraded to a
-      // supergroup, and reports the replacement in parameters.migrate_to_chat_id.
-      // Follow it automatically so an upgrade never costs a notification, and
-      // record the new id so the stored config can be corrected once.
-      const migrated = body?.parameters?.migrate_to_chat_id;
-      if (!body.ok && migrated) {
-        const r2 = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: migrated, text, parse_mode: 'HTML', disable_web_page_preview: true }),
-        });
-        const b2 = await r2.json().catch(() => ({}));
-        results.push({ chat: chat_id, ok: !!b2.ok, migrated_to: String(migrated),
-                       err: b2.ok ? '' : (b2.description || 'unknown') });
-        continue;
-      }
-      // Recorded against the lead row (never returned publicly) purely so a
-      // misconfigured chat id can be diagnosed without asking the owner to
-      // check their phone. Telegram's own error text is the useful part.
-      results.push({ chat: chat_id, ok: !!body.ok, err: body.ok ? '' : (body.description || 'unknown') });
-    } catch (e) {
-      results.push({ chat: chat_id, ok: false, err: String(e && e.message || e) });
-    }
-  }
-  return results;
-}
-
+/* ── The Telegram lead card ──────────────────────────────────────────────────
+ * Rendering and transport now live in _card.js and _telegram.js, shared with
+ * the webhook so a card posted here and a card rewritten by a button press come
+ * from identical code. Best-effort throughout: a lead is never lost because
+ * Telegram was unhappy. */
 export async function onRequestPost(context) {
   const { request, env } = context;
   const cors = corsHeaders(request.headers.get('Origin'));
@@ -278,19 +117,24 @@ export async function onRequestPost(context) {
   // lead must still reach the owner when storage is broken.
   const leadId = await storeLead(env, { formName, lead, meta, subject, receivedAt });
 
-  // Notify the owner on Telegram for every submission — fire-and-forget so it
-  // never blocks or breaks the lead, and fired here so it lands even if email
-  // delivery later hiccups (the message carries the lead details itself).
-  const notify = sendTelegram(env, telegramText({ form: formName, lead, meta, leadId, when, kind: kindOf(formName) }))
-    .then(async (results) => {
-      try {
-        if (leadId && env.DB && results && results.length) {
-          await env.DB.prepare('UPDATE leads SET tg_debug = ? WHERE id = ?')
-            .bind(JSON.stringify(results), leadId).run();
-        }
-      } catch { /* diagnostics must never affect the lead */ }
-    })
-    .catch(() => {});
+  // Post the card to the group. This is the partners' shared workspace, not a
+  // one-way alert: it carries action buttons and rewrites itself as people work
+  // the lead. Fire-and-forget so it never blocks or breaks the submission.
+  // If storage failed (leadId === ''), the card still goes out — just without
+  // buttons, since there would be no record for a button press to act on.
+  const notify = (async () => {
+    const card = renderCard(
+      fromSubmission({ id: leadId, kind: kindOf(formName), lead, meta, receivedAt: when.toISOString() }),
+      [],
+    );
+    const { cards, results } = await sendCard(env, card);
+    try {
+      if (leadId && env.DB) {
+        await env.DB.prepare('UPDATE leads SET tg_cards = ?, tg_debug = ? WHERE id = ?')
+          .bind(JSON.stringify(cards), JSON.stringify(results), leadId).run();
+      }
+    } catch { /* diagnostics must never affect the lead */ }
+  })().catch(() => {});
   if (typeof context.waitUntil === 'function') context.waitUntil(notify);
 
   // An import is a replay of leads the owner already has in their inbox.

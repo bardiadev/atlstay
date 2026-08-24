@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS leads (
   brand             TEXT NOT NULL DEFAULT 'ATLStay',  -- ATLStay | SSMProperty
   form_name         TEXT,                      -- e.g. "ATLStay Rental Projection"
   kind              TEXT NOT NULL DEFAULT 'lead',  -- lead | message (contact-page enquiries)
+  tg_cards          TEXT,                      -- JSON [{chat,mid}] — where this lead's Telegram cards live
   service_interest  TEXT,                      -- the category: HOA, long-term, etc.
 
   -- flattened for listing / search / dupe detection
@@ -43,3 +44,24 @@ CREATE INDEX IF NOT EXISTS idx_leads_status    ON leads (status, received_at DES
 CREATE INDEX IF NOT EXISTS idx_leads_kind      ON leads (kind, received_at DESC);
 CREATE INDEX IF NOT EXISTS idx_leads_email     ON leads (email);
 CREATE INDEX IF NOT EXISTS idx_leads_phone     ON leads (phone);
+
+
+-- ── Activity ─────────────────────────────────────────────────────────────────
+-- Append-only. Every action anyone takes on a lead is one immutable row: a
+-- button press in the Telegram group, or a status change in the Lead Desk.
+-- Chosen over a JSON blob on the lead row because several partners can act on
+-- the same card simultaneously — an INSERT is atomic, where read-modify-write
+-- on a blob silently loses whichever write lands second.
+CREATE TABLE IF NOT EXISTS lead_events (
+  id          TEXT PRIMARY KEY,
+  lead_id     TEXT NOT NULL,
+  action      TEXT NOT NULL,   -- called | emailed | proposal | won | lost
+                               -- replied | not_relevant | moved | note | created
+  actor       TEXT NOT NULL,   -- display name, e.g. the Telegram user's name
+  actor_tg_id TEXT,            -- Telegram user id; NULL for dashboard actions
+  note        TEXT,            -- free text, for action='note'
+  source      TEXT NOT NULL,   -- telegram | dashboard | system
+  created_at  TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_lead_events_lead  ON lead_events (lead_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_lead_events_actor ON lead_events (actor, created_at);

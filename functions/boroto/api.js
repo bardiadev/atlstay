@@ -6,8 +6,19 @@
  * Do not move this to /api/.
  */
 
+import { addEvent, eventsForAll } from '../api/_leadEvents.js';
+import { refreshCard } from '../api/_board.js';
+
 const STATUSES = ['new', 'proposal_sent', 'won', 'lost'];
 const KINDS = ['lead', 'message'];
+
+/* Dashboard actions are attributed to the owner. Partners act from Telegram,
+   where their own name comes with the button press. */
+const OWNER = 'Brandon';
+
+/* Which activity event a dashboard status change corresponds to, so the group's
+   card reads the same whether the change came from Telegram or the Lead Desk. */
+const STATUS_EVENT = { proposal_sent: 'proposal', won: 'won', lost: 'lost' };
 
 const json = (obj, status = 200) =>
   new Response(JSON.stringify(obj), {
@@ -56,7 +67,12 @@ export async function onRequestGet(context) {
       `SELECT * FROM leads ORDER BY received_at DESC LIMIT 1000`,
     ).all();
 
-    return json({ leads: (rows.results || []).map(hydrate) });
+    // One extra query for the whole activity history rather than N per lead —
+    // the panel holds the entire dataset in memory and filters locally.
+    const events = await eventsForAll(env);
+    return json({
+      leads: (rows.results || []).map((r) => ({ ...hydrate(r), events: events[r.id] || [] })),
+    });
   } catch (err) {
     return json({ error: String(err?.message || err) }, 500);
   }
@@ -113,6 +129,8 @@ export async function onRequestPost(context) {
       if (!KINDS.includes(body.kind)) return json({ error: 'Bad kind' }, 400);
       await env.DB.prepare('UPDATE leads SET kind = ?, updated_at = ? WHERE id = ?')
         .bind(body.kind, now, id).run();
+      // The two inboxes carry different buttons, so the card has to be redrawn.
+      await refreshCard(env, id);
       return json({ ok: true, kind: body.kind });
     }
 
@@ -140,6 +158,18 @@ export async function onRequestPost(context) {
     binds.push(id);
 
     await env.DB.prepare(`UPDATE leads SET ${sets.join(', ')} WHERE id = ?`).bind(...binds).run();
+
+    // A status change here is the same kind of fact as a button press in the
+    // group, so it goes into the same history and rewrites the same card.
+    // Merely opening a lead or editing a note is not activity worth announcing.
+    if (body.status && STATUS_EVENT[body.status]) {
+      await addEvent(env, {
+        leadId: id, action: STATUS_EVENT[body.status], actor: OWNER, source: 'dashboard',
+      });
+      // Editing a Telegram message sends no notification, so the group updates
+      // silently. Awaited so the card is true before the panel re-reads.
+      await refreshCard(env, id);
+    }
     return json({ ok: true });
   } catch (err) {
     return json({ error: String(err?.message || err) }, 500);
