@@ -29,6 +29,12 @@ live outside the repo; `.gitignore` blocks `backlog*.json` and friends.
   email, but still stores and still alerts Telegram, in chronological order.
 
 ## Email is sent by the BROWSER, never by the server
+**Any site that posts to `/api/lead` must send its own email.** The endpoint
+stores the lead and posts the Telegram card; it cannot mail. ssmproperty.com
+lost every email until 2026-08-24 because it posted here and assumed this
+endpoint would mail for it — its pages now call Web3Forms directly too (see
+that project's CLAUDE.md). Onboarding a new site means giving it that call.
+
 Web3Forms is client-side-only on the free plan. It nonetheless answers a
 Cloudflare Worker with HTTP 200 `"Form submitted successfully!"` **and delivers
 nothing** — verified repeatedly 2026-08-24, not even to spam.
