@@ -28,6 +28,7 @@
 import { storeLead, kindOf } from './_leadStore.js';
 import { renderCard, fromSubmission } from './_card.js';
 import { sendCard } from './_telegram.js';
+import { postCard } from './_board.js';
 
 const DEFAULTS = {
   toEmail: 'hello@bardia.dev',
@@ -111,6 +112,15 @@ export async function onRequestPost(context) {
   const isImport = Boolean(importKey && timingSafeEqual(String(payload?.importKey || ''), importKey));
   const receivedAt = isImport && payload?.receivedAt ? String(payload.receivedAt) : '';
   const when = receivedAt ? new Date(receivedAt) : new Date();
+
+  /* Re-post existing leads as cards. Used once, when the board went live and
+   * the history in the group had been posted by the previous bot (which cannot
+   * retrofit buttons onto its own old messages). Key-gated exactly like the
+   * import, and it creates nothing — it only gives leads already in the
+   * database a card. Sequential and oldest-first so the group reads in order. */
+  if (isImport && payload?.action === 'repost') {
+    return await repostCards(env, cors, Boolean(payload?.force));
+  }
 
   // Persist to D1 first so the Telegram alert can link straight to the lead.
   // storeLead never throws and returns '' if D1 is unbound or failing — the
@@ -203,6 +213,23 @@ export async function onRequestPost(context) {
 }
 
 /* ───────────────────────── delivery ───────────────────────── */
+
+/** Give every stored lead a Telegram card, oldest first. */
+async function repostCards(env, cors, force) {
+  if (!env.DB) return json({ success: false, error: 'Database not bound' }, 503, cors);
+  const rows = await env.DB.prepare(
+    'SELECT * FROM leads ORDER BY received_at ASC',
+  ).all().catch(() => ({ results: [] }));
+
+  const done = [];
+  for (const row of rows.results || []) {
+    const existing = (() => { try { return JSON.parse(row.tg_cards || '[]'); } catch { return []; } })();
+    if (existing.length && !force) { done.push({ id: row.id, name: row.name, skipped: 'already has a card' }); continue; }
+    const cards = await postCard(env, row);
+    done.push({ id: row.id, name: row.name, received_at: row.received_at, posted: cards.length });
+  }
+  return json({ success: true, via: 'repost', count: done.length, done }, 200, cors);
+}
 
 /** Constant-time string compare — no timing signal about how much matched. */
 function timingSafeEqual(a, b) {
