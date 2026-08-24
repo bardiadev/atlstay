@@ -161,6 +161,15 @@ export function renderCard(lead, events = []) {
     out.push('');
   }
 
+  /* Email is delivered by the visitor's browser, not this server (Web3Forms
+     refuses server-side calls on the free plan). When neither path delivered,
+     say so here rather than letting the owner discover it weeks later. */
+  if (L.emailFailed) {
+    out.push('⚠️ <b>NO EMAIL WAS SENT</b>');
+    out.push('<i>This card is the only copy — everything you need is above.</i>');
+    out.push('');
+  }
+
   out.push(STATUS_LINE[L.status] || STATUS_LINE.new);
 
   const trail = renderTrail(events);
@@ -213,6 +222,7 @@ export function fromRow(row) {
     brand: row.brand || 'ATLStay',
     status: row.status || 'new',
     seq: row.seq || null,
+    emailFailed: row.email_ok === 0,
     receivedAt: row.received_at,
     pageUrl: row.page_url || '',
     fields: parse(row.raw_lead),

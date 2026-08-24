@@ -28,7 +28,7 @@
 import { storeLead, kindOf } from './_leadStore.js';
 import { renderCard, fromSubmission } from './_card.js';
 import { sendCard } from './_telegram.js';
-import { postCard } from './_board.js';
+import { postCard, refreshCard } from './_board.js';
 
 const DEFAULTS = {
   toEmail: 'hello@bardia.dev',
@@ -206,7 +206,23 @@ export async function onRequestPost(context) {
     const results = await Promise.all(
       keys.map((k) => sendWeb3forms(k, { subject, formName, replyto, lead, meta })),
     );
-    return json({ success: results.some(Boolean), via: 'web3forms', delivered: results.filter(Boolean).length }, 200, cors);
+    const delivered = results.filter((r) => r.ok).length;
+
+    /* Record what Web3Forms actually said, and mark the lead so the Telegram
+       card can warn when no email went out. Without this, an email outage is
+       invisible until somebody notices months of missing mail. */
+    if (leadId && env.DB) {
+      try {
+        await env.DB.prepare('UPDATE leads SET email_ok = ?, email_debug = ? WHERE id = ?')
+          .bind(delivered > 0 ? 1 : 0, JSON.stringify(results), leadId).run();
+      } catch { /* diagnostics must never affect the lead */ }
+      // Repaint the card so a failed email is visible in the group, not buried.
+      if (!delivered) { try { await refreshCard(env, leadId); } catch { /* best effort */ } }
+    }
+
+    // success:false is what tells the browser to send its own copy. Reporting
+    // a delivery we did not make is the one thing that must never happen here.
+    return json({ success: delivered > 0, via: 'web3forms', delivered }, 200, cors);
   }
 
   return json({ success: false, error: 'No delivery method configured' }, 500, cors);
@@ -256,6 +272,21 @@ function sendResend(key, body) {
   });
 }
 
+/**
+ * Hand a lead to Web3Forms and report HONESTLY whether it was accepted.
+ *
+ * This is load-bearing in a way that is easy to miss. The browser (src/lib/
+ * leads.ts) posts here first and sends its OWN copy to Web3Forms only if this
+ * endpoint reports failure. Web3Forms refuses server-side submissions on the
+ * free plan ("Use our API in client side… Pro plan is required"), so that
+ * browser fallback is what has actually delivered every lead. The moment this
+ * function over-reports success, the browser stops falling back and the email
+ * vanishes with nobody the wiser — which is exactly what happened 2026-08-24.
+ *
+ * So: when Web3Forms returns a body, BELIEVE THE BODY. A 200 carrying
+ * {success:false} is a refusal, not a delivery. Only fall back to the HTTP
+ * status when there is no parseable body at all.
+ */
 async function sendWeb3forms(key, { subject, formName, replyto, lead, meta }) {
   try {
     const flat = { access_key: key, subject, from_name: formName };
@@ -267,9 +298,10 @@ async function sendWeb3forms(key, { subject, formName, replyto, lead, meta }) {
       body: JSON.stringify(flat),
     });
     const j = await res.json().catch(() => null);
-    return Boolean((j && j.success) || res.ok);
-  } catch {
-    return false;
+    const ok = j ? Boolean(j.success) : res.ok;
+    return { ok, status: res.status, message: j ? String(j.message || '') : 'no body' };
+  } catch (e) {
+    return { ok: false, status: 0, message: String((e && e.message) || e) };
   }
 }
 

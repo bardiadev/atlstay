@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS leads (
   kind              TEXT NOT NULL DEFAULT 'lead',  -- lead | message (contact-page enquiries)
   tg_cards          TEXT,                      -- JSON [{chat,mid}] — where this lead's Telegram cards live
   seq               INTEGER,                   -- permanent reference number, never reused (see lead_seq)
+  email_ok          INTEGER,                   -- 1 delivered, 0 refused, NULL not attempted
+  email_debug       TEXT,                      -- what Web3Forms actually said, for diagnosis
   service_interest  TEXT,                      -- the category: HOA, long-term, etc.
 
   -- flattened for listing / search / dupe detection

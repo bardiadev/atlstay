@@ -116,6 +116,23 @@ t('  ...and has no buttons',     unsaved.reply_markup, undefined);
 t('  ...but still shows details', unsaved.text.includes('Sam Taylor'), true);
 t('a healthy card stays quiet',  base.text.includes('NOT SAVED'), false);
 
+console.log('\n── an email failure must be loud too ──');
+const noMail = renderCard(fromRow({
+  id: 'x1', kind: 'lead', brand: 'ATLStay', status: 'new', email_ok: 0,
+  received_at: '2026-08-24T21:23:00Z', raw_lead: JSON.stringify({ Name: 'Sam Taylor' }),
+}), []);
+t('card says no email was sent', noMail.text.includes('NO EMAIL WAS SENT'), true);
+const mailedOk = renderCard(fromRow({
+  id: 'x2', kind: 'lead', brand: 'ATLStay', status: 'new', email_ok: 1,
+  received_at: '2026-08-24T21:23:00Z', raw_lead: JSON.stringify({ Name: 'Sam Taylor' }),
+}), []);
+t('delivered email stays quiet',  mailedOk.text.includes('NO EMAIL'), false);
+const unknownMail = renderCard(fromRow({
+  id: 'x3', kind: 'lead', brand: 'ATLStay', status: 'new',
+  received_at: '2026-08-24T21:23:00Z', raw_lead: JSON.stringify({ Name: 'Sam Taylor' }),
+}), []);
+t('unknown state stays quiet',    unknownMail.text.includes('NO EMAIL'), false);
+
 console.log('\n── reference numbers ──');
 const numbered = renderCard({ ...LEAD, seq: 7 }, []);
 t('ref shown, zero-padded',      numbered.text.includes('<code>#0007</code>'), true);
