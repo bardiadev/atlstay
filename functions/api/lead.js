@@ -86,63 +86,71 @@ function tgEscape(s) {
 function telegramText({ form, lead, meta, leadId }) {
   const L = lead || {};
   const M = meta || {};
-  const get = (re) => {
-    for (const [k, v] of Object.entries(L)) if (re.test(k) && String(v).trim()) return String(v);
+  const get = (src, re) => {
+    for (const [k, v] of Object.entries(src)) if (re.test(k) && String(v).trim()) return String(v).trim();
     return '';
   };
-  const isContact = /contact/i.test(form || '');
-  const name = get(/name/i) || 'Someone';
-  const phone = get(/phone/i);
-  const email = get(/email/i);
-  const addr = get(/address/i);
-  const message = get(/message/i);
-  const service = get(/service interest/i);
-  const page = M['Submitted from page'] || '';
-  const loc = M['Approx. location'] || '';
-  const device = M['Device'] || '';
-  const localTime = M['Submitted (their local time)'] || '';
 
-  // Label the source site so SSMProperty leads are distinguishable from ATLStay.
-  const sourceBrand = /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay';
-  const title = isContact ? 'New contact message' : 'New lead';
+  const name     = get(L, /name/i) || 'Someone';
+  const phone    = get(L, /phone/i);
+  const email    = get(L, /email/i);
+  const addr     = get(L, /address/i);
+  const message  = get(L, /message/i);
+  const service  = get(L, /service interest/i);
+  const page     = get(M, /submitted from page/i);
+  const referrer = get(M, /referrer/i);
+  const loc      = get(M, /approx\. location/i);
+  const device   = get(M, /^device$/i);
+  const browser  = get(M, /^browser$/i);
+  const localTs  = get(M, /their local time/i);
 
-  const lines = [`🏠 <b>${tgEscape(sourceBrand)}</b> · ${tgEscape(title)}`, `<b>${tgEscape(name)}</b>`];
+  const brand = /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay';
+  const title = /contact/i.test(form || '') ? 'New contact message' : 'New lead';
+  const rule = '━━━━━━━━━━━━━━━━━━';
 
-  // The single most useful triage fact: an HOA board and a house owner need
-  // completely different responses, so the category leads.
-  if (service) lines.push(`🏷 <b>${tgEscape(service)}</b>`);
+  const out = [];
+  out.push(`🏠 <b>${tgEscape(brand)}</b> — ${tgEscape(title)}`);
+  out.push(rule);
 
-  const contact = [];
-  if (phone) contact.push(`📞 ${tgEscape(phone)}`);
-  if (email) contact.push(`✉️ ${tgEscape(email)}`);
-  if (contact.length) lines.push(contact.join('  ·  '));
-  if (addr) lines.push(`📍 ${tgEscape(addr)}`);
-  if (message) lines.push(`💬 ${tgEscape(message.length > 280 ? message.slice(0, 280) + '…' : message)}`);
+  // Category first: an HOA board and a homeowner need completely different replies.
+  if (service) out.push(`🏷 <b>${tgEscape(service)}</b>`);
 
-  // Every remaining answer they gave, so a new form field can never be silently
-  // dropped. Forensic detail (user agent, screen size…) is deliberately NOT here
-  // — it belongs on the dashboard, not on a phone.
+  // Contact block — phone and email as real tap targets.
+  out.push('');
+  out.push(`👤 <b>${tgEscape(name)}</b>`);
+  if (phone) out.push(`📞 <a href="tel:${tgEscape(phone.replace(/[^0-9+]/g, ''))}">${tgEscape(phone)}</a>`);
+  if (email) out.push(`✉️ <a href="mailto:${tgEscape(email)}">${tgEscape(email)}</a>`);
+  if (addr)  out.push(`📍 ${tgEscape(addr)}`);
+  if (message) out.push(`💬 ${tgEscape(message.length > 400 ? message.slice(0, 400) + '…' : message)}`);
+
+  // Everything else they answered. Nothing is dropped — a new form field shows
+  // up here automatically without touching this file.
   const shown = [/name/i, /phone/i, /email/i, /address/i, /message/i, /service interest/i];
-  const rest = [];
-  for (const [k, v] of Object.entries(L)) {
-    const val = String(v == null ? '' : v).trim();
-    if (!val) continue;
-    if (shown.some((re) => re.test(k))) continue;
-    rest.push(`• <b>${tgEscape(k)}:</b> ${tgEscape(val.length > 160 ? val.slice(0, 160) + '…' : val)}`);
+  const details = Object.entries(L)
+    .filter(([k, v]) => String(v ?? '').trim() && !shown.some((re) => re.test(k)))
+    .map(([k, v]) => {
+      const val = String(v).trim();
+      return `• <b>${tgEscape(k)}:</b> ${tgEscape(val.length > 200 ? val.slice(0, 200) + '…' : val)}`;
+    });
+  if (details.length) { out.push(''); out.push('📋 <b>Details</b>'); out.push(...details); }
+
+  // The exact page that produced the lead — full URL, tappable.
+  if (page) {
+    out.push('');
+    out.push('🔗 <b>Came from</b>');
+    out.push(`<a href="${tgEscape(page)}">${tgEscape(page)}</a>`);
+    if (referrer) out.push(`<i>referrer: ${tgEscape(referrer)}</i>`);
   }
-  if (rest.length) lines.push(rest.join('\n'));
 
-  const ctx = [];
-  if (loc) ctx.push(tgEscape(loc));
-  if (device) ctx.push(tgEscape(String(device).toLowerCase()));
-  if (localTime) ctx.push(tgEscape(localTime));
-  if (page) ctx.push(tgEscape(page.replace(/^https?:\/\/[^/]+/, '') || page));
-  if (ctx.length) lines.push(`<i>${ctx.join('  ·  ')}</i>`);
+  const ctx = [loc, device, browser, localTs].filter(Boolean).map(tgEscape);
+  if (ctx.length) { out.push(''); out.push(`🕐 <i>${ctx.join(' · ')}</i>`); }
 
-  if (leadId) lines.push(`<a href="${DEFAULTS.domain}/boroto/leads/#${tgEscape(leadId)}">▸ Open in dashboard</a>`);
-
-  lines.push('━━━━━━━━━━━━━━━━');
-  return lines.join('\n');
+  if (leadId) {
+    out.push('');
+    out.push(`<a href="${DEFAULTS.domain}/boroto/leads/#${tgEscape(leadId)}">▸ Open in Lead Desk</a>`);
+  }
+  out.push(rule);
+  return out.join('\n');
 }
 
 async function sendTelegram(env, text) {
