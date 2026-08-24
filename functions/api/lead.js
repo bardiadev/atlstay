@@ -171,7 +171,23 @@ async function sendTelegram(env, text) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ chat_id, text, parse_mode: 'HTML', disable_web_page_preview: true }),
       });
-      const body = await r.json().catch(() => ({}));
+      let body = await r.json().catch(() => ({}));
+      // Telegram silently reassigns a group's id when it is upgraded to a
+      // supergroup, and reports the replacement in parameters.migrate_to_chat_id.
+      // Follow it automatically so an upgrade never costs a notification, and
+      // record the new id so the stored config can be corrected once.
+      const migrated = body?.parameters?.migrate_to_chat_id;
+      if (!body.ok && migrated) {
+        const r2 = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: migrated, text, parse_mode: 'HTML', disable_web_page_preview: true }),
+        });
+        const b2 = await r2.json().catch(() => ({}));
+        results.push({ chat: chat_id, ok: !!b2.ok, migrated_to: String(migrated),
+                       err: b2.ok ? '' : (b2.description || 'unknown') });
+        continue;
+      }
       // Recorded against the lead row (never returned publicly) purely so a
       // misconfigured chat id can be diagnosed without asking the owner to
       // check their phone. Telegram's own error text is the useful part.
