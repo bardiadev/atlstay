@@ -3,6 +3,11 @@ import { comparisons } from '@/data/comparisons';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
+
+/* Written out rather than derived from a Date. `new Date('2026-08-24')` is
+   parsed as UTC midnight, which renders as 23 August in Eastern — a date that
+   is wrong by a day on a line whose whole job is to say when we checked. */
+const VERIFIED_ON = '24 August 2026';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Button from '@/components/ui/Button.astro';
 import CTABand from '@/components/ui/CTABand.astro';
@@ -108,6 +113,63 @@ const metaDescription = `${comparison.summary.slice(0, 140)}…`;
       </div>
     </Container>
   </Section>
+
+  {comparison.facts && comparison.facts.length > 0 && (
+    <Section variant="white">
+      <Container>
+        <Eyebrow>Side by side</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          The facts, with sources
+        </h2>
+        <p class="mt-4 max-w-2xl text-ink/75">
+          Every figure below is either taken from {comparison.competitor}'s own published material and
+          linked, or recorded as not published. Where a number comes from a third party rather than
+          from {comparison.competitor}, it says so. Checked {VERIFIED_ON}.
+        </p>
+
+        {/* These pages used to carry no extractable fact at all — only soft positioning —
+            so there was nothing for a reader to check or an answer engine to cite. A
+            sourced table is the honest version of that, and "they do not publish a rate"
+            is a stronger and safer contrast than any estimate would be. */}
+        <div class="mt-8 overflow-x-auto rounded-2xl border border-line bg-white">
+          <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+            <thead>
+              <tr class="border-b border-line">
+                <th scope="col" class="px-5 py-4 font-display text-base font-normal text-forest">&nbsp;</th>
+                <th scope="col" class="px-5 py-4 font-display text-base font-normal text-forest">{comparison.competitor}</th>
+                <th scope="col" class="px-5 py-4 font-display text-base font-normal text-forest">ATLStay</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparison.facts.map((f) => (
+                <tr class="border-b border-line last:border-0 align-top">
+                  <th scope="row" class="px-5 py-4 text-xs font-semibold uppercase tracking-wide text-stone">
+                    {f.label}
+                  </th>
+                  <td class="px-5 py-4 text-ink/80">
+                    {f.theirs}
+                    <span class="mt-1.5 block text-xs text-stone">
+                      {f.thirdParty ? 'Third-party estimate — ' : 'Source — '}
+                      <a
+                        href={f.source.url}
+                        target="_blank"
+                        rel="noopener nofollow"
+                        class="underline underline-offset-2 hover:text-forest"
+                      >{f.source.publisher}</a>
+                    </span>
+                  </td>
+                  <td class="px-5 py-4 font-medium text-forest">{f.ours}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-xs text-stone">
+          Competitor terms change. If anything here is out of date, tell us and we will correct it.
+        </p>
+      </Container>
+    </Section>
+  )}
 
   <!-- Why local matters -->
   <Section variant="white">
