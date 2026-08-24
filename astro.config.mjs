@@ -54,7 +54,13 @@ const RESOURCE_LASTMOD = resourceLastmods();
 export default defineConfig({
   site: 'https://atlstay.com',
   trailingSlash: 'always',
-  build: { format: 'directory', inlineStylesheets: 'always' },
+  build: { format: 'directory', // 'auto', not 'always'. Inlining put 63KB of CSS into every one of 894 pages —
+    // 40% of the homepage's 155KB — which the browser must pull down before it can
+    // even request the hero image, and the hero image is the LCP element (measured:
+    // 91% of a 375px viewport). 'auto' still inlines small sheets but links the big
+    // one, so it downloads in parallel AND is cached for every subsequent page —
+    // which matters on a site whose whole funnel is city page -> service page.
+    inlineStylesheets: 'auto' },
   integrations: [
     react(),
     sitemap({
