@@ -148,24 +148,31 @@ function telegramText({ form, lead, meta, leadId }) {
 async function sendTelegram(env, text) {
   const token = env.TELEGRAM_BOT_TOKEN;
   const raw = env.TELEGRAM_CHAT_ID;
-  if (!token || !raw) return; // safe no-op until the secrets are set
+  if (!token || !raw) return [];
   // Comma-separated so leads can go to a group AND a personal chat during a
   // switchover, and so reverting is a config change rather than a deploy.
   // NOTE: this bot is shared with the owner's other, unrelated projects. Only
   // ever call sendMessage here — never setWebhook or getUpdates, which are
   // global to the bot and would break those projects' notifications.
   const chatIds = String(raw).split(',').map((c) => c.trim()).filter(Boolean);
+  const results = [];
   for (const chat_id of chatIds) {
     try {
-      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      const r = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ chat_id, text, parse_mode: 'HTML', disable_web_page_preview: true }),
       });
-    } catch {
-      /* best-effort — never throw, never block the lead */
+      const body = await r.json().catch(() => ({}));
+      // Recorded against the lead row (never returned publicly) purely so a
+      // misconfigured chat id can be diagnosed without asking the owner to
+      // check their phone. Telegram's own error text is the useful part.
+      results.push({ chat: chat_id, ok: !!body.ok, err: body.ok ? '' : (body.description || 'unknown') });
+    } catch (e) {
+      results.push({ chat: chat_id, ok: false, err: String(e && e.message || e) });
     }
   }
+  return results;
 }
 
 export async function onRequestPost(context) {
@@ -193,7 +200,16 @@ export async function onRequestPost(context) {
   // Notify the owner on Telegram for every submission — fire-and-forget so it
   // never blocks or breaks the lead, and fired here so it lands even if email
   // delivery later hiccups (the message carries the lead details itself).
-  const notify = sendTelegram(env, telegramText({ form: formName, lead, meta, leadId }));
+  const notify = sendTelegram(env, telegramText({ form: formName, lead, meta, leadId }))
+    .then(async (results) => {
+      try {
+        if (leadId && env.DB && results && results.length) {
+          await env.DB.prepare('UPDATE leads SET tg_debug = ? WHERE id = ?')
+            .bind(JSON.stringify(results), leadId).run();
+        }
+      } catch { /* diagnostics must never affect the lead */ }
+    })
+    .catch(() => {});
   if (typeof context.waitUntil === 'function') context.waitUntil(notify);
 
   const cfg = {
