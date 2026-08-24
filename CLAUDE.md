@@ -6,6 +6,34 @@
 - **The management fee is a RANGE, 10–15%, never "flat."** `site.pricing` carries `rate` (the range), `rateFrom`, `rateHigh`, `rateBasis`. Copy that says "flat" about the fee is a bug. "Flat" is still correct when it means flat *nightly* pricing — don't sweep those.
 - **Owner-confirmed 2026-08-10:** 10+ years in business is correct (not 15). They hold Georgia broker licensure, their lawyers have cleared it, and they legitimately manage long-term rentals and HOAs — write those as real services, don't hedge.
 
+## This repository is PUBLIC — never commit customer data
+`github.com/bardiadev/atlstay` is public. Real lead names, emails, phone
+numbers, addresses and IPs must never enter the working tree — not in tests, not
+in fixtures, not in a "temporary" JSON file. (Learned the hard way 2026-08-24: a
+real sender's name, work email and phone went into `test/telegram.test.mjs` and
+was pushed before I caught it.) Tests use invented data. Import/backlog files
+live outside the repo; `.gitignore` blocks `backlog*.json` and friends.
+
+## Lead Desk (/boroto/leads/)
+- Two inboxes, split on arrival by form name: `kind='lead'` (projection and
+  proposal forms) and `kind='message'` (anything whose form name contains
+  "contact"). Either can be moved to the other from the record.
+- The panel fetches the whole dataset ONCE and filters in memory. Do not put a
+  fetch in an interaction handler — that is what made it feel laggy before.
+- **Basic Auth must never be re-enabled on /boroto.** Browsers cache those
+  credentials and resend them automatically, which silently defeats "Sign out".
+  The signed session cookie is the only way in, and the API's 401 must not carry
+  `WWW-Authenticate` or the browser throws up its native prompt again.
+- Historical leads are replayed with `scripts/import-leads.mjs`, gated on the
+  `LEAD_IMPORT_KEY` Pages secret: it backdates `received_at` and suppresses the
+  email, but still stores and still alerts Telegram, in chronological order.
+
+## No web-app manifest
+A manifest with `display: standalone` is what makes browsers offer to install
+the site as an app. It was interrupting real visitors, so it is gone. Do not
+re-add `<link rel="manifest">` or `public/site.webmanifest`. The PNG icons stay
+— `apple-touch-icon` for bookmarks, `icon-512` for the Organization schema logo.
+
 ## Conversion: the form is the funnel, not the email
 - **The multi-step projection form is the primary conversion path everywhere.** `hello@atlstay.com` is a real inbox but Brandon does NOT want people emailing — email is the fallback, the form is the ask.
 - Put the form in the hero (automatic via `PageHero` — don't pass `hideForm`) **and repeat it down the page.** Long landing pages carry 3+ instances via `@/components/services/ServiceFormBand.astro`.
