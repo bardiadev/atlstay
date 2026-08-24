@@ -66,8 +66,24 @@ const built = [];
 /* ── the truthful raw material ──────────────────────────────────────────── */
 const shortHl = (c, i) => {
   const h = c.highlights[i % Math.max(c.highlights.length, 1)] || '';
-  // Highlights are written as "Thing — explanation"; the first clause is the fact.
   return h.split(/\s+—\s+|\s+-\s+/)[0].replace(/\.$/, '').trim();
+};
+
+/**
+ * Render a city highlight as its OWN sentence, never spliced into another one.
+ *
+ * The first version dropped the fragment into slots like "${hl} is the kind of
+ * thing that…", which only reads correctly when the highlight is a noun phrase.
+ * Many of them are complete clauses with their own verb, so 21% of entries came
+ * out as "…Snellville Days Festival is one of Gwinnett's largest annual
+ * community events tends to set what the association is managing". Quoting it as
+ * a standalone sentence is grammatical whichever shape the highlight takes.
+ */
+const localFactor = (c, i, leadIn, consequence) => {
+  const h = shortHl(c, i);
+  if (!h) return consequence;
+  const stmt = /[.!?]$/.test(h) ? h : `${h}.`;
+  return `${leadIn} ${stmt.charAt(0).toUpperCase()}${stmt.slice(1)} ${consequence}`;
 };
 
 const countyClause = (c) =>
@@ -98,7 +114,7 @@ const WRITERS = {
       `Some obligations travel with the money rather than the agreement. Georgia requires deposits to be escrowed or bonded, and requires an itemised accounting after the tenancy ends — which is why the bookkeeping, not the lease template, is where most owners come unstuck.`,
       `The deposit rules are the ones owners most often get wrong. Georgia expects the money held separately, documented at both ends of the tenancy, and returned within a defined period with any deduction itemised. Skipping the move-in record is what makes the move-out deduction indefensible.`,
     ], c, 'lt2'),
-    `What ${c.name} contributes is demand shape rather than legal difference. ${shortHl(c, 0)} is the kind of thing that decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.`,
+    localFactor(c, 0, `What ${c.name} contributes is demand shape rather than legal difference.`, `That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.`),
   ],
   'tenant-placement': (c) => [
     pick([
@@ -111,7 +127,7 @@ const WRITERS = {
       `The screening standard matters more than its severity. Federal fair housing law does not object to a demanding bar; it objects to a bar that moves between applicants, which is exactly what informal self-screening tends to produce.`,
       `Applying the same written criteria to everyone is the protection. Verification of income and employment, rental history and public-record searches are routine — what is not routine, and what creates fair housing risk, is deciding case by case.`,
     ], c, 'tp2'),
-    `Leasing on someone else's behalf for a fee is licensed activity in Georgia. Locally, ${shortHl(c, 1)} shapes the applicant pool more than the photographs do, and pricing to that pool rather than to the top of the comparable range is usually what separates a fast placement from a vacant month.`,
+    localFactor(c, 1, `Leasing on someone else's behalf for a fee is licensed activity in Georgia. One local factor shapes the applicant pool more than the photographs do.`, `Pricing to that pool, rather than to the top of the comparable range, is usually what separates a fast placement from a vacant month.`),
   ],
   'hoa-management': (c) => [
     pick([
@@ -124,7 +140,7 @@ const WRITERS = {
       `Whether the Property Owners' Association Act applies is the first question, not a detail. Georgia makes it elective, so two neighbouring ${c.name} communities can have materially different powers depending on what their declarations say.`,
       `The governing documents decide the board's authority, because Georgia's POA Act only reaches communities that affirmatively elected into it. A manager who assumes the Act applies is guessing about what the board can enforce.`,
     ], c, 'hoa2'),
-    `${c.name} sits in ${countyClause(c)}, and ${shortHl(c, 2)} tends to set what the association is really managing day to day — the amenities, the turnover, and the disputes that follow from both.`,
+    localFactor(c, 2, `${c.name} sits in ${countyClause(c)}, and one local fact tends to set what the association is really managing day to day.`, `That drives the amenities, the turnover, and the disputes that follow from both.`),
   ],
   'commercial-property-management': (c) => [
     pick([
@@ -137,7 +153,7 @@ const WRITERS = {
       `What costs money here is rarely dramatic. It is the missed escalation, the expired insurance certificate, the reconciliation that cannot be substantiated when a tenant queries it.`,
       `Most commercial losses are calendar failures rather than disputes — renewal windows, escalation dates and insurance expiries that passed without anyone tracking them.`,
     ], c, 'cm2'),
-    `Local filing obligations attach to the asset in ${countyClause(c)} regardless of where the owning entity is registered, which catches out-of-state owners more often than any tenant dispute. ${shortHl(c, 3)} decides what kind of tenant the space suits, and therefore what the lease should protect against.`,
+    localFactor(c, 3, `Local filing obligations attach to the asset in ${countyClause(c)} regardless of where the owning entity is registered, which catches out-of-state owners more often than any tenant dispute. Locally, one thing decides what kind of tenant the space suits.`, `That in turn decides what the lease should be protecting against.`),
   ],
   'multi-family-property-management': (c) => [
     pick([
@@ -150,7 +166,7 @@ const WRITERS = {
       `Uniformity across units is not bureaucracy, it is the fair housing defence. Discretion exercised unit by unit is precisely the pattern that creates exposure.`,
       `A portfolio needs one written standard applied everywhere — screening, notices, enforcement. Variation between units is far harder to defend than a demanding but uniform policy.`,
     ], c, 'mf2'),
-    `Dispossessories, when unavoidable, are heard in the magistrate court of ${countyClause(c)}, and at portfolio scale that has to be routine rather than exceptional. ${shortHl(c, 0)} determines the resident profile a building actually draws, and with it the realistic renewal rate.`,
+    localFactor(c, 0, `Dispossessories, when unavoidable, are heard in the magistrate court of ${countyClause(c)}, and at portfolio scale that has to be routine rather than exceptional. One local fact determines the resident profile a building actually draws.`, `That, more than the finish level, sets a realistic renewal rate.`),
   ],
   'investor-services': (c) => [
     pick([
@@ -163,7 +179,7 @@ const WRITERS = {
       `Most models we are shown are revenue models. The risk sits on the other side — what a turn costs locally, and whether ${countyClause(c)} permits the use being underwritten at all.`,
       `Deals fail on permitting far more often than on rate. An acquisition that pencils on nightly revenue and never checks ${countyClause(c)}'s position on the use is the common, avoidable mistake.`,
     ], c, 'iv2'),
-    `${shortHl(c, 4)} is the sort of local fact that belongs in the model before purchase rather than in the explanation afterwards.`,
+    localFactor(c, 4, `One local fact belongs in the model before purchase rather than in the explanation afterwards.`, `It is the sort of thing that changes an underwriting assumption rather than decorating it.`),
   ],
   'mid-term-rental-management': (c) => [
     pick([
@@ -176,7 +192,7 @@ const WRITERS = {
       `The rhythm is unrecognisable from short-term hosting — a handful of changeovers a year, bookings agreed weeks ahead, and someone genuinely resident between them.`,
       `Fewer arrivals, longer stays, and a guest who unpacks properly. Furnishing has to survive months of ordinary use rather than photograph well for a weekend.`,
     ], c, 'mt2'),
-    `In ${c.name}, ${shortHl(c, 1)} is the kind of thing that generates thirty-plus-day demand — relocations, contracts and projects rather than weekends.`,
+    localFactor(c, 1, `In ${c.name}, one local factor generates most of the thirty-plus-day demand.`, `It brings relocations, contracts and projects rather than weekends.`),
   ],
   'corporate-housing-management': (c) => [
     pick([
@@ -189,7 +205,7 @@ const WRITERS = {
       `What wins the booking is predictability: one number, proper invoicing, and no surprises on arrival day.`,
       `Consistent furnishing, documented internet and one accountable contact matter more than character. A company let down once does not book twice.`,
     ], c, 'ch2'),
-    `${shortHl(c, 2)} is what tends to generate that demand around ${c.name}, and it usually arrives with a fixed start date rather than a flexible one.`,
+    localFactor(c, 2, `One local factor generates most of that demand around ${c.name}.`, `It usually arrives with a fixed start date rather than a flexible one.`),
   ],
   'travel-nurse-housing': (c) => [
     pick([
@@ -202,7 +218,7 @@ const WRITERS = {
       `The requirements are practical rather than aspirational — a bed that is ready, a car space that is certain, and a drive that works at handover time.`,
       `Furnished, connected, parked and close enough that a night-shift commute is tolerable. Aesthetics rank well below all four.`,
     ], c, 'tn2'),
-    `Deposits and lease terms written for a twelve-month resident are the usual reason a suitable property loses the booking. Locally, ${shortHl(c, 3)} determines whether it is a realistic base for that commute — proximity on a map and proximity in traffic are different things.`,
+    localFactor(c, 3, `Deposits and lease terms written for a twelve-month resident are the usual reason a suitable property loses the booking. One local fact determines whether it is a realistic base for that commute.`, `Proximity on a map and proximity in traffic are different things.`),
   ],
   'insurance-housing': (c) => [
     pick([
@@ -215,7 +231,7 @@ const WRITERS = {
       `Proximity to the damaged property matters more than quality, because school runs and workplaces do not pause. So does documentation the carrier can actually pay against.`,
       `Flexibility on the exit is worth more to an adjuster than a lower rate, because repair schedules slip and the placement has to slip with them.`,
     ], c, 'ih2'),
-    `${shortHl(c, 4)} shapes what stock is genuinely available near ${c.name} at short notice, which is usually the binding constraint rather than price.`,
+    localFactor(c, 4, `One local factor shapes what stock is genuinely available near ${c.name} at short notice.`, `That availability, not price, is usually the binding constraint on a placement.`),
   ],
   'film-production-housing': (c) => [
     pick([
@@ -228,7 +244,7 @@ const WRITERS = {
       `Bookings arrive in blocks and change in blocks. What a production values is a single point of contact who can flex the count without renegotiating everything.`,
       `Crew bookings are group bookings with moving dates. Consolidated billing and a tolerant cancellation posture matter more than any individual room.`,
     ], c, 'fp2'),
-    `Parking for the vehicles crew actually drive, and tolerance for genuinely irregular hours, outrank décor every time. Around ${c.name}, ${shortHl(c, 0)} decides whether a property is a workable base for a call time.`,
+    localFactor(c, 0, `Parking for the vehicles crew actually drive, and tolerance for genuinely irregular hours, outrank décor every time. Around ${c.name}, one local fact decides whether a property is a workable base for a call time.`, `Everything else is negotiable; that rarely is.`),
   ],
   'student-housing': (c) => [
     pick([
@@ -241,7 +257,7 @@ const WRITERS = {
       `Parental guarantees, per-room agreements and planned annual turnover are normal here, not warning signs, and the screening has to be built for that.`,
       `Expect a guarantor, expect the unit to turn every year, and price the renewal cycle accordingly rather than treating turnover as a problem.`,
     ], c, 'st2'),
-    `${shortHl(c, 1)} is the local context that determines what a student household near ${c.name} actually wants and will pay.`,
+    localFactor(c, 1, `One local factor determines what a student household near ${c.name} actually wants and will pay.`, `Pricing against it beats pricing against the wider rental market.`),
   ],
   'direct-booking': (c) => [
     pick([
@@ -254,7 +270,7 @@ const WRITERS = {
       `Its economics rest on repeat stays. A first-time guest is worth finding on a platform; a returning one is worth owning.`,
       `Owning the payment, the terms and the guest relationship also means carrying the trust burden a platform used to carry for you.`,
     ], c, 'db2'),
-    `In ${c.name}, ${shortHl(c, 2)} tends to produce exactly that kind of repeat visit — the same reason to return, year after year.`,
+    localFactor(c, 2, `In ${c.name}, one local factor produces exactly that kind of repeat visit.`, `It gives a guest the same reason to return, year after year.`),
   ],
   'vrbo-management': (c) => [
     pick([
@@ -267,7 +283,7 @@ const WRITERS = {
       `Cross-posting without adaptation usually underperforms on both platforms. Vrbo's ranking pays attention to how reliably you accept and how accurate the calendar is.`,
       `Treating it as a copy of an Airbnb listing is the common mistake — the ranking signals, the guest expectations and the review norms are all its own.`,
     ], c, 'vr2'),
-    `Locally, ${shortHl(c, 3)} is the kind of draw that brings the multi-room, multi-night group Vrbo is built around.`,
+    localFactor(c, 3, `Locally, one draw brings exactly the multi-room, multi-night group Vrbo is built around.`, `A property that suits that group will outperform a better-looking one that does not.`),
   ],
   'marriott-homes-villas': (c) => [
     pick([
@@ -280,7 +296,7 @@ const WRITERS = {
       `The traveller here books earlier, stays longer, and measures the property against a hotel rather than against another rental.`,
       `Loyalty-programme guests behave differently — more planning, longer stays, and far less tolerance for inconsistency between visits.`,
     ], c, 'mh2'),
-    `${shortHl(c, 4)} is what tends to bring that traveller toward ${c.name} in the first place.`,
+    localFactor(c, 4, `One local factor tends to bring that traveller toward ${c.name} in the first place.`, `Meeting the standard is what keeps them booking directly through the channel.`),
   ],
 };
 
