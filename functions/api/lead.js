@@ -25,7 +25,7 @@
  * No build step: Cloudflare Pages auto-deploys /functions as serverless routes.
  */
 
-import { storeLead } from './_leadStore.js';
+import { storeLead, kindOf } from './_leadStore.js';
 
 const DEFAULTS = {
   toEmail: 'hello@bardia.dev',
@@ -102,7 +102,7 @@ function tgEscape(s) {
   return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function telegramText({ form, lead, meta, leadId }) {
+export function telegramText({ form, lead, meta, leadId, when, kind }) {
   const L = lead || {};
   const M = meta || {};
   const get = (src, re) => {
@@ -124,11 +124,12 @@ function telegramText({ form, lead, meta, leadId }) {
   const localTs  = get(M, /their local time/i);
 
   const brand = /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay';
-  const title = /contact/i.test(form || '') ? 'New contact message' : 'New lead';
+  const isMessage = (kind || kindOf(form)) === 'message';
+  const title = isMessage ? 'New message' : 'New lead';
   const rule = '━━━━━━━━━━━━━━━━━━';
 
   const out = [];
-  out.push(`🏠 <b>${tgEscape(brand)}</b> — ${tgEscape(title)}`);
+  out.push(`${isMessage ? '✉️' : '🏠'} <b>${tgEscape(brand)}</b> — ${tgEscape(title)}`);
   out.push(rule);
 
   // Category first: an HOA board and a homeowner need completely different replies.
@@ -140,7 +141,13 @@ function telegramText({ form, lead, meta, leadId }) {
   if (phone) out.push(`📞 <a href="tel:${tgEscape(phone.replace(/[^0-9+]/g, ''))}">${tgEscape(phone)}</a>`);
   if (email) out.push(`✉️ <a href="mailto:${tgEscape(email)}">${tgEscape(email)}</a>`);
   if (addr)  out.push(`📍 ${tgEscape(addr)}`);
-  if (message) out.push(`💬 ${tgEscape(message.length > 400 ? message.slice(0, 400) + '…' : message)}`);
+  // Sent in full — a truncated message defeats the purpose of the alert.
+  // Telegram's hard cap is 4096 chars for the whole message; 2500 leaves ample
+  // room for every other block below and is longer than any real enquiry.
+  if (message) {
+    out.push('');
+    out.push(`💬 ${tgEscape(message.length > 2500 ? message.slice(0, 2500) + '…' : message)}`);
+  }
 
   // Everything else they answered. Nothing is dropped — a new form field shows
   // up here automatically without touching this file.
@@ -163,7 +170,7 @@ function telegramText({ form, lead, meta, leadId }) {
 
   // Eastern time is the one the owner actually reasons in — show it plainly.
   out.push('');
-  out.push(`🕐 <b>${tgEscape(easternStamp())}</b>`);
+  out.push(`🕐 <b>${tgEscape(easternStamp(when instanceof Date && !isNaN(when) ? when : new Date()))}</b>`);
   const ctx = [loc, device, browser, localTs ? `their time ${localTs}` : ''].filter(Boolean).map(tgEscape);
   if (ctx.length) out.push(`<i>${ctx.join(' · ')}</i>`);
 
@@ -251,15 +258,28 @@ export async function onRequestPost(context) {
   const lead = payload?.lead || {};
   const meta = payload?.meta || {};
 
+  /* ── Backfill / import ──────────────────────────────────────────────────
+   * Two fields are honoured ONLY when the caller proves it holds the shared
+   * secret LEAD_IMPORT_KEY: `receivedAt` (backdate the row to when the lead
+   * really arrived) and email suppression (the owner already has those emails;
+   * re-sending them would be spam). Without a correct key both are ignored
+   * completely, so an ordinary visitor submission is unaffected and no one can
+   * forge a backdated lead or silence the email trail. If the secret is unset,
+   * the import path simply does not exist. */
+  const importKey = env.LEAD_IMPORT_KEY || '';
+  const isImport = Boolean(importKey && timingSafeEqual(String(payload?.importKey || ''), importKey));
+  const receivedAt = isImport && payload?.receivedAt ? String(payload.receivedAt) : '';
+  const when = receivedAt ? new Date(receivedAt) : new Date();
+
   // Persist to D1 first so the Telegram alert can link straight to the lead.
   // storeLead never throws and returns '' if D1 is unbound or failing — the
   // lead must still reach the owner when storage is broken.
-  const leadId = await storeLead(env, { formName, lead, meta, subject });
+  const leadId = await storeLead(env, { formName, lead, meta, subject, receivedAt });
 
   // Notify the owner on Telegram for every submission — fire-and-forget so it
   // never blocks or breaks the lead, and fired here so it lands even if email
   // delivery later hiccups (the message carries the lead details itself).
-  const notify = sendTelegram(env, telegramText({ form: formName, lead, meta, leadId }))
+  const notify = sendTelegram(env, telegramText({ form: formName, lead, meta, leadId, when, kind: kindOf(formName) }))
     .then(async (results) => {
       try {
         if (leadId && env.DB && results && results.length) {
@@ -270,6 +290,17 @@ export async function onRequestPost(context) {
     })
     .catch(() => {});
   if (typeof context.waitUntil === 'function') context.waitUntil(notify);
+
+  // An import is a replay of leads the owner already has in their inbox.
+  // Storage + Telegram run (that is the whole point); email does not.
+  if (isImport) {
+    // Always await the Telegram send here, unlike a live lead. An importer
+    // posting a backlog sequentially relies on each alert having actually been
+    // delivered before the next one starts, otherwise the replayed history
+    // arrives out of chronological order in the chat.
+    await notify;
+    return json({ success: true, via: 'import', id: leadId, receivedAt: receivedAt || null }, 200, cors);
+  }
 
   const cfg = {
     resendKey: env.RESEND_API_KEY || '',
@@ -326,6 +357,16 @@ export async function onRequestPost(context) {
 }
 
 /* ───────────────────────── delivery ───────────────────────── */
+
+/** Constant-time string compare — no timing signal about how much matched. */
+function timingSafeEqual(a, b) {
+  const ab = new TextEncoder().encode(a);
+  const bb = new TextEncoder().encode(b);
+  if (ab.length !== bb.length) return false;
+  let diff = 0;
+  for (let i = 0; i < ab.length; i++) diff |= ab[i] ^ bb[i];
+  return diff === 0;
+}
 
 function json(obj, status = 200, extra = {}) {
   return new Response(JSON.stringify(obj), {

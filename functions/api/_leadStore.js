@@ -10,12 +10,27 @@
  * If D1 is down, broken, or unbound, the owner must still get the lead.
  */
 
-/** Best-effort insert. Returns the new lead id, or '' on any failure. */
-export async function storeLead(env, { formName, lead, meta, subject }) {
+/**
+ * Classify a submission. The Lead Desk keeps two inboxes: real enquiries about
+ * managing a property, and general messages sent from the contact page (vendor
+ * pitches, questions, recruiters). They need different handling, so they are
+ * separated on arrival and can be moved between inboxes from the dashboard.
+ */
+export function kindOf(formName) {
+  return /contact/i.test(String(formName || '')) ? 'message' : 'lead';
+}
+
+/**
+ * Best-effort insert. Returns the new lead id, or '' on any failure.
+ * `receivedAt` backdates the row and is only ever supplied by the key-gated
+ * import path in lead.js — a normal submission always stamps "now".
+ */
+export async function storeLead(env, { formName, lead, meta, subject, receivedAt }) {
   try {
     if (!env || !env.DB) return ''; // not bound — nothing to do
     const id = crypto.randomUUID();
     const now = new Date().toISOString();
+    const stamp = receivedAt || now;
 
     const pick = (obj, re) => {
       for (const [k, v] of Object.entries(obj || {})) {
@@ -30,16 +45,17 @@ export async function storeLead(env, { formName, lead, meta, subject }) {
 
     await env.DB.prepare(
       `INSERT INTO leads
-        (id, received_at, brand, form_name, service_interest,
+        (id, received_at, brand, form_name, kind, service_interest,
          name, email, phone, address, page_url,
          raw_lead, raw_meta, status, updated_at)
-       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,'new',?)`,
+       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,'new',?)`,
     )
       .bind(
         id,
-        now,
+        stamp,
         brand,
         formName || '',
+        kindOf(formName),
         pick(lead, /service interest/i),
         pick(lead, /name/i),
         pick(lead, /email/i),

@@ -4,8 +4,10 @@
 // real data (content collections + data files); no fabricated metrics. Kept out
 // of search: noindexed (BaseLayout noindex), Disallow /boroto/ in robots.txt,
 // excluded from the sitemap (astro.config.mjs filter), and not linked anywhere.
-// Access is gated by HTTP Basic Auth at the edge (see functions/_middleware.js,
-// BOROTO_USER / BOROTO_PASS) so the URL is not publicly viewable.
+// Access is gated at the edge by a signed session cookie issued by the login
+// page (see functions/_middleware.js, BOROTO_USER / BOROTO_PASS), so the URL is
+// not publicly viewable. Basic Auth is deliberately not accepted: browsers
+// cache and resend those credentials, which silently defeated "Sign out".
 // =============================================================================
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Container from '../../components/ui/Container.astro';

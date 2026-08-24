@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS leads (
   received_at       TEXT NOT NULL,             -- ISO 8601 UTC
   brand             TEXT NOT NULL DEFAULT 'ATLStay',  -- ATLStay | SSMProperty
   form_name         TEXT,                      -- e.g. "ATLStay Rental Projection"
+  kind              TEXT NOT NULL DEFAULT 'lead',  -- lead | message (contact-page enquiries)
   service_interest  TEXT,                      -- the category: HOA, long-term, etc.
 
   -- flattened for listing / search / dupe detection
@@ -39,5 +40,6 @@ CREATE TABLE IF NOT EXISTS leads (
 
 CREATE INDEX IF NOT EXISTS idx_leads_received  ON leads (received_at DESC);
 CREATE INDEX IF NOT EXISTS idx_leads_status    ON leads (status, received_at DESC);
+CREATE INDEX IF NOT EXISTS idx_leads_kind      ON leads (kind, received_at DESC);
 CREATE INDEX IF NOT EXISTS idx_leads_email     ON leads (email);
 CREATE INDEX IF NOT EXISTS idx_leads_phone     ON leads (phone);

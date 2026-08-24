@@ -1,12 +1,13 @@
 /* Lead Desk API — /boroto/api
  *
- * Deliberately lives UNDER /boroto so it inherits the Basic Auth gate in
+ * Deliberately lives UNDER /boroto so it inherits the signed-session gate in
  * functions/_middleware.js. These responses contain customer names, phone
  * numbers and email addresses; they must never be reachable unauthenticated.
  * Do not move this to /api/.
  */
 
 const STATUSES = ['new', 'proposal_sent', 'won', 'lost'];
+const KINDS = ['lead', 'message'];
 
 const json = (obj, status = 200) =>
   new Response(JSON.stringify(obj), {
@@ -79,13 +80,15 @@ export async function onRequestPost(context) {
         'Property Address': body.address || '', 'Service Interest': body.service_interest || '',
         Notes: body.notes || '',
       };
+      const kind = KINDS.includes(body.kind) ? body.kind : 'lead';
+      if (body.message) lead.Message = body.message;
       await env.DB.prepare(
-        `INSERT INTO leads (id, received_at, brand, form_name, service_interest,
+        `INSERT INTO leads (id, received_at, brand, form_name, kind, service_interest,
                             name, email, phone, address, page_url, raw_lead, raw_meta,
                             status, notes, updated_at)
-         VALUES (?,?,?,?,?,?,?,?,?,'',?,'{}','new',?,?)`,
+         VALUES (?,?,?,?,?,?,?,?,?,?,'',?,'{}','new',?,?)`,
       ).bind(
-        id, body.received_at || now, body.brand || 'ATLStay', 'Added by hand',
+        id, body.received_at || now, body.brand || 'ATLStay', 'Added by hand', kind,
         body.service_interest || '', body.name || '', body.email || '', body.phone || '',
         body.address || '', JSON.stringify(lead), body.notes || '', now,
       ).run();
@@ -101,6 +104,16 @@ export async function onRequestPost(context) {
     if (body.action === 'delete') {
       await env.DB.prepare('DELETE FROM leads WHERE id = ?').bind(id).run();
       return json({ ok: true, deleted: id });
+    }
+
+    // Move between the two inboxes. Contact-page submissions land in Messages;
+    // when one turns out to be a genuine enquiry it becomes a lead (and the
+    // reverse, so neither inbox is a dead end).
+    if (body.action === 'move') {
+      if (!KINDS.includes(body.kind)) return json({ error: 'Bad kind' }, 400);
+      await env.DB.prepare('UPDATE leads SET kind = ?, updated_at = ? WHERE id = ?')
+        .bind(body.kind, now, id).run();
+      return json({ ok: true, kind: body.kind });
     }
 
     const sets = [];

@@ -2,23 +2,35 @@
 // Lead Desk — the workspace.
 //
 // PERFORMANCE CONTRACT: the entire dataset is fetched ONCE on load and held in
-// memory. Filtering, searching and opening a lead touch no network at all, and
-// status changes render instantly then sync in the background. The previous
-// build re-queried the database on every click, which is what made it feel
-// laggy — do not reintroduce a fetch into any interaction handler.
+// memory. Filtering, searching, switching inbox and opening a record touch no
+// network at all, and status changes render instantly then sync in the
+// background. An early build re-queried the database on every click, which is
+// what made it feel laggy — do not reintroduce a fetch into any interaction
+// handler. Fresh data arrives via the explicit Refresh button (or on returning
+// to the tab), which is the one place a fetch belongs.
+//
+// TWO INBOXES: real enquiries (kind='lead') and general contact-page messages
+// (kind='message') — vendor pitches, questions, recruiters. They need totally
+// different handling, so they are separated on arrival and can be moved either
+// way from the record itself.
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Lead Desk" description="Private lead workspace." noindex={true} bare={true}>
   <div class="min-h-screen bg-[#f6f5f1] text-[#1a2420]">
 
     <header class="sticky top-0 z-20 border-b border-[#e2e0d6] bg-white">
-      <div class="mx-auto flex max-w-[1400px] items-center gap-6 px-5 py-3">
+      <div class="mx-auto flex max-w-[1400px] flex-wrap items-center gap-x-6 gap-y-2 px-5 py-3">
         <span class="font-display text-lg text-forest">Lead Desk</span>
-        <nav class="flex items-center gap-1 text-sm">
-          <span class="rounded-md bg-forest px-3 py-1.5 font-medium text-cream">Leads</span>
-          <a href="/boroto/" class="rounded-md px-3 py-1.5 text-[#5b6660] transition-colors hover:bg-[#f1efe7] hover:text-forest">SEO dashboard</a>
-        </nav>
-        <div class="ml-auto flex items-center gap-3">
+        <nav id="nav" class="flex items-center gap-1 text-sm"></nav>
+        <div class="ml-auto flex items-center gap-2">
+          <span id="synced" class="mr-1 hidden text-xs text-[#9aa39e] sm:inline"></span>
+          <button id="refreshBtn" title="Check for new leads and messages"
+            class="inline-flex items-center gap-1.5 rounded-md border border-[#d8d5c8] bg-white px-3 py-1.5 text-sm font-medium text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest disabled:opacity-60">
+            <svg id="refreshIcon" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/>
+            </svg>
+            <span id="refreshLabel">Refresh</span>
+          </button>
           <button id="addBtn" class="rounded-md border border-[#d8d5c8] bg-white px-3 py-1.5 text-sm font-medium text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">Add lead</button>
           <a href="/boroto/logout" class="text-sm text-[#5b6660] hover:text-forest">Sign out</a>
         </div>
@@ -47,6 +59,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       lost:          { label: 'Lost',          fg: '#475569', bg: '#f1f3f5', bd: '#d9dee3', icon: 'M6 6l12 12M18 6 6 18' },
     };
     const ORDER = ['new', 'proposal_sent', 'won', 'lost'];
+    const ICONS = {
+      mail:    'M3 5h18v14H3z M3 6l9 7 9-7',
+      inbox:   'M3 5h18v14H3z M3 13h5l1 3h6l1-3h5',
+      back:    'M15 18l-6-6 6-6',
+      arrow:   'M5 12h14 M13 6l6 6-6 6',
+    };
 
     const icon = (d, cls = 'h-3.5 w-3.5') =>
       `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
@@ -62,35 +80,91 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     const stamp = (iso) => { if (!iso) return ''; const d = new Date(iso); return isNaN(d) ? iso : d.toLocaleString('en-US', EST) + ' EST'; };
     const shortStamp = (iso) => { if (!iso) return ''; const d = new Date(iso); return isNaN(d) ? iso :
       d.toLocaleString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true }); };
+    const clockStamp = (ms) => new Date(ms).toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', hour12: true });
     const daysSince = (iso) => iso ? Math.floor((Date.now() - new Date(iso)) / 86400000) : null;
     const ago = (iso) => { const d = daysSince(iso); return d === null ? '' : d === 0 ? 'Today' : d === 1 ? 'Yesterday' : d + 'd ago'; };
 
     let LEADS = [];
     let filter = 'all';
     let query = '';
+    let inbox = localStorage.getItem('boroto_inbox') === 'message' ? 'message' : 'lead';
+    let busy = false;
+    let lastSync = 0;
+    let pendingSave = null;   // flushed before any refresh so typing is never lost
+
+    const isMsg = (l) => l.kind === 'message';
+    const inInbox = (l) => (inbox === 'message') === isMsg(l);
+    const unreadMessages = () => LEADS.filter((l) => isMsg(l) && !l.first_viewed_at).length;
+
+    /* The message body as the visitor typed it. */
+    const bodyOf = (L) => {
+      for (const [k, v] of Object.entries(L.raw_lead || {})) {
+        if (/message|comment|how can we help/i.test(k) && String(v ?? '').trim()) return String(v).trim();
+      }
+      return '';
+    };
 
     const isQuiet = (l) => l.status === 'proposal_sent' && l.proposal_sent_at && daysSince(l.proposal_sent_at) > 4;
 
     const counts = () => {
-      const c = { all: LEADS.length, quiet: 0 };
+      const mine = LEADS.filter(inInbox);
+      const c = { all: mine.length, quiet: 0, unread: 0 };
       for (const k of ORDER) c[k] = 0;
-      for (const l of LEADS) { if (c[l.status] !== undefined) c[l.status]++; if (isQuiet(l)) c.quiet++; }
+      for (const l of mine) {
+        if (c[l.status] !== undefined) c[l.status]++;
+        if (isQuiet(l)) c.quiet++;
+        if (!l.first_viewed_at) c.unread++;
+      }
       return c;
     };
 
     const visible = () => {
       const q = query.toLowerCase();
       return LEADS.filter((l) => {
+        if (!inInbox(l)) return false;
         if (filter === 'quiet') { if (!isQuiet(l)) return false; }
+        else if (filter === 'unread') { if (l.first_viewed_at) return false; }
         else if (filter !== 'all' && l.status !== filter) return false;
         if (!q) return true;
-        return [l.name, l.email, l.phone, l.address, l.service_interest].some((f) => String(f || '').toLowerCase().includes(q));
+        return [l.name, l.email, l.phone, l.address, l.service_interest, bodyOf(l)]
+          .some((f) => String(f || '').toLowerCase().includes(q));
       });
     };
+
+    /* ── header nav (lives outside #app so it survives every re-render) ── */
+    function paintNav() {
+      const u = unreadMessages();
+      const item = (key, label, d, badgeCount) => {
+        const on = inbox === key;
+        return `<button data-inbox="${key}" aria-pressed="${on}"
+          class="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest ${
+            on ? 'bg-forest text-cream' : 'text-[#5b6660] hover:bg-[#f1efe7] hover:text-forest'}">
+          ${icon(d, 'h-4 w-4')}${label}${badgeCount ? `<span class="ml-0.5 inline-flex min-w-[1.25rem] justify-center rounded-full px-1.5 py-0.5 text-[11px] font-semibold tabular-nums ${
+            on ? 'bg-cream/25 text-cream' : 'bg-brass text-forest'}">${badgeCount}</span>` : ''}</button>`;
+      };
+      $('#nav').innerHTML =
+        item('lead', 'Leads', ICONS.inbox, 0) +
+        item('message', 'Messages', ICONS.mail, u) +
+        `<a href="/boroto/" class="rounded-md px-3 py-1.5 text-[#5b6660] transition-colors hover:bg-[#f1efe7] hover:text-forest">SEO dashboard</a>`;
+
+      $('#nav').querySelectorAll('button[data-inbox]').forEach((b) =>
+        b.addEventListener('click', () => {
+          if (inbox === b.dataset.inbox) return;
+          inbox = b.dataset.inbox;
+          localStorage.setItem('boroto_inbox', inbox);
+          filter = 'all'; query = '';
+          location.hash = '';
+          paintNav(); route();
+        }));
+
+      // Unread messages waiting is worth showing in the tab title too.
+      document.title = u ? `(${u}) Lead Desk` : 'Lead Desk';
+    }
 
     /* ── list ── */
     function renderList() {
       const c = counts();
+      const messages = inbox === 'message';
       const tab = (key, label, n, tone) => `
         <button data-f="${key}" aria-pressed="${filter === key}"
           class="flex items-baseline gap-2 rounded-lg border px-3.5 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest ${
@@ -99,57 +173,79 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           <span class="tabular-nums ${filter === key ? 'text-cream/70' : tone}">${n}</span>
         </button>`;
 
+      const tabs = messages
+        ? tab('all', 'All', c.all, 'text-[#5b6660]') + tab('unread', 'Unread', c.unread, c.unread ? 'text-[#92400e]' : 'text-[#5b6660]')
+        : tab('all', 'All', c.all, 'text-[#5b6660]')
+          + tab('new', 'New', c.new, 'text-[#1d4ed8]')
+          + tab('proposal_sent', 'Proposal sent', c.proposal_sent, 'text-[#92400e]')
+          + tab('quiet', 'Gone quiet', c.quiet, c.quiet ? 'text-[#b91c1c]' : 'text-[#5b6660]')
+          + tab('won', 'Won', c.won, 'text-[#15803d]')
+          + tab('lost', 'Lost', c.lost, 'text-[#5b6660]');
+
       const rows = visible();
+      const head = messages
+        ? ['Received (EST)', 'From', 'Message', 'Site']
+        : ['Received (EST)', 'Name', 'Service', 'Location', 'Site', 'Status'];
+
+      const cells = (l) => {
+        const unread = !l.first_viewed_at;
+        const when = `
+          <td class="whitespace-nowrap px-4 py-3 text-[#3c4742]">
+            <span class="inline-flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full ${unread ? 'bg-brass' : 'bg-transparent'}"></span>
+              <span class="${unread ? 'font-semibold text-forest' : ''}">${esc(shortStamp(l.received_at))}</span>
+              <span class="text-xs text-[#9aa39e]">${esc(ago(l.received_at))}</span>
+            </span>
+          </td>`;
+        if (messages) {
+          const b = bodyOf(l);
+          return when + `
+            <td class="px-4 py-3 ${unread ? 'font-semibold' : 'font-medium'} text-forest">
+              ${esc(l.name || '—')}
+              ${l.email ? `<span class="block text-xs font-normal text-[#5b6660]">${esc(l.email)}</span>` : ''}
+            </td>
+            <td class="px-4 py-3 text-[#3c4742]">${esc(b ? (b.length > 96 ? b.slice(0, 96) + '…' : b) : '—')}</td>
+            <td class="px-4 py-3 text-xs text-[#5b6660]">${esc(l.brand)}</td>`;
+        }
+        return when + `
+          <td class="px-4 py-3 font-medium text-forest">${esc(l.name || '—')}</td>
+          <td class="px-4 py-3 text-[#3c4742]">${esc(l.service_interest || '—')}</td>
+          <td class="px-4 py-3 text-[#5b6660]">${esc((l.address || '—').slice(0, 38))}</td>
+          <td class="px-4 py-3 text-xs text-[#5b6660]">${esc(l.brand)}</td>
+          <td class="px-4 py-3">${badge(l.status)}${isQuiet(l) ? ` <span class="ml-1 whitespace-nowrap text-xs font-medium text-[#b91c1c]">· quiet ${daysSince(l.proposal_sent_at)}d</span>` : ''}</td>`;
+      };
+
       $('#app').innerHTML = `
         <div class="flex flex-wrap items-center gap-2">
-          ${tab('all', 'All', c.all, 'text-[#5b6660]')}
-          ${tab('new', 'New', c.new, 'text-[#1d4ed8]')}
-          ${tab('proposal_sent', 'Proposal sent', c.proposal_sent, 'text-[#92400e]')}
-          ${tab('quiet', 'Gone quiet', c.quiet, c.quiet ? 'text-[#b91c1c]' : 'text-[#5b6660]')}
-          ${tab('won', 'Won', c.won, 'text-[#15803d]')}
-          ${tab('lost', 'Lost', c.lost, 'text-[#5b6660]')}
+          ${tabs}
           <div class="ml-auto">
-            <input id="q" type="search" value="${esc(query)}" placeholder="Search name, email, phone, address…"
+            <label for="q" class="sr-only">Search ${messages ? 'messages' : 'leads'}</label>
+            <input id="q" type="search" value="${esc(query)}" placeholder="${messages ? 'Search sender, email, message…' : 'Search name, email, phone, address…'}"
               class="w-72 rounded-lg border border-[#e2e0d6] bg-white px-3.5 py-2 text-sm outline-none placeholder:text-[#9aa39e] focus:border-brass focus:ring-2 focus:ring-brass/30" />
           </div>
         </div>
 
         ${rows.length ? `
-        <div class="mt-4 overflow-hidden rounded-xl border border-[#e2e0d6] bg-white">
+        <div class="mt-4 overflow-x-auto rounded-xl border border-[#e2e0d6] bg-white">
           <table class="w-full border-collapse text-sm">
             <thead>
               <tr class="border-b border-[#e2e0d6] text-left text-xs font-semibold uppercase tracking-wide text-[#5b6660]">
-                <th class="px-4 py-2.5 font-semibold">Received (EST)</th>
-                <th class="px-4 py-2.5 font-semibold">Name</th>
-                <th class="px-4 py-2.5 font-semibold">Service</th>
-                <th class="px-4 py-2.5 font-semibold">Location</th>
-                <th class="px-4 py-2.5 font-semibold">Site</th>
-                <th class="px-4 py-2.5 font-semibold">Status</th>
+                ${head.map((h) => `<th class="px-4 py-2.5 font-semibold">${h}</th>`).join('')}
               </tr>
             </thead>
             <tbody>
               ${rows.map((l) => `
                 <tr tabindex="0" data-id="${esc(l.id)}"
                   class="cursor-pointer border-b border-[#eeece3] last:border-0 transition-colors hover:bg-[#faf9f5] focus:bg-[#faf9f5] focus:outline-none">
-                  <td class="whitespace-nowrap px-4 py-3 text-[#3c4742]">
-                    <span class="inline-flex items-center gap-2">
-                      <span class="h-1.5 w-1.5 rounded-full ${l.first_viewed_at ? 'bg-transparent' : 'bg-brass'}"></span>
-                      <span class="${l.first_viewed_at ? '' : 'font-semibold text-forest'}">${esc(shortStamp(l.received_at))}</span>
-                      <span class="text-xs text-[#9aa39e]">${esc(ago(l.received_at))}</span>
-                    </span>
-                  </td>
-                  <td class="px-4 py-3 font-medium text-forest">${esc(l.name || '—')}</td>
-                  <td class="px-4 py-3 text-[#3c4742]">${esc(l.service_interest || '—')}</td>
-                  <td class="px-4 py-3 text-[#5b6660]">${esc((l.address || '—').slice(0, 38))}</td>
-                  <td class="px-4 py-3 text-xs text-[#5b6660]">${esc(l.brand)}</td>
-                  <td class="px-4 py-3">${badge(l.status)}${isQuiet(l) ? ` <span class="ml-1 whitespace-nowrap text-xs font-medium text-[#b91c1c]">· quiet ${daysSince(l.proposal_sent_at)}d</span>` : ''}</td>
+                  ${cells(l)}
                 </tr>`).join('')}
             </tbody>
           </table>
         </div>` : `
         <div class="mt-4 rounded-xl border border-dashed border-[#d8d5c8] bg-white py-16 text-center">
-          <p class="font-display text-lg text-forest">${LEADS.length ? 'Nothing matches' : 'No leads yet'}</p>
-          <p class="mt-1 text-sm text-[#5b6660]">${LEADS.length ? 'Try a different filter or search.' : 'The next enquiry from either site lands here automatically.'}</p>
+          <p class="font-display text-lg text-forest">${c.all ? 'Nothing matches' : (messages ? 'No messages yet' : 'No leads yet')}</p>
+          <p class="mt-1 text-sm text-[#5b6660]">${c.all ? 'Try a different filter or search.'
+            : (messages ? 'Anything sent through the contact page lands here.' : 'The next enquiry from either site lands here automatically.')}</p>
         </div>`}`;
 
       $('#app').querySelectorAll('button[data-f]').forEach((b) =>
@@ -186,7 +282,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     function renderDetail(id) {
       const L = LEADS.find((x) => x.id === id);
       if (!L) { location.hash = ''; return; }
+      // Deep link from a Telegram alert may point at the other inbox.
+      if (!inInbox(L)) { inbox = isMsg(L) ? 'message' : 'lead'; localStorage.setItem('boroto_inbox', inbox); paintNav(); }
+
       const lead = L.raw_lead || {}, meta = L.raw_meta || {};
+      const message = bodyOf(L);
+      const messages = isMsg(L);
 
       const link = (k, v) => {
         const s = String(v);
@@ -196,28 +297,34 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         return esc(s);
       };
       const contactRe = /name|email|phone/i, srcRe = /page|referrer|utm|source/i;
+      const bodyRe = /message|comment|how can we help/i;
       const pick = (o, f) => Object.entries(o).filter(([k]) => f(k)).map(([k, v]) => [k, link(k, v)]);
 
       $('#app').innerHTML = `
         <button id="back" class="mb-4 inline-flex items-center gap-1.5 text-sm text-[#5b6660] transition-colors hover:text-forest">
-          ${icon('M15 18l-6-6 6-6', 'h-4 w-4')} All leads
+          ${icon(ICONS.back, 'h-4 w-4')} ${messages ? 'All messages' : 'All leads'}
         </button>
 
         <div class="rounded-xl border border-[#e2e0d6] bg-white p-6">
           <div class="flex flex-wrap items-start justify-between gap-5">
             <div class="min-w-0">
-              <h1 class="font-display text-2xl text-forest">${esc(L.name || 'Unnamed lead')}</h1>
+              <h1 class="font-display text-2xl text-forest">${esc(L.name || (messages ? 'Unnamed sender' : 'Unnamed lead'))}</h1>
               ${L.service_interest ? `<p class="mt-1 text-sm font-medium text-[#92400e]">${esc(L.service_interest)}</p>` : ''}
               <p class="mt-2 text-sm text-[#5b6660]">${esc(L.brand)} · ${esc(stamp(L.received_at))}</p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              <button id="copyAll" class="rounded-md bg-forest px-3.5 py-2 text-sm font-medium text-cream transition-colors hover:bg-forest-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">Copy everything</button>
-              ${L.address ? `<a target="_blank" rel="noopener" href="https://app.airdna.co/data/us?search=${encodeURIComponent(L.address)}"
+              ${L.email ? `<a href="mailto:${esc(L.email)}?subject=${encodeURIComponent('Re: your message to ' + L.brand)}"
+                 class="rounded-md bg-forest px-3.5 py-2 text-sm font-medium text-cream transition-colors hover:bg-forest-700">Reply by email</a>` : ''}
+              <button id="copyAll" class="rounded-md border border-[#d8d5c8] px-3.5 py-2 text-sm text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5]">Copy everything</button>
+              ${!messages && L.address ? `<a target="_blank" rel="noopener" href="https://app.airdna.co/data/us?search=${encodeURIComponent(L.address)}"
                  class="rounded-md border border-[#d8d5c8] px-3.5 py-2 text-sm text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5]">AirDNA</a>` : ''}
+              <button id="move" class="inline-flex items-center gap-1.5 rounded-md border border-[#d8d5c8] px-3.5 py-2 text-sm text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5]">
+                ${icon(messages ? ICONS.inbox : ICONS.mail, 'h-4 w-4')}${messages ? 'Move to Leads' : 'Move to Messages'}</button>
               <button id="del" class="rounded-md border border-[#e6cbc8] px-3.5 py-2 text-sm text-[#a3231b] transition-colors hover:bg-[#fdeceb]">Delete</button>
             </div>
           </div>
 
+          ${messages ? '' : `
           <div class="mt-5 flex flex-wrap items-center gap-2 border-t border-[#eeece3] pt-4">
             <span class="mr-1 text-xs uppercase tracking-wide text-[#5b6660]">Status</span>
             ${ORDER.map((k) => {
@@ -228,12 +335,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                 ${icon(s.icon, 'h-3 w-3')}${s.label}</button>`;
             }).join('')}
             <span id="savedFlag" class="ml-2 text-xs text-[#15803d] opacity-0 transition-opacity">Saved</span>
-          </div>
+          </div>`}
         </div>
+
+        ${message ? `
+        <section class="mt-4 rounded-xl border border-[#e2e0d6] bg-white p-6">
+          <h3 class="font-display text-base text-forest">What they wrote</h3>
+          <p class="mt-3 whitespace-pre-wrap break-words text-[15px] leading-relaxed text-[#1a2420]">${esc(message)}</p>
+        </section>` : ''}
 
         <div class="mt-4 grid gap-4 lg:grid-cols-2">
           ${panel('Contact', pick(lead, (k) => contactRe.test(k)))}
-          ${panel('The property', pick(lead, (k) => !contactRe.test(k) && !/service interest/i.test(k)))}
+          ${panel(messages ? 'Anything else they sent' : 'The property',
+                  pick(lead, (k) => !contactRe.test(k) && !bodyRe.test(k) && !/service interest/i.test(k)))}
           ${panel('Where they came from', pick(meta, (k) => srcRe.test(k)))}
           ${panel('Their session', pick(meta, (k) => !srcRe.test(k)))}
         </div>
@@ -243,15 +357,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             <h3 class="font-display text-base text-forest">Timeline</h3>
             <dl class="mt-2">
               ${[['Came in', stamp(L.received_at)], ['You opened it', stamp(L.first_viewed_at)],
-                 ['Proposal sent', stamp(L.proposal_sent_at)], ['Sent to', esc(L.proposal_sent_to || '')]]
+                 ['Proposal sent', messages ? '' : stamp(L.proposal_sent_at)], ['Sent to', messages ? '' : esc(L.proposal_sent_to || '')]]
                 .filter(([, v]) => v).map(([k, v]) => `
                 <div class="grid grid-cols-[minmax(0,11rem)_1fr] gap-3 border-b border-[#f0eee6] py-2 last:border-0">
                   <dt class="text-xs uppercase tracking-wide text-[#5b6660]">${esc(k)}</dt>
                   <dd class="text-sm">${v}</dd></div>`).join('')}
             </dl>
+            ${messages ? '' : `
             <label for="sentTo" class="mt-4 block text-xs uppercase tracking-wide text-[#5b6660]">Proposal sent to</label>
             <input id="sentTo" value="${esc(L.proposal_sent_to || '')}" placeholder="dana@example.com"
-              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />`}
           </section>
 
           <section class="rounded-xl border border-[#e2e0d6] bg-white p-5">
@@ -263,7 +378,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
       $('#back').addEventListener('click', () => { location.hash = ''; });
 
-      const flash = () => { const f = $('#savedFlag'); f.style.opacity = '1'; setTimeout(() => { f.style.opacity = '0'; }, 1200); };
+      const flash = () => { const f = $('#savedFlag'); if (f) { f.style.opacity = '1'; setTimeout(() => { f.style.opacity = '0'; }, 1200); } };
       const sync = (body) => fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(flash).catch(() => {});
 
       // Optimistic: repaint immediately, persist in the background.
@@ -275,9 +390,20 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           sync({ id, status: L.status, proposal_sent_to: L.proposal_sent_to || '' });
         }));
 
+      $('#move').addEventListener('click', () => {
+        const to = messages ? 'lead' : 'message';
+        L.kind = to;
+        inbox = to;
+        localStorage.setItem('boroto_inbox', inbox);
+        paintNav();
+        renderDetail(id);
+        fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'move', id, kind: to }) }).catch(() => {});
+      });
+
       $('#copyAll').addEventListener('click', async () => {
         const txt = [
-          `LEAD — ${L.name || 'Unnamed'} (${L.brand})`,
+          `${messages ? 'MESSAGE' : 'LEAD'} — ${L.name || 'Unnamed'} (${L.brand})`,
           `Received: ${stamp(L.received_at)}`,
           L.service_interest ? `Service: ${L.service_interest}` : '',
           '', '--- What they submitted ---',
@@ -292,21 +418,32 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       });
 
       $('#del').addEventListener('click', async () => {
-        if (!confirm(`Delete this lead from ${L.name || 'unknown'}? This cannot be undone.`)) return;
+        if (!confirm(`Delete this ${messages ? 'message' : 'lead'} from ${L.name || 'unknown'}? This cannot be undone.`)) return;
         LEADS = LEADS.filter((x) => x.id !== id);
+        pendingSave = null;
         location.hash = '';
+        paintNav();
         fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'delete', id }) }).catch(() => {});
       });
 
       let t;
-      const debounced = () => { clearTimeout(t); t = setTimeout(() => {
-        L.notes = $('#notes').value; L.proposal_sent_to = $('#sentTo').value.trim();
-        sync({ id, notes: L.notes, proposal_sent_to: L.proposal_sent_to });
-      }, 600); };
+      const commit = () => {
+        clearTimeout(t);
+        const sentEl = $('#sentTo');
+        L.notes = $('#notes').value;
+        if (sentEl) L.proposal_sent_to = sentEl.value.trim();
+        pendingSave = null;
+        return sync({ id, notes: L.notes, proposal_sent_to: L.proposal_sent_to || '' });
+      };
+      const debounced = () => { clearTimeout(t); pendingSave = commit; t = setTimeout(commit, 600); };
       $('#notes').addEventListener('input', debounced);
-      $('#sentTo').addEventListener('input', debounced);
+      if ($('#sentTo')) $('#sentTo').addEventListener('input', debounced);
 
-      if (!L.first_viewed_at) { L.first_viewed_at = new Date().toISOString(); sync({ id, viewed: true }); }
+      if (!L.first_viewed_at) {
+        L.first_viewed_at = new Date().toISOString();
+        paintNav();                       // clears the unread badge immediately
+        sync({ id, viewed: true });
+      }
     }
 
     $('#addBtn').addEventListener('click', async () => {
@@ -315,8 +452,53 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       const address = prompt('Property / community address?') || '';
       const service_interest = prompt('What do they want? (e.g. HOA, Airbnb management)') || '';
       const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'create', name, email, phone, address, service_interest }) }).then((x) => x.json());
-      if (r.ok) { await load(); location.hash = r.id; } else alert(r.error || 'Could not add');
+        body: JSON.stringify({ action: 'create', name, email, phone, address, service_interest, kind: inbox }) }).then((x) => x.json());
+      if (r.ok) { await load(); paintNav(); location.hash = r.id; } else alert(r.error || 'Could not add');
+    });
+
+    /* ── refresh ────────────────────────────────────────────────────────────
+     * The one deliberate network path in the UI. Anything typed but not yet
+     * saved is flushed first, so a refresh can never discard a note. */
+    let flashLabel = '';   // transient "+2 new" confirmation
+
+    function paintRefresh() {
+      const b = $('#refreshBtn'), i = $('#refreshIcon'), l = $('#refreshLabel'), s = $('#synced');
+      b.disabled = busy;
+      i.style.animation = busy ? 'boroto-spin .8s linear infinite' : '';
+      l.textContent = busy ? 'Checking…' : (flashLabel || 'Refresh');
+      if (lastSync) { s.textContent = `Updated ${clockStamp(lastSync)}`; s.classList.remove('hidden'); }
+    }
+
+    async function refresh() {
+      if (busy) return;
+      busy = true; flashLabel = ''; paintRefresh();
+      try {
+        // Never let a refresh discard something half-typed.
+        if (pendingSave) { try { await pendingSave(); } catch { /* keep going */ } }
+        const before = LEADS.length;
+        if (await load()) {
+          lastSync = Date.now();
+          const gained = LEADS.length - before;
+          if (gained > 0) {
+            flashLabel = `+${gained} new`;
+            setTimeout(() => { flashLabel = ''; if (!busy) paintRefresh(); }, 2500);
+          }
+          paintNav();
+          route();
+        }
+      } finally {
+        busy = false; paintRefresh();
+      }
+    }
+    $('#refreshBtn').addEventListener('click', refresh);
+
+    // Coming back to the tab after a while is the other moment fresh data is
+    // wanted. Only on the list — never mid-edit on a record.
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState !== 'visible') return;
+      if (location.hash) return;
+      if (Date.now() - lastSync < 60000) return;
+      refresh();
     });
 
     function route() {
@@ -326,11 +508,24 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     window.addEventListener('hashchange', route);
 
     async function load() {
-      const r = await fetch(API + '?action=all').then((x) => x.json()).catch(() => ({ error: 'Could not reach the server' }));
-      if (r.error) { $('#app').innerHTML = `<p class="py-16 text-center text-sm text-[#a3231b]">${esc(r.error)}</p>`; return; }
+      const res = await fetch(API + '?action=all', { headers: { Accept: 'application/json' } })
+        .catch(() => null);
+      // Session expired → the login page, not a dead panel or a browser prompt.
+      if (res && res.status === 401) { location.href = '/boroto/login?next=/boroto/leads/'; return false; }
+      const r = res ? await res.json().catch(() => ({ error: 'Bad response from the server' }))
+                    : { error: 'Could not reach the server' };
+      if (r.error) { $('#app').innerHTML = `<p class="py-16 text-center text-sm text-[#a3231b]">${esc(r.error)}</p>`; return false; }
       LEADS = r.leads || [];
+      return true;
     }
-    load().then(route);
+
+    paintNav();
+    load().then((ok) => { if (ok) { lastSync = Date.now(); paintRefresh(); paintNav(); } route(); });
   })();
   </script>
+
+  <style is:inline>
+    @keyframes boroto-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { #refreshIcon { animation: none !important; } }
+  </style>
 </BaseLayout>

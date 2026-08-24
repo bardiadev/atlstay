@@ -4,17 +4,22 @@
  *
  *  1. Canonical host: 301 redirect www → apex (non-www), preserving path+query.
  *     (public/_redirects can't do this — it matches by path, not hostname.)
- *  2. Private dashboard gate: HTTP Basic Auth on /boroto. Credentials come from
+ *  2. Private dashboard gate: a signed session cookie on /boroto, issued by a
+ *     branded login form. Credentials come from
  *     encrypted environment vars — BOROTO_USER (defaults to "admin") and
  *     BOROTO_PASS (a secret set with `wrangler pages secret put BOROTO_PASS`).
  *     Fails CLOSED: if no password is configured the page is never served.
  *     No credential is ever stored in this repo.
  */
 
+// 401 for the JSON API only. Deliberately WITHOUT a WWW-Authenticate header:
+// sending one makes the browser throw up its native credential dialog, which is
+// the ugly prompt the login page exists to replace. The panel watches for this
+// status and redirects to the login page itself.
 function unauthorized() {
-  return new Response('Authentication required.', {
+  return new Response(JSON.stringify({ error: 'Session expired', signedOut: true }), {
     status: 401,
-    headers: { 'WWW-Authenticate': 'Basic realm="ATLStay", charset="UTF-8"' },
+    headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
 }
 
@@ -198,21 +203,12 @@ export async function onRequest(context) {
       return context.next();
     }
 
-    // Basic Auth is still accepted so existing bookmarks and any scripted
-    // access keep working; the form is simply the nicer front door.
-    const header = context.request.headers.get('Authorization') || '';
-    const [scheme, encoded] = header.split(' ');
-    if (scheme === 'Basic' && encoded) {
-      let decoded = '';
-      try { decoded = atob(encoded); } catch { decoded = ''; }
-      const sep = decoded.indexOf(':');
-      if (sep !== -1) {
-        const u = decoded.slice(0, sep);
-        const p = decoded.slice(sep + 1);
-        if (safeEqual(u, expectedUser) & safeEqual(p, expectedPass)) return context.next();
-      }
-    }
-
+    // NOTE: HTTP Basic Auth is deliberately NOT accepted here any more.
+    // Browsers cache Basic credentials for the whole browser session and resend
+    // them automatically on every request. While that fallback existed, signing
+    // out cleared the session cookie but the very next request re-authenticated
+    // via the cached header — so "Sign out" appeared to do nothing. The signed
+    // cookie is now the only way in, which makes sign-out actually sign you out.
     // The API answers with 401 (a fetch cannot render a login page); pages get
     // the form so the owner never sees the browser's built-in prompt again.
     if (url.pathname.startsWith('/boroto/api')) return unauthorized();
