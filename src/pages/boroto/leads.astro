@@ -94,7 +94,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
     const isMsg = (l) => l.kind === 'message';
     const inInbox = (l) => (inbox === 'message') === isMsg(l);
-    const unreadMessages = () => LEADS.filter((l) => isMsg(l) && !l.first_viewed_at).length;
+    const unreadIn = (kind) => LEADS.filter((l) => (kind === 'message') === isMsg(l) && !l.first_viewed_at).length;
 
     /* The message body as the visitor typed it. */
     const bodyOf = (L) => {
@@ -133,7 +133,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
     /* ── header nav (lives outside #app so it survives every re-render) ── */
     function paintNav() {
-      const u = unreadMessages();
+      const unreadLeads = unreadIn('lead');
+      const unreadMsgs = unreadIn('message');
       const item = (key, label, d, badgeCount) => {
         const on = inbox === key;
         return `<button data-inbox="${key}" aria-pressed="${on}"
@@ -143,8 +144,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             on ? 'bg-cream/25 text-cream' : 'bg-brass text-forest'}">${badgeCount}</span>` : ''}</button>`;
       };
       $('#nav').innerHTML =
-        item('lead', 'Leads', ICONS.inbox, 0) +
-        item('message', 'Messages', ICONS.mail, u) +
+        item('lead', 'Leads', ICONS.inbox, unreadLeads) +
+        item('message', 'Messages', ICONS.mail, unreadMsgs) +
         `<a href="/boroto/" class="rounded-md px-3 py-1.5 text-[#5b6660] transition-colors hover:bg-[#f1efe7] hover:text-forest">SEO dashboard</a>`;
 
       $('#nav').querySelectorAll('button[data-inbox]').forEach((b) =>
@@ -157,8 +158,10 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           paintNav(); route();
         }));
 
-      // Unread messages waiting is worth showing in the tab title too.
-      document.title = u ? `(${u}) Lead Desk` : 'Lead Desk';
+      // Anything unread is worth showing in the tab title too, so a background
+      // tab still tells him something is waiting.
+      const waiting = unreadLeads + unreadMsgs;
+      document.title = waiting ? `(${waiting}) Lead Desk` : 'Lead Desk';
     }
 
     /* ── list ── */
