@@ -149,6 +149,18 @@ export function renderCard(lead, events = []) {
 
   // ── current state ──
   out.push(RULE);
+
+  /* A lead with no id was never stored. That used to be invisible: the card
+     looked completely normal, just quietly missing its buttons, so a total
+     storage outage could run for hours unnoticed (it did, on 2026-08-24 —
+     see test/leadstore.test.mjs). Say it out loud instead. */
+  if (!L.id) {
+    out.push('⚠️ <b>NOT SAVED TO THE DASHBOARD</b>');
+    out.push('<i>Storage failed, so this card has no buttons and this lead is');
+    out.push('not in the Lead Desk. The details above are complete — copy them.</i>');
+    out.push('');
+  }
+
   out.push(STATUS_LINE[L.status] || STATUS_LINE.new);
 
   const trail = renderTrail(events);

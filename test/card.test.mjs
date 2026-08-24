@@ -108,6 +108,14 @@ t('parses a press',              JSON.stringify(parseCallback('act:won:abc-123')
 t('rejects junk',                parseCallback('nonsense'), null);
 t('rejects empty',               parseCallback(''), null);
 
+console.log('\n── a storage failure must be loud, not silent ──');
+const unsaved = renderCard(fromSubmission({ id: '', kind: 'lead', lead: { Name: 'Sam Taylor' }, meta: {} }), []);
+t('card says it was not saved',  unsaved.text.includes('NOT SAVED TO THE DASHBOARD'), true);
+t('  ...and explains why',       unsaved.text.includes('no buttons'), true);
+t('  ...and has no buttons',     unsaved.reply_markup, undefined);
+t('  ...but still shows details', unsaved.text.includes('Sam Taylor'), true);
+t('a healthy card stays quiet',  base.text.includes('NOT SAVED'), false);
+
 console.log('\n── reference numbers ──');
 const numbered = renderCard({ ...LEAD, seq: 7 }, []);
 t('ref shown, zero-padded',      numbered.text.includes('<code>#0007</code>'), true);

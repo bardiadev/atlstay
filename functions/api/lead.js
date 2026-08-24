@@ -125,7 +125,7 @@ export async function onRequestPost(context) {
   // Persist to D1 first so the Telegram alert can link straight to the lead.
   // storeLead never throws and returns '' if D1 is unbound or failing — the
   // lead must still reach the owner when storage is broken.
-  const leadId = await storeLead(env, { formName, lead, meta, subject, receivedAt });
+  const { id: leadId, seq: leadSeq } = await storeLead(env, { formName, lead, meta, subject, receivedAt });
 
   // Post the card to the group. This is the partners' shared workspace, not a
   // one-way alert: it carries action buttons and rewrites itself as people work
@@ -134,7 +134,7 @@ export async function onRequestPost(context) {
   // buttons, since there would be no record for a button press to act on.
   const notify = (async () => {
     const card = renderCard(
-      fromSubmission({ id: leadId, kind: kindOf(formName), lead, meta, receivedAt: when.toISOString() }),
+      fromSubmission({ id: leadId, seq: leadSeq, kind: kindOf(formName), lead, meta, receivedAt: when.toISOString() }),
       [],
     );
     const { cards, results } = await sendCard(env, card);

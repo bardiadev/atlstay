@@ -21,13 +21,21 @@ export function kindOf(formName) {
 }
 
 /**
- * Best-effort insert. Returns the new lead id, or '' on any failure.
+ * Best-effort insert. Returns { id, seq } — the id is '' and seq null on any
+ * failure, so a caller can always destructure safely. The card needs BOTH: the
+ * id to attach working buttons, and seq to show the reference number.
+ *
  * `receivedAt` backdates the row and is only ever supplied by the key-gated
  * import path in lead.js — a normal submission always stamps "now".
+ *
+ * NOTE: the INSERT below must keep its column list, its placeholders and its
+ * bindings in lockstep. D1 rejects a mismatch, and the catch here turns that
+ * into a silent total storage outage that looks exactly like a working lead.
+ * test/leadstore.test.mjs enforces the balance — keep it passing.
  */
 export async function storeLead(env, { formName, lead, meta, subject, receivedAt }) {
   try {
-    if (!env || !env.DB) return ''; // not bound — nothing to do
+    if (!env || !env.DB) return { id: '', seq: null }; // not bound — nothing to do
     const id = crypto.randomUUID();
     const now = new Date().toISOString();
     const stamp = receivedAt || now;
@@ -55,10 +63,10 @@ export async function storeLead(env, { formName, lead, meta, subject, receivedAt
 
     await env.DB.prepare(
       `INSERT INTO leads
-        (id, received_at, brand, form_name, kind, service_interest,
+        (id, received_at, brand, form_name, kind, seq, service_interest,
          name, email, phone, address, page_url,
          raw_lead, raw_meta, status, updated_at)
-       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,'new',?)`,
+       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,'new',?)`,
     )
       .bind(
         id,
@@ -79,8 +87,11 @@ export async function storeLead(env, { formName, lead, meta, subject, receivedAt
       )
       .run();
 
-    return id;
+    return { id, seq };
   } catch {
-    return ''; // never surface a storage problem to the submitter
+    // Never surface a storage problem to the submitter — but never pretend it
+    // succeeded either: an empty id is what tells the caller to ship a card
+    // without buttons rather than with dead ones.
+    return { id: '', seq: null };
   }
 }
