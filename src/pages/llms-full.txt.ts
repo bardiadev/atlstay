@@ -136,10 +136,28 @@ export const GET: APIRoute = async () => {
   // ── Neighborhoods ──
   if (neighborhoods.length) {
     hr();
-    L.push('## Atlanta neighborhoods');
-    L.push('Hyper-local management pages for Atlanta neighborhoods:');
+    /* Grouped by their actual city, and each with its own description.
+     * This was previously a bare name-plus-URL dump under the heading "Atlanta
+     * neighborhoods" — which was both the only link-dump in an otherwise
+     * prose-rich file (giving an answer engine nothing to cite), and factually
+     * wrong: it filed places like Aska Adventure Area, which is in Blue Ridge,
+     * under Atlanta. */
+    L.push('## Neighborhoods');
+    L.push('Hyper-local management pages, grouped by the city each neighborhood belongs to:');
+    const byCity = new Map<string, typeof neighborhoods>();
     for (const n of neighborhoods) {
-      L.push(`- ${n.data.name}: ${u(`/${n.data.citySlug}/${n.data.slug}/`)}`);
+      const list = byCity.get(n.data.citySlug) ?? [];
+      list.push(n);
+      byCity.set(n.data.citySlug, list);
+    }
+    const cityName = new Map(cities.map((c) => [c.data.slug, c.data.name]));
+    for (const [slug, list] of [...byCity.entries()].sort((a, b) => b[1].length - a[1].length)) {
+      L.push('');
+      L.push(`### ${cityName.get(slug) ?? slug} neighborhoods`);
+      for (const n of list) {
+        const desc = n.data.description ? ` — ${n.data.description}` : '';
+        L.push(`- [${n.data.name}](${u(`/${n.data.citySlug}/${n.data.slug}/`)})${desc}`);
+      }
     }
   }
 

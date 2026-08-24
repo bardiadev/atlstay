@@ -149,7 +149,14 @@ const heroSrcset = srcsetFor(img.src);
             Free rental projection — about a minute
           </p>
           )}
-          <ProjectionForm client:load {...formProps} />
+<!-- client:idle, not client:load. This island is React plus the form —
+             ~204KB that, under client:load, must download, parse and hydrate
+             before the browser is free to finish painting. On a throttled
+             mobile CPU that competes directly with LCP, which is why reducing
+             the hero image weight alone did not move it. client:idle keeps the
+             form fully interactive but lets the paint finish first.
+             Do NOT change back to client:load. -->
+          <ProjectionForm client:idle {...formProps} />
           <p class="mt-3 text-center text-xs text-cream/70">
             Free, no obligation. Prefer to talk? Call
             <a href={site.contact.phoneHref} class="underline underline-offset-2 hover:text-brass">{site.contact.phone}</a>.

@@ -53,6 +53,40 @@ export const GET: APIRoute = async () => {
       L.push(`- [${s.name}](${u(`/services/${s.slug}/`)}): ${s.seoDescription}`);
     }
   }
+  /* Every service x city page, grouped by service.
+   *
+   * These 470 URLs are the single largest section of the site, and until now
+   * NONE of them appeared in llms.txt or llms-full.txt — so an answer engine
+   * reading our own AI index had no way to discover that, say,
+   * /services/long-term-rental-management/marietta/ exists, even though it is
+   * a 3,600-word city-specific page. That was 52% of the site invisible to the
+   * exact audience these files are written for.
+   *
+   * Mirrors getStaticPaths() in src/pages/services/[service]/[city].astro
+   * EXACTLY (service.marketCities x published cities that have real intro
+   * copy), so this list can never advertise a URL that was not built. */
+  const cityBySlug = new Map(cities.map((c) => [c.data.slug, c]));
+  L.push('');
+  L.push('## Every service, in every market we cover');
+  L.push(
+    'Each combination below is its own page with market-specific detail — local demand, regulation, and what the service means in that city.',
+  );
+  for (const cat of serviceCategories) {
+    for (const s of servicesByCategory(cat.key)) {
+      const built = s.marketCities
+        .map((slug) => cityBySlug.get(slug))
+        .filter((c): c is NonNullable<typeof c> => Boolean(c && c.data.intro));
+      if (built.length === 0) continue;
+      L.push('');
+      L.push(`### ${s.name} by market`);
+      for (const c of built) {
+        L.push(
+          `- [${s.name} in ${c.data.name}, ${c.data.state}](${u(`/services/${s.slug}/${c.data.slug}/`)})`,
+        );
+      }
+    }
+  }
+
   L.push('');
   L.push('## Service areas');
   L.push(`- [Areas we serve](${u('/areas-we-serve/')}): Full coverage map — intown Atlanta, metro Atlanta, and Georgia destination markets (${cities.length}+ markets).`);

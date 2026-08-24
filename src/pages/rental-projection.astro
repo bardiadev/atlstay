@@ -145,7 +145,14 @@ const schemas = [
 
         <!-- Right: the form (sticky on desktop) -->
         <div class="lg:sticky lg:top-8">
-          <ProjectionForm client:load />
+<!-- client:idle, not client:load. This island is React plus the form —
+             ~204KB that, under client:load, must download, parse and hydrate
+             before the browser is free to finish painting. On a throttled
+             mobile CPU that competes directly with LCP, which is why reducing
+             the hero image weight alone did not move it. client:idle keeps the
+             form fully interactive but lets the paint finish first.
+             Do NOT change back to client:load. -->
+          <ProjectionForm client:idle />
           <p class="mt-4 text-center text-xs text-stone">
             Free. No obligation. Delivered within one business day.
           </p>
@@ -295,7 +302,7 @@ const schemas = [
           </ul>
         </div>
         <div>
-          <ProjectionForm client:load />
+          <ProjectionForm client:idle />
           <p class="mt-3 text-center text-xs text-cream/50">
             Your information is never shared or sold.
           </p>

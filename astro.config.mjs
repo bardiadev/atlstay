@@ -58,21 +58,25 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      changefreq: 'weekly',
       lastmod: new Date(),
       // /boroto = private dashboard; /search = noindex (a sitemapped noindex URL
       // triggers "Submitted URL marked noindex" in Search Console).
       filter: (page) => !page.includes('/boroto') && !/\/search\/?$/.test(page),
       serialize(item) {
+        // `priority` and `changefreq` are deliberately NOT emitted. Google has
+        // ignored both for years, and the values here had already drifted out of
+        // step with what the code claimed to produce — so they were bytes on
+        // every one of ~894 URLs that no search engine reads.
+        //
+        // `lastmod` is real for resources (their frontmatter carries publish and
+        // update dates). Everything else still falls back to build time, which
+        // means ~77% of URLs share one timestamp — a crawler that sees that
+        // learns to distrust the field. Extending real dates to the cities and
+        // neighbourhoods collections is the follow-up.
         const u = item.url;
         const resource = /\/resources\/([^/]+)\/$/.exec(u);
         const lastmod = resource && RESOURCE_LASTMOD.get(resource[1]);
         if (lastmod) item.lastmod = lastmod;
-        if (u === 'https://atlstay.com/') item.priority = 1.0;
-        else if (/\/(services|pricing|rental-projection)\/$/.test(u)) item.priority = 0.9;
-        else if (/\/(areas-we-serve|atlanta)\/$/.test(u)) item.priority = 0.8;
-        else if (/\/(resources|compare|how-it-works|about|contact|world-cup)/.test(u)) item.priority = 0.7;
-        else item.priority = 0.75; // location pages
         return item;
       },
     }),

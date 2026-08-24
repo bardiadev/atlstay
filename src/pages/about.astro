@@ -145,10 +145,10 @@ const values = [
     </Container>
   </Section>
 
-  <!-- ─── TEAM (placeholder) ─── -->
-  <!-- PLACEHOLDER SECTION — Owner to provide real team bios and photos before launch.
-       Do NOT publish placeholder names or bios as real people. This section is clearly
-       marked as a template. Replace with genuine, attributable team members only. -->
+  <!-- ─── TEAM ─── -->
+  <!-- Real named bios are still outstanding from the owner. Never publish
+       invented names, photos or bios here — add genuine, attributable people
+       only. Until then this section carries verified company facts. -->
   <Section variant="tint">
     <Container>
       <div class="text-center">
@@ -159,11 +159,35 @@ const values = [
         <p class="mx-auto mt-4 max-w-2xl text-ink/75">
           {site.brandName} is run by a small, dedicated team of Atlanta locals who are hands-on with every property in our portfolio. Not a call center. Not a franchise network. Real people who are personally invested in your home's performance.
         </p>
-        <!-- Owner: add real team member cards here. Example structure below — replace with genuine bios. -->
       </div>
-      <div class="mt-10 rounded-2xl border border-line bg-white p-8 text-center">
-        <p class="text-stone text-sm italic">Team bios coming soon. Owner to provide real team member names, photos, and short bios.</p>
+
+      <!-- Named bios still to come from the owner. Until then this carries the
+           CONFIRMED facts that were already sitting unused in site.config —
+           years in business, founding year, and the Georgia brokerage licence —
+           rather than an internal to-do note. The previous version shipped the
+           literal string "Team bios coming soon. Owner to provide real team
+           member names, photos, and short bios." to every visitor and crawler
+           on the single most trust-critical page on the site.
+           Do NOT invent team members here; add real ones only. -->
+      <div class="mt-10 grid gap-5 sm:grid-cols-3">
+        <div class="rounded-2xl border border-line bg-white p-7 text-center">
+          <p class="font-display text-3xl text-forest">{site.stats.years}</p>
+          <p class="mt-2 text-sm text-ink/70">years managing property in Georgia, since {site.stats.foundingYear}</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-7 text-center">
+          <p class="font-display text-3xl text-forest">Licensed</p>
+          <p class="mt-2 text-sm text-ink/70">Georgia real estate brokerage — {site.company.legalName}, regulated by the Georgia Real Estate Commission</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-7 text-center">
+          <p class="font-display text-3xl text-forest">{site.stats.homes}</p>
+          <p class="mt-2 text-sm text-ink/70">homes and communities under management</p>
+        </div>
       </div>
+      <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink/70">
+        Because we hold a Georgia brokerage licence, we can handle work an unlicensed
+        manager legally cannot — leasing and tenant placement, long-term rentals, and
+        community association management — alongside short-term hosting.
+      </p>
     </Container>
   </Section>
 
