@@ -42,7 +42,7 @@ export const GET: APIRoute = async () => {
   L.push('');
   L.push('## Services we provide');
   L.push(
-    `${site.brandName} is the short-term-rental brand of ${site.company.legalName}, a licensed Georgia real estate brokerage. The business manages property across the full range of rental terms — nightly, 30-plus days, and annual leases — for residential, multi-family, and commercial owners. ${serviceLines.length} distinct service lines:`,
+    `${site.brandName} is the short-term-rental brand of ${site.company.legalName}, whose team includes licensed Georgia real estate professionals. The business manages property across the full range of rental terms — nightly, 30-plus days, and annual leases — for residential, multi-family, and commercial owners. ${serviceLines.length} distinct service lines:`,
   );
   for (const cat of serviceCategories) {
     const lines = servicesByCategory(cat.key);

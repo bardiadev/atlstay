@@ -176,7 +176,13 @@ const values = [
         </div>
         <div class="rounded-2xl border border-line bg-white p-7 text-center">
           <p class="font-display text-3xl text-forest">Licensed</p>
-          <p class="mt-2 text-sm text-ink/70">Georgia real estate brokerage — {site.company.legalName}, regulated by the Georgia Real Estate Commission</p>
+          <!-- Deliberately attributed to the TEAM, not to a named legal entity.
+               The group runs several companies and sister companies, and stating
+               that one specific entity holds the brokerage licence is a claim we
+               should not be on the hook for. "Licensed professionals on our team"
+               is true regardless of which entity holds what. Do not reintroduce a
+               company name here. -->
+          <p class="mt-2 text-sm text-ink/70">Licensed Georgia real estate professionals on our team — so we can handle leasing, long-term rentals and community management, not just hosting</p>
         </div>
         <div class="rounded-2xl border border-line bg-white p-7 text-center">
           <p class="font-display text-3xl text-forest">{site.stats.homes}</p>

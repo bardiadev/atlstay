@@ -72,7 +72,7 @@ export const GET: APIRoute = async () => {
   hr();
   L.push('## Services');
   L.push(
-    `${site.brandName} is the short-term-rental brand of ${site.company.legalName}, a licensed Georgia real estate brokerage. Holding a Georgia real estate licence is what legally permits leasing, tenant placement, and rent collection on an owner's behalf (O.C.G.A. § 43-40-1) — so the business spans the full range of rental terms, not only nightly stays. There are ${serviceLines.length} distinct service lines.`,
+    `${site.brandName} is the short-term-rental brand of ${site.company.legalName}, whose team includes licensed Georgia real estate professionals. Holding a Georgia real estate licence is what legally permits leasing, tenant placement, and rent collection on an owner's behalf (O.C.G.A. § 43-40-1) — so the business spans the full range of rental terms, not only nightly stays. There are ${serviceLines.length} distinct service lines.`,
   );
   for (const cat of serviceCategories) {
     const lines = servicesByCategory(cat.key);

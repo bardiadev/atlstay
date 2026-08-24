@@ -13,6 +13,7 @@ import Prose from '@/components/ui/Prose.astro';
 import CheckList from '@/components/ui/CheckList.astro';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { images, type ImageKey } from '@/data/images';
+import { serviceLines } from '@/data/serviceLines';
 import { site } from '@/config/site';
 import { cityGeo } from '@/data/cityGeo';
 import { assignCardStyles } from '@/lib/cardImage';
@@ -37,8 +38,29 @@ const county = d.county ?? mapGeo?.county;
 const countyOf = (c: typeof entry) => c.data.county ?? cityGeo[c.data.slug]?.county;
 
 const isVacation = d.region === 'georgia';
-const heading = `${isVacation ? 'Vacation Rental & Airbnb Management' : 'Airbnb & Short-Term Rental Management'} in ${d.name}, ${d.state}`;
-const seoTitle = isVacation ? `Vacation Rental Management in ${d.name}, GA` : `Airbnb Management in ${d.name}, GA`;
+
+/* Every service line that actually has a live page for this city. Mirrors
+   getStaticPaths() in services/[service]/[city].astro, so this can only ever
+   list a page that was really built. */
+const citySvcs = serviceLines.filter((s) => s.marketCities.includes(d.slug) && d.intro);
+const hasLongTerm = citySvcs.some((s) =>
+  ['long-term-rental-management', 'tenant-placement', 'hoa-management',
+   'commercial-property-management', 'multi-family-property-management'].includes(s.slug));
+
+/* TITLES — measured, not guessed. Search Console (28 days) shows
+   "<city> property management" pulling 968 impressions across 188 queries
+   against 462 for every "airbnb ..." query combined: 2.1x the demand. Every
+   city page was nonetheless titled "Airbnb Management in <city>", mentioning
+   "property management" once against "airbnb" 36 times, and ranking ~position
+   75 for the bigger term. Leading with the phrase people actually type is
+   also more accurate — these cities have real long-term, HOA and commercial
+   service pages live, not just short-term. */
+const heading = isVacation
+  ? `Vacation Rental & Property Management in ${d.name}, ${d.state}`
+  : `Property Management in ${d.name}, ${d.state}`;
+const seoTitle = isVacation
+  ? `${d.name} Vacation Rental & Property Management, GA`
+  : `${d.name} Property Management, GA — Short & Long-Term`;
 const countyLine = county ? ` We manage homes across ${d.name} and ${county} County.` : '';
 
 // Neighborhoods (Atlanta only)
@@ -234,6 +256,40 @@ const schemas = [
         <Eyebrow>Common questions</Eyebrow>
         <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">{d.name} STR management — FAQs</h2>
         <div class="mt-8"><FAQ items={d.faqs} /></div>
+      </Container>
+    </Section>
+  )}
+
+  {citySvcs.length > 0 && (
+    <Section variant="white">
+      <Container>
+        <Eyebrow>Every service we run here</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          What we manage in {d.name}
+        </h2>
+        <p class="mt-4 max-w-2xl text-ink/75">
+          {hasLongTerm
+            ? `Short-term hosting is one part of it. Because licensed Georgia real estate professionals are on our team, we also handle leasing, long-term tenants and community associations in ${d.name} — work an unlicensed manager legally cannot take on.`
+            : `Here is every service we run in ${d.name}, each with its own local detail.`}
+        </p>
+        {/* This block did not exist. City pages linked UP to hubs but never DOWN
+            to their own service pages, so /marietta/ offered no route to
+            /services/hoa-management/marietta/ despite it existing and matching
+            exactly. Those pages depended on a single discovery path; this gives
+            them a second one, and gives the reader the page they actually want. */}
+        <ul class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {citySvcs.map((s) => (
+            <li>
+              <a
+                href={`/services/${s.slug}/${d.slug}/`}
+                class="flex h-full flex-col rounded-2xl border border-line bg-white p-5 transition-colors hover:border-brass hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
+              >
+                <span class="font-display text-lg text-forest">{s.name}</span>
+                <span class="mt-1.5 text-sm text-ink/70">in {d.name}, {d.state}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </Container>
     </Section>
   )}
