@@ -23,6 +23,7 @@ const ACTION_STATUS = {
 export const ACTIONS = {
   created:      { icon: '✨', verb: 'came in',            kind: 'system' },
   called:       { icon: '📞', verb: 'called',             kind: 'touch' },
+  texted:       { icon: '💬', verb: 'texted',             kind: 'touch' },
   emailed:      { icon: '✉️', verb: 'emailed',            kind: 'touch' },
   proposal:     { icon: '📤', verb: 'sent the proposal',  kind: 'milestone' },
   won:          { icon: '✅', verb: 'marked it won',      kind: 'milestone' },

@@ -6,7 +6,7 @@
  * Do not move this to /api/.
  */
 
-import { addEvent, eventsForAll } from '../api/_leadEvents.js';
+import { addEvent, eventsForAll, isAction, statusFor } from '../api/_leadEvents.js';
 import { refreshCard } from '../api/_board.js';
 
 const STATUSES = ['new', 'proposal_sent', 'won', 'lost'];
@@ -120,6 +120,31 @@ export async function onRequestPost(context) {
     if (body.action === 'delete') {
       await env.DB.prepare('DELETE FROM leads WHERE id = ?').bind(id).run();
       return json({ ok: true, deleted: id });
+    }
+
+    /* Log an action from the dashboard. Until now the dashboard could only
+     * change status, so "I called them" had to be done from Telegram. Both
+     * surfaces can now record the same things, into the same history. */
+    if (body.action === 'log') {
+      const ev = String(body.event || '');
+      if (!isAction(ev)) return json({ error: 'Bad action' }, 400);
+      await addEvent(env, {
+        leadId: id, action: ev, actor: OWNER, source: 'dashboard',
+        note: ev === 'note' ? String(body.note || '') : '',
+      });
+      // A milestone logged here moves the pipeline too, exactly as it would
+      // from a button press in the group.
+      const wanted = statusFor(ev);
+      if (wanted) {
+        await env.DB.prepare(
+          `UPDATE leads SET status = ?, updated_at = ?,
+             proposal_sent_at = CASE WHEN ? = 'proposal_sent'
+               THEN COALESCE(proposal_sent_at, ?) ELSE proposal_sent_at END
+            WHERE id = ?`,
+        ).bind(wanted, now, wanted, now, id).run();
+      }
+      await refreshCard(env, id);
+      return json({ ok: true, status: wanted || undefined });
     }
 
     // Move between the two inboxes. Contact-page submissions land in Messages;

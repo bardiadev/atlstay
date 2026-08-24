@@ -66,9 +66,9 @@ const STATUS_LINE = {
 /* Buttons. callback_data is capped at 64 bytes by Telegram; "act:won:<uuid>"
    is 44, so there is comfortable headroom. */
 const LEAD_BUTTONS = [
-  [['📞 Called', 'called'], ['✉️ Emailed', 'emailed']],
-  [['📤 Proposal', 'proposal'], ['✅ Won', 'won']],
-  [['❌ Lost', 'lost']],
+  [['📞 Called', 'called'], ['💬 Texted', 'texted']],
+  [['✉️ Emailed', 'emailed'], ['📤 Proposal', 'proposal']],
+  [['✅ Won', 'won'], ['❌ Lost', 'lost']],
 ];
 const MESSAGE_BUTTONS = [
   [['↩️ Replied', 'replied'], ['🚫 Not relevant', 'not_relevant']],
@@ -111,7 +111,10 @@ export function renderCard(lead, events = []) {
   const service = pick(fields, /service interest/i);
 
   const out = [];
-  out.push(`${isMessage ? '✉️' : '🏠'} <b>${esc(L.brand || 'ATLStay')}</b> — ${isMessage ? 'Message' : 'Lead'}`);
+  // The reference number is permanent and never reused, so partners can say
+  // "what happened with 0007?" and mean exactly one enquiry, forever.
+  const ref = L.seq ? ` <code>#${String(L.seq).padStart(4, '0')}</code>` : '';
+  out.push(`${isMessage ? '✉️' : '🏠'} <b>${esc(L.brand || 'ATLStay')}</b> — ${isMessage ? 'Message' : 'Lead'}${ref}`);
   out.push(RULE);
 
   // Category first: an HOA board and a homeowner need completely different replies.
@@ -197,6 +200,7 @@ export function fromRow(row) {
     kind: row.kind === 'message' ? 'message' : 'lead',
     brand: row.brand || 'ATLStay',
     status: row.status || 'new',
+    seq: row.seq || null,
     receivedAt: row.received_at,
     pageUrl: row.page_url || '',
     fields: parse(row.raw_lead),
@@ -207,13 +211,14 @@ export function fromRow(row) {
  * Normalise a fresh submission (the shape /api/lead receives) into the same
  * thing, so a brand-new card and a re-rendered one come from identical code.
  */
-export function fromSubmission({ id, kind, lead, meta, status, receivedAt }) {
+export function fromSubmission({ id, kind, lead, meta, status, receivedAt, seq }) {
   const page = pick(meta, /submitted from page/i);
   return {
     id,
     kind: kind === 'message' ? 'message' : 'lead',
     brand: /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay',
     status: status || 'new',
+    seq: seq || null,
     receivedAt: receivedAt || new Date().toISOString(),
     pageUrl: page,
     fields: lead || {},

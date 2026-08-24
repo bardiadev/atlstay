@@ -93,7 +93,8 @@ const huge = renderCard(
 t('stays under 4096 chars',      huge.text.length <= 4096, true);
 
 console.log('\n── buttons ──');
-t('lead gets 5 actions',         base.reply_markup.inline_keyboard.flat().length, 5);
+t('lead gets 6 actions',         base.reply_markup.inline_keyboard.flat().length, 6);
+t('texted is one of them',       JSON.stringify(base.reply_markup).includes('act:texted:lead-abc'), true);
 t('callback data is well-formed', base.reply_markup.inline_keyboard[0][0].callback_data, 'act:called:lead-abc');
 t('callback within 64 bytes',    base.reply_markup.inline_keyboard[0][0].callback_data.length <= 64, true);
 const msgCard = renderCard(fromSubmission({ id: 'm1', kind: 'message', lead: { Name: 'A' }, meta: {} }), []);
@@ -107,8 +108,17 @@ t('parses a press',              JSON.stringify(parseCallback('act:won:abc-123')
 t('rejects junk',                parseCallback('nonsense'), null);
 t('rejects empty',               parseCallback(''), null);
 
+console.log('\n── reference numbers ──');
+const numbered = renderCard({ ...LEAD, seq: 7 }, []);
+t('ref shown, zero-padded',      numbered.text.includes('<code>#0007</code>'), true);
+t('no ref when unnumbered',      base.text.includes('<code>#'), false);
+const big = renderCard({ ...LEAD, seq: 12345 }, []);
+t('long refs are not truncated', big.text.includes('<code>#12345</code>'), true);
+
 console.log('\n── action → status mapping ──');
 t('called is a touch',           statusFor('called'), '');
+t('texted is a touch',           statusFor('texted'), '');
+t('texted is a known action',    isAction('texted'), true);
 t('emailed is a touch',          statusFor('emailed'), '');
 t('note is a touch',             statusFor('note'), '');
 t('proposal sets status',        statusFor('proposal'), 'proposal_sent');

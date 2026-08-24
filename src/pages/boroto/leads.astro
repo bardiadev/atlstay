@@ -53,7 +53,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     /* Status is never conveyed by colour alone — each carries an icon and a
        label as well, and every colour clears 4.5:1 on white. */
     const STATUS = {
-      new:           { label: 'New',           fg: '#1d4ed8', bg: '#eef4ff', bd: '#c7dbff', icon: 'M12 6v6l4 2' },
+      new:           { label: 'New',           fg: '#1d4ed8', bg: '#eef4ff', bd: '#c7dbff', icon: 'M12 7v5l3 2M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18' },
       proposal_sent: { label: 'Proposal sent', fg: '#92400e', bg: '#fdf3e3', bd: '#f0dcb4', icon: 'm3 12 18-8-8 18-2-8-8-2Z' },
       won:           { label: 'Won',           fg: '#15803d', bg: '#eaf6ee', bd: '#c3e6cf', icon: 'm5 12 5 5L20 7' },
       lost:          { label: 'Lost',          fg: '#475569', bg: '#f1f3f5', bd: '#d9dee3', icon: 'M6 6l12 12M18 6 6 18' },
@@ -65,6 +65,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     const ACTIVITY = {
       created:      { icon: '✨', verb: 'came in' },
       called:       { icon: '📞', verb: 'called' },
+      texted:       { icon: '💬', verb: 'texted' },
       emailed:      { icon: '✉️', verb: 'emailed' },
       proposal:     { icon: '📤', verb: 'sent the proposal' },
       won:          { icon: '✅', verb: 'marked it won' },
@@ -78,6 +79,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       mail:    'M3 5h18v14H3z M3 6l9 7 9-7',
       inbox:   'M3 5h18v14H3z M3 13h5l1 3h6l1-3h5',
       back:    'M15 18l-6-6 6-6',
+      external:'M14 4h6v6M20 4l-9 9M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6',
       arrow:   'M5 12h14 M13 6l6 6-6 6',
     };
 
@@ -119,7 +121,49 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       return '';
     };
 
+    /* AirDNA's Rentalizer values one specific address; the old /data/us link
+       just opened a market map, which is not what you want when sizing a lead.
+       AirDNA geocodes the string itself, so a tidy "street, city, ST, USA" is
+       enough. Anything too thin to geocode falls back to the market search. */
+    const airdnaUrl = (addr) => {
+      const a = String(addr || '').trim().replace(/\s+/g, ' ');
+      if (a.length < 8 || !/\d/.test(a)) {
+        return 'https://app.airdna.co/data/us?search=' + encodeURIComponent(a);
+      }
+      const withCountry = /\bUSA?\b|\bUnited States\b/i.test(a) ? a : a + ', USA';
+      return 'https://app.airdna.co/data/rentalizer?address=' + encodeURIComponent(withCountry).replace(/%20/g, '+');
+    };
+
     const isQuiet = (l) => l.status === 'proposal_sent' && l.proposal_sent_at && daysSince(l.proposal_sent_at) > 4;
+
+    /* Permanent reference number — never reused, so #0007 always means the
+       same enquiry. Older leads imported before numbering show a dash. */
+    const ref = (l) => (l.seq ? '#' + String(l.seq).padStart(4, '0') : '—');
+
+    /* The most recent thing anyone did, whatever it was. This is what the
+       status column shows underneath the badge: a status alone doesn't tell
+       you that someone already called an hour ago. */
+    const latest = (l) => {
+      const evs = (l.events || []).filter((e) => ACTIVITY[e.action]);
+      return evs.length ? evs[evs.length - 1] : null;
+    };
+    const countsOf = (l) => {
+      const evs = l.events || [];
+      return { actions: evs.filter((e) => e.action !== 'note').length,
+               notes: evs.filter((e) => e.action === 'note').length };
+    };
+
+    /* "2h", "3d", "just now" — compact enough for a table cell. */
+    const shortAgo = (iso) => {
+      const ms = Date.now() - new Date(iso);
+      if (isNaN(ms)) return '';
+      const m = Math.floor(ms / 60000);
+      if (m < 1) return 'just now';
+      if (m < 60) return m + 'm';
+      const h = Math.floor(m / 60);
+      if (h < 24) return h + 'h';
+      return Math.floor(h / 24) + 'd';
+    };
 
     const counts = () => {
       const mine = LEADS.filter(inInbox);
@@ -202,11 +246,33 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
       const rows = visible();
       const head = messages
-        ? ['Received (EST)', 'From', 'Message', 'Site']
-        : ['Received (EST)', 'Name', 'Service', 'Location', 'Site', 'Status'];
+        ? ['Ref', 'Received (EST)', 'From', 'Message', 'Status']
+        : ['Ref', 'Received (EST)', 'Name', 'Service', 'Location', 'Status'];
+
+      const statusCell = (l) => {
+        const e = latest(l);
+        const c = countsOf(l);
+        const a = e ? (ACTIVITY[e.action] || { icon: '•', verb: e.action }) : null;
+        return `<td class="px-4 py-3">
+          <div class="flex flex-col gap-1">
+            <div>${badge(l.status)}${isQuiet(l) ? ` <span class="ml-1 whitespace-nowrap text-xs font-medium text-[#b91c1c]">· quiet ${daysSince(l.proposal_sent_at)}d</span>` : ''}</div>
+            ${e ? `<div class="flex items-center gap-1.5 text-xs text-[#5b6660]">
+                     <span aria-hidden="true">${a.icon}</span>
+                     <span class="truncate"><span class="font-medium text-[#3c4742]">${esc(e.actor)}</span> ${esc(a.verb)}</span>
+                     <span class="whitespace-nowrap text-[#9aa39e]">${esc(shortAgo(e.created_at))}</span>
+                   </div>`
+                : '<div class="text-xs text-[#9aa39e]">No activity yet</div>'}
+            ${(c.actions || c.notes) ? `<div class="flex gap-1.5 text-[11px] text-[#5b6660]">
+                 ${c.actions ? `<span class="rounded bg-[#f1efe7] px-1.5 py-0.5" title="${c.actions} action${c.actions === 1 ? '' : 's'} taken">${c.actions} action${c.actions === 1 ? '' : 's'}</span>` : ''}
+                 ${c.notes ? `<span class="rounded bg-[#fdf3e3] px-1.5 py-0.5 text-[#92400e]" title="${c.notes} note${c.notes === 1 ? '' : 's'}">${c.notes} note${c.notes === 1 ? '' : 's'}</span>` : ''}
+               </div>` : ''}
+          </div>
+        </td>`;
+      };
 
       const cells = (l) => {
         const unread = !l.first_viewed_at;
+        const refCell = `<td class="whitespace-nowrap px-4 py-3 font-mono text-xs text-[#5b6660]">${esc(ref(l))}</td>`;
         const when = `
           <td class="whitespace-nowrap px-4 py-3 text-[#3c4742]">
             <span class="inline-flex items-center gap-2">
@@ -217,20 +283,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           </td>`;
         if (messages) {
           const b = bodyOf(l);
-          return when + `
+          return refCell + when + `
             <td class="px-4 py-3 ${unread ? 'font-semibold' : 'font-medium'} text-forest">
               ${esc(l.name || '—')}
               ${l.email ? `<span class="block text-xs font-normal text-[#5b6660]">${esc(l.email)}</span>` : ''}
             </td>
-            <td class="px-4 py-3 text-[#3c4742]">${esc(b ? (b.length > 96 ? b.slice(0, 96) + '…' : b) : '—')}</td>
-            <td class="px-4 py-3 text-xs text-[#5b6660]">${esc(l.brand)}</td>`;
+            <td class="px-4 py-3 text-[#3c4742]">${esc(b ? (b.length > 80 ? b.slice(0, 80) + '…' : b) : '—')}</td>`
+            + statusCell(l);
         }
-        return when + `
+        return refCell + when + `
           <td class="px-4 py-3 font-medium text-forest">${esc(l.name || '—')}</td>
           <td class="px-4 py-3 text-[#3c4742]">${esc(l.service_interest || '—')}</td>
-          <td class="px-4 py-3 text-[#5b6660]">${esc((l.address || '—').slice(0, 38))}</td>
-          <td class="px-4 py-3 text-xs text-[#5b6660]">${esc(l.brand)}</td>
-          <td class="px-4 py-3">${badge(l.status)}${isQuiet(l) ? ` <span class="ml-1 whitespace-nowrap text-xs font-medium text-[#b91c1c]">· quiet ${daysSince(l.proposal_sent_at)}d</span>` : ''}</td>`;
+          <td class="px-4 py-3 text-[#5b6660]">${esc((l.address || '—').slice(0, 34))}</td>`
+          + statusCell(l);
       };
 
       $('#app').innerHTML = `
@@ -326,16 +391,18 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         <div class="rounded-xl border border-[#e2e0d6] bg-white p-6">
           <div class="flex flex-wrap items-start justify-between gap-5">
             <div class="min-w-0">
-              <h1 class="font-display text-2xl text-forest">${esc(L.name || (messages ? 'Unnamed sender' : 'Unnamed lead'))}</h1>
+              <div class="flex items-center gap-2.5">
+                <span class="rounded bg-[#f1efe7] px-2 py-0.5 font-mono text-xs font-medium text-[#5b6660]">${esc(ref(L))}</span>
+                <h1 class="font-display text-2xl text-forest">${esc(L.name || (messages ? 'Unnamed sender' : 'Unnamed lead'))}</h1>
+              </div>
               ${L.service_interest ? `<p class="mt-1 text-sm font-medium text-[#92400e]">${esc(L.service_interest)}</p>` : ''}
               <p class="mt-2 text-sm text-[#5b6660]">${esc(L.brand)} · ${esc(stamp(L.received_at))}</p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
-              ${L.email ? `<a href="mailto:${esc(L.email)}?subject=${encodeURIComponent('Re: your message to ' + L.brand)}"
-                 class="rounded-md bg-forest px-3.5 py-2 text-sm font-medium text-cream transition-colors hover:bg-forest-700">Reply by email</a>` : ''}
               <button id="copyAll" class="rounded-md border border-[#d8d5c8] px-3.5 py-2 text-sm text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5]">Copy everything</button>
-              ${!messages && L.address ? `<a target="_blank" rel="noopener" href="https://app.airdna.co/data/us?search=${encodeURIComponent(L.address)}"
-                 class="rounded-md border border-[#d8d5c8] px-3.5 py-2 text-sm text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5]">AirDNA</a>` : ''}
+              ${!messages && L.address ? `<a target="_blank" rel="noopener" href="${esc(airdnaUrl(L.address))}"
+                 class="inline-flex items-center gap-1.5 rounded-md border border-[#d8d5c8] px-3.5 py-2 text-sm text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">
+                 AirDNA${icon(ICONS.external, 'h-3.5 w-3.5 text-[#5b6660]')}<span class="sr-only">(opens in a new tab)</span></a>` : ''}
               <button id="move" class="inline-flex items-center gap-1.5 rounded-md border border-[#d8d5c8] px-3.5 py-2 text-sm text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5]">
                 ${icon(messages ? ICONS.inbox : ICONS.mail, 'h-4 w-4')}${messages ? 'Move to Leads' : 'Move to Messages'}</button>
               <button id="del" class="rounded-md border border-[#e6cbc8] px-3.5 py-2 text-sm text-[#a3231b] transition-colors hover:bg-[#fdeceb]">Delete</button>
@@ -343,17 +410,56 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           </div>
 
           ${messages ? '' : `
-          <div class="mt-5 flex flex-wrap items-center gap-2 border-t border-[#eeece3] pt-4">
-            <span class="mr-1 text-xs uppercase tracking-wide text-[#5b6660]">Status</span>
-            ${ORDER.map((k) => {
-              const s = STATUS[k], on = L.status === k;
-              return `<button data-s="${k}" aria-pressed="${on}"
-                class="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
-                style="${on ? `color:${s.fg};background:${s.bg};border-color:${s.fg}` : 'color:#5b6660;background:#fff;border-color:#e2e0d6'}">
-                ${icon(s.icon, 'h-3 w-3')}${s.label}</button>`;
-            }).join('')}
-            <span id="savedFlag" class="ml-2 text-xs text-[#15803d] opacity-0 transition-opacity">Saved</span>
+          <div class="mt-5 border-t border-[#eeece3] pt-4">
+            <div class="flex items-baseline justify-between gap-3">
+              <span class="text-xs font-semibold uppercase tracking-wide text-[#5b6660]">Where it stands</span>
+              <span id="savedFlag" class="text-xs font-medium text-[#15803d] opacity-0 transition-opacity">Saved</span>
+            </div>
+
+            <!-- A pipeline, shown as one segmented control rather than four
+                 loose pills: the stages read left to right in the order they
+                 actually happen, and the current one is unmistakable. State is
+                 never colour alone — the selected stage also carries a tick and
+                 aria-pressed. Targets are 44px tall for thumbs. -->
+            <div role="group" aria-label="Lead status" class="mt-2 grid grid-cols-2 overflow-hidden rounded-xl border border-[#d8d5c8] sm:grid-cols-4">
+              ${ORDER.map((k, i) => {
+                const st = STATUS[k], on = L.status === k;
+                return `<button data-s="${k}" aria-pressed="${on}"
+                  class="flex min-h-[44px] items-center justify-center gap-2 border-[#e2e0d6] px-3 py-2.5 text-sm font-medium transition-colors focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-forest ${i > 0 ? 'border-l' : ''} ${i < 2 ? 'border-b sm:border-b-0' : ''} ${on ? '' : 'bg-white text-[#5b6660] hover:bg-[#faf9f5]'}"
+                  style="${on ? `color:${st.fg};background:${st.bg}` : ''}">
+                  ${icon(st.icon, 'h-4 w-4')}<span>${st.label}</span>
+                  ${on ? icon('m5 12 5 5L20 7', 'h-3.5 w-3.5 opacity-70') : ''}
+                </button>`;
+              }).join('')}
+            </div>
+
+            <!-- Logging a touch is a different kind of act from moving the
+                 pipeline, so it gets its own row instead of being mixed in.
+                 Until now this was only possible from Telegram. -->
+            <div class="mt-3 flex flex-wrap items-center gap-2">
+              <span class="mr-1 text-xs font-semibold uppercase tracking-wide text-[#5b6660]">Log</span>
+              ${[['called', '📞', 'Called'], ['texted', '💬', 'Texted'], ['emailed', '✉️', 'Emailed'], ['note', '📝', 'Add note']]
+                .map(([a, ic, label]) => `<button data-log="${a}"
+                  class="inline-flex min-h-[36px] items-center gap-1.5 rounded-lg border border-[#e2e0d6] bg-white px-3 py-1.5 text-sm text-[#3c4742] transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">
+                  <span aria-hidden="true">${ic}</span>${label}</button>`).join('')}
+            </div>
           </div>`}
+
+          <!-- The at-a-glance answer to "what's happened here?", so you don't
+               have to scroll to the timeline to find out. -->
+          <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-[#eeece3] pt-3 text-sm">
+            ${(() => {
+              const e = latest(L), c = countsOf(L);
+              if (!e) return '<span class="text-[#9aa39e]">No activity yet — nobody has touched this.</span>';
+              const a = ACTIVITY[e.action] || { icon: '•', verb: e.action };
+              return `<span class="text-[#3c4742]"><span aria-hidden="true">${a.icon}</span>
+                        Last: <span class="font-medium text-forest">${esc(e.actor)}</span> ${esc(a.verb)}
+                        <span class="text-[#9aa39e]">${esc(shortAgo(e.created_at))} ago</span></span>
+                      <span class="text-[#9aa39e]">·</span>
+                      <span class="text-[#5b6660]">${c.actions} action${c.actions === 1 ? '' : 's'}${c.notes ? `, ${c.notes} note${c.notes === 1 ? '' : 's'}` : ''}</span>
+                      <a href="#activity-${esc(L.id)}" class="text-[#1d4ed8] underline-offset-2 hover:underline">See all</a>`;
+            })()}
+          </div>
         </div>
 
         ${message ? `
@@ -370,7 +476,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           ${panel('Their session', pick(meta, (k) => !srcRe.test(k)))}
         </div>
 
-        <section class="mt-4 rounded-xl border border-[#e2e0d6] bg-white p-5">
+        <section id="activity-${esc(L.id)}" class="mt-4 scroll-mt-20 rounded-xl border border-[#e2e0d6] bg-white p-5">
           <div class="flex items-baseline justify-between gap-3">
             <h3 class="font-display text-base text-forest">Activity</h3>
             <span class="text-xs text-[#9aa39e]">Everyone's actions, from Telegram and here</span>
@@ -426,10 +532,40 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       // Optimistic: repaint immediately, persist in the background.
       $('#app').querySelectorAll('button[data-s]').forEach((b) =>
         b.addEventListener('click', () => {
-          L.status = b.dataset.s;
-          if (L.status === 'proposal_sent' && !L.proposal_sent_at) L.proposal_sent_at = new Date().toISOString();
+          const next = b.dataset.s;
+          if (next === L.status) return;              // already there — do nothing
+          L.status = next;
+          if (next === 'proposal_sent' && !L.proposal_sent_at) L.proposal_sent_at = new Date().toISOString();
+          // Mirror what the server will record, so the trail and summary are
+          // right immediately rather than after the next refresh.
+          const EV = { proposal_sent: 'proposal', won: 'won', lost: 'lost' }[next];
+          if (EV) L.events = (L.events || []).concat([{
+            action: EV, actor: 'Brandon', source: 'dashboard', created_at: new Date().toISOString(),
+          }]);
           renderDetail(id);
-          sync({ id, status: L.status, proposal_sent_to: L.proposal_sent_to || '' });
+          sync({ id, status: next, proposal_sent_to: L.proposal_sent_to || '' });
+        }));
+
+      /* Logging an action from the dashboard writes into the same history the
+         Telegram buttons write to, and rewrites the group's card. Optimistic:
+         the trail repaints immediately, the write follows. */
+      $('#app').querySelectorAll('button[data-log]').forEach((b) =>
+        b.addEventListener('click', async () => {
+          const act = b.dataset.log;
+          let note = '';
+          if (act === 'note') {
+            note = (prompt('Note for this lead?') || '').trim();
+            if (!note) return;
+          }
+          L.events = (L.events || []).concat([{
+            action: act, actor: 'Brandon', source: 'dashboard',
+            note, created_at: new Date().toISOString(),
+          }]);
+          if (act === 'proposal') L.status = 'proposal_sent';
+          renderDetail(id);
+          fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'log', id, event: act, note }) })
+            .then(flash).catch(() => {});
         }));
 
       $('#move').addEventListener('click', () => {

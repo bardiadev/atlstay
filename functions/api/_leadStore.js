@@ -39,6 +39,16 @@ export async function storeLead(env, { formName, lead, meta, subject, receivedAt
       return '';
     };
 
+    /* A permanent reference number. AUTOINCREMENT on its own table guarantees
+     * the number is never reused, even after leads are deleted — so "#0007"
+     * always means the same enquiry, forever. Best-effort: a lead without a
+     * number is still a lead, so failure here must not abort the insert. */
+    let seq = null;
+    try {
+      const r = await env.DB.prepare('INSERT INTO lead_seq DEFAULT VALUES').run();
+      seq = r?.meta?.last_row_id ?? null;
+    } catch { /* keep going without a number */ }
+
     const page = pick(meta, /submitted from page/i);
     // SSMProperty posts here too — label by the page that submitted it.
     const brand = /ssmproperty\.com/i.test(page) ? 'SSMProperty' : 'ATLStay';
@@ -56,6 +66,7 @@ export async function storeLead(env, { formName, lead, meta, subject, receivedAt
         brand,
         formName || '',
         kindOf(formName),
+        seq,
         pick(lead, /service interest/i),
         pick(lead, /name/i),
         pick(lead, /email/i),
