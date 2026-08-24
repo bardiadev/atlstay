@@ -1,274 +1,336 @@
 ---
-// Lead Desk — the workspace. Reads /boroto/api (same Basic Auth gate).
-// Deep-linkable: /boroto/leads/#<lead-id> opens that lead, which is what the
-// Telegram alert links to.
+// Lead Desk — the workspace.
+//
+// PERFORMANCE CONTRACT: the entire dataset is fetched ONCE on load and held in
+// memory. Filtering, searching and opening a lead touch no network at all, and
+// status changes render instantly then sync in the background. The previous
+// build re-queried the database on every click, which is what made it feel
+// laggy — do not reintroduce a fetch into any interaction handler.
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { site } from '@/config/site';
 ---
 <BaseLayout title="Lead Desk" description="Private lead workspace." noindex={true} bare={true}>
-  <div class="min-h-screen bg-cream">
-    <header class="border-b border-line bg-white">
-      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5">
-        <div>
-          <h1 class="font-display text-2xl text-forest">Lead Desk</h1>
-          <p class="mt-0.5 text-sm text-stone">{site.brandName} &amp; {site.company.name}</p>
-        </div>
-        <div class="flex items-center gap-3">
-          <button id="addBtn" class="rounded-full border border-line px-4 py-2 text-sm text-ink/75 transition-colors hover:border-brass/60 hover:text-brass-600">+ Add lead</button>
-          <a href="/boroto/" class="text-sm text-ink/60 underline-offset-4 hover:text-brass-600 hover:underline">SEO dashboard</a>
+  <div class="min-h-screen bg-[#f6f5f1] text-[#1a2420]">
+
+    <header class="sticky top-0 z-20 border-b border-[#e2e0d6] bg-white">
+      <div class="mx-auto flex max-w-[1400px] items-center gap-6 px-5 py-3">
+        <span class="font-display text-lg text-forest">Lead Desk</span>
+        <nav class="flex items-center gap-1 text-sm">
+          <span class="rounded-md bg-forest px-3 py-1.5 font-medium text-cream">Leads</span>
+          <a href="/boroto/" class="rounded-md px-3 py-1.5 text-[#5b6660] transition-colors hover:bg-[#f1efe7] hover:text-forest">SEO dashboard</a>
+        </nav>
+        <div class="ml-auto flex items-center gap-3">
+          <button id="addBtn" class="rounded-md border border-[#d8d5c8] bg-white px-3 py-1.5 text-sm font-medium text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">Add lead</button>
+          <a href="/boroto/logout" class="text-sm text-[#5b6660] hover:text-forest">Sign out</a>
         </div>
       </div>
     </header>
 
-    <main class="mx-auto max-w-7xl px-6 py-8">
-      <!-- counts -->
-      <div id="counts" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5"></div>
-
-      <div class="mt-6 flex items-center gap-3">
-        <input id="search" type="search" placeholder="Search name, email, phone or address…"
-          class="w-full max-w-md rounded-lg border border-line bg-white px-4 py-2.5 text-sm text-ink outline-none focus:border-brass" />
-        <span id="listLabel" class="text-sm text-stone"></span>
+    <main class="mx-auto max-w-[1400px] px-5 py-6">
+      <div id="app" aria-live="polite">
+        <p class="py-16 text-center text-sm text-[#5b6660]">Loading…</p>
       </div>
-
-      <div id="list" class="mt-5"></div>
-      <div id="detail" class="mt-5 hidden"></div>
     </main>
   </div>
 
-  <script is:inline define:vars={{ phone: site.contact.phone }}>
+  <script is:inline>
+  (() => {
     const API = '/boroto/api';
-    const $ = (s) => document.querySelector(s);
+    const $ = (s, r = document) => r.querySelector(s);
     const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const STATUS = { new:'New', proposal_sent:'Proposal sent', won:'Won', lost:'Lost' };
-    let filter = '';
 
-    const fmt = (iso) => {
-      if (!iso) return '—';
-      const d = new Date(iso);
-      if (isNaN(d)) return iso;
-      return d.toLocaleString('en-US', { month:'short', day:'numeric', year:'numeric', hour:'numeric', minute:'2-digit' });
+    /* Status is never conveyed by colour alone — each carries an icon and a
+       label as well, and every colour clears 4.5:1 on white. */
+    const STATUS = {
+      new:           { label: 'New',           fg: '#1d4ed8', bg: '#eef4ff', bd: '#c7dbff', icon: 'M12 6v6l4 2' },
+      proposal_sent: { label: 'Proposal sent', fg: '#92400e', bg: '#fdf3e3', bd: '#f0dcb4', icon: 'm3 12 18-8-8 18-2-8-8-2Z' },
+      won:           { label: 'Won',           fg: '#15803d', bg: '#eaf6ee', bd: '#c3e6cf', icon: 'm5 12 5 5L20 7' },
+      lost:          { label: 'Lost',          fg: '#475569', bg: '#f1f3f5', bd: '#d9dee3', icon: 'M6 6l12 12M18 6 6 18' },
     };
-    const ago = (iso) => {
-      if (!iso) return '';
-      const days = Math.floor((Date.now() - new Date(iso)) / 86400000);
-      if (isNaN(days)) return '';
-      return days === 0 ? 'today' : days === 1 ? 'yesterday' : days + ' days ago';
+    const ORDER = ['new', 'proposal_sent', 'won', 'lost'];
+
+    const icon = (d, cls = 'h-3.5 w-3.5') =>
+      `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+
+    const badge = (st) => {
+      const s = STATUS[st] || STATUS.lost;
+      return `<span class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1 text-xs font-medium"
+        style="color:${s.fg};background:${s.bg};border-color:${s.bd}">${icon(s.icon, 'h-3 w-3')}${s.label}</span>`;
     };
 
-    async function api(qs) { const r = await fetch(API + qs); return r.json(); }
-    async function post(body) {
-      const r = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
-      return r.json();
-    }
+    /* Every timestamp is shown in Eastern — the owner's own working time. */
+    const EST = { timeZone: 'America/New_York', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
+    const stamp = (iso) => { if (!iso) return ''; const d = new Date(iso); return isNaN(d) ? iso : d.toLocaleString('en-US', EST) + ' EST'; };
+    const shortStamp = (iso) => { if (!iso) return ''; const d = new Date(iso); return isNaN(d) ? iso :
+      d.toLocaleString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true }); };
+    const daysSince = (iso) => iso ? Math.floor((Date.now() - new Date(iso)) / 86400000) : null;
+    const ago = (iso) => { const d = daysSince(iso); return d === null ? '' : d === 0 ? 'Today' : d === 1 ? 'Yesterday' : d + 'd ago'; };
 
-    /* ── list view ── */
-    async function loadList() {
-      const q = $('#search').value.trim();
-      const data = await api(`?action=list${filter ? '&status=' + encodeURIComponent(filter) : ''}${q ? '&q=' + encodeURIComponent(q) : ''}`);
-      if (data.error) { $('#list').innerHTML = `<p class="text-sm text-red-700">${esc(data.error)}</p>`; return; }
+    let LEADS = [];
+    let filter = 'all';
+    let query = '';
 
-      const c = data.counts || {};
-      const card = (key, label, n, tone) => `
-        <button data-filter="${key}" class="rounded-xl border ${filter===key?'border-brass bg-brass-50':'border-line bg-white'} p-4 text-left transition-colors hover:border-brass/60">
-          <div class="font-display text-3xl ${tone}">${n}</div>
-          <div class="mt-1 text-xs uppercase tracking-wide text-stone">${label}</div>
+    const isQuiet = (l) => l.status === 'proposal_sent' && l.proposal_sent_at && daysSince(l.proposal_sent_at) > 4;
+
+    const counts = () => {
+      const c = { all: LEADS.length, quiet: 0 };
+      for (const k of ORDER) c[k] = 0;
+      for (const l of LEADS) { if (c[l.status] !== undefined) c[l.status]++; if (isQuiet(l)) c.quiet++; }
+      return c;
+    };
+
+    const visible = () => {
+      const q = query.toLowerCase();
+      return LEADS.filter((l) => {
+        if (filter === 'quiet') { if (!isQuiet(l)) return false; }
+        else if (filter !== 'all' && l.status !== filter) return false;
+        if (!q) return true;
+        return [l.name, l.email, l.phone, l.address, l.service_interest].some((f) => String(f || '').toLowerCase().includes(q));
+      });
+    };
+
+    /* ── list ── */
+    function renderList() {
+      const c = counts();
+      const tab = (key, label, n, tone) => `
+        <button data-f="${key}" aria-pressed="${filter === key}"
+          class="flex items-baseline gap-2 rounded-lg border px-3.5 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest ${
+            filter === key ? 'border-forest bg-forest text-cream' : 'border-[#e2e0d6] bg-white text-[#3c4742] hover:border-[#c9c6b6]'}">
+          <span class="font-medium">${label}</span>
+          <span class="tabular-nums ${filter === key ? 'text-cream/70' : tone}">${n}</span>
         </button>`;
-      $('#counts').innerHTML =
-        card('', 'All', (c.new||0)+(c.proposal_sent||0)+(c.won||0)+(c.lost||0), 'text-forest') +
-        card('new', 'New', c.new||0, 'text-brass-600') +
-        card('proposal_sent', 'Proposal sent', c.proposal_sent||0, 'text-forest') +
-        card('quiet', 'Gone quiet', c.quiet||0, (c.quiet ? 'text-red-700' : 'text-stone')) +
-        card('won', 'Won', c.won||0, 'text-green-700');
 
-      const rows = data.leads || [];
-      $('#listLabel').textContent = rows.length + (rows.length === 1 ? ' lead' : ' leads');
-      $('#list').innerHTML = rows.length ? `
-        <div class="overflow-hidden rounded-xl border border-line bg-white">
-          <table class="w-full text-left text-sm">
-            <thead class="border-b border-line bg-cream/60 text-xs uppercase tracking-wide text-stone">
-              <tr><th class="px-4 py-3">Received</th><th class="px-4 py-3">Name</th><th class="px-4 py-3">Service</th><th class="px-4 py-3">Where</th><th class="px-4 py-3">Brand</th><th class="px-4 py-3">Status</th></tr>
+      const rows = visible();
+      $('#app').innerHTML = `
+        <div class="flex flex-wrap items-center gap-2">
+          ${tab('all', 'All', c.all, 'text-[#5b6660]')}
+          ${tab('new', 'New', c.new, 'text-[#1d4ed8]')}
+          ${tab('proposal_sent', 'Proposal sent', c.proposal_sent, 'text-[#92400e]')}
+          ${tab('quiet', 'Gone quiet', c.quiet, c.quiet ? 'text-[#b91c1c]' : 'text-[#5b6660]')}
+          ${tab('won', 'Won', c.won, 'text-[#15803d]')}
+          ${tab('lost', 'Lost', c.lost, 'text-[#5b6660]')}
+          <div class="ml-auto">
+            <input id="q" type="search" value="${esc(query)}" placeholder="Search name, email, phone, address…"
+              class="w-72 rounded-lg border border-[#e2e0d6] bg-white px-3.5 py-2 text-sm outline-none placeholder:text-[#9aa39e] focus:border-brass focus:ring-2 focus:ring-brass/30" />
+          </div>
+        </div>
+
+        ${rows.length ? `
+        <div class="mt-4 overflow-hidden rounded-xl border border-[#e2e0d6] bg-white">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[#e2e0d6] text-left text-xs font-semibold uppercase tracking-wide text-[#5b6660]">
+                <th class="px-4 py-2.5 font-semibold">Received (EST)</th>
+                <th class="px-4 py-2.5 font-semibold">Name</th>
+                <th class="px-4 py-2.5 font-semibold">Service</th>
+                <th class="px-4 py-2.5 font-semibold">Location</th>
+                <th class="px-4 py-2.5 font-semibold">Site</th>
+                <th class="px-4 py-2.5 font-semibold">Status</th>
+              </tr>
             </thead>
-            <tbody>${rows.map((r) => `
-              <tr data-id="${esc(r.id)}" class="cursor-pointer border-b border-line/60 transition-colors hover:bg-cream/50">
-                <td class="px-4 py-3 whitespace-nowrap ${!r.first_viewed_at ? 'font-semibold text-forest' : 'text-ink/70'}">
-                  ${!r.first_viewed_at ? '<span class="mr-1.5 inline-block h-2 w-2 rounded-full bg-brass align-middle"></span>' : ''}${esc(ago(r.received_at))}
-                </td>
-                <td class="px-4 py-3 font-medium text-forest">${esc(r.name || '—')}</td>
-                <td class="px-4 py-3 text-ink/70">${esc(r.service_interest || '—')}</td>
-                <td class="px-4 py-3 text-ink/60">${esc((r.address || '').slice(0, 40) || '—')}</td>
-                <td class="px-4 py-3"><span class="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/70">${esc(r.brand)}</span></td>
-                <td class="px-4 py-3"><span class="rounded-full border border-line px-2.5 py-0.5 text-xs text-ink/75">${esc(STATUS[r.status] || r.status)}</span></td>
-              </tr>`).join('')}
+            <tbody>
+              ${rows.map((l) => `
+                <tr tabindex="0" data-id="${esc(l.id)}"
+                  class="cursor-pointer border-b border-[#eeece3] last:border-0 transition-colors hover:bg-[#faf9f5] focus:bg-[#faf9f5] focus:outline-none">
+                  <td class="whitespace-nowrap px-4 py-3 text-[#3c4742]">
+                    <span class="inline-flex items-center gap-2">
+                      <span class="h-1.5 w-1.5 rounded-full ${l.first_viewed_at ? 'bg-transparent' : 'bg-brass'}"></span>
+                      <span class="${l.first_viewed_at ? '' : 'font-semibold text-forest'}">${esc(shortStamp(l.received_at))}</span>
+                      <span class="text-xs text-[#9aa39e]">${esc(ago(l.received_at))}</span>
+                    </span>
+                  </td>
+                  <td class="px-4 py-3 font-medium text-forest">${esc(l.name || '—')}</td>
+                  <td class="px-4 py-3 text-[#3c4742]">${esc(l.service_interest || '—')}</td>
+                  <td class="px-4 py-3 text-[#5b6660]">${esc((l.address || '—').slice(0, 38))}</td>
+                  <td class="px-4 py-3 text-xs text-[#5b6660]">${esc(l.brand)}</td>
+                  <td class="px-4 py-3">${badge(l.status)}${isQuiet(l) ? ` <span class="ml-1 whitespace-nowrap text-xs font-medium text-[#b91c1c]">· quiet ${daysSince(l.proposal_sent_at)}d</span>` : ''}</td>
+                </tr>`).join('')}
             </tbody>
           </table>
-        </div>` : '<p class="rounded-xl border border-line bg-white p-8 text-center text-sm text-stone">Nothing here.</p>';
+        </div>` : `
+        <div class="mt-4 rounded-xl border border-dashed border-[#d8d5c8] bg-white py-16 text-center">
+          <p class="font-display text-lg text-forest">${LEADS.length ? 'Nothing matches' : 'No leads yet'}</p>
+          <p class="mt-1 text-sm text-[#5b6660]">${LEADS.length ? 'Try a different filter or search.' : 'The next enquiry from either site lands here automatically.'}</p>
+        </div>`}`;
 
-      $('#list').querySelectorAll('tr[data-id]').forEach((tr) =>
-        tr.addEventListener('click', () => { location.hash = tr.dataset.id; }));
-      document.querySelectorAll('#counts button').forEach((b) =>
-        b.addEventListener('click', () => { filter = b.dataset.filter; loadList(); }));
+      $('#app').querySelectorAll('button[data-f]').forEach((b) =>
+        b.addEventListener('click', () => { filter = b.dataset.f; renderList(); }));
+
+      const qi = $('#q');
+      if (qi) {
+        qi.addEventListener('input', () => {
+          query = qi.value;
+          const pos = qi.selectionStart;
+          renderList();
+          const n = $('#q'); n.focus(); n.setSelectionRange(pos, pos);
+        });
+      }
+      $('#app').querySelectorAll('tr[data-id]').forEach((tr) => {
+        const open = () => { location.hash = tr.dataset.id; };
+        tr.addEventListener('click', open);
+        tr.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      });
     }
 
-    /* ── detail view ── */
+    /* ── detail ── */
     const panel = (title, rows) => {
-      const body = rows.filter(([, v]) => String(v ?? '').trim()).map(([k, v]) =>
-        `<div class="flex gap-4 border-b border-line/50 py-2 last:border-0">
-           <dt class="w-44 flex-none text-xs uppercase tracking-wide text-stone">${esc(k)}</dt>
-           <dd class="text-sm text-ink/85 break-words">${v}</dd>
-         </div>`).join('');
-      return body ? `<section class="rounded-xl border border-line bg-white p-5">
-          <h3 class="font-display text-lg text-forest">${esc(title)}</h3>
-          <dl class="mt-3">${body}</dl></section>` : '';
+      const body = rows.filter(([, v]) => String(v ?? '').trim()).map(([k, v]) => `
+        <div class="grid grid-cols-[minmax(0,11rem)_1fr] gap-3 border-b border-[#f0eee6] py-2 last:border-0">
+          <dt class="text-xs uppercase tracking-wide text-[#5b6660]">${esc(k)}</dt>
+          <dd class="break-words text-sm text-[#1a2420]">${v}</dd>
+        </div>`).join('');
+      return body ? `<section class="rounded-xl border border-[#e2e0d6] bg-white p-5">
+        <h3 class="font-display text-base text-forest">${esc(title)}</h3>
+        <dl class="mt-2">${body}</dl></section>` : '';
     };
 
-    async function loadDetail(id) {
-      const data = await api(`?action=get&id=${encodeURIComponent(id)}`);
-      if (data.error) { location.hash = ''; return; }
-      const L = data.lead, lead = L.raw_lead || {}, meta = L.raw_meta || {};
+    function renderDetail(id) {
+      const L = LEADS.find((x) => x.id === id);
+      if (!L) { location.hash = ''; return; }
+      const lead = L.raw_lead || {}, meta = L.raw_meta || {};
 
-      const linkify = (k, v) => {
+      const link = (k, v) => {
         const s = String(v);
-        if (/email/i.test(k) && s.includes('@')) return `<a class="text-brass-600 hover:underline" href="mailto:${esc(s)}">${esc(s)}</a>`;
-        if (/phone/i.test(k)) return `<a class="text-brass-600 hover:underline" href="tel:${esc(s.replace(/[^0-9+]/g,''))}">${esc(s)}</a>`;
-        if (/^https?:\/\//.test(s)) return `<a class="text-brass-600 hover:underline break-all" target="_blank" rel="noopener" href="${esc(s)}">${esc(s)}</a>`;
+        if (/email/i.test(k) && s.includes('@')) return `<a class="text-[#1d4ed8] underline-offset-2 hover:underline" href="mailto:${esc(s)}">${esc(s)}</a>`;
+        if (/phone/i.test(k)) return `<a class="text-[#1d4ed8] underline-offset-2 hover:underline" href="tel:${esc(s.replace(/[^0-9+]/g,''))}">${esc(s)}</a>`;
+        if (/^https?:\/\//.test(s)) return `<a class="break-all text-[#1d4ed8] underline-offset-2 hover:underline" target="_blank" rel="noopener" href="${esc(s)}">${esc(s)}</a>`;
         return esc(s);
       };
+      const contactRe = /name|email|phone/i, srcRe = /page|referrer|utm|source/i;
+      const pick = (o, f) => Object.entries(o).filter(([k]) => f(k)).map(([k, v]) => [k, link(k, v)]);
 
-      // Split the submitted answers: contact vs everything about the property.
-      const contactRe = /name|email|phone/i;
-      const contact = Object.entries(lead).filter(([k]) => contactRe.test(k)).map(([k,v]) => [k, linkify(k,v)]);
-      const property = Object.entries(lead).filter(([k]) => !contactRe.test(k) && !/service interest/i.test(k)).map(([k,v]) => [k, linkify(k,v)]);
+      $('#app').innerHTML = `
+        <button id="back" class="mb-4 inline-flex items-center gap-1.5 text-sm text-[#5b6660] transition-colors hover:text-forest">
+          ${icon('M15 18l-6-6 6-6', 'h-4 w-4')} All leads
+        </button>
 
-      const sourceRe = /page|referrer|utm|source/i;
-      const source = Object.entries(meta).filter(([k]) => sourceRe.test(k)).map(([k,v]) => [k, linkify(k,v)]);
-      const session = Object.entries(meta).filter(([k]) => !sourceRe.test(k)).map(([k,v]) => [k, linkify(k,v)]);
-
-      const dupes = (data.duplicates || []);
-      const addr = L.address || '';
-
-      $('#detail').innerHTML = `
-        <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
-          <button id="back" class="text-sm text-ink/60 hover:text-brass-600">&larr; All leads</button>
-          <div class="flex flex-wrap gap-2">
-            ${Object.entries(STATUS).map(([k, label]) => `
-              <button data-status="${k}" class="rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${L.status===k?'bg-forest text-cream':'border border-line bg-white text-ink/70 hover:border-brass/60'}">${label}</button>`).join('')}
+        <div class="rounded-xl border border-[#e2e0d6] bg-white p-6">
+          <div class="flex flex-wrap items-start justify-between gap-5">
+            <div class="min-w-0">
+              <h1 class="font-display text-2xl text-forest">${esc(L.name || 'Unnamed lead')}</h1>
+              ${L.service_interest ? `<p class="mt-1 text-sm font-medium text-[#92400e]">${esc(L.service_interest)}</p>` : ''}
+              <p class="mt-2 text-sm text-[#5b6660]">${esc(L.brand)} · ${esc(stamp(L.received_at))}</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <button id="copyAll" class="rounded-md bg-forest px-3.5 py-2 text-sm font-medium text-cream transition-colors hover:bg-forest-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">Copy everything</button>
+              ${L.address ? `<a target="_blank" rel="noopener" href="https://app.airdna.co/data/us?search=${encodeURIComponent(L.address)}"
+                 class="rounded-md border border-[#d8d5c8] px-3.5 py-2 text-sm text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5]">AirDNA</a>` : ''}
+              <button id="del" class="rounded-md border border-[#e6cbc8] px-3.5 py-2 text-sm text-[#a3231b] transition-colors hover:bg-[#fdeceb]">Delete</button>
+            </div>
           </div>
-        </div>
 
-        ${dupes.length ? `<div class="mb-4 rounded-xl border border-brass/50 bg-brass-50 p-4 text-sm text-ink/80">
-          <strong class="text-forest">Possible duplicate.</strong> This person has ${dupes.length} other submission${dupes.length>1?'s':''}:
-          ${dupes.map(d => `<a class="ml-1 text-brass-600 underline" href="#${esc(d.id)}">${esc(fmt(d.received_at))}${d.service_interest ? ' · ' + esc(d.service_interest) : ''}</a>`).join(', ')}
-        </div>` : ''}
-
-        <div class="rounded-xl border border-line bg-white p-6">
-          <div class="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <h2 class="font-display text-3xl text-forest">${esc(L.name || 'Unnamed lead')}</h2>
-              ${L.service_interest ? `<p class="mt-1 text-brass-600">${esc(L.service_interest)}</p>` : ''}
-              <p class="mt-2 text-sm text-stone">${esc(L.brand)} · received ${esc(fmt(L.received_at))} (${esc(ago(L.received_at))})</p>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <button id="copyAll" class="rounded-full bg-brass px-4 py-2 text-sm font-medium text-forest transition-colors hover:bg-brass-600 hover:text-cream">Copy everything</button>
-              ${addr ? `<a target="_blank" rel="noopener" href="https://app.airdna.co/data/us?search=${encodeURIComponent(addr)}" class="rounded-full border border-line px-4 py-2 text-sm text-ink/75 hover:border-brass/60">Open in AirDNA</a>` : ''}
-            </div>
+          <div class="mt-5 flex flex-wrap items-center gap-2 border-t border-[#eeece3] pt-4">
+            <span class="mr-1 text-xs uppercase tracking-wide text-[#5b6660]">Status</span>
+            ${ORDER.map((k) => {
+              const s = STATUS[k], on = L.status === k;
+              return `<button data-s="${k}" aria-pressed="${on}"
+                class="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
+                style="${on ? `color:${s.fg};background:${s.bg};border-color:${s.fg}` : 'color:#5b6660;background:#fff;border-color:#e2e0d6'}">
+                ${icon(s.icon, 'h-3 w-3')}${s.label}</button>`;
+            }).join('')}
+            <span id="savedFlag" class="ml-2 text-xs text-[#15803d] opacity-0 transition-opacity">Saved</span>
           </div>
         </div>
 
         <div class="mt-4 grid gap-4 lg:grid-cols-2">
-          ${panel('Contact', contact)}
-          ${panel('The property', property)}
-          ${panel('Where they came from', source)}
-          ${panel('Their session', session)}
+          ${panel('Contact', pick(lead, (k) => contactRe.test(k)))}
+          ${panel('The property', pick(lead, (k) => !contactRe.test(k) && !/service interest/i.test(k)))}
+          ${panel('Where they came from', pick(meta, (k) => srcRe.test(k)))}
+          ${panel('Their session', pick(meta, (k) => !srcRe.test(k)))}
         </div>
 
         <div class="mt-4 grid gap-4 lg:grid-cols-2">
-          <section class="rounded-xl border border-line bg-white p-5">
-            <h3 class="font-display text-lg text-forest">Timeline</h3>
-            <dl class="mt-3">
-              ${[['Came in', fmt(L.received_at)],
-                 ['You first opened it', fmt(L.first_viewed_at)],
-                 ['Proposal sent', fmt(L.proposal_sent_at)],
-                 ['Sent to', esc(L.proposal_sent_to || '')],
-                 ['Last updated', fmt(L.updated_at)]]
-                .filter(([,v]) => v && v !== '—')
-                .map(([k,v]) => `<div class="flex gap-4 border-b border-line/50 py-2 last:border-0">
-                   <dt class="w-44 flex-none text-xs uppercase tracking-wide text-stone">${esc(k)}</dt>
-                   <dd class="text-sm text-ink/85">${v}</dd></div>`).join('')}
+          <section class="rounded-xl border border-[#e2e0d6] bg-white p-5">
+            <h3 class="font-display text-base text-forest">Timeline</h3>
+            <dl class="mt-2">
+              ${[['Came in', stamp(L.received_at)], ['You opened it', stamp(L.first_viewed_at)],
+                 ['Proposal sent', stamp(L.proposal_sent_at)], ['Sent to', esc(L.proposal_sent_to || '')]]
+                .filter(([, v]) => v).map(([k, v]) => `
+                <div class="grid grid-cols-[minmax(0,11rem)_1fr] gap-3 border-b border-[#f0eee6] py-2 last:border-0">
+                  <dt class="text-xs uppercase tracking-wide text-[#5b6660]">${esc(k)}</dt>
+                  <dd class="text-sm">${v}</dd></div>`).join('')}
             </dl>
-            <label class="mt-4 block text-xs uppercase tracking-wide text-stone">Who did you send the proposal to?</label>
+            <label for="sentTo" class="mt-4 block text-xs uppercase tracking-wide text-[#5b6660]">Proposal sent to</label>
             <input id="sentTo" value="${esc(L.proposal_sent_to || '')}" placeholder="dana@example.com"
-              class="mt-1.5 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-brass" />
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
           </section>
 
-          <section class="rounded-xl border border-line bg-white p-5">
-            <h3 class="font-display text-lg text-forest">Your notes</h3>
-            <textarea id="notes" rows="9" placeholder="Anything worth remembering…"
-              class="mt-3 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-brass">${esc(L.notes || '')}</textarea>
-            <p id="saveState" class="mt-2 text-xs text-stone">Saves automatically.</p>
+          <section class="rounded-xl border border-[#e2e0d6] bg-white p-5">
+            <h3 class="font-display text-base text-forest">Notes</h3>
+            <textarea id="notes" rows="10" placeholder="Anything worth remembering…"
+              class="mt-2 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30">${esc(L.notes || '')}</textarea>
           </section>
         </div>`;
 
-      $('#list').classList.add('hidden');
-      $('#counts').parentElement.querySelectorAll('#counts, #search').forEach(() => {});
-      $('#detail').classList.remove('hidden');
-
       $('#back').addEventListener('click', () => { location.hash = ''; });
 
+      const flash = () => { const f = $('#savedFlag'); f.style.opacity = '1'; setTimeout(() => { f.style.opacity = '0'; }, 1200); };
+      const sync = (body) => fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(flash).catch(() => {});
+
+      // Optimistic: repaint immediately, persist in the background.
+      $('#app').querySelectorAll('button[data-s]').forEach((b) =>
+        b.addEventListener('click', () => {
+          L.status = b.dataset.s;
+          if (L.status === 'proposal_sent' && !L.proposal_sent_at) L.proposal_sent_at = new Date().toISOString();
+          renderDetail(id);
+          sync({ id, status: L.status, proposal_sent_to: L.proposal_sent_to || '' });
+        }));
+
       $('#copyAll').addEventListener('click', async () => {
-        const line = (k, v) => `${k}: ${v}`;
         const txt = [
           `LEAD — ${L.name || 'Unnamed'} (${L.brand})`,
-          `Received: ${fmt(L.received_at)}`,
+          `Received: ${stamp(L.received_at)}`,
           L.service_interest ? `Service: ${L.service_interest}` : '',
           '', '--- What they submitted ---',
-          ...Object.entries(lead).map(([k, v]) => line(k, v)),
+          ...Object.entries(lead).map(([k, v]) => `${k}: ${v}`),
           '', '--- Where they came from ---',
-          ...Object.entries(meta).map(([k, v]) => line(k, v)),
+          ...Object.entries(meta).map(([k, v]) => `${k}: ${v}`),
           L.notes ? `\n--- My notes ---\n${L.notes}` : '',
         ].filter(Boolean).join('\n');
         await navigator.clipboard.writeText(txt);
-        const b = $('#copyAll'); const old = b.textContent;
-        b.textContent = 'Copied ✓'; setTimeout(() => { b.textContent = old; }, 1600);
+        const b = $('#copyAll'), old = b.textContent;
+        b.textContent = 'Copied'; setTimeout(() => { b.textContent = old; }, 1400);
       });
 
-      $('#detail').querySelectorAll('button[data-status]').forEach((b) =>
-        b.addEventListener('click', async () => {
-          await post({ id: L.id, status: b.dataset.status, proposal_sent_to: $('#sentTo').value.trim() });
-          loadDetail(L.id);
-        }));
+      $('#del').addEventListener('click', async () => {
+        if (!confirm(`Delete this lead from ${L.name || 'unknown'}? This cannot be undone.`)) return;
+        LEADS = LEADS.filter((x) => x.id !== id);
+        location.hash = '';
+        fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'delete', id }) }).catch(() => {});
+      });
 
       let t;
-      const save = () => {
-        clearTimeout(t);
-        $('#saveState').textContent = 'Saving…';
-        t = setTimeout(async () => {
-          await post({ id: L.id, notes: $('#notes').value, proposal_sent_to: $('#sentTo').value.trim() });
-          $('#saveState').textContent = 'Saved.';
-        }, 700);
-      };
-      $('#notes').addEventListener('input', save);
-      $('#sentTo').addEventListener('input', save);
+      const debounced = () => { clearTimeout(t); t = setTimeout(() => {
+        L.notes = $('#notes').value; L.proposal_sent_to = $('#sentTo').value.trim();
+        sync({ id, notes: L.notes, proposal_sent_to: L.proposal_sent_to });
+      }, 600); };
+      $('#notes').addEventListener('input', debounced);
+      $('#sentTo').addEventListener('input', debounced);
+
+      if (!L.first_viewed_at) { L.first_viewed_at = new Date().toISOString(); sync({ id, viewed: true }); }
     }
 
-    /* ── manual add, for the backlog stuck in email ── */
     $('#addBtn').addEventListener('click', async () => {
       const name = prompt('Name?'); if (name === null) return;
-      const email = prompt('Email?') || '';
-      const phone = prompt('Phone?') || '';
+      const email = prompt('Email?') || '', phone = prompt('Phone?') || '';
       const address = prompt('Property / community address?') || '';
-      const service_interest = prompt('Service they want? (e.g. HOA, Airbnb management)') || '';
-      const r = await post({ action:'create', name, email, phone, address, service_interest });
-      if (r.ok) location.hash = r.id; else alert(r.error || 'Could not add');
+      const service_interest = prompt('What do they want? (e.g. HOA, Airbnb management)') || '';
+      const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'create', name, email, phone, address, service_interest }) }).then((x) => x.json());
+      if (r.ok) { await load(); location.hash = r.id; } else alert(r.error || 'Could not add');
     });
 
-    /* ── routing ── */
     function route() {
       const id = location.hash.replace(/^#/, '');
-      if (id) { loadDetail(id); }
-      else { $('#detail').classList.add('hidden'); $('#list').classList.remove('hidden'); loadList(); }
+      if (id) renderDetail(id); else renderList();
     }
     window.addEventListener('hashchange', route);
-    let st; $('#search').addEventListener('input', () => { clearTimeout(st); st = setTimeout(loadList, 250); });
-    route();
+
+    async function load() {
+      const r = await fetch(API + '?action=all').then((x) => x.json()).catch(() => ({ error: 'Could not reach the server' }));
+      if (r.error) { $('#app').innerHTML = `<p class="py-16 text-center text-sm text-[#a3231b]">${esc(r.error)}</p>`; return; }
+      LEADS = r.leads || [];
+    }
+    load().then(route);
+  })();
   </script>
 </BaseLayout>

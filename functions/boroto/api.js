@@ -45,45 +45,17 @@ export async function onRequestGet(context) {
       return json({ lead: hydrate(row), duplicates: dupes.results || [] });
     }
 
-    // ── list ──
-    const status = url.searchParams.get('status') || '';
-    const q = (url.searchParams.get('q') || '').trim();
-
-    const counts = await env.DB.prepare(
-      'SELECT status, COUNT(*) AS n FROM leads GROUP BY status',
+    // ── all ──
+    // Everything in ONE request, full payloads included. At this volume the
+    // whole dataset is a few hundred KB, and holding it in memory means
+    // filtering, searching and opening a lead are instant — the previous
+    // design re-queried the database on every click, which is what made the
+    // panel feel laggy.
+    const rows = await env.DB.prepare(
+      `SELECT * FROM leads ORDER BY received_at DESC LIMIT 1000`,
     ).all();
 
-    // "Gone quiet" = proposal sent, nothing since, more than 4 days ago.
-    const quiet = await env.DB.prepare(
-      `SELECT COUNT(*) AS n FROM leads
-        WHERE status = 'proposal_sent'
-          AND proposal_sent_at IS NOT NULL
-          AND julianday('now') - julianday(proposal_sent_at) > 4`,
-    ).first();
-
-    let sql = `SELECT id, received_at, brand, service_interest, name, email, phone,
-                      address, status, proposal_sent_at, first_viewed_at
-                 FROM leads`;
-    const binds = [];
-    const where = [];
-    if (status && STATUSES.includes(status)) { where.push('status = ?'); binds.push(status); }
-    if (status === 'quiet') {
-      where.push(`status = 'proposal_sent' AND julianday('now') - julianday(proposal_sent_at) > 4`);
-    }
-    if (q) {
-      where.push('(name LIKE ? OR email LIKE ? OR phone LIKE ? OR address LIKE ?)');
-      const like = `%${q}%`;
-      binds.push(like, like, like, like);
-    }
-    if (where.length) sql += ' WHERE ' + where.join(' AND ');
-    sql += ' ORDER BY received_at DESC LIMIT 300';
-
-    const rows = await env.DB.prepare(sql).bind(...binds).all();
-
-    const byStatus = Object.fromEntries(STATUSES.map((s) => [s, 0]));
-    for (const r of counts.results || []) if (r.status in byStatus) byStatus[r.status] = r.n;
-
-    return json({ counts: { ...byStatus, quiet: quiet?.n || 0 }, leads: rows.results || [] });
+    return json({ leads: (rows.results || []).map(hydrate) });
   } catch (err) {
     return json({ error: String(err?.message || err) }, 500);
   }
@@ -123,8 +95,19 @@ export async function onRequestPost(context) {
     const id = body.id;
     if (!id) return json({ error: 'Missing id' }, 400);
 
+    // Delete. Real deletion rather than a soft flag: this table is the owner's
+    // own workspace, the only rows removed are ones he explicitly chooses, and
+    // a hidden-but-present lead would undermine the counts he works from.
+    if (body.action === 'delete') {
+      await env.DB.prepare('DELETE FROM leads WHERE id = ?').bind(id).run();
+      return json({ ok: true, deleted: id });
+    }
+
     const sets = [];
     const binds = [];
+
+    // The client stamps first-view optimistically and tells us once.
+    if (body.viewed) { sets.push('first_viewed_at = COALESCE(first_viewed_at, ?)'); binds.push(now); }
 
     if (body.status) {
       if (!STATUSES.includes(body.status)) return json({ error: 'Bad status' }, 400);

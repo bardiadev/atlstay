@@ -79,6 +79,25 @@ export function onRequestOptions(context) {
  * Pings the owner's personal notifier bot on every submission. Reads
  * TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID from env; no-ops silently if either is
  * unset (safe to deploy before the secrets exist). The token is never logged. */
+
+/** Format an instant in US Eastern time, 12-hour, e.g. "Aug 24, 2026 at 5:10 PM EDT".
+ *  The owner operates in Atlanta; UTC is noise and the visitor's own local time
+ *  can be any zone, so every human-facing timestamp is normalised to Eastern. */
+function easternStamp(d = new Date()) {
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York',
+      month: 'short', day: 'numeric', year: 'numeric',
+      hour: 'numeric', minute: '2-digit', hour12: true,
+      timeZoneName: 'short',
+    }).formatToParts(d);
+    const g = (t) => (parts.find((p) => p.type === t) || {}).value || '';
+    return `${g('month')} ${g('day')}, ${g('year')} at ${g('hour')}:${g('minute')} ${g('dayPeriod')} ${g('timeZoneName')}`;
+  } catch {
+    return d.toISOString();
+  }
+}
+
 function tgEscape(s) {
   return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -142,14 +161,17 @@ function telegramText({ form, lead, meta, leadId }) {
     if (referrer) out.push(`<i>referrer: ${tgEscape(referrer)}</i>`);
   }
 
-  const ctx = [loc, device, browser, localTs].filter(Boolean).map(tgEscape);
-  if (ctx.length) { out.push(''); out.push(`🕐 <i>${ctx.join(' · ')}</i>`); }
+  // Eastern time is the one the owner actually reasons in — show it plainly.
+  out.push('');
+  out.push(`🕐 <b>${tgEscape(easternStamp())}</b>`);
+  const ctx = [loc, device, browser, localTs ? `their time ${localTs}` : ''].filter(Boolean).map(tgEscape);
+  if (ctx.length) out.push(`<i>${ctx.join(' · ')}</i>`);
 
   // Everything the email carries that isn't already above, so the alert is a
   // complete substitute for opening the inbox. Kept to one compact line and
   // placed last, because none of it is needed to actually reply to a lead.
   const usedMeta = [/submitted from page/i, /referrer/i, /approx\. location/i,
-                    /^device$/i, /^browser$/i, /their local time/i];
+                    /^device$/i, /^browser$/i, /their local time/i, /\(utc\)/i];
   const tech = Object.entries(M)
     .filter(([k, v]) => String(v ?? '').trim() && !usedMeta.some((re) => re.test(k)))
     .map(([k, v]) => {

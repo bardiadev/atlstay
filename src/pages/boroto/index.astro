@@ -174,6 +174,17 @@ const card = 'rounded-2xl border border-line bg-white p-5 shadow-sm';
     </header>
 
     <Container size="wide" class="pt-8">
+      <!-- Workspace switcher. The Lead Desk had no route in from here, so the
+           only way to reach it was typing the URL. -->
+      <nav class="mb-5 flex flex-wrap items-center gap-2">
+        <span class="rounded-md bg-forest px-3 py-1.5 text-sm font-medium text-cream">SEO dashboard</span>
+        <a href="/boroto/leads/" class="inline-flex items-center gap-2 rounded-md border border-line bg-white px-3 py-1.5 text-sm font-medium text-forest transition-colors hover:border-brass hover:bg-brass-50">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Z"/><path d="m2 9 10 5 10-5"/></svg>
+          Lead Desk
+        </a>
+        <a href="/boroto/logout" class="ml-auto text-sm text-stone underline-offset-4 hover:text-brass-600 hover:underline">Sign out</a>
+      </nav>
+
       <div class="mb-2 flex flex-wrap items-end justify-between gap-2">
         <h1 class="font-display text-3xl font-medium text-forest">Site overview</h1>
         <p class="text-xs text-stone">Generated {buildDate} · refreshes on every deploy</p>
