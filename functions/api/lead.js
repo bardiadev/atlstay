@@ -145,6 +145,19 @@ function telegramText({ form, lead, meta, leadId }) {
   const ctx = [loc, device, browser, localTs].filter(Boolean).map(tgEscape);
   if (ctx.length) { out.push(''); out.push(`🕐 <i>${ctx.join(' · ')}</i>`); }
 
+  // Everything the email carries that isn't already above, so the alert is a
+  // complete substitute for opening the inbox. Kept to one compact line and
+  // placed last, because none of it is needed to actually reply to a lead.
+  const usedMeta = [/submitted from page/i, /referrer/i, /approx\. location/i,
+                    /^device$/i, /^browser$/i, /their local time/i];
+  const tech = Object.entries(M)
+    .filter(([k, v]) => String(v ?? '').trim() && !usedMeta.some((re) => re.test(k)))
+    .map(([k, v]) => {
+      const val = String(v).trim();
+      return `${tgEscape(k)}: ${tgEscape(val.length > 90 ? val.slice(0, 90) + '…' : val)}`;
+    });
+  if (tech.length) { out.push(''); out.push(`🔧 <i>${tech.join(' · ')}</i>`); }
+
   if (leadId) {
     out.push('');
     out.push(`<a href="${DEFAULTS.domain}/boroto/leads/#${tgEscape(leadId)}">▸ Open in Lead Desk</a>`);
