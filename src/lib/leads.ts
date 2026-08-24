@@ -209,9 +209,17 @@ export async function sendLead(
   const intel = await collectLeadIntel(); // best-effort; never throws
   const lead = relabel(cleaned); // pretty Title-Case labels
 
-  // Preferred: our own endpoint (Cloudflare Function → branded Resend email,
-  // with its own Web3Forms fallback). On any failure, fall through so the lead
-  // is never lost.
+  /* Our own endpoint: stores the lead and posts the Telegram card. Fired first
+   * and always, and its result is NOT allowed to cancel the email below.
+   *
+   * WHY (2026-08-24): Web3Forms is documented as client-side only on the free
+   * plan, yet it answers a Cloudflare Worker with "Form submitted successfully!"
+   * and delivers nothing. This code used to treat that reply as proof and skip
+   * its own send, so leads were stored and alerted with no email at all. The
+   * browser now always sends its own copy — it is the only path observed to
+   * actually deliver. A duplicate email is a nuisance; a missed lead is a lost
+   * customer. */
+  let endpointOk = false;
   if (endpoint) {
     try {
       const res = await fetch(endpoint, {
@@ -221,14 +229,14 @@ export async function sendLead(
       });
       if (res.ok) {
         const j = await res.json().catch(() => null);
-        if (!j || j.success !== false) return { ok: true };
+        endpointOk = !j || j.success !== false;
       }
     } catch {
-      /* fall through to Web3Forms */
+      /* the email below is what matters; keep going */
     }
   }
 
-  // Fallback: Web3Forms direct (flat fields). Also the path when no endpoint set.
+  // Email, sent from the browser. Deliberately unconditional — see above.
   if (key) {
     try {
       const res = await fetch(WEB3FORMS_URL, {
@@ -246,11 +254,13 @@ export async function sendLead(
         }),
       });
       const json = await res.json().catch(() => null);
-      return { ok: Boolean(json?.success ?? res.ok) };
+      // The visitor sees success if EITHER path worked — their submission is
+      // safe the moment our endpoint stored it, even if email later failed.
+      return { ok: Boolean(json?.success ?? res.ok) || endpointOk };
     } catch {
-      return { ok: false };
+      return { ok: endpointOk };
     }
   }
 
-  return { ok: true, skipped: true };
+  return { ok: endpointOk || true, skipped: !endpointOk };
 }

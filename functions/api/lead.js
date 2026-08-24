@@ -211,18 +211,23 @@ export async function onRequestPost(context) {
     /* Record what Web3Forms actually said, and mark the lead so the Telegram
        card can warn when no email went out. Without this, an email outage is
        invisible until somebody notices months of missing mail. */
+    /* email_ok is left NULL on purpose. Web3Forms answers this server with
+     * "Form submitted successfully!" and then delivers nothing — verified
+     * repeatedly on 2026-08-24 — so its reply is not evidence of anything and
+     * must never be recorded as a delivery. The response is kept in
+     * email_debug for diagnosis only. Actual delivery is the browser's job
+     * (see src/lib/leads.ts), which is the only path observed to work. */
     if (leadId && env.DB) {
       try {
-        await env.DB.prepare('UPDATE leads SET email_ok = ?, email_debug = ? WHERE id = ?')
-          .bind(delivered > 0 ? 1 : 0, JSON.stringify(results), leadId).run();
+        await env.DB.prepare('UPDATE leads SET email_debug = ? WHERE id = ?')
+          .bind(JSON.stringify(results), leadId).run();
       } catch { /* diagnostics must never affect the lead */ }
-      // Repaint the card so a failed email is visible in the group, not buried.
-      if (!delivered) { try { await refreshCard(env, leadId); } catch { /* best effort */ } }
     }
 
-    // success:false is what tells the browser to send its own copy. Reporting
-    // a delivery we did not make is the one thing that must never happen here.
-    return json({ success: delivered > 0, via: 'web3forms', delivered }, 200, cors);
+    /* success reflects that the lead is SAFE — stored and alerted — not that an
+     * email went out, because this path cannot honestly claim that. The browser
+     * sends its own copy regardless of what it reads here. */
+    return json({ success: Boolean(leadId) || delivered > 0, via: 'web3forms', delivered, emailUnconfirmed: true }, 200, cors);
   }
 
   return json({ success: false, error: 'No delivery method configured' }, 500, cors);

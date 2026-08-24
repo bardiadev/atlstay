@@ -6,8 +6,13 @@
 // network at all, and status changes render instantly then sync in the
 // background. An early build re-queried the database on every click, which is
 // what made it feel laggy — do not reintroduce a fetch into any interaction
-// handler. Fresh data arrives via the explicit Refresh button (or on returning
-// to the tab), which is the one place a fetch belongs.
+// handler.
+//
+// New data is a different matter. Leads arrive while the desk sits open, and
+// requiring a manual Refresh to see one is indistinguishable from the lead
+// being lost. So the list quietly re-checks on a timer as well as on the
+// button and on returning to the tab — never while a record is open, and never
+// while something is being typed.
 //
 // TWO INBOXES: real enquiries (kind='lead') and general contact-page messages
 // (kind='message') — vendor pitches, questions, recruiters. They need totally
@@ -678,6 +683,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       if (Date.now() - lastSync < 60000) return;
       refresh();
     });
+
+    /* Quietly pick up new leads while the desk is left open. Without this a
+       lead can sit in the database, alerted in Telegram, and still look absent
+       here — which reads exactly like it was lost. Skipped while a record is
+       open so it can never interrupt typing, and skipped when the tab is
+       hidden so a backgrounded desk isn't polling for nothing. */
+    const AUTO_REFRESH_MS = 45000;
+    setInterval(() => {
+      if (document.visibilityState !== 'visible') return;
+      if (location.hash) return;          // a record is open — leave it alone
+      if (busy) return;
+      refresh();
+    }, AUTO_REFRESH_MS);
 
     function route() {
       const id = location.hash.replace(/^#/, '');
