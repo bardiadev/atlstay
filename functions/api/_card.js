@@ -142,9 +142,18 @@ export function renderCard(lead, events = []) {
     });
   if (details.length) { out.push(''); out.push(...details); }
 
-  // The page they submitted from says a lot about intent — an HOA page in
-  // Cumming is a different conversation from the pricing page.
-  if (L.pageUrl) { out.push(''); out.push(`🔗 ${esc(L.pageUrl)}`); }
+  /* Where it came from. The page a lead submitted from says a lot about intent
+     — an HOA page in Cumming is a different conversation from the pricing page. A submitted lead carries the page URL it came from; a
+     hand-added one carries free text ("Phone call", "Referral") and is marked
+     as hand-added, so nobody in the group mistakes it for something the website
+     captured. The link icon is only used when it is actually a link. */
+  if (L.manual) {
+    out.push('');
+    out.push(`✍️ <i>Added by hand${L.pageUrl ? ` — ${esc(L.pageUrl)}` : ''}</i>`);
+  } else if (L.pageUrl) {
+    out.push('');
+    out.push(`🔗 ${esc(L.pageUrl)}`);
+  }
   if (L.receivedAt) out.push(`🕐 ${esc(eastern(L.receivedAt))}`);
 
   // ── current state ──
@@ -223,6 +232,9 @@ export function fromRow(row) {
     status: row.status || 'new',
     seq: row.seq || null,
     emailFailed: row.email_ok === 0,
+    // 'Added by hand' is what functions/boroto/api.js writes for a lead keyed
+    // in from the dashboard rather than captured by a form.
+    manual: row.form_name === 'Added by hand',
     receivedAt: row.received_at,
     pageUrl: row.page_url || '',
     fields: parse(row.raw_lead),

@@ -113,7 +113,10 @@ export async function onRequestPost(context) {
         'Property Address': body.address || '', 'Service Interest': body.service_interest || '',
       };
       if (body.message) lead.Message = body.message;
-      if (body.notes) lead.Notes = body.notes;
+      /* Internal notes deliberately DO NOT go into raw_lead. raw_lead is what
+         the Telegram card renders field-by-field, and the form promises in
+         writing that notes are "Dashboard only — never sent to Telegram". They
+         live only in the `notes` column, which the card never reads. */
 
       // Best-effort reference number — same counter storeLead() uses. A failed
       // claim must never block the lead itself from being saved.
