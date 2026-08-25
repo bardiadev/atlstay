@@ -58,7 +58,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
        when it actually arrived) so a hand-keyed lead looks and behaves like a
        real one everywhere else in the system. -->
   <dialog id="addDialog" class="w-full max-w-2xl rounded-2xl border border-[#e2e0d6] bg-white p-0 shadow-2xl backdrop:bg-forest/40 backdrop:backdrop-blur-sm">
-    <form id="addForm" method="dialog" class="flex min-h-0 flex-1 flex-col">
+    <form id="addForm" method="dialog" class="flex max-h-[88vh] flex-col">
       <div class="flex items-center justify-between border-b border-[#eeece3] px-6 py-4">
         <h2 class="font-display text-xl text-forest">Add a lead</h2>
         <button type="button" id="addClose" aria-label="Close"
@@ -989,29 +989,17 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
     /* A modal <dialog> is centred by the browser's own `margin: auto`, but
        Tailwind's preflight sets `margin: 0` on `*`, which silently wins and
-       pins the dialog to the top-left corner. Restoring it here is the whole
-       fix. Height is capped on the dialog itself (not just its child form) so
-       the internal scroll region is what overflows, never the page. */
-    #addDialog {
-      margin: auto;
-      max-height: calc(100dvh - 2rem);
-      /* min() keeps Tailwind's max-w-2xl (42rem) while still shrinking below it
-         on a narrow window. A bare calc() here would beat the utility class on
-         specificity and stretch the dialog to the full viewport width. */
-      max-width: min(42rem, calc(100vw - 2rem));
-    }
-    /* Scoped to [open] on purpose: the UA sheet hides a closed dialog with
-       `display: none`, and an unscoped `display: flex` here would outrank it
-       and leave the dialog permanently on screen.
-       Flex column gives the inner form a DEFINITE height to resolve against —
-       without it the form's `max-height: 100%` resolves against an auto-height
-       parent, never applies, and the footer is pushed off the bottom of the
-       screen with the whole dialog scrolling instead of the field area. */
-    #addDialog[open] { display: flex; flex-direction: column; overflow: hidden; }
-    /* Full-bleed on phones: a centred card with side margins wastes the width
-       that long fields (address, message) actually need. */
-    @media (max-width: 640px) {
-      #addDialog { max-width: 100vw; max-height: 100dvh; border-radius: 0; border-width: 0; }
-    }
+       pins the dialog to the top-left corner. This one line is the entire fix.
+
+       Do NOT make this a flex container and give #addForm `flex-1`. That was
+       tried on 2026-08-25 and collapsed the whole dialog to a 2px line in
+       Safari: `flex-1` is `flex-basis: 0%`, and a flex item with a 0 basis and
+       `min-height: 0` contributes nothing to the intrinsic height of a parent
+       that has no definite height of its own, so Safari resolved it to zero.
+       Chromium guessed differently, which is exactly why it passed testing and
+       still broke in production. The form's own `max-h-[88vh]` is a DEFINITE,
+       viewport-relative height that needs no parent to resolve against — it
+       works in every engine, and it is what should stay. */
+    #addDialog { margin: auto; }
   </style>
 </BaseLayout>
