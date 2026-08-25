@@ -7,7 +7,7 @@
  */
 
 import { addEvent, eventsForAll, isAction, statusFor } from '../api/_leadEvents.js';
-import { refreshCard } from '../api/_board.js';
+import { refreshCard, postCard } from '../api/_board.js';
 
 const STATUSES = ['new', 'proposal_sent', 'won', 'lost'];
 const KINDS = ['lead', 'message'];
@@ -88,27 +88,62 @@ export async function onRequestPost(context) {
   const now = new Date().toISOString();
 
   try {
-    // Manual entry — for keying in the backlog that only exists in email.
+    // Manual entry — for keying in the backlog that only exists in email, a
+    // phone call, or a referral. Built to match a real submission in every way
+    // that matters: it claims a permanent reference number the same way
+    // storeLead() does, and — unless explicitly told not to — posts a Telegram
+    // card the same way /api/lead does, so a hand-entered lead is not a
+    // second-class citizen next to one the website captured itself.
     if (body.action === 'create') {
+      const name = String(body.name || '').trim();
+      if (!name) return json({ error: 'Name is required' }, 400);
+
       const id = crypto.randomUUID();
-      const lead = {
-        'First Name': body.name || '', Email: body.email || '', Phone: body.phone || '',
-        'Property Address': body.address || '', 'Service Interest': body.service_interest || '',
-        Notes: body.notes || '',
-      };
+      const brand = body.brand === 'SSMProperty' ? 'SSMProperty' : 'ATLStay';
       const kind = KINDS.includes(body.kind) ? body.kind : 'lead';
+      // "Where it came from" — free text (phone call, referral, another site's
+      // contact page, an old email) — reuses page_url, the same field an
+      // organic submission's source page lands in, so it renders identically
+      // on the card and in the dashboard.
+      const source = String(body.source || '').trim();
+      const receivedAt = body.received_at || now;
+
+      const lead = {
+        Name: name, Email: body.email || '', Phone: body.phone || '',
+        'Property Address': body.address || '', 'Service Interest': body.service_interest || '',
+      };
       if (body.message) lead.Message = body.message;
+      if (body.notes) lead.Notes = body.notes;
+
+      // Best-effort reference number — same counter storeLead() uses. A failed
+      // claim must never block the lead itself from being saved.
+      let seq = null;
+      try {
+        const r = await env.DB.prepare('INSERT INTO lead_seq DEFAULT VALUES').run();
+        seq = r?.meta?.last_row_id ?? null;
+      } catch { /* keep going without a number */ }
+
       await env.DB.prepare(
-        `INSERT INTO leads (id, received_at, brand, form_name, kind, service_interest,
+        `INSERT INTO leads (id, received_at, brand, form_name, kind, seq, service_interest,
                             name, email, phone, address, page_url, raw_lead, raw_meta,
                             status, notes, updated_at)
-         VALUES (?,?,?,?,?,?,?,?,?,?,'',?,'{}','new',?,?)`,
+         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,'{}','new',?,?)`,
       ).bind(
-        id, body.received_at || now, body.brand || 'ATLStay', 'Added by hand', kind,
-        body.service_interest || '', body.name || '', body.email || '', body.phone || '',
-        body.address || '', JSON.stringify(lead), body.notes || '', now,
+        id, receivedAt, brand, 'Added by hand', kind, seq,
+        body.service_interest || '', name, body.email || '', body.phone || '',
+        body.address || '', source, JSON.stringify(lead), body.notes || '', now,
       ).run();
-      return json({ ok: true, id });
+
+      let posted = false;
+      if (body.send_telegram !== false) {
+        const cards = await postCard(env, {
+          id, kind, brand, status: 'new', seq, email_ok: null,
+          received_at: receivedAt, page_url: source, raw_lead: lead,
+        });
+        posted = cards.length > 0;
+      }
+
+      return json({ ok: true, id, seq, telegram: posted });
     }
 
     const id = body.id;

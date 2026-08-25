@@ -49,6 +49,165 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     </main>
   </div>
 
+  <!-- ─── Add lead ───────────────────────────────────────────────────────────
+       Replaces a chain of five browser prompt() dialogs — no field labels, no
+       validation, silently dropped anything you cancelled out of, and never
+       touched Telegram at all. A <dialog> gets a real focus trap and Esc-to-
+       close for free; fields mirror exactly what an organic submission carries
+       (contact details, what they said, where it came from, service interest,
+       when it actually arrived) so a hand-keyed lead looks and behaves like a
+       real one everywhere else in the system. -->
+  <dialog id="addDialog" class="w-full max-w-2xl rounded-2xl border border-[#e2e0d6] bg-white p-0 shadow-2xl backdrop:bg-forest/40 backdrop:backdrop-blur-sm">
+    <form id="addForm" method="dialog" class="flex max-h-[88vh] flex-col">
+      <div class="flex items-center justify-between border-b border-[#eeece3] px-6 py-4">
+        <h2 class="font-display text-xl text-forest">Add a lead</h2>
+        <button type="button" id="addClose" aria-label="Close"
+          class="rounded-md p-1.5 text-[#9aa39e] transition-colors hover:bg-[#f1efe7] hover:text-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="min-h-0 flex-1 space-y-6 overflow-y-auto px-6 py-5">
+        <p id="addError" role="alert" class="hidden rounded-lg border border-[#e6cbc8] bg-[#fdeceb] px-3.5 py-2.5 text-sm text-[#a3231b]"></p>
+
+        <!-- Who -->
+        <fieldset class="grid gap-4 sm:grid-cols-2">
+          <legend class="sr-only">Contact</legend>
+          <div class="sm:col-span-2">
+            <label for="af-name" class="block text-xs uppercase tracking-wide text-[#5b6660]">Name <span class="text-[#a3231b]">*</span></label>
+            <input id="af-name" name="name" required autofocus placeholder="Jane Smith"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+          </div>
+          <div>
+            <label for="af-email" class="block text-xs uppercase tracking-wide text-[#5b6660]">Email</label>
+            <input id="af-email" name="email" type="email" placeholder="jane@example.com"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+          </div>
+          <div>
+            <label for="af-phone" class="block text-xs uppercase tracking-wide text-[#5b6660]">Phone</label>
+            <input id="af-phone" name="phone" type="tel" placeholder="(678) 555-0100"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+          </div>
+        </fieldset>
+
+        <!-- The property + what they want -->
+        <fieldset class="grid gap-4 sm:grid-cols-2">
+          <legend class="sr-only">The property</legend>
+          <div class="sm:col-span-2">
+            <label for="af-address" class="block text-xs uppercase tracking-wide text-[#5b6660]">Property / community address</label>
+            <input id="af-address" name="address" placeholder="123 Peachtree St NE, Atlanta, GA"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+          </div>
+          <div class="sm:col-span-2">
+            <label for="af-service" class="block text-xs uppercase tracking-wide text-[#5b6660]">Service interest</label>
+            <input id="af-service" name="service_interest" list="af-service-list" placeholder="e.g. HOA & Community Association Management"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+            <datalist id="af-service-list">
+              <option value="Airbnb / Short-Term Rental Management"></option>
+              <option value="Long-Term Rental Management"></option>
+              <option value="Tenant Placement"></option>
+              <option value="HOA & Community Association Management"></option>
+              <option value="Commercial Property Management"></option>
+              <option value="Multi-Family Property Management"></option>
+              <option value="Investor Services"></option>
+              <option value="Mid-Term Rental Management"></option>
+              <option value="Corporate Housing Management"></option>
+              <option value="Travel Nurse Housing Management"></option>
+              <option value="Insurance & ALE Housing Management"></option>
+              <option value="Film & Production Housing"></option>
+              <option value="Student & Academic Housing"></option>
+              <option value="Vrbo Property Management"></option>
+              <option value="Homes & Villas by Marriott Bonvoy Listing Management"></option>
+              <option value="Direct Booking & Multi-Channel Distribution"></option>
+            </datalist>
+          </div>
+        </fieldset>
+
+        <!-- What they said vs. what only the team should see -->
+        <fieldset class="grid gap-4">
+          <legend class="sr-only">Message and notes</legend>
+          <div>
+            <label for="af-message" class="block text-xs uppercase tracking-wide text-[#5b6660]">What they said</label>
+            <textarea id="af-message" name="message" rows="2" placeholder="e.g. Wants a projection for a 3-bed condo, hoping to list next month"
+              class="mt-1.5 w-full resize-y rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30"></textarea>
+            <p class="mt-1 text-xs text-[#9aa39e]">Shown on the Telegram card, the same as a real submission's message.</p>
+          </div>
+          <div>
+            <label for="af-notes" class="block text-xs uppercase tracking-wide text-[#5b6660]">Internal notes</label>
+            <textarea id="af-notes" name="notes" rows="2" placeholder="Context for the team only"
+              class="mt-1.5 w-full resize-y rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30"></textarea>
+            <p class="mt-1 text-xs text-[#9aa39e]">Dashboard only — never sent to Telegram.</p>
+          </div>
+        </fieldset>
+
+        <!-- Where + which site + which inbox -->
+        <fieldset class="grid gap-4 sm:grid-cols-2">
+          <legend class="sr-only">Source</legend>
+          <div class="sm:col-span-2">
+            <label for="af-source" class="block text-xs uppercase tracking-wide text-[#5b6660]">Where did this come from?</label>
+            <input id="af-source" name="source" list="af-source-list" placeholder="e.g. Phone call, referral, forwarded email"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+            <datalist id="af-source-list">
+              <option value="Phone call"></option>
+              <option value="Referral"></option>
+              <option value="Forwarded email"></option>
+              <option value="Walk-in / in person"></option>
+              <option value="atlstay.com"></option>
+              <option value="ssmproperty.com"></option>
+              <option value="Zillow"></option>
+              <option value="Facebook / Instagram"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="af-brand" class="block text-xs uppercase tracking-wide text-[#5b6660]">Site</label>
+            <select id="af-brand" name="brand"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] bg-white px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30">
+              <option value="ATLStay">ATLStay</option>
+              <option value="SSMProperty">SSMProperty</option>
+            </select>
+          </div>
+          <div>
+            <label for="af-kind" class="block text-xs uppercase tracking-wide text-[#5b6660]">Inbox</label>
+            <select id="af-kind" name="kind"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] bg-white px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30">
+              <option value="lead">Leads</option>
+              <option value="message">Messages</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- When -->
+        <fieldset class="grid gap-4 sm:grid-cols-2">
+          <legend class="sr-only">When it came in</legend>
+          <div>
+            <label for="af-date" class="block text-xs uppercase tracking-wide text-[#5b6660]">Date received</label>
+            <input id="af-date" name="date" type="date"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+          </div>
+          <div>
+            <label for="af-time" class="block text-xs uppercase tracking-wide text-[#5b6660]">Time received (Eastern)</label>
+            <input id="af-time" name="time" type="time"
+              class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />
+          </div>
+          <p id="af-when-preview" class="sm:col-span-2 text-xs text-[#9aa39e]"></p>
+        </fieldset>
+
+        <label class="flex items-start gap-2.5 rounded-lg border border-[#e2e0d6] bg-[#faf9f5] px-3.5 py-3 text-sm text-[#3c4742]">
+          <input id="af-telegram" type="checkbox" checked
+            class="mt-0.5 h-4 w-4 rounded border-[#c9c6b6] text-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest" />
+          <span>Post this to the Telegram group, the same as a real lead<span class="block text-xs text-[#9aa39e]">Turn off for old backlog entries you don't want to re-announce.</span></span>
+        </label>
+      </div>
+
+      <div class="flex items-center justify-end gap-2.5 border-t border-[#eeece3] px-6 py-4">
+        <button type="button" id="addCancel"
+          class="rounded-md border border-[#d8d5c8] bg-white px-4 py-2 text-sm font-medium text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">Cancel</button>
+        <button type="submit" id="addSubmit"
+          class="rounded-md bg-forest px-4 py-2 text-sm font-medium text-cream transition-colors hover:bg-forest-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest disabled:opacity-60">Add lead</button>
+      </div>
+    </form>
+  </dialog>
+
   <script is:inline>
   (() => {
     const API = '/boroto/api';
@@ -629,15 +788,110 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       }
     }
 
-    $('#addBtn').addEventListener('click', async () => {
-      const name = prompt('Name?'); if (name === null) return;
-      const email = prompt('Email?') || '', phone = prompt('Phone?') || '';
-      const address = prompt('Property / community address?') || '';
-      const service_interest = prompt('What do they want? (e.g. HOA, Airbnb management)') || '';
-      const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'create', name, email, phone, address, service_interest, kind: inbox }) }).then((x) => x.json());
-      if (r.ok) { await load(); paintNav(); location.hash = r.id; } else alert(r.error || 'Could not add');
-    });
+    /* ── add lead ──────────────────────────────────────────────────────────
+     * A real dialog with real fields, replacing five chained prompt() boxes
+     * that had no labels, no validation, and never touched Telegram. */
+    (() => {
+      const dlg = $('#addDialog'), form = $('#addForm'), errEl = $('#addError'), submitBtn = $('#addSubmit');
+      const nameEl = $('#af-name'), dateEl = $('#af-date'), timeEl = $('#af-time'), preview = $('#af-when-preview');
+
+      /* Convert a wall-clock Eastern date+time into a correct UTC instant,
+         accounting for EDT/EST — the offset a fixed "-04:00" string would get
+         wrong for roughly half the year. Works by rendering a first guess back
+         through the America/New_York timezone and correcting by the drift. */
+      function easternToUTC(dateStr, timeStr) {
+        const [y, mo, d] = dateStr.split('-').map(Number);
+        const [h, mi] = timeStr.split(':').map(Number);
+        if (!y || !mo || !d || (h !== 0 && !h) || mi == null || Number.isNaN(h) || Number.isNaN(mi)) return null;
+        let guess = Date.UTC(y, mo - 1, d, h, mi);
+        const parts = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/New_York', hourCycle: 'h23',
+          year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit',
+        }).formatToParts(new Date(guess));
+        const g = (t) => Number(parts.find((p) => p.type === t)?.value);
+        const shownAsUTC = Date.UTC(g('year'), g('month') - 1, g('day'), g('hour'), g('minute'));
+        return new Date(guess + (guess - shownAsUTC)).toISOString();
+      }
+
+      function nowInEastern() {
+        const parts = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+        }).formatToParts(new Date());
+        const g = (t) => parts.find((p) => p.type === t)?.value;
+        return { date: `${g('year')}-${g('month')}-${g('day')}`, time: `${g('hour')}:${g('minute')}` };
+      }
+
+      function updatePreview() {
+        const iso = easternToUTC(dateEl.value, timeEl.value);
+        preview.textContent = iso ? `→ ${stamp(iso)}` : '';
+      }
+      dateEl.addEventListener('input', updatePreview);
+      timeEl.addEventListener('input', updatePreview);
+
+      function openDialog() {
+        form.reset();
+        errEl.classList.add('hidden');
+        const n = nowInEastern();
+        dateEl.value = n.date; timeEl.value = n.time;
+        $('#af-kind').value = inbox;   // default to whichever inbox is open
+        updatePreview();
+        dlg.showModal();
+        nameEl.focus();
+      }
+      $('#addBtn').addEventListener('click', openDialog);
+      $('#addCancel').addEventListener('click', () => dlg.close());
+      $('#addClose').addEventListener('click', () => dlg.close());
+      // Click on the backdrop closes it — clicking the form itself must not.
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = nameEl.value.trim();
+        if (!name) { errEl.textContent = 'Name is required.'; errEl.classList.remove('hidden'); nameEl.focus(); return; }
+
+        const receivedAt = easternToUTC(dateEl.value, timeEl.value);
+        if (!receivedAt) { errEl.textContent = 'Enter a valid date and time.'; errEl.classList.remove('hidden'); return; }
+
+        errEl.classList.add('hidden');
+        submitBtn.disabled = true; submitBtn.textContent = 'Adding…';
+
+        const payload = {
+          action: 'create',
+          name,
+          email: $('#af-email').value.trim(),
+          phone: $('#af-phone').value.trim(),
+          address: $('#af-address').value.trim(),
+          service_interest: $('#af-service').value.trim(),
+          message: $('#af-message').value.trim(),
+          notes: $('#af-notes').value.trim(),
+          source: $('#af-source').value.trim(),
+          brand: $('#af-brand').value,
+          kind: $('#af-kind').value,
+          received_at: receivedAt,
+          send_telegram: $('#af-telegram').checked,
+        };
+
+        try {
+          const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload) }).then((x) => x.json());
+          if (!r.ok) throw new Error(r.error || 'Could not add this lead.');
+          dlg.close();
+          await load();
+          paintNav();
+          location.hash = r.id;
+          if (payload.send_telegram && !r.telegram) {
+            // Saved fine; only the Telegram post itself didn't land. Surface it
+            // rather than let it pass silently — the lead is safe either way.
+            setTimeout(() => alert('Saved. Telegram is not configured or did not accept the message, so no card was posted for this one.'), 50);
+          }
+        } catch (err) {
+          errEl.textContent = String(err.message || err);
+          errEl.classList.remove('hidden');
+        } finally {
+          submitBtn.disabled = false; submitBtn.textContent = 'Add lead';
+        }
+      });
+    })();
 
     /* ── refresh ────────────────────────────────────────────────────────────
      * The one deliberate network path in the UI. Anything typed but not yet
