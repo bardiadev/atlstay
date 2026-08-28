@@ -3,7 +3,7 @@
  * This repository is PUBLIC. Every name, email, phone and address below is
  * invented. Never paste a real submission into a test.
  */
-import { renderCard, fromRow, fromSubmission, parseCallback, keyboardFor } from '../functions/api/_card.js';
+import { renderCard, renderNotice, isNotifiable, fromRow, fromSubmission, parseCallback, keyboardFor } from '../functions/api/_card.js';
 import { statusFor, isAction } from '../functions/api/_leadEvents.js';
 
 let fail = 0;
@@ -170,6 +170,73 @@ const nasty = renderCard(fromSubmission({
 t('tags escaped',                nasty.text.includes('&lt;script&gt;'), true);
 t('raw tag absent',              nasty.text.includes('<script>'), false);
 t('ampersand escaped',           nasty.text.includes('a&amp;b@example.com'), true);
+
+console.log('\n── milestone announcements ──');
+/* Editing a card notifies nobody, so a proposal going out and a deal closing
+   also get a short message of their own. Only those two: a ping for every
+   button tap is how a group ends up muted. */
+{
+  const L = { ...LEAD, seq: 7 };
+  const prop = renderNotice(L, 'proposal', 'Bardia');
+  t('proposal is announced',       prop.startsWith('📤 <b>Proposal sent</b>'), true);
+  t('  names the lead',            prop.includes('Sam Taylor'), true);
+  t('  carries the reference',     prop.includes('<code>#0007</code>'), true);
+  t('  credits who did it',        prop.includes('by Bardia'), true);
+  t('  gives the service',         prop.includes('HOA &amp; Community Association'), true);
+  t('  stays two lines',           prop.split('\n').length, 2);
+  t('  and short',                 prop.length < 220, true);
+
+  const won = renderNotice(L, 'won', 'Alex');
+  t('a win is announced',          won.startsWith('✅ <b>Deal won</b>'), true);
+  t('  credits who did it',        won.includes('by Alex'), true);
+
+  // It is an announcement, not a second card: the card holds the detail, and
+  // duplicating contact details into extra messages spreads PII for nothing.
+  t('no phone in the notice',      /7705550148/.test(prop), false);
+  t('no email in the notice',      /sam@example\.com/.test(prop), false);
+  t('no address in the notice',    /Example Ridge/.test(prop), false);
+  t('no buttons (plain text)',     typeof prop, 'string');
+}
+
+console.log('\n── only the two milestones interrupt anyone ──');
+t('proposal notifies',           isNotifiable('proposal'), true);
+t('won notifies',                isNotifiable('won'), true);
+t('lost stays silent',           isNotifiable('lost'), false);
+t('called stays silent',         isNotifiable('called'), false);
+t('texted stays silent',         isNotifiable('texted'), false);
+t('emailed stays silent',        isNotifiable('emailed'), false);
+t('a note stays silent',         isNotifiable('note'), false);
+t('unknown stays silent',        isNotifiable('drop_database'), false);
+for (const a of ['called', 'texted', 'emailed', 'note', 'lost', 'moved', 'nonsense']) {
+  t(`"${a}" renders nothing`,    renderNotice(LEAD, a, 'Bardia'), '');
+}
+
+console.log('\n── announcement edge cases ──');
+{
+  const noRef = renderNotice(LEAD, 'won', 'Bardia');
+  t('unnumbered lead omits the ref', noRef.includes('<code>#'), false);
+
+  const bare = renderNotice(
+    fromSubmission({ id: 'b1', kind: 'lead', lead: { Name: 'Jordan Lee' }, meta: {} }), 'won', '');
+  t('no actor, no service → one line', bare.split('\n').length, 1);
+  t('  still names the lead',       bare.includes('Jordan Lee'), true);
+
+  const nameless = renderNotice(fromSubmission({ id: 'b2', kind: 'lead', lead: {}, meta: {} }), 'won', 'Alex');
+  t('missing name degrades safely', nameless.includes('Someone'), true);
+
+  const longSvc = renderNotice(fromSubmission({
+    id: 'b3', kind: 'lead', lead: { Name: 'Jordan Lee', 'Service Interest': 'X'.repeat(200) }, meta: {},
+  }), 'proposal', 'Alex');
+  t('a long service is trimmed',    longSvc.length < 200, true);
+  t('  ...with an ellipsis',        longSvc.includes('…'), true);
+
+  const evil = renderNotice(fromSubmission({
+    id: 'b4', kind: 'lead', lead: { Name: '<b>fake</b>' }, meta: {},
+  }), 'won', '<script>x</script>');
+  t('lead name escaped',            evil.includes('&lt;b&gt;fake&lt;/b&gt;'), true);
+  t('actor name escaped',           evil.includes('&lt;script&gt;'), true);
+  t('no raw tag survives',          /<script>/.test(evil), false);
+}
 
 console.log('\n' + (fail ? `${fail} FAILED` : 'ALL PASS'));
 process.exit(fail ? 1 : 0);

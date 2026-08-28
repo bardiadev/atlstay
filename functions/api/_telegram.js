@@ -120,6 +120,39 @@ export async function editCards(env, cards, { text, reply_markup }) {
   return changed ? next : null;
 }
 
+/**
+ * Post a short announcement into every configured chat.
+ *
+ * A NEW message rather than an edit, which is the whole point: editing the card
+ * notifies nobody. Where we know the lead's card address in a chat, the notice
+ * is sent as a reply to it, so it threads under the card and one tap gets you
+ * the full detail — with allow_sending_without_reply so a deleted card downgrades
+ * to a plain message instead of losing the announcement.
+ *
+ * Best-effort and silent on failure, like everything else here: a missed ping
+ * must never break the status change that triggered it.
+ */
+export async function sendNotice(env, text, cards = []) {
+  const token = tokenFor(env);
+  if (!token || !text) return 0;
+
+  const replyIn = new Map();
+  for (const c of Array.isArray(cards) ? cards : []) {
+    if (c && c.chat && c.mid) replyIn.set(String(c.chat), c.mid);
+  }
+
+  let sent = 0;
+  for (const chat_id of chatIdsFor(env)) {
+    const mid = replyIn.get(String(chat_id));
+    const body = await call(token, 'sendMessage', {
+      chat_id, text, parse_mode: 'HTML', disable_web_page_preview: true,
+      ...(mid ? { reply_parameters: { message_id: mid, allow_sending_without_reply: true } } : {}),
+    });
+    if (body.ok) sent++;
+  }
+  return sent;
+}
+
 /** Stop the button spinning, with a short toast. Best-effort. */
 export async function answerCallback(env, id, text) {
   const token = tokenFor(env);

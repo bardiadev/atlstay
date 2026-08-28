@@ -7,7 +7,7 @@
  */
 
 import { addEvent, eventsForAll, isAction, statusFor } from '../api/_leadEvents.js';
-import { refreshCard, postCard } from '../api/_board.js';
+import { refreshCard, postCard, announce } from '../api/_board.js';
 
 const STATUSES = ['new', 'proposal_sent', 'won', 'lost'];
 const KINDS = ['lead', 'message'];
@@ -166,13 +166,16 @@ export async function onRequestPost(context) {
     if (body.action === 'log') {
       const ev = String(body.event || '');
       if (!isAction(ev)) return json({ error: 'Bad action' }, 400);
+      const wanted = statusFor(ev);
+      // Read the status BEFORE writing it: re-marking a lead that is already
+      // won is not news, and announcing it would ping the whole group twice.
+      const before = wanted ? await currentStatus(env, id) : '';
       await addEvent(env, {
         leadId: id, action: ev, actor: OWNER, source: 'dashboard',
         note: ev === 'note' ? String(body.note || '') : '',
       });
       // A milestone logged here moves the pipeline too, exactly as it would
       // from a button press in the group.
-      const wanted = statusFor(ev);
       if (wanted) {
         await env.DB.prepare(
           `UPDATE leads SET status = ?, updated_at = ?,
@@ -182,6 +185,8 @@ export async function onRequestPost(context) {
         ).bind(wanted, now, wanted, now, id).run();
       }
       await refreshCard(env, id);
+      // Editing the card notifies nobody, so a milestone gets its own message.
+      if (wanted && before !== wanted) await announce(env, id, ev, OWNER);
       return json({ ok: true, status: wanted || undefined });
     }
 
@@ -220,6 +225,10 @@ export async function onRequestPost(context) {
     sets.push('updated_at = ?'); binds.push(now);
     binds.push(id);
 
+    // Same reason as the 'log' path: what the status was before decides whether
+    // this is news worth announcing, so it has to be read before the write.
+    const before = body.status && STATUS_EVENT[body.status] ? await currentStatus(env, id) : '';
+
     await env.DB.prepare(`UPDATE leads SET ${sets.join(', ')} WHERE id = ?`).bind(...binds).run();
 
     // A status change here is the same kind of fact as a button press in the
@@ -232,10 +241,29 @@ export async function onRequestPost(context) {
       // Editing a Telegram message sends no notification, so the group updates
       // silently. Awaited so the card is true before the panel re-reads.
       await refreshCard(env, id);
+      // ...which is exactly why a milestone also gets its own short message.
+      if (before !== body.status) await announce(env, id, STATUS_EVENT[body.status], OWNER);
     }
     return json({ ok: true });
   } catch (err) {
     return json({ error: String(err?.message || err) }, 500);
+  }
+}
+
+/**
+ * The lead's status right now, for deciding whether a change is actually news.
+ *
+ * Returns '' if it cannot be read, which reads as "different from whatever we
+ * are about to set" — erring towards announcing once too often rather than
+ * swallowing a real milestone. Never throws: this must not be able to fail a
+ * status update.
+ */
+async function currentStatus(env, id) {
+  try {
+    const r = await env.DB.prepare('SELECT status FROM leads WHERE id = ?').bind(id).first();
+    return r?.status || '';
+  } catch {
+    return '';
   }
 }
 

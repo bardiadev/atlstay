@@ -193,6 +193,59 @@ export function renderCard(lead, events = []) {
   return { text, reply_markup: keyboardFor(L.kind, L.id) };
 }
 
+/* ── milestone announcements ──────────────────────────────────────────────
+ *
+ * Editing a message sends NO notification: Telegram rewrites it in place and
+ * nobody's phone makes a sound. That is exactly right for the running card —
+ * it would be unbearable if every button tap pinged everyone — but it means
+ * the two moments that actually matter can pass completely unnoticed.
+ *
+ * So those two, and only those two, also get a short message of their own.
+ * Announcing every action would train the group to mute the chat, which would
+ * cost the notifications that matter. Losses stay silent on purpose.
+ *
+ * This is NOT a second card: no buttons, no contact details, no duplication of
+ * anything. It names what happened and points at the card, which remains the
+ * single source of truth. */
+const NOTICE = {
+  proposal: { icon: '📤', headline: 'Proposal sent' },
+  won:      { icon: '✅', headline: 'Deal won' },
+};
+
+/** Is this action worth interrupting the group for? */
+export const isNotifiable = (action) =>
+  Object.prototype.hasOwnProperty.call(NOTICE, action);
+
+/**
+ * Render the announcement. Pure, like renderCard — returns '' for any action
+ * that is not a milestone, so callers can hand it anything.
+ *
+ * @param {object} lead   normalised lead (see fromRow)
+ * @param {string} action 'proposal' | 'won'
+ * @param {string} actor  who did it
+ */
+export function renderNotice(lead, action, actor) {
+  const n = NOTICE[action];
+  if (!n) return '';
+
+  const L = lead || {};
+  const fields = L.fields || {};
+  const name = pick(fields, /name/i) || 'Someone';
+  const service = pick(fields, /service interest/i);
+  const ref = L.seq ? ` <code>#${String(L.seq).padStart(4, '0')}</code>` : '';
+
+  const out = [`${n.icon} <b>${n.headline}</b> — ${esc(name)}${ref}`];
+
+  // Second line only when there is something to put on it.
+  const context = [
+    actor ? `by ${actor}` : '',
+    service.length > 60 ? `${service.slice(0, 60)}…` : service,
+  ].filter(Boolean).join(' · ');
+  if (context) out.push(`<i>${esc(context)}</i>`);
+
+  return out.join('\n');
+}
+
 /** The activity trail, newest last, older entries collapsed to a count. */
 function renderTrail(events) {
   const list = (events || []).filter((e) => ACTIONS[e.action] && e.action !== 'created');

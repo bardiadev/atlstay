@@ -9,9 +9,9 @@
  * Every function here is best-effort and never throws: the card is a view of
  * the data, and a broken view must never break the data.
  */
-import { renderCard, fromRow } from './_card.js';
+import { renderCard, renderNotice, isNotifiable, fromRow } from './_card.js';
 import { eventsFor } from './_leadEvents.js';
-import { sendCard, editCards } from './_telegram.js';
+import { sendCard, editCards, sendNotice } from './_telegram.js';
 
 const parseCards = (v) => {
   try { const a = JSON.parse(v || '[]'); return Array.isArray(a) ? a : []; }
@@ -73,6 +73,36 @@ export async function refreshCard(env, leadId) {
     const healed = await editCards(env, cards, { text, reply_markup });
     if (healed) await saveCards(env, leadId, healed);
     return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Announce a milestone to the group, on top of refreshing the card.
+ *
+ * refreshCard() keeps the card TRUE but tells nobody — an edit produces no
+ * notification. This is the ping, and it fires for a proposal going out and a
+ * deal being won, from either surface: a button tap in the group and a status
+ * change in the Lead Desk both land here, so the group hears about it once
+ * either way.
+ *
+ * CALLERS MUST ONLY CALL THIS ON A REAL TRANSITION. Re-marking a lead that is
+ * already won is not news, and pinging everyone for it is how a group gets
+ * muted. Telegram's own handler returns early on a repeat tap; the dashboard
+ * reads the status before it writes.
+ *
+ * Best-effort, like everything else in this file: never throws, and a failure
+ * to announce never affects the status change that caused it.
+ */
+export async function announce(env, leadId, action, actor) {
+  try {
+    if (!isNotifiable(action)) return false;
+    const row = await loadLead(env, leadId);
+    if (!row) return false;
+    const text = renderNotice(fromRow(row), action, actor);
+    if (!text) return false;
+    return (await sendNotice(env, text, parseCards(row.tg_cards))) > 0;
   } catch {
     return false;
   }

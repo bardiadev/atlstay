@@ -19,7 +19,7 @@
 import { parseCallback } from './_card.js';
 import { addEvent, statusFor, isAction, ACTIONS } from './_leadEvents.js';
 import { chatIdsFor, answerCallback } from './_telegram.js';
-import { refreshCard, loadLead, leadByCard } from './_board.js';
+import { refreshCard, loadLead, leadByCard, announce } from './_board.js';
 
 const ok = () => new Response('ok', { status: 200 });
 
@@ -102,6 +102,10 @@ async function handleButton(env, cq) {
   if (action === 'moved') await moveToLeads(env, leadId);
 
   await refreshCard(env, leadId);
+  // The rewrite above is silent — Telegram notifies nobody about an edit. A
+  // milestone therefore gets its own short message so the group actually hears
+  // it. Safe from repeats: the already-in-that-status check above returned.
+  await announce(env, leadId, action, actor);
   await answerCallback(env, cq.id, `${ACTIONS[action].icon} ${actor} ${ACTIONS[action].verb}`);
 }
 

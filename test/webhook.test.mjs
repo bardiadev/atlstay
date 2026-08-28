@@ -142,6 +142,52 @@ console.log('\n── repeat taps do not pollute the history ──');
   await res;
   t('already-won tap writes nothing', writes(db).length, 0);
   t('  ...but still answers the tap', sent.some((s) => /answerCallbackQuery/.test(s.url)), true);
+  // The point of the guard: nobody's phone buzzes twice for the same win.
+  t('  ...and announces nothing',     sent.some((s) => /sendMessage/.test(s.url)), false);
+}
+
+console.log('\n── milestones announce; everything else stays silent ──');
+/* An edit sends NO Telegram notification, so without a message of its own a
+   proposal or a win would land in the group completely unnoticed. Only those
+   two get one — a ping per button tap is how a group ends up muted. */
+const notices = () => sent.filter((s) => /sendMessage/.test(s.url));
+{
+  const { res } = post(buttonPress('proposal'));
+  await res;
+  const n = notices();
+  t('proposal posts a new message',   n.length, 1);
+  t('  card was edited as well',      sent.some((s) => /editMessageText/.test(s.url)), true);
+  t('  headline is clear',            /📤 <b>Proposal sent<\/b>/.test(n[0].body.text), true);
+  t('  credits the presser',          n[0].body.text.includes('by Bardia'), true);
+  t('  threaded under its card',      n[0].body.reply_parameters?.message_id, 555);
+  t('  survives a deleted card',      n[0].body.reply_parameters?.allow_sending_without_reply, true);
+  t('  goes to the configured chat',  n[0].body.chat_id, CHAT);
+  t('  carries no buttons',           'reply_markup' in n[0].body, false);
+}
+{
+  const { res } = post(buttonPress('won', { id: 9, first_name: 'Alex' }));
+  await res;
+  const n = notices();
+  t('a win posts a new message',      n.length, 1);
+  t('  headline is clear',            /✅ <b>Deal won<\/b>/.test(n[0].body.text), true);
+  t('  credits the presser',          n[0].body.text.includes('by Alex'), true);
+}
+for (const quiet of ['called', 'texted', 'emailed', 'lost']) {
+  const { res } = post(buttonPress(quiet));
+  await res;
+  t(`"${quiet}" announces nothing`,   notices().length, 0);
+  t(`  ...but still edits the card`,  sent.some((s) => /editMessageText/.test(s.url)), true);
+}
+{
+  // A note replied into the group is already visible to everyone there.
+  const { res } = post({
+    message: {
+      message_id: 903, chat: { id: CHAT }, from: { id: 8, first_name: 'Alex' },
+      text: 'Board meets Thursday', reply_to_message: { message_id: 555 },
+    },
+  });
+  await res;
+  t('a note announces nothing',       notices().length, 0);
 }
 
 console.log('\n── notes by replying to a card ──');
