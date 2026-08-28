@@ -112,6 +112,12 @@ re-add `<link rel="manifest">` or `public/site.webmanifest`. The PNG icons stay
 ## Hosting & deploy (verified live 2026-07-06)
 - Live host = **Cloudflare Pages** — `functions/` runs live and the site serves HEAD. The green "Deploy to GitHub Pages" Action + `public/CNAME` are a DECOY: atlstay.com does not serve that output, so never debug deploys via GitHub Actions. Function env vars/secrets live in the CF Pages dashboard, not the repo.
 - Pushing main goes live (auto-deploy repo → the smart gate applies to the push itself).
+- **Never call a push "live" from `wrangler pages deployment list`.** It marks the
+  newest production deployment "Active" the moment the record is created, while
+  the build is still running. On 2026-08-28 that produced a false all-clear and
+  Brandon tested a new feature 15 seconds before it deployed, so working code
+  looked broken. Run `node scripts/wait-deploy.mjs` (waits for the deployment's
+  own `deploy: success`, ~2 min) and only then say it is live.
 - After any deploy that adds/changes pages run `node scripts/indexnow.mjs` (pings Bing/Yandex/etc.; Google relies on the sitemap).
 
 ## Functions (both load-bearing)
