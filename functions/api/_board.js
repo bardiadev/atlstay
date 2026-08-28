@@ -102,8 +102,14 @@ export async function announce(env, leadId, action, actor) {
     if (!row) return false;
     const text = renderNotice(fromRow(row), action, actor);
     if (!text) return false;
-    return (await sendNotice(env, text, parseCards(row.tg_cards))) > 0;
-  } catch {
+    const sent = await sendNotice(env, text, parseCards(row.tg_cards));
+    // An announcement that fails is invisible: the group simply never hears
+    // about the milestone, and looks no different from one that was never
+    // reached. Say so in the log — id and action only, never lead data.
+    if (!sent) console.warn(`[board] "${action}" on lead ${leadId} was not announced`);
+    return sent > 0;
+  } catch (err) {
+    console.warn(`[board] announcing "${action}" threw:`, String(err?.message || err));
     return false;
   }
 }

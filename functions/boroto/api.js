@@ -227,22 +227,31 @@ export async function onRequestPost(context) {
 
     // Same reason as the 'log' path: what the status was before decides whether
     // this is news worth announcing, so it has to be read before the write.
-    const before = body.status && STATUS_EVENT[body.status] ? await currentStatus(env, id) : '';
+    const before = body.status ? await currentStatus(env, id) : '';
 
     await env.DB.prepare(`UPDATE leads SET ${sets.join(', ')} WHERE id = ?`).bind(...binds).run();
 
-    // A status change here is the same kind of fact as a button press in the
-    // group, so it goes into the same history and rewrites the same card.
-    // Merely opening a lead or editing a note is not activity worth announcing.
-    if (body.status && STATUS_EVENT[body.status]) {
-      await addEvent(env, {
-        leadId: id, action: STATUS_EVENT[body.status], actor: OWNER, source: 'dashboard',
-      });
+    /* A status change here is the same kind of fact as a button press in the
+       group, so it goes into the same history and rewrites the same card.
+       Merely opening a lead or editing a note is not activity worth announcing.
+
+       EVERY status change redraws the card, not only the milestones. Correcting
+       one back to New used to update the database and leave the group's card
+       still reading PROPOSAL SENT — the two surfaces disagreeing, which is the
+       exact failure this whole design exists to prevent. */
+    if (body.status) {
+      if (STATUS_EVENT[body.status]) {
+        await addEvent(env, {
+          leadId: id, action: STATUS_EVENT[body.status], actor: OWNER, source: 'dashboard',
+        });
+      }
       // Editing a Telegram message sends no notification, so the group updates
       // silently. Awaited so the card is true before the panel re-reads.
       await refreshCard(env, id);
       // ...which is exactly why a milestone also gets its own short message.
-      if (before !== body.status) await announce(env, id, STATUS_EVENT[body.status], OWNER);
+      if (STATUS_EVENT[body.status] && before !== body.status) {
+        await announce(env, id, STATUS_EVENT[body.status], OWNER);
+      }
     }
     return json({ ok: true });
   } catch (err) {

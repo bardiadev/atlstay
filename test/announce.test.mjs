@@ -137,6 +137,23 @@ for (const quiet of ['called', 'texted', 'emailed', 'lost']) {
   t('a note announces nothing',       notices().length, 0);
 }
 
+console.log('\n── correcting a status back still redraws the card ──');
+{
+  /* This used to be a silent drift: the database went back to New while the
+     group's card carried on saying PROPOSAL SENT. The two surfaces disagreeing
+     is the exact failure the shared renderer exists to prevent. */
+  const { res } = post({ id: 'lead-1', status: 'new' }, { ...ROW, status: 'proposal_sent' });
+  t('request succeeds',               (await res).status, 200);
+  t('the card is redrawn',            edits().length, 1);
+  t('  ...and nothing is announced',  notices().length, 0);
+}
+{
+  const { res } = post({ id: 'lead-1', status: 'lost' }, { ...ROW, status: 'proposal_sent' });
+  await res;
+  t('a loss redraws the card',        edits().length, 1);
+  t('  ...but stays silent',          notices().length, 0);
+}
+
 console.log('\n── ordinary edits stay silent ──');
 {
   const { res } = post({ id: 'lead-1', notes: 'internal thoughts' });

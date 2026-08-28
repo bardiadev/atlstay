@@ -149,6 +149,10 @@ export async function sendNotice(env, text, cards = []) {
       ...(mid ? { reply_parameters: { message_id: mid, allow_sending_without_reply: true } } : {}),
     });
     if (body.ok) sent++;
+    // Fail soft, but never in silence: a rejected announcement is invisible in
+    // the group by definition, so the reason has to reach `wrangler pages
+    // deployment tail`. The description is Telegram's own, never lead data.
+    else console.warn('[telegram] notice rejected:', body.description || 'unknown');
   }
   return sent;
 }
