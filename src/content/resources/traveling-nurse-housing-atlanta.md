@@ -82,6 +82,9 @@ The honest filter is location and setup. A two-bedroom, well-equipped property w
 
 The right starting point is a realistic look at what your specific property can earn across mid-term and nightly strategies, based on comps that reflect your actual address. See our [areas we serve](/areas-we-serve/) page for where ATLStay currently manages properties across the metro, and read our [best Atlanta neighborhoods for Airbnb guide](/resources/best-atlanta-neighborhoods-for-airbnb/) to understand how different parts of the city compare for STR performance overall.
 
+
+Which hospital a property actually sits near changes the arithmetic more than most owners expect — the contract lengths differ, the shift patterns differ, and so does the commute a nurse will accept. We keep a page for each of the big ones: [Emory University Hospital](/furnished-housing/emory-university-hospital/) and [Emory University Hospital Midtown](/furnished-housing/emory-university-hospital-midtown/), [Grady Memorial](/furnished-housing/grady-memorial-hospital/), [Piedmont Atlanta](/furnished-housing/piedmont-atlanta-hospital/), [Northside Hospital](/furnished-housing/northside-hospital-atlanta/) in Sandy Springs, [Children's Healthcare of Atlanta at Arthur M. Blank](/furnished-housing/childrens-healthcare-arthur-blank-hospital/), and [Wellstar Kennestone](/furnished-housing/wellstar-kennestone-marietta/) in Marietta. Each sets out what a furnished let near that specific campus needs.
+
 ---
 
 *Want to know how your Atlanta property fits into the mid-term and travel healthcare market? [Get a free rental projection from ATLStay](/rental-projection/) — we'll look at your address and give you a realistic estimate based on real comparable listings. Prefer to talk it through? Call us at (678) 938-6413.*

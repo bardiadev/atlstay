@@ -121,6 +121,9 @@ It tends to be a strong fit if:
 
 ATLStay helps Atlanta hosts across this full range of rental strategies. See [our services](/services/) for how we approach furnished monthly positioning alongside or instead of traditional STR management.
 
+
+Where a furnished property sits relative to a hospital, a studio or a campus decides who books it and for how long, so we keep a separate page for each of the anchors we manage around — from [Grady Memorial](/furnished-housing/grady-memorial-hospital/) and [Children's Healthcare at Arthur M. Blank](/furnished-housing/childrens-healthcare-arthur-blank-hospital/) to [Tyler Perry Studios](/furnished-housing/tyler-perry-studios-atlanta/) and [Georgia State](/furnished-housing/georgia-state-university-atlanta/). They are all listed on our [furnished housing](/furnished-housing/) page.
+
 ---
 
 *Curious what your furnished Atlanta property could realistically earn in the monthly market? [Get a free rental projection from ATLStay](/rental-projection/) and we'll build you an honest, comps-based range for your specific address. Or call us directly at (678) 938-6413.*

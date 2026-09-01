@@ -116,6 +116,9 @@ For a full picture of how STR compares to long-term from an income perspective, 
 
 The [ATLStay services page](/services/) covers how we approach blended and mid-term strategies for Atlanta owners.
 
+
+A thirty-day-plus let is nearly always sold on what it is near. Rather than describe that in the abstract, we publish a page for each anchor that actually generates the demand — the hospital campuses like [Emory](/furnished-housing/emory-university-hospital/) and [Wellstar Kennestone](/furnished-housing/wellstar-kennestone-marietta/), the studios like [Trilith](/furnished-housing/trilith-studios-fayetteville/) and [Assembly](/furnished-housing/assembly-studios-doraville/), and the campuses at [Georgia Tech](/furnished-housing/georgia-tech-atlanta/) and [Kennesaw State](/furnished-housing/kennesaw-state-university/). The complete list is on our [furnished and mid-term housing](/furnished-housing/) page.
+
 ---
 
 *Not sure which rental model fits your property best? [Get a free rental projection from ATLStay](/rental-projection/) — we'll model your realistic range across strategies and give you an honest comparison for your specific address. Or call us directly at (678) 938-6413.*

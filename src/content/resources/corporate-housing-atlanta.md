@@ -78,6 +78,9 @@ The broader decision — whether corporate mid-term, nightly STR, or a hybrid ap
 
 For most owners in Atlanta's business corridors, the answer isn't choosing one model over the other — it's building a strategy flexible enough to capture both. ATLStay's [full-service management approach](/services/) is built for exactly that flexibility.
 
+
+Corporate demand in Atlanta clusters around named institutions rather than around the city as a whole, which is why we publish a page per anchor rather than one page for the metro. The hospital campuses — [Emory](/furnished-housing/emory-university-hospital/), [Piedmont Atlanta](/furnished-housing/piedmont-atlanta-hospital/), [Northside](/furnished-housing/northside-hospital-atlanta/) — carry the steadiest year-round demand, while the university campuses at [Georgia Tech](/furnished-housing/georgia-tech-atlanta/), [Georgia State](/furnished-housing/georgia-state-university-atlanta/) and [Kennesaw State](/furnished-housing/kennesaw-state-university/) add visiting faculty, researchers and staff on fixed appointments. The full set is on our [furnished housing](/furnished-housing/) page.
+
 ---
 
 *Curious what your Atlanta property could earn across both nightly and mid-term corporate stays? [Get a free rental projection from ATLStay](/rental-projection/) — we'll look at your specific address and give you a realistic picture based on real comps. Prefer a conversation? Call us at (678) 938-6413.*

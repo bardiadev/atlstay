@@ -86,6 +86,9 @@ Read our [is Airbnb management worth it](/resources/is-airbnb-management-worth-i
 
 ATLStay manages properties across metro Atlanta with the flexibility to pursue production, corporate, and nightly STR demand based on what's performing for each specific property and calendar period. See the full picture at [pricing](/pricing/) and [areas we serve](/areas-we-serve/).
 
+
+Crew housing is judged against a call time, not against Atlanta generally, so proximity to a specific stage is what decides a booking. Each of the major facilities has its own page: [Trilith Studios](/furnished-housing/trilith-studios-fayetteville/) in Fayetteville, [Tyler Perry Studios](/furnished-housing/tyler-perry-studios-atlanta/), [Assembly Studios](/furnished-housing/assembly-studios-doraville/) in Doraville, [Shadowbox Studios](/furnished-housing/shadowbox-studios-atlanta/), and [Three Ring Studios](/furnished-housing/cinelease-three-ring-covington/) in Covington.
+
 ---
 
 *Interested in what your Atlanta property could earn from production housing and mid-term bookings? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest picture of what the mid-term and nightly market looks like for your specific property. Prefer a direct conversation? Call us at (678) 938-6413.*
