@@ -8,6 +8,7 @@ import Button from '@/components/ui/Button.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import CheckList from '@/components/ui/CheckList.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { getCollection } from 'astro:content';
 import { site } from '@/config/site';
@@ -117,6 +118,8 @@ const schemas = [
       </div>
     </Container>
   </Section>
+
+  <ServiceFormBand variant="tint" />
 
   <!-- FAQ (emits FAQPage JSON-LD) -->
   <Section variant="cream">

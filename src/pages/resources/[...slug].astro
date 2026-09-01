@@ -9,6 +9,7 @@ import Prose from '@/components/ui/Prose.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import PageHero from '@/components/ui/PageHero.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { breadcrumbSchema, articleSchema } from '@/lib/schema';
 import { images } from '@/data/images';
 import type { ImageKey } from '@/data/images';
@@ -132,6 +133,12 @@ const schemas = [
     </Container>
   </Section>
 
+  <ServiceFormBand
+    variant="tint"
+    heading="What could your property earn?"
+    text="Tell us about it and we'll build a free, comps-based projection — a real person, not an algorithm, back to you within one business day."
+  />
+
   <!-- FAQ section (if entry has faqs) -->
   {entry.data.faqs.length > 0 && (
     <Section variant="cream" id="faq">
@@ -195,5 +202,8 @@ const schemas = [
     </Section>
   )}
 
+  {/* Guides rank best of anything here — several sit at position 10-13 — and
+      until now they converted only through links. A form at the foot of the
+      article catches the reader who just finished it. */}
   <CTABand />
 </BaseLayout>

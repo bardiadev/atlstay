@@ -10,6 +10,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import Prose from '@/components/ui/Prose.astro';
 import CheckList from '@/components/ui/CheckList.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { images, type ImageKey } from '@/data/images';
 import { site } from '@/config/site';
@@ -175,6 +176,12 @@ const schemas = [
       </div>
     </Container>
   </Section>
+
+  <ServiceFormBand
+    variant="tint"
+    heading="What could your property earn?"
+    text="Send us the address and we'll come back with real numbers for it, within one business day."
+  />
 
   <!-- FAQ -->
   {entry.data.faqs.length > 0 && (

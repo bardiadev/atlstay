@@ -7,6 +7,7 @@ import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Button from '@/components/ui/Button.astro';
 import Card from '@/components/ui/Card.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { site } from '@/config/site';
 import { breadcrumbSchema } from '@/lib/schema';
 
@@ -233,6 +234,8 @@ const serviceAreaNeighborhoods = [
       </div>
     </Container>
   </Section>
+
+  <ServiceFormBand variant="tint" />
 
   <!-- ─── LOCAL BUSINESS EMPHASIS ─── -->
   <Section variant="cream">

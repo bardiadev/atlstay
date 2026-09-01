@@ -11,6 +11,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import Prose from '@/components/ui/Prose.astro';
 import CheckList from '@/components/ui/CheckList.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { images, type ImageKey } from '@/data/images';
 import { serviceLines } from '@/data/serviceLines';
@@ -190,6 +191,12 @@ const schemas = [
     <Container size="narrow"><Prose><Content /></Prose></Container>
   </Section>
 
+  <ServiceFormBand
+    variant="tint"
+    heading={`What could your ${d.name} property earn?`}
+    text="Send us the address and we'll come back with real numbers for it, from a person on our team, within one business day."
+  />
+
   <!-- Regulations: Atlanta-specific vs general (never assert wrong local rules) -->
   <Section variant="cream">
     <Container>
@@ -294,5 +301,10 @@ const schemas = [
     </Section>
   )}
 
+  {/* Second form instance. The hero form was the ONLY one on city pages —
+      the best-performing shape on the site at ~14 impressions per page — so a
+      reader who scrolled past the hero had no way to convert without going
+      back up. ServiceFormBand hydrates client:visible, so this costs nothing
+      on first paint. */}
   <CTABand heading={`Ready to maximize your ${d.name} property?`} text="Get a free, comps-based rental projection from our local team." />
 </BaseLayout>

@@ -10,6 +10,7 @@ import StepList from '@/components/ui/StepList.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import RelatedReading from '@/components/ui/RelatedReading.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
 import { site } from '@/config/site';
 
@@ -144,6 +145,8 @@ const schemas = [
       </div>
     </Container>
   </Section>
+
+  <ServiceFormBand variant="tint" />
 
   <!-- Why ours is different -->
   <Section variant="white">

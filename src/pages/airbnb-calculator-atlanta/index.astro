@@ -8,6 +8,7 @@ import Button from '@/components/ui/Button.astro';
 import FAQ from '@/components/ui/FAQ.astro';
 import ReviewProof from '@/components/ui/ReviewProof.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { breadcrumbSchema, faqPageSchema } from '@/lib/schema';
 import { images } from '@/data/images';
 
@@ -211,6 +212,8 @@ const schemas = [
       <ReviewProof heading="Owners across Atlanta trust our numbers." />
     </Container>
   </Section>
+
+  <ServiceFormBand variant="tint" />
 
   <!-- =============================================
        FAQ (FAQPage JSON-LD emitted once via BaseLayout schemas)

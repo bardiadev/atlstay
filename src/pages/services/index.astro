@@ -10,6 +10,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import Stat from '@/components/ui/Stat.astro';
 import ServicesServiceRow from '@/components/services/ServicesServiceRow.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { services } from '@/data/services';
 import { serviceCategories, servicesByCategory } from '@/data/serviceLines';
 import { site } from '@/config/site';
@@ -185,6 +186,8 @@ const schemas = [
       </div>
     </Container>
   </Section>
+
+  <ServiceFormBand variant="tint" />
 
   <!-- Why full-service beats half-service band -->
   <Section variant="forest">

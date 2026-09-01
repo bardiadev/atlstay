@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import Badge from '@/components/ui/Badge.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import PageHero from '@/components/ui/PageHero.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 
 const allResources = await getCollection('resources', (entry) => !entry.data.draft);
@@ -146,6 +147,8 @@ const featured = resources.filter((r) => r.data.featured);
       </div>
     </Container>
   </Section>
+
+  <ServiceFormBand variant="tint" />
 
   <!-- Internal link callouts -->
   <Section variant="white">

@@ -11,6 +11,7 @@ const VERIFIED_ON = '24 August 2026';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Button from '@/components/ui/Button.astro';
 import CTABand from '@/components/ui/CTABand.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import PageHero from '@/components/ui/PageHero.astro';
 import { breadcrumbSchema } from '@/lib/schema';
 import { site } from '@/config/site';
@@ -204,6 +205,12 @@ const metaDescription = `${comparison.summary.slice(0, 140)}…`;
       </div>
     </Container>
   </Section>
+
+  <ServiceFormBand
+    variant="tint"
+    heading="Not sure which is right for your property?"
+    text="Send us the address and we'll come back with real numbers for both, from a person on our team, within one business day."
+  />
 
   <!-- CTA -->
   <Section variant="cream">
