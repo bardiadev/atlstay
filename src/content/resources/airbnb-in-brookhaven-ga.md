@@ -86,4 +86,4 @@ For owners who want to understand the full range of [services ATLStay provides](
 
 ---
 
-*Wondering what your Brookhaven property could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address and give you a comps-based picture with no obligation. Want to talk it through? Call (678) 938-6413.*
+*Wondering what your Brookhaven property could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address and give you a comps-based picture with no obligation. Want to talk it through? Call (770) 999-9740.*

@@ -78,4 +78,4 @@ If you're comparing Dunwoody to other Atlanta-area markets before deciding where
 
 ---
 
-*Curious what your Dunwoody property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps from comparable Dunwoody listings and give you an honest estimate. Prefer a conversation first? Call us at (678) 938-6413.*
+*Curious what your Dunwoody property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps from comparable Dunwoody listings and give you an honest estimate. Prefer a conversation first? Call us at (770) 999-9740.*

@@ -94,4 +94,4 @@ If you're evaluating whether professional management makes financial sense for y
 
 ---
 
-*Curious what your Atlanta property could earn across both platforms? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest picture. Prefer to talk through your options? Call us at (678) 938-6413.*
+*Curious what your Atlanta property could earn across both platforms? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest picture. Prefer to talk through your options? Call us at (770) 999-9740.*

@@ -89,4 +89,4 @@ This is why honesty in photography pays twice: a guest who booked based on accur
 
 ---
 
-*Want to understand what your property could earn with professional photography and full-service management behind it? [Get a free rental projection from ATLStay](/rental-projection/) and see what comparable listings are generating. Or call us at (678) 938-6413 — we're happy to talk through your property's specific situation.*
+*Want to understand what your property could earn with professional photography and full-service management behind it? [Get a free rental projection from ATLStay](/rental-projection/) and see what comparable listings are generating. Or call us at (770) 999-9740 — we're happy to talk through your property's specific situation.*

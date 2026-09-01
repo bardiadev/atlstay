@@ -102,4 +102,4 @@ For owners of multiple Atlanta properties, professional management is often what
 
 ---
 
-*Want to know what a well-managed, Superhost-caliber Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your address and give you an honest estimate. Prefer to talk it through? Call us at (678) 938-6413.*
+*Want to know what a well-managed, Superhost-caliber Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your address and give you an honest estimate. Prefer to talk it through? Call us at (770) 999-9740.*

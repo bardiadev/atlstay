@@ -89,4 +89,4 @@ ATLStay covers East Point as part of our broader south Atlanta coverage — see 
 
 ---
 
-*Want to know what your East Point property could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we use actual comparable listing data to give you an honest, grounded range for your specific address. Prefer to talk it through first? Call us at (678) 938-6413.*
+*Want to know what your East Point property could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we use actual comparable listing data to give you an honest, grounded range for your specific address. Prefer to talk it through first? Call us at (770) 999-9740.*

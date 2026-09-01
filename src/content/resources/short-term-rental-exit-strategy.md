@@ -107,4 +107,4 @@ That baseline makes every exit decision — sell, convert, or hand off — a mor
 
 ---
 
-*Not sure which path makes sense for your property? [Get a free rental projection from ATLStay](/rental-projection/) and we'll walk you through the realistic options for your specific situation. Or call us directly at (678) 938-6413.*
+*Not sure which path makes sense for your property? [Get a free rental projection from ATLStay](/rental-projection/) and we'll walk you through the realistic options for your specific situation. Or call us directly at (770) 999-9740.*

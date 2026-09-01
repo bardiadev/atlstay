@@ -36,8 +36,8 @@ const DEFAULTS = {
   web3formsKey: '3b77cc25-dd1c-48f9-b8bd-c30905d66335',
   brand: 'ATLStay',
   domain: 'https://atlstay.com',
-  phone: '(678) 938-6413',
-  phoneHref: 'tel:+16789386413',
+  phone: '(770) 999-9740',
+  phoneHref: 'tel:+17709999740',
 };
 
 const C = {

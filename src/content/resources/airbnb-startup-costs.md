@@ -115,4 +115,4 @@ If you want to understand the ongoing economics once you're operating, the [Airb
 
 ---
 
-*Before you spend on setup, know what your property can realistically earn. [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based revenue picture. Prefer a conversation first? Call us at (678) 938-6413.*
+*Before you spend on setup, know what your property can realistically earn. [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based revenue picture. Prefer a conversation first? Call us at (770) 999-9740.*

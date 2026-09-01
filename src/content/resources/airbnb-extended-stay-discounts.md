@@ -95,4 +95,4 @@ The [ATLStay pricing approach](/pricing/) takes all of these levers into account
 
 ---
 
-*Want to see what a calibrated revenue strategy could mean for your specific Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll build it from real comparable listings and walk you through the numbers. Prefer a conversation? Call (678) 938-6413.*
+*Want to see what a calibrated revenue strategy could mean for your specific Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll build it from real comparable listings and walk you through the numbers. Prefer a conversation? Call (770) 999-9740.*

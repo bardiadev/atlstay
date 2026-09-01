@@ -102,4 +102,4 @@ For context on how all of this fits into a professionally managed operation, see
 
 ---
 
-*Want to see how Atlanta's demand cycle maps onto realistic revenue estimates for your specific property? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based and address-specific, with no obligation. Or call us at (678) 938-6413.*
+*Want to see how Atlanta's demand cycle maps onto realistic revenue estimates for your specific property? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based and address-specific, with no obligation. Or call us at (770) 999-9740.*

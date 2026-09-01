@@ -88,4 +88,4 @@ If you're weighing whether professional management makes sense for your property
 
 ---
 
-*Curious what your Atlanta property could realistically earn during the World Cup window? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest, comps-based picture. Or call us directly at (678) 938-6413.*
+*Curious what your Atlanta property could realistically earn during the World Cup window? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest, comps-based picture. Or call us directly at (770) 999-9740.*

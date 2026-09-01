@@ -73,4 +73,4 @@ Understanding the specific event calendar that drives this neighborhood's demand
 
 ---
 
-*Want to know what your Cabbagetown property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll look at comparable listings in the neighborhood and give you an honest, comps-based picture specific to your property's character and size. Prefer to talk? Call us at (678) 938-6413.*
+*Want to know what your Cabbagetown property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll look at comparable listings in the neighborhood and give you an honest, comps-based picture specific to your property's character and size. Prefer to talk? Call us at (770) 999-9740.*

@@ -83,4 +83,4 @@ Corporate demand in Atlanta clusters around named institutions rather than aroun
 
 ---
 
-*Curious what your Atlanta property could earn across both nightly and mid-term corporate stays? [Get a free rental projection from ATLStay](/rental-projection/) — we'll look at your specific address and give you a realistic picture based on real comps. Prefer a conversation? Call us at (678) 938-6413.*
+*Curious what your Atlanta property could earn across both nightly and mid-term corporate stays? [Get a free rental projection from ATLStay](/rental-projection/) — we'll look at your specific address and give you a realistic picture based on real comps. Prefer a conversation? Call us at (770) 999-9740.*

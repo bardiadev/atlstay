@@ -84,4 +84,4 @@ An accurate projection against real comparable cabins in your specific area is t
 
 ---
 
-*Interested in what your North Georgia cabin could realistically earn? [Request a free rental projection from ATLStay](/rental-projection/) — we run comps against actual comparable listings in your specific area and give you an honest, seasonality-aware picture. Prefer to start with a conversation? Call (678) 938-6413.*
+*Interested in what your North Georgia cabin could realistically earn? [Request a free rental projection from ATLStay](/rental-projection/) — we run comps against actual comparable listings in your specific area and give you an honest, seasonality-aware picture. Prefer to start with a conversation? Call (770) 999-9740.*

@@ -78,4 +78,4 @@ If you're evaluating whether your specific property fits the Blue Ridge market �
 
 ---
 
-*Curious what your Blue Ridge cabin could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your specific property and give you an honest, data-backed picture. Prefer to talk through the mountain market directly? Call us at (678) 938-6413.*
+*Curious what your Blue Ridge cabin could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your specific property and give you an honest, data-backed picture. Prefer to talk through the mountain market directly? Call us at (770) 999-9740.*

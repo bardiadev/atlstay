@@ -82,4 +82,4 @@ The [West End property management page](/atlanta/west-end/) covers how ATLStay a
 
 ---
 
-*Want to see what your West End property could realistically earn across the AUC calendar, BeltLine season, and Atlanta's broader event calendar? [Get a free rental projection from ATLStay](/rental-projection/) — we'll build it from actual comparable listings in your neighborhood. Prefer to talk it through? Call us at (678) 938-6413.*
+*Want to see what your West End property could realistically earn across the AUC calendar, BeltLine season, and Atlanta's broader event calendar? [Get a free rental projection from ATLStay](/rental-projection/) — we'll build it from actual comparable listings in your neighborhood. Prefer to talk it through? Call us at (770) 999-9740.*

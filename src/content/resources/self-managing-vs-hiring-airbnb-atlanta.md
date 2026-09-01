@@ -85,4 +85,4 @@ Neither self-management nor professional management is the right answer for ever
 
 ---
 
-*Unsure which direction makes sense for your Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address so you have an honest baseline for either decision. Or call (678) 938-6413 to talk through the specifics.*
+*Unsure which direction makes sense for your Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address so you have an honest baseline for either decision. Or call (770) 999-9740 to talk through the specifics.*

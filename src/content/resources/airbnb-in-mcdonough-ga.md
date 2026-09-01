@@ -82,4 +82,4 @@ Our [services](/services/) include full-service management that covers regulatio
 
 ---
 
-*Ready to see what your McDonough property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your area and give you an honest, comps-based estimate. Prefer to talk directly? Call us at (678) 938-6413.*
+*Ready to see what your McDonough property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your area and give you an honest, comps-based estimate. Prefer to talk directly? Call us at (770) 999-9740.*

@@ -94,4 +94,4 @@ If you own an Atlanta home and you're away for a meaningful part of the year, it
 
 ---
 
-*Curious what your Atlanta home could earn during the months you're away? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest picture of seasonal income potential. Prefer to talk through your situation? Call us at (678) 938-6413.*
+*Curious what your Atlanta home could earn during the months you're away? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest picture of seasonal income potential. Prefer to talk through your situation? Call us at (770) 999-9740.*

@@ -101,4 +101,4 @@ To see what your specific property could realistically earn before you commit to
 
 ---
 
-*Want an honest, comps-based estimate for your Georgia property — and guidance on the local rules that apply to it? [Get a free rental projection from ATLStay](/rental-projection/). Prefer to talk it through? Call us at (678) 938-6413.*
+*Want an honest, comps-based estimate for your Georgia property — and guidance on the local rules that apply to it? [Get a free rental projection from ATLStay](/rental-projection/). Prefer to talk it through? Call us at (770) 999-9740.*

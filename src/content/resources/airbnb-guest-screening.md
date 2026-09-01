@@ -92,4 +92,4 @@ Understanding what your property earns under professional management — where s
 
 ---
 
-*ATLStay handles guest screening, pre-arrival communication, and property protection as part of full-service management. [Get a free rental projection](/rental-projection/) to see what your Atlanta property could realistically earn — or call (678) 938-6413 to talk through your situation.*
+*ATLStay handles guest screening, pre-arrival communication, and property protection as part of full-service management. [Get a free rental projection](/rental-projection/) to see what your Atlanta property could realistically earn — or call (770) 999-9740 to talk through your situation.*

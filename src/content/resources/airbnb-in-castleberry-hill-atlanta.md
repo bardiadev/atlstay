@@ -84,4 +84,4 @@ For a comps-based picture of what your specific Castleberry Hill property could 
 
 ---
 
-*Ready to see what your Castleberry Hill property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and walk you through an honest, event-adjusted picture with no obligation. Prefer to talk through the opportunity first? Call us at (678) 938-6413.*
+*Ready to see what your Castleberry Hill property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and walk you through an honest, event-adjusted picture with no obligation. Prefer to talk through the opportunity first? Call us at (770) 999-9740.*

@@ -44,4 +44,4 @@ Two homes on the same street can perform very differently. Finish level, outdoor
 
 Your projection is a realistic, comps-based range to help you make an informed decision. It is **not** a guaranteed income figure. No honest manager can promise a specific number, because the outcome depends on market conditions, your availability, your property's condition, and the pricing and management decisions made along the way. If the numbers are strong, we'll show you why. If your property isn't a great short-term rental fit, we'll tell you that honestly rather than talk you into it.
 
-When you're ready, [request your free projection](/rental-projection/) — it takes about a minute, and a local team member reviews it personally. Prefer to talk it through? Call us at (678) 938-6413.
+When you're ready, [request your free projection](/rental-projection/) — it takes about a minute, and a local team member reviews it personally. Prefer to talk it through? Call us at (770) 999-9740.

@@ -116,4 +116,4 @@ To see what a well-optimized, professionally managed listing in your Atlanta nei
 
 ---
 
-*Want to see what your listing could earn when it's set up and managed to perform? [Get a free rental projection from ATLStay](/rental-projection/) — we model your specific property against real comparable listings and give you an honest range. Or call us at (678) 938-6413.*
+*Want to see what your listing could earn when it's set up and managed to perform? [Get a free rental projection from ATLStay](/rental-projection/) — we model your specific property against real comparable listings and give you an honest range. Or call us at (770) 999-9740.*

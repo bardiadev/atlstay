@@ -147,4 +147,4 @@ We are not attorneys and nothing here is legal advice. On a question about your 
 
 ---
 
-*Own a Georgia rental from out of state and want a straight answer about what it should be earning? [Get a free rental projection](/rental-projection/), or see [where we manage](/areas-we-serve/). Prefer to talk it through? Call (678) 938-6413.*
+*Own a Georgia rental from out of state and want a straight answer about what it should be earning? [Get a free rental projection](/rental-projection/), or see [where we manage](/areas-we-serve/). Prefer to talk it through? Call (770) 999-9740.*

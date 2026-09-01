@@ -64,4 +64,4 @@ For the demand side of an Athens property — UGA game-day and graduation demand
 
 ---
 
-*Want to know what your Athens property could realistically earn across game days, graduation, and the full year? [Get a free rental projection from ATLStay](/rental-projection/), or call us at (678) 938-6413.*
+*Want to know what your Athens property could realistically earn across game days, graduation, and the full year? [Get a free rental projection from ATLStay](/rental-projection/), or call us at (770) 999-9740.*

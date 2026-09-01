@@ -87,4 +87,4 @@ Tybee is a genuine beach market with real earning potential and a specific opera
 
 ---
 
-*Curious what your Tybee Island property could realistically earn across the full year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll analyze real comparable listings for your specific address and give you an honest, data-backed picture. Prefer to talk it through? Call us at (678) 938-6413.*
+*Curious what your Tybee Island property could realistically earn across the full year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll analyze real comparable listings for your specific address and give you an honest, data-backed picture. Prefer to talk it through? Call us at (770) 999-9740.*

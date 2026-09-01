@@ -96,4 +96,4 @@ If you're managing your Atlanta Airbnb yourself and want to understand what prof
 
 ---
 
-*Tired of managing party risk on your own? [Get a free rental projection from ATLStay](/rental-projection/) and see what full-service management could look like for your Atlanta property — or call us directly at (678) 938-6413.*
+*Tired of managing party risk on your own? [Get a free rental projection from ATLStay](/rental-projection/) and see what full-service management could look like for your Atlanta property — or call us directly at (770) 999-9740.*

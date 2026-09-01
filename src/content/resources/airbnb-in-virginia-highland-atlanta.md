@@ -92,4 +92,4 @@ Virginia-Highland falls within City of Atlanta jurisdiction for short-term renta
 
 ---
 
-*Want to see what your Virginia-Highland property could realistically earn? [Request a free rental projection from ATLStay](/rental-projection/) — we'll pull genuine comps from your area and give you a clear, honest picture with no obligation. Rather talk it through first? Reach us at (678) 938-6413.*
+*Want to see what your Virginia-Highland property could realistically earn? [Request a free rental projection from ATLStay](/rental-projection/) — we'll pull genuine comps from your area and give you a clear, honest picture with no obligation. Rather talk it through first? Reach us at (770) 999-9740.*

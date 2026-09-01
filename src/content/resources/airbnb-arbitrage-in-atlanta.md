@@ -104,4 +104,4 @@ A [free rental projection](/rental-projection/) for any unit you're evaluating �
 
 ---
 
-*Considering an Atlanta arbitrage play or evaluating a specific unit? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for the address and give you an honest look at the revenue potential. Prefer a direct conversation? Call (678) 938-6413.*
+*Considering an Atlanta arbitrage play or evaluating a specific unit? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for the address and give you an honest look at the revenue potential. Prefer a direct conversation? Call (770) 999-9740.*

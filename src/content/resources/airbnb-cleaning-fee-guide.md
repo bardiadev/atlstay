@@ -94,4 +94,4 @@ For how professional management handles both the pricing and the execution side,
 
 ---
 
-*Want to see how fee structure and pricing strategy combine to affect your total revenue? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you what comparable Atlanta properties are earning with professionally managed pricing. Or call us at (678) 938-6413.*
+*Want to see how fee structure and pricing strategy combine to affect your total revenue? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you what comparable Atlanta properties are earning with professionally managed pricing. Or call us at (770) 999-9740.*

@@ -86,4 +86,4 @@ If you're still working through whether short-term rental makes sense compared t
 
 ---
 
-*Want to know what your Lawrenceville property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture. Prefer to talk it through? Call us at (678) 938-6413.*
+*Want to know what your Lawrenceville property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture. Prefer to talk it through? Call us at (770) 999-9740.*

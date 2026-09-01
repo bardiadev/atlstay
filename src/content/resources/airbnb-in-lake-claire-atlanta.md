@@ -88,4 +88,4 @@ The [services ATLStay provides](/services/) include the full management stack �
 
 ---
 
-*Curious what your Lake Claire property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your specific address and give you an honest picture before you make any decisions. Prefer a conversation first? Call us at (678) 938-6413.*
+*Curious what your Lake Claire property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your specific address and give you an honest picture before you make any decisions. Prefer a conversation first? Call us at (770) 999-9740.*

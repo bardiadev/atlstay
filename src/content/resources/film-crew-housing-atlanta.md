@@ -91,4 +91,4 @@ Crew housing is judged against a call time, not against Atlanta generally, so pr
 
 ---
 
-*Interested in what your Atlanta property could earn from production housing and mid-term bookings? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest picture of what the mid-term and nightly market looks like for your specific property. Prefer a direct conversation? Call us at (678) 938-6413.*
+*Interested in what your Atlanta property could earn from production housing and mid-term bookings? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest picture of what the mid-term and nightly market looks like for your specific property. Prefer a direct conversation? Call us at (770) 999-9740.*

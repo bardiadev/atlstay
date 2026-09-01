@@ -98,4 +98,4 @@ For Atlanta hosts thinking about what professional management means for their re
 
 ---
 
-*Want to see what a professionally managed Atlanta Airbnb looks like from the inside? [Talk to ATLStay](/rental-projection/) — or call us at (678) 938-6413 to walk through your property and what we'd do differently.*
+*Want to see what a professionally managed Atlanta Airbnb looks like from the inside? [Talk to ATLStay](/rental-projection/) — or call us at (770) 999-9740 to walk through your property and what we'd do differently.*

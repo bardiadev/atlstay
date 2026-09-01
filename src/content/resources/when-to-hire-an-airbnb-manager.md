@@ -88,4 +88,4 @@ If you're recognizing more than one of these signals in your current situation, 
 
 ---
 
-*Not sure if it's the right time? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you what your property could realistically earn with professional management versus your current setup, based on real local comps. Call us directly at (678) 938-6413 if you'd rather talk it through first.*
+*Not sure if it's the right time? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you what your property could realistically earn with professional management versus your current setup, based on real local comps. Call us directly at (770) 999-9740 if you'd rather talk it through first.*

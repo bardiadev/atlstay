@@ -98,4 +98,4 @@ Understanding what your property earns — net of management, maintenance, and t
 
 ---
 
-*ATLStay handles damage documentation, turnover, and claim processes for every property we manage. [Get a free rental projection](/rental-projection/) to see what full-service Atlanta Airbnb management could look like for your property — or call us at (678) 938-6413.*
+*ATLStay handles damage documentation, turnover, and claim processes for every property we manage. [Get a free rental projection](/rental-projection/) to see what full-service Atlanta Airbnb management could look like for your property — or call us at (770) 999-9740.*

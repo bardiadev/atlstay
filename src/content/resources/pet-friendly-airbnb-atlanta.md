@@ -92,4 +92,4 @@ ATLStay manages the full decision — from setup to turnover protocol to pricing
 
 ---
 
-*Wondering whether a pet-friendly policy is right for your Atlanta property — and what it could mean for your earnings? [Get a free rental projection from ATLStay](/rental-projection/) and we'll give you a clear comp-based picture of your property's realistic range. Prefer to talk it through? Call us at (678) 938-6413.*
+*Wondering whether a pet-friendly policy is right for your Atlanta property — and what it could mean for your earnings? [Get a free rental projection from ATLStay](/rental-projection/) and we'll give you a clear comp-based picture of your property's realistic range. Prefer to talk it through? Call us at (770) 999-9740.*

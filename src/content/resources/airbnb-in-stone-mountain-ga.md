@@ -81,4 +81,4 @@ For a straightforward comparison on pricing and what management actually costs, 
 
 ---
 
-*Want to see what your Stone Mountain property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll use actual comparable listings in the area to give you a comps-based earnings range with no obligation. Prefer to talk first? Call (678) 938-6413.*
+*Want to see what your Stone Mountain property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll use actual comparable listings in the area to give you a comps-based earnings range with no obligation. Prefer to talk first? Call (770) 999-9740.*

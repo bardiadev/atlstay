@@ -103,4 +103,4 @@ For more on ATLStay's approach to management across the Atlanta market, the [how
 
 ---
 
-*Want to understand what full-service management would look like for your specific Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll give you a comps-based picture of your earnings potential so you can make the decision with real numbers. Prefer a conversation? Call us at (678) 938-6413.*
+*Want to understand what full-service management would look like for your specific Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll give you a comps-based picture of your earnings potential so you can make the decision with real numbers. Prefer a conversation? Call us at (770) 999-9740.*

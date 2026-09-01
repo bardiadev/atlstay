@@ -80,4 +80,4 @@ On regulation: Peoplestown falls entirely within the City of Atlanta's short-ter
 
 ---
 
-*Want to know what your Peoplestown property could realistically bring in, including what event weekends look like compared to base occupancy? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run real comparables for your address and give you an honest picture of the range. Prefer a direct conversation? Call us at (678) 938-6413.*
+*Want to know what your Peoplestown property could realistically bring in, including what event weekends look like compared to base occupancy? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run real comparables for your address and give you an honest picture of the range. Prefer a direct conversation? Call us at (770) 999-9740.*

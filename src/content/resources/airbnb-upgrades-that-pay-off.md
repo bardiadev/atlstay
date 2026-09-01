@@ -94,4 +94,4 @@ The other side of the upgrade question is whether professional management makes 
 
 ---
 
-*Wondering what your Atlanta property could earn with the right setup and management? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you where your property sits relative to real comps in your market. Questions? Call us at (678) 938-6413.*
+*Wondering what your Atlanta property could earn with the right setup and management? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you where your property sits relative to real comps in your market. Questions? Call us at (770) 999-9740.*

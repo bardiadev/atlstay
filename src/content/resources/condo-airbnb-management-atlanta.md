@@ -90,4 +90,4 @@ If you're still evaluating whether short-term rental is the right approach for y
 
 ---
 
-*Ready to find out what your Atlanta condo could realistically earn? [Request a free rental projection from ATLStay](/rental-projection/) — we'll run comps against real comparable listings in your specific building's neighborhood and give you an honest picture. Questions first? Call (678) 938-6413.*
+*Ready to find out what your Atlanta condo could realistically earn? [Request a free rental projection from ATLStay](/rental-projection/) — we'll run comps against real comparable listings in your specific building's neighborhood and give you an honest picture. Questions first? Call (770) 999-9740.*

@@ -49,7 +49,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you handle Airbnb management near the stadium?',
-        a: 'Yes — ATLStay manages full-service short-term rentals across the downtown and west-side neighborhoods around Mercedes-Benz Stadium: listing, dynamic event-aware pricing, 24/7 guest care, cleaning, and turnovers. Call (678) 938-6413 or get a free projection to see what your property could earn.',
+        a: 'Yes — ATLStay manages full-service short-term rentals across the downtown and west-side neighborhoods around Mercedes-Benz Stadium: listing, dynamic event-aware pricing, 24/7 guest care, cleaning, and turnovers. Call (770) 999-9740 or get a free projection to see what your property could earn.',
       },
     ],
     published: true,
@@ -112,7 +112,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage short-term rentals downtown near the arena?',
-        a: 'Yes. ATLStay runs full-service management for downtown and Castleberry Hill properties — event-aware pricing, 24/7 guest care, cleaning, and turnovers. Call (678) 938-6413 or request a free projection.',
+        a: 'Yes. ATLStay runs full-service management for downtown and Castleberry Hill properties — event-aware pricing, 24/7 guest care, cleaning, and turnovers. Call (770) 999-9740 or request a free projection.',
       },
     ],
     published: true,
@@ -143,7 +143,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage rentals near the convention center?',
-        a: 'Yes — full-service management with convention-aware pricing, 24/7 guest care, and reliable turnovers. Call (678) 938-6413 or get a free projection for your property.',
+        a: 'Yes — full-service management with convention-aware pricing, 24/7 guest care, and reliable turnovers. Call (770) 999-9740 or get a free projection for your property.',
       },
     ],
     published: true,
@@ -174,7 +174,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage short-term rentals near The Battery?',
-        a: 'Yes — ATLStay manages properties across Smyrna, Vinings, and Marietta with ballpark-aware pricing and full-service operations. Call (678) 938-6413 or request a free projection.',
+        a: 'Yes — ATLStay manages properties across Smyrna, Vinings, and Marietta with ballpark-aware pricing and full-service operations. Call (770) 999-9740 or request a free projection.',
       },
     ],
     published: true,
@@ -205,7 +205,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage Airbnbs near Piedmont Park?',
-        a: 'Yes — full-service management for Midtown and the surrounding neighborhoods, with festival-aware pricing and 24/7 guest care. Call (678) 938-6413 or get a free projection.',
+        a: 'Yes — full-service management for Midtown and the surrounding neighborhoods, with festival-aware pricing and 24/7 guest care. Call (770) 999-9740 or get a free projection.',
       },
     ],
     published: true,
@@ -236,7 +236,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage rentals near Georgia Tech?',
-        a: 'Yes — full-service management for Home Park, West Midtown, and the surrounding Midtown area. Call (678) 938-6413 or request a free projection.',
+        a: 'Yes — full-service management for Home Park, West Midtown, and the surrounding Midtown area. Call (770) 999-9740 or request a free projection.',
       },
     ],
     published: true,
@@ -267,7 +267,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage short-term rentals near Emory?',
-        a: 'Yes — ATLStay manages properties across Druid Hills, Decatur, and the surrounding area, tuned to the academic and medical guest. Call (678) 938-6413 or get a free projection.',
+        a: 'Yes — ATLStay manages properties across Druid Hills, Decatur, and the surrounding area, tuned to the academic and medical guest. Call (770) 999-9740 or get a free projection.',
       },
     ],
     published: true,
@@ -297,7 +297,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage luxury Airbnbs in Buckhead?',
-        a: 'Yes — ATLStay runs white-glove management for Buckhead properties near Lenox and Phipps. Call (678) 938-6413 or request a free projection.',
+        a: 'Yes — ATLStay runs white-glove management for Buckhead properties near Lenox and Phipps. Call (770) 999-9740 or request a free projection.',
       },
     ],
     published: true,
@@ -328,7 +328,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage short-term rentals near Stone Mountain Park?',
-        a: 'Yes — full-service management across Stone Mountain, Tucker, and the surrounding east-side markets. Call (678) 938-6413 or get a free projection.',
+        a: 'Yes — full-service management across Stone Mountain, Tucker, and the surrounding east-side markets. Call (770) 999-9740 or get a free projection.',
       },
     ],
     published: true,
@@ -359,7 +359,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage lake-house rentals on Lake Lanier?',
-        a: 'Yes — ATLStay manages lake houses with the dock-aware, seasonal operations the asset class requires. Call (678) 938-6413 or request a free projection. See our lake-house management page for the full operational picture.',
+        a: 'Yes — ATLStay manages lake houses with the dock-aware, seasonal operations the asset class requires. Call (770) 999-9740 or request a free projection. See our lake-house management page for the full operational picture.',
       },
     ],
     published: true,
@@ -391,7 +391,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage BeltLine-area short-term rentals?',
-        a: 'Yes — full-service management across the Eastside Trail neighborhoods, with listings written to surface BeltLine walkability. Call (678) 938-6413 or get a free projection.',
+        a: 'Yes — full-service management across the Eastside Trail neighborhoods, with listings written to surface BeltLine walkability. Call (770) 999-9740 or get a free projection.',
       },
     ],
     published: true,
@@ -422,7 +422,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage rentals near Ponce City Market?',
-        a: 'Yes — full-service management across Old Fourth Ward and the surrounding BeltLine neighborhoods. Call (678) 938-6413 or request a free projection.',
+        a: 'Yes — full-service management across Old Fourth Ward and the surrounding BeltLine neighborhoods. Call (770) 999-9740 or request a free projection.',
       },
     ],
     published: true,
@@ -454,7 +454,7 @@ export const landmarks: Landmark[] = [
       },
       {
         q: 'Do you manage downtown Atlanta short-term rentals?',
-        a: 'Yes — full-service management across the downtown and Castleberry Hill core. Call (678) 938-6413 or get a free projection.',
+        a: 'Yes — full-service management across the downtown and Castleberry Hill core. Call (770) 999-9740 or get a free projection.',
       },
     ],
     published: true,

@@ -84,4 +84,4 @@ If you're evaluating whether short-term rental makes sense compared to a long-te
 
 ---
 
-*Want to know what your Norcross property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll compare your property against real, active listings in the area and give you an honest range. Prefer to talk first? Call us at (678) 938-6413.*
+*Want to know what your Norcross property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll compare your property against real, active listings in the area and give you an honest range. Prefer to talk first? Call us at (770) 999-9740.*

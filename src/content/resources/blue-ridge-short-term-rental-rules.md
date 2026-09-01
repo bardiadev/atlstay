@@ -62,4 +62,4 @@ For the demand side of a Blue Ridge cabin — seasonality, amenities, and what m
 
 ---
 
-*Curious what your Blue Ridge cabin could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/), or call us at (678) 938-6413.*
+*Curious what your Blue Ridge cabin could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/), or call us at (770) 999-9740.*

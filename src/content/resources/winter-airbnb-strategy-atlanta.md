@@ -106,4 +106,4 @@ Improvements made in February will be fully reflected in your listing and your r
 
 ---
 
-*Wondering how your Atlanta property's revenue should look across the full year, including slow season? [Get a free rental projection from ATLStay](/rental-projection/) — we'll map out realistic expectations based on real comparable listings at your address. Prefer to talk strategy directly? Call us at (678) 938-6413.*
+*Wondering how your Atlanta property's revenue should look across the full year, including slow season? [Get a free rental projection from ATLStay](/rental-projection/) — we'll map out realistic expectations based on real comparable listings at your address. Prefer to talk strategy directly? Call us at (770) 999-9740.*

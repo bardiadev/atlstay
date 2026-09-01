@@ -94,4 +94,4 @@ If you're considering all options, it's also worth reviewing the [Airbnb versus 
 
 ---
 
-*Curious what a professionally managed Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, address-specific, and genuinely free. Or reach us directly at (678) 938-6413.*
+*Curious what a professionally managed Atlanta property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, address-specific, and genuinely free. Or reach us directly at (770) 999-9740.*

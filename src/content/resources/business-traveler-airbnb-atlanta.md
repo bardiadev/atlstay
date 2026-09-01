@@ -94,4 +94,4 @@ For owners assessing whether their Atlanta property is positioned to compete in 
 
 ---
 
-*Ready to see what consistent corporate bookings could mean for your Atlanta property's performance? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your address and show you a realistic picture of the corporate demand in your area. Or reach us directly at (678) 938-6413.*
+*Ready to see what consistent corporate bookings could mean for your Atlanta property's performance? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your address and show you a realistic picture of the corporate demand in your area. Or reach us directly at (770) 999-9740.*

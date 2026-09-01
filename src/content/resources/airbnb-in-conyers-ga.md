@@ -82,4 +82,4 @@ The [how it works](/how-it-works/) page walks through our full onboarding proces
 
 ---
 
-*Want to know what your Conyers property could realistically earn across the Horse Park calendar and standard periods? [Get a free rental projection from ATLStay](/rental-projection/) — we'll base it on real comparable listings and be honest about the range. Prefer to talk it through? Call us at (678) 938-6413.*
+*Want to know what your Conyers property could realistically earn across the Horse Park calendar and standard periods? [Get a free rental projection from ATLStay](/rental-projection/) — we'll base it on real comparable listings and be honest about the range. Prefer to talk it through? Call us at (770) 999-9740.*

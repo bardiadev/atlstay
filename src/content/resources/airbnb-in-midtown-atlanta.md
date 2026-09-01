@@ -88,4 +88,4 @@ ATLStay's [full management services](/services/) cover the pricing, operations, 
 
 ---
 
-*Curious what your Midtown property could realistically earn across a full year — including event peaks and shoulder periods? [Get a free rental projection from ATLStay](/rental-projection/). We'll build it from real comparable listings at your address, with no obligation. Prefer to talk through the numbers? Reach us at (678) 938-6413.*
+*Curious what your Midtown property could realistically earn across a full year — including event peaks and shoulder periods? [Get a free rental projection from ATLStay](/rental-projection/). We'll build it from real comparable listings at your address, with no obligation. Prefer to talk through the numbers? Reach us at (770) 999-9740.*

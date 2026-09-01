@@ -98,4 +98,4 @@ For owners thinking about [how the full management approach works](/how-it-works
 
 ---
 
-*Curious what your Atlanta property could earn with a remote-work-ready setup? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your specific address and give you an honest picture. Prefer a conversation? Call us at (678) 938-6413.*
+*Curious what your Atlanta property could earn with a remote-work-ready setup? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your specific address and give you an honest picture. Prefer a conversation? Call us at (770) 999-9740.*

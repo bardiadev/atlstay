@@ -86,4 +86,4 @@ Professional management provides the systems, staffing, and accountability struc
 
 ---
 
-*Curious what your Atlanta property could command at a premium positioning? [Request a free rental projection from ATLStay](/rental-projection/) — we'll run your address against real comparable luxury listings and give you a clear, comps-based picture. Prefer to talk it through? Call (678) 938-6413.*
+*Curious what your Atlanta property could command at a premium positioning? [Request a free rental projection from ATLStay](/rental-projection/) — we'll run your address against real comparable luxury listings and give you a clear, comps-based picture. Prefer to talk it through? Call (770) 999-9740.*

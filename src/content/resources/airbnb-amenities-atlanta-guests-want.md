@@ -105,4 +105,4 @@ Professional management takes this off the owner's plate: ATLStay monitors listi
 
 ---
 
-*Want to know how your current setup stacks up and what your property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — no obligation, comps-based, and specific to your address. Or call us at (678) 938-6413.*
+*Want to know how your current setup stacks up and what your property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — no obligation, comps-based, and specific to your address. Or call us at (770) 999-9740.*

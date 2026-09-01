@@ -92,4 +92,4 @@ If you want to understand what your property could realistically earn once it's 
 
 ---
 
-*Getting your listing right from day one is far easier than fixing it later. [Request a free rental projection from ATLStay](/rental-projection/) and see what a well-managed, well-positioned listing could realistically earn for your Atlanta property. Or call us directly at (678) 938-6413.*
+*Getting your listing right from day one is far easier than fixing it later. [Request a free rental projection from ATLStay](/rental-projection/) and see what a well-managed, well-positioned listing could realistically earn for your Atlanta property. Or call us directly at (770) 999-9740.*

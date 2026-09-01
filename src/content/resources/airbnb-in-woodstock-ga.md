@@ -80,4 +80,4 @@ For what ATLStay's management model covers in practice — including how we hand
 
 ---
 
-*Want to know what your Woodstock property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable Woodstock listings and give you a comps-based estimate for your specific address. Prefer to talk first? Call us at (678) 938-6413.*
+*Want to know what your Woodstock property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable Woodstock listings and give you a comps-based estimate for your specific address. Prefer to talk first? Call us at (770) 999-9740.*

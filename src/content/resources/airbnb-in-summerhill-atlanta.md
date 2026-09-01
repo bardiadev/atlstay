@@ -80,4 +80,4 @@ See the [Summerhill property management page](/atlanta/summerhill/) for more on 
 
 ---
 
-*Curious what your Summerhill property could realistically earn across the full event season and beyond? [Get a free rental projection from ATLStay](/rental-projection/) — we'll use real comparable listings in your area to give you an honest, comps-based picture. Prefer to talk first? Call us at (678) 938-6413.*
+*Curious what your Summerhill property could realistically earn across the full event season and beyond? [Get a free rental projection from ATLStay](/rental-projection/) — we'll use real comparable listings in your area to give you an honest, comps-based picture. Prefer to talk first? Call us at (770) 999-9740.*

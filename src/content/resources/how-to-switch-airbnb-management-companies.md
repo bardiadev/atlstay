@@ -95,4 +95,4 @@ A well-executed switch can meaningfully improve your property's performance with
 
 ---
 
-*Thinking about making a change? [Get a free rental projection from ATLStay](/rental-projection/) for your Atlanta property — it's a useful starting point before any conversation about switching. You can also reach us directly at (678) 938-6413.*
+*Thinking about making a change? [Get a free rental projection from ATLStay](/rental-projection/) for your Atlanta property — it's a useful starting point before any conversation about switching. You can also reach us directly at (770) 999-9740.*

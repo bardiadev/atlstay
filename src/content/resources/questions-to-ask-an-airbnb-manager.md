@@ -97,4 +97,4 @@ The answers to those questions will tell you more than a polished sales conversa
 
 For more on how to think through the broader decision of whether hiring a manager makes sense for your situation, see [is Airbnb management worth it?](/resources/is-airbnb-management-worth-it/) — an honest look at when the math and logistics actually favor bringing in a professional.
 
-*Considering ATLStay for your Atlanta property? [Get a free rental projection](/rental-projection/) based on real comparable listings for your address — it's a useful baseline before any conversation about management. Or call us directly at (678) 938-6413.*
+*Considering ATLStay for your Atlanta property? [Get a free rental projection](/rental-projection/) based on real comparable listings for your address — it's a useful baseline before any conversation about management. Or call us directly at (770) 999-9740.*

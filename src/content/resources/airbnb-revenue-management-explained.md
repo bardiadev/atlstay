@@ -84,4 +84,4 @@ If you want a grounded starting point — a realistic look at what your specific
 
 ---
 
-*Want to see what a real revenue management approach could do for your Atlanta property's earnings? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, no obligation. Or reach us by phone at (678) 938-6413.*
+*Want to see what a real revenue management approach could do for your Atlanta property's earnings? [Get a free rental projection from ATLStay](/rental-projection/) — comps-based, no obligation. Or reach us by phone at (770) 999-9740.*

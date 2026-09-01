@@ -86,4 +86,4 @@ ATLStay handles the operational side of family-ready hosting — from properly e
 
 ---
 
-*Want to see what your Atlanta property could realistically earn from family bookings and other high-value guest segments? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run comps on your address and give you an honest picture of the market. Prefer a conversation? Call (678) 938-6413.*
+*Want to see what your Atlanta property could realistically earn from family bookings and other high-value guest segments? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run comps on your address and give you an honest picture of the market. Prefer a conversation? Call (770) 999-9740.*

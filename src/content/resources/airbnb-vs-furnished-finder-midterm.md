@@ -95,4 +95,4 @@ If you're exploring what your property realistically earns across scenarios, the
 
 ---
 
-*Thinking about the mid-term segment for your Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) to see what your address could realistically earn across strategies. Or call us directly at (678) 938-6413.*
+*Thinking about the mid-term segment for your Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) to see what your address could realistically earn across strategies. Or call us directly at (770) 999-9740.*

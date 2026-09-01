@@ -79,4 +79,4 @@ See the [Sweet Auburn property management page](/atlanta/sweet-auburn/) for more
 
 ---
 
-*Want to know what your Sweet Auburn property could realistically earn, including the cultural-calendar peaks that make this neighborhood unusual? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture. Prefer a direct conversation? Call us at (678) 938-6413.*
+*Want to know what your Sweet Auburn property could realistically earn, including the cultural-calendar peaks that make this neighborhood unusual? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based picture. Prefer a direct conversation? Call us at (770) 999-9740.*

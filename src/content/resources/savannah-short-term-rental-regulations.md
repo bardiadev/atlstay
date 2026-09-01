@@ -51,4 +51,4 @@ For the demand side of a Savannah property — guest profile, seasonality, and w
 
 ---
 
-*Want an honest, comps-based picture of what your Savannah property could earn? [Get a free rental projection from ATLStay](/rental-projection/), or call us at (678) 938-6413.*
+*Want an honest, comps-based picture of what your Savannah property could earn? [Get a free rental projection from ATLStay](/rental-projection/), or call us at (770) 999-9740.*

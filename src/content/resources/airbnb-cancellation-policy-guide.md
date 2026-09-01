@@ -87,4 +87,4 @@ How ATLStay approaches this for managed properties: policy and pricing are revie
 
 ---
 
-*Not sure which policy is right for your listing — or what your property could realistically earn with the right setup? [Get a free rental projection from ATLStay](/rental-projection/) and talk through the options. You can also reach us directly at (678) 938-6413.*
+*Not sure which policy is right for your listing — or what your property could realistically earn with the right setup? [Get a free rental projection from ATLStay](/rental-projection/) and talk through the options. You can also reach us directly at (770) 999-9740.*

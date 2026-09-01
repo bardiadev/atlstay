@@ -84,4 +84,4 @@ If you're still in the evaluation phase — comparing neighborhoods, assessing w
 
 ---
 
-*Have questions about operating a short-term rental in Atlanta? [Get a free rental projection from ATLStay](/rental-projection/) and talk through the full picture — regulations, revenue potential, and what professional management looks like for your property. You can also reach us directly at (678) 938-6413.*
+*Have questions about operating a short-term rental in Atlanta? [Get a free rental projection from ATLStay](/rental-projection/) and talk through the full picture — regulations, revenue potential, and what professional management looks like for your property. You can also reach us directly at (770) 999-9740.*

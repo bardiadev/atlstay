@@ -80,4 +80,4 @@ On permits: Westview is within the City of Atlanta, and the standard short-term 
 
 ---
 
-*Wondering what your Westview property could realistically earn, including what AUC event weekends look like versus the base calendar? [Get a free rental projection from ATLStay](/rental-projection/) — we pull actual comparable listings for your specific address and give you an honest, comps-based range. Prefer to start with a conversation? Call us at (678) 938-6413.*
+*Wondering what your Westview property could realistically earn, including what AUC event weekends look like versus the base calendar? [Get a free rental projection from ATLStay](/rental-projection/) — we pull actual comparable listings for your specific address and give you an honest, comps-based range. Prefer to start with a conversation? Call us at (770) 999-9740.*

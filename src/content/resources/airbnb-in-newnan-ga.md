@@ -79,4 +79,4 @@ Newnan rewards operators who lean into what makes the city distinctive. A proper
 
 ---
 
-*Want to know what your Newnan property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your specific address and give you an honest, comps-based picture. Prefer to talk it through directly? Call us at (678) 938-6413.*
+*Want to know what your Newnan property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comparable listings for your specific address and give you an honest, comps-based picture. Prefer to talk it through directly? Call us at (770) 999-9740.*

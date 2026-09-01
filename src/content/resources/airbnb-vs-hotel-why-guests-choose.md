@@ -90,4 +90,4 @@ The [ATLStay listings approach](/services/) addresses all of these — from prof
 
 ---
 
-*Curious what your Atlanta property could realistically earn with the right positioning? [Get a free rental projection from ATLStay](/rental-projection/) — no commitment, just an honest estimate based on real comparable listings. Or call us directly at (678) 938-6413.*
+*Curious what your Atlanta property could realistically earn with the right positioning? [Get a free rental projection from ATLStay](/rental-projection/) — no commitment, just an honest estimate based on real comparable listings. Or call us directly at (770) 999-9740.*

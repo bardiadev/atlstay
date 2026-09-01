@@ -88,4 +88,4 @@ The [pricing](/pricing/) page covers ATLStay's fee structure — there are no hi
 
 ---
 
-*Ready to see what your College Park property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest range, no commitment required. Prefer a conversation? Call us at (678) 938-6413.*
+*Ready to see what your College Park property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and give you an honest range, no commitment required. Prefer a conversation? Call us at (770) 999-9740.*

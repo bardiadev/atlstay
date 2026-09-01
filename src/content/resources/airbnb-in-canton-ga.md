@@ -92,4 +92,4 @@ You can review [our services](/services/), see [how our process works](/how-it-w
 
 ---
 
-*Want to know what a Canton property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we use actual comparable listings, not industry-average estimates. Prefer to talk first? Call (678) 938-6413.*
+*Want to know what a Canton property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we use actual comparable listings, not industry-average estimates. Prefer to talk first? Call (770) 999-9740.*

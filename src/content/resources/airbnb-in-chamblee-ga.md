@@ -85,4 +85,4 @@ If you're ready to understand your specific property's revenue potential, our [p
 
 ---
 
-*Curious what your Chamblee property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll base it on real comparable listings, not optimistic estimates. Rather talk it through? Call us at (678) 938-6413.*
+*Curious what your Chamblee property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll base it on real comparable listings, not optimistic estimates. Rather talk it through? Call us at (770) 999-9740.*

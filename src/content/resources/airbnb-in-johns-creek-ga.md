@@ -84,4 +84,4 @@ Corporate visitors book throughout the year. Sports families cluster around tour
 
 ---
 
-*Wondering what your Johns Creek home could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we'll compare your specific property against real comps in the Johns Creek market with no obligation. Prefer to talk first? Call us at (678) 938-6413.*
+*Wondering what your Johns Creek home could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we'll compare your specific property against real comps in the Johns Creek market with no obligation. Prefer to talk first? Call us at (770) 999-9740.*

@@ -92,4 +92,4 @@ The practical takeaway is simple: hold your calendar open for high-demand window
 
 ---
 
-*Want to see how the full Atlanta event calendar translates to revenue for your specific property? [Get a free rental projection from ATLStay](/rental-projection/) — no guesswork, just real comps data from your market. Or call us at (678) 938-6413.*
+*Want to see how the full Atlanta event calendar translates to revenue for your specific property? [Get a free rental projection from ATLStay](/rental-projection/) — no guesswork, just real comps data from your market. Or call us at (770) 999-9740.*

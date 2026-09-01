@@ -102,4 +102,4 @@ If you're evaluating whether professional management is worth it for your proper
 
 ---
 
-*Ready to get your Atlanta property set up and protected the right way? [Get a free rental projection from ATLStay](/rental-projection/) to see what professional management could mean for your income — and your peace of mind. Or call us directly at (678) 938-6413.*
+*Ready to get your Atlanta property set up and protected the right way? [Get a free rental projection from ATLStay](/rental-projection/) to see what professional management could mean for your income — and your peace of mind. Or call us directly at (770) 999-9740.*

@@ -108,4 +108,4 @@ For hosts managing properties across multiple listings or neighborhoods, having 
 
 ---
 
-*Want to understand what your Atlanta property could realistically earn with professionally managed guest experience and operations? [Get a free rental projection from ATLStay](/rental-projection/) — or call us at (678) 938-6413.*
+*Want to understand what your Atlanta property could realistically earn with professionally managed guest experience and operations? [Get a free rental projection from ATLStay](/rental-projection/) — or call us at (770) 999-9740.*

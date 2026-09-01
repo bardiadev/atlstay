@@ -95,4 +95,4 @@ ATLStay's [full management services](/services/) include everything from listing
 
 ---
 
-*Ready to see what your Old Fourth Ward property could realistically earn — including what a strong event weekend looks like versus a slow January Tuesday? [Get a free rental projection from ATLStay](/rental-projection/). It's built from real comps at your specific address and comes with no obligation. You can also reach us directly at (678) 938-6413.*
+*Ready to see what your Old Fourth Ward property could realistically earn — including what a strong event weekend looks like versus a slow January Tuesday? [Get a free rental projection from ATLStay](/rental-projection/). It's built from real comps at your specific address and comes with no obligation. You can also reach us directly at (770) 999-9740.*

@@ -91,4 +91,4 @@ The [Inman Park management page](/atlanta/inman-park/) walks through how ATLStay
 
 ---
 
-*Curious what your Inman Park home could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull active comps near your address and give you an honest range, no obligation. Prefer to start with a conversation? Call us at (678) 938-6413.*
+*Curious what your Inman Park home could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull active comps near your address and give you an honest range, no obligation. Prefer to start with a conversation? Call us at (770) 999-9740.*

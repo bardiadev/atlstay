@@ -79,4 +79,4 @@ The operators who succeed in Douglasville treat it as a volume-and-occupancy mar
 
 ---
 
-*Want to know what your Douglasville property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based estimate. Prefer to talk it through first? Call us at (678) 938-6413.*
+*Want to know what your Douglasville property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest, comps-based estimate. Prefer to talk it through first? Call us at (770) 999-9740.*

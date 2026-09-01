@@ -103,4 +103,4 @@ Co-hosting and full management both have a place. The right one depends entirely
 
 ---
 
-*Not sure which model fits your property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll give you an honest, comps-based picture of what full management could produce for your specific address. Or call us directly at (678) 938-6413 to talk through the options.*
+*Not sure which model fits your property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll give you an honest, comps-based picture of what full management could produce for your specific address. Or call us directly at (770) 999-9740 to talk through the options.*

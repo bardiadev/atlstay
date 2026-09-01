@@ -85,4 +85,4 @@ If you've had multiple cleaner cancellations, if your cleanliness scores are inc
 
 ---
 
-*Wondering what your Atlanta property could earn with professional cleaning and operations behind it? [Get a free rental projection from ATLStay](/rental-projection/) and we'll show you the real comp picture for your address. Rather talk it through? Call (678) 938-6413.*
+*Wondering what your Atlanta property could earn with professional cleaning and operations behind it? [Get a free rental projection from ATLStay](/rental-projection/) and we'll show you the real comp picture for your address. Rather talk it through? Call (770) 999-9740.*

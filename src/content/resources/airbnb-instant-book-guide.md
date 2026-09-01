@@ -109,4 +109,4 @@ For Atlanta-specific guidance and how ATLStay handles this setting across differ
 
 ---
 
-*Want a professional take on how your Atlanta listing is set up and what it could earn with the right configuration? [Get a free rental projection from ATLStay](/rental-projection/) and we'll give you an honest, comps-based picture. Or call us at (678) 938-6413 to talk through it.*
+*Want a professional take on how your Atlanta listing is set up and what it could earn with the right configuration? [Get a free rental projection from ATLStay](/rental-projection/) and we'll give you an honest, comps-based picture. Or call us at (770) 999-9740 to talk through it.*

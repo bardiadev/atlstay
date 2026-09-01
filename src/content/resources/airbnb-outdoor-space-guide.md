@@ -94,4 +94,4 @@ See [our services](/services/) for how ATLStay manages everything from setup gui
 
 ---
 
-*Curious what your outdoor space is worth to your bottom line? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you comps and realistic earning potential for your specific address. Or call us directly at (678) 938-6413.*
+*Curious what your outdoor space is worth to your bottom line? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you comps and realistic earning potential for your specific address. Or call us directly at (770) 999-9740.*

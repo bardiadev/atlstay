@@ -95,4 +95,4 @@ Getting the fundamentals right before expanding to more channels generally produ
 
 ---
 
-*Want to know what your Atlanta property could earn with professional management handling distribution, pricing, and operations? [Get a free rental projection from ATLStay](/rental-projection/) — or call us at (678) 938-6413.*
+*Want to know what your Atlanta property could earn with professional management handling distribution, pricing, and operations? [Get a free rental projection from ATLStay](/rental-projection/) — or call us at (770) 999-9740.*

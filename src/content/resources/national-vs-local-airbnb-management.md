@@ -98,4 +98,4 @@ You can also see the [areas ATLStay serves in Atlanta](/areas-we-serve/) to unde
 
 ---
 
-*Curious what your Atlanta property could earn under local, neighborhood-specific management? [Get a free rental projection from ATLStay](/rental-projection/) — we'll model it against real comparable listings with no obligation. Questions? Call us at (678) 938-6413.*
+*Curious what your Atlanta property could earn under local, neighborhood-specific management? [Get a free rental projection from ATLStay](/rental-projection/) — we'll model it against real comparable listings with no obligation. Questions? Call us at (770) 999-9740.*

@@ -80,4 +80,4 @@ Exploring the [areas we serve](/areas-we-serve/) gives you a broader view of how
 
 ---
 
-*Want to know what your Duluth property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run comparable listings for your specific address and give you a grounded estimate. Prefer to talk it through? Call us at (678) 938-6413.*
+*Want to know what your Duluth property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run comparable listings for your specific address and give you a grounded estimate. Prefer to talk it through? Call us at (770) 999-9740.*

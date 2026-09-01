@@ -80,4 +80,4 @@ The [Druid Hills property management page](/atlanta/druid-hills/) goes deeper on
 
 ---
 
-*Want to know what your Druid Hills property could realistically earn from the Emory, CDC, and Fernbank-driven guest mix? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull actual comparable listings in and around Druid Hills to give you an honest, grounded picture. Prefer a direct conversation? Call us at (678) 938-6413.*
+*Want to know what your Druid Hills property could realistically earn from the Emory, CDC, and Fernbank-driven guest mix? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull actual comparable listings in and around Druid Hills to give you an honest, grounded picture. Prefer a direct conversation? Call us at (770) 999-9740.*

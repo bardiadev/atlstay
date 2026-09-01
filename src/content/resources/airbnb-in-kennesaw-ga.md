@@ -82,4 +82,4 @@ See [how ATLStay works](/how-it-works/) for a full picture of what our managemen
 
 ---
 
-*Curious what your Kennesaw property could realistically earn across a full year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run real comps for your address with no obligation. Prefer a direct conversation? Call us at (678) 938-6413.*
+*Curious what your Kennesaw property could realistically earn across a full year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run real comps for your address with no obligation. Prefer a direct conversation? Call us at (770) 999-9740.*

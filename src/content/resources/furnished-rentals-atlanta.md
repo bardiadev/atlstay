@@ -126,4 +126,4 @@ Where a furnished property sits relative to a hospital, a studio or a campus dec
 
 ---
 
-*Curious what your furnished Atlanta property could realistically earn in the monthly market? [Get a free rental projection from ATLStay](/rental-projection/) and we'll build you an honest, comps-based range for your specific address. Or call us directly at (678) 938-6413.*
+*Curious what your furnished Atlanta property could realistically earn in the monthly market? [Get a free rental projection from ATLStay](/rental-projection/) and we'll build you an honest, comps-based range for your specific address. Or call us directly at (770) 999-9740.*

@@ -89,4 +89,4 @@ If you're thinking about what professional management looks like for a property 
 
 ---
 
-*Want to know what your property could realistically earn on Peachtree Race weekend — and across the full year? [Get a free rental projection from ATLStay](/rental-projection/) and we'll show you real comps for your specific address. Or call us at (678) 938-6413.*
+*Want to know what your property could realistically earn on Peachtree Race weekend — and across the full year? [Get a free rental projection from ATLStay](/rental-projection/) and we'll show you real comps for your specific address. Or call us at (770) 999-9740.*

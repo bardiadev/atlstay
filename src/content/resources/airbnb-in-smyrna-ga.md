@@ -88,4 +88,4 @@ For owners who want to benefit from the demand without managing operations, full
 
 ---
 
-*Want to know what your Smyrna property could realistically earn across a full year — including event nights? [Get a free rental projection from ATLStay](/rental-projection/) with comps specific to your address and no obligation. Or call us directly at (678) 938-6413.*
+*Want to know what your Smyrna property could realistically earn across a full year — including event nights? [Get a free rental projection from ATLStay](/rental-projection/) with comps specific to your address and no obligation. Or call us directly at (770) 999-9740.*

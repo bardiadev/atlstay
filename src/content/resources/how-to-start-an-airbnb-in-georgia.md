@@ -99,4 +99,4 @@ If you're still evaluating whether the investment makes sense for a specific pro
 
 ---
 
-*Wondering what your Georgia property could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run real comparable listings for your address and give you an honest picture before you invest. Prefer to talk it through? Call us at (678) 938-6413.*
+*Wondering what your Georgia property could realistically earn as a short-term rental? [Get a free rental projection from ATLStay](/rental-projection/) — we'll run real comparable listings for your address and give you an honest picture before you invest. Prefer to talk it through? Call us at (770) 999-9740.*

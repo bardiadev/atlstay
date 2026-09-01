@@ -95,4 +95,4 @@ ATLStay manages the full launch process for new Atlanta properties, including se
 
 ---
 
-*Ready to launch your Atlanta Airbnb or find out what it could earn? [Get a free rental projection from ATLStay](/rental-projection/) — no obligation, no averages, just real comps for your address. You can also reach us directly at (678) 938-6413.*
+*Ready to launch your Atlanta Airbnb or find out what it could earn? [Get a free rental projection from ATLStay](/rental-projection/) — no obligation, no averages, just real comps for your address. You can also reach us directly at (770) 999-9740.*

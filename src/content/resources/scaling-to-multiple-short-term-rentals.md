@@ -89,4 +89,4 @@ For a realistic look at what your current or prospective Atlanta properties coul
 
 ---
 
-*Thinking about growing your Atlanta short-term rental portfolio? [Get a free rental projection from ATLStay](/rental-projection/) for any property you're evaluating — we pull real comparable data so you can run honest numbers before you commit. Prefer to talk through your portfolio strategy? Call us at (678) 938-6413.*
+*Thinking about growing your Atlanta short-term rental portfolio? [Get a free rental projection from ATLStay](/rental-projection/) for any property you're evaluating — we pull real comparable data so you can run honest numbers before you commit. Prefer to talk through your portfolio strategy? Call us at (770) 999-9740.*

@@ -90,4 +90,4 @@ To see what a properly structured pricing approach would mean for your specific 
 
 ---
 
-*Curious what your Atlanta property could earn with day-of-week pricing working in your favor? [Request a free rental projection](/rental-projection/) — no commitment, just an honest look at your numbers. You can also reach ATLStay directly at (678) 938-6413.*
+*Curious what your Atlanta property could earn with day-of-week pricing working in your favor? [Request a free rental projection](/rental-projection/) — no commitment, just an honest look at your numbers. You can also reach ATLStay directly at (770) 999-9740.*

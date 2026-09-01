@@ -98,4 +98,4 @@ For a full picture of what goes into setting up a competitive Atlanta short-term
 
 ---
 
-*Curious what your Atlanta property could earn with the right setup and professional management? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your specific address and give you an honest, data-grounded estimate. Prefer to talk through the tech or setup questions directly? Call us at (678) 938-6413.*
+*Curious what your Atlanta property could earn with the right setup and professional management? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your specific address and give you an honest, data-grounded estimate. Prefer to talk through the tech or setup questions directly? Call us at (770) 999-9740.*

@@ -101,4 +101,4 @@ You can explore [our services](/services/), review [how ATLStay works](/how-it-w
 
 ---
 
-*Want to see what your Columbus property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we use actual comps from the Columbus market, including the Fort Benning demand calendar. Or call us directly at (678) 938-6413.*
+*Want to see what your Columbus property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we use actual comps from the Columbus market, including the Fort Benning demand calendar. Or call us directly at (770) 999-9740.*

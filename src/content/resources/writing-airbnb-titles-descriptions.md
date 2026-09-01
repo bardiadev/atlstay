@@ -109,4 +109,4 @@ The [how it works](/how-it-works/) section details how ATLStay handles the full 
 
 ---
 
-*Want to see what a professionally optimized listing could earn for your Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps for your specific address and give you a realistic picture. Or reach us at (678) 938-6413 to talk through your property directly.*
+*Want to see what a professionally optimized listing could earn for your Atlanta property? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull comps for your specific address and give you a realistic picture. Or reach us at (770) 999-9740 to talk through your property directly.*

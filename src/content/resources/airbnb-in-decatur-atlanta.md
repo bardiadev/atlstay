@@ -81,4 +81,4 @@ Managing a Decatur rental well means being responsive to the university-visitor 
 
 ---
 
-*Want to know what your Decatur property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your specific address and give you an honest, comps-based picture with no obligation. You can also check out our [guide to the best Atlanta neighborhoods for Airbnb](/resources/best-atlanta-neighborhoods-for-airbnb/) to see how Decatur compares. Prefer a conversation? Call us at (678) 938-6413.*
+*Want to know what your Decatur property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your specific address and give you an honest, comps-based picture with no obligation. You can also check out our [guide to the best Atlanta neighborhoods for Airbnb](/resources/best-atlanta-neighborhoods-for-airbnb/) to see how Decatur compares. Prefer a conversation? Call us at (770) 999-9740.*

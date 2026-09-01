@@ -90,4 +90,4 @@ If you're working through the full operational picture, the [resources section](
 
 ---
 
-*Curious what your Atlanta property could earn with professional management and a consistent guest communication system in place? [Get a free rental projection from ATLStay](/rental-projection/). Or talk it through directly at (678) 938-6413.*
+*Curious what your Atlanta property could earn with professional management and a consistent guest communication system in place? [Get a free rental projection from ATLStay](/rental-projection/). Or talk it through directly at (770) 999-9740.*

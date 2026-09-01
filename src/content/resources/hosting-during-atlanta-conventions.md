@@ -104,4 +104,4 @@ For hosts who want to understand how their property fits into the broader Atlant
 
 ---
 
-*Want a comps-based view of what your Atlanta property could earn across the convention calendar? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and property type. Prefer to talk through your situation? Call us at (678) 938-6413.*
+*Want a comps-based view of what your Atlanta property could earn across the convention calendar? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable data for your address and property type. Prefer to talk through your situation? Call us at (770) 999-9740.*

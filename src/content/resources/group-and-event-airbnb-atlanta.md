@@ -88,4 +88,4 @@ For a broader view of how Atlanta's different neighborhoods handle group and eve
 
 ---
 
-*Curious what a group-capable Atlanta property could earn with the right setup and management? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you realistic numbers based on actual comparable listings in your area. Or call us directly at (678) 938-6413.*
+*Curious what a group-capable Atlanta property could earn with the right setup and management? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you realistic numbers based on actual comparable listings in your area. Or call us directly at (770) 999-9740.*

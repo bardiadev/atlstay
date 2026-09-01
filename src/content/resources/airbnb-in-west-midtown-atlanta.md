@@ -83,4 +83,4 @@ The guest who books West Midtown expects quick, professional communication, a se
 
 ---
 
-*Curious what your West Midtown property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you a comps-based picture with no obligation or pressure. Have questions first? Call us at (678) 938-6413.*
+*Curious what your West Midtown property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you a comps-based picture with no obligation or pressure. Have questions first? Call us at (770) 999-9740.*

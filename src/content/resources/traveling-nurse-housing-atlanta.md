@@ -87,4 +87,4 @@ Which hospital a property actually sits near changes the arithmetic more than mo
 
 ---
 
-*Want to know how your Atlanta property fits into the mid-term and travel healthcare market? [Get a free rental projection from ATLStay](/rental-projection/) — we'll look at your address and give you a realistic estimate based on real comparable listings. Prefer to talk it through? Call us at (678) 938-6413.*
+*Want to know how your Atlanta property fits into the mid-term and travel healthcare market? [Get a free rental projection from ATLStay](/rental-projection/) — we'll look at your address and give you a realistic estimate based on real comparable listings. Prefer to talk it through? Call us at (770) 999-9740.*

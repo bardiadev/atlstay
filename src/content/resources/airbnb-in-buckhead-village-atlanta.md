@@ -76,4 +76,4 @@ On regulation: Buckhead Village falls under Atlanta's short-term rental licensin
 
 ---
 
-*Want to know what your Buckhead Village property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your property type and location and give you an honest picture before you make any decisions. Prefer to talk it through? Call us at (678) 938-6413.*
+*Want to know what your Buckhead Village property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comps for your property type and location and give you an honest picture before you make any decisions. Prefer to talk it through? Call us at (770) 999-9740.*

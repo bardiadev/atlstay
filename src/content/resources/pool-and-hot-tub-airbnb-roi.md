@@ -94,4 +94,4 @@ For owners evaluating whether a pool or hot tub makes sense for their specific A
 
 ---
 
-*Want to know what your Atlanta property — with or without a pool — could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) based on real comparable listings for your address. Rather talk it through? Reach us at (678) 938-6413.*
+*Want to know what your Atlanta property — with or without a pool — could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) based on real comparable listings for your address. Rather talk it through? Reach us at (770) 999-9740.*

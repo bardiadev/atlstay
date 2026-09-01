@@ -145,4 +145,4 @@ For the broader communication principles underlying this sequence — tone, resp
 
 ---
 
-*Want your property's guest communication handled at this standard on every booking? [Get a free rental projection from ATLStay](/rental-projection/) and see what professional management could add to your Atlanta property's performance. Or call us at (678) 938-6413.*
+*Want your property's guest communication handled at this standard on every booking? [Get a free rental projection from ATLStay](/rental-projection/) and see what professional management could add to your Atlanta property's performance. Or call us at (770) 999-9740.*

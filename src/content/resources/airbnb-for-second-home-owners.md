@@ -98,4 +98,4 @@ A well-timed launch builds your review base faster, which compounds into better 
 
 ---
 
-*Thinking about putting your second home to work? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you what comparable properties near yours are actually earning, with no obligation. Or call us directly at (678) 938-6413 to talk through your specific situation.*
+*Thinking about putting your second home to work? [Get a free rental projection from ATLStay](/rental-projection/) — we'll show you what comparable properties near yours are actually earning, with no obligation. Or call us directly at (770) 999-9740 to talk through your specific situation.*

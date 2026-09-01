@@ -102,4 +102,4 @@ For prospective owners still evaluating whether Atlanta STR income is worth the 
 
 ---
 
-*Getting ready to launch your Atlanta Airbnb and want to know what it could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address and give you an honest estimate, no strings attached. Prefer to talk through the setup process? Call us at (678) 938-6413.*
+*Getting ready to launch your Atlanta Airbnb and want to know what it could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/) — we pull real comparable listings for your address and give you an honest estimate, no strings attached. Prefer to talk through the setup process? Call us at (770) 999-9740.*

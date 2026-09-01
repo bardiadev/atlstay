@@ -121,4 +121,4 @@ A thirty-day-plus let is nearly always sold on what it is near. Rather than desc
 
 ---
 
-*Not sure which rental model fits your property best? [Get a free rental projection from ATLStay](/rental-projection/) — we'll model your realistic range across strategies and give you an honest comparison for your specific address. Or call us directly at (678) 938-6413.*
+*Not sure which rental model fits your property best? [Get a free rental projection from ATLStay](/rental-projection/) — we'll model your realistic range across strategies and give you an honest comparison for your specific address. Or call us directly at (770) 999-9740.*

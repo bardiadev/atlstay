@@ -62,4 +62,4 @@ For the demand side of a Helen property — Oktoberfest and seasonal demand, the
 
 ---
 
-*Want to know what your Helen property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/), or call us at (678) 938-6413.*
+*Want to know what your Helen property could realistically earn? [Get a free rental projection from ATLStay](/rental-projection/), or call us at (770) 999-9740.*

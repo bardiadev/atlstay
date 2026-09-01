@@ -92,4 +92,4 @@ Athens is a focused, high-ceiling market for the right property in the right loc
 
 ---
 
-*Want to know what your Athens property could realistically earn across game days, graduation, and the full calendar year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest picture. Prefer to talk first? Call us at (678) 938-6413.*
+*Want to know what your Athens property could realistically earn across game days, graduation, and the full calendar year? [Get a free rental projection from ATLStay](/rental-projection/) — we'll pull real comparable listings for your address and give you an honest picture. Prefer to talk first? Call us at (770) 999-9740.*
