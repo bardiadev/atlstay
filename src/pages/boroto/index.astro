@@ -16,6 +16,10 @@ import { site } from '../../config/site';
 import { counties } from '../../data/counties';
 import { propertyTypes } from '../../data/propertyTypes';
 import { landmarks } from '../../data/landmarks';
+import { serviceLines } from '../../data/serviceLines';
+import { publishedAnchors } from '../../data/anchors';
+import { comparisons } from '../../data/comparisons';
+import searchSnapshot from '../../data/searchSnapshot.json';
 import { pageTitle } from '../../lib/seo';
 
 const wc = (s: unknown) => (s ? String(s).trim().split(/\s+/).filter(Boolean).length : 0);
@@ -80,6 +84,32 @@ const resourceRecs = resourcesPub.map((r) =>
   rec({ label: r.data.title, url: `/resources/${r.id}/`, title: r.data.title, description: r.data.description, bodyWords: wc((r as any).body), faqCount: (r.data.faqs || []).length, thinAt: 350 }),
 );
 
+/* The service axis and the furnished-housing anchors were missing entirely.
+   Between them they are 501 of the site's pages, so every roll-up on this
+   dashboard was understating the site by more than half. */
+const serviceHubRecs = serviceLines.map((l) =>
+  rec({ label: l.name, url: `/services/${l.slug}/`, title: l.seoTitle, description: l.seoDescription,
+        bodyWords: wc(l.intro) + l.sections.reduce((n, sec) => n + sec.body.reduce((m, b) => m + wc(b), 0), 0),
+        faqCount: (l.faqs || []).length, thinAt: 400 }),
+);
+const svcCityRecs = serviceLines.flatMap((l) =>
+  l.marketCities
+    .filter((slug) => cities.some((c) => c.data.slug === slug))
+    .map((slug) => {
+      const city = cities.find((c) => c.data.slug === slug)!;
+      return rec({ label: `${l.name} — ${city.data.name}`, url: `/services/${l.slug}/${slug}/`,
+                   bodyWords: wc(l.intro), faqCount: (l.faqs || []).length });
+    }),
+);
+const anchorRecs = publishedAnchors.map((a) =>
+  rec({ label: a.shortName ?? a.name, url: `/furnished-housing/${a.slug}/`,
+        bodyWords: a.demand.reduce((n, d) => n + wc(d), 0), faqCount: a.faqs.length, thinAt: 200 }),
+);
+const compareRecs = comparisons.map((c) =>
+  rec({ label: `vs ${c.competitor}`, url: `/compare/${c.slug}/`,
+        bodyWords: wc(c.summary) + c.ourEdge.reduce((n, e) => n + wc(e), 0), faqCount: 0, thinAt: 120 }),
+);
+
 const staticPages = [
   'Home /', 'Services /services/', 'Pricing /pricing/', 'How it works /how-it-works/',
   'Dynamic pricing /dynamic-pricing/', 'Rental projection /rental-projection/',
@@ -97,11 +127,16 @@ const sections = [
   { key: 'type', title: 'Property-type pages', recs: typeRecs, note: 'Title/desc generated in template' },
   { key: 'landmark', title: '"Near landmark" pages', recs: landmarkRecs, note: 'Title/desc generated in template' },
   { key: 'resource', title: 'Resource / blog articles', recs: resourceRecs, note: 'Flag: article body under 350 words' },
+  { key: 'svchub', title: 'Service hub pages', recs: serviceHubRecs, note: 'One per service line' },
+  { key: 'svccity', title: 'Service × city pages', recs: svcCityRecs, note: 'Local notes render per city; see serviceNotes/' },
+  { key: 'anchor', title: 'Furnished-housing anchors', recs: anchorRecs, note: 'Hospitals, studios and campuses' },
+  { key: 'compare', title: 'Competitor comparisons', recs: compareRecs, note: 'Every competitor figure carries a source' },
 ];
 
 // ── Roll-ups ────────────────────────────────────────────────────────────────
 const allRecs = sections.flatMap((s) => s.recs);
-const locationCount = cityRecs.length + nbRecs.length + countyRecs.length + typeRecs.length + landmarkRecs.length;
+const locationCount = cityRecs.length + nbRecs.length + countyRecs.length + typeRecs.length + landmarkRecs.length + anchorRecs.length;
+const serviceCount = serviceHubRecs.length + svcCityRecs.length;
 const totalPages = allRecs.length + staticPages.length;
 const withFaqs = allRecs.filter((r) => r.faqCount > 0).length;
 const flagged = allRecs.filter((r) => r.flags.length > 0);
@@ -122,11 +157,13 @@ const summary = sections.map((s) => {
 });
 
 const infra = [
-  ['XML sitemap', '/sitemap-index.xml — auto-generated, priority-weighted'],
-  ['robots.txt', 'Allows all + AI crawlers; /dashboard/ disallowed'],
+  ['XML sitemap', `/sitemap-index.xml — every URL carries a real <lastmod> from the commit that last changed it`],
+  ['robots.txt', 'Allows all + named AI crawlers; /boroto/ disallowed'],
   ['Canonical tags', 'Self-referencing on every page'],
   ['OpenGraph + Twitter', 'Full social-card set in BaseLayout'],
-  ['JSON-LD schema', 'Organization, WebSite, LocalBusiness, Service, Article, FAQ, Breadcrumb, ItemList'],
+  ['JSON-LD schema', 'Organization, WebSite, ProfessionalService, Service, Article, FAQPage, Breadcrumb, ItemList'],
+  ['Machine-readable pricing', 'Offer + UnitPriceSpecification (10–15% of booking revenue) on every Service, so assistants can quote the fee'],
+  ['Entity signals', 'OfferCatalog of all 15 service lines, 16 knowsAbout topics, 23 areaServed entries'],
   ['llms.txt + llms-full.txt', 'AI answer-engine knowledge base'],
   ['www → apex 301', 'Cloudflare middleware'],
   ['Performance', 'WebP images, LCP preload, inlined CSS, font-display swap'],
@@ -192,15 +229,96 @@ const card = 'rounded-2xl border border-line bg-white p-5 shadow-sm';
         <p class="text-xs text-stone">Generated {buildDate} · refreshes on every deploy</p>
       </div>
       <p class="mb-6 max-w-3xl text-sm text-stone">
-        Live inventory and on-page health of every page on atlstay.com, built straight from the site's own
-        content. Rankings/impressions aren't shown yet — connect Google Search Console (below) to add live search data.
+        Inventory and on-page health of every page on atlstay.com, built straight from the site's own content
+        at deploy time. Lead figures below are live from the database on every load; search figures are a
+        dated Search Console snapshot.
       </p>
+
+      <!-- LIVE lead counters. Filled client-side from the same endpoint the Lead
+           Desk uses, so these are current on every page load rather than frozen
+           at deploy. They read "—" until the fetch returns, and stay "—" if it
+           fails: a dashboard that invents a number is worse than one that admits
+           it does not know. -->
+      <div class="mb-3 flex items-baseline justify-between">
+        <h2 class="font-display text-xl text-forest">Leads — live</h2>
+        <a href="/boroto/leads/" class="text-sm text-forest underline decoration-brass/60 underline-offset-4 hover:text-brass-600">Open the Lead Desk &rarr;</a>
+      </div>
+      <div id="lead-cards" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        {[
+          ['Total leads', 'total'], ['Last 7 days', 'd7'], ['Last 30 days', 'd30'],
+          ['New / unworked', 'new'], ['Proposals sent', 'proposal'], ['Won', 'won'],
+        ].map(([label, key]) => (
+          <div class={card}>
+            <div class="font-display text-3xl font-medium text-forest" data-lead={key}>—</div>
+            <div class="mt-1 text-xs font-medium uppercase tracking-wide text-stone">{label}</div>
+          </div>
+        ))}
+      </div>
+      <p id="lead-note" class="mt-2 text-xs text-stone">Loading live lead data…</p>
+
+      <!-- Search Console snapshot. Deliberately dated rather than presented as
+           live: this is a committed capture, and a number without a date on a
+           dashboard is how stale figures get acted on months later. -->
+      <div class="mt-8 mb-3 flex items-baseline justify-between">
+        <h2 class="font-display text-xl text-forest">Google Search — snapshot</h2>
+        <span class="text-xs text-stone">{searchSnapshot.capturedFor.start} → {searchSnapshot.capturedFor.end} · 28 days</span>
+      </div>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {[
+          ['Impressions', searchSnapshot.impressions.toLocaleString()],
+          ['Clicks', String(searchSnapshot.clicks)],
+          ['Queries ranking', searchSnapshot.queries.toLocaleString()],
+          ['Avg position', String(searchSnapshot.position)],
+          ['CTR', `${searchSnapshot.ctr}%`],
+        ].map(([label, n]) => (
+          <div class={card}>
+            <div class="font-display text-3xl font-medium text-forest">{n}</div>
+            <div class="mt-1 text-xs font-medium uppercase tracking-wide text-stone">{label}</div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-3 grid gap-6 lg:grid-cols-2">
+        <div class={card}>
+          <h3 class="font-display text-lg text-forest">Impressions by page type</h3>
+          <table class="mt-3 w-full text-left text-sm">
+            <tbody>
+              {Object.entries(searchSnapshot.impressionsByType).map(([k, v]) => (
+                <tr class="border-b border-line/60">
+                  <td class="py-1.5 pr-3 font-medium text-ink">{k}</td>
+                  <td class="py-1.5 text-right tabular-nums text-stone">{Number(v).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class={card}>
+          <h3 class="font-display text-lg text-forest">Top queries by impressions</h3>
+          <table class="mt-3 w-full text-left text-sm">
+            <thead class="border-b border-line text-xs uppercase tracking-wide text-stone">
+              <tr><th class="py-1.5 pr-3 font-medium">Query</th><th class="py-1.5 pr-3 text-right font-medium">Impr</th><th class="py-1.5 text-right font-medium">Pos</th></tr>
+            </thead>
+            <tbody>
+              {searchSnapshot.topQueries.slice(0, 10).map((q) => (
+                <tr class="border-b border-line/60">
+                  <td class="py-1.5 pr-3 text-ink">{q.q}</td>
+                  <td class="py-1.5 pr-3 text-right tabular-nums text-stone">{q.impressions}</td>
+                  <td class={`py-1.5 text-right tabular-nums ${q.position <= 20 ? 'text-green-700' : 'text-stone'}`}>{q.position}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p class="mt-3 text-xs text-stone">Green = position 20 or better, the point at which a query starts earning clicks.</p>
+        </div>
+      </div>
+
+      <h2 class="mt-8 mb-3 font-display text-xl text-forest">Pages built</h2>
 
       <!-- Top-line metric cards -->
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
         {[
           ['Total pages', totalPages],
           ['Location pages', locationCount],
+          ['Service pages', serviceCount],
           ['Articles', resourceRecs.length],
           ['Pages with FAQs', withFaqs],
           ['Flagged', flagged.length],
@@ -384,10 +502,54 @@ const card = 'rounded-2xl border border-line bg-white p-5 shadow-sm';
           </a>
         ))}
       </div>
-      <p class="mt-4 max-w-3xl text-xs text-stone">
-        Want live keyword rankings, impressions, and click data inside this dashboard? It requires connecting this
-        property in Google Search Console. Once that's verified, a live data panel can be wired in here.
-      </p>
     </Container>
   </div>
+
+  <!-- Live lead counters. Same endpoint the Lead Desk uses, so the numbers are
+       current on load rather than frozen at deploy. Every failure path leaves
+       the cards showing "—": a dashboard that guesses is worse than one that
+       says it does not know. -->
+  <script is:inline>
+    (function () {
+      var set = function (k, v) {
+        var el = document.querySelector('[data-lead="' + k + '"]');
+        if (el) el.textContent = String(v);
+      };
+      var note = document.getElementById('lead-note');
+      fetch('/boroto/api?action=list', { headers: { Accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (data) {
+          var rows = Array.isArray(data) ? data : (data.leads || data.rows || []);
+          if (!Array.isArray(rows)) throw new Error('unexpected shape');
+          var now = Date.now();
+          var since = function (days) {
+            return rows.filter(function (r) {
+              var t = Date.parse(r.received_at || r.receivedAt || '');
+              return !isNaN(t) && now - t <= days * 86400000;
+            }).length;
+          };
+          var byStatus = function (st) {
+            return rows.filter(function (r) { return (r.status || 'new') === st; }).length;
+          };
+          set('total', rows.length);
+          set('d7', since(7));
+          set('d30', since(30));
+          set('new', byStatus('new'));
+          set('proposal', byStatus('proposal_sent'));
+          set('won', byStatus('won'));
+          if (note) {
+            note.textContent =
+              'Live from the leads database · ' + rows.length + ' records · read at ' +
+              new Date().toLocaleString();
+          }
+        })
+        .catch(function (err) {
+          if (note) {
+            note.textContent =
+              'Could not load live lead data (' + (err && err.message ? err.message : 'unknown') +
+              '). The Lead Desk itself is unaffected — open it to see the records.';
+          }
+        });
+    })();
+  </script>
 </BaseLayout>

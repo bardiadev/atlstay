@@ -1,0 +1,97 @@
+{
+  "capturedFor": {
+    "start": "2026-08-04",
+    "end": "2026-08-29"
+  },
+  "clicks": 25,
+  "impressions": 5106,
+  "ctr": 0.49,
+  "position": 55.4,
+  "queries": 1000,
+  "impressionsByType": {
+    "city": 1355,
+    "services": 1070,
+    "resources": 368,
+    "neighborhood": 205,
+    "manage": 6,
+    "near": 4,
+    "homepage": 2
+  },
+  "topQueries": [
+    {
+      "q": "johns creek property management",
+      "impressions": 93,
+      "position": 74
+    },
+    {
+      "q": "dunwoody property management",
+      "impressions": 81,
+      "position": 70
+    },
+    {
+      "q": "airbnb search rank",
+      "impressions": 51,
+      "position": 79
+    },
+    {
+      "q": "kennesaw property management",
+      "impressions": 43,
+      "position": 74
+    },
+    {
+      "q": "buckhead property management",
+      "impressions": 40,
+      "position": 58
+    },
+    {
+      "q": "airbnb ranking service",
+      "impressions": 34,
+      "position": 73
+    },
+    {
+      "q": "short term rentals brookhaven",
+      "impressions": 32,
+      "position": 28
+    },
+    {
+      "q": "short term rentals smyrna",
+      "impressions": 31,
+      "position": 45
+    },
+    {
+      "q": "dunwoody property management",
+      "impressions": 29,
+      "position": 86
+    },
+    {
+      "q": "lawrenceville property management",
+      "impressions": 27,
+      "position": 72
+    },
+    {
+      "q": "how much does airbnb management cost",
+      "impressions": 26,
+      "position": 75
+    },
+    {
+      "q": "johns creek property management",
+      "impressions": 26,
+      "position": 89
+    },
+    {
+      "q": "short term rentals kennesaw",
+      "impressions": 26,
+      "position": 45
+    },
+    {
+      "q": "short term rentals dunwoody",
+      "impressions": 25,
+      "position": 44
+    },
+    {
+      "q": "buford property management",
+      "impressions": 24,
+      "position": 52
+    }
+  ]
+}
