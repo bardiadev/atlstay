@@ -55,6 +55,10 @@ interface FormData {
   firstName: string;
   email: string;
   phone: string;
+  // Optional detail, asked only on the final step. Never validated — see
+  // docs/superpowers/specs/2026-09-01-lead-form-optional-fields-design.md
+  message: string;
+  timeline: string;
   company: string; // honeypot
 }
 
@@ -65,7 +69,7 @@ const initial: FormData = {
   assetType: '', unitCount: '', occupancy: '',
   currentlyManaged: '',
   doors: '', associationType: '', contractEnd: '', changeReason: '',
-  firstName: '', email: '', phone: '', company: '',
+  firstName: '', email: '', phone: '', message: '', timeline: '', company: '',
 };
 
 const TOTAL = 4;
@@ -84,6 +88,16 @@ const priorities: { value: Priority; label: string; desc: string }[] = [
 const assetTypes = ['Multi-family', 'Office', 'Retail', 'Flex or industrial', 'Mixed-use', 'Medical office', 'Other'];
 const occupancyOpts = ['Fully leased', 'Partly leased', 'Vacant', 'Not sure'];
 const associationTypes = ['HOA', 'Condominium', 'Townhome', 'Mixed'];
+/* Step 4's optional block. Deliberately short lists: these are asked AFTER the
+   visitor has already committed, so the job is one tap, not a survey. */
+const timelines = ['As soon as possible', 'In 1–3 months', 'In 3–6 months', 'Just exploring'];
+const switchReasons = [
+  'Earnings below expectations',
+  'Slow or poor communication',
+  'Cleaning & maintenance issues',
+  'Just comparing options',
+];
+
 const changeReasons = [
   'Financials & reporting',
   'Vendor and maintenance response',
@@ -189,6 +203,26 @@ const COPY: Record<ProjectionFormVariant, VariantCopy> = {
   },
 };
 
+/**
+ * Send an event to GA4, if GA4 is there.
+ *
+ * Until now the site tracked phone clicks and nothing else, so analytics had no
+ * idea a form was ever submitted — which meant no way to tell which of ~939
+ * pages produce leads, or where people abandon the form. Two events fix both.
+ *
+ * Wrapped so that analytics can never interfere with a lead. If gtag is absent,
+ * blocked by an extension, or throws, the form carries on exactly as before.
+ * A submission must never fail because a tracker did.
+ */
+function track(event: string, params: Record<string, string | number>): void {
+  try {
+    const g = (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag;
+    if (typeof g === 'function') g('event', event, params);
+  } catch {
+    /* analytics is never allowed to break the form */
+  }
+}
+
 const inputCls =
   'w-full rounded-lg border border-line bg-white px-4 py-3 text-ink placeholder:text-stone/60 focus:border-brass focus:outline-none focus:ring-2 focus:ring-brass/30';
 
@@ -265,7 +299,17 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
     return true;
   };
 
-  const next = () => validate() && setStep((s) => Math.min(TOTAL, s + 1));
+  const next = () => {
+    if (!validate()) return false;
+    setStep((s) => {
+      const to = Math.min(TOTAL, s + 1);
+      // Fired on the step being ENTERED, so the funnel reads 1 -> 2 -> 3 -> 4
+      // and the gap between two numbers is where people leave.
+      track('form_step', { form_variant: kind, step: to, page_path: location.pathname });
+      return to;
+    });
+    return true;
+  };
   const back = () => {
     setError('');
     setStep((s) => Math.max(1, s - 1));
@@ -273,11 +317,30 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
 
   const yesNo = (v: Listed) => (v === 'yes' ? 'Yes' : v === 'no' ? 'No' : '');
 
+  /* Ask what is going wrong only where there is an incumbent to be unhappy
+     with. Every input here was answered on step 2 or 3, so this resolves before
+     step 4 paints and the step never changes shape while it is on screen.
+     Suppressed on HOA, which already asks the same question on step 3 under the
+     same field name. */
+  const hasIncumbent =
+    data.currentlyListed === 'yes' || data.tenantInPlace === 'yes' || data.currentlyManaged === 'yes';
+  const askSwitchReason = kind !== 'hoa' && hasIncumbent;
+
   /**
    * Only the fields the visitor was actually shown are submitted. Keys are
    * snake_case because src/lib/leads.ts humanizes on `_`/`-` only — a camelCase
    * key would arrive in the owner's email as "AssociationType".
    */
+  /* The optional step-4 answers, shared by every variant except HOA, which
+     already carries reason_for_change from step 3. Empty values are dropped by
+     clean() in lib/leads.ts before anything is sent, so a visitor who skips
+     these produces exactly the payload the form produced before they existed. */
+  const optional = (): Record<string, string> => ({
+    timeline: data.timeline,
+    ...(askSwitchReason ? { reason_for_change: data.changeReason } : {}),
+    message: data.message,
+  });
+
   const leadFields = (priorityLabel: string): Record<string, string | string[]> => {
     if (kind === 'commercial') {
       return {
@@ -291,6 +354,7 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
         occupancy: data.occupancy,
         currently_managed: yesNo(data.currentlyManaged),
         owner_priority: priorityLabel,
+        ...optional(),
       };
     }
     if (kind === 'hoa') {
@@ -304,6 +368,8 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
         currently_managed: yesNo(data.currentlyManaged),
         contract_ends: data.contractEnd,
         reason_for_change: data.changeReason,
+        timeline: data.timeline,
+        message: data.message,
       };
     }
     if (kind === 'long-term') {
@@ -320,6 +386,7 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
         current_rent: data.currentRent,
         available_from: data.availableFrom,
         owner_priority: priorityLabel,
+        ...optional(),
       };
     }
     return {
@@ -336,6 +403,7 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
       listing_url: data.listingUrl,
       months_available_per_year: data.monthsAvailable,
       owner_priority: priorityLabel,
+      ...optional(),
     };
   };
 
@@ -358,6 +426,16 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
         formName: copy.formName,
       });
       if (result.ok) {
+        // GA4's recommended event name, so it appears in standard reports and
+        // can be marked a key event without custom setup.
+        track('generate_lead', {
+          form_variant: kind,
+          page_path: location.pathname,
+          has_phone: data.phone.trim() ? 'yes' : 'no',
+          has_message: data.message.trim() ? 'yes' : 'no',
+          timeline: data.timeline || 'not given',
+          seconds_to_complete: Math.round((Date.now() - startedAt.current) / 1000),
+        });
         setDone(true);
       } else {
         setError('Something went wrong sending your details. Please call us and we’ll take care of it.');
@@ -662,6 +740,48 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
             </label>
             <input id={fid('phone')} type="tel" autoComplete="tel" className={inputCls} placeholder="(404) 555-0123"
               value={data.phone} onChange={(e) => set({ phone: e.target.value })} />
+          </div>
+
+          {/* OPTIONAL DETAIL.
+              Kept to the last step on purpose. By the time anyone sees this
+              they have already given an address and their contact details, so
+              a skipped question costs nothing — and `clean()` in lib/leads.ts
+              drops empty values before send, so skipping produces exactly the
+              same email and Telegram card as before these existed. Nothing
+              here is validated; there is no new way to get stuck. */}
+          <div className="border-t border-line pt-5">
+            <p className="text-xs font-medium uppercase tracking-wide text-stone">Optional — helps us prepare</p>
+
+            <div className="mt-4">
+              <Pills
+                label="When are you hoping to start?"
+                options={timelines}
+                value={data.timeline}
+                onSelect={(v) => set({ timeline: data.timeline === v ? '' : v })}
+              />
+            </div>
+
+            {askSwitchReason && (
+              <div className="mt-5">
+                <Pills
+                  label="What isn’t working right now?"
+                  options={switchReasons}
+                  value={data.changeReason}
+                  onSelect={(v) => set({ changeReason: data.changeReason === v ? '' : v })}
+                />
+              </div>
+            )}
+
+            <div className="mt-5">
+              <label htmlFor={fid('message')} className="mb-2 block text-sm font-medium text-forest">
+                Anything else we should know?
+              </label>
+              <textarea
+                id={fid('message')} rows={3} className={inputCls}
+                placeholder="Anything about the property, your timing, or what you’re hoping for."
+                value={data.message} onChange={(e) => set({ message: e.target.value })}
+              />
+            </div>
           </div>
           {/* Honeypot */}
           <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true"
