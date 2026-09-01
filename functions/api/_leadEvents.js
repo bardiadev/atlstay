@@ -57,7 +57,11 @@ export async function addEvent(env, { leadId, action, actor, actorTgId, note, so
       action,
       String(actor || 'Someone').slice(0, 80),
       actorTgId ? String(actorTgId) : null,
-      note ? String(note).slice(0, 500) : null,
+      // Notes are the one thing people write at length — a call summary, a
+      // pasted text message. 500 was close enough to real notes to start
+      // silently clipping them, so store the whole thing; the Telegram card
+      // shows a preview and the dashboard shows all of it.
+      note ? String(note).slice(0, 4000) : null,
       source || 'system',
       new Date().toISOString(),
     ).run();

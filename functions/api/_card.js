@@ -21,6 +21,8 @@ import { ACTIONS } from './_leadEvents.js';
 const MAX_LEN = 4096;
 /** How many events to show before collapsing the older ones into a count. */
 const TRAIL_LIMIT = 8;
+/** How much of a long note the card previews. The full text lives in the Lead Desk. */
+const NOTE_PREVIEW = 600;
 
 const RULE = '━━━━━━━━━';
 
@@ -260,7 +262,17 @@ function renderTrail(events) {
     const when = eastern(e.created_at, false);
     if (e.action === 'note') {
       lines.push(`📝 <b>${esc(e.actor)}</b> · ${esc(when)}`);
-      lines.push(`   ↳ <i>${esc(e.note || '')}</i>`);
+      /* Notes get written at length and are stored in full for the dashboard.
+         The card shows the opening of one, keeping its own line breaks, because
+         a single long note must not crowd out the rest of the card or push it
+         into Telegram's hard limit. */
+      const full = String(e.note || '').trim();
+      const shown = full.length > NOTE_PREVIEW
+        ? `${full.slice(0, NOTE_PREVIEW).trimEnd()}…`
+        : full;
+      const [first, ...rest] = shown.split('\n');
+      lines.push(`   ↳ <i>${esc(first)}</i>`);
+      for (const line of rest) lines.push(`     <i>${esc(line)}</i>`);
     } else {
       lines.push(`${a.icon} <b>${esc(e.actor)}</b> ${esc(a.verb)} · ${esc(when)}`);
     }

@@ -208,6 +208,45 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     </form>
   </dialog>
 
+  <!-- Adding a note used to be a one-line prompt() box. A note is the one thing
+       anyone actually writes at length here — what was said on a call, a text
+       message pasted in whole — so it gets a real, resizable field that keeps
+       line breaks. Same shell as the dialog above, deliberately: that layout is
+       known to render correctly in Safari (see the note on #addDialog below). -->
+  <dialog id="noteDialog" class="w-full max-w-xl rounded-2xl border border-[#e2e0d6] bg-white p-0 shadow-2xl backdrop:bg-forest/40 backdrop:backdrop-blur-sm">
+    <form id="noteForm" method="dialog" class="flex max-h-[88vh] flex-col">
+      <div class="flex items-center justify-between border-b border-[#eeece3] px-6 py-4">
+        <h2 class="font-display text-xl text-forest">Add a note</h2>
+        <button type="button" id="noteClose" aria-label="Close"
+          class="rounded-md p-1.5 text-[#9aa39e] transition-colors hover:bg-[#f1efe7] hover:text-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="min-h-0 flex-1 overflow-y-auto px-6 py-5">
+        <p id="noteFor" class="mb-3 text-xs uppercase tracking-wide text-[#5b6660]"></p>
+        <label for="nf-text" class="sr-only">Note</label>
+        <textarea id="nf-text" rows="10" required placeholder="What was said, what they want, what happens next…"
+          class="w-full resize-y rounded-lg border border-[#e2e0d6] px-3.5 py-3 text-sm leading-relaxed outline-none focus:border-brass focus:ring-2 focus:ring-brass/30"></textarea>
+        <div class="mt-1.5 flex items-baseline justify-between gap-3 text-xs text-[#9aa39e]">
+          <span>Paste as much as you like — line breaks are kept.</span>
+          <span id="nf-count" class="whitespace-nowrap tabular-nums"></span>
+        </div>
+        <p class="mt-3 rounded-lg border border-[#e2e0d6] bg-[#faf9f5] px-3.5 py-2.5 text-xs leading-relaxed text-[#3c4742]">
+          <span aria-hidden="true">📣</span> Goes on the activity timeline <b>and into the Telegram group</b>, credited to you.
+          For something only you should see, use <b>Private notes</b> further down the page.
+        </p>
+      </div>
+
+      <div class="flex items-center justify-end gap-2.5 border-t border-[#eeece3] px-6 py-4">
+        <button type="button" id="noteCancel"
+          class="rounded-md border border-[#d8d5c8] bg-white px-4 py-2 text-sm font-medium text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">Cancel</button>
+        <button type="submit" id="noteSubmit"
+          class="rounded-md bg-forest px-4 py-2 text-sm font-medium text-cream transition-colors hover:bg-forest-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest disabled:opacity-60">Add note</button>
+      </div>
+    </form>
+  </dialog>
+
   <script is:inline>
   (() => {
     const API = '/boroto/api';
@@ -331,6 +370,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       const h = Math.floor(m / 60);
       if (h < 24) return h + 'h';
       return Math.floor(h / 24) + 'd';
+    };
+    /* "just now" is already a complete phrase; the summary line appended "ago"
+       to whatever came back and so read "just now ago". Everything else is a
+       bare duration ("5m") and does need it. */
+    const agoLabel = (iso) => {
+      const s = shortAgo(iso);
+      return !s || s === 'just now' ? s : `${s} ago`;
     };
 
     const counts = () => {
@@ -531,6 +577,49 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         <dl class="mt-2">${body}</dl></section>` : '';
     };
 
+    /* ── the note dialog ──────────────────────────────────────────────────
+     * Lives outside #app so it survives every re-render, and is opened with a
+     * callback rather than reading the page: whoever opens it decides what to
+     * do with the text. Replaces a prompt() that could only take one line. */
+    const noteDlg = {
+      el: $('#noteDialog'), form: $('#noteForm'), text: $('#nf-text'),
+      count: $('#nf-count'), who: $('#noteFor'), submit: $('#noteSubmit'),
+      onSubmit: null,
+    };
+    function openNoteDialog(who, onSubmit) {
+      noteDlg.onSubmit = onSubmit;
+      noteDlg.text.value = '';
+      noteDlg.who.textContent = who ? `On ${who}` : '';
+      noteDlg.count.textContent = '';
+      noteDlg.el.showModal();
+      // Deferred: Safari focuses the dialog itself first, which would scroll
+      // the field out of view on a short screen.
+      requestAnimationFrame(() => noteDlg.text.focus());
+    }
+    if (noteDlg.el) {
+      const closeNote = () => noteDlg.el.close();
+      $('#noteClose').addEventListener('click', closeNote);
+      $('#noteCancel').addEventListener('click', closeNote);
+      noteDlg.text.addEventListener('input', () => {
+        const n = noteDlg.text.value.length;
+        // Only worth mentioning once a note is long enough to approach the cap.
+        noteDlg.count.textContent = n > 500 ? `${n.toLocaleString()} / 4,000` : '';
+      });
+      // A textarea swallows Enter, so give the keyboard a way to submit.
+      noteDlg.text.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); noteDlg.form.requestSubmit(); }
+      });
+      noteDlg.form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const note = noteDlg.text.value.trim();
+        if (!note) { noteDlg.text.focus(); return; }
+        const run = noteDlg.onSubmit;
+        noteDlg.onSubmit = null;
+        noteDlg.el.close();
+        if (run) run(note);
+      });
+    }
+
     function renderDetail(id) {
       const L = LEADS.find((x) => x.id === id);
       if (!L) { location.hash = ''; return; }
@@ -627,7 +716,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
               const a = ACTIVITY[e.action] || { icon: '•', verb: e.action };
               return `<span class="text-[#3c4742]"><span aria-hidden="true">${a.icon}</span>
                         Last: <span class="font-medium text-forest">${esc(e.actor)}</span> ${esc(a.verb)}
-                        <span class="text-[#9aa39e]">${esc(shortAgo(e.created_at))} ago</span></span>
+                        <span class="text-[#9aa39e]">${esc(agoLabel(e.created_at))}</span></span>
                       <span class="text-[#9aa39e]">·</span>
                       <span class="text-[#5b6660]">${c.actions} action${c.actions === 1 ? '' : 's'}${c.notes ? `, ${c.notes} note${c.notes === 1 ? '' : 's'}` : ''}</span>
                       <a href="#activity-${esc(L.id)}" class="text-[#1d4ed8] underline-offset-2 hover:underline">See all</a>`;
@@ -650,9 +739,17 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         </div>
 
         <section id="activity-${esc(L.id)}" class="mt-4 scroll-mt-20 rounded-xl border border-[#e2e0d6] bg-white p-5">
-          <div class="flex items-baseline justify-between gap-3">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-2">
             <h3 class="font-display text-base text-forest">Activity</h3>
-            <span class="text-xs text-[#9aa39e]">Everyone's actions, from Telegram and here</span>
+            <div class="flex items-baseline gap-3">
+              <span class="text-xs text-[#9aa39e]">Everyone's actions, from Telegram and here</span>
+              <!-- Same data-log="note" as the Log row above, so it binds with no
+                   extra wiring. It belongs here too: this is where notes end up,
+                   and it is where you look after scrolling down to read them. -->
+              <button data-log="note"
+                class="inline-flex min-h-[36px] items-center gap-1.5 rounded-lg border border-[#e2e0d6] bg-white px-3 py-1.5 text-sm text-[#3c4742] transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest">
+                <span aria-hidden="true">📝</span>Add note</button>
+            </div>
           </div>
           ${(L.events || []).length ? `
           <ol class="mt-3 space-y-2.5">
@@ -690,10 +787,24 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
               class="mt-1.5 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30" />`}
           </section>
 
+          <!-- Named "Private" because there are two kinds of note here and the
+               difference used to be invisible: this one is a scratchpad only
+               the dashboard sees, while "Add note" above is shared with the
+               group. Saying which is which is the whole point of the label. -->
           <section class="rounded-xl border border-[#e2e0d6] bg-white p-5">
-            <h3 class="font-display text-base text-forest">Notes</h3>
+            <div class="flex items-baseline justify-between gap-3">
+              <h3 class="font-display text-base text-forest">Private notes</h3>
+              <span id="notesState" class="text-xs text-[#9aa39e]" role="status" aria-live="polite"></span>
+            </div>
+            <p class="mt-1 text-xs leading-relaxed text-[#9aa39e]">
+              Only visible here — never sent to Telegram. For something the team should see, use <b>Add note</b> above.
+            </p>
             <textarea id="notes" rows="10" placeholder="Anything worth remembering…"
-              class="mt-2 w-full rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm outline-none focus:border-brass focus:ring-2 focus:ring-brass/30">${esc(L.notes || '')}</textarea>
+              class="mt-2 w-full resize-y rounded-lg border border-[#e2e0d6] px-3 py-2 text-sm leading-relaxed outline-none focus:border-brass focus:ring-2 focus:ring-brass/30">${esc(L.notes || '')}</textarea>
+            <div class="mt-2 flex justify-end">
+              <button type="button" id="notesSave" disabled
+                class="rounded-md border border-[#d8d5c8] bg-white px-3.5 py-2 text-sm font-medium text-forest transition-colors hover:border-brass hover:bg-[#fdfbf5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest disabled:cursor-default disabled:opacity-45">Save</button>
+            </div>
           </section>
         </div>`;
 
@@ -722,23 +833,24 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       /* Logging an action from the dashboard writes into the same history the
          Telegram buttons write to, and rewrites the group's card. Optimistic:
          the trail repaints immediately, the write follows. */
+      const applyLog = (act, note) => {
+        L.events = (L.events || []).concat([{
+          action: act, actor: 'Brandon', source: 'dashboard',
+          note, created_at: new Date().toISOString(),
+        }]);
+        if (act === 'proposal') L.status = 'proposal_sent';
+        renderDetail(id);
+        fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'log', id, event: act, note }) })
+          .then(flash).catch(() => {});
+      };
+
       $('#app').querySelectorAll('button[data-log]').forEach((b) =>
-        b.addEventListener('click', async () => {
+        b.addEventListener('click', () => {
           const act = b.dataset.log;
-          let note = '';
-          if (act === 'note') {
-            note = (prompt('Note for this lead?') || '').trim();
-            if (!note) return;
-          }
-          L.events = (L.events || []).concat([{
-            action: act, actor: 'Brandon', source: 'dashboard',
-            note, created_at: new Date().toISOString(),
-          }]);
-          if (act === 'proposal') L.status = 'proposal_sent';
-          renderDetail(id);
-          fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ action: 'log', id, event: act, note }) })
-            .then(flash).catch(() => {});
+          // A note needs room to write in; every other action is a single tap.
+          if (act === 'note') openNoteDialog(L.name || 'this lead', (note) => applyLog('note', note));
+          else applyLog(act, '');
         }));
 
       $('#move').addEventListener('click', () => {
@@ -777,18 +889,64 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'delete', id }) }).catch(() => {});
       });
 
-      let t;
+      /* Private notes used to save silently on a 600ms debounce. It worked —
+         but with no button and no confirmation there was no way to know, and
+         the honest reaction to that is not to trust it. The autosave stays,
+         because losing a long note would be far worse than a stray request;
+         what is new is that it SAYS what it is doing, and there is a real Save
+         button for when you want to press something. */
+      let t, dirty = false, clearState;
+      const notesEl = $('#notes'), saveBtn = $('#notesSave'), stateEl = $('#notesState');
+      const setState = (txt, tone) => {
+        clearTimeout(clearState);
+        if (!stateEl) return;
+        stateEl.textContent = txt;
+        stateEl.className = 'text-xs ' + (tone === 'bad' ? 'font-medium text-[#a3231b]'
+          : tone === 'ok' ? 'font-medium text-[#15803d]' : 'text-[#9aa39e]');
+      };
+
       const commit = () => {
         clearTimeout(t);
         const sentEl = $('#sentTo');
-        L.notes = $('#notes').value;
+        L.notes = notesEl.value;
         if (sentEl) L.proposal_sent_to = sentEl.value.trim();
         pendingSave = null;
-        return sync({ id, notes: L.notes, proposal_sent_to: L.proposal_sent_to || '' });
+        const saving = L.notes;
+        setState('Saving…');
+        if (saveBtn) saveBtn.disabled = true;
+        return fetch(API, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, notes: L.notes, proposal_sent_to: L.proposal_sent_to || '' }),
+        }).then((r) => {
+          if (!r.ok) throw new Error(String(r.status));
+          flash();
+          // Only call it saved if nothing was typed while the request was out.
+          if (notesEl.value === saving) {
+            dirty = false;
+            setState('Saved ✓', 'ok');
+            clearState = setTimeout(() => { if (!dirty) setState(''); }, 2500);
+          }
+        }).catch(() => {
+          setState('Not saved — check your connection', 'bad');
+          if (saveBtn) saveBtn.disabled = false;
+        });
       };
-      const debounced = () => { clearTimeout(t); pendingSave = commit; t = setTimeout(commit, 600); };
-      $('#notes').addEventListener('input', debounced);
+
+      const debounced = () => {
+        clearTimeout(t);
+        dirty = true;
+        setState('Unsaved…');
+        if (saveBtn) saveBtn.disabled = false;
+        pendingSave = commit;
+        t = setTimeout(commit, 600);
+      };
+      notesEl.addEventListener('input', debounced);
       if ($('#sentTo')) $('#sentTo').addEventListener('input', debounced);
+      if (saveBtn) saveBtn.addEventListener('click', commit);
+      // Long note, one hand on the keyboard — same shortcut as the note dialog.
+      notesEl.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); commit(); }
+      });
 
       if (!L.first_viewed_at) {
         L.first_viewed_at = new Date().toISOString();
@@ -1000,6 +1158,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
        still broke in production. The form's own `max-h-[88vh]` is a DEFINITE,
        viewport-relative height that needs no parent to resolve against — it
        works in every engine, and it is what should stay. */
-    #addDialog { margin: auto; }
+    #addDialog, #noteDialog { margin: auto; }
   </style>
 </BaseLayout>

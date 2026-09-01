@@ -76,6 +76,37 @@ t('second partner named',        active.text.includes('<b>Alex</b> emailed'), tr
 t('dashboard action in trail',   active.text.includes('<b>Brandon</b> sent the proposal'), true);
 t('no longer says nobody acted', active.text.includes('Nobody has actioned'), false);
 
+console.log('\n── long, multi-line notes ──');
+/* A note is the one thing people write at length — a call summary, a text
+   message pasted in whole. It is stored in full for the dashboard; the card
+   shows the opening of it, keeping the writer's own line breaks. */
+{
+  const multi = renderCard(LEAD, [{
+    action: 'note', actor: 'Brandon', created_at: '2026-08-31T18:00:00Z', source: 'dashboard',
+    note: 'Spoke with her today, she is NOT allowed to do STR.\nShe texted after our call:\n\nLooking to rent long term.\nTime frame is Feb 2027.',
+  }]);
+  t('first line marked with ↳',   multi.text.includes('↳ <i>Spoke with her today, she is NOT allowed to do STR.</i>'), true);
+  t('later lines kept separate',  multi.text.includes('<i>Time frame is Feb 2027.</i>'), true);
+  t('blank line preserved',       multi.text.includes('\n     <i></i>\n'), true);
+  t('nothing run together',       /call:She texted|STR\.She/.test(multi.text), false);
+
+  const long = renderCard(LEAD, [{
+    action: 'note', actor: 'Brandon', created_at: '2026-08-31T18:00:00Z', source: 'dashboard',
+    note: 'x'.repeat(2000),
+  }]);
+  t('a long note is previewed',   long.text.includes('…'), true);
+  t('  ...not dumped whole',      long.text.includes('x'.repeat(700)), false);
+  t('  ...and the card survives', long.text.length <= 4096, true);
+  t('  ...still says who wrote it', long.text.includes('<b>Brandon</b>'), true);
+
+  const short = renderCard(LEAD, [{
+    action: 'note', actor: 'Alex', created_at: '2026-08-31T18:00:00Z', source: 'telegram',
+    note: 'Call back Tuesday',
+  }]);
+  t('a short note is untouched',  short.text.includes('↳ <i>Call back Tuesday</i>'), true);
+  t('  ...with no ellipsis',      short.text.includes('Call back Tuesday…'), false);
+}
+
 console.log('\n── trail collapsing ──');
 const many = Array.from({ length: 14 }, (_, i) => ({
   action: 'called', actor: `P${i}`, created_at: `2026-08-15T${String(i).padStart(2, '0')}:00:00Z`, source: 'telegram',
