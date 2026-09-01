@@ -7,7 +7,7 @@ county: DeKalb
 lat: 33.9428
 lng: -84.3178
 title: "Airbnb Management in Dunwoody, GA"
-description: "Short-term rental management in Dunwoody, GA. ATLStay handles listing, pricing, and guests for Dunwoody owners — maximizing earnings in Atlanta's northern corporate suburb."
+description: "Property management in Dunwoody, GA. Nightly letting is not permitted here, so we run long-term leasing and furnished 30-day-plus corporate stays off Perimeter Center demand."
 intro: "Dunwoody's Perimeter Center office market, walkable Village district, and upscale residential neighborhoods create a demand profile dominated by business travel — making it one of metro Atlanta's most stable and predictable STR markets for owners who know how to position for the corporate guest."
 heroImage: suburbHome
 neighborhoods: []
@@ -16,10 +16,10 @@ highlights:
   - "Dunwoody Village dining scene creates weekend leisure bookings"
   - "MARTA access at Dunwoody and Medical Center stations for car-free business travelers"
   - "Upscale single-family homes command premium extended-stay rates"
-  - "City of Dunwoody STR compliance support included"
+  - "Nightly letting is not permitted here — we run the strategies that are"
 faqs:
   - q: "Does Dunwoody require a permit or license for short-term rentals?"
-    a: "Yes. The City of Dunwoody has its own short-term rental regulations that require property owners to register and comply with local zoning, safety, and operational standards. Dunwoody's rules are distinct from DeKalb County's. Because local requirements can be updated, we recommend reviewing the City of Dunwoody's Community Development resources or contacting ATLStay — we handle STR compliance for all our Dunwoody clients and stay current on any regulatory changes."
+    a: "There is no permit to get, because Dunwoody does not allow them. The city said so in its own words in the council packet for the January 2022 Chapter 27 amendment: “Short-term rentals of residential properties are not allowed in the City of Dunwoody.” That same amendment created a Party House use and banned it in residential districts city-wide, allowing it only by special administrative permit in certain non-residential districts, capped at 48 hours and non-renewable. Anyone telling you to register a Dunwoody home as a nightly rental is describing a process that does not exist. What does work here is the 30-day-plus market, and Dunwoody is unusually strong at it: InterContinental Hotels Group runs its Americas headquarters at Three Ravinia Drive with about 2,500 employees, Hapag-Lloyd and T-Mobile add several hundred more, Peachford Hospital brings clinical staff, and the Dunwoody MARTA station puts the airport within a direct train ride. Furnished corporate stays and long-term leases are what we run in Dunwoody, and they are what the code permits."
   - q: "What makes Dunwoody a good market for short-term rentals?"
     a: "Dunwoody's defining advantage as an STR market is the Perimeter Center employment zone. Major corporate offices in technology, financial services, consulting, and healthcare create consistent weekday demand for furnished rentals from professionals who are in the market for training, projects, or transitional housing. This corporate base gives Dunwoody a demand stability that markets relying solely on leisure tourism can't match. Weekend demand comes from the Dunwoody Village dining scene and proximity to Sandy Springs and Buckhead entertainment."
   - q: "What types of homes work best as Airbnb rentals in Dunwoody?"

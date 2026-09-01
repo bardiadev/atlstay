@@ -7,7 +7,7 @@ county: DeKalb
 lat: 33.8592
 lng: -84.3389
 title: "Airbnb Management in Brookhaven, GA"
-description: "Expert short-term rental management in Brookhaven, GA. ATLStay maximizes earnings for Brookhaven STR owners with local pricing expertise and full-service management."
+description: "Property management in Brookhaven, GA. Short-term permits are owner-occupied only, so most owners let long-term or furnished 30-day-plus near Children's Healthcare and MARTA."
 intro: "Brookhaven is one of metro Atlanta's most desirable residential addresses — and that desirability, anchored by Buford Highway's dining scene, Children's Healthcare proximity, and direct MARTA access, translates into a consistent, premium-yielding short-term rental market."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -16,10 +16,10 @@ highlights:
   - "Children's Healthcare of Atlanta and CDC proximity creates medical-travel bookings"
   - "MARTA Gold Line access makes the city genuinely walkable for car-free travelers"
   - "Upscale residential character supports above-average nightly rates"
-  - "City of Brookhaven STR compliance expertise included"
+  - "Straight answers on who actually qualifies for a Brookhaven STR permit"
 faqs:
   - q: "Does Brookhaven, GA require a permit for short-term rentals?"
-    a: "Yes. The City of Brookhaven has adopted its own short-term rental ordinance requiring property owners to obtain a permit, comply with safety standards, and adhere to zoning requirements. Brookhaven's rules are separate from Atlanta's and DeKalb County's. Because local ordinances are subject to change, we recommend checking current requirements with the City of Brookhaven directly or contacting ATLStay — we track Brookhaven's STR regulations and handle the permitting process for our clients."
+    a: "Yes, and the terms matter more than the permit itself, because most owners who ask do not qualify. Under Section 27-629(3), adopted 23 April 2019, applicants “shall be limited to owner-occupiers who have owned the subject property for more than a year” and must show a current DeKalb County homestead exemption. A permit “shall not be issued to any business entity,” which the ordinance spells out as partnerships, LLPs, LLCs and personal or family trusts. An owner may hold only one at a time, the property may not be let for more than 180 days in a calendar year, the fee is $25 a year, renewal is refused after two or more code citations in the preceding year, and permits are capped at five percent of the residential parcels in each city council district. In short: it is a rule for people letting the home they live in, not for investors. If a Brookhaven property is not your primary residence, the route is a long-term lease or a furnished 30-day-plus let — both legal, both things we run, and both well served by Children's Healthcare of Atlanta at roughly 3,090 employees and the MARTA Gold Line."
   - q: "What drives short-term rental demand in Brookhaven?"
     a: "Brookhaven benefits from several distinct demand sources. The Buford Highway corridor — one of the most celebrated food destinations in the Southeast — draws culinary travelers from across the region. Children's Healthcare of Atlanta at Scottish Rite generates medical-family stays: parents and relatives of young patients who need comfortable housing near the hospital for days or weeks at a time. The CDC and Emory University's Clairmont campus attract academic and medical professionals. MARTA access brings inbound travelers who prefer not to rent a car."
   - q: "How does medical-family demand work for a Brookhaven STR host?"

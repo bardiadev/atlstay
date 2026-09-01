@@ -7,7 +7,7 @@ county: Fulton
 lat: 34.0333
 lng: -84.2028
 title: "Airbnb Management in Johns Creek, GA"
-description: "Professional short-term rental management in Johns Creek, GA. ATLStay optimizes your Airbnb for Johns Creek's affluent family market, corporate demand, and event-driven stays."
+description: "Property management in Johns Creek, GA. The zoning code defines residential use as stays over 30 days, so we run long-term leasing and furnished mid-term housing for Tech Park and Emory Johns Creek demand."
 intro: "Johns Creek is one of the most affluent communities in Georgia — a city of large family homes, top-ranked schools, and a resident profile that generates strong demand from visiting families, medical professionals, and the corporate relocation market."
 heroImage: metroAtlanta
 neighborhoods: []
@@ -16,10 +16,10 @@ highlights:
   - "Medical and technology employers along GA-141 create weekday business-travel demand"
   - "Family relocation and extended-stay demand from the school-district draw"
   - "Athletic Club Northeast and golf courses attract tournament and event visitors"
-  - "Johns Creek and Fulton County STR compliance support included"
+  - "We tell you what the zoning code actually permits before you furnish anything"
 faqs:
   - q: "Are short-term rentals permitted in Johns Creek, GA?"
-    a: "Short-term rentals in Johns Creek are subject to Fulton County and City of Johns Creek regulations. Local rules address registration, zoning compliance, safety requirements, and operational standards. Because Johns Creek is a relatively young city whose regulations have evolved since incorporation in 2006, we recommend checking current requirements with the City of Johns Creek or contacting ATLStay — we track local STR rules for all our north Fulton County markets."
+    a: "In residential districts, effectively no — and the mechanism catches most owners by surprise because there is no ordinance with the words on it. Johns Creek's zoning ordinance defines a Dwelling as a building used for residential purposes “for periods of more than 30 consecutive days.” A let of 30 days or fewer is therefore not the permitted residential use, and the phrase “short-term rental” appears nowhere in the ordinance at all. The one transient use it does allow is a Bed and Breakfast of two to five guest rooms, owner-occupied, and only by use permit in the AG-1, R-6 and TR districts. What this means in practice is that Johns Creek is a 30-day-plus market: furnished mid-term and corporate housing, or a standard long-term lease. Both are legal, both are things we run here, and the demand from Alcon, Emory Johns Creek Hospital and Technology Park suits them well. We confirm the zoning for your specific address before you spend a dollar on furniture."
   - q: "What drives short-term rental demand in Johns Creek?"
     a: "Johns Creek's demand is distinct from Atlanta's event-driven or leisure-dominant markets. The primary drivers are: families visiting or relocating for the renowned school district (Northview, Johns Creek, and Lambert high schools consistently rank among Georgia's best), medical professionals affiliated with Emory Johns Creek Hospital and nearby healthcare facilities, and corporate travelers from the technology and financial services employers along the GA-141/McGinnis Ferry corridor. Athletic and golf events at venues like Athletic Club Northeast add a sporting-event layer."
   - q: "What types of properties perform best as short-term rentals in Johns Creek?"
