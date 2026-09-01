@@ -1,15 +1,38 @@
 ---
+/* About ATLStay.
+ *
+ * The story here is the OWNER'S, supplied 2026-09-01, not invented: four people
+ * who did every job themselves, then built departments around what they had
+ * learned. Keep it that way — this is the page where an owner decides whether
+ * to trust us with an asset, and a fabricated detail here would poison the
+ * whole site.
+ *
+ * TWO CLAIMS FROM THE SOURCE MATERIAL ARE DELIBERATELY NOT PUBLISHED:
+ *   1. "#1-rated property manager in the eastern United States" — a superlative
+ *      ranking with no attributable source. Unverifiable superlatives are an
+ *      advertising risk and are exactly what E-E-A-T assessment penalises.
+ *      Restore it only alongside the award or ranking body that issued it.
+ *   2. "across the United States" — the whole site, its schema and its ranking
+ *      strategy are metro-Atlanta and Georgia. A national claim would contradict
+ *      every location page and weaken the local relevance that is working.
+ * Both were raised with the owner rather than quietly dropped.
+ *
+ * The service list is deliberately SHORT and linked rather than described. The
+ * source material described all sixteen service lines at length; reproducing
+ * that here would have duplicated the service pages themselves, which is the
+ * exact defect that was measured and fixed across the 454 city pages.
+ */
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PageHero from '@/components/ui/PageHero.astro';
 import Section from '@/components/ui/Section.astro';
 import Container from '@/components/ui/Container.astro';
 import Eyebrow from '@/components/ui/Eyebrow.astro';
 import Card from '@/components/ui/Card.astro';
-import CheckList from '@/components/ui/CheckList.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import { site } from '@/config/site';
 import { images } from '@/data/images';
 import { breadcrumbSchema } from '@/lib/schema';
+import { serviceLines } from '@/data/serviceLines';
 
 const schemas = [
   breadcrumbSchema([
@@ -18,120 +41,249 @@ const schemas = [
   ]),
 ];
 
+/* The jobs the founders did themselves before any of them was a department.
+   This is the credibility of the whole page: it is specific, and nobody who
+   had not done the work would list these. */
+const didItOurselves = [
+  'Answered guest messages',
+  'Coordinated cleaners',
+  'Took the maintenance calls',
+  'Worked with tenants',
+  'Spoke to owners directly',
+  'Got homes ready for market',
+  'Built and rewrote listings',
+  'Chased contractors',
+  'Handled the emergencies',
+  'Adjusted the pricing',
+  'Ran the turnovers',
+  'Fixed what went wrong',
+];
+
+/* Each became a function once the portfolio outgrew four people doing all of
+   it. Ordered roughly the way an owner encounters them. */
+const operations = [
+  { name: 'Property onboarding', line: 'Condition, positioning and readiness before anything goes live.' },
+  { name: 'Revenue management', line: 'Pricing that moves with demand instead of sitting still for months.' },
+  { name: 'Leasing', line: 'Marketing, showings, screening and execution for longer-term tenancies.' },
+  { name: 'Guest services', line: 'Round-the-clock communication, because arrivals do not keep office hours.' },
+  { name: 'Cleaning', line: 'Turnovers to a set standard, inspected rather than assumed.' },
+  { name: 'Maintenance', line: 'Coordination and a vendor network, not a list of numbers handed to you.' },
+  { name: 'Owner relations', line: 'One point of contact who knows your property.' },
+  { name: 'Accounting & reporting', line: 'Statements you can read without decoding them.' },
+];
+
+/* Why owners actually leave their previous manager. Owner-supplied. */
+const whyOwnersMove = [
+  'Communication went quiet',
+  'Maintenance only ever reactive',
+  'The property underperforming',
+  'Pricing untouched for months',
+  'Cleaning quality drifting',
+  'Vacancies running long',
+  'Nobody reachable after hours',
+  'Outgrew a manager who could not scale',
+  'Tired of managing the manager',
+];
+
 const values = [
   {
-    title: 'Local roots, national standard',
-    text: 'We built this company in Atlanta, for Atlanta. We know Buckhead occupancy seasonality and BeltLine pricing pressure because we live and work here — not because we read a report about it.',
+    title: 'The property decides the strategy',
+    text: 'Not every home should be an Airbnb. Not every home should have a twelve-month tenant. The right answer depends on the asset, the location, the regulations and what you actually want from it — not on whichever service earns us the most.',
   },
   {
-    title: 'Transparency without exception',
-    text: 'One clear fee. No setup charges. No hidden deductions. You see our rate before you sign anything, and your monthly statement reflects exactly what happened — no decoding required.',
+    title: 'Own the problem until it is solved',
+    text: 'Not "that is the cleaner\'s responsibility". Not "call the contractor". Not "contact the platform". You hired a management company so you would not have to be the coordinator between six different people. That is the job.',
   },
   {
-    title: 'Owner alignment, always',
-    text: 'We only earn when your home earns. There\'s no setup fee to collect, no retainer regardless of performance. If your home doesn\'t perform, neither do we — and we take that seriously.',
+    title: 'One clear fee',
+    text: `Short-term and furnished management is ${site.pricing.rate} of booking revenue, all-inclusive. Long-term, commercial and community management is quoted per property or per door. You see the rate before you sign anything.`,
   },
   {
-    title: 'Hospitality over property management',
-    text: 'We don\'t think of ourselves as a property management company. We\'re in the hospitality business — the guest experience, the presentation, the welcome. That mindset drives better reviews, which drives everything else.',
+    title: 'Technology where it helps, people where they matter',
+    text: 'Pricing systems, channel sync, digital reporting — all necessary. But software cannot inspect a property, notice a turnover fell short, or reassure a frustrated tenant. We use technology to make people faster, not to remove them.',
   },
   {
-    title: 'No bureaucracy',
-    text: 'You can reach us directly. No ticket numbers, no five-day response windows, no "please hold for the next available representative." Local teams making local decisions, in real time.',
+    title: 'We say no',
+    text: 'We do not take every property that comes to us. We run a real projection and have an honest conversation first. If a home is not going to perform, telling you that is more useful than signing you.',
   },
   {
-    title: 'We only take homes we believe in',
-    text: 'We don\'t sign every property that walks through the door. We run a real projection, have an honest conversation, and only take on homes where we\'re genuinely confident in the results. That\'s better for you and better for us.',
+    title: 'Local decisions, locally made',
+    text: `We are based in ${site.contact.address.city}, and we know why a Buckhead corporate stay prices differently from a BeltLine weekend because we work here — not because we read it in a report.`,
   },
 ];
 ---
 
 <BaseLayout
-  title="About ATLStay — Atlanta's Premium Local STR Management"
-  description="ATLStay was built to be Atlanta's most credible, most local, and most transparent short-term rental management company. Learn our story, values, and approach."
+  title="About ATLStay — From Four People to a Full Property Operation"
+  description={`ATLStay began with four people who did every job themselves. Today it is a full property management operation across metro Atlanta — short-term, long-term, furnished, commercial and community. Based in ${site.contact.address.city}, GA.`}
   image={images.about.src}
   schemas={schemas}
 >
 
   <PageHero
-    title="Atlanta's Premium Local Short-Term Rental Management Company"
-    subtitle="We built ATLStay to close the gap between national scale and genuine local expertise — premium standards, deep Atlanta roots."
+    title="Four people. One idea. A different standard for property management."
+    subtitle="ATLStay did not start with departments, technology or a 24/7 operations centre. It started with four people who thought owners should not have to choose between a local team that cares and a national company that has the infrastructure."
     eyebrow="OUR STORY"
     imageKey="about"
     breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }]}
     cta={{ label: 'Get my free rental projection', href: '/rental-projection/' }}
   />
 
-  <!-- ─── WHY WE STARTED ─── -->
+  <!-- ─── THE CHOICE NOBODY SHOULD HAVE TO MAKE ─── -->
   <Section variant="white">
     <Container>
       <div class="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div>
           <Eyebrow>Why we started</Eyebrow>
           <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-            There was a gap nobody was filling.
+            Owners were being asked to pick a side.
           </h2>
           <div class="mt-5 space-y-4 text-ink/75">
-            <p>The national brands — Vacasa, Evolve, Awning — brought scale and technology to the market. But they brought it with national pricing strategies, national cleaning crews, and national customer service queues that had no idea when the Peach Bowl was, who was playing at State Farm Arena, or what a Buckhead corporate traveler actually expects from a short-term stay.</p>
-            <p>The local operators knew Atlanta inside out. But they often ran dated sites, operated with minimal transparency on fees, and couldn't offer the professional infrastructure that serious owners needed to feel confident handing over their property.</p>
-            <p>We built {site.brandName} to sit exactly in the gap between those two worlds. Local expertise, delivered at a standard the nationals set the bar for.</p>
+            <p>
+              Hire a small local manager and you get personal attention with limited
+              resources. Hire a national company and you get real infrastructure —
+              and become one address inside an enormous portfolio.
+            </p>
+            <p>
+              We did not think that was a fair choice. So we set out to build the
+              infrastructure of a national property management company with the
+              accountability of a local team.
+            </p>
+            <p class="font-medium text-forest">That idea became {site.brandName}.</p>
+            <p>
+              What started with four people now runs as an organisation with
+              dedicated teams across every part of the rental lifecycle. But what
+              it became only makes sense once you know how it began.
+            </p>
           </div>
         </div>
         <div>
           <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-forest-50">
-            <img
-              src={images.about.src}
-              alt={images.about.alt}
-              loading="lazy"
-              class="h-full w-full object-cover"
-            />
+            <img src={images.about.src} alt={images.about.alt} loading="lazy" class="h-full w-full object-cover" />
           </div>
         </div>
       </div>
     </Container>
   </Section>
 
-  <!-- ─── LOCAL ROOTS ─── -->
+  <!-- ─── BEFORE THERE WERE DEPARTMENTS ─── -->
   <Section variant="cream">
     <Container>
-      <div class="text-center">
-        <Eyebrow>Deep Atlanta roots</Eyebrow>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>How it started</Eyebrow>
         <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-          We know this city the way only a local can.
+          Before there were departments, we did it ourselves.
         </h2>
-        <p class="mx-auto mt-4 max-w-2xl text-ink/75">
-          Atlanta's short-term rental market is driven by a specific mix of demand drivers. Conventions at the Georgia World Congress Center. SEC Championship and Peach Bowl weekends at Mercedes-Benz Stadium. Georgia Tech and Emory driving consistent corporate travel. The BeltLine and Ponce City Market pulling experiential travelers from across the country. Film production bringing long-stay crews to neighborhoods most managers never think about.
+        <p class="mt-5 text-ink/75">
+          There was no guest services team. No leasing team. No revenue desk, no
+          maintenance division, no vendor network. There were properties that had
+          to perform, and four people determined to make that happen.
         </p>
       </div>
 
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Card>
-          <h3 class="font-display text-lg text-forest">Convention demand</h3>
-          <p class="mt-2 text-sm text-ink/70">The Georgia World Congress Center hosts events that fill metro Atlanta hotels and drive premium short-term rental rates for properties up to 15 miles away.</p>
-        </Card>
-        <Card>
-          <h3 class="font-display text-lg text-forest">Sports & event weekends</h3>
-          <p class="mt-2 text-sm text-ink/70">Braves, Falcons, Hawks, and major college football events create predictable demand spikes that require proactive pricing — weeks or months in advance.</p>
-        </Card>
-        <Card>
-          <h3 class="font-display text-lg text-forest">Film & production stays</h3>
-          <p class="mt-2 text-sm text-ink/70">Atlanta's status as a major film hub creates extended-stay demand from production crews — a market segment most managers underserve entirely.</p>
-        </Card>
-        <Card>
-          <h3 class="font-display text-lg text-forest">Neighborhood character</h3>
-          <p class="mt-2 text-sm text-ink/70">Buckhead, Midtown, Old Fourth Ward, and Decatur each attract a different guest profile with different expectations. We manage for those differences intentionally.</p>
-        </Card>
+      <ul class="mx-auto mt-10 grid max-w-4xl gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+        {didItOurselves.map((job) => (
+          <li class="flex items-start gap-2.5 text-[15px] text-ink/80">
+            <span aria-hidden="true" class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brass"></span>
+            {job}
+          </li>
+        ))}
+      </ul>
+
+      <div class="mx-auto mt-10 max-w-3xl rounded-2xl border-l-2 border-brass/60 bg-white/70 p-7 sm:p-9">
+        <p class="text-ink/80">
+          When something went wrong there was no other department to hand it to.
+          We had to solve it. That is where the standard came from — and it is why
+          we still believe great property management is not one big thing. It is
+          hundreds of small things done correctly, consistently, and usually before
+          an owner knows they needed doing.
+        </p>
       </div>
     </Container>
   </Section>
 
-  <!-- ─── OUR VALUES ─── -->
+  <!-- ─── BUILDING THE ORGANISATION ─── -->
+  <Section variant="white">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow>How it grew</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          We did not just grow a portfolio. We built an operation.
+        </h2>
+        <p class="mt-5 text-ink/75">
+          As more owners trusted us there was a decision to make: keep piling
+          properties onto individual managers until everyone was overwhelmed, or
+          build the infrastructure properly. We built the infrastructure.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {operations.map((op) => (
+          <div class="rounded-2xl border border-line bg-white p-6">
+            <h3 class="font-display text-base text-forest">{op.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink/70">{op.line}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="mx-auto mt-10 max-w-3xl text-center text-ink/75">
+        Behind those functions sit property managers, leasing professionals, guest
+        support, cleaners, maintenance technicians, revenue specialists, licensed
+        real estate professionals and an extensive contractor network. Support runs
+        around the clock, because a guest can be locked out at midnight and an air
+        conditioner does not care that it is Sunday.
+      </p>
+    </Container>
+  </Section>
+
+  <!-- ─── MORE THAN AIRBNB ─── -->
+  <Section variant="tint">
+    <Container>
+      <div class="mx-auto max-w-3xl">
+        <Eyebrow>What we do now</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+          Short-term rentals were the beginning. They are not the whole story.
+        </h2>
+        <div class="mt-5 space-y-4 text-ink/75">
+          <p>
+            As our owners' portfolios grew, what they needed changed. Some wanted
+            nightly income, others wanted a twelve-month tenant. Some needed
+            furnished housing for corporate stays, healthcare contracts or insurance
+            placements. Some bought multifamily. Some bought commercial. Investors
+            started asking us to look at properties <em>before</em> they bought them.
+          </p>
+          <p>
+            What almost none of them wanted was five different companies handling
+            five different parts of one portfolio. They wanted one organisation that
+            could do the lot. So we built one.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-2.5">
+        {serviceLines.map((s) => (
+          <a
+            href={`/services/${s.slug}/`}
+            class="rounded-full border border-line bg-white px-4 py-2 text-sm text-ink/80 transition-colors hover:border-brass hover:bg-white hover:text-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
+          >{s.name}</a>
+        ))}
+      </div>
+
+      <p class="mt-8 max-w-3xl text-ink/75">
+        The important part is not the length of that list. It is that the same team
+        can move a property between strategies when the market, the regulations or
+        your plans change — without you rebuilding your whole team to do it.
+      </p>
+    </Container>
+  </Section>
+
+  <!-- ─── HOW WE OPERATE ─── -->
   <Section variant="white">
     <Container>
       <div class="text-center">
         <Eyebrow>How we operate</Eyebrow>
         <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-          The principles that guide every decision we make.
+          The principles behind every decision.
         </h2>
       </div>
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -145,31 +297,71 @@ const values = [
     </Container>
   </Section>
 
-  <!-- ─── TEAM ─── -->
+  <!-- ─── WHY OWNERS COME TO US ─── -->
+  <Section variant="cream">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <Eyebrow>Why owners move</Eyebrow>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+            Nobody looks for a new manager when everything is going well.
+          </h2>
+          <p class="mt-5 text-ink/75">
+            Owners come to us because something stopped working. Usually one of these:
+          </p>
+          <ul class="mt-6 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
+            {whyOwnersMove.map((r) => (
+              <li class="flex items-start gap-2.5 text-[15px] text-ink/80">
+                <span aria-hidden="true" class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brass"></span>
+                {r}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-8">
+          <h3 class="font-display text-xl text-forest">What happens after you hand us the keys</h3>
+          <p class="mt-4 text-ink/75">
+            You are not hiring one person with a phone. Your property gets assessed
+            for condition, positioning, pricing, photography, compliance and
+            readiness — then the right teams take it on.
+          </p>
+          <p class="mt-4 text-ink/75">
+            Revenue specialists work the revenue. Leasing works the leasing. Cleaners
+            hold the presentation standard. Maintenance keeps it operating. Guest
+            support handles guests. Specialists where specialisation matters, one
+            organisation accountable for the result — and you can see what is
+            happening throughout.
+          </p>
+          <p class="mt-5">
+            <a href="/how-it-works/" class="font-medium text-forest underline decoration-brass/60 underline-offset-4 transition-colors hover:text-brass-600">
+              See the full onboarding process
+            </a>
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- ─── FACTS ─── -->
   <!-- Real named bios are still outstanding from the owner. Never publish
        invented names, photos or bios here — add genuine, attributable people
        only. Until then this section carries verified company facts. -->
-  <Section variant="tint">
+  <Section variant="white">
     <Container>
-      <div class="text-center">
+      <div class="mx-auto max-w-3xl text-center">
         <Eyebrow>The team</Eyebrow>
         <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
-          Local people who care about this as much as you do.
+          Big enough to deliver. Close enough to care.
         </h2>
-        <p class="mx-auto mt-4 max-w-2xl text-ink/75">
-          {site.brandName} is run by a small, dedicated team of Atlanta locals who are hands-on with every property in our portfolio. Not a call center. Not a franchise network. Real people who are personally invested in your home's performance.
+        <p class="mt-5 text-ink/75">
+          There are advantages to being small and advantages to being large, and we
+          built {site.brandName} to hold on to both. However big the portfolio gets,
+          every property still belongs to somebody — it is capital, income, often the
+          largest thing a family owns. Scale is never a reason to forget that.
         </p>
       </div>
 
-      <!-- Named bios still to come from the owner. Until then this carries the
-           CONFIRMED facts that were already sitting unused in site.config —
-           years in business, founding year, and the Georgia brokerage licence —
-           rather than an internal to-do note. The previous version shipped the
-           literal string "Team bios coming soon. Owner to provide real team
-           member names, photos, and short bios." to every visitor and crawler
-           on the single most trust-critical page on the site.
-           Do NOT invent team members here; add real ones only. -->
-      <div class="mt-10 grid gap-5 sm:grid-cols-3">
+      <div class="mt-11 grid gap-5 sm:grid-cols-3">
         <div class="rounded-2xl border border-line bg-white p-7 text-center">
           <p class="font-display text-3xl text-forest">{site.stats.years}</p>
           <p class="mt-2 text-sm text-ink/70">years managing property in Georgia, since {site.stats.foundingYear}</p>
@@ -189,27 +381,28 @@ const values = [
           <p class="mt-2 text-sm text-ink/70">homes and communities under management</p>
         </div>
       </div>
-      <p class="mx-auto mt-6 max-w-2xl text-center text-sm text-ink/70">
-        Because we hold a Georgia brokerage licence, we can handle work an unlicensed
-        manager legally cannot — leasing and tenant placement, long-term rentals, and
-        community association management — alongside short-term hosting.
+
+      <p class="mx-auto mt-7 max-w-2xl text-center text-sm text-ink/70">
+        Based in {site.contact.address.city}, {site.contact.address.region} — {site.contact.address.street},
+        in Buckhead. Reach us on <a href={site.contact.phoneHref} class="font-medium text-forest underline decoration-brass/60 underline-offset-4 hover:text-brass-600">{site.contact.phone}</a>
+        or <a href={`mailto:${site.contact.email}`} class="font-medium text-forest underline decoration-brass/60 underline-offset-4 hover:text-brass-600">{site.contact.email}</a>.
       </p>
     </Container>
   </Section>
 
-  <!-- ─── TRUST + SCALE ─── -->
+  <!-- ─── SCALE ─── -->
   <Section variant="forest">
     <Container>
       <div class="text-center">
         <Eyebrow class="text-brass">Track record</Eyebrow>
         <h2 class="mt-3 font-display text-3xl text-cream sm:text-4xl">
-          A growing operation. A consistent standard.
+          More capable was always the point. Not bigger.
         </h2>
       </div>
       <div class="mt-12 grid gap-6 sm:grid-cols-3">
         <div class="rounded-2xl bg-white/5 p-8 text-center ring-1 ring-white/10">
           <p class="font-display text-2xl text-brass">{site.scale.portfolioPhrase}</p>
-          <p class="mt-2 text-sm text-cream/65">trusted to us by Atlanta owners</p>
+          <p class="mt-2 text-sm text-cream/65">trusted to us by Georgia owners</p>
         </div>
         <div class="rounded-2xl bg-white/5 p-8 text-center ring-1 ring-white/10">
           <p class="font-display text-2xl text-brass">{site.scale.staysPhrase}</p>
@@ -220,18 +413,18 @@ const values = [
           <p class="mt-2 text-sm text-cream/65">in revenue managed for owners</p>
         </div>
       </div>
-      <div class="mt-10 text-center">
-        <p class="mx-auto max-w-xl text-cream/70">
-          We're {site.scale.portfolioPhrase}. And we're growing because owners tell other owners — not because we have the biggest ad budget.
-        </p>
-      </div>
+      <p class="mx-auto mt-10 max-w-2xl text-center text-cream/70">
+        More people available when something goes wrong. More expertise around the
+        investment. More ways to generate demand, more systems protecting the
+        property, and more options when the market shifts. That is what the growth
+        was for.
+      </p>
     </Container>
   </Section>
 
-  <!-- ─── CTA BAND ─── -->
   <CTABand
     heading="Let's talk about your property."
-    text="Get a free projection and find out if we're the right fit for your home."
+    text="Get a free projection and find out whether we're the right fit for your home."
   />
 
 </BaseLayout>

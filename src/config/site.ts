@@ -17,7 +17,10 @@ export const site = {
   contact: {
     phone: '(678) 938-6413',
     phoneHref: 'tel:+16789386413',
-    email: 'hello@atlstay.com', // CONFIRM — placeholder
+    // Owner-confirmed 2026-09-01: a real, monitored inbox. Capitalised the way
+    // he wants it shown — mail is case-insensitive at every mainstream provider,
+    // so the display form and the mailto: can safely be the same string.
+    email: 'Hello@ATLStay.com',
     address: {
       street: '3343 Peachtree Rd NE',
       city: 'Atlanta',
