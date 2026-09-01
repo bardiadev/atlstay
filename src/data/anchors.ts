@@ -62,7 +62,7 @@ export interface Anchor {
    specifically crisis or seasonal work, not the normal case — so this does not
    claim them as typical. */
 export const TRAVEL_NURSE_CONTRACT =
-  'The standard US travel-nurse contract runs 13 weeks. Assignments typically range from 8 to 26 weeks, and extensions are usually renewed in further 13-week blocks.';
+  "The standard US travel-nurse contract runs 13 weeks — a little over three months. Assignments typically range from 8 to 26 weeks, and extensions are usually renewed in further 13-week blocks, so a nurse who settles somewhere they like often stays six months or more. Shorter four-to-eight-week contracts exist but are specifically crisis or seasonal cover rather than the normal case. That 13-week shape is the whole reason furnished mid-term housing exists as a category near hospitals: it is far too long for a hotel to make financial sense, and far too short for a landlord demanding a twelve-month lease. An owner letting furnished on 30-plus-day terms is pricing against that contract length, not against a weekend rate, and should expect a booking calendar measured in quarters rather than nights.";
 
 /* The 30-day line, confirmed in primary sources. This is the single most useful
    fact an owner near a hospital can be told, and almost nobody states it
@@ -71,7 +71,7 @@ export const TRAVEL_NURSE_CONTRACT =
    rule. That is common short-let folklore and could NOT be found in Georgia's
    Title 44 landlord-tenant law. Do not add it without a lawyer's sign-off. */
 export const THIRTY_DAY_LINE =
-  "Atlanta's short-term rental ordinance defines a short-term rental as lodging for a period not exceeding 30 consecutive days, so a longer furnished let sits outside that licensing regime by the ordinance's own definition. Georgia's local hotel-motel excise tax likewise exempts charges after the first 30 days of continuous occupancy, and the state's $5-a-night hotel-motel fee stops once a stay becomes an \"extended stay rental\" of 31 or more consecutive days to the same guest. Breaking the stay and checking back in resets that count.";
+  "Thirty days is the line that separates two different businesses in Georgia, and three separate rules turn on it. Atlanta's short-term rental ordinance defines a short-term rental as lodging for a period not exceeding 30 consecutive days, so a longer furnished let sits outside that certificate regime by the ordinance's own definition. Georgia's local hotel-motel excise tax exempts charges for continuous occupancy after the first 30 days. And the state's $5-a-night hotel-motel fee stops once a stay becomes an \"extended stay rental\" of 31 or more consecutive days to the same guest — though if that guest checks out and checks back in, the count resets to zero and the fee starts again. This is why owners near hospitals, studios and campuses so often choose furnished mid-term over nightly: fewer turnovers, a different rulebook, and a guest who stays for a season rather than a weekend. Local rules differ across metro Atlanta and do change, so the position should be confirmed for a specific address before a property is listed.";
 
 const ATLANTA_STR_SOURCE: AnchorSource = {
   label: 'City of Atlanta Short Term Rental Ordinance 20-O-1656, §20-1003',
@@ -114,7 +114,7 @@ export const GA_FILM =
   "Georgia's film incentive is a 20% transferable tax credit on qualified in-state spend, rising to 30% with the promotional logo uplift, with a $500,000 minimum and no annual cap. That structure is why the industry is here at all.";
 
 export const GA_FILM_VOLUME =
-  'Production spend in Georgia was $2.0 billion across 280 productions in FY2026 — down from $2.3 billion the year before and less than half the $4.4 billion peak of FY2022. The market is real and large, but it is contracting, and any owner counting on crew housing should size it on that basis rather than on the boom years.';
+  "Production spend in Georgia was $2.0 billion across 280 productions in the 2026 fiscal year — 13 feature films, 77 independent films, 130 television and episodic productions and 54 commercials. That is down from $2.3 billion the year before and less than half the $4.4 billion peak of 2022, making it the weakest year for Georgia production spending in about a decade. The industry is not going anywhere: the state's 30% transferable tax credit is uncapped and has no sunset, and more than 7,000 crew belong to the Georgia IATSE local. But an owner deciding whether to furnish a property for crew housing should size that decision on $2 billion and falling, not on the boom years. Our advice is consistent: treat production crew as one demand source among several for a property that already works, rather than as the reason to buy one.";
 
 const GA_FILM_SOURCE: AnchorSource = {
   label: 'Georgia Department of Economic Development — film production incentives',
@@ -147,13 +147,13 @@ const CAMPUS_SERVICES = [
 ];
 
 const CREW_FAQ = {
-  q: 'How long does a production crew actually stay?',
-  a: 'It varies with the shoot. A mid-size feature commonly shoots 40 to 50 days, a larger one 80 to 100, and an hour-long TV drama runs roughly eight shooting days per episode across a season — and crew are on the ground for prep and wrap either side of that. In practice it is a stay of weeks to several months, which is squarely furnished mid-term territory rather than nightly.',
+  q: 'How long does a production crew actually stay in the area?',
+  a: "It tracks the shoot, and shoots are long. A mid-size feature commonly films for 40 to 50 days, a larger studio production 80 to 100, and an hour-long television drama runs roughly eight shooting days per episode across a season. Crew are also on the ground for prep before the first day and wrap after the last, so the time somebody actually needs a bed is meaningfully longer than the shooting schedule suggests. In practice that means a stay of several weeks to several months — squarely furnished mid-term territory rather than nightly. Corporate housing providers who serve this market report crews booking accommodation six to eight weeks ahead of principal photography, which is a useful signal for an owner: production housing is arranged in advance by people with a budget, not booked last-minute by individuals hunting for a bargain.",
 };
 
 const FILM_JOBS_FAQ = {
-  q: 'Is there enough local crew to make this a real market?',
-  a: 'IATSE Local 479, the Georgia crew local, has more than 7,000 members and is now the largest studio mechanics local in the country — its membership more than tripled in a decade. Georgia\'s below-the-line local hire rate is around 72%, which means roughly a quarter of crew on a given production still come from outside the state and need somewhere to live.',
+  q: 'Is there enough film work in Georgia to make crew housing a real market?',
+  a: "The workforce is substantial and local. IATSE Local 479, the Georgia crew local covering the below-the-line trades, has more than 7,000 members and is now the largest studio mechanics local in the United States — its membership more than tripled in a decade. Georgia's below-the-line local hire rate sits at about 72%, which is the number that matters for housing: roughly a quarter of crew on any given production still come from outside the state and need somewhere to live while they work. For scale, a single long-running Atlanta production, Stranger Things, employed 7,700 Georgians over its decade in the state and 3,737 during its final season alone. The demand is real. What an owner should be careful about is not whether crew exist, but whether production volume in a given year supports counting on them.",
 };
 
 export const anchors: Anchor[] = [
@@ -211,7 +211,7 @@ export const anchors: Anchor[] = [
       },
       {
         q: 'Which neighbourhoods actually work for Emory staff?',
-        a: 'Druid Hills sits immediately around the Clifton Road campus. Decatur, Brookhaven and Virginia-Highland are the realistic wider options, and all three have the walkable dining and grocery access that matters when someone is living somewhere for three months rather than visiting for three days. We manage properties across all of them.',
+        a: "Druid Hills sits immediately around the Clifton Road campus. Beyond it, the realistic catchment is tighter than most owners assume: North Druid Hills is about 7 minutes and 2.2 miles by car, Candler Park 10 minutes, Virginia-Highland 11 minutes, and Decatur Square 12 minutes. Anything beyond roughly fifteen minutes stops competing, because someone working clinical shifts is optimising for the commute above almost everything else. What those inner neighbourhoods share is walkable dining and grocery access, which matters far more to a person living somewhere for three months than to one visiting for three days. There is no MARTA rail station on the Clifton Road campus — bus route 6 runs to the hospital from Lindbergh Center — so a property with off-street parking has a real advantage here. We manage across all of these areas.",
       },
       {
         q: 'Do I need a short-term rental permit for a 30-day-plus let?',
@@ -276,7 +276,7 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Is a car necessary for staff living near Emory Midtown?',
-        a: 'Less than almost anywhere else in the city. The hospital is on Peachtree Street in Midtown, inside the walkable core and close to MARTA rail. For a nurse or resident arriving for three months without shipping a car, that is often the deciding factor — and it is worth stating explicitly in the listing.',
+        a: "Less than almost anywhere else in the city, and this is the single strongest selling point a property near this hospital has. Emory Midtown sits on Peachtree Street inside Midtown's walkable core. Civic Center MARTA station is a 0.2-mile walk from the hospital and North Avenue station is 0.4 miles, so a member of staff can genuinely live here without a car — which for someone flying in for a 13-week contract, or a resident arriving from another state, removes an expensive and awkward problem. If a property is within walking distance of a rail station, that fact belongs in the first line of the listing rather than buried in the amenities. It is frequently the detail that decides a booking, and it is worth more here than an extra bedroom would be.",
       },
       {
         q: 'How long are these stays?',
@@ -284,7 +284,7 @@ export const anchors: Anchor[] = [
       },
       {
         q: 'Does a Midtown property have to choose between healthcare and corporate guests?',
-        a: 'No, and it should not. Midtown carries corporate, film-production and healthcare demand at the same time. We position a property for whichever of those is paying best in a given season rather than committing it to one audience.',
+        a: "No, and it should not have to. Midtown carries corporate, film-production and healthcare demand simultaneously, which is unusual and valuable: it means a furnished property here is not exposed to any single employer's contracting cycle. Emory itself has gone further than most institutions in signalling the shortage — in 2025 it began converting two nearby Midtown buildings, including 477 Peachtree Street directly across from the hospital, into more than 50 rental apartments reserved for its own healthcare employees. An organisation building housing for its own staff is about the clearest evidence of unmet demand an owner could ask for. We position a property for whichever segment is paying best in a given season rather than committing it to one audience, which is what keeps occupancy steady across the year.",
       },
     ],
     sources: [
@@ -340,7 +340,7 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Is Buckhead too expensive to work as furnished mid-term housing?',
-        a: 'Not for this audience. Corporate housing budgets and healthcare stipends are set against local market rates, and Buckhead is precisely where relocating executives and consultants expect to be placed. The risk in Buckhead is an empty premium property, not an unaffordable one — which is a pricing and positioning problem, and that is the job.',
+        a: "Not for this audience, no. Corporate housing budgets and healthcare stipends are set against local market rates, and Buckhead is precisely where relocating executives and consultants expect to be placed — a company moving someone to Atlanta is not looking for the cheapest postcode. Piedmont Atlanta is a 643-bed hospital with more than 1,000 physicians and around 30,000 inpatient admissions a year, sitting in the middle of one of the strongest rental submarkets in the city. Piedmont also runs its own internal travel-staffing agency placing nurses on 12- and 13-week assignments across its Georgia hospitals. The real risk in Buckhead is not that the rate is unaffordable; it is an empty premium property sitting unlet because it was positioned wrongly or priced on instinct. That is a management problem, and it is the job.",
       },
       {
         q: 'What length of stay should I expect?',
@@ -399,11 +399,11 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Is Northside Hospital Atlanta actually in Atlanta?',
-        a: 'No. It is in Sandy Springs, in the Pill Hill medical district, outside Atlanta city limits — a common and consequential mix-up. It affects which local rules apply to your property and which city a guest is really searching for.',
+        a: "No, and the mix-up has consequences. Northside Hospital Atlanta is physically in Sandy Springs, in the Pill Hill medical district, outside Atlanta city limits — the City of Sandy Springs lists it among the hospitals within its own boundaries. The \"Atlanta, GA 30342\" mailing address is a postal artifact that predates Sandy Springs incorporating as a city in 2005. Two things follow for an owner. First, Atlanta's short-term rental ordinance is not automatically the rule that governs a property near this hospital; Sandy Springs sets its own, and that has to be checked for the specific address. Second, a guest searching for housing near this hospital may search either city name, so a listing that mentions only one of them is invisible to half of them.",
       },
       {
         q: 'Why does Pill Hill matter for a furnished rental?',
-        a: 'Because it puts several major medical employers within a short radius of the same property. A furnished let there is not dependent on one hospital\'s contracting cycle, which is the main risk in single-employer housing.',
+        a: "Because it removes the single biggest risk in institution-anchored housing: dependence on one employer. Pill Hill concentrates Northside, Emory Saint Joseph\'s and Children\'s Healthcare at Scottish Rite within a short radius, so a furnished property there is within reach of three major medical employers rather than betting on one hospital\'s contracting cycle. Northside alone has 621 licensed beds, 14,000 employees and more than 4,000 physicians, and sponsors its own accredited internal medicine and family medicine residencies plus sports medicine and colorectal surgery fellowships. It also delivers more babies annually than any hospital in the United States and was the first verified Level IV Maternal Center. The Medical Center MARTA station, a short walk away, was effectively built to serve this district. Drive times: Sandy Springs 9 minutes, Brookhaven 11, Dunwoody and Chamblee 13, Buckhead 16.",
       },
     ],
     sources: [
@@ -458,11 +458,11 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Can someone working at Grady live without a car?',
-        a: 'Realistically, yes. Grady is served directly by MARTA rail at the Georgia State station and by bus route 99. A furnished property within reach of a rail station is worth saying so explicitly in the listing — for a three-month stay it is often the deciding detail.',
+        a: "Realistically, yes — and few Atlanta hospitals can say that. Grady sits downtown and is served directly by MARTA rail at the Georgia State station, two blocks away, and by bus route 99 which stops in front of the hospital. For a resident arriving from another state for a multi-year programme, or a nurse on a 13-week contract, being able to skip shipping or renting a car is a genuine financial saving and often the detail that decides where they live. A furnished property within walking distance of a rail station should say so in the first line of the listing. It is worth noting the reverse too: because so much of metro Atlanta requires a car, properties that genuinely do not are scarce enough to command a premium rather than compete on price.",
       },
       {
         q: 'Who is the guest here — nurses or students?',
-        a: 'Both, and they overlap. Grady carries 350+ Emory residents and fellows daily across around 50 programmes, and Georgia State sits next door with record graduate enrolment and an active housing waitlist. A furnished downtown property can serve either.',
+        a: "Both, and the overlap is what makes a downtown property resilient. Grady is jointly staffed by two medical schools — Emory and Morehouse — with more than 350 Emory residents and fellows on site daily across roughly 50 training programmes, and Morehouse School of Medicine runs seven residency programmes with Grady as its primary teaching hospital. Next door, Georgia State enrolled 53,144 students including a record 8,102 graduate students, and its housing portal currently states a waitlist is in effect for all applicants with no guarantee of a room. Those are two large, continuously rotating populations of people who need somewhere furnished, near transit, for a defined stretch of time — one on clinical rotations, one on academic terms. A single property can serve either, which is what fills the gaps when one of them is between cycles.",
       },
     ],
     sources: [
@@ -516,11 +516,11 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Who needs furnished housing near a children\'s hospital?',
-        a: 'Mostly families. A child in extended treatment often means a parent or both parents living near the hospital for weeks or months, frequently arranged at very short notice. It is a different guest from a business traveller and the property should be set up accordingly — laundry, a real kitchen, and space to actually live rather than visit.',
+        a: "Mostly families, and they are a different guest from anyone else in this market. A child in extended treatment often means one or both parents living near the hospital for weeks or months, arranged at very short notice and under real stress. The Arthur M. Blank Hospital opened in September 2024 with 446 licensed beds — 116 more than Egleston had — as part of a $1.5 billion, 19-storey, two-million-square-foot build, the largest healthcare construction project in Georgia\'s history. A hospital of that size draws families from well outside metro Atlanta. What they need is not a hotel room: it is laundry, a real kitchen, somewhere for siblings to sleep, and enough space to live rather than visit. A property set up for that will hold these bookings far longer than a nightly listing ever would.",
       },
       {
         q: 'How is this different from a nightly rental?',
-        a: 'In length and in tone. These are thirty-day-plus stays booked under difficult circumstances. They turn over far less often than nightly bookings, they generate fewer service requests, and they need a manager who treats the guest accordingly.',
+        a: "In length, in economics and in tone. These are stays of thirty days and longer booked under difficult circumstances, so they turn over a fraction as often as nightly bookings, generate far fewer service requests, and are usually left in better condition. The financial shape is different too: less cleaning, less linen, fewer check-ins, and a booking calendar measured in months rather than nights, which for many owners nets out better than a higher nominal nightly rate with gaps between stays. The tone matters as much as the numbers. A family beside a children\'s hospital does not want an automated check-in sequence and an upsell. They want the practical things to work and to be left alone. Managing that well is mostly about restraint, and it is why these guests tend to extend rather than move.",
       },
     ],
     sources: [
@@ -578,7 +578,7 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Does a guest at Kennestone need a car?',
-        a: "Almost certainly, and it is the single biggest difference from the Atlanta hospitals. Cobb County is not part of MARTA. Local transit is CobbLinc, whose routes 40 and 45 stop about two minutes' walk from the hospital on Church Street, but it does not connect the way MARTA rail does. Parking is not a nice-to-have on a Marietta listing — it is the listing.",
+        a: "Almost certainly, and it is the single biggest practical difference between Marietta and the hospitals inside the Perimeter. Cobb County is not part of the MARTA system at all. Local transit is CobbLinc, whose routes 40 and 45 stop about two minutes\' walk from the hospital on Church Street, but it does not connect across the metro the way MARTA rail does, and nobody relocating for a 13-week contract will rely on it. The consequence for an owner is concrete: off-street parking stops being an amenity and becomes a requirement, and it belongs at the top of the listing rather than in a list at the bottom. A Marietta property with secure parking and an easy route to Church Street will out-let a nicer property without one, every time.",
       },
       {
         q: 'Is there really contract-staffing demand here?',
@@ -587,7 +587,7 @@ export const anchors: Anchor[] = [
       { q: 'How long are these stays?', a: TRAVEL_NURSE_CONTRACT },
       {
         q: 'Do I need a short-term rental permit in Marietta?',
-        a: "Marietta and Cobb County set their own rules, and they are not Atlanta's — so the Atlanta ordinance most owners have read does not apply to you. We confirm the current position for your specific address before a property is listed, rather than assuming it carries across county lines.",
+        a: "Marietta and Cobb County set their own rules, and they are not Atlanta\'s — so the ordinance most owners have read about does not apply here. This matters more than it sounds, because almost every guide written about short-term rentals in this region describes the City of Atlanta\'s regime, which defines a short-term rental as a stay not exceeding 30 consecutive days and requires a certificate. Outside Atlanta city limits, that framework is simply not the governing one. Two things remain true across Georgia regardless of municipality: the local hotel-motel excise tax exempts continuous occupancy after the first 30 days, and the state\'s $5-a-night hotel-motel fee stops at 31 consecutive days for the same guest. We confirm the current municipal position for a specific address before a property is listed rather than assuming rules carry across county lines.",
       },
     ],
     sources: [
@@ -645,7 +645,7 @@ export const anchors: Anchor[] = [
       },
       {
         q: 'Why does the on-site hotel matter?',
-        a: 'Because it is your competition, and it tells you what to offer instead. A 193-room guesthouse sits on the lot. A furnished house wins on the things a hotel room cannot do over three months — a real kitchen, laundry, separate bedrooms for a shared crew let, and somewhere to actually live on a day off.',
+        a: "Because it is your competition, and knowing that tells you exactly what to offer instead. The Trilith Guesthouse is a 193-room hotel on the lot itself, which sets the floor: anyone who just needs a bed within walking distance of the stage already has an option. A furnished house does not beat that on convenience, so it has to beat it on the things a hotel room cannot do across a three-month shoot — a real kitchen, laundry, separate bedrooms so three or four crew can share and split the cost, outdoor space, and somewhere that feels like living rather than staying. Crew on long shoots also cook, do laundry and need to decompress on a day off. Price a house per bedroom against the hotel per room and the maths usually favours the house.",
       },
     ],
     sources: [
@@ -699,7 +699,7 @@ export const anchors: Anchor[] = [
       FILM_JOBS_FAQ,
       {
         q: 'Which areas do crew at Tyler Perry Studios actually stay in?',
-        a: 'The south side. East Point, College Park and Hapeville are the closest options and are already used for crew lodging, with the wider airport corridor behind them. The studio is close enough to downtown that some crew stay in town, but proximity to the lot and to the airport is what most of them optimise for.',
+        a: "The south side, overwhelmingly. East Point, College Park and Hapeville are the closest options and are already used for crew lodging, with the wider Hartsfield-Jackson corridor behind them. The studio sits on the former Fort McPherson base less than six miles from downtown, so some crew do stay in town, but most optimise for two things: minutes to the lot and minutes to the airport, because film work means flying in and out. That is a part of metro Atlanta with a great deal of ordinary housing stock and very little of it set up as a furnished thirty-day-plus let, which is the opportunity. It is also worth knowing the studio is still growing — a thirteenth soundstage, built for virtual production, is expected operational by the end of 2026.",
       },
       {
         q: 'Is film work a safe thing to build a rental strategy on?',
@@ -754,7 +754,7 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Why is episodic television better for an owner than film?',
-        a: 'Because it comes back. A feature shoots once and leaves. A returning series keeps a crew in the same market for months at a time and then does it again next season, which turns a one-off booking into a repeat tenant relationship. Assembly is currently producing exactly that kind of work.',
+        a: "Because it comes back. A feature film shoots once and leaves; whatever housing it needed is gone when the production wraps. A returning television series keeps a crew in the same market for months at a stretch and then does it again the following season, which turns a one-off booking into something much closer to a repeat tenant relationship — and repeat guests are worth far more than new ones, because there is no marketing cost, no vetting and no void between them. Assembly is producing exactly that kind of work: Beyond the Gates, the first new network daytime drama in twenty-five years, and the Hulu series Murdaugh: Death in the Family. It is also the newest of the large Atlanta lots, operated by NBCUniversal, on a 43-acre campus with around nineteen soundstages.",
       },
       CREW_FAQ,
       FILM_JOBS_FAQ,
@@ -814,7 +814,7 @@ export const anchors: Anchor[] = [
       FILM_JOBS_FAQ,
       {
         q: 'Should I count on the expansion?',
-        a: 'Not yet. The $500 million expansion to 31 stages is publicly announced and under way, but no completion date has been published, and a stage does not generate housing demand until it is booked. Treat it as upside on a property that already works for east-side demand, not as the reason to buy one.',
+        a: "Not yet, and we would rather say so than sell you the headline. The $500 million expansion that would take Shadowbox to 31 soundstages across two million square feet is publicly announced and under way, but no completion date has been published, and a soundstage generates no housing demand until it is built, leased and booked. Announced construction slips routinely, and Georgia production spend is currently falling rather than rising. Treat the expansion as upside on a property that already works for east-side demand — Grant Park, Ormewood Park, East Atlanta Village, Cabbagetown and Decatur are all within a short drive, and all carry ordinary furnished and corporate demand independently of the studio. What the expansion should not be is the reason you buy a house.",
       },
       {
         q: 'Is film work a safe thing to build a rental strategy on?',
@@ -865,7 +865,7 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Is being 35 miles out a problem?',
-        a: 'For this use, it is the opposite. Crew working at Three Ring are not going to drive an hour each way from Atlanta on I-20, so they stay in Covington and the towns around it. That keeps the demand local and there is very little furnished supply competing for it.',
+        a: "For this particular use it is an advantage, not a problem. Three Ring sits on GA-142 about two miles north of I-20 and roughly 35 miles east of downtown Atlanta — the better part of an hour each way in traffic. Crew working a multi-week shoot are not making that drive twice a day, so the housing demand stays local: Covington itself, Oxford, Conyers and Social Circle. In a market that size there is very little furnished supply competing for it, which is the opposite of the situation intown. The trade-off is honest and worth stating: a smaller market means less competition but also fewer fallback guests if production slows. We would want a property here to stand up as a long-term rental too, not only as crew housing.",
       },
       CREW_FAQ,
       {
@@ -923,15 +923,15 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Does an enrolment of 56,715 mean 56,715 people needing housing?',
-        a: 'No, and anyone telling you otherwise has not read the numbers. Nearly half of Georgia Tech students are enrolled exclusively online and three quarters of graduate students are part-time. The population that actually relocates is closer to the 8,749 full-time graduate students plus undergraduates, postdocs and visiting scholars. That is still a large market — it is just not the headline one.',
+        a: "No, and anyone quoting that number at you has not read past the headline. Georgia Tech reports that 47% of its students are enrolled exclusively online, and 26,938 of its 35,687 graduate students are part-time — largely because of very large online programmes such as the online computer science masters, whose students never relocate. The population that actually moves to Atlanta and needs somewhere to live is closer to the 8,749 full-time graduate students, plus the undergraduate body, 350 to 400 postdoctoral scholars at any given time, and visiting researchers on J-1 scholar status. That is still a substantial market on its own — it is simply not the 56,715 figure. We would rather size a property against the real number and be right than against the flattering one and be wrong.",
       },
       {
         q: 'Why are postdocs and visiting scholars a good tenant?',
-        a: 'They are funded, they arrive from another city or country, they stay one to three years, and they cannot furnish a home on arrival. That is a furnished mid-term let almost by definition — longer and steadier than a nightly booking, shorter and more flexible than the twelve-month lease most landlords insist on.',
+        a: "They are close to the ideal tenant for this strategy. A postdoc or visiting scholar is funded by a grant or an institution, arrives from another city or another country, stays somewhere between one and three years, and cannot realistically furnish a home on arrival or sign a twelve-month lease from overseas before seeing it. That is a furnished mid-term let almost by definition: longer and steadier than a nightly booking, more flexible than an annual tenancy. They also tend to be low-maintenance guests — quiet, employed, and unlikely to be hosting parties. Georgia Tech has 350 to 400 postdoctoral scholars at any given time and administers a J-1 scholar programme for visiting researchers, and neither group is well served by student halls or by landlords who want twelve months up front.",
       },
       {
         q: 'When is demand strongest?',
-        a: 'It concentrates hard around the academic calendar, with the heaviest pressure before the autumn term. A property positioned only for students will have gaps; one that also works for Midtown corporate and healthcare demand fills them.',
+        a: "It concentrates hard around the academic calendar, with the heaviest pressure in the weeks before the autumn term when housing allocation is settled and the lottery leaves people without a room. That seasonality is the honest weakness of a student-only strategy, and an owner should plan for it rather than discover it. The answer in this location is that Midtown does not depend on the campus: Emory University Hospital Midtown is a short distance away with its own rotating clinical staff, the Midtown corporate market runs year-round, and film production draws on the area independently. A property positioned for the academic calendar alone will have gaps between terms. One positioned to take whichever of those three is paying in a given month does not.",
       },
     ],
     sources: [
@@ -984,15 +984,15 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'How solid is the housing-shortage claim?',
-        a: 'It is the university\'s own statement, not an inference. Georgia State\'s housing portal says a waitlist is in effect for all 2026-27 applicants and that being on it does not guarantee a room. We link the page in the sources below so you can read it yourself.',
+        a: "It is the university\'s own statement rather than our inference, which is why we are comfortable building a page on it. Georgia State\'s housing portal says plainly that a waitlist is in effect for all 2026-27 applicants and that a place on that waitlist does not guarantee a room, with allocation running by application date and new first-years prioritised. We link the page in the sources at the foot of this page so you can read it yourself rather than take our word for it. Set that against enrolment of 53,144 students including a record 8,102 graduate students, on a downtown campus with no large residential ring around it, and the arithmetic is straightforward: the students the university cannot house look for somewhere within walking distance of Auburn Avenue.",
       },
       {
         q: 'Do students actually take furnished mid-term lets?',
-        a: 'Graduate students do, and they are the segment growing fastest here. Someone arriving for a one or two-year programme from another state or country is not shipping furniture, and often cannot sign a twelve-month lease that starts before they arrive. That is the gap a furnished 30-day-plus let fills.',
+        a: "Graduate students do, and they are the segment growing fastest at Georgia State — enrolment hit a record 8,102. The undergraduate picture is different, but a graduate or professional student arriving for a one or two-year programme from another state or country is not shipping furniture across the country, and frequently cannot sign a twelve-month lease that begins before they have arrived or seen the property. Many also arrive on funding that starts on a specific date, which makes a flexible thirty-day-plus term genuinely useful rather than merely convenient. That is precisely the gap a furnished mid-term let fills, and it is poorly served by both the student-halls market and the conventional annual-lease market on either side of it.",
       },
       {
         q: 'What happens in the summer?',
-        a: 'It is the honest weakness of a student-only strategy. Downtown answers it: Grady is next door with hundreds of rotating medical trainees, and the convention and corporate market runs year-round. We position a property for whichever is paying in a given month.',
+        a: "It is the honest weakness of any student-only strategy, and downtown Atlanta happens to answer it better than most places. Grady Memorial is next door with more than 350 Emory residents and fellows on site daily across roughly 50 training programmes, plus Morehouse School of Medicine\'s seven residency programmes — clinical rotations run through the summer regardless of the academic calendar. Downtown also carries convention, corporate and event demand year-round, and the Georgia State MARTA station makes the whole area workable without a car. We position a property for whichever of those is paying best in a given month rather than committing it to the academic year. An owner who plans only for term time will have three quiet months; one who does not, will not.",
       },
     ],
     sources: [
@@ -1045,15 +1045,15 @@ export const anchors: Anchor[] = [
     faqs: [
       {
         q: 'Which campus should a property be near?',
-        a: 'They are different markets eleven miles apart. The Kennesaw campus on Chastain Road is the larger and original one; the Marietta campus is the former Southern Polytechnic and sits near Marietta Square — and about ten minutes from Wellstar Kennestone, which means a Marietta property can serve students and hospital contract staff from the same address.',
+        a: "They are genuinely different markets about eleven miles apart, and choosing between them matters more than it would at a single-campus university. The Kennesaw campus on Chastain Road is the original and larger one. The Marietta campus on South Marietta Parkway is the former Southern Polytechnic State University, merged into Kennesaw State in 2015, and it sits near Marietta Square — roughly ten minutes from Wellstar Kennestone. That second point is the interesting one for an owner: a furnished property near the Marietta campus can serve students and visiting faculty during term and hospital contract staff on 13-week assignments year-round, from the same address. Kennestone recently added 235 beds including a 49-bed neonatal intensive care unit, so that clinical demand is growing rather than static.",
       },
       {
         q: 'Is the academic demand here as strong as at Georgia Tech or Emory?',
-        a: 'Not in the graduate and postdoc segment, and it would be dishonest to imply it. Kennesaw State is a comprehensive university rather than a research one, with 5,306 graduate students. What it does have is scale and growth — 51,375 students, up 7.4% in a year — and two campuses generating demand in a county with no rail transit.',
+        a: "Not in the graduate and postdoctoral segment, and it would be dishonest to imply otherwise. Kennesaw State is classified as a comprehensive university rather than a research one, with 5,306 graduate students against Georgia Tech\'s and Emory\'s much deeper research populations. It does run a formal postdoctoral scholar programme and hosts incoming Fulbright scholars, but at a smaller scale. What Kennesaw State has instead is size and momentum: 51,375 students in autumn 2025, up 7.4% in a single year, spread across two campuses in a county with no rail transit and comparatively little purpose-built furnished supply. For an owner that is a different proposition from the intown academic markets — more volume, less specialisation — and a property should be positioned for it accordingly.",
       },
       {
         q: 'How much does parking matter in Cobb?',
-        a: 'A great deal. Cobb County is outside the MARTA system, so a guest here will have a car. Off-street parking is close to a requirement rather than an amenity, and it belongs near the top of the listing.',
+        a: "A great deal, and this is the point most owners coming from an intown mindset get wrong. Cobb County sits outside the MARTA system entirely, so a guest here will have a car — there is no realistic version of living near either campus without one. Off-street parking therefore stops being an amenity and becomes close to a requirement, and it belongs near the top of the listing rather than buried in a features list. If a property has secure parking, or space for two vehicles where housemates are sharing, say so explicitly and early. The same logic applies to the Marietta campus and to Wellstar Kennestone ten minutes away: in a county without rail, the parking situation is frequently what decides between two otherwise comparable properties.",
       },
     ],
     sources: [
