@@ -1,5 +1,6 @@
 // @ts-check
 import { readdirSync, readFileSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
@@ -50,6 +51,66 @@ function resourceLastmods() {
 
 const RESOURCE_LASTMOD = resourceLastmods();
 
+/**
+ * Real `lastmod` for every OTHER page type, taken from git.
+ *
+ * Resources carry their own dates in frontmatter. Everything else used to fall
+ * back to the build timestamp, which meant 702 of 910 URLs claimed to change
+ * at the same instant every deploy — and a crawler that sees that stops
+ * believing the field at all, including on the pages where it is true.
+ *
+ * The honest date for a generated page is the last time anything that
+ * determines its output actually changed: its own content file, the data file
+ * it is built from, and the template that renders it. One `git log` walk gives
+ * the most recent commit touching each path, and the page takes the newest of
+ * the files that feed it. No date is invented — a page with no known source
+ * simply keeps the build timestamp, as before.
+ *
+ * @returns {Map<string, string>} repo path → ISO date
+ */
+function gitLastmods() {
+  /** @type {Map<string, string>} */
+  const map = new Map();
+  let out = '';
+  try {
+    out = execSync('git log --pretty=format:%cI --name-only --no-merges', {
+      encoding: 'utf8',
+      maxBuffer: 64 * 1024 * 1024,
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+  } catch {
+    return map; // not a git checkout, or git unavailable — fall back to build time
+  }
+  let current = '';
+  for (const line of out.split('\n')) {
+    if (!line.trim()) continue;
+    if (/^\d{4}-\d{2}-\d{2}T/.test(line)) { current = line.trim(); continue; }
+    // First time a path appears is its most recent commit — git logs newest first.
+    if (current && !map.has(line)) map.set(line, current);
+  }
+  return map;
+}
+
+const GIT_LASTMOD = gitLastmods();
+
+/** Newest ISO date among the given repo paths, or null if none are known. */
+function newestOf(...paths) {
+  let best = null;
+  for (const p of paths) {
+    if (!p) continue;
+    const d = GIT_LASTMOD.get(p);
+    if (d && (!best || d > best)) best = d;
+  }
+  return best;
+}
+
+/** Every serviceLines / serviceNotes source file, since any of them can change a page. */
+function dataDirPaths(dir) {
+  return [...GIT_LASTMOD.keys()].filter((p) => p.startsWith(dir));
+}
+const SERVICE_DATA = [...dataDirPaths('src/data/serviceLines/'), ...dataDirPaths('src/data/serviceNotes/')];
+const NEWEST_SERVICE_DATA = newestOf(...SERVICE_DATA);
+
 // NOTE: update `site` to the production domain before deploy.
 export default defineConfig({
   site: 'https://atlstay.com',
@@ -74,14 +135,57 @@ export default defineConfig({
         // step with what the code claimed to produce — so they were bytes on
         // every one of ~894 URLs that no search engine reads.
         //
-        // `lastmod` is real for resources (their frontmatter carries publish and
-        // update dates). Everything else still falls back to build time, which
-        // means ~77% of URLs share one timestamp — a crawler that sees that
-        // learns to distrust the field. Extending real dates to the cities and
-        // neighbourhoods collections is the follow-up.
+        // `lastmod` is real for every page type we can source honestly:
+        // resources from their own frontmatter, everything else from the last
+        // commit touching the content, data and template files that determine
+        // the page. Anything we cannot source keeps the build timestamp rather
+        // than getting a date we made up.
         const u = item.url;
+        const path = new URL(u).pathname;
+        const seg = path.split('/').filter(Boolean);
+
         const resource = /\/resources\/([^/]+)\/$/.exec(u);
-        const lastmod = resource && RESOURCE_LASTMOD.get(resource[1]);
+        if (resource && RESOURCE_LASTMOD.get(resource[1])) {
+          item.lastmod = RESOURCE_LASTMOD.get(resource[1]);
+          return item;
+        }
+
+        let lastmod = null;
+        if (seg[0] === 'services' && seg.length === 3) {
+          // service x city: the service data, the city's own file, and the template
+          lastmod = newestOf(
+            NEWEST_SERVICE_DATA,
+            `src/content/cities/${seg[2]}.md`,
+            'src/pages/services/[service]/[city].astro',
+          );
+        } else if (seg[0] === 'services') {
+          lastmod = newestOf(NEWEST_SERVICE_DATA, 'src/pages/services/[service]/index.astro');
+        } else if (seg[0] === 'furnished-housing') {
+          lastmod = newestOf('src/data/anchors.ts', 'src/pages/furnished-housing/[anchor].astro');
+        } else if (seg[0] === 'counties') {
+          lastmod = newestOf('src/data/counties.ts');
+        } else if (seg[0] === 'manage') {
+          lastmod = newestOf('src/data/propertyTypes.ts');
+        } else if (seg[0] === 'near') {
+          lastmod = newestOf('src/data/landmarks.ts');
+        } else if (seg.length === 2) {
+          // {city}/{neighbourhood}
+          lastmod = newestOf(
+            `src/content/neighborhoods/${seg[1]}.md`,
+            `src/content/cities/${seg[0]}.md`,
+            'src/pages/[city]/[neighborhood].astro',
+          );
+        } else if (seg.length === 1) {
+          // A city page, or a hand-built top-level page — try both.
+          lastmod = newestOf(
+            `src/content/cities/${seg[0]}.md`,
+            `src/pages/${seg[0]}.astro`,
+            `src/pages/${seg[0]}/index.astro`,
+          );
+        } else if (seg.length === 0) {
+          lastmod = newestOf('src/pages/index.astro');
+        }
+
         if (lastmod) item.lastmod = lastmod;
         return item;
       },

@@ -54,6 +54,44 @@ const allSchemas = [
       <Fragment>
         <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${site.analytics.gaId}`}></script>
         <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${site.analytics.gaId}');`} />
+
+        {/* CALL TRACKING.
+            The owner reports roughly two calls a day; the lead forms account
+            for about 0.9. More than half of all leads were arriving by phone
+            with nothing recorded at all, so there was no way to know which
+            pages actually produce calls — the largest channel on the site was
+            invisible in every report.
+
+            One delegated listener on the document rather than a listener per
+            link: tel: links are rendered in the header, the footer, the sticky
+            mobile bar and inside page copy, and several of those are re-rendered
+            client-side. Delegation catches them all, including any added later.
+
+            Deliberately defensive. It is wrapped so that a failure here can
+            never break a phone call — the click proceeds regardless of whether
+            gtag exists, has loaded yet, or throws. An analytics tag must never
+            stand between a customer and the phone. */}
+        <script is:inline set:html={`
+(function(){
+  try {
+    document.addEventListener('click', function(e){
+      try {
+        var a = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+        if (!a || typeof window.gtag !== 'function') return;
+        var where = a.closest('header') ? 'header'
+                  : a.closest('footer') ? 'footer'
+                  : a.closest('[data-sticky-cta]') ? 'sticky_bar'
+                  : 'page_body';
+        window.gtag('event', 'call_click', {
+          event_category: 'lead',
+          link_url: a.getAttribute('href') || '',
+          page_path: location.pathname,
+          placement: where
+        });
+      } catch (_) {}
+    }, true);
+  } catch (_) {}
+})();`} />
       </Fragment>
     )}
 
