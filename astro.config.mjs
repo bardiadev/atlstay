@@ -124,8 +124,10 @@ export default defineConfig({
         const m = /\/services\/([^/]+)\/atlanta\/$/.exec(page);
         if (m) {
           const line = SERVICE_LINES.find((l) => l.slug === m[1]);
-          const templated = line ? `${line.name} in Atlanta, GA` : null;
-          if (line && templated.length <= 60 && line.seoTitle === templated) return false;
+          if (line) {
+            const templated = `${line.name} in Atlanta, GA`;
+            if (templated.length <= 60 && line.seoTitle === templated) return false;
+          }
         }
         return true;
       },
