@@ -24,10 +24,11 @@ const {
   noindex = false,
   schemas = [],
   bare = false,
+  canonicalUrl: canonicalOverride,
 } = Astro.props;
 
 const fullTitle = pageTitle(title);
-const canonicalUrl = canonical(Astro.url);
+const canonicalUrl = canonicalOverride ?? canonical(Astro.url);
 const ogImage = absoluteImage(image);
 // Only the default OG image has known dimensions (1200×630). Custom per-page
 // images vary, so we omit width/height there and let scrapers measure.

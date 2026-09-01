@@ -4,6 +4,8 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+// Read for the sitemap filter below — see the note on the Atlanta duplicates.
+import { serviceLines as SERVICE_LINES } from './src/data/serviceLines/index.ts';
 
 /**
  * Real per-article <lastmod> dates for the sitemap.
@@ -104,9 +106,29 @@ export default defineConfig({
     react(),
     sitemap({
       lastmod: new Date(),
-      // /boroto = private dashboard; /search = noindex (a sitemapped noindex URL
-      // triggers "Submitted URL marked noindex" in Search Console).
-      filter: (page) => !page.includes('/boroto') && !/\/search\/?$/.test(page),
+      /* /boroto = private dashboard; /search = noindex (a sitemapped noindex URL
+         triggers "Submitted URL marked noindex" in Search Console).
+
+         Also excluded: the handful of /services/{service}/atlanta/ pages that
+         canonicalise to their own hub. Four service hubs carry a hand-written
+         seoTitle that already targets Atlanta, so the templated title for that
+         service's Atlanta page came out identical and the two competed — the
+         hub ranked 50-58 while its twin sat at 70-87. Those pages now point
+         their canonical at the hub, and a sitemap should list canonical URLs
+         rather than the duplicates that defer to them.
+
+         The condition is recomputed from the data rather than hardcoded, so it
+         tracks automatically if a hub title is rewritten. */
+      filter: (page) => {
+        if (page.includes('/boroto') || /\/search\/?$/.test(page)) return false;
+        const m = /\/services\/([^/]+)\/atlanta\/$/.exec(page);
+        if (m) {
+          const line = SERVICE_LINES.find((l) => l.slug === m[1]);
+          const templated = line ? `${line.name} in Atlanta, GA` : null;
+          if (line && templated.length <= 60 && line.seoTitle === templated) return false;
+        }
+        return true;
+      },
       serialize(item) {
         // `priority` and `changefreq` are deliberately NOT emitted. Google has
         // ignored both for years, and the values here had already drifted out of

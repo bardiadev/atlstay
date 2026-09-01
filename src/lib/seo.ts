@@ -39,4 +39,10 @@ export interface SeoProps {
   /** "website" | "article" */
   ogType?: string;
   noindex?: boolean;
+  /**
+   * Absolute URL to point the canonical at instead of this page's own URL.
+   * Only for a genuine duplicate that should consolidate onto a stronger page —
+   * see the Atlanta service-city case in services/[service]/[city].astro.
+   */
+  canonicalUrl?: string;
 }

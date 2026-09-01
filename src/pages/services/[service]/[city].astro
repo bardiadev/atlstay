@@ -158,6 +158,25 @@ const titleCandidates = [
 const seoTitle =
   titleCandidates.find((t) => t.length <= 60) ??
   `${(SHORT_LABEL[service.slug] ?? service.name).slice(0, Math.max(8, 57 - place.length)).replace(/\s+\S*$/, '')} in ${place}`;
+
+/* SELF-COMPETITION FIX.
+ * Four service hubs carry a hand-written seoTitle that already targets Atlanta
+ * — "Commercial Property Management in Atlanta, GA" — and the templated title
+ * for that service's own /atlanta/ page comes out identical. Two of our URLs
+ * were therefore chasing one query with one title, and Search Console showed
+ * exactly the damage: for all four, the hub ranked between positions 50 and 58
+ * while its Atlanta twin sat at 70 to 87, with the impressions split across
+ * both. The hub also carries roughly twice the body copy.
+ *
+ * So where the two titles collide, the city page canonicalises to the hub and
+ * the signal consolidates onto the stronger page. The page is NOT removed — it
+ * still serves visitors and still carries its local notes; it just stops
+ * bidding against its own hub.
+ *
+ * The condition is the collision itself rather than a hardcoded list of four
+ * slugs, so it corrects itself if a hub title is ever rewritten. */
+const hubUrl = new URL(`/services/${service.slug}/`, site.domain).href;
+const canonicalUrl = service.seoTitle === seoTitle ? hubUrl : undefined;
 // Deliberately says "local team", not "licensed team". The group operates
 // through more than one entity and the licensing posture differs by service
 // line, so a blanket licensing claim in a sitewide-templated meta description
@@ -218,7 +237,7 @@ const schemas = [
 ];
 ---
 
-<BaseLayout title={seoTitle} description={seoDescription} schemas={schemas}>
+<BaseLayout title={seoTitle} description={seoDescription} schemas={schemas} canonicalUrl={canonicalUrl}>
   <PageHero
     title={heading}
     subtitle={service.intro}
