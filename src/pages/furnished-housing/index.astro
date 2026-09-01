@@ -1,0 +1,117 @@
+---
+/* Hub for the furnished / mid-term anchor pages.
+ *
+ * Exists partly because every anchor page's breadcrumb points here — a
+ * breadcrumb to a 404 is worse than no breadcrumb — and partly because this is
+ * the page that explains the category once, so the individual anchors do not
+ * each have to.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/ui/PageHero.astro';
+import Section from '@/components/ui/Section.astro';
+import Container from '@/components/ui/Container.astro';
+import Eyebrow from '@/components/ui/Eyebrow.astro';
+import CTABand from '@/components/ui/CTABand.astro';
+import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
+import { publishedAnchors, THIRTY_DAY_LINE } from '@/data/anchors';
+import { breadcrumbSchema, itemListSchema } from '@/lib/schema';
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Furnished housing', path: '/furnished-housing/' },
+];
+
+const schemas = [
+  breadcrumbSchema(breadcrumbs),
+  itemListSchema({
+    name: 'Furnished and mid-term housing locations ATLStay manages',
+    items: publishedAnchors.map((a) => ({
+      name: a.shortName ?? a.name,
+      path: `/furnished-housing/${a.slug}/`,
+      description: a.tagline,
+    })),
+  }),
+];
+---
+
+<BaseLayout
+  title="Furnished & Mid-Term Housing Management in Atlanta"
+  description="Furnished 30+ day rental management across metro Atlanta — near Emory, Grady, Piedmont, Northside and Children's Healthcare. For travel nurses, residents, corporate stays and relocating families."
+  schemas={schemas}
+>
+  <PageHero
+    title="Furnished & mid-term housing, managed properly"
+    subtitle="Between a weekend booking and a twelve-month lease sits a large, steady market: people who need somewhere furnished to live for one to six months. We manage properties for it across metro Atlanta."
+    eyebrow="30+ DAY STAYS"
+    breadcrumbs={breadcrumbs}
+    cta={{ label: 'Get my free projection', href: '/rental-projection/' }}
+  />
+
+  <Section variant="white">
+    <Container size="narrow">
+      <Eyebrow>Why owners choose it</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        Fewer turnovers, longer stays, a different rulebook
+      </h2>
+      <div class="mt-6 space-y-5 text-ink/80">
+        <p>
+          A furnished let of thirty days or more is a different business from a
+          nightly rental. Guests stay for months rather than nights, so the
+          property turns over a fraction as often, generates far fewer service
+          calls, and is usually left in better condition.
+        </p>
+        <p>
+          It also sits on the other side of a legal line that matters:
+        </p>
+      </div>
+      <div class="mt-7 rounded-2xl border-l-2 border-brass/60 bg-[#faf9f5] p-6 sm:p-8">
+        <h3 class="font-display text-lg text-forest">The 30-day line</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-ink/80">{THIRTY_DAY_LINE}</p>
+        <p class="mt-4 text-sm text-ink/70">
+          Rules differ by jurisdiction and do change. We confirm the position for
+          your specific address before anything is listed, and nothing here is
+          legal or tax advice.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <Section variant="cream">
+    <Container>
+      <Eyebrow>Where the demand is</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        Housing near the places that generate long stays
+      </h2>
+      <p class="mt-4 max-w-3xl text-ink/75">
+        Teaching hospitals rotate residents and fellows on fixed terms. Contract
+        nurses arrive on 13-week assignments. Families relocate alongside a child
+        in extended treatment. Each of these is a furnished stay, and each is tied
+        to a specific institution rather than to a neighbourhood.
+      </p>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {publishedAnchors.map((a) => (
+          <a
+            href={`/furnished-housing/${a.slug}/`}
+            class="group flex flex-col rounded-2xl border border-line bg-white p-6 transition-colors hover:border-brass focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
+          >
+            <span class="text-xs uppercase tracking-wide text-[#9aa39e]">{a.kind}</span>
+            <span class="mt-2 font-display text-lg text-forest group-hover:text-brass-600">{a.shortName ?? a.name}</span>
+            <span class="mt-1 text-xs text-[#5b6660]">{a.city}, GA</span>
+            <span class="mt-3 text-sm leading-relaxed text-ink/70">{a.tagline}</span>
+          </a>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <ServiceFormBand
+    heading="Would your property work as a furnished let?"
+    text="Send us the address and we'll come back with real numbers for it, from a person on our team, within one business day."
+  />
+
+  <CTABand
+    heading="Not sure which strategy earns most?"
+    text="We'll run the numbers on nightly, furnished mid-term and a twelve-month tenancy, and tell you honestly which one wins."
+  />
+</BaseLayout>

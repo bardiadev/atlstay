@@ -60,6 +60,9 @@ export const footerNav: { heading: string; links: { label: string; href: string 
       { label: 'Insurance & displacement', href: '/services/insurance-housing/' },
       { label: 'Film & production housing', href: '/services/film-production-housing/' },
       { label: 'Student & university housing', href: '/services/student-housing/' },
+      // The anchor hub. Without an inbound link from here the furnished
+      // location pages would be orphans reachable only from the sitemap.
+      { label: 'Housing near hospitals', href: '/furnished-housing/' },
     ],
   },
   {
