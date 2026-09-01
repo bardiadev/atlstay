@@ -223,3 +223,37 @@ export function exploreGridClass(count: number): string {
   if (count === 2) return `${base} mx-auto max-w-2xl`;
   return `${base} mx-auto max-w-sm sm:grid-cols-1`;
 }
+
+/**
+ * Guides that name a specific city, for linking from that city's page.
+ *
+ * WHY. An audit found 139 resource guides whose slug names a city we publish —
+ * `airbnb-in-marietta-ga`, `airbnb-management-cost-alpharetta` — and only 3 of
+ * them were linked from the city page they are about. The rest were reachable
+ * essentially only from the /resources/ index, which is why 169 pages sitewide
+ * had one inbound internal link or none. City pages are the strongest pages we
+ * have (2,265 impressions across 56 of them); the guides are among the weakest.
+ * Linking the two is free equity and it is the link a reader wants anyway.
+ *
+ * Matching is longest-city-slug-first and anchored on both ends, so
+ * `airbnb-in-east-atlanta-village` resolves to east-atlanta-village rather than
+ * to atlanta, and `airbnb-in-marietta-ga` is not claimed by a city whose slug
+ * merely appears inside another.
+ */
+export function guidesForCity(
+  citySlug: string,
+  allCitySlugs: string[],
+  guides: { slug: string; title: string; description?: string }[],
+  limit = 8,
+): { slug: string; title: string; description?: string }[] {
+  const byLength = [...allCitySlugs].sort((a, b) => b.length - a.length);
+  const out: typeof guides = [];
+  for (const g of guides) {
+    const owner = byLength.find((c) =>
+      new RegExp(`(^|-)${c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(-|$)`).test(g.slug),
+    );
+    if (owner === citySlug) out.push(g);
+    if (out.length >= limit) break;
+  }
+  return out;
+}

@@ -1,6 +1,7 @@
 // JSON-LD builders. Pages/layout render these via:
 //   <script type="application/ld+json" set:html={JSON.stringify(x)} />
 import { site } from '../config/site';
+import { serviceLines } from '../data/serviceLines';
 
 const ORG_ID = `${site.domain}/#organization`;
 const SITE_ID = `${site.domain}/#website`;
@@ -8,6 +9,65 @@ const SITE_ID = `${site.domain}/#website`;
 // owns the Google Business Profile. ATLStay is its secondary SEO brand and
 // references it as parentOrganization (without claiming its GBP reviews).
 const SILVERSTONE_ID = `${site.company.url}/#organization`;
+
+/**
+ * The management fee, as structured data.
+ *
+ * WHY THIS EXISTS. Asked "what does Atlanta property management cost" or
+ * "cheapest Airbnb management in Atlanta", an assistant extracts a price if one
+ * is machine-readable and paraphrases vaguely if it is not. Ours was only ever
+ * in prose. The fee is a genuine competitive fact — 10–15% all-in against the
+ * 25–35% that industry reviews report for the national operators, sourced on
+ * our own comparison pages — so it is worth stating in a form a machine can
+ * read.
+ *
+ * `unitText` is doing real work here. minPrice 10 / maxPrice 15 with a USD
+ * currency would otherwise read as ten to fifteen DOLLARS, which would be
+ * worse than saying nothing. The unit text and the description both spell out
+ * that this is a percentage of booking revenue.
+ *
+ * Deliberately NOT asserted: the happiness guarantee and the no-long-term-
+ * contract terms. The owner confirmed both are real but that they "depend on
+ * deal and offer", so they are not universal, and a blanket offer term in
+ * schema would misrepresent them.
+ */
+function managementOffer() {
+  return {
+    '@type': 'Offer',
+    name: 'All-inclusive property management',
+    description:
+      `${site.pricing.rate} ${site.pricing.rateNote}. ${site.pricing.rateBasis}`,
+    priceCurrency: 'USD',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      priceCurrency: 'USD',
+      minPrice: Number(site.pricing.rateFrom.replace('%', '')),
+      maxPrice: Number(site.pricing.rateHigh.replace('%', '')),
+      unitText: 'percent of booking revenue',
+      description: `${site.pricing.rate} of booking revenue, all-inclusive. No setup fees and no per-booking charges.`,
+    },
+    seller: { '@id': ORG_ID },
+    areaServed: { '@type': 'State', name: 'Georgia' },
+  };
+}
+
+/** Every service line we actually publish a page for. */
+function offerCatalog() {
+  return {
+    '@type': 'OfferCatalog',
+    name: `${site.brandName} property management services`,
+    itemListElement: serviceLines.map((l) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: l.name,
+        serviceType: l.name,
+        url: `${site.domain}/services/${l.slug}/`,
+        provider: { '@id': ORG_ID },
+      },
+    })),
+  };
+}
 
 function postalAddress() {
   const a = site.contact.address;
@@ -40,6 +100,34 @@ export function organizationSchema() {
     },
     image: `${site.domain}/images/og-default.jpg`,
     ...(sameAs.length ? { sameAs } : {}),
+    foundingDate: String(site.stats.foundingYear),
+    areaServed: [...site.serviceAreas].map((name) =>
+      name === 'Georgia, US'
+        ? { '@type': 'State', name: 'Georgia' }
+        : { '@type': 'City', name },
+    ),
+    // Topical scope, for entity understanding. Every one of these is a subject
+    // we publish a real service line or guide on — not an aspirational list.
+    knowsAbout: [
+      'Short-term rental management',
+      'Airbnb property management',
+      'Vacation rental management',
+      'Long-term rental management',
+      'Tenant placement',
+      'Mid-term and furnished rental management',
+      'Corporate housing',
+      'Travel nurse housing',
+      'Insurance and displacement housing',
+      'Film and production housing',
+      'Student housing',
+      'HOA and community association management',
+      'Commercial property management',
+      'Multi-family property management',
+      'Georgia landlord-tenant law',
+      'Atlanta short-term rental regulations',
+    ],
+    hasOfferCatalog: offerCatalog(),
+    makesOffer: managementOffer(),
     // ATLStay is a secondary brand operated by Silverstone Management LLC.
     parentOrganization: { '@id': SILVERSTONE_ID },
     contactPoint: {
@@ -112,6 +200,13 @@ export function localBusinessSchema(opts: { areaServed?: string[] } = {}) {
     // count on a new domain risks being ignored or flagged. The visible
     // social-proof copy (ReviewProof) carries the rating instead.
     foundingDate: String(site.stats.foundingYear),
+    // The fee is repeated here on purpose — it is the single most extracted
+    // fact on the page and the ProfessionalService entity is what a local
+    // query resolves to. The full service catalogue is NOT repeated: it hangs
+    // off the Organization above, which this references as parent, and
+    // duplicating fifteen offers into every one of 936 pages bought weight
+    // without adding meaning.
+    makesOffer: managementOffer(),
     parentOrganization: { '@id': ORG_ID },
   };
 }
@@ -175,6 +270,7 @@ export function serviceSchema(opts: {
     serviceType: opts.serviceType ?? 'Short-term rental management',
     provider: { '@id': ORG_ID },
     areaServed,
+    offers: managementOffer(),
   };
 }
 

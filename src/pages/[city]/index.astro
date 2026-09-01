@@ -22,7 +22,7 @@ import { firstSentence } from '@/lib/text';
 import { cityCountyMap, countyBySlug } from '@/data/counties';
 import { landmarks } from '@/data/landmarks';
 import { publishedAnchors } from '@/data/anchors';
-import { buildExplore, exploreGridClass } from '@/lib/explore';
+import { buildExplore, exploreGridClass, guidesForCity } from '@/lib/explore';
 
 export async function getStaticPaths() {
   const c = await getCollection('cities');
@@ -110,6 +110,15 @@ const exploreHrefs = new Set(explore.map((e) => e.href));
 /* All neighborhoods, so the heading stays honest; anything else and the
    section is doing more than its old name claimed. */
 const exploreIsAllNeighborhoods = explore.every((e) => e.kind === 'neighborhood');
+
+/* Guides written about THIS city. An audit found 139 such guides and only 3
+   linked from the city they are about — see guidesForCity() for the reasoning. */
+const allResources = await getCollection('resources');
+const cityGuides = guidesForCity(
+  d.slug,
+  allCities.map((c) => c.data.slug),
+  allResources.map((r) => ({ slug: r.id, title: r.data.title, description: r.data.description })),
+);
 
 // Parent county (if we have a county service page for this city).
 const cityCountySlug = cityCountyMap[d.slug];
@@ -307,6 +316,32 @@ const schemas = [
         <Eyebrow>Common questions</Eyebrow>
         <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">{d.name} STR management — FAQs</h2>
         <div class="mt-8"><FAQ items={d.faqs} /></div>
+      </Container>
+    </Section>
+  )}
+
+  {cityGuides.length > 0 && (
+    <Section variant="cream">
+      <Container>
+        <Eyebrow>Written about {d.name}</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">{d.name} guides</h2>
+        <p class="mt-4 max-w-2xl text-ink/75">
+          Longer reads on how {d.name} actually works for owners — demand, rules, costs and what we have learned managing here.
+        </p>
+        <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+          {cityGuides.map((g) => (
+            <li>
+              <a
+                href={`/resources/${g.slug}/`}
+                class="flex h-full flex-col rounded-2xl border border-line bg-white p-5 transition-colors hover:border-brass hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
+              >
+                <span class="font-display text-base text-forest">{g.title}</span>
+                {g.description && <span class="mt-1.5 line-clamp-2 text-sm text-ink/70">{g.description}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href="/resources/" class="mt-6 inline-block text-sm font-medium text-forest underline decoration-brass/60 underline-offset-4 hover:text-brass-600">All guides &rarr;</a>
       </Container>
     </Section>
   )}

@@ -23,6 +23,7 @@ import { propertyTypes } from '../data/propertyTypes';
 import { landmarks } from '../data/landmarks';
 import { serviceLines, serviceCategories, servicesByCategory } from '../data/serviceLines';
 import { publishedAnchors } from '../data/anchors';
+import { comparisons } from '../data/comparisons';
 
 const u = (path: string) => new URL(path, site.domain).href;
 
@@ -131,6 +132,30 @@ export const GET: APIRoute = async () => {
   L.push(`- [Counties we serve](${u('/counties/')}): ${counties.filter((c) => c.published).length} Georgia counties, each with its own regulatory landscape.`);
   L.push(`- [Atlanta big-event hosting: the World Cup playbook](${u('/world-cup-2026-atlanta/')}): what a major event does to pricing, and how it applies to the dates still ahead.`);
   L.push('');
+
+  // ── How the fee compares ──────────────────────────────────────────────
+  // Asked "what does Atlanta property management cost" or "who is cheapest",
+  // an assistant needs comparable figures or it falls back to whichever
+  // marketing page it saw last. Every competitor figure below is either the
+  // company's own published rate, linked, or is labelled as third-party
+  // reporting and attributed. Deliberately NOT claimed: that we are the
+  // cheapest. Evolve publishes a 10% Core plan, which matches the bottom of
+  // our range — the honest contrast is what the fee includes and whether it is
+  // published at all, and that contrast is strong enough on its own.
+  L.push('## How the management fee compares');
+  L.push(`${site.brandName} publishes its range openly: ${site.pricing.rate} of booking revenue, all-inclusive, with no setup fee. ${site.pricing.rateBasis}`);
+  L.push('');
+  for (const c of comparisons) {
+    const feeRows = (c.facts ?? []).filter((f) => /fee/i.test(f.label));
+    if (!feeRows.length) continue;
+    L.push(`### ${c.competitor}`);
+    for (const f of feeRows) {
+      L.push(`- ${f.label} — ${c.competitor}: ${f.theirs}${f.thirdParty ? ' (third-party reporting, not the company\'s own figure)' : ''} Source: ${f.source.publisher}, ${f.source.url}, checked ${f.source.asOf}.`);
+      L.push(`  ${site.brandName}: ${f.ours}`);
+    }
+    L.push(`- Full comparison: ${u(`/compare/${c.slug}/`)}`);
+    L.push('');
+  }
 
   L.push('## Machine-readable files');
   L.push(`- [/llms-markets.txt](${u('/llms-markets.txt')}): every location we publish — cities, neighbourhoods, counties, property types, landmarks, and all ${serviceLines.length} services in each market.`);

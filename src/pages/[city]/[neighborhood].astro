@@ -54,6 +54,18 @@ const cityName =
    side stays in the H1, the copy and the schema so nothing is traded away. */
 const seoTitle = `${entry.data.name} Property Management — ${cityName}, GA`;
 
+/* Guides written about THIS neighbourhood. Atlanta alone has 82 guides whose
+   slug names a place we publish, and the city page can only reasonably show a
+   handful — but a guide about Candler Park belongs on the Candler Park page
+   far more than on Atlanta's. Matching is anchored on both ends so
+   `west-end` cannot be claimed by a slug that merely contains those letters. */
+const nbhdSlug = entry.data.slug;
+const nbhdRe = new RegExp(`(^|-)${nbhdSlug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(-|$)`);
+const nbhdGuides = (await getCollection('resources'))
+  .filter((r) => nbhdRe.test(r.id))
+  .slice(0, 6)
+  .map((r) => ({ slug: r.id, title: r.data.title, description: r.data.description }));
+
 const schemas = [
   breadcrumbSchema([
     { name: 'Home', path: '/' },
@@ -232,6 +244,28 @@ const schemas = [
       </div>
     </Container>
   </Section>
+
+  {nbhdGuides.length > 0 && (
+    <Section variant="cream">
+      <Container>
+        <Eyebrow>Written about {entry.data.name}</Eyebrow>
+        <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">{entry.data.name} guides</h2>
+        <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+          {nbhdGuides.map((g) => (
+            <li>
+              <a
+                href={`/resources/${g.slug}/`}
+                class="flex h-full flex-col rounded-2xl border border-line bg-white p-5 transition-colors hover:border-brass hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
+              >
+                <span class="font-display text-base text-forest">{g.title}</span>
+                {g.description && <span class="mt-1.5 line-clamp-2 text-sm text-ink/70">{g.description}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </Section>
+  )}
 
   <CTABand
     heading={`Own a property in ${entry.data.name}?`}
