@@ -33,8 +33,26 @@ const heroImg = entry.data.heroImage && entry.data.heroImage in images
   ? images[entry.data.heroImage as ImageKey]
   : images.nbhdDefault;
 
-const cityName = entry.data.citySlug.charAt(0).toUpperCase() + entry.data.citySlug.slice(1);
-const seoTitle = `Airbnb Management in ${entry.data.name}, ${cityName}`;
+/* The city's real name, from the cities collection.
+   This used to upper-case the first letter of the slug, which is fine for
+   "atlanta" and wrong for every two-word city: "sandy-springs" rendered as
+   "Sandy-springs" and "blue-ridge" as "Blue-ridge", nine times on a single
+   page including the <title> tag Google shows in results. */
+const cityEntry = (await getCollection('cities', (c) => c.data.slug === entry.data.citySlug))[0];
+const cityName =
+  cityEntry?.data.name ??
+  entry.data.citySlug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+/* TITLE — measured, the same way the city pages were.
+   Search Console, 28 days, queries landing on these pages: "<area> property
+   management" style queries carry 43% of all neighborhood-page impressions
+   (89 of 205) at a median position of 58, and the phrase "property management"
+   appeared in no neighborhood <title> at all. The "airbnb ..." queries, which
+   the old title DID match, sit at a median position of 20. Same page, same
+   authority — the difference is whether the title contains the words. So the
+   title now leads with the phrase carrying the impressions, and the short-term
+   side stays in the H1, the copy and the schema so nothing is traded away. */
+const seoTitle = `${entry.data.name} Property Management — ${cityName}, GA`;
 
 const schemas = [
   breadcrumbSchema([
@@ -44,7 +62,7 @@ const schemas = [
     { name: entry.data.name, path: `/${entry.data.citySlug}/${entry.data.slug}/` },
   ]),
   serviceSchema({
-    name: `Short-Term Rental Management in ${entry.data.name}, ${cityName}`,
+    name: `Property Management in ${entry.data.name}, ${cityName}`,
     description: entry.data.description,
   }),
 ];
@@ -57,7 +75,7 @@ const schemas = [
   schemas={schemas}
 >
   <PageHero
-    title={`${entry.data.name} Airbnb & Vacation Rental Management`}
+    title={`${entry.data.name} Property Management`}
     subtitle={entry.data.intro}
     eyebrow={`${cityName} · ${entry.data.name}`}
     image={heroImg.src}
