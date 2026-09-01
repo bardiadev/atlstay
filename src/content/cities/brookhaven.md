@@ -10,7 +10,7 @@ title: "Airbnb Management in Brookhaven, GA"
 description: "Property management in Brookhaven, GA. Short-term permits are owner-occupied only, so most owners let long-term or furnished 30-day-plus near Children's Healthcare and MARTA."
 intro: "Brookhaven is one of metro Atlanta's most desirable residential addresses — and that desirability, anchored by Buford Highway's dining scene, Children's Healthcare proximity, and direct MARTA access, translates into a consistent, premium-yielding short-term rental market."
 heroImage: metroAtlanta
-neighborhoods: []
+neighborhoods: ["town-brookhaven", "brookhaven-village", "historic-brookhaven"]
 highlights:
   - "Buford Highway corridor drives destination dining and cultural tourism demand"
   - "Children's Healthcare of Atlanta and CDC proximity creates medical-travel bookings"

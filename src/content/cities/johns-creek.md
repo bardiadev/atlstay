@@ -10,7 +10,7 @@ title: "Airbnb Management in Johns Creek, GA"
 description: "Property management in Johns Creek, GA. The zoning code defines residential use as stays over 30 days, so we run long-term leasing and furnished mid-term housing for Tech Park and Emory Johns Creek demand."
 intro: "Johns Creek is one of the most affluent communities in Georgia — a city of large family homes, top-ranked schools, and a resident profile that generates strong demand from visiting families, medical professionals, and the corporate relocation market."
 heroImage: metroAtlanta
-neighborhoods: []
+neighborhoods: ["technology-park", "medlock-bridge", "johns-creek-town-center"]
 highlights:
   - "Consistently ranked among Georgia's most affluent cities — premium home stock supports premium rates"
   - "Medical and technology employers along GA-141 create weekday business-travel demand"

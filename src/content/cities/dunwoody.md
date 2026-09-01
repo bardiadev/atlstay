@@ -10,7 +10,7 @@ title: "Airbnb Management in Dunwoody, GA"
 description: "Property management in Dunwoody, GA. Nightly letting is not permitted here, so we run long-term leasing and furnished 30-day-plus corporate stays off Perimeter Center demand."
 intro: "Dunwoody's Perimeter Center office market, walkable Village district, and upscale residential neighborhoods create a demand profile dominated by business travel — making it one of metro Atlanta's most stable and predictable STR markets for owners who know how to position for the corporate guest."
 heroImage: suburbHome
-neighborhoods: []
+neighborhoods: ["perimeter-center", "dunwoody-village", "georgetown"]
 highlights:
   - "Perimeter Center — one of metro Atlanta's largest office concentrations — drives weekday demand"
   - "Dunwoody Village dining scene creates weekend leisure bookings"
