@@ -95,9 +95,35 @@ const article = /^[aeiou]/i.test(d.name) ? 'an' : 'a';
 const revenueShare = ['short-term', 'mid-term', 'platform'].includes(service.category);
 const quotesRevenueShare = (s: string) =>
   /booking revenue|%\s*of\s*(the\s*)?(booking\s*)?revenue|\d+\s*[–—-]\s*\d+\s*%/i.test(s);
-const cityFaqs = revenueShare
+const feeSafeFaqs = revenueShare
   ? [...d.faqs]
   : d.faqs.filter((f) => !quotesRevenueShare(f.a) && !quotesRevenueShare(f.q));
+
+/* A city's FAQs were the SAME six questions on all twelve of that city's
+ * service pages, which made them the single biggest source of duplication
+ * between sibling service pages — measured at ~60% identical paragraphs for
+ * same-city/different-service pairs. They were also frequently off-topic: an
+ * Airbnb permit question sitting on a corporate-housing page.
+ *
+ * Take a service-appropriate slice instead. Questions whose wording actually
+ * touches this service come first; the remainder is rotated by a hash of the
+ * service slug so two services in the same city never open with the same
+ * filler. Nothing is lost — the full list still renders on the city page
+ * itself, which is where someone browsing the whole market will read it.
+ */
+const FAQ_FIT: Record<string, RegExp> = {
+  'short-term': /short.?term|airbnb|nightly|guest|permit|licen[cs]e|occupancy|review/i,
+  'mid-term': /mid.?term|furnished|30|month|extended|corporate|nurse|insurance|relocat|stay/i,
+  platform: /airbnb|vrbo|booking|listing|channel|direct|photo|rank/i,
+  'long-term': /long.?term|lease|tenant|annual|renter|screen|deposit|evict/i,
+  commercial: /commercial|office|retail|multi.?family|unit|hoa|association|board|assessment/i,
+};
+const fit = FAQ_FIT[service.category] ?? /./;
+const onTopic = feeSafeFaqs.filter((f) => fit.test(f.q) || fit.test(f.a));
+const offTopic = feeSafeFaqs.filter((f) => !onTopic.includes(f));
+const spin = Math.abs([...service.slug].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 0));
+const turn = offTopic.length ? spin % offTopic.length : 0;
+const cityFaqs = [...onTopic, ...offTopic.slice(turn), ...offTopic.slice(0, turn)].slice(0, 3);
 
 const heading = `${service.name} in ${d.name}, ${d.state}`;
 
@@ -141,9 +167,23 @@ const seoTitle =
 // hard-slicing to 155 chopped descriptions mid-word ("Get a free projec"). This
 // composes only fixed-length parts, so every one of the 470 city pages ends as
 // a complete sentence with no truncation.
-const seoDescription = boardAudience
-  ? `${service.name} in ${d.name}, ${d.state} from a local Atlanta team. Request a written management proposal for your community.`
-  : `${service.name} in ${d.name}, ${d.state} from a local Atlanta team. Get a free projection for your property.`;
+// The county is real, differs city to city, and is exactly the kind of local
+// qualifier a searcher recognises — so it carries the description instead of
+// the same "from a local Atlanta team" sentence appearing on all 454 pages.
+// Still composed from fixed-length parts and length-checked, so no description
+// can end mid-word; falls back to the plain form if a long name overruns.
+const shortLabel = SHORT_LABEL[service.slug] ?? service.name;
+const countyPhrase = d.county ? `${d.county} County` : 'metro Atlanta';
+const cta = boardAudience
+  ? 'Request a written management proposal.'
+  : 'Get a free projection for your property.';
+const describedAs = [
+  `${shortLabel} in ${d.name}, ${d.state} — for owners across ${countyPhrase}. ${cta}`,
+  `${shortLabel} in ${d.name}, ${d.state} from a local ${countyPhrase} team. ${cta}`,
+  `${service.name} in ${d.name}, ${d.state} from a local Atlanta team. ${cta}`,
+];
+const seoDescription =
+  describedAs.find((s) => s.length <= 158) ?? describedAs[describedAs.length - 1];
 
 // Only link a county that actually has a page — the cities collection names
 // counties we don't publish (Pickens, Lumpkin, Gilmer, Hall…), and linking them
@@ -246,6 +286,24 @@ const schemas = [
           </div>
         </div>
       )}
+
+      {/* Two pages were competing for "{city} property management" — this one
+          and the city page — and both sat at position 70+ as a result. This
+          says, in the words people actually search, which page owns that term
+          and sends the reader there. It is also the honest answer for an owner
+          who landed on one service and wants the whole property handled: that
+          full-service work is the core of the business, not a side line. */}
+      <div class="mt-10 rounded-xl border border-line bg-white/70 px-5 py-4 sm:px-6">
+        <p class="text-[15px] leading-relaxed text-ink/80">
+          Want the whole property handled, not just {service.name.toLowerCase()}?
+          {' '}
+          <a
+            href={`/${d.slug}/`}
+            class="font-medium text-forest underline decoration-brass/60 underline-offset-4 transition-colors hover:text-brass-600"
+          >{d.name} property management</a>
+          {' '}covers short-term, long-term and everything between — one team, one point of contact.
+        </p>
+      </div>
 
       <div class="mt-10">
         <Button href={`/services/${service.slug}/`} size="lg">
