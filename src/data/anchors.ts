@@ -254,12 +254,16 @@ export const anchors: Anchor[] = [
     demand: [
       'Piedmont Atlanta is a 643-bed hospital on Peachtree Road, in Buckhead — by its own description, in the middle of one of the strongest rental submarkets in the city.',
       'That location is the point. A furnished property near Piedmont is not dependent on the hospital alone: Buckhead carries corporate relocation, extended business travel and executive housing demand at the same time, on the same kind of thirty-day-plus terms.',
-      'For an owner, that overlap is what makes the furnished strategy defensible here. When healthcare contracting slows, the corporate demand does not necessarily slow with it.',
+      'Piedmont runs its own internal travel-staffing agency placing nurses on 12- and 13-week assignments across its Georgia hospitals, Atlanta included. That is the same contract length the wider travel-nurse market works to, and the same length a furnished let is built around.',
+      'For an owner, that overlap is what makes the furnished strategy defensible here. When healthcare contracting slows, the corporate demand does not necessarily slow with it. Drive times checked on Google Maps: Midtown 10 minutes, Buckhead Village 10, Virginia-Highland 14, Brookhaven 17.',
     ],
     facts: [
       { label: 'Address', value: '1968 Peachtree Rd NW, Atlanta, GA 30309' },
       { label: 'Neighbourhood', value: 'Buckhead' },
-      { label: 'Beds', value: '643' },
+      { label: 'Beds', value: '643 licensed' },
+      { label: 'Staff', value: 'More than 1,000 physicians and 4,000 healthcare professionals' },
+      { label: 'Admissions', value: 'Around 30,000 inpatient admissions a year' },
+      { label: 'Transit', value: 'No rail station within walking distance; Lindbergh Center is 2.6 miles' },
     ],
     audiences: [
       'Travel nurses and allied health contractors',
@@ -290,6 +294,7 @@ export const anchors: Anchor[] = [
     ],
     sources: [
       { label: 'Piedmont — Piedmont Atlanta Hospital', url: 'https://www.piedmont.org/locations/piedmont-atlanta', checked: '2026-09-01' },
+      { label: 'Piedmont Careers — First Call Staffing internal travel agency', url: 'https://piedmontcareers.org/atlanta-internal-medicine/', checked: '2026-09-01' },
       NURSE_SOURCE,
     ],
     published: true,
@@ -306,13 +311,17 @@ export const anchors: Anchor[] = [
     demand: [
       'Northside Hospital Atlanta is in the Pill Hill medical district of Sandy Springs. Despite the name, it is not inside Atlanta city limits — which matters for anyone comparing local rules, and matters for how a listing should describe itself.',
       'Northside sponsors its own ACGME-accredited graduate medical education: an internal medicine residency, a transitional year residency and a colon and rectal surgery programme. These are its own programmes rather than a university affiliation, and they put trainees on the ground for fixed terms every year.',
-      'Pill Hill concentrates several major medical employers in a small area, so a furnished property here is within reach of more than one of them rather than betting on a single hospital.',
+      'Pill Hill concentrates several major medical employers in a small area — Northside, Emory Saint Joseph\u2019s and Children\u2019s at Scottish Rite all sit within it — so a furnished property here is within reach of more than one of them rather than betting on a single hospital. The Medical Center MARTA station was effectively built to serve the district and is a short walk from the hospital.',
+      'Northside also delivers more babies each year than any other hospital in the United States, and in 2023 became the first US hospital verified as a Level IV Maternal Center. Maternity at that scale draws specialist staff and travelling families from well outside the immediate area. Drive times checked on Google Maps: Sandy Springs 9 minutes, Brookhaven 11, Dunwoody and Chamblee 13, Buckhead 16.',
     ],
     facts: [
       { label: 'Address', value: '1000 Johnson Ferry Rd NE, Sandy Springs, GA' },
       { label: 'District', value: 'Pill Hill, Sandy Springs — outside Atlanta city limits' },
-      { label: 'Beds', value: '621 (2023)' },
-      { label: 'Teaching hospital', value: 'Yes — sponsors its own ACGME internal medicine, transitional year and colon & rectal surgery programmes' },
+      { label: 'Beds', value: '621 licensed' },
+      { label: 'Staff', value: '14,000 employees and more than 4,000 physicians' },
+      { label: 'Transit', value: 'Medical Center MARTA station is a 0.4-mile walk' },
+      { label: 'Teaching hospital', value: 'Yes — sponsors its own ACGME internal medicine and family medicine residencies, plus sports medicine and colorectal surgery fellowships' },
+      { label: 'Maternity', value: 'Delivers more babies annually than any other hospital in the United States; first US hospital verified as a Level IV Maternal Center (2023)' },
     ],
     audiences: [
       'Residents on Northside-sponsored programmes',
@@ -344,7 +353,10 @@ export const anchors: Anchor[] = [
     ],
     sources: [
       { label: 'Northside Hospital — Internal Medicine Residency Program', url: 'https://www.northside.com/locations/internal-medicine-residency-program', checked: '2026-09-01' },
-      { label: 'AMA FREIDA — Northside Hospital programme listing', url: 'https://freida.ama-assn.org/program/0601231047', checked: '2026-09-01' },
+      { label: 'Northside Hospital Atlanta — Graduate Medical Education programmes', url: 'https://nsgmeatl.com/office-of-gme/programs', checked: '2026-09-01' },
+      { label: 'Northside Hospital Atlanta — location and facility facts', url: 'https://www.northside.com/locations/northside-hospital-atlanta', checked: '2026-09-01' },
+      { label: 'Georgia Public Broadcasting — first US Level IV Maternal Center', url: 'https://www.gpb.org/news/2023/01/19/northside-atlanta-first-hospital-in-the-us-top-tier-maternal-care-designation', checked: '2026-09-01' },
+      { label: 'City of Sandy Springs — hospitals in the city', url: 'https://www.sandyspringsga.gov/hospitals/', checked: '2026-09-01' },
       NURSE_SOURCE,
     ],
     published: true,
