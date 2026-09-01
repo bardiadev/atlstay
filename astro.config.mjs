@@ -1,6 +1,5 @@
 // @ts-check
 import { readdirSync, readFileSync } from 'node:fs';
-import { execSync } from 'node:child_process';
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
@@ -52,64 +51,43 @@ function resourceLastmods() {
 const RESOURCE_LASTMOD = resourceLastmods();
 
 /**
- * Real `lastmod` for every OTHER page type, taken from git.
+ * Real `lastmod` for every page type, read from a COMMITTED map.
  *
- * Resources carry their own dates in frontmatter. Everything else used to fall
- * back to the build timestamp, which meant 702 of 910 URLs claimed to change
- * at the same instant every deploy — and a crawler that sees that stops
- * believing the field at all, including on the pages where it is true.
+ * This deliberately does not call git. The first version did, and it silently
+ * did nothing in production: Cloudflare Pages builds from a shallow clone, so
+ * `git log` saw one commit, every path resolved to the same date, and the
+ * sitemap went straight back to claiming all 910 URLs changed today. It passed
+ * locally and failed live — caught only by reading the deployed sitemap.
  *
- * The honest date for a generated page is the last time anything that
- * determines its output actually changed: its own content file, the data file
- * it is built from, and the template that renders it. One `git log` walk gives
- * the most recent commit touching each path, and the page takes the newest of
- * the files that feed it. No date is invented — a page with no known source
- * simply keeps the build timestamp, as before.
- *
- * @returns {Map<string, string>} repo path → ISO date
+ * scripts/build-lastmod.mjs computes the dates where full history exists and
+ * writes src/data/lastmod.json, which is committed. Run it before committing
+ * when content changes. A missing or stale map degrades to the build timestamp
+ * — the old behaviour — rather than producing a date that is wrong.
  */
-function gitLastmods() {
-  /** @type {Map<string, string>} */
-  const map = new Map();
-  let out = '';
-  try {
-    out = execSync('git log --pretty=format:%cI --name-only --no-merges', {
-      encoding: 'utf8',
-      maxBuffer: 64 * 1024 * 1024,
-      stdio: ['ignore', 'pipe', 'ignore'],
-    });
-  } catch {
-    return map; // not a git checkout, or git unavailable — fall back to build time
-  }
-  let current = '';
-  for (const line of out.split('\n')) {
-    if (!line.trim()) continue;
-    if (/^\d{4}-\d{2}-\d{2}T/.test(line)) { current = line.trim(); continue; }
-    // First time a path appears is its most recent commit — git logs newest first.
-    if (current && !map.has(line)) map.set(line, current);
-  }
-  return map;
+let GIT_LASTMOD = /** @type {Record<string,string>} */ ({});
+try {
+  GIT_LASTMOD = JSON.parse(readFileSync(new URL('./src/data/lastmod.json', import.meta.url), 'utf8'));
+} catch {
+  console.warn('[sitemap] src/data/lastmod.json missing — lastmod falls back to build time. Run: node scripts/build-lastmod.mjs');
 }
-
-const GIT_LASTMOD = gitLastmods();
 
 /** Newest ISO date among the given repo paths, or null if none are known. */
 function newestOf(...paths) {
   let best = null;
   for (const p of paths) {
     if (!p) continue;
-    const d = GIT_LASTMOD.get(p);
+    const d = GIT_LASTMOD[p];
     if (d && (!best || d > best)) best = d;
   }
   return best;
 }
 
-/** Every serviceLines / serviceNotes source file, since any of them can change a page. */
-function dataDirPaths(dir) {
-  return [...GIT_LASTMOD.keys()].filter((p) => p.startsWith(dir));
-}
-const SERVICE_DATA = [...dataDirPaths('src/data/serviceLines/'), ...dataDirPaths('src/data/serviceNotes/')];
-const NEWEST_SERVICE_DATA = newestOf(...SERVICE_DATA);
+/** Any serviceLines / serviceNotes file can change a service page. */
+const NEWEST_SERVICE_DATA = newestOf(
+  ...Object.keys(GIT_LASTMOD).filter(
+    (p) => p.startsWith('src/data/serviceLines/') || p.startsWith('src/data/serviceNotes/'),
+  ),
+);
 
 // NOTE: update `site` to the production domain before deploy.
 export default defineConfig({
