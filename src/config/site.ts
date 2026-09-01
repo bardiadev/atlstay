@@ -74,8 +74,13 @@ export const site = {
 
   // Recommended differentiators — business decisions; confirm before publishing.
   features: {
-    guarantee: true, // CONFIRM
-    guaranteeText: '6-month happiness guarantee', // CONFIRM
+    guarantee: true, // Owner-confirmed 2026-09-01
+    // Owner-confirmed 2026-09-01 that the guarantee is real and current, but
+    // that it "depends on deal and offer" — so it is NOT universal. The
+    // qualifier keeps the claim true wherever it renders: it was previously
+    // stated as an unconditional promise on the homepage, pricing, how-it-works
+    // and the projection page. Do not shorten it back.
+    guaranteeText: '6-month happiness guarantee on our standard management agreement',
     noLockIn: true, // CONFIRM — no long-term contract
     marketRange: false, // keep OFF unless citing a sourced market range
   },

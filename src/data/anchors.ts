@@ -429,12 +429,15 @@ export const anchors: Anchor[] = [
     demand: [
       'The Arthur M. Blank Hospital opened in September 2024 with 446 licensed beds — 116 more than Egleston had before it. A new hospital of that size does not just move staff around; it expands what the site can treat and how far families travel to reach it.',
       'Paediatric care creates a housing need that adult hospitals largely do not: families relocating for weeks or months alongside a child in extended treatment. That is a furnished, thirty-day-plus stay, and it is often arranged at short notice.',
-      "Children's partners with Emory University School of Medicine on the paediatric residency and multiple accredited fellowships, with the paediatric anaesthesiology fellowship sited at this hospital specifically. More than 500 physicians hold joint appointments across both institutions.",
+      "Children's partners with Emory University School of Medicine on the paediatric residency and multiple accredited fellowships, with the paediatric anaesthesiology fellowship sited at this hospital specifically. It is also a primary paediatric training site for Morehouse School of Medicine, and more than 500 physicians hold joint appointments across both institutions. Drive times checked on maps: Buckhead 12 minutes, Chamblee 14, Decatur 18.",
+      "One thing worth knowing if you are comparing addresses: this hospital replaced Egleston rather than joining it. All 202 inpatients moved across in a single day in September 2024, and the Egleston building on Clifton Road is no longer an operating hospital. Scottish Rite in Sandy Springs is still open and separate.",
     ],
     facts: [
       { label: 'Address', value: '2220 North Druid Hills Rd NE, Atlanta, GA 30329' },
       { label: 'Opened', value: 'September 2024' },
       { label: 'Beds', value: '446 licensed — 116 more than Egleston previously had' },
+      { label: 'Scale', value: '19 storeys, 2 million sq ft — a $1.5bn build, the largest healthcare construction project in Georgia history' },
+      { label: 'Access', value: 'At the I-85 / North Druid Hills interchange, redesigned in 2019 to give the hospital its own ramp; MARTA bus route 17 stops at the door' },
       { label: 'Teaching', value: 'Emory paediatric residency and accredited fellowships, including paediatric anaesthesiology sited here' },
     ],
     audiences: [
@@ -468,6 +471,76 @@ export const anchors: Anchor[] = [
     sources: [
       { label: "Children's Healthcare of Atlanta — Arthur M. Blank Hospital", url: 'https://www.choa.org/locations/arthur-m-blank-hospital', checked: '2026-09-01' },
       { label: "Children's Healthcare of Atlanta — fellowships and residencies", url: 'https://www.choa.org/medical-professionals/education-and-training/fellowships-and-residencies', checked: '2026-09-01' },
+      NURSE_SOURCE,
+    ],
+    published: true,
+  },
+
+  {
+    slug: 'wellstar-kennestone-marietta',
+    name: 'Wellstar Kennestone Regional Medical Center',
+    shortName: 'Wellstar Kennestone',
+    kind: 'Regional medical centre',
+    city: 'Marietta',
+    county: 'Cobb',
+    address: '677 Church St NE, Marietta, GA 30060',
+    tagline: 'Furnished housing in Marietta and Cobb — where there is no MARTA and a car is assumed',
+    demand: [
+      "Kennestone sits just north of Marietta Square and is the largest hospital in Cobb County. In May 2024 it was verified as a Level I trauma centre, making it only the second in metro Atlanta after Grady — a designation that followed Atlanta Medical Center closing in 2022, and one that took some of that hospital's emergency staff with it.",
+      'It is still growing. The nine-storey Yellow Tower opened to patients in April 2026: a $400 million, roughly 300,000 square foot addition carrying 235 beds, including a 49-bed neonatal intensive care unit. New capacity on that scale has to be staffed, and a good share of that hiring is contract cover.',
+      'That is not speculative here. Travel assignments at Kennestone are advertised openly through several national agencies at weekly rates well above a staff wage, which tells you what the housing budget behind them looks like.',
+      "Kennestone also runs seven residency programmes and a fellowship through Wellstar's own accredited consortium — internal medicine, emergency medicine, obstetrics and gynaecology, general surgery, transitional year, family medicine and palliative care.",
+    ],
+    facts: [
+      { label: 'Address', value: '677 Church St NE, Marietta, GA 30060' },
+      { label: 'County', value: 'Cobb County — just north of Marietta Square' },
+      { label: 'Beds', value: '633 inpatient plus 166 emergency department beds, before the new tower' },
+      { label: 'Recent expansion', value: 'Yellow Tower opened April 2026 — $400m, nine storeys, 235 beds including a 49-bed NICU' },
+      { label: 'Trauma status', value: 'Level I trauma centre since May 2024 — the second in metro Atlanta after Grady' },
+      { label: 'Teaching hospital', value: "Yes — seven residency programmes plus a fellowship, run through Wellstar's own consortium rather than a university partnership" },
+      { label: 'Transit', value: 'No MARTA — Cobb County sits outside the system. CobbLinc routes 40 and 45 stop a two-minute walk away on Church Street' },
+    ],
+    audiences: [
+      'Travel nurses and allied health contractors on 13-week assignments',
+      'Residents across seven Wellstar programmes',
+      'NICU and trauma specialists recruited for the new tower',
+      'Families staying near extended treatment',
+      'Corporate assignees working in Cobb County',
+    ],
+    nearby: [
+      { name: 'Marietta', href: '/marietta/' },
+      { name: 'East Cobb', href: '/marietta/east-cobb/' },
+      { name: 'Kennesaw', href: '/kennesaw/' },
+      { name: 'Smyrna', href: '/smyrna/' },
+      { name: 'Vinings', href: '/vinings/' },
+      { name: 'Acworth', href: '/acworth/' },
+    ],
+    services: [
+      { name: 'Travel Nurse Housing Management', href: '/services/travel-nurse-housing/' },
+      { name: 'Mid-Term Rental Management', href: '/services/mid-term-rental-management/' },
+      { name: 'Corporate Housing Management', href: '/services/corporate-housing-management/' },
+    ],
+    faqs: [
+      {
+        q: 'Does a guest at Kennestone need a car?',
+        a: "Almost certainly, and it is the single biggest difference from the Atlanta hospitals. Cobb County is not part of MARTA. Local transit is CobbLinc, whose routes 40 and 45 stop about two minutes' walk from the hospital on Church Street, but it does not connect the way MARTA rail does. Parking is not a nice-to-have on a Marietta listing — it is the listing.",
+      },
+      {
+        q: 'Is there really contract-staffing demand here?',
+        a: 'It is advertised in the open. Travel assignments at Kennestone are posted through several national agencies at weekly rates far above a staff wage, and the hospital has just added 235 beds including a 49-bed NICU. New beds have to be staffed, and specialist cover of that kind is routinely filled on 13-week contracts.',
+      },
+      { q: 'How long are these stays?', a: TRAVEL_NURSE_CONTRACT },
+      {
+        q: 'Do I need a short-term rental permit in Marietta?',
+        a: "Marietta and Cobb County set their own rules, and they are not Atlanta's — so the Atlanta ordinance most owners have read does not apply to you. We confirm the current position for your specific address before a property is listed, rather than assuming it carries across county lines.",
+      },
+    ],
+    sources: [
+      { label: 'Wellstar — Kennestone Regional Medical Center', url: 'https://www.wellstar.org/locations/hospital/kennestone-regional-medical-center', checked: '2026-09-01' },
+      { label: 'Wellstar — Kennestone expands care with new tower', url: 'https://www.wellstar.org/articles/wellstar-kennestone-expands-care-with-new-tower', checked: '2026-09-01' },
+      { label: 'AJC — Marietta hospital achieves Level I trauma status', url: 'https://www.ajc.com/news/health-news/a-hospital-in-marietta-achieves-level-1-trauma-status/GQKF6SSRFBDIZAQ4K5DOGPWO34/', checked: '2026-09-01' },
+      { label: 'Wellstar Graduate Medical Education — programmes', url: 'https://gme.wellstar.org/programs/', checked: '2026-09-01' },
+      { label: 'Cobb County — CobbLinc stop near Kennestone Hospital', url: 'https://www.cobbcounty.gov/news/cobblinc-adds-stop-near-kennestone-hospital-improve-healthcare-access', checked: '2026-09-01' },
       NURSE_SOURCE,
     ],
     published: true,
