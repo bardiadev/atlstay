@@ -6,7 +6,7 @@
  * Do not move this to /api/.
  */
 
-import { addEvent, eventsForAll, isAction, statusFor } from '../api/_leadEvents.js';
+import { addEvent, editNote, eventsForAll, isAction, statusFor } from '../api/_leadEvents.js';
 import { refreshCard, postCard, announce } from '../api/_board.js';
 
 const STATUSES = ['new', 'proposal_sent', 'won', 'lost'];
@@ -188,6 +188,24 @@ export async function onRequestPost(context) {
       // Editing the card notifies nobody, so a milestone gets its own message.
       if (wanted && before !== wanted) await announce(env, id, ev, OWNER);
       return json({ ok: true, status: wanted || undefined });
+    }
+
+    /* Correct the wording of a note already written. Only the text changes —
+       the author, the time it was written and its place in the history all
+       stand, and the card is redrawn so the group sees the correction. There
+       is no announcement: fixing a sentence is not a milestone. */
+    if (body.action === 'edit_note') {
+      const eventId = String(body.event_id || '');
+      const note = String(body.note || '').trim();
+      if (!eventId) return json({ error: 'Missing event_id' }, 400);
+      // Emptying a note would erase what somebody wrote while leaving a hollow
+      // entry in the history. Deleting a note is a different act, not this one.
+      if (!note) return json({ error: 'A note cannot be emptied' }, 400);
+
+      const done = await editNote(env, { leadId: id, eventId, note });
+      if (!done) return json({ error: 'That note no longer exists' }, 404);
+      await refreshCard(env, id);
+      return json({ ok: true });
     }
 
     // Move between the two inboxes. Contact-page submissions land in Messages;

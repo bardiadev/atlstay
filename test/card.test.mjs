@@ -85,9 +85,9 @@ console.log('\n── long, multi-line notes ──');
     action: 'note', actor: 'Brandon', created_at: '2026-08-31T18:00:00Z', source: 'dashboard',
     note: 'Spoke with her today, she is NOT allowed to do STR.\nShe texted after our call:\n\nLooking to rent long term.\nTime frame is Feb 2027.',
   }]);
-  t('first line marked with ↳',   multi.text.includes('↳ <i>Spoke with her today, she is NOT allowed to do STR.</i>'), true);
+  t('first line rendered',        multi.text.includes('<i>Spoke with her today, she is NOT allowed to do STR.</i>'), true);
   t('later lines kept separate',  multi.text.includes('<i>Time frame is Feb 2027.</i>'), true);
-  t('blank line preserved',       multi.text.includes('\n     <i></i>\n'), true);
+  t('blank line preserved',       multi.text.includes('\n<i></i>\n'), true);
   t('nothing run together',       /call:She texted|STR\.She/.test(multi.text), false);
 
   const long = renderCard(LEAD, [{
@@ -103,8 +103,62 @@ console.log('\n── long, multi-line notes ──');
     action: 'note', actor: 'Alex', created_at: '2026-08-31T18:00:00Z', source: 'telegram',
     note: 'Call back Tuesday',
   }]);
-  t('a short note is untouched',  short.text.includes('↳ <i>Call back Tuesday</i>'), true);
+  t('a short note is untouched',  short.text.includes('<i>Call back Tuesday</i>'), true);
   t('  ...with no ellipsis',      short.text.includes('Call back Tuesday…'), false);
+}
+
+console.log('\n── several notes must stay readable ──');
+/* Interleaved with the taps, two or three notes ran together into a wall where
+   you could not see whose words were whose. They get their own block now. */
+{
+  const mixed = renderCard(LEAD, [
+    { action: 'called',  actor: 'Bardia',  created_at: '2026-08-31T14:00:00Z', source: 'telegram' },
+    { action: 'note',    actor: 'Brandon', created_at: '2026-08-31T15:00:00Z', source: 'dashboard', note: 'First note.' },
+    { action: 'emailed', actor: 'Alex',    created_at: '2026-08-31T16:00:00Z', source: 'telegram' },
+    { action: 'note',    actor: 'Alex',    created_at: '2026-08-31T17:00:00Z', source: 'telegram', note: 'Second note.' },
+    { action: 'note',    actor: 'Brandon', created_at: '2026-08-31T18:00:00Z', source: 'dashboard', note: 'Third note.' },
+  ]);
+  t('notes are counted',           mixed.text.includes('📝 <b>3 notes</b>'), true);
+  t('taps stay above the notes',   mixed.text.indexOf('Bardia</b> called') < mixed.text.indexOf('📝 <b>3 notes</b>'), true);
+  t('no tap after the notes head', mixed.text.indexOf('Alex</b> emailed') < mixed.text.indexOf('📝 <b>3 notes</b>'), true);
+  t('each note is attributed',     (mixed.text.match(/<b>Brandon<\/b> · /g) || []).length, 2);
+  t('all three bodies present',    ['First note.', 'Second note.', 'Third note.'].every((s) => mixed.text.includes(s)), true);
+  t('blank line between notes',    mixed.text.includes('<i>First note.</i>\n\n<b>Alex</b>'), true);
+
+  const one = renderCard(LEAD, [
+    { action: 'note', actor: 'Brandon', created_at: '2026-08-31T18:00:00Z', source: 'dashboard', note: 'Only note.' },
+  ]);
+  t('singular reads correctly',    one.text.includes('📝 <b>1 note</b>'), true);
+  t('  ...not "1 notes"',          one.text.includes('1 notes'), false);
+}
+
+console.log('\n── many long notes cannot blow the card ──');
+{
+  const many = renderCard(LEAD, Array.from({ length: 9 }, (_, i) => ({
+    action: 'note', actor: `P${i}`, created_at: `2026-08-31T${String(10 + i).padStart(2, '0')}:00:00Z`,
+    source: 'dashboard', note: `note ${i} `.padEnd(900, 'y'),
+  })));
+  t('within Telegram\'s limit',    many.text.length <= 4096, true);
+  t('total counted honestly',      many.text.includes('📝 <b>9 notes</b>'), true);
+  t('  ...and says it trimmed',    many.text.includes('newest 5'), true);
+  t('newest note is kept',         many.text.includes('<b>P8</b>'), true);
+  t('oldest is dropped',           many.text.includes('<b>P0</b> ·'), false);
+  t('each is shortened',           (many.text.match(/…/g) || []).length >= 5, true);
+}
+
+console.log('\n── an edited note says so ──');
+{
+  const edited = renderCard(LEAD, [{
+    action: 'note', actor: 'Brandon', created_at: '2026-08-31T18:00:00Z',
+    edited_at: '2026-08-31T19:30:00Z', source: 'dashboard', note: 'Corrected wording.',
+  }]);
+  t('marked as edited',            edited.text.includes('· <i>edited</i>'), true);
+  t('author unchanged',            edited.text.includes('<b>Brandon</b>'), true);
+  t('original time unchanged',     edited.text.includes('Aug 31, 2:00 PM'), true);
+  const plain = renderCard(LEAD, [{
+    action: 'note', actor: 'Brandon', created_at: '2026-08-31T18:00:00Z', source: 'dashboard', note: 'Untouched.',
+  }]);
+  t('unedited note stays quiet',   plain.text.includes('edited'), false);
 }
 
 console.log('\n── trail collapsing ──');

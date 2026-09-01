@@ -21,8 +21,12 @@ import { ACTIONS } from './_leadEvents.js';
 const MAX_LEN = 4096;
 /** How many events to show before collapsing the older ones into a count. */
 const TRAIL_LIMIT = 8;
-/** How much of a long note the card previews. The full text lives in the Lead Desk. */
+/** Longest preview of any single note. The full text lives in the Lead Desk. */
 const NOTE_PREVIEW = 600;
+/** Characters of note text the whole card will spend, shared between the notes shown. */
+const NOTE_BUDGET = 1400;
+/** How many of the most recent notes to show before collapsing the rest. */
+const NOTES_SHOWN = 5;
 
 const RULE = '━━━━━━━━━';
 
@@ -248,33 +252,53 @@ export function renderNotice(lead, action, actor) {
   return out.join('\n');
 }
 
-/** The activity trail, newest last, older entries collapsed to a count. */
+/**
+ * The activity trail.
+ *
+ * Notes are kept in their OWN block below the actions rather than interleaved.
+ * Mixed together, two or three notes ran into one another and into the taps
+ * around them — a wall of text where you could not see where one person's
+ * words ended and the next began. Separated, headed with a count, and spaced a
+ * blank line apart, several notes stay readable on a phone.
+ */
 function renderTrail(events) {
   const list = (events || []).filter((e) => ACTIONS[e.action] && e.action !== 'created');
   if (!list.length) return ['<i>Nobody has actioned this yet.</i>'];
 
+  const notes = list.filter((e) => e.action === 'note');
+  const taps = list.filter((e) => e.action !== 'note');
   const lines = [];
-  const hidden = list.length - TRAIL_LIMIT;
-  if (hidden > 0) lines.push(`<i>+${hidden} earlier…</i>`);
 
-  for (const e of list.slice(-TRAIL_LIMIT)) {
-    const a = ACTIONS[e.action];
-    const when = eastern(e.created_at, false);
-    if (e.action === 'note') {
-      lines.push(`📝 <b>${esc(e.actor)}</b> · ${esc(when)}`);
-      /* Notes get written at length and are stored in full for the dashboard.
-         The card shows the opening of one, keeping its own line breaks, because
-         a single long note must not crowd out the rest of the card or push it
-         into Telegram's hard limit. */
+  // ── what people did ──
+  if (taps.length) {
+    const hidden = taps.length - TRAIL_LIMIT;
+    if (hidden > 0) lines.push(`<i>+${hidden} earlier…</i>`);
+    for (const e of taps.slice(-TRAIL_LIMIT)) {
+      const a = ACTIONS[e.action];
+      lines.push(`${a.icon} <b>${esc(e.actor)}</b> ${esc(a.verb)} · ${esc(eastern(e.created_at, false))}`);
+    }
+  }
+
+  // ── what people wrote ──
+  if (notes.length) {
+    if (lines.length) lines.push('');
+    const shown = notes.slice(-NOTES_SHOWN);
+    const hidden = notes.length - shown.length;
+    lines.push(`📝 <b>${notes.length} note${notes.length === 1 ? '' : 's'}</b>`
+      + (hidden ? ` <i>— newest ${shown.length}</i>` : ''));
+
+    /* Notes are stored in full for the Lead Desk; the card previews them. The
+       previews share a fixed budget, so five notes cannot crowd out everything
+       else while one note on its own still gets room to actually be read. */
+    const cap = Math.max(140, Math.min(NOTE_PREVIEW, Math.floor(NOTE_BUDGET / shown.length)));
+
+    for (const e of shown) {
+      lines.push('');
+      lines.push(`<b>${esc(e.actor)}</b> · ${esc(eastern(e.created_at, false))}`
+        + (e.edited_at ? ' · <i>edited</i>' : ''));
       const full = String(e.note || '').trim();
-      const shown = full.length > NOTE_PREVIEW
-        ? `${full.slice(0, NOTE_PREVIEW).trimEnd()}…`
-        : full;
-      const [first, ...rest] = shown.split('\n');
-      lines.push(`   ↳ <i>${esc(first)}</i>`);
-      for (const line of rest) lines.push(`     <i>${esc(line)}</i>`);
-    } else {
-      lines.push(`${a.icon} <b>${esc(e.actor)}</b> ${esc(a.verb)} · ${esc(when)}`);
+      const text = full.length > cap ? `${full.slice(0, cap).trimEnd()}…` : full;
+      for (const line of text.split('\n')) lines.push(`<i>${esc(line)}</i>`);
     }
   }
   return lines;

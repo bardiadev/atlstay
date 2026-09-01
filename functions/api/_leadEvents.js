@@ -76,12 +76,39 @@ export async function eventsFor(env, leadId) {
   try {
     if (!env || !env.DB || !leadId) return [];
     const r = await env.DB.prepare(
-      `SELECT action, actor, note, source, created_at FROM lead_events
+      `SELECT id, action, actor, note, source, created_at, edited_at FROM lead_events
         WHERE lead_id = ? ORDER BY created_at ASC`,
     ).bind(leadId).all();
     return r.results || [];
   } catch {
     return [];
+  }
+}
+
+/**
+ * Correct the text of one note.
+ *
+ * The single exception to this table being append-only, and a deliberate one:
+ * a note is prose somebody typed, and prose has typos. It is an UPDATE of one
+ * row addressed by primary key, so none of the lost-update trouble that ruled
+ * out a JSON blob applies. `lead_id` is in the WHERE clause as well as the id,
+ * so a note can only ever be edited through the lead it belongs to, and
+ * `action = 'note'` means a button press can never be rewritten into prose.
+ *
+ * Returns false if nothing matched, so a caller can tell a miss from a success.
+ */
+export async function editNote(env, { leadId, eventId, note }) {
+  try {
+    if (!env || !env.DB || !leadId || !eventId) return false;
+    const r = await env.DB.prepare(
+      `UPDATE lead_events SET note = ?, edited_at = ?
+        WHERE id = ? AND lead_id = ? AND action = 'note'`,
+    ).bind(String(note || '').slice(0, 4000), new Date().toISOString(), eventId, leadId).run();
+    // D1 reports rows changed; if it ever stops, assume success rather than
+    // telling the operator their saved edit failed.
+    return (r?.meta?.changes ?? 1) > 0;
+  } catch {
+    return false;
   }
 }
 
@@ -93,7 +120,7 @@ export async function eventsForAll(env) {
   try {
     if (!env || !env.DB) return {};
     const r = await env.DB.prepare(
-      `SELECT lead_id, action, actor, note, source, created_at FROM lead_events
+      `SELECT id, lead_id, action, actor, note, source, created_at, edited_at FROM lead_events
         ORDER BY created_at ASC`,
     ).all();
     const out = {};

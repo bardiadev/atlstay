@@ -56,11 +56,17 @@ CREATE INDEX IF NOT EXISTS idx_leads_phone     ON leads (phone);
 CREATE TABLE IF NOT EXISTS lead_seq (n INTEGER PRIMARY KEY AUTOINCREMENT);
 
 -- ── Activity ─────────────────────────────────────────────────────────────────
--- Append-only. Every action anyone takes on a lead is one immutable row: a
--- button press in the Telegram group, or a status change in the Lead Desk.
--- Chosen over a JSON blob on the lead row because several partners can act on
--- the same card simultaneously — an INSERT is atomic, where read-modify-write
--- on a blob silently loses whichever write lands second.
+-- Append-only. Every action anyone takes on a lead is one row: a button press
+-- in the Telegram group, or a status change in the Lead Desk. Chosen over a
+-- JSON blob on the lead row because several partners can act on the same card
+-- simultaneously — an INSERT is atomic, where read-modify-write on a blob
+-- silently loses whichever write lands second.
+--
+-- ONE EXCEPTION: a note's own text can be corrected in place (see edited_at).
+-- A note is prose somebody typed, and prose has typos; fixing one is finishing
+-- a sentence, not rewriting history. It is an UPDATE of a single row addressed
+-- by primary key, so it has none of the lost-update problem above. Nothing
+-- else here is ever mutated, and no row is ever deleted.
 CREATE TABLE IF NOT EXISTS lead_events (
   id          TEXT PRIMARY KEY,
   lead_id     TEXT NOT NULL,
@@ -70,7 +76,8 @@ CREATE TABLE IF NOT EXISTS lead_events (
   actor_tg_id TEXT,            -- Telegram user id; NULL for dashboard actions
   note        TEXT,            -- free text, for action='note'
   source      TEXT NOT NULL,   -- telegram | dashboard | system
-  created_at  TEXT NOT NULL
+  created_at  TEXT NOT NULL,
+  edited_at   TEXT             -- set when a note's text was corrected; NULL otherwise
 );
 CREATE INDEX IF NOT EXISTS idx_lead_events_lead  ON lead_events (lead_id, created_at);
 CREATE INDEX IF NOT EXISTS idx_lead_events_actor ON lead_events (actor, created_at);

@@ -172,6 +172,53 @@ console.log('\n── ordinary edits stay silent ──');
   t('moving inbox announces nothing',  notices().length, 0);
 }
 
+console.log('\n── editing a note ──');
+{
+  const { res, db } = post({ action: 'edit_note', id: 'lead-1', event_id: 'ev-9', note: 'Corrected wording.' });
+  t('request succeeds',               (await res).status, 200);
+  const upd = db.log.find((c) => /UPDATE lead_events/i.test(c.sql));
+  t('the note row is updated',        Boolean(upd), true);
+  t('  new text bound',               upd.args[0], 'Corrected wording.');
+  t('  edited_at stamped',            /^\d{4}-\d{2}-\d{2}T/.test(upd.args[1]), true);
+  t('  addressed by event id',        upd.args[2], 'ev-9');
+  /* The lead id is in the WHERE clause too, so a guessed event id cannot reach
+     a note belonging to a different lead — these responses are customer data. */
+  t('  ...and scoped to the lead',    upd.args[3], 'lead-1');
+  t('  only notes are editable',      /action = 'note'/.test(upd.sql), true);
+  t('the card is redrawn',            edits().length, 1);
+  // Fixing a typo is not a milestone; nobody should get a push for it.
+  t('nothing is announced',           notices().length, 0);
+  t('no event is appended',           db.log.some((c) => /INSERT INTO lead_events/i.test(c.sql)), false);
+}
+{
+  const { res } = post({ action: 'edit_note', id: 'lead-1', note: 'no id given' });
+  t('missing event_id rejected',      (await res).status, 400);
+}
+{
+  const res = await (post({ action: 'edit_note', id: 'lead-1', event_id: 'ev-9', note: '   ' })).res;
+  const json = await res.json();
+  t('an empty note is refused',       res.status, 400);
+  t('  ...with a clear reason',       /cannot be emptied/i.test(json.error || ''), true);
+}
+{
+  // D1 reporting zero rows changed means the note is gone — say so, do not
+  // report a success the operator would believe.
+  sent = [];
+  const db = fakeDB(ROW);
+  const orig = db.prepare.bind(db);
+  db.prepare = (sql) => {
+    const st = orig(sql);
+    if (/UPDATE lead_events/i.test(sql)) st.run = async () => ({ meta: { changes: 0 } });
+    return st;
+  };
+  const res = await onRequestPost({
+    env: { DB: db, TELEGRAM_LEAD_BOT_TOKEN: 'token', TELEGRAM_CHAT_ID: CHAT },
+    request: { json: async () => ({ action: 'edit_note', id: 'lead-1', event_id: 'gone', note: 'x' }) },
+  });
+  t('a vanished note reports 404',    res.status, 404);
+  t('  ...and redraws nothing',       sent.length, 0);
+}
+
 console.log('\n── an announcement can never break the thing that caused it ──');
 {
   // No bot token configured: the status change must still succeed.
