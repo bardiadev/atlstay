@@ -9,7 +9,7 @@ faqs:
   - q: "Who books an Airbnb in Marietta?"
     a: "Marietta draws a diverse guest mix: families visiting for Kennesaw Mountain National Battlefield Park, baseball fans attending Braves games at Truist Park, couples spending a weekend around historic Marietta Square, and business travelers working in Cobb County's corporate corridor. The mix shifts seasonally — baseball season brings event-driven demand, fall and spring attract history and outdoor enthusiasts, and the corporate base provides a steadier midweek floor."
   - q: "Does Marietta have its own short-term rental rules separate from Atlanta?"
-    a: "Yes. Marietta is an independent city in Cobb County with its own municipal code, and its STR rules are entirely separate from the City of Atlanta's ordinance. Cobb County unincorporated areas have their own regulations as well, distinct from Marietta's. Owners should verify the current short-term rental requirements directly with the City of Marietta before listing — requirements around permits, taxes, and property eligibility can change, and the city is the authoritative source."
+    a: "Yes, and in a way most guides get wrong. Marietta is an incorporated city with its own municipal code, so Atlanta's short-term rental ordinance has no bearing here — but neither does Cobb County's, which binds by its own wording only “any owner of any property within the unincorporated areas of Cobb County.” Marietta has not adopted one of its own: the Marietta Daily Journal reported on 1 May 2026 that the city has no dedicated short-term rental ordinance and that operators are not required to hold a business licence, while council members debated creating a registry. General noise, nuisance and parking ordinances still apply, as does state and local lodging tax. Because council is actively working on this, verify the current position with the City of Marietta before listing."
   - q: "How does Truist Park affect Airbnb demand in Marietta?"
     a: "Truist Park and The Battery development are located in unincorporated Cobb County, very close to Marietta. Braves home games — roughly 81 per season from spring through fall — generate significant short-notice travel demand in the surrounding area. Properties within a convenient distance of Truist Park can see strong event-driven booking spikes, especially around high-profile games and playoff runs. Dynamic pricing is particularly valuable during the baseball season."
   - q: "What makes Marietta Square appealing for short-term rental guests?"
@@ -63,7 +63,15 @@ For owners weighing how [Marietta property management](/marietta/) fits into the
 
 ## Understanding Marietta and Cobb County's STR Rules
 
-This is where Marietta owners need to pay close attention. **Marietta is not governed by the City of Atlanta's short-term rental ordinance.** Marietta has its own city code and its own permitting requirements. Properties in unincorporated Cobb County — including the area immediately surrounding Truist Park — fall under Cobb County's regulations, which are separate from Marietta's.
+This is where Marietta owners need to pay close attention, because the answer usually given online is wrong in both directions.
+
+**Marietta is not governed by the City of Atlanta's short-term rental ordinance.** That much most guides get right. What they then get wrong is the substitute. Cobb County's short-term rental ordinance — Chapter 78, Division 11, effective 1 January 2023 — states in its own Applicability section that it binds "any owner of any property within the unincorporated areas of Cobb County." Marietta is incorporated, so that ordinance does not reach it.
+
+And Marietta has not adopted one of its own. The Marietta Daily Journal reported on 1 May 2026 that the city has no dedicated short-term rental ordinance and that operators are not required to hold a business licence. Assistant City Manager Daniel Cummings told council it is "very difficult to determine which addresses are being operated as Airbnbs or VRBOs," and Councilman Carlyle Kent argued for a licence requirement on the grounds that "we need to know what's in the city."
+
+What remains in force inside Marietta is the city's general noise, nuisance, parking and licensing ordinances, plus state and local lodging tax. Properties in unincorporated Cobb County — including the area immediately surrounding Truist Park — do fall under the county's certificate regime: a certificate obtained from the business license division, no more than one per dwelling unit, a sworn statement that any homeowners association has been notified, and penalties of $500 for a first violation, $750 for a second, and revocation with a twelve-month bar on reapplying for a third.
+
+This is a live question rather than a settled one, so confirm the current position before you list.
 
 Before listing, owners should:
 - Verify current STR requirements directly with the City of Marietta (for properties within city limits)

@@ -41,7 +41,15 @@ Don't infer your jurisdiction from a mailing address or ZIP code — they cross 
 
 Like most of Georgia, Gwinnett's jurisdictions regulate short-term rentals through a mix of **zoning**, **registration or permitting**, and **occupancy / hotel-motel tax**, sitting alongside private **HOA covenants**.
 
-A notable feature of Gwinnett is that several cities have been **actively moving on short-term rental ordinances** — Lawrenceville, Suwanee, and Duluth among those that have adopted or considered local rules — while **unincorporated Gwinnett** has leaned on its **zoning code** rather than a single countywide STR license. That means the regulatory picture varies meaningfully across the county and has been changing. A rule you confirm for one city may not match the city next door, and a rule that was current last year may have been updated since.
+The variation across this one county is wider than most owners expect, and two cities show the extremes.
+
+**Duluth is the strictest we have read anywhere in metro Atlanta.** Section 343 of the city's Unified Development Code makes a short-term rental a Special Use requiring City Council approval, and the permit requirements open with proof of homestead exemption on the property. Georgia grants homestead exemption only on an owner's primary residence, so that one line effectively confines short-term letting in Duluth to a home the owner lives in. The section also caps short-term rentals at one per two units in a duplex, one per three in a triplex and one per four in larger buildings, bars a short-term rental from abutting another in single-family districts, requires two off-street spaces plus a dedicated paved and evergreen-screened space for single-family properties, and sets quiet hours of 10pm to 7am on weekdays and 10pm to 10am at weekends.
+
+**Lilburn takes the licensing route instead.** Chapter 14, Article XIV of the Lilburn code, effective 13 June 2022, requires a permit from the Planning Department, an initial and then annual life-safety inspection, a designated agent reachable 24 hours a day, a certificate of compliance stating maximum occupancy and parking, an occupational tax certificate renewed each January, and a notice posted inside the unit, with penalties to $1,000 per violation.
+
+**Suwanee, by contrast, has nothing.** A full-text search of its codified ordinances returns no short-term rental ordinance and no rental registration or inspection programme, which leaves the covenant and the lease as the operative constraints there rather than the code.
+
+**Unincorporated Gwinnett** has leaned on its zoning code rather than a single countywide short-term rental licence. A rule you confirm for one city genuinely may not match the city next door, and any of these can change.
 
 ## What to Verify Before You List in Gwinnett
 

@@ -120,11 +120,6 @@ export const generatedNotes: ServiceNotes = {
     'Most commercial losses are calendar failures rather than disputes — renewal windows, escalation dates and insurance expiries that passed without anyone tracking them.',
     'Local filing obligations attach to the asset in Cobb County regardless of where the owning entity is registered, which catches out-of-state owners more often than any tenant dispute. Locally, one thing decides what kind of tenant the space suits. Immediate access to I-285 and Buckhead makes Vinings a top-tier corporate lodging option. That in turn decides what the lease should be protecting against.',
   ],
-  'corporate-housing-management:alpharetta': [
-    'A Alpharetta corporate booking is a business purchase: someone is placing a colleague, against a deadline, with their own reputation attached.',
-    'They are buying certainty — a fixed monthly figure, an invoice finance can process, and a property genuinely ready on the day.',
-    'One local factor generates most of that demand around Alpharetta. Avalon mixed-use district draws retail, dining, and event visitors all year. It usually arrives with a fixed start date rather than a flexible one.',
-  ],
   'corporate-housing-management:cumming': [
     'The person booking a Cumming corporate stay is an administrator, not the occupant, and is judged on whether the arrangement goes smoothly rather than on what it cost.',
     'Consistent furnishing, documented internet and one accountable contact matter more than character. A company let down once does not book twice.',
@@ -139,11 +134,6 @@ export const generatedNotes: ServiceNotes = {
     'Corporate placements in East Point are booked by someone who will not live there — an HR or relocation manager working to a start date.',
     'What wins the booking is predictability: one number, proper invoicing, and no surprises on arrival day.',
     'One local factor generates most of that demand around East Point. ATL Airport District designation. It usually arrives with a fixed start date rather than a flexible one.',
-  ],
-  'corporate-housing-management:johns-creek': [
-    'A Johns Creek corporate booking is a business purchase: someone is placing a colleague, against a deadline, with their own reputation attached.',
-    'They are buying certainty — a fixed monthly figure, an invoice finance can process, and a property genuinely ready on the day.',
-    'One local factor generates most of that demand around Johns Creek. Family relocation and extended-stay demand from the school-district draw. It usually arrives with a fixed start date rather than a flexible one.',
   ],
   'corporate-housing-management:kennesaw': [
     'A Kennesaw corporate booking is a business purchase: someone is placing a colleague, against a deadline, with their own reputation attached.',
@@ -160,20 +150,10 @@ export const generatedNotes: ServiceNotes = {
     'What wins the booking is predictability: one number, proper invoicing, and no surprises on arrival day.',
     'One local factor generates most of that demand around Milton. Affluent demographic supports above-average guest quality and property care. It usually arrives with a fixed start date rather than a flexible one.',
   ],
-  'corporate-housing-management:norcross': [
-    'A Norcross corporate booking is a business purchase: someone is placing a colleague, against a deadline, with their own reputation attached.',
-    'They are buying certainty — a fixed monthly figure, an invoice finance can process, and a property genuinely ready on the day.',
-    'One local factor generates most of that demand around Norcross. I-85 proximity makes Norcross a convenient base for the full northeast Atlanta metro. It usually arrives with a fixed start date rather than a flexible one.',
-  ],
   'corporate-housing-management:peachtree-corners': [
     'The person booking a Peachtree Corners corporate stay is an administrator, not the occupant, and is judged on whether the arrangement goes smoothly rather than on what it cost.',
     'Consistent furnishing, documented internet and one accountable contact matter more than character. A company let down once does not book twice.',
     'One local factor generates most of that demand around Peachtree Corners. The Forum shopping and dining center is a premium lifestyle anchor serving Peachtree Corners and neighboring communities. It usually arrives with a fixed start date rather than a flexible one.',
-  ],
-  'corporate-housing-management:roswell': [
-    'Corporate placements in Roswell are booked by someone who will not live there — an HR or relocation manager working to a start date.',
-    'What wins the booking is predictability: one number, proper invoicing, and no surprises on arrival day.',
-    'One local factor generates most of that demand around Roswell. Proximity to Alpharetta\'s tech corridor adds weekday business-travel bookings. It usually arrives with a fixed start date rather than a flexible one.',
   ],
   'corporate-housing-management:smyrna': [
     'A Smyrna corporate booking is a business purchase: someone is placing a colleague, against a deadline, with their own reputation attached.',
@@ -300,11 +280,6 @@ export const generatedNotes: ServiceNotes = {
     'The governing documents decide the board\'s authority, because Georgia\'s POA Act only reaches communities that affirmatively elected into it. A manager who assumes the Act applies is guessing about what the board can enforce.',
     'Conyers sits in Rockdale County, and one local fact tends to set what the association is really managing day to day. Olde Town Conyers historic district generates heritage and arts tourism. That drives the amenities, the turnover, and the disputes that follow from both.',
   ],
-  'hoa-management:cumming': [
-    'A Cumming board is not a landlord and does not want a landlord\'s manager. It needs assessments billed and collected, covenants applied evenly, contractors held to their scope, and books that survive an owner asking to see them.',
-    'The governing documents decide the board\'s authority, because Georgia\'s POA Act only reaches communities that affirmatively elected into it. A manager who assumes the Act applies is guessing about what the board can enforce.',
-    'Cumming sits in Forsyth County, and one local fact tends to set what the association is really managing day to day. One of Georgia\'s fastest-growing counties with expanding corporate travel. That drives the amenities, the turnover, and the disputes that follow from both.',
-  ],
   'hoa-management:dacula': [
     'What a Dacula association actually buys is administration with a paper trail: billing, collections, enforcement that is applied the same way to every lot, meeting notice done correctly, and accounts a volunteer officer can hand over cleanly.',
     'Georgia\'s Property Owners\' Association Act is opt-in — it governs a community only where the declaration expressly elects to be subject to it. That single fact changes what a board may do about assessments, liens and enforcement.',
@@ -385,16 +360,6 @@ export const generatedNotes: ServiceNotes = {
     'Whether the Property Owners\' Association Act applies is the first question, not a detail. Georgia makes it elective, so two neighbouring Powder Springs communities can have materially different powers depending on what their declarations say.',
     'Powder Springs sits in Cobb County, and one local fact tends to set what the association is really managing day to day. Sweetwater Creek State Park and Kennesaw Mountain access expand the outdoor recreation draw. That drives the amenities, the turnover, and the disputes that follow from both.',
   ],
-  'hoa-management:roswell': [
-    'A Roswell board is not a landlord and does not want a landlord\'s manager. It needs assessments billed and collected, covenants applied evenly, contractors held to their scope, and books that survive an owner asking to see them.',
-    'The governing documents decide the board\'s authority, because Georgia\'s POA Act only reaches communities that affirmatively elected into it. A manager who assumes the Act applies is guessing about what the board can enforce.',
-    'Roswell sits in Fulton County, and one local fact tends to set what the association is really managing day to day. Proximity to Alpharetta\'s tech corridor adds weekday business-travel bookings. That drives the amenities, the turnover, and the disputes that follow from both.',
-  ],
-  'hoa-management:sandy-springs': [
-    'A Sandy Springs board is not a landlord and does not want a landlord\'s manager. It needs assessments billed and collected, covenants applied evenly, contractors held to their scope, and books that survive an owner asking to see them.',
-    'The governing documents decide the board\'s authority, because Georgia\'s POA Act only reaches communities that affirmatively elected into it. A manager who assumes the Act applies is guessing about what the board can enforce.',
-    'Sandy Springs sits in Fulton County, and one local fact tends to set what the association is really managing day to day. Upscale residential stock commands above-average nightly rates. That drives the amenities, the turnover, and the disputes that follow from both.',
-  ],
   'hoa-management:snellville': [
     'A Snellville board is not a landlord and does not want a landlord\'s manager. It needs assessments billed and collected, covenants applied evenly, contractors held to their scope, and books that survive an owner asking to see them.',
     'The governing documents decide the board\'s authority, because Georgia\'s POA Act only reaches communities that affirmatively elected into it. A manager who assumes the Act applies is guessing about what the board can enforce.',
@@ -419,11 +384,6 @@ export const generatedNotes: ServiceNotes = {
     'What a Tucker association actually buys is administration with a paper trail: billing, collections, enforcement that is applied the same way to every lot, meeting notice done correctly, and accounts a volunteer officer can hand over cleanly.',
     'Georgia\'s Property Owners\' Association Act is opt-in — it governs a community only where the declaration expressly elects to be subject to it. That single fact changes what a board may do about assessments, liens and enforcement.',
     'Tucker sits in DeKalb County, and one local fact tends to set what the association is really managing day to day. Downtown Tucker\'s restaurant and brewery scene adds weekend draw. That drives the amenities, the turnover, and the disputes that follow from both.',
-  ],
-  'hoa-management:woodstock': [
-    'What a Woodstock association actually buys is administration with a paper trail: billing, collections, enforcement that is applied the same way to every lot, meeting notice done correctly, and accounts a volunteer officer can hand over cleanly.',
-    'Georgia\'s Property Owners\' Association Act is opt-in — it governs a community only where the declaration expressly elects to be subject to it. That single fact changes what a board may do about assessments, liens and enforcement.',
-    'Woodstock sits in Cherokee County, and one local fact tends to set what the association is really managing day to day. Northside Hospital Cherokee campus creates year-round medical-stay demand from patients and families. That drives the amenities, the turnover, and the disputes that follow from both.',
   ],
   'insurance-housing:acworth': [
     'Additional living expense placements around Acworth begin with a loss, not a trip. A household is out of its home after a fire, a flood or a burst pipe.',
@@ -455,20 +415,10 @@ export const generatedNotes: ServiceNotes = {
     'Flexibility on the exit is worth more to an adjuster than a lower rate, because repair schedules slip and the placement has to slip with them.',
     'One local factor shapes what stock is genuinely available near Lilburn at short notice. City of Lilburn and Gwinnett County STR compliance support included. That availability, not price, is usually the binding constraint on a placement.',
   ],
-  'insurance-housing:lithonia': [
-    'This work near Lithonia starts with a claim. The occupants did not choose to move and the carrier, not the family, is paying.',
-    'The constraints are unusual: close enough that children stay in the same schools, furnished immediately, documented to a standard the carrier will reimburse, and near-certain to change as the repair timeline moves.',
-    'One local factor shapes what stock is genuinely available near Lithonia at short notice. DeKalb County STR compliance guidance included. That availability, not price, is usually the binding constraint on a placement.',
-  ],
   'insurance-housing:mableton': [
     'This work near Mableton starts with a claim. The occupants did not choose to move and the carrier, not the family, is paying.',
     'The constraints are unusual: close enough that children stay in the same schools, furnished immediately, documented to a standard the carrier will reimburse, and near-certain to change as the repair timeline moves.',
     'One local factor shapes what stock is genuinely available near Mableton at short notice. Mable House Arts Center adds a cultural destination layer to the market. That availability, not price, is usually the binding constraint on a placement.',
-  ],
-  'insurance-housing:norcross': [
-    'This work near Norcross starts with a claim. The occupants did not choose to move and the carrier, not the family, is paying.',
-    'The constraints are unusual: close enough that children stay in the same schools, furnished immediately, documented to a standard the carrier will reimburse, and near-certain to change as the repair timeline moves.',
-    'One local factor shapes what stock is genuinely available near Norcross at short notice. City of Norcross and Gwinnett County STR compliance support included. That availability, not price, is usually the binding constraint on a placement.',
   ],
   'insurance-housing:peachtree-corners': [
     'An ALE placement near Peachtree Corners is an insurance event. Someone is displaced, and an adjuster is arranging somewhere to live under a policy limit.',
@@ -530,11 +480,6 @@ export const generatedNotes: ServiceNotes = {
     'The underwriting question we are usually asked is the wrong one. Gross revenue models easily and rarely binds; what decides the return is turnover cost and the regulatory posture of DeKalb County toward the intended use.',
     'One local fact belongs in the model before purchase rather than in the explanation afterwards. Award-winning schools and family-friendly character draw relocation and family-visit demand. It is the sort of thing that changes an underwriting assumption rather than decorating it.',
   ],
-  'investor-services:douglasville': [
-    'Out-of-state ownership in Douglasville has a compliance dimension that is easy to miss until it matters — Georgia looks for licensed oversight where property is managed for an owner who lives elsewhere.',
-    'Deals fail on permitting far more often than on rate. An acquisition that pencils on nightly revenue and never checks Douglas County\'s position on the use is the common, avoidable mistake.',
-    'One local fact belongs in the model before purchase rather than in the explanation afterwards. 25 miles from Atlanta. It is the sort of thing that changes an underwriting assumption rather than decorating it.',
-  ],
   'investor-services:duluth': [
     'An investor buying in Duluth from another state inherits a licensing question along with the asset. Putting the brokerage relationship in place before the first tenant is considerably cheaper than after a dispute.',
     'The underwriting question we are usually asked is the wrong one. Gross revenue models easily and rarely binds; what decides the return is turnover cost and the regulatory posture of Gwinnett County toward the intended use.',
@@ -573,7 +518,7 @@ export const generatedNotes: ServiceNotes = {
   'investor-services:marietta': [
     'Out-of-state ownership in Marietta has a compliance dimension that is easy to miss until it matters — Georgia looks for licensed oversight where property is managed for an owner who lives elsewhere.',
     'Deals fail on permitting far more often than on rate. An acquisition that pencils on nightly revenue and never checks Cobb County\'s position on the use is the common, avoidable mistake.',
-    'One local fact belongs in the model before purchase rather than in the explanation afterwards. Full compliance support under Marietta\'s STR ordinance. It is the sort of thing that changes an underwriting assumption rather than decorating it.',
+    'One local fact belongs in the model before purchase rather than in the explanation afterwards. Compliance handled. It is the sort of thing that changes an underwriting assumption rather than decorating it.',
   ],
   'investor-services:mcdonough': [
     'Owning McDonough rental property from out of state carries a requirement most investors meet after the fact: Georgia expects a licensed brokerage to stand over property managed for a non-resident owner.',
@@ -584,11 +529,6 @@ export const generatedNotes: ServiceNotes = {
     'An investor buying in Roswell from another state inherits a licensing question along with the asset. Putting the brokerage relationship in place before the first tenant is considerably cheaper than after a dispute.',
     'The underwriting question we are usually asked is the wrong one. Gross revenue models easily and rarely binds; what decides the return is turnover cost and the regulatory posture of Fulton County toward the intended use.',
     'One local fact belongs in the model before purchase rather than in the explanation afterwards. Local regulation expertise keeps your listing compliant with Roswell city rules. It is the sort of thing that changes an underwriting assumption rather than decorating it.',
-  ],
-  'investor-services:smyrna': [
-    'Out-of-state ownership in Smyrna has a compliance dimension that is easy to miss until it matters — Georgia looks for licensed oversight where property is managed for an owner who lives elsewhere.',
-    'Deals fail on permitting far more often than on rate. An acquisition that pencils on nightly revenue and never checks Cobb County\'s position on the use is the common, avoidable mistake.',
-    'One local fact belongs in the model before purchase rather than in the explanation afterwards. Cobb County STR compliance support included. It is the sort of thing that changes an underwriting assumption rather than decorating it.',
   ],
   'investor-services:snellville': [
     'An investor buying in Snellville from another state inherits a licensing question along with the asset. Putting the brokerage relationship in place before the first tenant is considerably cheaper than after a dispute.',
@@ -615,20 +555,10 @@ export const generatedNotes: ServiceNotes = {
     'The underwriting question we are usually asked is the wrong one. Gross revenue models easily and rarely binds; what decides the return is turnover cost and the regulatory posture of Cherokee County toward the intended use.',
     'One local fact belongs in the model before purchase rather than in the explanation afterwards. I-575 corridor access makes Woodstock a natural gateway for visitors headed further north. It is the sort of thing that changes an underwriting assumption rather than decorating it.',
   ],
-  'long-term-rental-management:alpharetta': [
-    'Letting a Alpharetta property on a twelve-month lease moves it into landlord-tenant law. That means Fulton County\'s magistrate court is the venue if possession is ever contested, and it means the lease itself has to do work the listing never had to.',
-    'Georgia also sets rules an owner cannot contract out of. A security deposit must sit in escrow or be covered by a surety bond, and it has to be accounted for and returned inside the statutory window. Move-in and move-out condition records are what make a deduction survive a challenge.',
-    'What Alpharetta contributes is demand shape rather than legal difference. Major tech and finance employers generate consistent weekday business-travel demand. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
-  ],
   'long-term-rental-management:avondale-estates': [
     'A twelve-month lease in Avondale Estates is a different instrument from a nightly booking, and the difference is mostly legal. If a tenancy has to be ended, the dispossessory is filed in the magistrate court of DeKalb County — not in Atlanta, and not wherever the owner happens to live.',
     'Some obligations travel with the money rather than the agreement. Georgia requires deposits to be escrowed or bonded, and requires an itemised accounting after the tenancy ends — which is why the bookkeeping, not the lease template, is where most owners come unstuck.',
     'What Avondale Estates contributes is demand shape rather than legal difference. Historic Tudor-style downtown draws design-conscious and leisure travelers. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
-  ],
-  'long-term-rental-management:buford': [
-    'A twelve-month lease in Buford is a different instrument from a nightly booking, and the difference is mostly legal. If a tenancy has to be ended, the dispossessory is filed in the magistrate court of Gwinnett County — not in Atlanta, and not wherever the owner happens to live.',
-    'Some obligations travel with the money rather than the agreement. Georgia requires deposits to be escrowed or bonded, and requires an itemised accounting after the tenancy ends — which is why the bookkeeping, not the lease template, is where most owners come unstuck.',
-    'What Buford contributes is demand shape rather than legal difference. Mall of Georgia. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
   ],
   'long-term-rental-management:cumming': [
     'Annual tenancies in Cumming are governed by statute in a way short-term bookings never are. Possession disputes go to the magistrate court of Forsyth County, which runs its own process on its own timetable, and a defective notice sends the filing back to the start.',
@@ -644,16 +574,6 @@ export const generatedNotes: ServiceNotes = {
     'Annual tenancies in Dunwoody are governed by statute in a way short-term bookings never are. Possession disputes go to the magistrate court of DeKalb County, which runs its own process on its own timetable, and a defective notice sends the filing back to the start.',
     'The deposit rules are the ones owners most often get wrong. Georgia expects the money held separately, documented at both ends of the tenancy, and returned within a defined period with any deduction itemised. Skipping the move-in record is what makes the move-out deduction indefensible.',
     'What Dunwoody contributes is demand shape rather than legal difference. Perimeter Center. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
-  ],
-  'long-term-rental-management:johns-creek': [
-    'Letting a Johns Creek property on a twelve-month lease moves it into landlord-tenant law. That means Fulton County\'s magistrate court is the venue if possession is ever contested, and it means the lease itself has to do work the listing never had to.',
-    'Georgia also sets rules an owner cannot contract out of. A security deposit must sit in escrow or be covered by a surety bond, and it has to be accounted for and returned inside the statutory window. Move-in and move-out condition records are what make a deduction survive a challenge.',
-    'What Johns Creek contributes is demand shape rather than legal difference. Consistently ranked among Georgia\'s most affluent cities. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
-  ],
-  'long-term-rental-management:lithonia': [
-    'Letting a Lithonia property on a twelve-month lease moves it into landlord-tenant law. That means DeKalb County\'s magistrate court is the venue if possession is ever contested, and it means the lease itself has to do work the listing never had to.',
-    'Georgia also sets rules an owner cannot contract out of. A security deposit must sit in escrow or be covered by a surety bond, and it has to be accounted for and returned inside the statutory window. Move-in and move-out condition records are what make a deduction survive a challenge.',
-    'What Lithonia contributes is demand shape rather than legal difference. Arabia Mountain National Heritage Area drives outdoor recreation and eco-tourism bookings. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
   ],
   'long-term-rental-management:milton': [
     'A twelve-month lease in Milton is a different instrument from a nightly booking, and the difference is mostly legal. If a tenancy has to be ended, the dispossessory is filed in the magistrate court of Fulton County — not in Atlanta, and not wherever the owner happens to live.',
@@ -674,11 +594,6 @@ export const generatedNotes: ServiceNotes = {
     'Annual tenancies in Sandy Springs are governed by statute in a way short-term bookings never are. Possession disputes go to the magistrate court of Fulton County, which runs its own process on its own timetable, and a defective notice sends the filing back to the start.',
     'The deposit rules are the ones owners most often get wrong. Georgia expects the money held separately, documented at both ends of the tenancy, and returned within a defined period with any deduction itemised. Skipping the move-in record is what makes the move-out deduction indefensible.',
     'What Sandy Springs contributes is demand shape rather than legal difference. Prime positioning between Perimeter Center and Buckhead draws steady corporate demand. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
-  ],
-  'long-term-rental-management:smyrna': [
-    'Letting a Smyrna property on a twelve-month lease moves it into landlord-tenant law. That means Cobb County\'s magistrate court is the venue if possession is ever contested, and it means the lease itself has to do work the listing never had to.',
-    'Georgia also sets rules an owner cannot contract out of. A security deposit must sit in escrow or be covered by a surety bond, and it has to be accounted for and returned inside the statutory window. Move-in and move-out condition records are what make a deduction survive a challenge.',
-    'What Smyrna contributes is demand shape rather than legal difference. Minutes from Truist Park. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
   ],
   'long-term-rental-management:snellville': [
     'A twelve-month lease in Snellville is a different instrument from a nightly booking, and the difference is mostly legal. If a tenancy has to be ended, the dispossessory is filed in the magistrate court of Gwinnett County — not in Atlanta, and not wherever the owner happens to live.',
@@ -715,11 +630,6 @@ export const generatedNotes: ServiceNotes = {
     'Georgia also sets rules an owner cannot contract out of. A security deposit must sit in escrow or be covered by a surety bond, and it has to be accounted for and returned inside the statutory window. Move-in and move-out condition records are what make a deduction survive a challenge.',
     'What Vinings contributes is demand shape rather than legal difference. Truist Park and the Battery Atlanta are minutes away, driving one of metro Atlanta\'s most reliable event-demand calendars. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
   ],
-  'long-term-rental-management:woodstock': [
-    'A twelve-month lease in Woodstock is a different instrument from a nightly booking, and the difference is mostly legal. If a tenancy has to be ended, the dispossessory is filed in the magistrate court of Cherokee County — not in Atlanta, and not wherever the owner happens to live.',
-    'Some obligations travel with the money rather than the agreement. Georgia requires deposits to be escrowed or bonded, and requires an itemised accounting after the tenancy ends — which is why the bookkeeping, not the lease template, is where most owners come unstuck.',
-    'What Woodstock contributes is demand shape rather than legal difference. Downtown Woodstock\'s restaurants, bars, and events drive strong weekend leisure bookings. That decides who applies and how long they stay, and a lease that fits that resident beats a higher headline rent from one who leaves inside a year.',
-  ],
   'marriott-homes-villas:alpharetta': [
     'Homes & Villas by Marriott Bonvoy is invitation-based with a defined quality standard, so a Alpharetta property either meets the specification or is not listed.',
     'The traveller here books earlier, stays longer, and measures the property against a hotel rather than against another rental.',
@@ -738,7 +648,7 @@ export const generatedNotes: ServiceNotes = {
   'marriott-homes-villas:marietta': [
     'Homes & Villas by Marriott Bonvoy is invitation-based with a defined quality standard, so a Marietta property either meets the specification or is not listed.',
     'The traveller here books earlier, stays longer, and measures the property against a hotel rather than against another rental.',
-    'One local factor tends to bring that traveller toward Marietta in the first place. Full compliance support under Marietta\'s STR ordinance. Meeting the standard is what keeps them booking directly through the channel.',
+    'One local factor tends to bring that traveller toward Marietta in the first place. Compliance handled. Meeting the standard is what keeps them booking directly through the channel.',
   ],
   'marriott-homes-villas:peachtree-city': [
     'Homes & Villas by Marriott Bonvoy is invitation-based with a defined quality standard, so a Peachtree City property either meets the specification or is not listed.',
@@ -925,11 +835,6 @@ export const generatedNotes: ServiceNotes = {
     'Uniformity across units is not bureaucracy, it is the fair housing defence. Discretion exercised unit by unit is precisely the pattern that creates exposure.',
     'Dispossessories, when unavoidable, are heard in the magistrate court of Gwinnett County, and at portfolio scale that has to be routine rather than exceptional. One local fact determines the resident profile a building actually draws. Old Town Lilburn offers walkable dining, local events, and a historic downtown feel that sets it apart from most Gwinnett suburbs. That, more than the finish level, sets a realistic renewal rate.',
   ],
-  'multi-family-property-management:lithonia': [
-    'At Lithonia scale the number that matters is days vacant per turn, not the asking rent. A building loses more to slow turns than to being a little under market.',
-    'A portfolio needs one written standard applied everywhere — screening, notices, enforcement. Variation between units is far harder to defend than a demanding but uniform policy.',
-    'Dispossessories, when unavoidable, are heard in the magistrate court of DeKalb County, and at portfolio scale that has to be routine rather than exceptional. One local fact determines the resident profile a building actually draws. Arabia Mountain National Heritage Area drives outdoor recreation and eco-tourism bookings. That, more than the finish level, sets a realistic renewal rate.',
-  ],
   'multi-family-property-management:mableton': [
     'At Mableton scale the number that matters is days vacant per turn, not the asking rent. A building loses more to slow turns than to being a little under market.',
     'A portfolio needs one written standard applied everywhere — screening, notices, enforcement. Variation between units is far harder to defend than a demanding but uniform policy.',
@@ -945,25 +850,10 @@ export const generatedNotes: ServiceNotes = {
     'Consistency is also the legal protection. The same screening standard, the same notices, the same enforcement across every unit is what keeps a portfolio defensible under federal fair housing law.',
     'Dispossessories, when unavoidable, are heard in the magistrate court of Clayton County, and at portfolio scale that has to be routine rather than exceptional. One local fact determines the resident profile a building actually draws. Clayton State University creates consistent student, family, and academic visitor demand. That, more than the finish level, sets a realistic renewal rate.',
   ],
-  'multi-family-property-management:norcross': [
-    'At Norcross scale the number that matters is days vacant per turn, not the asking rent. A building loses more to slow turns than to being a little under market.',
-    'A portfolio needs one written standard applied everywhere — screening, notices, enforcement. Variation between units is far harder to defend than a demanding but uniform policy.',
-    'Dispossessories, when unavoidable, are heard in the magistrate court of Gwinnett County, and at portfolio scale that has to be routine rather than exceptional. One local fact determines the resident profile a building actually draws. Historic Downtown Norcross. That, more than the finish level, sets a realistic renewal rate.',
-  ],
   'multi-family-property-management:powder-springs': [
     'At Powder Springs scale the number that matters is days vacant per turn, not the asking rent. A building loses more to slow turns than to being a little under market.',
     'A portfolio needs one written standard applied everywhere — screening, notices, enforcement. Variation between units is far harder to defend than a demanding but uniform policy.',
     'Dispossessories, when unavoidable, are heard in the magistrate court of Cobb County, and at portfolio scale that has to be routine rather than exceptional. One local fact determines the resident profile a building actually draws. Silver Comet Trail passes through the city, driving year-round outdoor recreation demand. That, more than the finish level, sets a realistic renewal rate.',
-  ],
-  'multi-family-property-management:smyrna': [
-    'At Smyrna scale the number that matters is days vacant per turn, not the asking rent. A building loses more to slow turns than to being a little under market.',
-    'A portfolio needs one written standard applied everywhere — screening, notices, enforcement. Variation between units is far harder to defend than a demanding but uniform policy.',
-    'Dispossessories, when unavoidable, are heard in the magistrate court of Cobb County, and at portfolio scale that has to be routine rather than exceptional. One local fact determines the resident profile a building actually draws. Minutes from Truist Park. That, more than the finish level, sets a realistic renewal rate.',
-  ],
-  'multi-family-property-management:snellville': [
-    'Running multiple units in Snellville is an operations problem before it is a pricing one — scheduling, inspecting and re-leasing a turn quickly is where the return actually comes from.',
-    'Consistency is also the legal protection. The same screening standard, the same notices, the same enforcement across every unit is what keeps a portfolio defensible under federal fair housing law.',
-    'Dispossessories, when unavoidable, are heard in the magistrate court of Gwinnett County, and at portfolio scale that has to be routine rather than exceptional. One local fact determines the resident profile a building actually draws. The Grove at Towne Center hosts outdoor concerts, movies on the lawn, seasonal festivals, and weekly community events. That, more than the finish level, sets a realistic renewal rate.',
   ],
   'multi-family-property-management:stone-mountain': [
     'Multi-family in Stone Mountain is a throughput business. What decides the year is not headline rent but how many days a unit sits between residents.',
@@ -1015,11 +905,6 @@ export const generatedNotes: ServiceNotes = {
     'The screening standard matters more than its severity. Federal fair housing law does not object to a demanding bar; it objects to a bar that moves between applicants, which is exactly what informal self-screening tends to produce.',
     'Leasing on someone else\'s behalf for a fee is licensed activity in Georgia. One local factor shapes the applicant pool more than the photographs do. Ameris Bank Amphitheatre concert season creates predictable summer rate spikes. Pricing to that pool, rather than to the top of the comparable range, is usually what separates a fast placement from a vacant month.',
   ],
-  'tenant-placement:buford': [
-    'Some Buford owners want to run the property themselves and only need the tenant found properly. That is this service — listed, shown, screened, signed, handed over.',
-    'Applying the same written criteria to everyone is the protection. Verification of income and employment, rental history and public-record searches are routine — what is not routine, and what creates fair housing risk, is deciding case by case.',
-    'Leasing on someone else\'s behalf for a fee is licensed activity in Georgia. One local factor shapes the applicant pool more than the photographs do. Lake Lanier access positions Buford properties for strong spring and summer water-recreation demand. Pricing to that pool, rather than to the top of the comparable range, is usually what separates a fast placement from a vacant month.',
-  ],
   'tenant-placement:cumming': [
     'This is the leasing half of management for Cumming owners who intend to self-manage: get the right resident in on the right paperwork, then step back.',
     'Screening is where it earns its keep. Income and employment verification, rental history, and criminal and eviction searches have to be applied identically to every applicant — under federal fair housing law the exposure is an inconsistent standard, not a strict one.',
@@ -1059,11 +944,6 @@ export const generatedNotes: ServiceNotes = {
     'Placement-only work in Smyrna stops where full management begins: marketing, showings, screening and a properly executed Georgia lease, then the keys go to the owner.',
     'The screening standard matters more than its severity. Federal fair housing law does not object to a demanding bar; it objects to a bar that moves between applicants, which is exactly what informal self-screening tends to produce.',
     'Leasing on someone else\'s behalf for a fee is licensed activity in Georgia. One local factor shapes the applicant pool more than the photographs do. Village Green district creates walkable weekend leisure demand. Pricing to that pool, rather than to the top of the comparable range, is usually what separates a fast placement from a vacant month.',
-  ],
-  'tenant-placement:snellville': [
-    'Some Snellville owners want to run the property themselves and only need the tenant found properly. That is this service — listed, shown, screened, signed, handed over.',
-    'Applying the same written criteria to everyone is the protection. Verification of income and employment, rental history and public-record searches are routine — what is not routine, and what creates fair housing risk, is deciding case by case.',
-    'Leasing on someone else\'s behalf for a fee is licensed activity in Georgia. One local factor shapes the applicant pool more than the photographs do. Gwinnett Environmental and Heritage Center draws school groups, event attendees, and eco-tourism visitors. Pricing to that pool, rather than to the top of the comparable range, is usually what separates a fast placement from a vacant month.',
   ],
   'tenant-placement:stone-mountain': [
     'This is the leasing half of management for Stone Mountain owners who intend to self-manage: get the right resident in on the right paperwork, then step back.',

@@ -16,10 +16,10 @@ highlights:
   - "Kennesaw Mountain and Civil War sites attract heritage and outdoor travelers"
   - "Dobbins Air Reserve Base creates year-round business and military-adjacent demand"
   - "Cobb Galleria and Truist Park proximity adds corporate and sports-event demand"
-  - "Full compliance support under Marietta's STR ordinance"
+  - "Compliance handled — Marietta, unincorporated Cobb and Atlanta each set different rules"
 faqs:
   - q: "Are short-term rentals allowed in Marietta, GA?"
-    a: "Short-term rentals are permitted in Marietta subject to local regulations. Marietta has adopted its own STR ordinance requiring registration, safety compliance, and adherence to zoning rules. Because local ordinances can be updated, we recommend reviewing the City of Marietta's planning and zoning resources or contacting ATLStay — we keep current on Cobb County and Marietta STR requirements for all our clients."
+    a: "Yes, and the regulatory answer surprises most owners. As of the city council's most recent discussion of the question, Marietta has no dedicated short-term rental ordinance — the Marietta Daily Journal reported on 1 May 2026 that operators are not required to hold a business licence, and council members were debating whether to create a registry at all. Cobb County's ordinance does not fill that gap either: its own Applicability section binds only “any owner of any property within the unincorporated areas of Cobb County,” and Marietta is incorporated. What does apply are the city's general noise, nuisance, parking and licensing ordinances, plus state and local lodging tax. Council is actively working on this, so we confirm the current position for your specific address before a property is listed rather than relying on a guide."
   - q: "What drives Airbnb demand in Marietta?"
     a: "Marietta's demand is genuinely multi-layered. Marietta Square draws weekend visitors for its restaurants, farmers markets, and events throughout the year. Kennesaw Mountain National Battlefield Park is one of the most visited National Park sites in Georgia, drawing history enthusiasts and hikers. Dobbins Air Reserve Base and Lockheed Martin bring business and contractor travelers. Truist Park, home of the Atlanta Braves, is just minutes away — with 81 home games plus playoff potential, the ballpark drives some of the most predictable demand spikes in Cobb County."
   - q: "How much can I earn renting my Marietta home short-term?"
