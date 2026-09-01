@@ -10,7 +10,7 @@ title: "Airbnb Management in Kennesaw, GA"
 description: "Full-service short-term rental management in Kennesaw, GA. ATLStay maximizes your earnings by capturing Kennesaw Mountain visitors, university events, and I-75 business travel."
 intro: "Kennesaw blends Civil War history, an active university, and I-75 corridor business demand into a short-term rental market with year-round depth — anchored by Kennesaw Mountain National Battlefield and reinforced by a student and academic visitor base that keeps demand consistent across seasons."
 heroImage: suburbHome
-neighborhoods: []
+neighborhoods: ["downtown-kennesaw", "kennesaw-state-university", "town-center-kennesaw"]
 highlights:
   - "Kennesaw Mountain National Battlefield Park draws heritage visitors year-round"
   - "Kennesaw State University generates parent, visiting academic, and event demand"
