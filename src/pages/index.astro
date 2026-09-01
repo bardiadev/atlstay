@@ -121,7 +121,12 @@ const heroSrcset = srcsetFor(images.heroHome.src);
   />
 
   <!-- ─── HERO ─── (copy + live projection form; viewport-fit on desktop) -->
-  <section class="relative isolate flex items-center overflow-hidden py-12 lg:min-h-[calc(100svh-5rem)] lg:py-0">
+  {/* lg:pb-16 is deliberate. The hero centres its content inside a
+      min-height, so lg:py-0 was fine while the form was short — but the form
+      card can now run to ~930px on the final step, and with the logo strip
+      below pinned to !py-0 the card was ending 28px from it. Bottom padding
+      only: the top stays flush against the header. */}
+  <section class="relative isolate flex items-center overflow-hidden py-12 lg:min-h-[calc(100svh-5rem)] lg:py-0 lg:pb-16">
     <!-- Real intrinsic size + srcset: this img previously declared no
          dimensions at all (so the browser reserved nothing and the layout
          shifted) and shipped one full-size file to every device. -->

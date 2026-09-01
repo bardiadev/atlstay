@@ -90,13 +90,12 @@ const occupancyOpts = ['Fully leased', 'Partly leased', 'Vacant', 'Not sure'];
 const associationTypes = ['HOA', 'Condominium', 'Townhome', 'Mixed'];
 /* Step 4's optional block. Deliberately short lists: these are asked AFTER the
    visitor has already committed, so the job is one tap, not a survey. */
-const timelines = ['As soon as possible', 'In 1–3 months', 'In 3–6 months', 'Just exploring'];
-const switchReasons = [
-  'Earnings below expectations',
-  'Slow or poor communication',
-  'Cleaning & maintenance issues',
-  'Just comparing options',
-];
+/* Kept SHORT on purpose. The first cut used sentence-length labels ("As soon
+   as possible", "Earnings below expectations") and each set wrapped onto three
+   or four rows, which made step 4 tower over the other three. These say the
+   same thing in one row each. */
+const timelines = ['ASAP', '1–3 months', '3–6 months', 'Exploring'];
+const switchReasons = ['Earnings', 'Communication', 'Cleaning', 'Comparing'];
 
 const changeReasons = [
   'Financials & reporting',
@@ -749,36 +748,33 @@ export default function ProjectionForm({ variant, serviceName }: ProjectionFormP
               drops empty values before send, so skipping produces exactly the
               same email and Telegram card as before these existed. Nothing
               here is validated; there is no new way to get stuck. */}
-          <div className="border-t border-line pt-5">
-            <p className="text-xs font-medium uppercase tracking-wide text-stone">Optional — helps us prepare</p>
-
-            <div className="mt-4">
-              <Pills
-                label="When are you hoping to start?"
-                options={timelines}
-                value={data.timeline}
-                onSelect={(v) => set({ timeline: data.timeline === v ? '' : v })}
-              />
-            </div>
+          <div className="space-y-4 border-t border-line pt-4">
+            <Pills
+              label="When are you hoping to start?"
+              optional
+              options={timelines}
+              value={data.timeline}
+              onSelect={(v) => set({ timeline: data.timeline === v ? '' : v })}
+            />
 
             {askSwitchReason && (
-              <div className="mt-5">
-                <Pills
-                  label="What isn’t working right now?"
-                  options={switchReasons}
-                  value={data.changeReason}
-                  onSelect={(v) => set({ changeReason: data.changeReason === v ? '' : v })}
-                />
-              </div>
+              <Pills
+                label="What isn’t working right now?"
+                optional
+                options={switchReasons}
+                value={data.changeReason}
+                onSelect={(v) => set({ changeReason: data.changeReason === v ? '' : v })}
+              />
             )}
 
-            <div className="mt-5">
+            <div>
               <label htmlFor={fid('message')} className="mb-2 block text-sm font-medium text-forest">
                 Anything else we should know?
+                <span className="font-normal text-stone"> (optional)</span>
               </label>
               <textarea
-                id={fid('message')} rows={3} className={inputCls}
-                placeholder="Anything about the property, your timing, or what you’re hoping for."
+                id={fid('message')} rows={2} className={inputCls}
+                placeholder="Anything about the property or your timing."
                 value={data.message} onChange={(e) => set({ message: e.target.value })}
               />
             </div>
@@ -984,20 +980,24 @@ function AddressAutocomplete({
 }
 
 function Pills({
-  label, options, value, onSelect,
+  label, options, value, onSelect, optional = false,
 }: {
   label: string;
   options: string[];
   value: string;
   onSelect: (v: string) => void;
+  /** Marks the question optional, matching how the Phone field reads. */
+  optional?: boolean;
 }) {
   return (
     <div>
-      <span className="mb-2 block text-sm font-medium text-forest">{label}</span>
+      <span className="mb-2 block text-sm font-medium text-forest">
+        {label}{optional && <span className="font-normal text-stone"> (optional)</span>}
+      </span>
       <div className="flex flex-wrap gap-2">
         {options.map((o) => (
           <button key={o} type="button" onClick={() => onSelect(o)}
-            className={`min-w-[3.25rem] rounded-lg border px-3.5 py-2.5 text-sm transition-colors ${
+            className={`min-w-[3.25rem] rounded-lg border px-3 py-2 text-sm transition-colors ${
               value === o ? 'border-brass bg-brass-50 text-forest' : 'border-line text-ink/80 hover:border-brass/50'
             }`}>
             {o}
