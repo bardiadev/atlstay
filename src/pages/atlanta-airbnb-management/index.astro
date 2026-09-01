@@ -10,7 +10,32 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import ReviewProof from '@/components/ui/ReviewProof.astro';
 import { site } from '@/config/site';
-import { breadcrumbSchema, serviceSchema, faqPageSchema } from '@/lib/schema';
+import { breadcrumbSchema, serviceSchema, faqPageSchema, articleSchema } from '@/lib/schema';
+
+/* Primary sources for the regulation section further down. Read off the
+   ordinance and the Georgia Department of Revenue directly, not off a summary
+   blog. Same shape as ServiceSource so the rendering matches the service hubs.
+   If a claim here changes, re-check the source and move the asOf date. */
+const sources = [
+  {
+    claim: "Atlanta defines a short-term rental as lodging for a period not exceeding 30 consecutive days, and requires a short-term rental certificate to operate one.",
+    publisher: 'City of Atlanta Code of Ordinances, Part 20 §20-1003 and §20-1004',
+    url: 'https://library.municode.com/ga/atlanta/codes/code_of_ordinances?nodeId=PTIIICOORANDECO_PT20SHTERE_S20-1003DEGEPR',
+    asOf: 'Checked 1 September 2026',
+  },
+  {
+    claim: "Georgia's local hotel-motel excise tax exempts charges for continuous occupancy after the first 30 days.",
+    publisher: 'O.C.G.A. §48-13-51(h)(4)',
+    url: 'https://codes.findlaw.com/ga/title-48-revenue-and-taxation/ga-code-sect-48-13-51/',
+    asOf: 'Checked 1 September 2026',
+  },
+  {
+    claim: 'The $5-a-night state hotel-motel fee stops once a stay becomes an extended stay rental of 31 or more consecutive days to the same customer, and the count resets if the guest checks out and back in.',
+    publisher: 'Georgia Department of Revenue, State Hotel-Motel Fee FAQ',
+    url: 'https://dor.georgia.gov/state-hotel-motel-faq',
+    asOf: 'Checked 1 September 2026',
+  },
+];
 
 // ---------------------------------------------------------------------------
 // Keyword-exact full-service money page for "Atlanta Airbnb management".
@@ -142,6 +167,20 @@ const schemas = [
     },
   }),
   faqPageSchema(faqs),
+  /* dateModified is a citation signal: an assistant choosing between two pages
+     that say the same thing will prefer the one it can tell is current. The
+     helper already existed but was wired only to /resources/. The date tracks
+     when the sourced regulation section above was last verified — move it when
+     those sources are re-checked, not on every unrelated edit. */
+  articleSchema({
+    title: 'Atlanta Airbnb Management',
+    description:
+      "Full-service Airbnb and short-term rental management in Atlanta, and what the city's short-term rental ordinance actually requires.",
+    path: '/atlanta-airbnb-management/',
+    datePublished: '2026-07-06',
+    dateModified: '2026-09-01',
+    speakable: true,
+  }),
 ];
 ---
 
@@ -418,6 +457,72 @@ const schemas = [
         {' '}and
         {' '}<a href="/resources/is-airbnb-management-worth-it/" class="font-medium text-brass-600 underline-offset-4 hover:underline">whether Airbnb management is worth it</a>.
       </p>
+    </Container>
+  </Section>
+
+  <!-- ─── ATLANTA'S RULES, WITH SOURCES ───
+       This page had no external citations at all, on a site where the two pages
+       AI assistants actually send converting traffic to are the two that carry
+       dated third-party sources. Everything below is read off primary documents
+       — the city ordinance and the Georgia Department of Revenue — and every
+       figure is listed again in the Sources block underneath. Do not add a
+       claim here that is not in that block. -->
+  <Section variant="cream">
+    <Container size="narrow">
+      <Eyebrow>The rules, in plain terms</Eyebrow>
+      <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">
+        What Atlanta actually requires
+      </h2>
+      <div class="mt-6 space-y-5 text-ink/80">
+        <p>
+          Atlanta regulates short-term rentals under a 2021 ordinance. Letting a
+          dwelling for compensation for a period <strong>not exceeding 30
+          consecutive days</strong> makes it a short-term rental, and a
+          short-term rental certificate is required to operate one. That
+          30-day threshold is not a rule of thumb — it is the definition the
+          ordinance itself uses.
+        </p>
+        <p>
+          The same line governs the tax. Georgia's local hotel-motel excise tax
+          exempts charges for continuous occupancy <strong>after the first 30
+          days</strong>, and the state's separate $5-a-night hotel-motel fee
+          stops once a stay becomes an "extended stay rental" — 31 or more
+          consecutive days to the same guest. If a guest checks out and checks
+          back in, that count resets to zero.
+        </p>
+        <p>
+          This is why an Atlanta owner has a real choice rather than one option.
+          A nightly listing sits inside the certificate regime and the nightly
+          taxes. A furnished let of 31 days or more sits outside both, turns over
+          a fraction as often, and serves a completely different guest — which is
+          the subject of our <a href="/furnished-housing/" class="font-medium text-forest underline decoration-brass/60 underline-offset-4 transition-colors hover:text-brass-600">furnished and mid-term housing</a> pages.
+        </p>
+        <p class="text-sm text-ink/65">
+          Rules differ across metro Atlanta — Sandy Springs, Marietta, Decatur
+          and unincorporated county areas each set their own — and they change.
+          We confirm the position for your specific address before a property is
+          listed. Nothing here is legal or tax advice.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Sources — same pattern as the service hubs, shown openly -->
+  <Section variant="white">
+    <Container size="narrow">
+      <h2 class="font-display text-xl text-forest">Sources</h2>
+      <p class="mt-2 text-sm text-ink/60">
+        Every figure on this page is linked to its original source, with the date we checked it.
+      </p>
+      <ol class="mt-5 space-y-3 text-sm">
+        {sources.map((s) => (
+          <li class="text-ink/70">
+            <span>{s.claim}</span>{' '}
+            <a href={s.url} target="_blank" rel="noopener nofollow" class="text-brass-600 underline-offset-2 hover:underline">{s.publisher}</a>
+            <span class="text-ink/45"> · {s.asOf}</span>
+          </li>
+        ))}
+      </ol>
     </Container>
   </Section>
 

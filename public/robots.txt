@@ -27,5 +27,8 @@ Allow: /
 Sitemap: https://atlstay.com/sitemap-index.xml
 
 # AI index + full knowledge base for answer engines:
-#   https://atlstay.com/llms.txt
-#   https://atlstay.com/llms-full.txt
+#   https://atlstay.com/llms.txt          — start here: concise index
+#   https://atlstay.com/llms-markets.txt  — every city, county and service x city page
+#   https://atlstay.com/llms-guides.txt   — every guide, grouped by topic
+#   https://atlstay.com/llms-faq.txt      — every question answered, most important first
+#   https://atlstay.com/llms-full.txt     — the complete knowledge base (large)

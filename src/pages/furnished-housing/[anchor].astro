@@ -26,7 +26,7 @@ import CTABand from '@/components/ui/CTABand.astro';
 import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { site } from '@/config/site';
 import { publishedAnchors, THIRTY_DAY_LINE } from '@/data/anchors';
-import { breadcrumbSchema, faqPageSchema, serviceSchema } from '@/lib/schema';
+import { breadcrumbSchema, faqPageSchema, serviceSchema, articleSchema } from '@/lib/schema';
 
 export function getStaticPaths() {
   return publishedAnchors.map((a) => ({ params: { anchor: a.slug }, props: { a } }));
@@ -61,6 +61,16 @@ const schemas = [
     area: { name: `${a.city}, GA`, type: 'City', county: a.county },
   }),
   faqPageSchema(a.faqs),
+  /* dateModified is derived from the newest source check on the page rather
+     than hand-set, so it can never claim to be fresher than the facts it
+     rests on. Re-check a source, move its `checked` date, and this follows. */
+  articleSchema({
+    title: heading,
+    description: seoDescription,
+    path: `/furnished-housing/${a.slug}/`,
+    dateModified: a.sources.map((s) => s.checked).sort().at(-1),
+    speakable: true,
+  }),
 ];
 ---
 
