@@ -11,7 +11,7 @@ faqs:
   - q: "What type of property performs best in Glenwood Park?"
     a: "The neighborhood's new-urbanist architecture lends itself to clean, well-styled interiors. Row homes, townhomes, and ground-level condos with private outdoor space consistently outperform generic listings here. Guests arrive expecting the neighborhood to look a certain way — your property should feel like it belongs."
   - q: "Is Glenwood Park good for short-term rentals year-round?"
-    a: "Demand peaks with warmer months when the BeltLine and outdoor spaces are most active, but the neighborhood draws bookings across the year thanks to its walkable character and proximity to the broader intown Atlanta market. Spring and fall tend to be especially strong as travelers seek out Atlanta's outdoor amenities."
+    a: "Glenwood works for this, and the reason is structural: demand peaks with warmer months when the BeltLine and outdoor spaces are most active, but the neighborhood draws bookings across the year thanks to its walkable character and proximity to the broader intown Atlanta market. Spring and fall tend to be especially strong as travelers seek out Atlanta's outdoor amenities."
   - q: "Do I need a permit to list on Airbnb in Glenwood Park?"
     a: "Yes. Glenwood Park is within the City of Atlanta, so the city's short-term rental licensing requirements apply. You'll need a valid permit before listing. Check whether your property is also subject to HOA or community rules — some planned communities have additional restrictions. Our Atlanta regulations guide covers current requirements in detail."
   - q: "How does the BeltLine affect short-term rental demand here?"

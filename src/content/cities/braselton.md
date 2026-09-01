@@ -27,7 +27,7 @@ faqs:
   - q: "What types of guests book in Braselton?"
     a: "Wine and culinary travelers visiting Château Élan, motorsports fans for Road Atlanta events, corporate retreat and conference attendees, golfers, and couples seeking a wine-country weekend escape are the primary guest segments. ATLStay builds pricing strategies that capture the premium rates these guests expect to pay around major events."
   - q: "Is Braselton a strong STR investment market?"
-    a: "The combination of a major resort anchor and a high-profile motorsports venue — each with its own distinct event calendar — creates demand peaks that appear throughout the year rather than in a single season. That non-correlated, calendar-spread demand profile is a meaningful structural advantage for STR performance."
+    a: "Braselton's strength as a short-term rental market is the combination of a major resort anchor and a high-profile motorsports venue — each with its own distinct event calendar — creates demand peaks that appear throughout the year rather than in a single season. That non-correlated, calendar-spread demand profile is a meaningful structural advantage for STR performance."
 order: 0
 published: true
 ---

@@ -23,7 +23,7 @@ faqs:
   - q: "What is LakePoint Sports Complex and how does it drive STR demand?"
     a: "LakePoint Sports is a large multi-sport tournament campus located in Emerson, just outside Holly Springs. It hosts hundreds of youth travel sports tournaments each year — baseball, softball, soccer, lacrosse, and more — drawing families from across the Southeast who need lodging for multi-day events. Holly Springs properties are among the most conveniently located options for LakePoint tournament families, and this demand is calendar-predictable, recurring, and group-size friendly."
   - q: "How much can I earn from a Holly Springs short-term rental?"
-    a: "Earnings depend on home size, condition, and management quality. LakePoint tournament weekends create demand spikes that can support premium pricing for properties with enough bedrooms for families and groups. The best way to size your potential is a free projection from our team."
+    a: "What a Holly Springs short-term rental earns depends on home size, condition, and management quality. LakePoint tournament weekends create demand spikes that can support premium pricing for properties with enough bedrooms for families and groups. The best way to size your potential is a free projection from our team."
   - q: "What other demand drivers exist near Holly Springs?"
     a: "Beyond LakePoint, Holly Springs benefits from Blankets Creek's trail system (a regional mountain biking destination), proximity to the Outlet Shoppes at Atlanta, and the broader Cherokee County outdoor and leisure visitor base. The city's position between Woodstock and Canton also means it captures demand spillover from both markets when those areas are fully booked."
   - q: "What does ATLStay charge for management in Holly Springs?"

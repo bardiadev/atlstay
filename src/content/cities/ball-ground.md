@@ -29,7 +29,7 @@ faqs:
   - q: "What does ATLStay charge to manage a Ball Ground property?"
     a: "Our all-in management is 10–15% of booking revenue — dynamic pricing, listing management, guest communication, cleaning coordination, and owner reporting. No setup fees. Contact us for a quote tailored to your specific home."
   - q: "Can I use my Ball Ground home myself during the year?"
-    a: "Yes. You retain full calendar control. Block any dates you want and we manage all guest bookings around those windows."
+    a: "Yes — ATLStay management of a Ball Ground home leaves the calendar in your hands. Block any dates you want and we manage all guest bookings around those windows."
 order: 0
 published: true
 ---

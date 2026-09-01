@@ -27,7 +27,7 @@ faqs:
   - q: "What is Winder's business and contractor demand like?"
     a: "Barrow County's position on the Hwy 316 corridor and its ongoing residential and commercial development generates consistent business and contractor accommodation demand. Workers on extended assignments in the county — construction project managers, subcontractors, corporate site staff — often prefer a furnished STR over a chain hotel for multi-week stays. The county seat function adds legal, civic, and government visitor demand on top of this base."
   - q: "What property types perform best in Winder?"
-    a: "Properties with outdoor space and storage work well for Fort Yargo outdoor recreation guests — mountain bikers and paddlers need gear storage and a good washdown area. Functional, well-equipped homes serve business and contractor visitors. Larger properties capture event-weekend groups traveling to nearby Braselton events."
+    a: "In Winder, properties with outdoor space and storage work well for Fort Yargo outdoor recreation guests — mountain bikers and paddlers need gear storage and a good washdown area. Functional, well-equipped homes serve business and contractor visitors. Larger properties capture event-weekend groups traveling to nearby Braselton events."
 order: 0
 published: true
 ---

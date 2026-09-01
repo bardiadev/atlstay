@@ -27,7 +27,7 @@ faqs:
   - q: "Is the Silver Comet Trail a significant demand driver in Mableton?"
     a: "Yes. The Silver Comet Trail begins in Smyrna and runs west through Mableton, making it one of the first substantial trail access points on the route. Cyclists beginning multi-day western Georgia rides, trail runners, and recreational users of all kinds find Mableton STR properties a convenient and comfortable trail base. Bike-friendly amenities — covered storage, outdoor wash areas, ground-floor access — are features worth investing in for this market."
   - q: "What is ATLStay's fee for managing Mableton properties?"
-    a: "Our all-in management is 10–15% of booking revenue — covering dynamic pricing, listing optimization, guest communication, cleaning oversight, and reporting. No setup fees. Contact us for a quote tailored to your property."
+    a: "For Mableton properties, ATLStay's all-in rate is 10–15% of booking revenue — covering dynamic pricing, listing optimization, guest communication, cleaning oversight, and reporting. No setup fees. Contact us for a quote tailored to your property."
   - q: "Can I block off dates for personal use?"
     a: "Yes. You retain full calendar control and can block any dates for personal use at any time."
 order: 0

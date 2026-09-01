@@ -11,7 +11,7 @@ faqs:
   - q: "What property type works best for Airbnb in Lake Claire?"
     a: "Single-family homes and craftsman-style bungalows with outdoor space perform strongest here. The neighborhood's character is residential and tree-lined, and properties that fit that aesthetic — warm interiors, real outdoor space, a genuine home feel — match what guests are seeking when they specifically choose Lake Claire over a busier intown option."
   - q: "Is Lake Claire good for year-round short-term rentals?"
-    a: "Yes, with the caveat that the demand profile is steadier than spiky. Families visiting for extended Atlanta stays, relocation guests, and travelers seeking calm over activity book throughout the year. Spring and fall bring stronger leisure demand, while the neighborhood's proximity to Decatur and the broader east Atlanta market sustains bookings in slower months."
+    a: "Lake works for this, and the reason is structural: yes, with the caveat that the demand profile is steadier than spiky. Families visiting for extended Atlanta stays, relocation guests, and travelers seeking calm over activity book throughout the year. Spring and fall bring stronger leisure demand, while the neighborhood's proximity to Decatur and the broader east Atlanta market sustains bookings in slower months."
   - q: "Do I need a permit to list on Airbnb in Lake Claire?"
     a: "Yes. Lake Claire is within the City of Atlanta, so Atlanta's short-term rental licensing requirements apply. You'll need a valid permit before listing. Our Atlanta short-term rental regulations guide covers current permit requirements and the registration process in detail."
   - q: "How does proximity to Candler Park and Decatur affect bookings?"

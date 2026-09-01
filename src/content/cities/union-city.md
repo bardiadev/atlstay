@@ -25,9 +25,9 @@ faqs:
   - q: "What role does film production play in Union City's STR market?"
     a: "Georgia's film tax credit has made the state — and particularly the I-20 and south metro corridors — one of the largest film production regions in the US. South Fulton County sees regular production activity. Film and television crews often prefer STR accommodations over hotel blocks for extended shoots, particularly for higher-production roles that need a real workspace and home environment during multi-week assignments. Union City's south Fulton position places it within this active production zone."
   - q: "What guest types typically book in Union City?"
-    a: "Airport-adjacent travelers, film and TV production workers, logistics industry employees on extended assignments, contractors working in south Fulton County's ongoing development, and families visiting area residents are the primary segments. ATLStay builds marketing and pricing strategies around all of these profiles."
+    a: "Union City draws airport-adjacent travelers, film and TV production workers, logistics industry employees on extended assignments, contractors working in south Fulton County's ongoing development, and families visiting area residents are the primary segments. ATLStay builds marketing and pricing strategies around all of these profiles."
   - q: "Is Union City a good location for a short-term rental investment?"
-    a: "South Fulton County's combination of airport proximity, film industry activity, and logistics corridor growth creates durable, multi-source demand. Property costs are meaningfully lower than north Fulton or intown Atlanta, and the demand profile is less seasonal than purely leisure-driven markets."
+    a: "Union works for this, and the reason is structural: south Fulton County's combination of airport proximity, film industry activity, and logistics corridor growth creates durable, multi-source demand. Property costs are meaningfully lower than north Fulton or intown Atlanta, and the demand profile is less seasonal than purely leisure-driven markets."
 order: 0
 published: true
 ---

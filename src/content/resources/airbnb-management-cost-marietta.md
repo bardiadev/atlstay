@@ -13,7 +13,7 @@ faqs:
   - q: "Why does management matter in a market like Marietta?"
     a: "Marietta has several independent demand drivers — the historic Square, Kennesaw Mountain visitors, Dobbins and Lockheed business travel, and Truist Park just minutes away with 81 Braves home games plus events at the Battery. Each creates its own booking spikes. A manager who tracks and prices those events captures meaningfully more than one relying on platform defaults."
   - q: "Is a 10–15% all-inclusive rate too good to be true?"
-    a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached."
+    a: "No. A 10–15% all-inclusive management rate reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached."
   - q: "Are Marietta Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Marietta owners should also account for Cobb County and local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
   - q: "How much can my Marietta home earn on Airbnb?"

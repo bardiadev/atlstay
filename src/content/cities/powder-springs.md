@@ -25,7 +25,7 @@ faqs:
   - q: "Is Six Flags a demand driver for Powder Springs STRs?"
     a: "Yes. Six Flags Over Georgia is close enough to Powder Springs that families attending the park often find STR properties here more spacious and less expensive than equivalent hotel rooms near the park. Multi-day park visitors who want a full kitchen, more space, and a home feel find Powder Springs a practical choice. This demand concentrates heavily in spring and summer operating seasons."
   - q: "What kind of guests book in Powder Springs?"
-    a: "Primarily outdoor-recreation visitors (Silver Comet cyclists and trail users), families visiting Six Flags or Sweetwater Creek State Park, and sports event families attending regional competitions at McEachern and other Cobb County athletic facilities. The market also sees extended-stay demand from Cobb County's large corporate and healthcare employment base."
+    a: "Powder Springs draws primarily outdoor-recreation visitors (Silver Comet cyclists and trail users), families visiting Six Flags or Sweetwater Creek State Park, and sports event families attending regional competitions at McEachern and other Cobb County athletic facilities. The market also sees extended-stay demand from Cobb County's large corporate and healthcare employment base."
   - q: "What is ATLStay's management fee in Powder Springs?"
     a: "Our all-in management is 10–15% of booking revenue — covering dynamic pricing, listing management, guest communication, cleaning coordination, and owner reporting. No setup fees. Contact us for a quote tailored to your property."
   - q: "Can I use my Powder Springs home for personal use while it's managed?"

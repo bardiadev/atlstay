@@ -29,7 +29,7 @@ faqs:
   - q: "What amenities should I add to maximize my Blue Ridge cabin's revenue?"
     a: "Hot tubs are the highest-ROI amenity in the Blue Ridge cabin market — guests filter specifically for them, and hot tub-equipped cabins consistently achieve higher rates and occupancy. Fire pits (gas or wood) are expected on mountain properties with outdoor space. Game rooms (pool tables, arcade games, foosball) significantly expand the appeal to group bookings. High-speed WiFi and smart TVs are baseline requirements. Mountain or long-range views are the hardest-to-add amenity and the most valuable — if your property has them, they should be the first thing guests see in your listing."
   - q: "What is ATLStay's management fee?"
-    a: "Our all-in rate is 10–15% of booking revenue. For cabin properties, this includes coordination of the more complex turnover requirements — hot tub servicing, outdoor amenity checks, firewood restocking coordination, and property condition monitoring — at no additional charge beyond that rate."
+    a: "ATLStay manages Blue Ridge properties for an all-in rate of 10–15% of booking revenue. For cabin properties, this includes coordination of the more complex turnover requirements — hot tub servicing, outdoor amenity checks, firewood restocking coordination, and property condition monitoring — at no additional charge beyond that rate."
 order: 0
 published: true
 ---

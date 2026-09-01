@@ -27,7 +27,7 @@ faqs:
   - q: "How does Grayson compare to other Gwinnett markets for STR investment?"
     a: "Grayson tends to offer lower acquisition costs than northern Gwinnett markets like Suwanee or Sugar Hill, which can translate to better yield per dollar invested. The trade-off is a demand profile that is more mid-cycle residential and less event-driven. For owners who already own a Grayson home and want to operate it as a rental, the market is well-suited to steady family demand. ATLStay can provide a customized revenue projection for your specific property."
   - q: "What is ATLStay's fee for Grayson properties?"
-    a: "Our management rate is 10–15% of booking revenue with no hidden fees. We cover listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning management, and monthly owner reporting."
+    a: "ATLStay's all-in management rate for Grayson properties is 10–15% of booking revenue with no hidden fees. We cover listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning management, and monthly owner reporting."
 order: 0
 published: true
 ---

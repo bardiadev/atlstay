@@ -29,7 +29,7 @@ faqs:
   - q: "Will a ATLStay manager know Roswell's neighborhoods?"
     a: "Yes. We serve clients across Roswell and know the difference between a Canton Street cottage and a Riverside neighborhood home in terms of positioning, guest profile, and pricing. That local knowledge is reflected in how we write listings, set rates, and communicate with guests."
   - q: "Can I still use my Roswell property personally?"
-    a: "Completely. You control your calendar. Block any dates for personal use and we manage bookings around them. No minimums, no restrictions on your personal use."
+    a: "Yes. Owners of Roswell properties retain full calendar control while ATLStay manages the listing. Block any dates for personal use and we manage bookings around them. No minimums, no restrictions on your personal use."
 order: 0
 published: true
 ---

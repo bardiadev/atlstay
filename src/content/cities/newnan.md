@@ -27,7 +27,7 @@ faqs:
   - q: "How does the I-85 corridor affect demand?"
     a: "Interstate 85 southwest of Atlanta has developed into a significant logistics, manufacturing, and industrial corridor. Companies operating in Coweta County generate consistent business travel that hotel inventory in Newnan doesn't always serve efficiently. A quality STR that caters to the business traveler — reliable internet, workspace, comfortable furnishings — fills a genuine gap and creates weekday occupancy to complement weekend heritage leisure demand."
   - q: "What property types work best in Newnan?"
-    a: "Properties in or adjacent to the historic districts perform strongly for heritage tourism and weekend stays. Larger homes with character architecture can command premiums for group visits and special occasions. Functional, well-equipped properties closer to the I-85 interchange capture business and contractor stays. ATLStay calibrates pricing and targeting across both segments."
+    a: "In Newnan, properties in or adjacent to the historic districts perform strongly for heritage tourism and weekend stays. Larger homes with character architecture can command premiums for group visits and special occasions. Functional, well-equipped properties closer to the I-85 interchange capture business and contractor stays. ATLStay calibrates pricing and targeting across both segments."
 order: 0
 published: true
 ---

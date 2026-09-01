@@ -13,7 +13,7 @@ faqs:
   - q: "Why does management matter in a market like Roswell?"
     a: "Roswell pairs a walkable historic district with multiple demand generators — Canton Street's restaurant row, the Old Mill and Chattahoochee parks, and proximity to Alpharetta's corporate sector. Positioning and pricing differ between a Canton Street cottage and a Riverside-area home. A manager who knows those distinctions captures more than one applying a generic metro rate."
   - q: "Is a 10–15% all-inclusive rate too good to be true?"
-    a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras layered on."
+    a: "No. A 10–15% all-inclusive management rate reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras layered on."
   - q: "Are Roswell Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Roswell owners should also account for local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
   - q: "How much can my Roswell home earn on Airbnb?"

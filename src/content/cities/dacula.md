@@ -29,7 +29,7 @@ faqs:
   - q: "What types of properties work best in Dacula?"
     a: "Larger homes suited to families and groups are the strongest performers. Properties with four or more bedrooms, private outdoor space, garage parking, and a full kitchen are ideal for the sports-travel and extended-stay guest profiles. A quiet residential neighborhood location adds to the appeal — sports-travel families with early-morning games value a restful setting."
   - q: "What is ATLStay's fee for Dacula properties?"
-    a: "Our management rate is 10–15% of booking revenue with no hidden fees. We cover listing optimization, photography coordination, dynamic pricing around tournament and UGA game weekends, 24/7 guest communication, cleaning management, and monthly owner reporting."
+    a: "ATLStay's all-in management rate for Dacula properties is 10–15% of booking revenue with no hidden fees. We cover listing optimization, photography coordination, dynamic pricing around tournament and UGA game weekends, 24/7 guest communication, cleaning management, and monthly owner reporting."
 order: 0
 published: true
 ---

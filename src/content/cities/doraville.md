@@ -27,7 +27,7 @@ faqs:
   - q: "How does film production work as an STR demand source?"
     a: "Georgia's film tax credit has made the state one of the most active production markets globally. Productions running at Assembly Atlanta range from multi-month feature films to episodic TV series. Crew members — camera operators, gaffers, art directors, makeup artists — are often brought in from out of state and need housing for the duration of production. A well-located, well-equipped Doraville STR can serve this segment repeatedly, often with week-long minimum stays that keep occupancy high and turnover costs low."
   - q: "What is ATLStay's management fee for Doraville properties?"
-    a: "Our all-in rate is 10–15% of booking revenue, covering listing optimization, dynamic pricing, photography, guest communication, cleaning oversight, and reporting. No setup fees or per-booking charges."
+    a: "ATLStay manages Doraville properties for an all-in rate of 10–15% of booking revenue, covering listing optimization, dynamic pricing, photography, guest communication, cleaning oversight, and reporting. No setup fees or per-booking charges."
 order: 0
 published: true
 ---

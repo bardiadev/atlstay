@@ -29,7 +29,7 @@ faqs:
   - q: "What is ATLStay's management fee in Canton?"
     a: "Our all-in management is 10–15% of booking revenue, covering dynamic pricing, listing management, guest communication, cleaning oversight, and reporting. No setup fees. Contact us for a quote specific to your property."
   - q: "Can I still use my Canton home if ATLStay manages it?"
-    a: "Yes. You keep full calendar control. Block any dates you want for personal use and we manage all guest bookings around those windows."
+    a: "Yes — as the owner of a Canton property under ATLStay management you keep full calendar control. Block any dates you want for personal use and we manage all guest bookings around those windows."
 order: 0
 published: true
 ---

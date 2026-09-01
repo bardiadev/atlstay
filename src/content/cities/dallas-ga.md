@@ -27,7 +27,7 @@ faqs:
   - q: "How does Paulding County's growth affect the STR market?"
     a: "Paulding has been one of the fastest-growing Georgia counties for over a decade. Residential construction, commercial development, and infrastructure projects generate consistent demand from workers who prefer extended STR stays over chain hotels for multi-week assignments. Families relocating to the county also create short-term housing demand during transition periods."
   - q: "What property types perform well in Dallas, GA?"
-    a: "Homes with outdoor space and storage work well for Silver Comet Trail cyclists and outdoor visitors. Functional, well-equipped properties near the commercial core serve business and government visitors. Properties that can accommodate groups are well-positioned for Amphitheater event weekends."
+    a: "In Dallas, homes with outdoor space and storage work well for Silver Comet Trail cyclists and outdoor visitors. Functional, well-equipped properties near the commercial core serve business and government visitors. Properties that can accommodate groups are well-positioned for Amphitheater event weekends."
 order: 0
 published: true
 ---

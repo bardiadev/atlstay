@@ -27,7 +27,7 @@ faqs:
   - q: "What is Olde Town Conyers and does it generate STR demand?"
     a: "Olde Town Conyers is the historic commercial district at the heart of the city, with independent restaurants, shops, and a community calendar of events including festivals and farmers markets. It gives Conyers a genuine local character that drives weekend leisure visitors who prefer a small-town experience over the generic suburban strip. The Georgia Outdoor Film Festival and other Olde Town events contribute to seasonal demand spikes."
   - q: "What is ATLStay's management fee in Conyers?"
-    a: "Our all-in rate is 10–15% of booking revenue, covering listing optimization, dynamic pricing, photography, guest communication, cleaning oversight, and reporting. We manage pricing around the Horse Park's event calendar to capture demand spikes. No setup fees."
+    a: "ATLStay manages Conyers properties for an all-in rate of 10–15% of booking revenue, covering listing optimization, dynamic pricing, photography, guest communication, cleaning oversight, and reporting. We manage pricing around the Horse Park's event calendar to capture demand spikes. No setup fees."
 order: 0
 published: true
 ---

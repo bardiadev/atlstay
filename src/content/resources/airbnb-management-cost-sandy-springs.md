@@ -13,7 +13,7 @@ faqs:
   - q: "Why does management matter in a corporate market like Sandy Springs?"
     a: "Sandy Springs has two demand streams: steady weekday business travel from Perimeter Center, one of the Southeast's largest suburban office markets, and weekend leisure from Chattahoochee recreation and Buckhead proximity. Business demand shows up on Tuesday nights and during multi-week projects, not just weekends. A manager who fills midweek gaps and configures for corporate guests earns their fee through occupancy a leisure-only approach would miss."
   - q: "Is a 10–15% all-inclusive rate too good to be true?"
-    a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached."
+    a: "No. A 10–15% all-inclusive management rate reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached."
   - q: "Are Sandy Springs Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Sandy Springs owners should also account for local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
   - q: "How much can my Sandy Springs home earn on Airbnb?"

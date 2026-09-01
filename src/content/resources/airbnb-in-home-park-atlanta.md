@@ -9,7 +9,7 @@ faqs:
   - q: "Who typically books a Home Park Airbnb?"
     a: "Home Park draws a reliable mix of Georgia Tech visitors — parents moving students in or out, alumni returning for homecoming and graduation, and fans attending games at Bobby Dodd Stadium. Midtown-adjacent leisure travelers who want more space than a hotel room at a competitive price round out the guest mix."
   - q: "What property type works best in Home Park?"
-    a: "Comfortable, practical properties that offer more space than a comparable hotel room tend to perform well here. Full houses and larger apartments work well for family groups visiting campus; clean, well-organized smaller units serve solo travelers and couples. The key is being genuinely comfortable and well-priced, not trying to be Buckhead."
+    a: "In Home Park, comfortable, practical properties that offer more space than a comparable hotel room tend to perform well here. Full houses and larger apartments work well for family groups visiting campus; clean, well-organized smaller units serve solo travelers and couples. The key is being genuinely comfortable and well-priced, not trying to be Buckhead."
   - q: "Is demand consistent in Home Park throughout the year?"
     a: "Demand follows Georgia Tech's academic and athletic calendar closely. Move-in weekends, graduation, homecoming, and big home games drive predictable spikes. Summer conference season and ongoing Midtown corporate demand provide a baseline between academic peaks. The calendar is knowable, which makes pricing strategy more straightforward."
   - q: "Do I need a permit to run an Airbnb in Home Park?"

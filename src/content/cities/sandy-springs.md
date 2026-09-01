@@ -25,7 +25,7 @@ faqs:
   - q: "What types of homes perform best as short-term rentals in Sandy Springs?"
     a: "Larger single-family homes near Perimeter Center or the Chattahoochee corridor perform well for both extended-stay corporate travelers and leisure groups. Well-furnished condos in the Hammond Drive or Roswell Road corridors attract solo business travelers. Properties with outdoor space, home-office setups, or pool access consistently outperform comparable listings without those features."
   - q: "What is ATLStay's management fee for Sandy Springs properties?"
-    a: "Our all-in rate is 10–15% of booking revenue — no setup fees, no per-booking charges. That covers listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. You keep the rest."
+    a: "For Sandy Springs properties, ATLStay's all-in rate is 10–15% of booking revenue — no setup fees, no per-booking charges. That covers listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. You keep the rest."
   - q: "Can I block dates to use my Sandy Springs home myself?"
     a: "Absolutely. You retain full calendar control. Block any dates you want for personal use, family stays, or maintenance, and we manage everything around them. There are no minimum availability requirements."
   - q: "How does ATLStay handle STR compliance in Sandy Springs?"

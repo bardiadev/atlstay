@@ -27,9 +27,9 @@ faqs:
   - q: "Does proximity to Truist Park affect Airbnb rates in Marietta?"
     a: "Meaningfully, yes. The Atlanta Braves play 81 regular-season home games plus any postseason games, and the Battery Atlanta development surrounding Truist Park hosts concerts and events year-round. Guests who want to avoid driving after a night game or a late concert are a reliable market. We price proactively for the full Braves and Battery Atlanta event calendar."
   - q: "What is ATLStay's fee for managing Marietta properties?"
-    a: "Our all-in management rate is 10–15% of booking revenue — covering listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees, no per-booking charges."
+    a: "ATLStay manages Marietta properties for an all-in rate of 10–15% of booking revenue — covering listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees, no per-booking charges."
   - q: "Can I host my Marietta property with ATLStay and still use it myself?"
-    a: "Yes. You retain full control of your calendar. Block any dates for personal or family use, and we handle all bookings around those windows. No minimum availability requirements."
+    a: "Yes. Owners of Marietta properties retain full calendar control while ATLStay manages the listing. You retain full control of your calendar. Block any dates for personal or family use, and we handle all bookings around those windows. No minimum availability requirements."
 order: 0
 published: true
 ---

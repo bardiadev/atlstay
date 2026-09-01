@@ -27,7 +27,7 @@ faqs:
   - q: "What types of homes perform well as STRs in Lithonia?"
     a: "Homes with outdoor features — decks, patios, fire pits, yard space — that complement the outdoor-recreation guest profile perform particularly well. Properties with space for couples, small families, or groups of hikers or cyclists align with the typical Arabia Mountain visitor. Clean, comfortable, and practical outperforms luxury in this market."
   - q: "What is ATLStay's management fee in Lithonia?"
-    a: "Our all-in rate is 10–15% of booking revenue, covering listing creation, dynamic pricing, photography, guest communication, cleaning oversight, and owner reporting. No setup fees."
+    a: "ATLStay's all-in management rate for Lithonia properties is 10–15% of booking revenue, covering listing creation, dynamic pricing, photography, guest communication, cleaning oversight, and owner reporting. No setup fees."
 order: 0
 published: true
 ---

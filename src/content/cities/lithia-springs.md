@@ -27,7 +27,7 @@ faqs:
   - q: "What guest types visit Lithia Springs?"
     a: "Outdoor recreation visitors for Sweetwater Creek make up a meaningful weekend segment. Six Flags families represent summer and holiday-season demand. Business travelers and contractors working along the I-20 corridor and in Douglas County's distribution center base fill weekday occupancy. ATLStay prices and markets for all three profiles."
   - q: "What property types work well in Lithia Springs?"
-    a: "Mid-size homes that can comfortably house an outdoor recreation group — with space for gear, good shower pressure, and a comfortable common area — perform well for the Sweetwater Creek audience. Properties with outdoor spaces like decks or yards add appeal. Functional, well-equipped spaces close to the I-20 interchange serve business travelers efficiently."
+    a: "In Lithia Springs, mid-size homes that can comfortably house an outdoor recreation group — with space for gear, good shower pressure, and a comfortable common area — perform well for the Sweetwater Creek audience. Properties with outdoor spaces like decks or yards add appeal. Functional, well-equipped spaces close to the I-20 interchange serve business travelers efficiently."
 order: 0
 published: true
 ---

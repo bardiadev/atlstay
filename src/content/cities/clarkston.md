@@ -27,7 +27,7 @@ faqs:
   - q: "How far is Clarkston from downtown Atlanta?"
     a: "Clarkston sits roughly 10 miles east of downtown Atlanta. The Indian Creek MARTA station provides rail access for guests who prefer not to drive, connecting into the broader Atlanta transit network. Guests with cars can reach downtown in 20–25 minutes under normal traffic conditions."
   - q: "What is ATLStay's fee for Clarkston properties?"
-    a: "Our all-in management rate is 10–15% of booking revenue and covers listing creation, dynamic pricing, photography coordination, 24/7 guest communication, cleaning oversight, and reporting. No setup fees or per-stay charges."
+    a: "For Clarkston properties, ATLStay's all-in rate is 10–15% of booking revenue and covers listing creation, dynamic pricing, photography coordination, 24/7 guest communication, cleaning oversight, and reporting. No setup fees or per-stay charges."
 order: 0
 published: true
 ---

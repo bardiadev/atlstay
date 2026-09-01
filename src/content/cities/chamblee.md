@@ -27,7 +27,7 @@ faqs:
   - q: "How does MARTA access affect bookings in Chamblee?"
     a: "Chamblee station is on the Gold Line, providing direct rail access into downtown Atlanta and to Hartsfield-Jackson International Airport. For international guests and domestic travelers who prefer transit, this is a meaningful selling point — one that should be highlighted in your listing title and description. Properties within easy walking distance of the Chamblee station command a real premium from this segment."
   - q: "What is ATLStay's management fee in Chamblee?"
-    a: "Our all-in rate is 10–15% of booking revenue, covering listing creation, dynamic pricing, photography, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees."
+    a: "ATLStay's all-in management rate for Chamblee properties is 10–15% of booking revenue, covering listing creation, dynamic pricing, photography, 24/7 guest communication, cleaning oversight, and owner reporting. No setup fees."
 order: 0
 published: true
 ---

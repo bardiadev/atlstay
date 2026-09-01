@@ -13,7 +13,7 @@ faqs:
   - q: "Why does management matter so much in Athens?"
     a: "UGA football is the single largest demand driver in the Athens market — roughly seven home games a season at Sanford Stadium, each its own pricing event, with rivalry games and Homecoming commanding the highest rates. Add graduation, parents' weekends, and move-in dates, and you have a calendar of high-value windows. A manager who prices each game as the schedule firms up captures far more than one relying on platform defaults."
   - q: "Is a 10–15% all-inclusive rate too good to be true?"
-    a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning, maintenance, or 'game weekend' handling is far easier to evaluate than a low base rate with extras attached."
+    a: "No. A 10–15% all-inclusive management rate reflects a lean, owner-first model rather than a thin service tier. The real question for any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning, maintenance, or 'game weekend' handling is far easier to evaluate than a low base rate with extras attached."
   - q: "Are Athens Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Athens owners should also account for local lodging and occupancy taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
   - q: "How much can my Athens home earn on Airbnb?"

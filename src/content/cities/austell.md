@@ -25,7 +25,7 @@ faqs:
   - q: "Is Sweetwater Creek State Park near Austell?"
     a: "Sweetwater Creek State Park borders Austell to the south and is one of the most popular state parks in Georgia, drawing hikers, paddlers, and outdoor recreation visitors from across metro Atlanta. Park visitors who want a home base rather than on-site camping find Austell properties a natural fit — close to the park entrance, with a full kitchen and more space than a hotel room."
   - q: "How much can I earn from a short-term rental in Austell?"
-    a: "Earnings depend on property size, condition, and management quality. Six Flags proximity supports strong pricing on peak park weekends, while the broader Cobb County market and outdoor recreation access sustain baseline occupancy outside park season. Request a free projection from our team to see your specific home's potential."
+    a: "What a Austell short-term rental earns depends on property size, condition, and management quality. Six Flags proximity supports strong pricing on peak park weekends, while the broader Cobb County market and outdoor recreation access sustain baseline occupancy outside park season. Request a free projection from our team to see your specific home's potential."
   - q: "What does ATLStay charge for managing Austell properties?"
     a: "Our all-in management is 10–15% of booking revenue — covering listing optimization, dynamic pricing, guest communication, cleaning oversight, and reporting. No setup fees or per-booking charges. Contact us for a quote specific to your home."
   - q: "Can I block off personal use dates?"

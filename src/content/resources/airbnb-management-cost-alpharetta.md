@@ -13,7 +13,7 @@ faqs:
   - q: "Why does management matter in a corporate market like Alpharetta?"
     a: "Alpharetta's demand is diverse — tech and fintech business travel during the week, Ameris Bank Amphitheatre concerts and Avalon visitors on weekends, plus affluent local staycation demand. Each segment wants different things from a listing and prices differently. A manager who tunes the calendar across all of them captures more than one applying a flat suburban rate."
   - q: "Is a 10–15% all-inclusive rate too good to be true?"
-    a: "No — it reflects a lean, owner-first model rather than a thin service tier. The real test of any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached for every service."
+    a: "No. A 10–15% all-inclusive management rate reflects a lean, owner-first model rather than a thin service tier. The real test of any quote is what's bundled. A flat all-in rate with no setup fees, no per-booking charges, and no add-ons for cleaning or maintenance is far easier to evaluate than a low base rate with extras attached for every service."
   - q: "Are Alpharetta Airbnb management fees tax deductible?"
     a: "Yes. Management fees on a property rented for profit are a deductible business expense, along with cleaning, supplies, and platform fees. Alpharetta owners should also account for local lodging taxes separately. Consult a tax professional familiar with Georgia short-term rental rules for the full picture."
   - q: "How much can my Alpharetta home earn on Airbnb?"

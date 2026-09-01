@@ -27,7 +27,7 @@ faqs:
   - q: "How does the Peachtree Industrial Blvd corridor affect Norcross STR demand?"
     a: "Peachtree Industrial Boulevard runs through Norcross and carries one of the highest concentrations of business parks and corporate campuses in the northeast metro. Business travelers — including consultants, corporate trainers, project teams, and employees in temporary relocation — regularly prefer furnished private homes over extended-stay hotels when their engagement runs more than a few days. A well-positioned Norcross property can serve this corporate segment with a weekday occupancy floor that leisure properties can't match."
   - q: "What is ATLStay's fee for Norcross properties?"
-    a: "Our management rate is 10–15% of booking revenue with no hidden fees. We provide listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning management, and monthly owner reporting."
+    a: "For Norcross properties, ATLStay's all-in rate is 10–15% of booking revenue with no hidden fees. We provide listing optimization, photography coordination, dynamic pricing, 24/7 guest communication, cleaning management, and monthly owner reporting."
 order: 0
 published: true
 ---

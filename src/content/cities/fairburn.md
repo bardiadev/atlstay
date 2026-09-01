@@ -27,7 +27,7 @@ faqs:
   - q: "What role does film production play in Fairburn's STR market?"
     a: "South Fulton County is within Georgia's active film production corridor, and film industry workers on extended location assignments prefer STR homes over hotel stays for multi-week projects. Fairburn's proximity to studio facilities and its airport-adjacent location make it attractive for production staff who need flexibility and space during long shoots."
   - q: "What guest types book in Fairburn?"
-    a: "Renaissance Festival attendees on spring weekends are a unique and predictable segment. Film and production workers represent a growing extended-stay market. Airport-adjacent travelers seeking south-side positioning book year-round. Historic downtown visitors and arts patrons add weekend leisure demand. ATLStay builds strategy across all these profiles."
+    a: "Fairburn draws renaissance Festival attendees on spring weekends are a unique and predictable segment. Film and production workers represent a growing extended-stay market. Airport-adjacent travelers seeking south-side positioning book year-round. Historic downtown visitors and arts patrons add weekend leisure demand. ATLStay builds strategy across all these profiles."
 order: 0
 published: true
 ---

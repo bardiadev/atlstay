@@ -27,7 +27,7 @@ faqs:
   - q: "What property types perform best as short-term rentals in Lilburn?"
     a: "Homes with three or more bedrooms and private outdoor space (yards, patios, decks) perform particularly well. Lilburn's family rental demographic values space, privacy, and a residential neighborhood feel. Properties near Old Town or within easy reach of the trail network add leisure appeal for guests arriving by car for outdoor-focused trips."
   - q: "What is ATLStay's fee structure for Lilburn properties?"
-    a: "Our management rate is 10–15% of booking revenue with no hidden fees. That includes listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning management, and monthly owner reporting."
+    a: "For Lilburn properties, ATLStay's all-in rate is 10–15% of booking revenue with no hidden fees. That includes listing optimization, professional photography coordination, dynamic pricing, 24/7 guest communication, cleaning management, and monthly owner reporting."
 order: 0
 published: true
 ---

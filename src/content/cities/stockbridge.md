@@ -27,7 +27,7 @@ faqs:
   - q: "How does Stockbridge's highway access affect STR demand?"
     a: "The I-75/I-675 convergence near Stockbridge gives it a catchment area that most single-interstate suburbs don't have. Business travelers approaching from either the south Atlanta spine or from the southeast via I-675 find Stockbridge accessible without a city-center premium. This also makes Stockbridge useful as a staging point for travelers visiting multiple south-metro locations — Henry County, Clayton County, and the Airport District are all reasonable drives."
   - q: "What property types work best in Stockbridge?"
-    a: "Comfortable, professionally furnished properties with good wifi and workspace perform across all demand segments. Properties near Panola Mountain or with proximity to the I-675 interchange appeal strongly to the recreation and transit segments respectively. Larger homes with multiple bedrooms are well-suited to family relocation stays and group visits to the park."
+    a: "In Stockbridge, comfortable, professionally furnished properties with good wifi and workspace perform across all demand segments. Properties near Panola Mountain or with proximity to the I-675 interchange appeal strongly to the recreation and transit segments respectively. Larger homes with multiple bedrooms are well-suited to family relocation stays and group visits to the park."
 order: 0
 published: true
 ---
