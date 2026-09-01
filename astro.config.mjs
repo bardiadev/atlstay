@@ -72,7 +72,7 @@ try {
 }
 
 /** Newest ISO date among the given repo paths, or null if none are known. */
-function newestOf(...paths) {
+function newestOf(/** @type {(string|null|undefined)[]} */ ...paths) {
   let best = null;
   for (const p of paths) {
     if (!p) continue;
