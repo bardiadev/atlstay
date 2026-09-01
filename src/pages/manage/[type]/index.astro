@@ -11,6 +11,7 @@ import FAQ from '@/components/ui/FAQ.astro';
 import CTABand from '@/components/ui/CTABand.astro';
 import ServiceFormBand from '@/components/services/ServiceFormBand.astro';
 import { breadcrumbSchema, serviceSchema, itemListSchema } from '@/lib/schema';
+import { exploreGridClass } from '@/lib/explore';
 import { assignCardStyles } from '@/lib/cardImage';
 import { firstSentence } from '@/lib/text';
 import { propertyTypes } from '@/data/propertyTypes';
@@ -153,7 +154,7 @@ const schemas = [
             We manage {type.pluralName.toLowerCase()} across these Georgia markets. Each one has a distinct demand pattern — explore the local detail or get a projection for your specific address.
           </p>
         </div>
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class={exploreGridClass(marketCards.length)}>
           {marketCards.map((m, i) => (
             <NeighborhoodCard
               name={m.name}

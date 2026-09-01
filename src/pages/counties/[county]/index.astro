@@ -14,6 +14,9 @@ import { breadcrumbSchema, serviceSchema, itemListSchema } from '@/lib/schema';
 import { assignCardStyles } from '@/lib/cardImage';
 import { firstSentence } from '@/lib/text';
 import { counties } from '@/data/counties';
+import { landmarks } from '@/data/landmarks';
+import { publishedAnchors } from '@/data/anchors';
+import { buildCountyExplore, exploreGridClass } from '@/lib/explore';
 import { site } from '@/config/site';
 
 export async function getStaticPaths() {
@@ -30,8 +33,30 @@ const citiesInCounty = county.cities
   .map((slug) => allCities.find((c) => c.data.slug === slug))
   .filter((c): c is NonNullable<typeof c> => Boolean(c));
 
+/* Ten of the seventeen county pages rendered three cards or fewer in a
+   four-wide grid, and three rendered exactly one — the same broken-looking
+   grid the city pages had. The county pages also linked to neither the
+   furnished-housing anchor pages nor the landmark pages, despite both being
+   organised by county and city. Both now fill out the row. */
+const countyCitySlugs = citiesInCounty.map((c) => c.data.slug);
+const allNeighborhoods = await getCollection('neighborhoods', (n) => n.data.published);
+const explore = buildCountyExplore({
+  cities: citiesInCounty.map((c) => ({ name: c.data.name, slug: c.data.slug, intro: c.data.intro })),
+  citySlugs: countyCitySlugs,
+  anchors: publishedAnchors,
+  landmarks: landmarks.filter((l) => l.published),
+  neighborhoods: allNeighborhoods
+    .filter((n) => countyCitySlugs.includes(n.data.citySlug))
+    .map((n) => ({ name: n.data.name, slug: n.data.slug, citySlug: n.data.citySlug, intro: n.data.intro })),
+  nearbyCounties: counties
+    .filter((c) => c.published && c.slug !== county.slug && c.region === county.region)
+    .map((c) => ({ name: c.name, slug: c.slug, intro: c.intro })),
+  countyName: county.name,
+});
+/* Heading stays honest: a neighbouring county is not IN this county. */
+const exploreLeavesCounty = explore.some((e) => e.kind === 'county');
 const styles = assignCardStyles(
-  citiesInCounty.map((c) => ({ slug: c.data.slug, region: c.data.region })),
+  explore.map((e) => ({ slug: e.slug, region: e.kind === 'city' ? 'metro' : 'atlanta' })),
 );
 
 const heading = `Vacation Rental & Airbnb Management in ${county.name} County, ${county.state}`;
@@ -114,19 +139,19 @@ const schemas = [
       <Container size="wide">
         <div class="mb-10 text-center">
           <Eyebrow>{county.name} County</Eyebrow>
-          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Cities we manage in {county.name} County</h2>
+          <h2 class="mt-3 font-display text-3xl text-forest sm:text-4xl">Where we manage in {exploreLeavesCounty ? 'and around ' : ''}{county.name} County</h2>
           <p class="mx-auto mt-4 max-w-2xl text-ink/70">
             Each {county.name} County city brings its own demand profile and guest mix. We manage properties across all of them.
           </p>
         </div>
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {citiesInCounty.map((c, i) => (
+        <div class={exploreGridClass(explore.length)}>
+          {explore.map((e, i) => (
             <NeighborhoodCard
-              name={c.data.name}
-              href={`/${c.data.slug}/`}
+              name={e.name}
+              href={e.href}
               gradient={styles[i].gradient}
               icon={styles[i].icon}
-              blurb={firstSentence(c.data.intro)}
+              blurb={e.blurb ? firstSentence(e.blurb) : undefined}
             />
           ))}
         </div>
