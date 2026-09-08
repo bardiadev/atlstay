@@ -3,6 +3,15 @@
 - **Brand:** ATLStay is a secondary SEO brand; the real company is Silverstone Management LLC / ssmproperty.com — same business as the SSM apps. Schema links UP via `parentOrganization`; never present Silverstone's GBP reviews as ATLStay's own.
 - **Business facts** (fee, phone, email, stats, address) come only from `src/config/site.ts` — never hardcode new ones in pages. Fields marked `CONFIRM` there are placeholders, not confirmed facts.
 - **Phone (770) 999-9740** is unified sitewide (local-SEO NAP consistency) but hardcoded in ~190 files (`src/config/site.ts`, `src/content/resources/*.md`, `functions/api/lead.js`). If it ever changes: grep the whole repo first, then change EVERYWHERE or nowhere.
+- **A phone change does NOT reach Google for weeks — keep the OLD line alive.**
+  The number changed 2026-09-01 from (678) 938-6413. Eight days later the site
+  was 100% correct and the sitemap correctly carried `lastmod` 2026-09-01, but
+  Google had only recrawled 7 of the top 25 pages: **67% of impressions still
+  displayed the OLD number in search results**, so callers from Google rang a
+  number nobody was watching. Form leads looked normal the whole time, which is
+  what made it invisible. Next time: keep the old number active and forwarding
+  for at least 4-6 weeks after any change, and check `lastCrawlTime` via the GSC
+  URL Inspection API before assuming a NAP change has landed.
 - **The management fee is a RANGE, 10–15%, never "flat."** `site.pricing` carries `rate` (the range), `rateFrom`, `rateHigh`, `rateBasis`. Copy that says "flat" about the fee is a bug. "Flat" is still correct when it means flat *nightly* pricing — don't sweep those.
 - **Owner-confirmed 2026-08-10:** 10+ years in business is correct (not 15). They hold Georgia broker licensure, their lawyers have cleared it, and they legitimately manage long-term rentals and HOAs — write those as real services, don't hedge.
 
@@ -104,6 +113,15 @@ re-add `<link rel="manifest">` or `public/site.webmanifest`. The PNG icons stay
 - The site has TWO dimensions now: location and service. Service lines live in `src/data/serviceLines/` (`types.ts` + one file per category + an `index.ts` barrel). Adding an entry there automatically creates the hub page, every service×city page, the schema, the nav entry, and the llms.txt/llms-full.txt sections.
 - **Routing trap:** `src/pages/[city]/[neighborhood].astro` catches ANY two-segment path under a city, so `/marietta/long-term-rental-management/` would collide with the real `/marietta/east-cobb/`. Service pages must stay service-first (`/services/{service}/{city}/`). Never nest a service under a city path.
 - Every external figure in a service line needs a real `sources` entry (URL + date); the template renders them on-page. Unsourceable → leave the number out.
+
+## SEO/GA4 lookups: pass the property explicitly
+`~/.config/claude-seo/google-api.json` has a single shared `ga4_property_id`
+default that every one of Brandon's projects overwrites — on 2026-09-01 it was
+switched to FarsiChart. A default-property GA4 query from this repo silently
+returns **another site's data** (95k pageviews instead of ATLStay's ~900), which
+looks like a traffic explosion rather than an error. Always read
+`properties["atlstay.com"]` (539231769) from that config, never the default.
+GSC property is `sc-domain:atlstay.com`.
 
 ## Stack & commands
 - Astro 6 + Tailwind v4 + TypeScript; React island only for forms. pnpm: `pnpm dev --port 4327` (per `.claude/launch.json`), `pnpm build`, `pnpm check`.
