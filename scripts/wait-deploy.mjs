@@ -32,20 +32,46 @@ const CAP_MS = 12 * 60 * 1000; // hard cap — never poll forever
 const want = (process.argv[2] || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' })).trim();
 const short = want.slice(0, 7);
 
-/* wrangler's own OAuth token. Read, never printed. */
-function token() {
-  const paths = [
-    `${homedir()}/Library/Preferences/.wrangler/config/default.toml`,
-    `${homedir()}/.config/.wrangler/config/default.toml`,
-    `${homedir()}/.wrangler/config/default.toml`,
-  ];
-  for (const p of paths) {
+/* wrangler's own OAuth token. Read, never printed.
+ *
+ * These tokens last about an hour. wrangler refreshes them transparently when
+ * wrangler itself runs, but this script reads the file directly — so after an
+ * idle hour it would read a stale token and the deploy check died on
+ * "Cloudflare rejected the stored credentials" even though `wrangler whoami`
+ * worked fine a second later. That turned the one command CLAUDE.md says to
+ * trust before calling a deploy live into a coin flip. Check the recorded
+ * expiry first and let wrangler mint a fresh one when it has lapsed. */
+const TOKEN_PATHS = [
+  `${homedir()}/Library/Preferences/.wrangler/config/default.toml`,
+  `${homedir()}/.config/.wrangler/config/default.toml`,
+  `${homedir()}/.wrangler/config/default.toml`,
+];
+
+function readToken() {
+  for (const p of TOKEN_PATHS) {
     try {
-      const m = readFileSync(p, 'utf8').match(/oauth_token\s*=\s*"([^"]+)"/);
-      if (m) return m[1];
+      const raw = readFileSync(p, 'utf8');
+      const m = raw.match(/oauth_token\s*=\s*"([^"]+)"/);
+      if (!m) continue;
+      const exp = raw.match(/expiration_time\s*=\s*"([^"]+)"/);
+      const freshFor = exp ? Date.parse(exp[1]) - Date.now() : Infinity;
+      return { token: m[1], stale: freshFor < 120_000 };
     } catch { /* try the next location */ }
   }
+  return null;
+}
+
+function token() {
   if (process.env.CLOUDFLARE_API_TOKEN) return process.env.CLOUDFLARE_API_TOKEN;
+  let found = readToken();
+  if (found?.stale) {
+    // `whoami` is read-only and refreshes the OAuth token as a side effect.
+    try {
+      execFileSync('npx', ['--yes', 'wrangler', 'whoami'], { stdio: 'ignore', timeout: 90_000 });
+      found = readToken() ?? found;
+    } catch { /* fall through and try the token we have */ }
+  }
+  if (found) return found.token;
   console.error('No Cloudflare credentials found. Run `npx wrangler whoami` first.');
   process.exit(1);
 }
