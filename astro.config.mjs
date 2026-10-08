@@ -85,6 +85,14 @@ function newestOf(/** @type {(string|null|undefined)[]} */ ...paths) {
 }
 
 /** Any serviceLines / serviceNotes file can change a service page. */
+/* Business facts — phone, email, address, price — live in src/config/site.ts
+   and render into every page, so when one of them changes all ~930 URLs really
+   have changed and Google needs telling. Deliberately keyed on the FACTS and
+   not on the file: dating the site from any edit to site.ts would flag the
+   whole sitemap over a tagline apostrophe, which is how lastmod gets ignored.
+   See scripts/build-lastmod.mjs. */
+const NEWEST_GLOBAL = newestOf('src/config/site.ts#facts');
+
 const NEWEST_SERVICE_DATA = newestOf(
   ...Object.keys(GIT_LASTMOD).filter(
     (p) => p.startsWith('src/data/serviceLines/') || p.startsWith('src/data/serviceNotes/'),
@@ -187,6 +195,11 @@ export default defineConfig({
         } else if (seg.length === 0) {
           lastmod = newestOf('src/pages/index.astro');
         }
+
+        /* Resources returned above with their own editorial date — an author's
+           explicit updatedDate is not ours to overwrite. Everything else is
+           template-derived, so the global config date is simply one more input. */
+        if (NEWEST_GLOBAL && (!lastmod || NEWEST_GLOBAL > lastmod)) lastmod = NEWEST_GLOBAL;
 
         if (lastmod) item.lastmod = lastmod;
         return item;
