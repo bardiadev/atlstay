@@ -8,7 +8,7 @@
 
 export const site = {
   brandName: 'ATLStay',
-  tagline: "Atlanta's home for effortless hosting.",
+  tagline: "Atlanta’s home for effortless hosting.",
   domain: 'https://atlstay.com', // update before deploy
   description:
     'Premium short-term rental management in Atlanta. We handle everything — listing, pricing, guests, cleaning, and five-star reviews — so your home earns more, effortlessly.',

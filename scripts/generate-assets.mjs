@@ -6,7 +6,12 @@
 // favicon.svg) and a branded /images/og-default.jpg (logo + wordmark +
 // tagline + real stats composited over the Atlanta skyline).
 //
-// Brand facts below mirror src/config/site.ts — keep them in sync.
+// Brand facts are READ FROM src/config/site.ts, never retyped here. They used
+// to be "mirrored ... keep them in sync" and of course they drifted: this card
+// claimed a 4.9-star rating while every page on the site said 5.0, and the card
+// is the first thing anyone sees when a link is shared. If a fact moves in
+// site.ts the card follows; if a field is renamed, this script fails loudly
+// rather than quietly baking a stale number into a JPEG.
 import { createRequire } from 'node:module';
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -26,6 +31,23 @@ function resolveSharp() {
 const sharp = resolveSharp();
 
 const pub = join(root, 'public');
+
+/* Pull a single quoted value out of src/config/site.ts. Deliberately strict —
+   a renamed field throws instead of silently falling back to a stale literal. */
+const siteSrc = readFileSync(join(root, 'src/config/site.ts'), 'utf8');
+function fact(key) {
+  const m = siteSrc.match(new RegExp(`\\b${key}:\\s*(['"\`])(.*?)\\1`));
+  if (!m) throw new Error(`generate-assets: "${key}" not found in src/config/site.ts`);
+  return m[2];
+}
+const xml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+const BRAND   = fact('brandName');
+const TAGLINE = fact('tagline');
+const RATING  = fact('ratingValue');
+const REVIEWS = fact('reviews');   // stats.reviews — the string, not the object
+const HOMES   = fact('homes');
+const STATS_LINE = `${RATING}-star rating \u00b7 ${REVIEWS} five-star reviews \u00b7 ${HOMES} homes managed`;
 const FOREST = '#14342B';
 const CREAM = '#F7F4EC';
 const BRASS = '#C9A24B';
@@ -77,15 +99,17 @@ const overlay = Buffer.from(`
   <rect width="${W}" height="${H}" fill="url(#base)" />
   <rect width="${W}" height="${H}" fill="url(#scrim)" />
   ${mark}
-  <text x="208" y="248" font-family="Georgia,'Times New Roman',serif" font-size="92" font-weight="700" fill="${CREAM}">ATLStay</text>
-  <text x="88" y="322" font-family="'Helvetica Neue',Arial,sans-serif" font-size="33" fill="${CREAM}" fill-opacity="0.92">Atlanta&#8217;s home for effortless hosting.</text>
+  <text x="208" y="248" font-family="Georgia,'Times New Roman',serif" font-size="92" font-weight="700" fill="${CREAM}">${xml(BRAND)}</text>
+  <text x="88" y="322" font-family="'Helvetica Neue',Arial,sans-serif" font-size="33" fill="${CREAM}" fill-opacity="0.92">${xml(TAGLINE)}</text>
   <rect x="90" y="352" width="132" height="6" rx="3" fill="${BRASS}" />
-  <text x="90" y="430" font-family="'Helvetica Neue',Arial,sans-serif" font-size="30" font-weight="600" fill="${CREAM}" fill-opacity="0.9">4.9-star rating &#183; 10,000+ five-star reviews &#183; 450+ homes managed</text>
+  <text x="90" y="430" font-family="'Helvetica Neue',Arial,sans-serif" font-size="30" font-weight="600" fill="${CREAM}" fill-opacity="0.9">${xml(STATS_LINE)}</text>
   <text x="90" y="476" font-family="'Helvetica Neue',Arial,sans-serif" font-size="27" fill="${CREAM}" fill-opacity="0.75">Premium short-term rental management across Atlanta &amp; Georgia</text>
   <text x="90" y="556" font-family="'Helvetica Neue',Arial,sans-serif" font-size="28" font-weight="700" fill="${BRASS}" letter-spacing="0.5">atlstay.com</text>
 </svg>`);
 
-await sharp(join(pub, 'images/atlanta-skyline.jpg'))
+/* The .jpg this used to read was removed when the heroes were converted to
+   WebP, which silently broke this script. Read the file that exists. */
+await sharp(join(pub, 'images/atlanta-skyline.webp'))
   .resize(W, H, { fit: 'cover', position: 'attention' })
   .composite([{ input: overlay, top: 0, left: 0 }])
   .jpeg({ quality: 86, mozjpeg: true })
