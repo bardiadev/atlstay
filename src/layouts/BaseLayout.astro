@@ -53,6 +53,16 @@ const allSchemas = [
 
     {site.analytics?.gaId && (
       <Fragment>
+        {/* gtag.js is by some distance the heaviest thing on the page — 528 KB
+            of script and ~277 ms of main-thread work, more than everything this
+            site ships put together. It is also cross-origin, so without a hint
+            the browser cannot even begin the DNS lookup, TCP handshake and TLS
+            negotiation until it has parsed this far. preconnect starts all
+            three immediately; dns-prefetch covers the browsers that ignore it.
+            Costs nothing, changes no behaviour, and does not touch what GA
+            records. */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${site.analytics.gaId}`}></script>
         <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${site.analytics.gaId}');`} />
 
