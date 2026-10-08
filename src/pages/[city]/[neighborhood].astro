@@ -52,7 +52,20 @@ const cityName =
    authority — the difference is whether the title contains the words. So the
    title now leads with the phrase carrying the impressions, and the short-term
    side stays in the H1, the copy and the schema so nothing is traded away. */
-const seoTitle = `${entry.data.name} Property Management — ${cityName}, GA`;
+/* Keep the title inside Google's ~60-character display limit, which it was
+   overrunning on the longest names ("Kennesaw State University Area Property
+   Management — Kennesaw, GA" is 65 and gets cut mid-phrase). Two honest trims,
+   in order: drop the city suffix when the neighbourhood name already contains
+   the city (it reads as a stutter anyway), then drop the ", GA" if it is still
+   long. The full name always survives — only the redundant tail is shed. */
+const seoTitle = (() => {
+  const base = `${entry.data.name} Property Management`;
+  if (entry.data.name.toLowerCase().includes(cityName.toLowerCase())) return base;
+  const full = `${base} — ${cityName}, GA`;
+  if (full.length <= 60) return full;
+  const noState = `${base} — ${cityName}`;
+  return noState.length <= 60 ? noState : base;
+})();
 
 /* Guides written about THIS neighbourhood. Atlanta alone has 82 guides whose
    slug names a place we publish, and the city page can only reasonably show a
