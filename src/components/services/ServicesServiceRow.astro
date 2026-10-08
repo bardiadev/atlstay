@@ -1,5 +1,13 @@
 ---
-// A single full-service row — alternating image left / image right layout
+// A single full-service row — alternating image left / image right layout.
+//
+// WHY THE IMAGE COLUMN IS CONDITIONAL. This used to render the image column
+// unconditionally and fill it with an empty gradient when `imageKey` was
+// absent. Four of the nine entries in src/data/services.ts carried no
+// imageKey, so the bottom half of /services/ showed four blank 4:3 rectangles
+// in a photo layout — it read as broken images rather than as a design.
+// Every entry now has a real photo, and a row without one collapses to
+// full-width text instead of reserving a hole for a picture that isn't there.
 import { images } from '@/data/images';
 import type { ImageKey } from '@/data/images';
 
@@ -14,20 +22,21 @@ const { title, description, imageKey, reverse = false } = Astro.props;
 const img = imageKey ? images[imageKey] : null;
 ---
 
-<div class={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${reverse ? 'lg:[&>:first-child]:order-2' : ''}`}>
-  <!-- Image column -->
-  <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-forest-50">
-    {img ? (
+<div
+  class={`grid items-center gap-10 lg:gap-16 ${
+    img ? `lg:grid-cols-2 ${reverse ? 'lg:[&>:first-child]:order-2' : ''}` : ''
+  }`}
+>
+  {img && (
+    <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-forest-50">
       <img
         src={img.src}
         alt={img.alt}
         loading="lazy"
         class="h-full w-full object-cover"
       />
-    ) : (
-      <div class="h-full w-full bg-gradient-to-br from-forest-50 to-brass-50" />
-    )}
-  </div>
+    </div>
+  )}
 
   <!-- Text column -->
   <div>

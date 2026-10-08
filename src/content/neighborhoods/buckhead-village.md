@@ -5,7 +5,7 @@ citySlug: atlanta
 title: "Airbnb Management in Buckhead Village, Atlanta"
 description: "Expert luxury STR management in Buckhead Village, Atlanta. The Shops Buckhead Atlanta, high-end dining, and upscale condos drive premium short-term rental demand."
 intro: "Buckhead Village is Atlanta's premier luxury neighborhood — a walkable enclave of high-end condominiums, the Shops Buckhead Atlanta, acclaimed restaurants, and nightlife that draws a clientele accustomed to the best. For STR owners, it's a market where property quality and management excellence directly translate to top-of-market rates and an affluent guest profile that pays for the experience."
-heroImage: "nbhdDefault"
+heroImage: "nbhdBuckhead"
 demandDrivers:
   - "The Shops Buckhead Atlanta: This open-air luxury retail district — Saint Laurent, Hermès, Christian Louboutin, Bottega Veneta — anchors the neighborhood's luxury identity and draws affluent visitors from across the Southeast specifically for the shopping experience"
   - "Premier restaurant scene: Buckhead Village's restaurant corridor includes some of Atlanta's most acclaimed dining — Bones, St. Cecilia, The Select, and a roster of upscale options that attract destination diners and corporate entertainment"

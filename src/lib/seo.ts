@@ -1,6 +1,9 @@
 import { site } from '../config/site';
+import { images } from '@/data/images';
 
-export const DEFAULT_OG_IMAGE = '/images/og-default.jpg';
+// Single source of truth: the OG default is one entry in the image registry,
+// not a second copy of its path that can silently drift out of step.
+export const DEFAULT_OG_IMAGE = images.ogDefault.src;
 
 /** Brand-suffixed page title. Skips the suffix when the title already names the
  *  brand (no "ATLStay … | ATLStay"), and drops it when it would push the title

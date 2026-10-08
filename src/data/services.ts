@@ -13,7 +13,7 @@ export const services: Service[] = [
     short: 'A listing built to book.',
     description:
       'We write, design, and continuously tune your listing — title, photos, amenities, and description — then A/B test it against the market so it stays at the top of search and converts browsers into bookings.',
-    imageKey: 'photography',
+    imageKey: 'heroHome',
   },
   {
     title: 'Professional photography',
@@ -48,23 +48,27 @@ export const services: Service[] = [
     short: 'Small problems, solved fast.',
     description:
       'We coordinate trusted local vendors for anything that comes up and keep the home stocked with the essentials guests expect — so issues never become bad reviews.',
+    imageKey: 'serviceManagement',
   },
   {
     title: 'Multi-platform distribution',
     short: 'Seen everywhere guests book.',
     description:
       'Your home, syndicated and synced across Airbnb, Vrbo, Booking.com, and more — with a single calendar so you’re never double-booked and never leaving money on the table.',
+    imageKey: 'atlantaSkyline',
   },
   {
     title: 'Reviews & reputation',
     short: 'Protecting your five stars.',
     description:
       'We engineer the whole guest experience toward five-star reviews and manage feedback proactively, building the rating that keeps your calendar full.',
+    imageKey: 'heroProjection',
   },
   {
     title: 'Owner reporting & payouts',
     short: 'Total clarity, on time.',
     description:
       'A clean monthly statement, transparent numbers, and reliable payouts. You always know exactly how your home is performing — no guesswork, no hidden fees.',
+    imageKey: 'ownerHandshake',
   },
 ];
