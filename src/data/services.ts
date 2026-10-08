@@ -48,7 +48,7 @@ export const services: Service[] = [
     short: 'Small problems, solved fast.',
     description:
       'We coordinate trusted local vendors for anything that comes up and keep the home stocked with the essentials guests expect — so issues never become bad reviews.',
-    imageKey: 'serviceManagement',
+    imageKey: 'suburbHome',
   },
   {
     title: 'Multi-platform distribution',

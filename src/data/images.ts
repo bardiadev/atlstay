@@ -14,12 +14,17 @@ export const images = {
   heroProjection: { src: '/images/hero-projection.webp', alt: 'Bright modern interior of a managed Atlanta short-term rental' },
 
   atlantaSkyline: { src: '/images/atlanta-skyline.webp', alt: 'The Atlanta, Georgia city skyline at dusk' },
-  serviceManagement: { src: '/images/service-management.webp', alt: 'Host preparing a five-star welcome for short-term rental guests' },
+  // STOPGAP 2026-10-08: this pointed at /images/service-management.webp — a
+  // vacant storefront in the snow with a FOR RENT sign and another company's
+  // phone number on it, used as the hero of /services/ and 8 resource guides.
+  // Reusing the villa shot until a real service/maintenance photo is sourced.
+  // The old file is left in public/images/ and is no longer referenced.
+  serviceManagement: { src: '/images/about.webp', alt: 'A bright, well-kept managed rental home' },
   cleaning: { src: '/images/cleaning.webp', alt: 'Spotless, professionally cleaned and staged bedroom' },
   pricingDashboard: { src: '/images/dynamic-pricing.webp', alt: 'Calendar and pricing strategy for a vacation rental' },
-  guestExperience: { src: '/images/guest-experience.webp', alt: 'Guests arriving at a welcoming Atlanta home' },
+  guestExperience: { src: '/images/guest-experience.webp', alt: 'Crisp white linens freshly made up for the next guest' },
   photography: { src: '/images/photography.webp', alt: 'Professionally photographed, light-filled living space' },
-  ownerHandshake: { src: '/images/owner.webp', alt: 'A homeowner reviewing results with their property manager' },
+  ownerHandshake: { src: '/images/owner.webp', alt: 'A styled, move-in-ready living room in a managed rental' },
   about: { src: '/images/about.webp', alt: 'The ATLStay approach to local, hands-on hosting' },
 
   nbhdBuckhead: { src: '/images/buckhead.webp', alt: 'Upscale Buckhead, Atlanta neighborhood' },
